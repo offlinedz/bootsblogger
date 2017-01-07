@@ -9,7 +9,7 @@ function loadStyleSheet(src){
     stylesheet.href = src
     stylesheet.rel = &#39;stylesheet&#39;
     stylesheet.type = &#39;text/css&#39;
-    document.getElementsByTagName(&#39;head&#39;)[0].appendChild(stylesheet)
+    document.head.appendChild(stylesheet)
   }
 }
 window.onload = function() {
