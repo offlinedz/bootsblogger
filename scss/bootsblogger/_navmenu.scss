@@ -56,8 +56,11 @@
 .navmenu-nav {
   display: flex;
   flex-direction: column;
+  padding-left: 0;
   margin-right: -$navmenu-padding-x;
+  margin-bottom: 0;
   margin-left: -$navmenu-padding-x;
+  list-style: none;
 }
 .navmenu-nav .nav-link {
   display: block;

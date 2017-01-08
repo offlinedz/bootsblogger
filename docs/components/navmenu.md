@@ -19,12 +19,12 @@ Gunakan `.navmenu` untuk membungkus konten dan tambahkan kelas [skema warna](#co
 {% example html %}
 <nav class="navmenu navmenu-light bg-faded">
   <a class="navmenu-brand" href="#">Bootsblogger</a>
-  <div class="nav navmenu-nav">
+  <div class="navmenu-nav">
     <a class="nav-item nav-link" href="#">Nav item</a>
     <a class="nav-item nav-link" href="#">Nav item again</a>
     <a class="nav-item nav-link" href="#">Another nav item</a>
   </div>
-  <div class="nav navmenu-nav">
+  <div class="navmenu-nav">
     <a class="nav-item nav-link active" href="#">Active</a>
     <a class="nav-item nav-link disabled" href="#">Disabled</a>
   </div>
@@ -39,7 +39,7 @@ Gunakan `.navmenu` untuk membungkus konten dan tambahkan kelas [skema warna](#co
   <a class="navmenu-brand" href="#">Bootsblogger</a>
 
   <!-- Nav -->
-  <div class="nav navmenu-nav">
+  <div class="navmenu-nav">
     <a class="nav-item nav-link" href="#">Nav item</a>
     <a class="nav-item nav-link" href="#">Nav item again</a>
     <a class="nav-item nav-link" href="#">Another nav item</a>
@@ -71,7 +71,7 @@ Untuk mengubah warna navmenu sangatlah mudah, gunakan `.navmenu-light` atau `.na
 {% example html %}
 <nav class="navmenu navmenu-light bg-faded">
   <a class="navmenu-brand" href="#">Bootsblogger</a>
-  <div class="nav navmenu-nav">
+  <div class="navmenu-nav">
     <a class="nav-item nav-link" href="#">Nav item</a>
     <a class="nav-item nav-link" href="#">Nav item again</a>
     <a class="nav-item nav-link" href="#">Another nav item</a>
@@ -82,7 +82,7 @@ Untuk mengubah warna navmenu sangatlah mudah, gunakan `.navmenu-light` atau `.na
 {% example html %}
 <nav class="navmenu navmenu-light" style="background-color: #e3f2fd;">
   <a class="navmenu-brand" href="#">Bootsblogger</a>
-  <div class="nav navmenu-nav">
+  <div class="navmenu-nav">
     <a class="nav-item nav-link" href="#">Nav item</a>
     <a class="nav-item nav-link" href="#">Nav item again</a>
     <a class="nav-item nav-link" href="#">Another nav item</a>
@@ -93,7 +93,7 @@ Untuk mengubah warna navmenu sangatlah mudah, gunakan `.navmenu-light` atau `.na
 {% example html %}
 <nav class="navmenu navmenu-dark bg-blue">
   <a class="navmenu-brand" href="#">Bootsblogger</a>
-  <div class="nav navmenu-nav">
+  <div class="navmenu-nav">
     <a class="nav-item nav-link" href="#">Nav item</a>
     <a class="nav-item nav-link" href="#">Nav item again</a>
     <a class="nav-item nav-link" href="#">Another nav item</a>
@@ -104,7 +104,7 @@ Untuk mengubah warna navmenu sangatlah mudah, gunakan `.navmenu-light` atau `.na
 {% example html %}
 <nav class="navmenu navmenu-dark" style="background-color: #ef6c00;">
   <a class="navmenu-brand" href="#">Bootsblogger</a>
-  <div class="nav navmenu-nav">
+  <div class="navmenu-nav">
     <a class="nav-item nav-link" href="#">Nav item</a>
     <a class="nav-item nav-link" href="#">Nav item again</a>
     <a class="nav-item nav-link" href="#">Another nav item</a>
@@ -117,7 +117,7 @@ Untuk mengubah warna navmenu sangatlah mudah, gunakan `.navmenu-light` atau `.na
 {% example html %}
 <nav class="navmenu navmenu-light bg-faded">
   <a class="navmenu-brand" href="#">Bootsblogger</a>
-  <ul class="nav navmenu-nav">
+  <ul class="navmenu-nav">
     <li class="nav-item"><a class="nav-link" href="#">Nav item</a></li>
     <li class="nav-item"><a class="nav-link" href="#">Nav item again</a></li>
     <li class="nav-item dropdown">
@@ -149,7 +149,7 @@ Untuk mengubah warna navmenu sangatlah mudah, gunakan `.navmenu-light` atau `.na
 {% example html %}
 <nav class="navmenu navmenu-fixed-left navmenu-dark bg-orange">
   <a class="navmenu-brand" href="#">Fixed left</a>
-  <div class="nav navmenu-nav">
+  <div class="navmenu-nav">
     <a class="nav-item nav-link" href="#">Nav item</a>
     <a class="nav-item nav-link" href="#">Nav item again</a>
     <a class="nav-item nav-link" href="#">Another nav item</a>
@@ -160,7 +160,7 @@ Untuk mengubah warna navmenu sangatlah mudah, gunakan `.navmenu-light` atau `.na
 {% example html %}
 <nav class="navmenu navmenu-fixed-right navmenu-dark bg-orange">
   <a class="navmenu-brand" href="#">Fixed right</a>
-  <div class="nav navmenu-nav">
+  <div class="navmenu-nav">
     <a class="nav-item nav-link" href="#">Nav item</a>
     <a class="nav-item nav-link" href="#">Nav item again</a>
     <a class="nav-item nav-link" href="#">Another nav item</a>
