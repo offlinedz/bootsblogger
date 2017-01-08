@@ -178,11 +178,7 @@
 }
 
 // Editor
-.comment-form-editor {
-  background-color: #f5f5f5;
-  border-color: rgba(0,0,0,.125);
-}
-.comment-form-editor iframe {
+.comment-form-tabs .comment-editor {
   position: relative;
   width: 100%;
   border: 0;
@@ -193,15 +189,12 @@
   display: none !important;
 }
 .comment-form-loading {
-  text-align: center;
-
   .comment-form-loading-icon {
     display: inline-block !important;
   }
 
   .comment-form-message,
-  .comment-form-editor,
-  .comment-form-help {
+  .comment-form-tabs {
     display: none;
   }
 }

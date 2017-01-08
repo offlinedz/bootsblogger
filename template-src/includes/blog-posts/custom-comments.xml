@@ -25,11 +25,11 @@
         <div class='comment-add-wrapper mb-1'>
           <a class='btn btn-block btn-success js-comment-action' href='#comment-form-container-original' onclick='javascript:reply(&quot;cancel&quot;);' role='button'><i aria-hidden='true' class='fa fa-comment'/> Add comment</a>
         </div>
-        <div class='card card-block comment-form comment-form-loading mb-0' id='comment-form'>
+        <div class='card card-block comment-form comment-form-loading' id='comment-form'>
           <data:blogTeamBlogMessage/>
           <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
           <!-- Loading icon -->
-          <i aria-hidden='true' class='fa fa-spinner fa-pulse fa-3x fa-fw comment-form-loading-icon'/>
+          <i aria-hidden='true' class='fa fa-spinner fa-pulse fa-3x fa-fw mx-auto comment-form-loading-icon'/>
           <!-- Message -->
           <div class='card card-block comment-form-message'>
             <h2 class='card-title h4'><data:postCommentMsg/></h2>
@@ -37,23 +37,31 @@
               <p class='card-text mb-0'><data:blogCommentMessage/></p>
             </b:if>
           </div>
-          <!-- Help and converter -->
-          <div class='card comment-form-help'>
+          <!-- Comment editor and comment helper -->
+          <div class='card comment-form-tabs'>
             <div class='card-header'>
               <ul class='nav nav-tabs card-header-tabs float-left' role='tablist'>
                 <li class='nav-item'>
-                  <a class='nav-link' data-toggle='tab' href='#tab-comment-tags' role='tab'>Supported tags</a>
+                  <a class='nav-link active' data-toggle='tab' href='#tab-comment-editor' role='tab'>Comment Form</a>
                 </li>
-                <li class='nav-item'>
-                  <a class='nav-link' data-toggle='tab' href='#tab-comment-emo' role='tab'>Emoticons</a>
-                </li>
-                <li class='nav-item'>
-                  <a class='nav-link' data-toggle='tab' href='#tab-comment-converter' role='tab'>HTML Converter</a>
+                <li class='nav-item dropdown'>
+                  <a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='false'>Help</a>
+                  <div class='dropdown-menu'>
+                    <a class='dropdown-item' data-toggle='tab' href='#tab-comment-html' role='tab'>Supported HTML</a>
+                    <a class='dropdown-item' data-toggle='tab' href='#tab-comment-emo' role='tab'>Emoticons</a>
+                    <a class='dropdown-item' data-toggle='tab' href='#tab-comment-converter' role='tab'>HTML Converter</a>
+                  </div>
                 </li>
               </ul>
             </div>
             <div class='tab-content'>
-              <div class='card-block tab-pane' id='tab-comment-tags' role='tabpanel'>
+              <div class='card-block tab-pane active' id='tab-comment-editor' role='tabpanel'>
+                <iframe class='blogger-iframe-colorize blogger-comment-from-post comment-editor' id='comment-editor' name='comment-editor'/>
+                <data:post.friendConnectJs/>
+                <data:post.cmtfpIframe/>
+                <script>BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;, &#39;<data:post.communityId/>&#39;);</script>
+              </div>
+              <div class='card-block tab-pane' id='tab-comment-html' role='tabpanel'>
                 <table class='table table-sm table-bordered mb-0'>
                   <tbody>
                     <tr>
@@ -64,7 +72,7 @@
                 </table>
               </div>
               <div class='card-block tab-pane' id='tab-comment-emo' role='tabpanel'>
-                <p class='mb-0'>Emo lists</p>
+                <p class='mb-0'>:)</p>
               </div>
               <div class='card-block tab-pane' id='tab-comment-converter' role='tabpanel'>
                 <textarea class='form-control' id='js-comment-textarea-convert' style='height: 200px;'></textarea>
@@ -75,13 +83,6 @@
               </div>
             </div>
           </div>
-          <!-- Editor -->
-          <div class='card card-block comment-form-editor mb-0'>
-            <iframe class='blogger-iframe-colorize blogger-comment-from-post' id='comment-editor' name='comment-editor'/>
-          </div>
-          <data:post.friendConnectJs/>
-          <data:post.cmtfpIframe/>
-          <script>BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;, &#39;<data:post.communityId/>&#39;);</script>
         </div>
       </div>
     </b:if>
