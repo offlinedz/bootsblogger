@@ -164,21 +164,21 @@
     })
 
 
-    // Add/remove `.open` for `add comment` and `cancel reply` wrapper
+    // Add/remove `.show` for `add comment` and `cancel reply` wrapper
 
     $('.js-comment-action').on('click', function () {
       $('.comment-form-container-original').each(function () {
         if ($(this).find('.comment-form').length) {
-          $('body').find('.comment-add-wrapper').removeClass('open')
+          $('body').find('.comment-add-wrapper').removeClass('show')
         } else {
-          $('body').find('.comment-add-wrapper').addClass('open')
+          $('body').find('.comment-add-wrapper').addClass('show')
         }
       })
       $('.comment-form-container-reply').each(function () {
         if ($(this).find('.comment-form').length) {
-          $('body').find('.comment-cancel-wrapper').addClass('open')
+          $('body').find('.comment-cancel-wrapper').addClass('show')
         } else {
-          $('body').find('.comment-cancel-wrapper:not(.open)').removeClass('open')
+          $('body').find('.comment-cancel-wrapper:not(.show)').removeClass('show')
         }
       })
     })

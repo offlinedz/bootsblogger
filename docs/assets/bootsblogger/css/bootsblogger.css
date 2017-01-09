@@ -2361,17 +2361,12 @@
   }
 }
 .comments {
-  padding: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
   background-color: #f8f8f8;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
 }
 
 .comments-title {
-  margin-top: 0;
-  margin-bottom: 1rem;
   font-weight: bold;
   color: #555;
 }
@@ -2419,7 +2414,6 @@
 }
 
 .comment-dropdown {
-  padding: .5rem;
   color: #8899a6;
 }
 .comment-dropdown:hover, .comment-dropdown:focus {
@@ -2508,8 +2502,8 @@
 .comment-cancel-wrapper {
   display: none;
 }
-.comment-add-wrapper.open,
-.comment-cancel-wrapper.open {
+.comment-add-wrapper.show,
+.comment-cancel-wrapper.show {
   display: block;
 }
 
