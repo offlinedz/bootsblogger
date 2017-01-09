@@ -1,15 +1,10 @@
 .comments {
-  padding: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
   background-color: #f8f8f8;
   border: 1px solid rgba(0,0,0,.125);
   @include border-radius($border-radius);
 }
 
 .comments-title {
-  margin-top: 0;
-  margin-bottom: 1rem;
   font-weight: $font-weight-bold;
   color: #555;
 
@@ -75,7 +70,6 @@
 
 // Dropdown icon
 .comment-dropdown {
-  padding: .5rem;
   color: #8899a6;
 
   &:hover,
@@ -208,7 +202,7 @@
 .comment-cancel-wrapper {
   display: none;
 
-  &.open {
+  &.show {
     display: block;
   }
 }
