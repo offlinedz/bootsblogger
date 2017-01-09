@@ -1,6 +1,6 @@
 <b:if cond='data:post.authorAboutMe'>
   <div class='media' itemprop='author' itemscope='itemscope' itemtype='http://schema.org/Person'>
-    <div class='media-left'>
+    <div class='d-flex mr-3'>
       <b:if cond='data:post.authorPhoto.url'>
         <img alt='Author profile' class='rounded-circle' expr:src='data:post.authorPhoto.url' height='50' width='50' itemprop='image'/>
       <b:else/>

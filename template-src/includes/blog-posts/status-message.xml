@@ -65,7 +65,7 @@ function searchMsg(json) {
       <i aria-hidden='true' class='fa fa-search-minus'/> Your search <strong>&quot;<data:blog.searchQuery/>&quot;</strong> did not match any documents.
     </div>
   	<!-- Search form -->
-    <div class='card'>
+    <div class='card mb-3'>
       <div class='card-block'>
         <form action='/search' method='get' role='search'>
           <div class='input-group'>
@@ -103,7 +103,7 @@ function searchMsg(json) {
     <strong>404: sorry, the page you were looking for in this blog does not exist.</strong>
   </div>
   <!-- Search form -->
-  <div class='card'>
+  <div class='card mb-3'>
     <div class='card-block'>
       <form action='/search' method='get' role='search'>
         <div class='input-group'>

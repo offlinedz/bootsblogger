@@ -1,6 +1,6 @@
 <b:if cond='data:top.showReactions'>
   <div class='media'>
-    <div class='media-left' style='vertical-align: middle;'>
+    <div class='d-flex mr-3' style='vertical-align: middle;'>
       <span><data:top.reactionsLabel/></span>
     </div>
     <div class='media-body'>
