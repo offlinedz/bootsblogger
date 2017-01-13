@@ -1,95 +1,27 @@
 <b:if cond='data:post.allowComments'>
 
-  <div class='comments p-3 mt-3 mb-3' id='comments'>
+  <div class='comments p-3 mb-3' id='comments'>
 
     <!-- Heading -->
-    <h1 class='comments-title h2 mt-0 mb-3'>
-      <i aria-hidden='true' class='fa fa-comments-o'/> Comments <small><data:post.numComments/></small>
+    <h1 class='comments-title h2 m-0'>
+      <i aria-hidden='true' class='fa fa-comments-o'/> Comments <span class='text-nowrap'><small><data:post.numComments/></small> <b:if cond='data:post.allowNewComments'><a class='js-comment-action' href='#comment-form-container-original' onclick='javascript:reply(&quot;cancel&quot;);' role='button' title='Add comment'><i aria-hidden='true' class='fa fa-plus-circle'/></a></b:if></span>
     </h1>
 
     <!-- No comments -->
     <b:if cond='data:post.numComments == 0 and data:post.allowNewComments'>
-      <div class='alert alert-info' role='alert'>Be the first to comment.</div>
+      <div class='alert alert-info mt-4 mb-0' role='alert'>Be the first to comment.</div>
     </b:if>
 
     <!-- New comments are not allowed -->
     <b:if cond='!data:post.allowNewComments'>
-      <div class='alert alert-warning' role='alert'>
+      <div class='alert alert-warning mt-4 mb-0' role='alert'>
         <data:post.noNewCommentsText/>
-      </div>
-    </b:if>
-
-    <!-- Comment form -->
-    <b:if cond='data:post.allowNewComments'>
-      <div class='comment-form-container-original active' id='comment-form-container-original'>
-        <div class='comment-add-wrapper mb-3'>
-          <a class='btn btn-block btn-success js-comment-action' href='#comment-form-container-original' onclick='javascript:reply(&quot;cancel&quot;);' role='button'><i aria-hidden='true' class='fa fa-comment'/> Add comment</a>
-        </div>
-        <div class='card card-block comment-form comment-form-loading p-2' id='comment-form'>
-          <data:blogTeamBlogMessage/>
-          <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
-          <!-- Loading icon -->
-          <i aria-hidden='true' class='fa fa-spinner fa-pulse fa-3x fa-fw mx-auto comment-form-loading-icon'/>
-          <!-- Message -->
-          <div class='card card-block comment-form-message mb-2'>
-            <h2 class='card-title h4'><data:postCommentMsg/></h2>
-            <b:if cond='data:blogCommentMessage'>
-              <p class='card-text mb-0'><data:blogCommentMessage/></p>
-            </b:if>
-          </div>
-          <!-- Comment editor and comment helper -->
-          <div class='card comment-form-tabs'>
-            <div class='card-header'>
-              <ul class='nav nav-tabs card-header-tabs float-left' role='tablist'>
-                <li class='nav-item'>
-                  <a class='nav-link active' data-toggle='tab' href='#tab-comment-editor' role='tab'>Comment Form</a>
-                </li>
-                <li class='nav-item dropdown'>
-                  <a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='false'>Help</a>
-                  <div class='dropdown-menu'>
-                    <a class='dropdown-item' data-toggle='tab' href='#tab-comment-html' role='tab'>Supported HTML</a>
-                    <a class='dropdown-item' data-toggle='tab' href='#tab-comment-emo' role='tab'>Emoticons</a>
-                    <a class='dropdown-item' data-toggle='tab' href='#tab-comment-converter' role='tab'>HTML Converter</a>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class='tab-content'>
-              <div class='card-block tab-pane p-1 active' id='tab-comment-editor' role='tabpanel'>
-                <iframe class='blogger-iframe-colorize blogger-comment-from-post comment-editor' id='comment-editor' name='comment-editor'/>
-                <data:post.friendConnectJs/>
-                <data:post.cmtfpIframe/>
-                <script>BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;, &#39;<data:post.communityId/>&#39;);</script>
-              </div>
-              <div class='card-block tab-pane' id='tab-comment-html' role='tabpanel'>
-                <table class='table table-sm table-bordered mb-0'>
-                  <tbody>
-                    <tr>
-                      <td>Lorem</td>
-                      <td>Ipsum</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class='card-block tab-pane' id='tab-comment-emo' role='tabpanel'>
-                <p class='mb-0'>:)</p>
-              </div>
-              <div class='card-block tab-pane' id='tab-comment-converter' role='tabpanel'>
-                <textarea class='form-control' id='js-comment-textarea-convert' style='height: 200px;'></textarea>
-                <div class='text-center mt-3'>
-                  <button type='button' class='btn btn-sm btn-primary' id='js-comment-btn-convert'>Convert</button>
-                  <button type='button' class='btn btn-sm btn-danger' id='js-comment-btn-convert-clear' style='display: none;'>Clear</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </b:if>
 
     <!-- Pagination -->
     <b:if cond='data:post.commentPagingRequired'>
-      <div class='mt-3 mb-3'>
+      <div class='mt-4'>
         <div class='text-center'>
           <div class='btn-group'>
             <a class='btn btn-secondary' expr:href='data:post.oldestLinkUrl' role='button'><data:post.oldestLinkText/></a>
@@ -135,7 +67,7 @@
                 </div>
                 <div class='float-right'>
                   <div class='dropdown'>
-                    <a class='comment-dropdown p-2' data-toggle='dropdown' href='javascript:;'><i aria-hidden='true' class='fa fa-ellipsis-v comment-dropdown-icon'/></a>
+                    <a class='comment-dropdown p-1' data-toggle='dropdown' href='javascript:;'><i aria-hidden='true' class='fa fa-ellipsis-v comment-dropdown-icon'/></a>
                     <div class='dropdown-menu dropdown-menu-right'>
                       <b:if cond='!data:comment.isDeleted'>
                         <a class='dropdown-item' expr:href='&quot;http://www.blogger.com/delete-comment.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;postID=&quot; + data:comment.id'><i aria-hidden='true' class='fa fa-trash'/> Delete</a>
@@ -216,7 +148,7 @@
                         </div>
                         <div class='float-right'>
                           <div class='dropdown'>
-                            <a class='comment-dropdown p-2' data-toggle='dropdown' href='javascript:;'><i aria-hidden='true' class='fa fa-ellipsis-v comment-dropdown-icon'/></a>
+                            <a class='comment-dropdown p-1' data-toggle='dropdown' href='javascript:;'><i aria-hidden='true' class='fa fa-ellipsis-v comment-dropdown-icon'/></a>
                             <div class='dropdown-menu dropdown-menu-right'>
                               <b:if cond='!data:replies.isDeleted'>
                                 <a class='dropdown-item' expr:href='&quot;http://www.blogger.com/delete-comment.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;postID=&quot; + data:replies.id'><i aria-hidden='true' class='fa fa-trash'/> Delete</a>
@@ -269,6 +201,74 @@
           <div class='btn-group'>
             <a class='btn btn-secondary' expr:href='data:post.newerLinkUrl' role='button'><data:post.newerLinkText/></a>
             <a class='btn btn-secondary' expr:href='data:post.newestLinkUrl' role='button'><data:post.newestLinkText/></a>
+          </div>
+        </div>
+      </div>
+    </b:if>
+
+    <!-- Comment form -->
+    <b:if cond='data:post.allowNewComments'>
+      <div class='comment-form-container-original mt-4 active' id='comment-form-container-original'>
+        <div class='comment-add-wrapper'>
+          <a class='btn btn-block btn-success js-comment-action' href='#comment-form-container-original' onclick='javascript:reply(&quot;cancel&quot;);' role='button'><i aria-hidden='true' class='fa fa-comment'/> Add comment</a>
+        </div>
+        <div class='card card-block comment-form comment-form-loading p-2' id='comment-form'>
+          <data:blogTeamBlogMessage/>
+          <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
+          <!-- Loading icon -->
+          <i aria-hidden='true' class='fa fa-spinner fa-pulse fa-3x fa-fw mx-auto comment-form-loading-icon'/>
+          <!-- Message -->
+          <div class='card card-block comment-form-message mb-2'>
+            <h2 class='card-title h4'><data:postCommentMsg/></h2>
+            <b:if cond='data:blogCommentMessage'>
+              <p class='card-text mb-0'><data:blogCommentMessage/></p>
+            </b:if>
+          </div>
+          <!-- Comment editor and comment helper -->
+          <div class='card comment-form-tabs'>
+            <div class='card-header'>
+              <ul class='nav nav-tabs card-header-tabs float-left' role='tablist'>
+                <li class='nav-item'>
+                  <a class='nav-link active' data-toggle='tab' href='#tab-comment-editor' role='tab'>Comment Form</a>
+                </li>
+                <li class='nav-item dropdown'>
+                  <a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='false'>Help</a>
+                  <div class='dropdown-menu'>
+                    <a class='dropdown-item' data-toggle='tab' href='#tab-comment-html' role='tab'>Supported HTML</a>
+                    <a class='dropdown-item' data-toggle='tab' href='#tab-comment-emo' role='tab'>Emoticons</a>
+                    <a class='dropdown-item' data-toggle='tab' href='#tab-comment-converter' role='tab'>HTML Converter</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class='tab-content'>
+              <div class='card-block tab-pane p-1 active' id='tab-comment-editor' role='tabpanel'>
+                <iframe class='blogger-iframe-colorize blogger-comment-from-post comment-editor' id='comment-editor' name='comment-editor'/>
+                <data:post.friendConnectJs/>
+                <data:post.cmtfpIframe/>
+                <script>BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;, &#39;<data:post.communityId/>&#39;);</script>
+              </div>
+              <div class='card-block tab-pane' id='tab-comment-html' role='tabpanel'>
+                <table class='table table-sm table-bordered mb-0'>
+                  <tbody>
+                    <tr>
+                      <td>Lorem</td>
+                      <td>Ipsum</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class='card-block tab-pane' id='tab-comment-emo' role='tabpanel'>
+                <p class='mb-0'>:)</p>
+              </div>
+              <div class='card-block tab-pane' id='tab-comment-converter' role='tabpanel'>
+                <textarea class='form-control' id='js-comment-textarea-convert' style='height: 200px;'></textarea>
+                <div class='text-center mt-3'>
+                  <button type='button' class='btn btn-sm btn-primary' id='js-comment-btn-convert'>Convert</button>
+                  <button type='button' class='btn btn-sm btn-danger' id='js-comment-btn-convert-clear' style='display: none;'>Clear</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

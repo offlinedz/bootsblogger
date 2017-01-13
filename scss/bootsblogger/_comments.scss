@@ -12,6 +12,21 @@
     font-size: 60%;
     color: #777;
   }
+
+  a {
+    font-size: 1rem;
+    color: #8899a6;
+
+    &:hover,
+    &:focus {
+      color: #3b94d9;
+    }
+  }
+
+  small,
+  a {
+    vertical-align: middle;
+  }
 }
 
 
