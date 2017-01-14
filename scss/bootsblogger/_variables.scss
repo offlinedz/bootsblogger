@@ -14,7 +14,7 @@
 // Colors
 //
 
-$color-faded:         $gray-lightest !default;
+$color-faded:         darken($body-bg, 3%) !default;
 $color-blue:          #3b83c0 !default;
 $color-green:         #5bbd72 !default;
 $color-teal:          #00b5ad !default;
