@@ -884,22 +884,22 @@
   color: rgba(0, 0, 0, 0.15);
 }
 
-.navmenu-dark .navmenu-brand {
+.navmenu-inverse .navmenu-brand {
   color: white;
 }
-.navmenu-dark .navmenu-brand:focus, .navmenu-dark .navmenu-brand:hover {
+.navmenu-inverse .navmenu-brand:focus, .navmenu-inverse .navmenu-brand:hover {
   color: white;
 }
-.navmenu-dark .navmenu-nav .nav-link {
+.navmenu-inverse .navmenu-nav .nav-link {
   color: rgba(255, 255, 255, 0.5);
 }
-.navmenu-dark .navmenu-nav .nav-link:focus, .navmenu-dark .navmenu-nav .nav-link:hover {
+.navmenu-inverse .navmenu-nav .nav-link:focus, .navmenu-inverse .navmenu-nav .nav-link:hover {
   color: rgba(255, 255, 255, 0.75);
 }
-.navmenu-dark .navmenu-nav .nav-link.active, .navmenu-dark .navmenu-nav .nav-link.active:focus, .navmenu-dark .navmenu-nav .nav-link.active:hover {
+.navmenu-inverse .navmenu-nav .nav-link.active, .navmenu-inverse .navmenu-nav .nav-link.active:focus, .navmenu-inverse .navmenu-nav .nav-link.active:hover {
   color: white;
 }
-.navmenu-dark .navmenu-nav .nav-link.disabled, .navmenu-dark .navmenu-nav .nav-link.disabled:focus, .navmenu-dark .navmenu-nav .nav-link.disabled:hover {
+.navmenu-inverse .navmenu-nav .nav-link.disabled, .navmenu-inverse .navmenu-nav .nav-link.disabled:focus, .navmenu-inverse .navmenu-nav .nav-link.disabled:hover {
   color: rgba(255, 255, 255, 0.25);
 }
 
@@ -1004,7 +1004,7 @@
 }
 
 .wg-box > .widget {
-  padding: 0.75rem;
+  padding: 1.25rem;
   margin-bottom: 1rem;
   border: 1px solid transparent;
   border-radius: 0.25rem;
@@ -1257,7 +1257,7 @@
 }
 
 .wg-panel > .widget > h2 {
-  padding: 0.5rem 0.75rem;
+  padding: 0.75rem 1.25rem;
   margin-top: 0;
   margin-bottom: 0;
   font-size: 1rem;
@@ -1273,7 +1273,7 @@
 }
 
 .wg-panel > .widget > .widget-content {
-  padding: 0.75rem;
+  padding: 1.25rem;
   border: 1px solid transparent;
   border-radius: 0.25rem;
 }
@@ -1320,7 +1320,7 @@
 }
 
 .wg-panel .list-group-flush {
-  margin: -0.75rem !important;
+  margin: -1.25rem !important;
 }
 .wg-panel .list-group-flush > .list-group-item {
   border-width: 1px 0;
@@ -1357,7 +1357,7 @@
 }
 .wg-panel.wg-collapse > .widget > .widget-collapse > .widget-content,
 .wg-panel.wg-accordion > .widget > .widget-collapse > .widget-content {
-  padding: 0.75rem;
+  padding: 1.25rem;
   border-radius: calc(0.25rem - 1px);
 }
 
