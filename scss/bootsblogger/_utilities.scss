@@ -1,5 +1,5 @@
 //
-// Colors
+// Text colors
 //
 
 @include text-emphasis-variant('.text-faded', $color-faded);
@@ -18,7 +18,7 @@
 
 
 //
-// Backgrounds
+// Background colors
 //
 
 @include bg-variant('.bg-faded', $color-faded);
