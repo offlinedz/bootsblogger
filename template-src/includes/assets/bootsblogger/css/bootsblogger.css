@@ -2374,6 +2374,17 @@
   font-size: 60%;
   color: #777;
 }
+.comments-title a {
+  font-size: 1rem;
+  color: #8899a6;
+}
+.comments-title a:hover, .comments-title a:focus {
+  color: #3b94d9;
+}
+.comments-title small,
+.comments-title a {
+  vertical-align: middle;
+}
 
 .comment-avatar img {
   width: 50px;
