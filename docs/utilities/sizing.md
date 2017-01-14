@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Width
+title: Sizing
 description: Kelas-kelas untuk mengatur lebar suatu element dengan dukungan responsif.
 group: utilities
 ---
