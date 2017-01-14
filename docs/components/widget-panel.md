@@ -156,7 +156,7 @@ Ubah `.wg-panel-{color}` dengan `.wg-panel-outline-{color}`.
     <div class="widget">
       <h2>Widget title</h2>
       <div class="widget-content">
-        <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>.</p>
+        <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
       </div>
     </div><!-- /.widget -->
   </div>
