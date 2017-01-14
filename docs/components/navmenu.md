@@ -66,7 +66,7 @@ Gunakan `.navmenu` untuk membungkus konten dan tambahkan kelas [skema warna](#co
 
 ## Color schemes
 
-Untuk mengubah warna navmenu sangatlah mudah, gunakan `.navmenu-light` atau `.navmenu-dark` untuk menyesuaikan warna teks dengan latar belakang yang terang atau gelap. Untuk warna latar belakang dapat menggunakan kelas utilitas atau dengan menambahkan `background-color`.
+Untuk mengubah warna navmenu sangatlah mudah, gunakan `.navmenu-light` atau `.navmenu-inverse` untuk menyesuaikan warna teks dengan latar belakang yang terang atau gelap. Untuk warna latar belakang dapat menggunakan kelas utilitas atau dengan menambahkan `background-color`.
 
 {% example html %}
 <nav class="navmenu navmenu-light bg-faded">
@@ -91,7 +91,7 @@ Untuk mengubah warna navmenu sangatlah mudah, gunakan `.navmenu-light` atau `.na
 {% endexample %}
 
 {% example html %}
-<nav class="navmenu navmenu-dark bg-blue">
+<nav class="navmenu navmenu-inverse bg-blue">
   <a class="navmenu-brand" href="#">Bootsblogger</a>
   <div class="navmenu-nav">
     <a class="nav-item nav-link" href="#">Nav item</a>
@@ -102,7 +102,7 @@ Untuk mengubah warna navmenu sangatlah mudah, gunakan `.navmenu-light` atau `.na
 {% endexample %}
 
 {% example html %}
-<nav class="navmenu navmenu-dark" style="background-color: #ef6c00;">
+<nav class="navmenu navmenu-inverse" style="background-color: #ef6c00;">
   <a class="navmenu-brand" href="#">Bootsblogger</a>
   <div class="navmenu-nav">
     <a class="nav-item nav-link" href="#">Nav item</a>
@@ -147,7 +147,7 @@ Untuk mengubah warna navmenu sangatlah mudah, gunakan `.navmenu-light` atau `.na
 ## Placement
 
 {% example html %}
-<nav class="navmenu navmenu-fixed-left navmenu-dark bg-orange">
+<nav class="navmenu navmenu-fixed-left navmenu-inverse bg-orange">
   <a class="navmenu-brand" href="#">Fixed left</a>
   <div class="navmenu-nav">
     <a class="nav-item nav-link" href="#">Nav item</a>
@@ -158,7 +158,7 @@ Untuk mengubah warna navmenu sangatlah mudah, gunakan `.navmenu-light` atau `.na
 {% endexample %}
 
 {% example html %}
-<nav class="navmenu navmenu-fixed-right navmenu-dark bg-orange">
+<nav class="navmenu navmenu-fixed-right navmenu-inverse bg-orange">
   <a class="navmenu-brand" href="#">Fixed right</a>
   <div class="navmenu-nav">
     <a class="nav-item nav-link" href="#">Nav item</a>

@@ -147,31 +147,31 @@
 }
 
 // White links against a dark background
-.navmenu-dark {
+.navmenu-inverse {
   .navmenu-brand {
-    color: $navmenu-dark-active-color;
+    color: $navmenu-inverse-active-color;
 
     @include hover-focus {
-      color: $navmenu-dark-active-color;
+      color: $navmenu-inverse-active-color;
     }
   }
 
   .navmenu-nav {
     .nav-link {
-      color: $navmenu-dark-color;
+      color: $navmenu-inverse-color;
 
       @include hover-focus {
-        color: $navmenu-dark-hover-color;
+        color: $navmenu-inverse-hover-color;
       }
     }
     .nav-link.active {
       @include plain-hover-focus {
-        color: $navmenu-dark-active-color;
+        color: $navmenu-inverse-active-color;
       }
     }
     .nav-link.disabled {
       @include plain-hover-focus {
-        color: $navmenu-dark-disabled-color;
+        color: $navmenu-inverse-disabled-color;
       }
     }
   }
