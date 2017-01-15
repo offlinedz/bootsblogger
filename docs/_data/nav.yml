@@ -21,15 +21,13 @@
     - title: Widget basic
     - title: Widget box
     - title: Widget panel
-    - title: Widget title
-    - title: Widget columns
-    - title: Widget grid
 
 - title: Utilities
   pages:
     - title: Colors
     - title: Sizing
     - title: Figures
+    - title: Widget
 
 - title: Blogger JSON feeds
   pages:
