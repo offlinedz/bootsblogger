@@ -637,42 +637,6 @@
 
 
 //
-// No rounded
-//
-
-.post-norounded {
-  @include border-radius(0 !important);
-
-  .post-img-only,
-  .post-img-top,
-  .post-img-bottom,
-  .post-img-left,
-  .post-img-right,
-  .post-img-overlay {
-    &,
-    > img,
-    a > img {
-      @include border-radius(0 !important);
-    }
-  }
-
-  .post-img-only.post-img-cover,
-  .post-img-top.post-img-cover,
-  .post-img-bottom.post-img-cover,
-  .post-img-left.post-img-cover,
-  .post-img-right.post-img-cover {
-    @include border-radius(0 !important);
-  }
-
-  .post-content,
-  .post-header,
-  .post-footer {
-    @include border-radius(0 !important);
-  }
-}
-
-
-//
 // Inverted text
 //
 

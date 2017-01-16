@@ -206,22 +206,6 @@
 
 
 //
-// No rounded
-//
-
-.wg-panel-norounded {
-  &.wg-panel-group,
-  > .widget,
-  > .widget > h2,
-  > .widget > .widget-content,
-  > .widget > .widget-collapse,
-  > .widget > .widget-collapse > .widget-content {
-    @include border-radius(0 !important);
-  }
-}
-
-
-//
 // Background variants
 //
 
