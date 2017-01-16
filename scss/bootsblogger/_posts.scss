@@ -766,13 +766,13 @@
   background-color: $post-gray-bg;
   border-color: $post-gray-border;
 }
-.post-black {
-  background-color: $post-black-bg;
-  border-color: $post-black-border;
-}
 .post-brown {
   background-color: $post-brown-bg;
   border-color: $post-brown-border;
+}
+.post-black {
+  background-color: $post-black-bg;
+  border-color: $post-black-border;
 }
 
 
@@ -820,11 +820,11 @@
   background-color: transparent;
   border-color: $post-gray-bg;
 }
-.post-outline-black {
-  background-color: transparent;
-  border-color: $post-black-bg;
-}
 .post-outline-brown {
   background-color: transparent;
   border-color: $post-brown-bg;
+}
+.post-outline-black {
+  background-color: transparent;
+  border-color: $post-black-bg;
 }
