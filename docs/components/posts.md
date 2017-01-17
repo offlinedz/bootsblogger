@@ -939,11 +939,11 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header pada posisi pertama 
 </b:loop>
 {% endhighlight %}
 
-## Cover image
+## Cover
 
 Tambahkan `.post-img-cover` ke `.post-img-{only, top, bottom, left, right, overlay}` untuk menampilkan gambar dengan `background-image` dan `background-size: cover;`.
 
-### Cover image: image only
+### Cover: image only
 
 <div class="bd-example">
   <div class="post">
@@ -965,7 +965,7 @@ Tambahkan `.post-img-cover` ke `.post-img-{only, top, bottom, left, right, overl
 </b:loop>
 {% endhighlight %}
 
-### Cover image: top image
+### Cover: top image
 
 <div class="bd-example">
   <div class="post">
@@ -1004,7 +1004,7 @@ Tambahkan `.post-img-cover` ke `.post-img-{only, top, bottom, left, right, overl
 </b:loop>
 {% endhighlight %}
 
-### Cover image: bottom image
+### Cover: bottom image
 
 <div class="bd-example">
   <div class="post">
@@ -1043,7 +1043,7 @@ Tambahkan `.post-img-cover` ke `.post-img-{only, top, bottom, left, right, overl
 </b:loop>
 {% endhighlight %}
 
-### Cover image: left image
+### Cover: left image
 
 <div class="bd-example">
   <div class="post">
@@ -1086,7 +1086,7 @@ Tambahkan `.post-img-cover` ke `.post-img-{only, top, bottom, left, right, overl
 </b:loop>
 {% endhighlight %}
 
-### Cover image: right image
+### Cover: right image
 
 <div class="bd-example">
   <div class="post">
@@ -1129,7 +1129,7 @@ Tambahkan `.post-img-cover` ke `.post-img-{only, top, bottom, left, right, overl
 </b:loop>
 {% endhighlight %}
 
-### Cover image: image overlays
+### Cover: image overlays
 
 <div class="bd-example">
   <div class="post post-inverse">
