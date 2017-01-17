@@ -281,9 +281,9 @@
   }
 }
 
-// Image padding
+// Image gutters
 
-.post-img-padding {
+.post-img-gutter {
   padding: $post-content-padding !important;
 
   > img,
@@ -317,7 +317,7 @@
     }
   }
 
-  // Image padding with image overlays
+  // With image overlays
   &.post-img-overlay + .post-content {
     margin: $post-content-padding;
     @include border-radius($post-border-radius);

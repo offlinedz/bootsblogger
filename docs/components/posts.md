@@ -1172,15 +1172,15 @@ Tambahkan `.post-img-cover` ke `.post-img-{only, top, bottom, left, right, overl
 </b:loop>
 {% endhighlight %}
 
-## Padding image
+## Gutters
 
-Tambahkan `.post-img-padding` ke `.post-img-{only, top, bottom, left, right, overlay}`.
+Tambahkan `.post-img-gutter` ke `.post-img-{only, top, bottom, left, right, overlay}`.
 
-### Padding image: image only
+### Gutter: image only
 
 <div class="bd-example">
   <div class="post">
-    <div class="post-img-only post-img-padding">
+    <div class="post-img-only post-img-gutter">
       <a href="#"><img data-src="holder.js/100px350/?auto=yes&text=Image" alt="Image"></a>
     </div>
   </div>
@@ -1190,18 +1190,18 @@ Tambahkan `.post-img-padding` ke `.post-img-{only, top, bottom, left, right, ove
 <b:loop values='data:posts' var='post'>
   <article class='post' expr:id='"post-" + data:post.id' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
     <!-- Image -->
-    <div class='post-img-only post-img-padding' itemprop='thumbnail'>
+    <div class='post-img-only post-img-gutter' itemprop='thumbnail'>
       <b:include name='include-thumbnail'/>
     </div><!-- /.post-img-only -->
   </article><!-- /.post -->
 </b:loop>
 {% endhighlight %}
 
-### Padding image: top image
+### Gutter: top image
 
 <div class="bd-example">
   <div class="post">
-    <div class="post-img-top post-img-padding">
+    <div class="post-img-top post-img-gutter">
       <a href="#"><img data-src="holder.js/100px350/?auto=yes&text=Image" alt="Image"/></a>
     </div>
     <div class="post-content">
@@ -1216,7 +1216,7 @@ Tambahkan `.post-img-padding` ke `.post-img-{only, top, bottom, left, right, ove
 <b:loop values='data:posts' var='post'>
   <article class='post' expr:id='"post-" + data:post.id' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
     <!-- Image -->
-    <div class='post-img-top post-img-padding' itemprop='thumbnail'>
+    <div class='post-img-top post-img-gutter' itemprop='thumbnail'>
       <b:include name='include-thumbnail'/>
     </div><!-- /.post-img-top -->
     <!-- Content -->
@@ -1235,7 +1235,7 @@ Tambahkan `.post-img-padding` ke `.post-img-{only, top, bottom, left, right, ove
 </b:loop>
 {% endhighlight %}
 
-### Padding image: bottom image
+### Gutter: bottom image
 
 <div class="bd-example">
   <div class="post">
@@ -1244,7 +1244,7 @@ Tambahkan `.post-img-padding` ke `.post-img-{only, top, bottom, left, right, ove
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
       <p><a class="btn btn-primary" href="#">Read more</a></p>
     </div>
-    <div class="post-img-bottom post-img-padding">
+    <div class="post-img-bottom post-img-gutter">
       <a href="#"><img data-src="holder.js/100px350/?auto=yes&text=Image" alt="Image"/></a>
     </div>
   </div>
@@ -1266,19 +1266,19 @@ Tambahkan `.post-img-padding` ke `.post-img-{only, top, bottom, left, right, ove
       <p><a class='btn btn-primary' expr:href='data:post.url' itemprop='url' role='button'>Read more <span class='sr-only'>read more <data:post.id/></span></a></p>
     </div><!-- /.post-content -->
     <!-- Image -->
-    <div class='post-img-bottom post-img-padding' itemprop='thumbnail'>
+    <div class='post-img-bottom post-img-gutter' itemprop='thumbnail'>
       <b:include name='include-thumbnail'/>
     </div><!-- /.post-img-bottom -->
   </article><!-- /.post -->
 </b:loop>
 {% endhighlight %}
 
-### Padding image: left image
+### Gutter: left image
 
 <div class="bd-example">
   <div class="post">
     <div class="post-horizontal">
-      <div class="post-img-left post-img-padding">
+      <div class="post-img-left post-img-gutter">
         <a href="#"><img data-src="holder.js/100px180/?auto=yes&text=Image" alt="Image"/></a>
       </div>
       <div class="post-content">
@@ -1295,7 +1295,7 @@ Tambahkan `.post-img-padding` ke `.post-img-{only, top, bottom, left, right, ove
   <article class='post' expr:id='"post-" + data:post.id' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
     <div class='post-horizontal'>
       <!-- Image -->
-      <div class='post-img-left post-img-padding' itemprop='thumbnail'>
+      <div class='post-img-left post-img-gutter' itemprop='thumbnail'>
         <b:include name='include-thumbnail'/>
       </div><!-- /.post-img-left -->
       <!-- Content -->
@@ -1315,7 +1315,7 @@ Tambahkan `.post-img-padding` ke `.post-img-{only, top, bottom, left, right, ove
 </b:loop>
 {% endhighlight %}
 
-### Padding image: right image
+### Gutter: right image
 
 <div class="bd-example">
   <div class="post">
@@ -1325,7 +1325,7 @@ Tambahkan `.post-img-padding` ke `.post-img-{only, top, bottom, left, right, ove
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
         <p><a class="btn btn-primary" href="#">Read more</a></p>
       </div>
-      <div class="post-img-right post-img-padding">
+      <div class="post-img-right post-img-gutter">
         <a href="#"><img data-src="holder.js/100px180/?auto=yes&text=Image" alt="Image"/></a>
       </div>
     </div>
@@ -1349,7 +1349,7 @@ Tambahkan `.post-img-padding` ke `.post-img-{only, top, bottom, left, right, ove
         <p><a class='btn btn-primary' expr:href='data:post.url' itemprop='url' role='button'>Read more <span class='sr-only'>read more <data:post.id/></span></a></p>
       </div><!-- /.post-content -->
       <!-- Image -->
-      <div class='post-img-right post-img-padding' itemprop='thumbnail'>
+      <div class='post-img-right post-img-gutter' itemprop='thumbnail'>
         <b:include name='include-thumbnail'/>
       </div><!-- /.post-img-right -->
     </div><!-- /.post-horizontal -->
@@ -1357,12 +1357,12 @@ Tambahkan `.post-img-padding` ke `.post-img-{only, top, bottom, left, right, ove
 </b:loop>
 {% endhighlight %}
 
-### Padding image: image overlays
+### Gutter: image overlays
 
 <div class="bd-example">
   <div class="post post-inverse">
     <div class="post-overlay">
-      <div class="post-img-overlay post-img-padding">
+      <div class="post-img-overlay post-img-gutter">
         <a href="#"><img data-src="holder.js/100px350/?auto=yes&text=Image" alt="Image"/></a>
       </div>
       <div class="post-content">
@@ -1379,7 +1379,7 @@ Tambahkan `.post-img-padding` ke `.post-img-{only, top, bottom, left, right, ove
   <article class='post post-inverse' expr:id='"post-" + data:post.id' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
     <div class='post-overlay'>
       <!-- Image -->
-      <div class='post-img-overlay post-img-padding' itemprop='thumbnail'>
+      <div class='post-img-overlay post-img-gutter' itemprop='thumbnail'>
         <b:include name='include-thumbnail'/>
       </div><!-- /.post-img-overlay -->
       <!-- Content -->
@@ -2875,7 +2875,7 @@ Hanya pada gambar:
 <div class="bd-example">
   <div class="post">
     <div class="post-horizontal">
-      <div class="post-img-left post-img-padding post-orange">
+      <div class="post-img-left post-img-gutter post-orange">
         <a href="#"><img data-src="holder.js/100px180/?auto=yes&text=Image" alt="Image"/></a>
       </div>
       <div class="post-content">
@@ -2890,7 +2890,7 @@ Hanya pada gambar:
 {% highlight html %}
 <div class="post">
   <div class="post-horizontal">
-    <div class="post-img-left post-img-padding post-orange">
+    <div class="post-img-left post-img-gutter post-orange">
       ...
     </div>
     <div class="post-content">
@@ -2903,7 +2903,7 @@ Hanya pada gambar:
 <div class="bd-example">
   <div class="post">
     <div class="post-horizontal">
-      <div class="post-img-left post-img-padding">
+      <div class="post-img-left post-img-gutter">
         <a href="#"><img data-src="holder.js/100px180/?auto=yes&text=Image" alt="Image"/></a>
       </div>
       <div class="post-content post-inverse post-orange">
@@ -2918,7 +2918,7 @@ Hanya pada gambar:
 {% highlight html %}
 <div class="post">
   <div class="post-horizontal">
-    <div class="post-img-left post-img-padding">
+    <div class="post-img-left post-img-gutter">
       ...
     </div>
     <div class="post-content post-inverse post-orange">
@@ -2931,7 +2931,7 @@ Hanya pada gambar:
 <div class="bd-example">
   <div class="post">
     <div class="post-horizontal">
-      <div class="post-img-left post-img-padding post-gray">
+      <div class="post-img-left post-img-gutter post-gray">
         <a href="#"><img data-src="holder.js/100px180/?auto=yes&text=Image" alt="Image"/></a>
       </div>
       <div class="post-content post-inverse post-orange">
@@ -2946,7 +2946,7 @@ Hanya pada gambar:
 {% highlight html %}
 <div class="post">
   <div class="post-horizontal">
-    <div class="post-img-left post-img-padding post-gray">
+    <div class="post-img-left post-img-gutter post-gray">
       ...
     </div>
     <div class="post-content post-inverse post-orange">
@@ -2959,7 +2959,7 @@ Hanya pada gambar:
 <div class="bd-example">
   <div class="post post-inverse post-red">
     <div class="post-horizontal">
-      <div class="post-img-left post-img-padding post-gray">
+      <div class="post-img-left post-img-gutter post-gray">
         <a href="#"><img data-src="holder.js/100px180/?auto=yes&text=Image" alt="Image"/></a>
       </div>
       <div class="post-content post-orange">
@@ -2974,7 +2974,7 @@ Hanya pada gambar:
 {% highlight html %}
 <div class="post post-inverse post-red">
   <div class="post-horizontal">
-    <div class="post-img-left post-img-padding post-gray">
+    <div class="post-img-left post-img-gutter post-gray">
       ...
     </div>
     <div class="post-content post-orange">
