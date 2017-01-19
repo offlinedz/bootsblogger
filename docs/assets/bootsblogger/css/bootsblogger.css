@@ -253,36 +253,36 @@
   border-bottom-left-radius: calc(0.25rem - 1px);
 }
 
-.post-img-padding {
+.post-img-gutter {
   padding: 1.25rem !important;
 }
-.post-img-padding > img,
-.post-img-padding a > img {
+.post-img-gutter > img,
+.post-img-gutter a > img {
   border-radius: 0.25rem !important;
 }
-.post-img-padding.post-img-top {
+.post-img-gutter.post-img-top {
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
-.post-img-padding.post-img-bottom {
+.post-img-gutter.post-img-bottom {
   border-top: 1px solid rgba(0, 0, 0, 0.125);
 }
 @media (min-width: 576px) {
-  .post-img-padding.post-img-left {
+  .post-img-gutter.post-img-left {
     border-right: 1px solid rgba(0, 0, 0, 0.125);
   }
-  .post-img-padding.post-img-right {
+  .post-img-gutter.post-img-right {
     border-left: 1px solid rgba(0, 0, 0, 0.125);
   }
 }
 @media (max-width: 575px) {
-  .post-img-padding.post-img-left {
+  .post-img-gutter.post-img-left {
     border-bottom: 1px solid rgba(0, 0, 0, 0.125);
   }
-  .post-img-padding.post-img-right {
+  .post-img-gutter.post-img-right {
     border-top: 1px solid rgba(0, 0, 0, 0.125);
   }
 }
-.post-img-padding.post-img-overlay + .post-content {
+.post-img-gutter.post-img-overlay + .post-content {
   margin: 1.25rem;
   border-radius: 0.25rem;
 }
@@ -567,42 +567,6 @@
     padding-left: 0 !important;
   }
 }
-.post-norounded {
-  border-radius: 0 !important;
-}
-.post-norounded .post-img-only,
-.post-norounded .post-img-only > img,
-.post-norounded .post-img-only a > img,
-.post-norounded .post-img-top,
-.post-norounded .post-img-top > img,
-.post-norounded .post-img-top a > img,
-.post-norounded .post-img-bottom,
-.post-norounded .post-img-bottom > img,
-.post-norounded .post-img-bottom a > img,
-.post-norounded .post-img-left,
-.post-norounded .post-img-left > img,
-.post-norounded .post-img-left a > img,
-.post-norounded .post-img-right,
-.post-norounded .post-img-right > img,
-.post-norounded .post-img-right a > img,
-.post-norounded .post-img-overlay,
-.post-norounded .post-img-overlay > img,
-.post-norounded .post-img-overlay a > img {
-  border-radius: 0 !important;
-}
-.post-norounded .post-img-only.post-img-cover,
-.post-norounded .post-img-top.post-img-cover,
-.post-norounded .post-img-bottom.post-img-cover,
-.post-norounded .post-img-left.post-img-cover,
-.post-norounded .post-img-right.post-img-cover {
-  border-radius: 0 !important;
-}
-.post-norounded .post-content,
-.post-norounded .post-header,
-.post-norounded .post-footer {
-  border-radius: 0 !important;
-}
-
 .post-inverse .post-content,
 .post-inverse.post-content {
   color: #fff;
@@ -652,8 +616,8 @@
 }
 
 .post-faded {
-  background-color: #f7f7f9;
-  border-color: #eeeef2;
+  background-color: #f7f7f7;
+  border-color: #f0f0f0;
 }
 
 .post-blue {
@@ -701,19 +665,19 @@
   border-color: #3f4244;
 }
 
-.post-black {
-  background-color: #222;
-  border-color: #1a1a1a;
-}
-
 .post-brown {
   background-color: #a5673f;
   border-color: #9a603b;
 }
 
+.post-black {
+  background-color: #222;
+  border-color: #1a1a1a;
+}
+
 .post-outline-faded {
   background-color: transparent;
-  border-color: #f7f7f9;
+  border-color: #f7f7f7;
 }
 
 .post-outline-blue {
@@ -761,14 +725,14 @@
   border-color: #464a4c;
 }
 
-.post-outline-black {
-  background-color: transparent;
-  border-color: #222;
-}
-
 .post-outline-brown {
   background-color: transparent;
   border-color: #a5673f;
+}
+
+.post-outline-black {
+  background-color: transparent;
+  border-color: #222;
 }
 
 .navmenu {
@@ -952,7 +916,7 @@
 }
 
 .wg-basic-faded > .widget > h2 {
-  color: #f7f7f9;
+  color: #f7f7f7;
 }
 
 .wg-basic-blue > .widget > h2 {
@@ -1039,12 +1003,8 @@
   margin-top: .5rem;
 }
 
-.wg-box-norounded > .widget {
-  border-radius: 0 !important;
-}
-
 .wg-box-faded > .widget {
-  background-color: #f7f7f9;
+  background-color: #f7f7f7;
   border-color: #eee;
 }
 .wg-box-faded > .widget > h2 {
@@ -1149,10 +1109,10 @@
 
 .wg-box-outline-faded > .widget {
   background-color: transparent;
-  border-color: #f7f7f9;
+  border-color: #f7f7f7;
 }
 .wg-box-outline-faded > .widget > h2 {
-  color: #f7f7f9;
+  color: #f7f7f7;
 }
 
 .wg-box-outline-blue > .widget {
@@ -1405,15 +1365,6 @@
   background-color: transparent !important;
 }
 
-.wg-panel-norounded.wg-panel-group,
-.wg-panel-norounded > .widget,
-.wg-panel-norounded > .widget > h2,
-.wg-panel-norounded > .widget > .widget-content,
-.wg-panel-norounded > .widget > .widget-collapse,
-.wg-panel-norounded > .widget > .widget-collapse > .widget-content {
-  border-radius: 0 !important;
-}
-
 .wg-panel-faded > .widget > .widget-content,
 .wg-panel-faded > .widget > .widget-collapse {
   border-color: #eee;
@@ -1424,7 +1375,7 @@
 }
 .wg-panel-faded > .widget > h2 {
   color: #292b2c;
-  background-color: #f7f7f9;
+  background-color: #f7f7f7;
   border-color: #eee;
 }
 
@@ -1598,16 +1549,16 @@
 
 .wg-panel-outline-faded > .widget > .widget-content,
 .wg-panel-outline-faded > .widget > .widget-collapse {
-  border-color: #f7f7f9;
+  border-color: #f7f7f7;
 }
 .wg-panel-outline-faded > .widget > .widget-content,
 .wg-panel-outline-faded > .widget > .widget-collapse > .widget-content {
   background-color: transparent;
 }
 .wg-panel-outline-faded > .widget > h2 {
-  color: #f7f7f9;
+  color: #f7f7f7;
   background-color: transparent;
-  border-color: #f7f7f9;
+  border-color: #f7f7f7;
 }
 
 .wg-panel-outline-blue > .widget > .widget-content,
@@ -2519,11 +2470,11 @@
 }
 
 .text-faded {
-  color: #f7f7f9 !important;
+  color: #f7f7f7 !important;
 }
 
 a.text-faded:focus, a.text-faded:hover {
-  color: #dadae3 !important;
+  color: #dedede !important;
 }
 
 .text-blue {
@@ -2623,11 +2574,11 @@ a.text-white:focus, a.text-white:hover {
 }
 
 .bg-faded {
-  background-color: #f7f7f9 !important;
+  background-color: #f7f7f7 !important;
 }
 
 a.bg-faded:focus, a.bg-faded:hover {
-  background-color: #dadae3 !important;
+  background-color: #dedede !important;
 }
 
 .bg-blue {
@@ -2825,7 +2776,7 @@ a.bg-white:focus, a.bg-white:hover {
   float: none;
   padding: 1rem;
   clear: both;
-  background-color: #f7f7f9;
+  background-color: #f7f7f7;
 }
 
 .figure-align-right .figure-img,
