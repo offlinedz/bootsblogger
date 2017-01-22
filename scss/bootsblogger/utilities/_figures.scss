@@ -1,0 +1,30 @@
+.figure-align-right {
+  float: right;
+  margin-left: 1rem;
+}
+.figure-align-left {
+  float: left;
+  margin-right: 1rem;
+}
+.figure-align-none {
+  display: block;
+  float: none;
+  padding: 1rem;
+  clear: both;
+  background-color: $color-faded;
+}
+
+.figure-align-right,
+.figure-align-left,
+.figure-align-none {
+  .figure-img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .figure-caption {
+    text-align: center;
+  }
+}
