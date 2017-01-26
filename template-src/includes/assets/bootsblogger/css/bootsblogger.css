@@ -2095,22 +2095,6 @@ a.bg-white:focus, a.bg-white:hover {
   background-color: #e6e6e6 !important;
 }
 
-.w-xs-25 {
-  width: 25% !important;
-}
-
-.w-xs-50 {
-  width: 50% !important;
-}
-
-.w-xs-75 {
-  width: 75% !important;
-}
-
-.w-xs-100 {
-  width: 100% !important;
-}
-
 @media (min-width: 576px) {
   .w-sm-25 {
     width: 25% !important;
@@ -2283,18 +2267,18 @@ a.bg-white:focus, a.bg-white:hover {
     width: 100%;
   }
 }
-.wg-xs-1,
-.wg-xs-2,
-.wg-xs-3,
-.wg-xs-4,
-.wg-xs-5,
-.wg-xs-6,
-.wg-xs-7,
-.wg-xs-8,
-.wg-xs-9,
-.wg-xs-10,
-.wg-xs-11,
-.wg-xs-12,
+.wg-1,
+.wg-2,
+.wg-3,
+.wg-4,
+.wg-5,
+.wg-6,
+.wg-7,
+.wg-8,
+.wg-9,
+.wg-10,
+.wg-11,
+.wg-12,
 .wg-sm-1,
 .wg-sm-2,
 .wg-sm-3,
@@ -2346,18 +2330,18 @@ a.bg-white:focus, a.bg-white:hover {
   margin-right: -15px;
   margin-left: -15px;
 }
-.wg-xs-1::after,
-.wg-xs-2::after,
-.wg-xs-3::after,
-.wg-xs-4::after,
-.wg-xs-5::after,
-.wg-xs-6::after,
-.wg-xs-7::after,
-.wg-xs-8::after,
-.wg-xs-9::after,
-.wg-xs-10::after,
-.wg-xs-11::after,
-.wg-xs-12::after,
+.wg-1::after,
+.wg-2::after,
+.wg-3::after,
+.wg-4::after,
+.wg-5::after,
+.wg-6::after,
+.wg-7::after,
+.wg-8::after,
+.wg-9::after,
+.wg-10::after,
+.wg-11::after,
+.wg-12::after,
 .wg-sm-1::after,
 .wg-sm-2::after,
 .wg-sm-3::after,
@@ -2410,18 +2394,18 @@ a.bg-white:focus, a.bg-white:hover {
   content: "";
   clear: both;
 }
-.wg-xs-1 .widget,
-.wg-xs-2 .widget,
-.wg-xs-3 .widget,
-.wg-xs-4 .widget,
-.wg-xs-5 .widget,
-.wg-xs-6 .widget,
-.wg-xs-7 .widget,
-.wg-xs-8 .widget,
-.wg-xs-9 .widget,
-.wg-xs-10 .widget,
-.wg-xs-11 .widget,
-.wg-xs-12 .widget,
+.wg-1 .widget,
+.wg-2 .widget,
+.wg-3 .widget,
+.wg-4 .widget,
+.wg-5 .widget,
+.wg-6 .widget,
+.wg-7 .widget,
+.wg-8 .widget,
+.wg-9 .widget,
+.wg-10 .widget,
+.wg-11 .widget,
+.wg-12 .widget,
 .wg-sm-1 .widget,
 .wg-sm-2 .widget,
 .wg-sm-3 .widget,
@@ -2475,66 +2459,66 @@ a.bg-white:focus, a.bg-white:hover {
   margin-left: 15px;
 }
 
-.wg-xs-1 .widget,
-.wg-xs-2 .widget,
-.wg-xs-3 .widget,
-.wg-xs-4 .widget,
-.wg-xs-5 .widget,
-.wg-xs-6 .widget,
-.wg-xs-7 .widget,
-.wg-xs-8 .widget,
-.wg-xs-9 .widget,
-.wg-xs-10 .widget,
-.wg-xs-11 .widget,
-.wg-xs-12 .widget {
+.wg-1 .widget,
+.wg-2 .widget,
+.wg-3 .widget,
+.wg-4 .widget,
+.wg-5 .widget,
+.wg-6 .widget,
+.wg-7 .widget,
+.wg-8 .widget,
+.wg-9 .widget,
+.wg-10 .widget,
+.wg-11 .widget,
+.wg-12 .widget {
   float: left;
 }
 
-.wg-xs-12 .widget {
+.wg-12 .widget {
   width: calc(100% - 30px);
 }
 
-.wg-xs-11 .widget {
+.wg-11 .widget {
   width: calc(91.66666667% - 30px);
 }
 
-.wg-xs-10 .widget {
+.wg-10 .widget {
   width: calc(83.33333333% - 30px);
 }
 
-.wg-xs-9 .widget {
+.wg-9 .widget {
   width: calc(75% - 30px);
 }
 
-.wg-xs-8 .widget {
+.wg-8 .widget {
   width: calc(66.66666667% - 30px);
 }
 
-.wg-xs-7 .widget {
+.wg-7 .widget {
   width: calc(58.33333333% - 30px);
 }
 
-.wg-xs-6 .widget {
+.wg-6 .widget {
   width: calc(50% - 30px);
 }
 
-.wg-xs-5 .widget {
+.wg-5 .widget {
   width: calc(41.66666667% - 30px);
 }
 
-.wg-xs-4 .widget {
+.wg-4 .widget {
   width: calc(33.33333333% - 30px);
 }
 
-.wg-xs-3 .widget {
+.wg-3 .widget {
   width: calc(25% - 30px);
 }
 
-.wg-xs-2 .widget {
+.wg-2 .widget {
   width: calc(16.66666667% - 30px);
 }
 
-.wg-xs-1 .widget {
+.wg-1 .widget {
   width: calc(8.33333333% - 30px);
 }
 
