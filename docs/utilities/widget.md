@@ -331,7 +331,7 @@ Sistem grid untuk widget.
     </tr>
     <tr>
       <th class="text-nowrap" scope="row">Class prefix</th>
-      <td><code>.wg-xs-</code></td>
+      <td><code>.wg-</code></td>
       <td><code>.wg-sm-</code></td>
       <td><code>.wg-md-</code></td>
       <td><code>.wg-lg-</code></td>
