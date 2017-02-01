@@ -17,7 +17,7 @@ Sebelum Anda melanjutkan ke bagian berikutnya, di bawah ini ada beberapa hal das
 
 ## Page types
 
-Blogger mempunyai 7 tipe halaman, yaitu:
+Template Bootsblogger mempunyai 8 tipe halaman yang diciptakan dengan menggunakan [tag kondisional di bawah](#conditional-tags), yaitu:
 
 1. Homepage (halaman beranda).
 2. Item/single page (halaman posting).
@@ -26,14 +26,19 @@ Blogger mempunyai 7 tipe halaman, yaitu:
 5. Search results page (halaman hasil pencarian).
 6. Archive page (halaman arsip posting).
 7. Error page (halaman galat).
+8. Default (`https://example.blogspot.com/search`)
 
 ## Conditional tags
 
-Berikut adalah tag kondisional **luar biasa** untuk ke tujuh tipe halaman di atas, Anda akan banyak menemukan bentuk kondisional seperti ini pada template dasar Bootsblogger.
+Tag kondisional **luar biasa** untuk menciptakan 8 tipe halaman di atas.
 
 {% highlight html %}
+<!-- Homepage -->
+<b:if cond='data:blog.url == data:blog.homepageUrl'>
+  <p>Teks ini akan tampil di halaman beranda.</p>
+
 <!-- Item/single page -->
-<b:if cond='data:blog.pageType == &quot;item&quot;'>
+<b:elseif cond='data:blog.pageType == &quot;item&quot;'/>
   <p>Teks ini akan tampil di halaman posting.</p>
 
 <!-- Static page -->
@@ -56,8 +61,8 @@ Berikut adalah tag kondisional **luar biasa** untuk ke tujuh tipe halaman di ata
 <b:elseif cond='data:blog.pageType == &quot;error_page&quot;'/>
   <p>Teks ini akan tampil di halaman galat.</p>
 
-<!-- Homepage -->
+<!-- Default (https://example.blogspot.com/search) -->
 <b:else/>
-  <p>Teks ini akan tampil di halaman beranda.</p>
+  <p>Teks ini akan tampil di halaman dengan URL `https://example.blogspot.com/search`.</p>
 </b:if>
 {% endhighlight %}

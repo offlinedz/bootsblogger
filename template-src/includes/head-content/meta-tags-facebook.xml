@@ -64,7 +64,7 @@
   <meta content='https://placehold.it/256/eee/777?text=404' property='og:image'/>
 
 <b:else/>
-  <!-- Homepage -->
+  <!-- Homepage and default (https://example.blogspot.com/search) -->
   <meta expr:content='{{ blog.meta.title.homePage }}' property='og:title'/>
   <b:if cond='data:blog.metaDescription'>
     <meta expr:content='data:blog.metaDescription' property='og:description'/>

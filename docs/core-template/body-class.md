@@ -9,10 +9,13 @@ Terdapat kelas pada `<body>` yang akan berubah-ubah di setiap tipe halaman.
 
 {% highlight html %}
 <!-- Menggunakan `ternary selector` -->
-<body expr:class='data:blog.pageType == &quot;item&quot; ? &quot;blog-page-item&quot; : data:blog.pageType == &quot;static_page&quot; ? &quot;blog-page-static&quot; : data:blog.searchLabel ? &quot;blog-page-label&quot; : data:blog.searchQuery ? &quot;blog-page-search&quot; : data:blog.pageType == &quot;archive&quot; ? &quot;blog-page-archive&quot; : data:blog.pageType == &quot;error_page&quot; ? &quot;blog-page-error&quot; : &quot;blog-page-home&quot;'>
+<body expr:class='data:blog.url == data:blog.homepageUrl ? &quot;blog-page-home&quot; : data:blog.pageType == &quot;item&quot; ? &quot;blog-page-item&quot; : data:blog.pageType == &quot;static_page&quot; ? &quot;blog-page-static&quot; : data:blog.searchLabel ? &quot;blog-page-label&quot; : data:blog.searchQuery ? &quot;blog-page-search&quot; : data:blog.pageType == &quot;archive&quot; ? &quot;blog-page-archive&quot; : data:blog.pageType == &quot;error_page&quot; ? &quot;blog-page-error&quot; : &quot;blog-page-default&quot;'>
 {% endhighlight %}
 
 {% highlight html %}
+<!-- Homepage -->
+<body class="blog-page-home">...</body>
+
 <!-- Item/single page -->
 <body class="blog-page-item">...</body>
 
@@ -31,8 +34,8 @@ Terdapat kelas pada `<body>` yang akan berubah-ubah di setiap tipe halaman.
 <!-- Error page -->
 <body class="blog-page-error">...</body>
 
-<!-- Homepage -->
-<body class="blog-page-home">...</body>
+<!-- Default (https://example.blogspot.com/search) -->
+<body class="blog-page-default">...</body>
 {% endhighlight %}
 
 Contoh pemanfaatan:

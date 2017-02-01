@@ -70,7 +70,7 @@ Pada bawaan Blogger tag judul biasanya hanya menggunakan `<title><data:blog.page
   <title>Page Not Found</title>
 
 <b:else/>
-  <!-- Homepage -->
+  <!-- Homepage and default (https://example.blogspot.com/search) -->
   <title><data:blog.title/></title>
 </b:if>
 {% endhighlight %}
@@ -148,7 +148,7 @@ Tag meta dan link untuk mesin pencari.
   <link href='https://placehold.it/256/eee/png?text=404' rel='image_src'/>
 
 <b:else/>
-  <!-- Homepage -->
+  <!-- Homepage and default (https://example.blogspot.com/search) -->
   <b:if cond='data:blog.metaDescription'>
     <meta expr:content='data:blog.metaDescription' name='description'/>
   <b:else/>
@@ -231,7 +231,7 @@ Tag meta untuk jejaring sosial Twitter. Berguna ketika seseorang membagikan Blog
   <meta content='https://placehold.it/256/eee/png?text=404' property='twitter:image'/>
 
 <b:else/>
-  <!-- Homepage -->
+  <!-- Homepage and default (https://example.blogspot.com/search) -->
   <meta expr:content='{{ "{{ blog.meta.title.homePage " }}}}' name='twitter:title'/>
   <b:if cond='data:blog.metaDescription'>
     <meta expr:content='data:blog.metaDescription' name='twitter:description'/>
@@ -313,7 +313,7 @@ Tag meta untuk jejaring sosial Facebook. Berguna ketika seseorang membagikan Blo
   <meta content='https://placehold.it/256/eee/png?text=404' property='og:image'/>
 
 <b:else/>
-  <!-- Homepage -->
+  <!-- Homepage and default (https://example.blogspot.com/search) -->
   <meta expr:content='{{ "{{ blog.meta.title.homePage " }}}}' property='og:title'/>
   <b:if cond='data:blog.metaDescription'>
     <meta expr:content='data:blog.metaDescription' property='og:description'/>

@@ -32,8 +32,12 @@ function createSummary(id) {
 </script>
 </b:if>
 
+<!-- Homepage -->
+<b:if cond='data:blog.url == data:blog.homepageUrl'>
+  <b:include cond='data:numPosts != 0' name='post-home'/>
+
 <!-- Item/single page -->
-<b:if cond='data:blog.pageType == &quot;item&quot;'>
+<b:elseif cond='data:blog.pageType == &quot;item&quot;'/>
   <b:include name='post-item'/>
 
 <!-- Static page -->
@@ -56,9 +60,9 @@ function createSummary(id) {
 <b:elseif cond='data:blog.pageType == &quot;error_page&quot;'/>
   <!-- None -->
 
-<!-- Homepage -->
+<!-- Default (https://example.blogspot.com/search) -->
 <b:else/>
-  <b:include cond='data:numPosts != 0' name='post-home'/>
+  <b:include cond='data:numPosts != 0' name='post-default'/>
 </b:if>
 
 <!-- Comments -->

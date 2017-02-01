@@ -15,6 +15,8 @@
         <li class='nav-item dropdown'>
           <a class='nav-link dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' href='javascript:;'>Demo</a>
           <div class='dropdown-menu'>
+            <a class='dropdown-item' href='/'>Homepage</a>
+            <div class='dropdown-divider'></div>
             <a class='dropdown-item' href='/search/label/Sample?max-results=10'>Category page (yes)</a>
             <a class='dropdown-item' href='/search/label/Nope?max-results=10'>Category page (nope)</a>
             <div class='dropdown-divider'></div>
@@ -23,6 +25,8 @@
             <div class='dropdown-divider'></div>
             <a class='dropdown-item' href='/2016_11_01_archive.html'>Archive page (yes)</a>
             <a class='dropdown-item' href='/1945_08_17_archive.html'>Archive page (nope)</a>
+            <div class='dropdown-divider'></div>
+            <a class='dropdown-item' href='/search'>Default</a>
             <div class='dropdown-divider'></div>
             <a class='dropdown-item' href='/2016/11/sample-blog-post-03.html'>Item page</a>
             <a class='dropdown-item' href='/p/static-page.html'>Static page</a>

@@ -164,6 +164,11 @@
     <!--(bake /includes/blog-posts/__post-archive.xml)-->
 
   </b:includable>
+  <b:includable id='post-default' var='post'>
+
+    <!--(bake /includes/blog-posts/__post-default.xml)-->
+
+  </b:includable>
   <b:includable id='post-home' var='post'>
 
     <!--(bake /includes/blog-posts/__post-home.xml)-->

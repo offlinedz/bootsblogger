@@ -23,6 +23,6 @@
   <title>Page Not Found</title>
 
 <b:else/>
-  <!-- Homepage -->
+  <!-- Homepage and default (https://example.blogspot.com/search) -->
   <title><data:blog.title/></title>
 </b:if>

@@ -50,7 +50,7 @@
   <link href='https://placehold.it/256/eee/777?text=404' rel='image_src'/>
 
 <b:else/>
-  <!-- Homepage -->
+  <!-- Homepage and default (https://example.blogspot.com/search) -->
   <b:if cond='data:blog.metaDescription'>
     <meta expr:content='data:blog.metaDescription' name='description'/>
   <b:else/>

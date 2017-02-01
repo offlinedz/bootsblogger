@@ -102,6 +102,14 @@ Tampilan posting untuk halaman arsip.
 <b:includable id='post-archive' var='post'>...</b:includable>
 {% endhighlight %}
 
+#### Default
+
+Tampilan posting untuk halaman dengan URL `https://example.blogspot.com/search`.
+
+{% highlight html %}
+<b:includable id='post-default' var='post'>...</b:includable>
+{% endhighlight %}
+
 ## Includes
 
 [Includes](https://support.google.com/blogger/answer/46995?hl=en&ref_topic=6321969) sangat berguna ketika kita ingin menggunakan kode yang sama, tanpa harus menulis ulang kode tersebut, cukup panggil bagian yang sudah didefinisikan menggunakan `b:includable` dengan:
