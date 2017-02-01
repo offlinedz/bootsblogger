@@ -146,7 +146,7 @@
       <title>Page Not Found</title>
 
     <b:else/>
-      <!-- Homepage -->
+      <!-- Homepage and default (https://example.blogspot.com/search) -->
       <title><data:blog.title/></title>
     </b:if>
 
@@ -207,7 +207,7 @@
       <link href='https://placehold.it/256/eee/777?text=404' rel='image_src'/>
 
     <b:else/>
-      <!-- Homepage -->
+      <!-- Homepage and default (https://example.blogspot.com/search) -->
       <b:if cond='data:blog.metaDescription'>
         <meta expr:content='data:blog.metaDescription' name='description'/>
       <b:else/>
@@ -286,7 +286,7 @@
       <meta content='https://placehold.it/256/eee/777?text=404' property='twitter:image'/>
 
     <b:else/>
-      <!-- Homepage -->
+      <!-- Homepage and default (https://example.blogspot.com/search) -->
       <meta expr:content='data:blog.title' name='twitter:title'/>
       <b:if cond='data:blog.metaDescription'>
         <meta expr:content='data:blog.metaDescription' name='twitter:description'/>
@@ -364,7 +364,7 @@
       <meta content='https://placehold.it/256/eee/777?text=404' property='og:image'/>
 
     <b:else/>
-      <!-- Homepage -->
+      <!-- Homepage and default (https://example.blogspot.com/search) -->
       <meta expr:content='data:blog.title' property='og:title'/>
       <b:if cond='data:blog.metaDescription'>
         <meta expr:content='data:blog.metaDescription' property='og:description'/>
@@ -555,7 +555,7 @@
     //]]>
     </script>
   </head>
-  <body expr:class='data:blog.pageType == &quot;item&quot; ? &quot;blog-page-item&quot; : data:blog.pageType == &quot;static_page&quot; ? &quot;blog-page-static&quot; : data:blog.searchLabel ? &quot;blog-page-label&quot; : data:blog.searchQuery ? &quot;blog-page-search&quot; : data:blog.pageType == &quot;archive&quot; ? &quot;blog-page-archive&quot; : data:blog.pageType == &quot;error_page&quot; ? &quot;blog-page-error&quot; : &quot;blog-page-home&quot;'>
+  <body expr:class='data:blog.url == data:blog.homepageUrl ? &quot;blog-page-home&quot; : data:blog.pageType == &quot;item&quot; ? &quot;blog-page-item&quot; : data:blog.pageType == &quot;static_page&quot; ? &quot;blog-page-static&quot; : data:blog.searchLabel ? &quot;blog-page-label&quot; : data:blog.searchQuery ? &quot;blog-page-search&quot; : data:blog.pageType == &quot;archive&quot; ? &quot;blog-page-archive&quot; : data:blog.pageType == &quot;error_page&quot; ? &quot;blog-page-error&quot; : &quot;blog-page-default&quot;'>
 
 
     <!-- SKIPPY
@@ -586,6 +586,8 @@
             <li class='nav-item dropdown'>
               <a class='nav-link dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' href='javascript:;'>Demo</a>
               <div class='dropdown-menu'>
+                <a class='dropdown-item' href='/'>Homepage</a>
+                <div class='dropdown-divider'></div>
                 <a class='dropdown-item' href='/search/label/Sample?max-results=10'>Category page (yes)</a>
                 <a class='dropdown-item' href='/search/label/Nope?max-results=10'>Category page (nope)</a>
                 <div class='dropdown-divider'></div>
@@ -594,6 +596,8 @@
                 <div class='dropdown-divider'></div>
                 <a class='dropdown-item' href='/2016_11_01_archive.html'>Archive page (yes)</a>
                 <a class='dropdown-item' href='/1945_08_17_archive.html'>Archive page (nope)</a>
+                <div class='dropdown-divider'></div>
+                <a class='dropdown-item' href='/search'>Default</a>
                 <div class='dropdown-divider'></div>
                 <a class='dropdown-item' href='/2016/11/sample-blog-post-03.html'>Item page</a>
                 <a class='dropdown-item' href='/p/static-page.html'>Static page</a>
@@ -1329,8 +1333,12 @@
                 </script>
                 </b:if>
 
+                <!-- Homepage -->
+                <b:if cond='data:blog.url == data:blog.homepageUrl'>
+                  <b:include cond='data:numPosts != 0' name='post-home'/>
+
                 <!-- Item/single page -->
-                <b:if cond='data:blog.pageType == &quot;item&quot;'>
+                <b:elseif cond='data:blog.pageType == &quot;item&quot;'/>
                   <b:include name='post-item'/>
 
                 <!-- Static page -->
@@ -1353,9 +1361,9 @@
                 <b:elseif cond='data:blog.pageType == &quot;error_page&quot;'/>
                   <!-- None -->
 
-                <!-- Homepage -->
+                <!-- Default (https://example.blogspot.com/search) -->
                 <b:else/>
-                  <b:include cond='data:numPosts != 0' name='post-home'/>
+                  <b:include cond='data:numPosts != 0' name='post-default'/>
                 </b:if>
 
                 <!-- Comments -->
@@ -1410,6 +1418,50 @@
                     </article><!-- /.post -->
                   </b:loop>
                 </div>
+
+              </b:includable>
+              <b:includable id='post-default' var='post'>
+
+                <b:loop values='data:posts' var='post'>
+                  <article class='post' expr:id='"post-" + data:post.id' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
+                    <!-- Content -->
+                    <div class='post-content'>
+                      <!-- Post title -->
+                      <b:if cond='data:post.title'>
+                        <h2 class='post-title' itemprop='name headline'>
+                          <a class='post-title-link' expr:href='data:post.url' expr:title='data:post.title' itemprop='url'><data:post.title/></a>
+                        </h2>
+                      </b:if>
+                      <!-- Metadata -->
+                      <b:if cond='data:top.showAuthor or data:top.showTimestamp or data:post.allowComments'>
+                        <div class='post-meta'>
+                          <ul class='post-meta-list'>
+                            <!-- Author -->
+                            <b:if cond='data:top.showAuthor'>
+                              <li>
+                                <b:include name='include-author'/>
+                              </li>
+                            </b:if>
+                            <!-- Timestamp -->
+                            <b:if cond='data:top.showTimestamp'>
+                              <li>
+                                <b:include name='include-timestamp'/>
+                              </li>
+                            </b:if>
+                            <!-- Num comments -->
+                            <b:if cond='data:post.allowComments'>
+                              <li>
+                                <b:include name='include-num-comments'/>
+                              </li>
+                            </b:if>
+                          </ul>
+                        </div><!-- /.post-meta -->
+                      </b:if>
+                      <!-- Post snippet -->
+                      <p itemprop='articleBody description'><data:post.snippet/></p>
+                    </div><!-- /.post-content -->
+                  </article><!-- /.post -->
+                </b:loop>
 
               </b:includable>
               <b:includable id='post-home' var='post'>
