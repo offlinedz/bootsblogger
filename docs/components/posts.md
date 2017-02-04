@@ -8,7 +8,7 @@ redirect_from: "/components/"
 
 Bootsblogger menyediakan komponen untuk tampilan posting, dengan beragam tampilan, warna, dan fitur.
 
-Sebelum Anda membaca dokumentasi ini, pastikan Anda sudah membaca dokumentasi [widget blog posts]({{ site.baseurl }}/core-template/blog-posts/) karena untuk menampilkan data posting menggunakan fungsi-fungsi yang ada dalam widget tersebut. 
+Sebelum Anda membaca dokumentasi ini, pastikan Anda sudah membaca dokumentasi [widget blog posts]({{ site.baseurl }}/core-template/blog-posts/), karena dalam menampilkan data postingnya menggunakan fungsi-fungsi yang ada dalam widget tersebut. 
 
 ## Contents
 
@@ -17,7 +17,7 @@ Sebelum Anda membaca dokumentasi ini, pastikan Anda sudah membaca dokumentasi [w
 
 ## Basic example
 
-Gunakan `.post` sebagai kelas utama, dan di dalamnya bungkus konten seperti judul, isi posting, atau konten lainnya dengan `.post-content`.
+Gunakan `.post` sebagai kelas utama, dan di dalamnya bungkus konten seperti judul, tubuh posting, atau konten lainnya dengan `.post-content`.
 
 <div class="bd-example">
   <div class="post">
@@ -97,7 +97,7 @@ Dengan `.post-title-link`.
 
 ## Metadata
 
-Gunakan `.post-meta` dan tempatkan di dalam `.post-content`, untuk membuat list (daftar) gunakan `.post-meta-list`.
+Gunakan `.post-meta`, dan tempatkan di dalam `.post-content`. Untuk membuat list (daftar) gunakan `.post-meta-list`.
 
 <div class="bd-example">
   <div class="post">
@@ -278,7 +278,7 @@ Gunakan `.post-img-bottom`.
 
 ### Left image
 
-Gunakan `.post-img-left` dan bungkus thumbnail dan konten dengan `.post-horizontal`.
+Gunakan `.post-img-left`, dan bungkus thumbnail dan konten dengan `.post-horizontal`.
 
 <div class="bd-example">
   <div class="post">
@@ -322,7 +322,7 @@ Gunakan `.post-img-left` dan bungkus thumbnail dan konten dengan `.post-horizont
 
 ### Right image
 
-Gunakan `.post-img-right` dan bungkus thumbnail dan konten dengan `.post-horizontal`.
+Gunakan `.post-img-right`, dan bungkus thumbnail dan konten dengan `.post-horizontal`.
 
 <div class="bd-example">
   <div class="post">
@@ -366,7 +366,7 @@ Gunakan `.post-img-right` dan bungkus thumbnail dan konten dengan `.post-horizon
 
 ### Image overlays
 
-Gunakan `.post-img-overlay` dan bungkus thumbnail dan konten dengan `.post-overlay`. Membutuhkan penggunaan `.post-inverse` untuk mengubah teks menjadi berwarna putih.
+Gunakan `.post-img-overlay`, dan bungkus thumbnail dan konten dengan `.post-overlay`. Membutuhkan penggunaan `.post-inverse` untuk mengubah teks menjadi berwarna putih.
 
 <div class="bd-example">
   <div class="post post-inverse">
@@ -1756,7 +1756,7 @@ Bungkus semua `.post` dengan `.post-group`.
 
 ## Background variants
 
-Komponen posting tersedia dengan beragam varian warna, dengan mengubah `background-color` dan `border-color` menggunakan kelas-kelas yang tersedia, atau Anda dapat menentukan warna sesuai dengan yang Anda inginkan dengan mudah menggunakan *custom styles*. Latar belakang yang berwarna gelap membutuhkan penggunaan `.post-inverse` untuk mengubah teks menjadi berwarna putih.
+Komponen posting tersedia dengan beragam varian warna, tentukan warna dengan mengubah `background-color` dan `border-color`, Anda dapat menggunakan kelas-kelas yang tersedia, atau menentukan warna sesuai dengan yang Anda inginkan dengan menggunakan *custom styles*. Latar belakang yang berwarna gelap membutuhkan penggunaan `.post-inverse` untuk mengubah teks menjadi berwarna putih.
 
 <div class="bd-example">
   <div class="post post-faded">
@@ -1948,175 +1948,84 @@ Komponen posting tersedia dengan beragam varian warna, dengan mengubah `backgrou
 
 ## Outline variants
 
-Posting berwarna, tetapi bukan pada latar belakang, hanya mengubah `border-color`. Gunakan `.post-outline-{color}`.
+Posting berwarna, tetapi bukan pada latar belakang, hanya mengubah `border-color`. Ubah kelas warna posting dengan menambahkan `.post-outline-*`.
 
 <div class="bd-example">
   <div class="post post-outline-faded">
     <div class="post-content">
       <h2 class="post-title"><a class="post-title-link" href="#">Faded</a></h2>
-      <div class="post-meta">
-        <ul class="post-meta-list">
-          <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-          <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
-          <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
-        </ul>
-      </div>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
     </div><!-- /.post-content -->
   </div><!-- /.post -->
   <div class="post post-outline-blue">
     <div class="post-content">
       <h2 class="post-title"><a class="post-title-link" href="#">Blue</a></h2>
-      <div class="post-meta">
-        <ul class="post-meta-list">
-          <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-          <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
-          <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
-        </ul>
-      </div>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
     </div><!-- /.post-content -->
   </div><!-- /.post -->
   <div class="post post-outline-green">
     <div class="post-content">
       <h2 class="post-title"><a class="post-title-link" href="#">Green</a></h2>
-      <div class="post-meta">
-        <ul class="post-meta-list">
-          <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-          <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
-          <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
-        </ul>
-      </div>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
     </div><!-- /.post-content -->
   </div><!-- /.post -->
   <div class="post post-outline-teal">
     <div class="post-content">
       <h2 class="post-title"><a class="post-title-link" href="#">Teal</a></h2>
-      <div class="post-meta">
-        <ul class="post-meta-list">
-          <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-          <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
-          <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
-        </ul>
-      </div>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
     </div><!-- /.post-content -->
   </div><!-- /.post -->
   <div class="post post-outline-red">
     <div class="post-content">
       <h2 class="post-title"><a class="post-title-link" href="#">Red</a></h2>
-      <div class="post-meta">
-        <ul class="post-meta-list">
-          <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-          <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
-          <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
-        </ul>
-      </div>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
     </div><!-- /.post-content -->
   </div><!-- /.post -->
   <div class="post post-outline-orange">
     <div class="post-content">
       <h2 class="post-title"><a class="post-title-link" href="#">Orange</a></h2>
-      <div class="post-meta">
-        <ul class="post-meta-list">
-          <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-          <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
-          <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
-        </ul>
-      </div>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
     </div><!-- /.post-content -->
   </div><!-- /.post -->
   <div class="post post-outline-purple">
     <div class="post-content">
       <h2 class="post-title"><a class="post-title-link" href="#">Purple</a></h2>
-      <div class="post-meta">
-        <ul class="post-meta-list">
-          <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-          <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
-          <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
-        </ul>
-      </div>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
     </div><!-- /.post-content -->
   </div><!-- /.post -->
   <div class="post post-outline-yellow">
     <div class="post-content">
       <h2 class="post-title"><a class="post-title-link" href="#">Yellow</a></h2>
-      <div class="post-meta">
-        <ul class="post-meta-list">
-          <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-          <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
-          <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
-        </ul>
-      </div>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
     </div><!-- /.post-content -->
   </div><!-- /.post -->
   <div class="post post-outline-pink">
     <div class="post-content">
       <h2 class="post-title"><a class="post-title-link" href="#">Pink</a></h2>
-      <div class="post-meta">
-        <ul class="post-meta-list">
-          <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-          <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
-          <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
-        </ul>
-      </div>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
     </div><!-- /.post-content -->
   </div><!-- /.post -->
   <div class="post post-outline-gray">
     <div class="post-content">
       <h2 class="post-title"><a class="post-title-link" href="#">Gray</a></h2>
-      <div class="post-meta">
-        <ul class="post-meta-list">
-          <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-          <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
-          <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
-        </ul>
-      </div>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
     </div><!-- /.post-content -->
   </div><!-- /.post -->
   <div class="post post-outline-brown">
     <div class="post-content">
       <h2 class="post-title"><a class="post-title-link" href="#">Brown</a></h2>
-      <div class="post-meta">
-        <ul class="post-meta-list">
-          <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-          <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
-          <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
-        </ul>
-      </div>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
     </div><!-- /.post-content -->
   </div><!-- /.post -->
   <div class="post post-outline-black">
     <div class="post-content">
       <h2 class="post-title"><a class="post-title-link" href="#">Black</a></h2>
-      <div class="post-meta">
-        <ul class="post-meta-list">
-          <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-          <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
-          <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
-        </ul>
-      </div>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
     </div><!-- /.post-content -->
   </div><!-- /.post -->
   <div class="post" style="background-color: transparent; border-color: #263238;">
     <div class="post-content">
       <h2 class="post-title"><a class="post-title-link" href="#">Custom</a></h2>
-      <div class="post-meta">
-        <ul class="post-meta-list">
-          <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-          <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
-          <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
-        </ul>
-      </div>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
     </div><!-- /.post-content -->
   </div><!-- /.post -->
@@ -2142,7 +2051,11 @@ Posting berwarna, tetapi bukan pada latar belakang, hanya mengubah `border-color
 
 Bungkus semua `.post` dengan `.post-columns`.
 
-Hanya diterapkan pada perangkat kecil ke atas. Pada perangkat kecil ke atas (&ge;576px) akan tampil dua kolom dan pada perangkat sedang ke atas (&ge;768px) akan tampil tiga kolom, pada perangkat sangat kecil (&lt;576px) hanya tampil satu kolom.
+Hanya bekerja pada perangkat kecil ke atas.
+
+- Pada perangkat sedang ke atas (&ge;768px) akan tampil tiga kolom.
+- Pada perangkat kecil ke atas (&ge;576px) akan tampil dua kolom.
+- Pada perangkat sangat kecil (&lt;576px) hanya tampil satu kolom.
 
 Urutan widget dimulai dari atas ke bawah dan dari kiri ke kanan.
 
@@ -2766,7 +2679,7 @@ Gunakan `.post-content` lebih dari satu untuk membungkus setiap konten. Di bawah
 
 ## Post clickable
 
-Tambahkan `.post-clickable` ke `.post` dan tambahkan atribut `data-url`.
+Tambahkan `.post-clickable` dan `data-url` ke `.post`.
 
 <div class="bd-example">
   <div class="post post-clickable" data-url="#post-clickable">

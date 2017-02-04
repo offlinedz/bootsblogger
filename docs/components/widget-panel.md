@@ -1,11 +1,11 @@
 ---
 layout: docs
 title: Widget panel
-description: Tampilan widget dengan beragam warna latar belakang pada bagian judul dan border pada bagian konten, juga tersedia variasi lainnya.
+description: Tampilan widget dengan beragam warna latar belakang di bagian judul, border di bagian konten, juga tersedia variasi lainnya.
 group: components
 ---
 
-Tampilan widget dengan beragam warna latar belakang pada bagian judul dan border pada bagian konten, juga tersedia variasi lainnya.
+Tampilan widget dengan beragam warna latar belakang di bagian judul, border di bagian konten, juga tersedia variasi lainnya.
 
 ## Contents
 
@@ -14,12 +14,12 @@ Tampilan widget dengan beragam warna latar belakang pada bagian judul dan border
 
 ## Examples
 
-Gunakan `.wg-panel` diikuti dengan `.wg-panel-{color}`.
+Gunakan `.wg-panel`, diikuti dengan `.wg-panel-{color}`.
 
 <div class="bd-example">
   <div class="wg-panel wg-panel-faded">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Faded</h2>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
@@ -27,7 +27,7 @@ Gunakan `.wg-panel` diikuti dengan `.wg-panel-{color}`.
   </div>
   <div class="wg-panel wg-panel-blue">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Blue</h2>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
@@ -35,7 +35,7 @@ Gunakan `.wg-panel` diikuti dengan `.wg-panel-{color}`.
   </div>
   <div class="wg-panel wg-panel-green">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Green</h2>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
@@ -43,7 +43,7 @@ Gunakan `.wg-panel` diikuti dengan `.wg-panel-{color}`.
   </div>
   <div class="wg-panel wg-panel-teal">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Teal</h2>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
@@ -51,7 +51,7 @@ Gunakan `.wg-panel` diikuti dengan `.wg-panel-{color}`.
   </div>
   <div class="wg-panel wg-panel-red">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Red</h2>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
@@ -59,7 +59,7 @@ Gunakan `.wg-panel` diikuti dengan `.wg-panel-{color}`.
   </div>
   <div class="wg-panel wg-panel-orange">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Orange</h2>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
@@ -67,7 +67,7 @@ Gunakan `.wg-panel` diikuti dengan `.wg-panel-{color}`.
   </div>
   <div class="wg-panel wg-panel-purple">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Purple</h2>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
@@ -75,7 +75,7 @@ Gunakan `.wg-panel` diikuti dengan `.wg-panel-{color}`.
   </div>
   <div class="wg-panel wg-panel-yellow">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Yellow</h2>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
@@ -83,7 +83,7 @@ Gunakan `.wg-panel` diikuti dengan `.wg-panel-{color}`.
   </div>
   <div class="wg-panel wg-panel-pink">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Pink</h2>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
@@ -91,7 +91,7 @@ Gunakan `.wg-panel` diikuti dengan `.wg-panel-{color}`.
   </div>
   <div class="wg-panel wg-panel-gray">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Gray</h2>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
@@ -99,7 +99,7 @@ Gunakan `.wg-panel` diikuti dengan `.wg-panel-{color}`.
   </div>
   <div class="wg-panel wg-panel-brown">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Brown</h2>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
@@ -107,7 +107,7 @@ Gunakan `.wg-panel` diikuti dengan `.wg-panel-{color}`.
   </div>
   <div class="wg-panel wg-panel-black">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Black</h2>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
@@ -115,7 +115,7 @@ Gunakan `.wg-panel` diikuti dengan `.wg-panel-{color}`.
   </div>
   <div class="wg-panel wg-panel-white">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>White</h2>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
@@ -146,7 +146,7 @@ Ubah `.wg-panel-{color}` dengan `.wg-panel-outline-{color}`.
 <div class="bd-example bg-inverse">
   <div class="wg-panel wg-panel-outline-faded">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Faded</h2>
       <div class="widget-content">
         <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
       </div>
@@ -154,7 +154,7 @@ Ubah `.wg-panel-{color}` dengan `.wg-panel-outline-{color}`.
   </div>
   <div class="wg-panel wg-panel-outline-blue">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Blue</h2>
       <div class="widget-content">
         <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
       </div>
@@ -162,7 +162,7 @@ Ubah `.wg-panel-{color}` dengan `.wg-panel-outline-{color}`.
   </div>
   <div class="wg-panel wg-panel-outline-green">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Green</h2>
       <div class="widget-content">
         <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
       </div>
@@ -170,7 +170,7 @@ Ubah `.wg-panel-{color}` dengan `.wg-panel-outline-{color}`.
   </div>
   <div class="wg-panel wg-panel-outline-teal">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Teal</h2>
       <div class="widget-content">
         <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
       </div>
@@ -178,7 +178,7 @@ Ubah `.wg-panel-{color}` dengan `.wg-panel-outline-{color}`.
   </div>
   <div class="wg-panel wg-panel-outline-red">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Red</h2>
       <div class="widget-content">
         <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
       </div>
@@ -186,7 +186,7 @@ Ubah `.wg-panel-{color}` dengan `.wg-panel-outline-{color}`.
   </div>
   <div class="wg-panel wg-panel-outline-orange">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Orange</h2>
       <div class="widget-content">
         <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
       </div>
@@ -194,7 +194,7 @@ Ubah `.wg-panel-{color}` dengan `.wg-panel-outline-{color}`.
   </div>
   <div class="wg-panel wg-panel-outline-purple">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Purple</h2>
       <div class="widget-content">
         <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
       </div>
@@ -202,7 +202,7 @@ Ubah `.wg-panel-{color}` dengan `.wg-panel-outline-{color}`.
   </div>
   <div class="wg-panel wg-panel-outline-yellow">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Yellow</h2>
       <div class="widget-content">
         <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
       </div>
@@ -210,7 +210,7 @@ Ubah `.wg-panel-{color}` dengan `.wg-panel-outline-{color}`.
   </div>
   <div class="wg-panel wg-panel-outline-pink">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Pink</h2>
       <div class="widget-content">
         <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
       </div>
@@ -218,7 +218,7 @@ Ubah `.wg-panel-{color}` dengan `.wg-panel-outline-{color}`.
   </div>
   <div class="wg-panel wg-panel-outline-gray">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Gray</h2>
       <div class="widget-content">
         <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
       </div>
@@ -226,7 +226,7 @@ Ubah `.wg-panel-{color}` dengan `.wg-panel-outline-{color}`.
   </div>
   <div class="wg-panel wg-panel-outline-brown">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Brown</h2>
       <div class="widget-content">
         <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
       </div>
@@ -234,7 +234,7 @@ Ubah `.wg-panel-{color}` dengan `.wg-panel-outline-{color}`.
   </div>
   <div class="wg-panel wg-panel-outline-black">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Black</h2>
       <div class="widget-content">
         <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
       </div>
@@ -242,7 +242,7 @@ Ubah `.wg-panel-{color}` dengan `.wg-panel-outline-{color}`.
   </div>
   <div class="wg-panel wg-panel-outline-white">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>White</h2>
       <div class="widget-content">
         <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
       </div>
@@ -256,7 +256,7 @@ Ubah `.wg-panel-{color}` dengan `.wg-panel-outline-{color}`.
 
 ## Transparent contents
 
-Gunakan `.wg-panel-transparent` dengan `.wg-panel-{color}`.
+Gunakan `.wg-panel-{color}`, dan tambahkan `.wg-panel-transparent`.
 
 <div class="bd-example bg-inverse">
   <div class="wg-panel wg-panel-purple wg-panel-transparent">
@@ -315,7 +315,7 @@ Tambahkan `.wg-panel-group`.
 
 ## Collapsible widget
 
-Kelas opsional: `.open-all` dan `.open-first` untuk menentukan konten widget terlihat atau tersembunyi terlebih dahulu. `.open-all` hanya bekerja pada `.wg-collapse`.
+Kelas opsional: tambahkan `.open-all` atau `.open-first` untuk membuat konten widget terlihat terlebih dahulu. `.open-all` hanya bekerja pada `.wg-collapse`.
 
 ### Basic example
 

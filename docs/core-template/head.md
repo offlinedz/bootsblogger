@@ -14,8 +14,8 @@ Berikut ini adalah konten yang ada di dalam `<head>`.
 
 ## Custom all-head-content <small class="text-muted">custom-all-head-content.xml</small>
 
-Bawaan Blogger menggunakan `<b:include data='blog' name='all-head-content'/>` untuk favicon, *feeds*, dan lain-lain.
-Penyesuaian ini hanya untuk validasi dan penambahan *feeds* untuk komentar dan label.
+Template bawaan Blogger menggunakan `<b:include data='blog' name='all-head-content'/>` untuk favicon, *feeds*, dan lain-lain.
+Pengubahsuaian ini hanya untuk validasi dan penambahan *feeds* untuk komentar dan label.
 
 {% highlight html %}
 <meta content='blogger' name='generator'/>
@@ -42,7 +42,7 @@ Penyesuaian ini hanya untuk validasi dan penambahan *feeds* untuk komentar dan l
 
 ## Title <small class="text-muted">title.xml</small>
 
-Pada bawaan Blogger tag judul biasanya hanya menggunakan `<title><data:blog.pageTitle/></title>`, dengan penyesuaian ini Anda dapat menulis judul sesuai dengan yang Anda inginkan.
+Pada template bawaan Blogger, tag judul biasanya hanya menggunakan `<title><data:blog.pageTitle/></title>`, dengan pengubahsuaian ini Anda dapat menampilkan judul dengan gaya sesuai yang Anda inginkan.
 
 {% highlight html %}
 <b:if cond='data:blog.pageType == &quot;item&quot;'>
@@ -78,8 +78,6 @@ Pada bawaan Blogger tag judul biasanya hanya menggunakan `<title><data:blog.page
 ## Meta and link tags
 
 Tag meta adalah elemen HTML yang digunakan untuk membentuk struktur metadata dari sebuah halaman web/blog. [Metadata](http://w3schools.com/tags/tag_meta.asp) adalah data (informasi) tentang data atau data informasi tentang berbagai aspek dari blog, seperti judul, deskripsi, gambar, URL, dan lain-lain.
-
-**Catatan:** beberapa tag menggunakan variabel konfigurasi pada `config.json`.
 
 ### Required meta tags <small class="text-muted">meta-tags-required.xml</small>
 
@@ -161,7 +159,7 @@ Tag meta dan link untuk mesin pencari.
 
 ### Twitter Cards <small class="text-muted">meta-tags-twitter.xml</small>
 
-Tag meta untuk jejaring sosial Twitter. Berguna ketika seseorang membagikan Blog atau postingan Anda ke jejaring sosial [Twitter](https://twitter.com).
+Tag meta untuk jejaring sosial [Twitter](https://twitter.com).
 
 {% highlight html %}
 <b:if cond='data:blog.url == data:blog.homepageUrl'>
@@ -244,7 +242,7 @@ Tag meta untuk jejaring sosial Twitter. Berguna ketika seseorang membagikan Blog
 
 ### Facebook Open Graph <small class="text-muted">meta-tags-facebook.xml</small>
 
-Tag meta untuk jejaring sosial Facebook. Berguna ketika seseorang membagikan Blog atau postingan Anda ke jejaring sosial [Facebook](https://facebook.com).
+Tag meta untuk jejaring sosial [Facebook](https://facebook.com).
 
 {% highlight html %}
 <b:if cond='data:blog.pageType in [&quot;item&quot;, &quot;static_page&quot;]'>
@@ -326,7 +324,7 @@ Tag meta untuk jejaring sosial Facebook. Berguna ketika seseorang membagikan Blo
 
 ## Remove Blogger's default CSS <small class="text-muted">blogger-css-hack.xml</small>
 
-Blogger memiliki CSS bawaan, yaitu `*-css_bundle_v2.css` yang mereka gunakan untuk widget, gadget, dan juga elemen umum seperti `html`, `body`, `h*`, `p`, dan lain-lain. Oleh karena mereka menggunakannya untuk elemen umum tadi, dan juga terdapat nama kelas yang sama dengan CSS Bootsblogger maupun Bootstrap, maka bundel CSS tersebut harus dibuang agar CSS Bootstrap dan Bootsblogger berfungsi sebagaimana mestinya.
+Blogger memiliki CSS bawaan, yaitu `*-css_bundle_v2.css`, yang digunakan untuk widget, gadget, dan juga elemen umum, seperti `html`, `body`, `h*`, `p`, dan lain-lain. Oleh karena itu, bundel CSS tersebut harus dibuang, untuk menghindari konflik dengan CSS Bootstrap dan Bootsblogger.
 
 Bundel CSS tersebut dihilangkan dengan menggunakan metode hack sederhana, yaitu dengan kode di bawah ini:
 
@@ -341,7 +339,7 @@ Kode di atas akan mengapit bundel CSS Blogger dengan komentar HTML, sehingga CSS
 
 ## Blogger grid system <small class="text-muted">blogger-css-hack.xml</small>
 
-Pada tulisan di atas ini, kita sudah membahas tentang membuang CSS bawaan Blogger. Selanjutnya kita akan membahas sistem grid untuk tata letak widget pada halaman Blogger [ <a href="javascript:;" data-toggle="modal" data-target=".image-blogger-layout">lihat gambar</a> ]. CSS sistem grid ini harus diletakan di dalam kode yang di atas tadi, seperti berikut:
+Pada tulisan di atas ini, kita sudah membahas tentang membuang CSS bawaan Blogger. Selanjutnya kita akan membahas sistem grid untuk tata letak widget pada halaman Blogger, <a href="javascript:;" data-toggle="modal" data-target=".image-blogger-layout">lihat gambar</a>. CSS sistem grid ini harus diletakan di dalam kode yang di atas tadi, seperti berikut:
 
 **Catatan:** CSS ini tidak akan mempengaruhi template, hanya bekerja pada halaman Blogger.
 
@@ -454,20 +452,20 @@ Hasilnya akan seperti pada <a href="javascript:;" data-toggle="modal" data-targe
 
 #### Note
 
-Jika Anda menggunakan sistem grid Bootstrap dan juga sistem grid Blogger pada elemen yang sama, **kelas kolom tidak harus sama**, misal Anda menggunakan sistem grid Bootstrap untuk membuat template dua kolom dengan menggunakan `.col-md-9` untuk *main* dan `.col-md-3` untuk *sidebar*, penggunaan sistem grid Blogger tidak harus menggunakan `.blogger-col-9` untuk *main* dan `.blogger-col-3` untuk *sidebar*, tetapi bisa juga `.blogger-col-8` untuk *main* dan `.blogger-col-4` untuk *sidebar*. Untuk lebih jelas lihat kode di bawah ini:
+Jika Anda menggunakan sistem grid Bootstrap dan sistem grid Blogger pada elemen yang sama, **kelas kolom tidak harus sama**, misal Anda menggunakan sistem grid Bootstrap untuk membuat template dua kolom dengan menggunakan `.col-md-9` untuk *main* dan `.col-md-3` untuk *sidebar*, penggunaan sistem grid Blogger tidak harus menggunakan `.blogger-col-9` untuk *main* dan `.blogger-col-3` untuk *sidebar*, tetapi bisa juga `.blogger-col-8` untuk *main* dan `.blogger-col-4` untuk *sidebar*. Untuk lebih jelas lihat kode di bawah ini:
 
 {% highlight html %}
 <div class='container blogger-container'>
   <div class='row blogger-row'>
     <!-- Main -->
-    <div class='col-md-9 blogger-col-8 main' role='main'>
-      <b:section id='main' maxwidgets='1' showaddelement='no'></b:section>
-    </div><!-- /.main -->
+    <main class='blog-main col-md-9 blogger-col-8' id='blog-main'>
+      <b:section id='main-section' maxwidgets='1' showaddelement='no'></b:section>
+    </main><!-- /.main -->
 
     <!-- Sidebar -->
-    <div class='col-md-3 blogger-col-4 sidebar' role='complementary'>
-      <b:section id='sidebar'></section>
-    </div><!-- /.sidebar -->
+    <aside class='blog-sidebar col-md-3 blogger-col-4' id='blog-sidebar'>
+      <b:section id='sidebar-section'></section>
+    </aside><!-- /.sidebar -->
   </div><!-- /.row -->
 </div><!-- /.container -->
 {% endhighlight %}

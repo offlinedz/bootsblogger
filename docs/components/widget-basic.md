@@ -1,11 +1,11 @@
 ---
 layout: docs
 title: Widget basic
-description: Tampilan widget yang sederhana, dengan sentuhan judul yang beragam warna.
+description: Tampilan widget sederhana, dengan judul yang beragam warna.
 group: components
 ---
 
-Tampilan widget yang sederhana, dengan sentuhan judul yang beragam warna.
+Tampilan widget sederhana, dengan judul yang beragam warna.
 
 ## Contents
 
@@ -14,12 +14,12 @@ Tampilan widget yang sederhana, dengan sentuhan judul yang beragam warna.
 
 ## Examples
 
-Gunakan `.wg-basic` diikuti dengan `.wg-basic-{color}`.
+Gunakan `.wg-basic`, diikuti dengan `.wg-basic-{color}`.
 
 <div class="bd-example">
   <div class="wg-basic wg-basic-faded">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Faded</h2>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
@@ -27,7 +27,7 @@ Gunakan `.wg-basic` diikuti dengan `.wg-basic-{color}`.
   </div>
   <div class="wg-basic wg-basic-blue">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Blue</h2>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
@@ -35,7 +35,7 @@ Gunakan `.wg-basic` diikuti dengan `.wg-basic-{color}`.
   </div>
   <div class="wg-basic wg-basic-green">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Green</h2>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
@@ -43,7 +43,7 @@ Gunakan `.wg-basic` diikuti dengan `.wg-basic-{color}`.
   </div>
   <div class="wg-basic wg-basic-teal">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Teal</h2>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
@@ -51,7 +51,7 @@ Gunakan `.wg-basic` diikuti dengan `.wg-basic-{color}`.
   </div>
   <div class="wg-basic wg-basic-red">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Red</h2>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
@@ -59,7 +59,7 @@ Gunakan `.wg-basic` diikuti dengan `.wg-basic-{color}`.
   </div>
   <div class="wg-basic wg-basic-orange">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Orange</h2>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
@@ -67,7 +67,7 @@ Gunakan `.wg-basic` diikuti dengan `.wg-basic-{color}`.
   </div>
   <div class="wg-basic wg-basic-purple">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Purple</h2>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
@@ -75,7 +75,7 @@ Gunakan `.wg-basic` diikuti dengan `.wg-basic-{color}`.
   </div>
   <div class="wg-basic wg-basic-yellow">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Yellow</h2>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
@@ -83,7 +83,7 @@ Gunakan `.wg-basic` diikuti dengan `.wg-basic-{color}`.
   </div>
   <div class="wg-basic wg-basic-pink">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Pink</h2>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
@@ -91,7 +91,7 @@ Gunakan `.wg-basic` diikuti dengan `.wg-basic-{color}`.
   </div>
   <div class="wg-basic wg-basic-gray">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Gray</h2>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
@@ -99,7 +99,7 @@ Gunakan `.wg-basic` diikuti dengan `.wg-basic-{color}`.
   </div>
   <div class="wg-basic wg-basic-brown">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Brown</h2>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
@@ -107,7 +107,7 @@ Gunakan `.wg-basic` diikuti dengan `.wg-basic-{color}`.
   </div>
   <div class="wg-basic wg-basic-black">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>Black</h2>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
@@ -115,7 +115,7 @@ Gunakan `.wg-basic` diikuti dengan `.wg-basic-{color}`.
   </div>
   <div class="wg-basic wg-basic-white">
     <div class="widget">
-      <h2>Widget title</h2>
+      <h2>White</h2>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
@@ -141,7 +141,7 @@ Gunakan `.wg-basic` diikuti dengan `.wg-basic-{color}`.
 
 ## Collapsible widget
 
-Kelas opsional: `.open-all` dan `.open-first` untuk menentukan konten widget terlihat atau tersembunyi terlebih dahulu. `.open-all` hanya bekerja pada `.wg-collapse`.
+Kelas opsional: tambahkan `.open-all` atau `.open-first` untuk membuat konten widget terlihat terlebih dahulu. `.open-all` hanya bekerja pada `.wg-collapse`.
 
 ### Basic example
 

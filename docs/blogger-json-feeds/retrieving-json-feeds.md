@@ -6,7 +6,7 @@ group: blogger-json-feeds
 redirect_from: "/blogger-json-feeds/"
 ---
 
-Blogger mempunyai data posting, halaman statis, dan komentar dalam bentuk JSON yang disediakan oleh Blogger Data API. Di bawah ini adalah cara mengambil data JSON feeds dari Blogger Data API.
+Blogger mempunyai data—posting, halaman statis, dan komentar dalam bentuk JSON, yang disediakan oleh Blogger Data API. Di bawah ini adalah cara mengambil data JSON feeds dari Blogger Data API.
 
 ## Contents
 
@@ -53,19 +53,19 @@ Blogger mempunyai data posting, halaman statis, dan komentar dalam bentuk JSON y
     </tr>
     <tr>
       <td><code>{x}</code></td>
-      <td>Ganti dengan nomor untuk mengambil data JSON mulai dari urutan ke-<code>{x}</code>. <code>{x}</code> &gt;= <code>1</code> dan tidak boleh lebih besar dari jumlah data yang ada.</td>
+      <td>Ganti dengan nomor, yang digunakan untuk mengambil data JSON mulai dari urutan ke-<code>x</code>. <code>x</code> &gt;= <code>1</code> dan tidak boleh lebih besar dari jumlah data yang ada.</td>
     </tr>
     <tr>
       <td><code>{n}</code></td>
-      <td>Ganti dengan nomor untuk membatasi jumlah data JSON yang diambil sebanyak <code>{n}</code>.</td>
+      <td>Ganti dengan nomor, yang digunakan untuk membatasi jumlah data JSON yang diambil, sebanyak <code>n</code>.</td>
     </tr>
     <tr>
       <td><code>alt=json-in-script</code></td>
-      <td>Untuk menandakan bahwa data yang diambil berupa JSON.</td>
+      <td>Data yang diambil berupa JSON.</td>
     </tr>
     <tr>
       <td><code>{function}</code></td>
-      <td>Ganti dengan nama fungsi (JavaScript) untuk mengubah data JSON menjadi markup HTML.</td>
+      <td>Ganti dengan nama-fungsi JavaScript, yang digunakan untuk mengubah data JSON menjadi markup HTML.</td>
     </tr>
   </tbody>
 </table>

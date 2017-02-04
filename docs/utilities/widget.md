@@ -12,9 +12,9 @@ Kelas-kelas utilitas untuk widget.
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
-## Hidden
+## Title: hidden
 
-Gunakan `.wg-title-hidden` untuk menyembunyikan judul widget.
+Untuk menyembunyikan judul widget, gunakan `.wg-title-hidden`.
 
 <div class="bd-example">
   <div class="wg-panel wg-panel-orange wg-title-hidden">
@@ -31,7 +31,7 @@ Gunakan `.wg-title-hidden` untuk menyembunyikan judul widget.
 <b:section class='wg-panel wg-panel-orange wg-title-hidden' id='sectionId'></b:section>
 {% endhighlight %}
 
-## Alignment
+## Title: alignment
 
 Terdapat tiga kelas untuk perataan judul widget, yaitu rata kiri `.wg-title-left`, rata tengah `.wg-title-center`, dan rata kanan `.wg-title-right`.
 
@@ -68,9 +68,9 @@ Terdapat tiga kelas untuk perataan judul widget, yaitu rata kiri `.wg-title-left
 <b:section class='wg-panel wg-panel-orange wg-title-right' id='sectionId'></b:section>
 {% endhighlight %}
 
-## Font size
+## Title: font size
 
-Kelas-kelas untuk mengubah ukuran judul widget. `wg-title-h1` - `.wg-title-h6`.
+Kelas-kelas untuk mengubah ukuran judul widget. Anda dapat menggunakan `.wg-title-h1` - `.wg-title-h6`.
 
 <div class="bd-example">
   <div class="wg-panel wg-panel-orange wg-title-h1">
@@ -134,13 +134,17 @@ Kelas-kelas untuk mengubah ukuran judul widget. `wg-title-h1` - `.wg-title-h6`.
 
 ## Columns
 
-Tampilan kolom widget seperti [Masonry](http://masonry.desandro.com/) dengan hanya menggunakan CSS. 
-
-### Examples
+Tampilan kolom widget seperti [Masonry](http://masonry.desandro.com/), dengan hanya menggunakan CSS. 
 
 Gunakan `.wg-columns`.
 
-Hanya diterapkan pada perangkat kecil ke atas. Pada perangkat kecil ke atas (&ge;576px) akan tampil dua kolom dan pada perangkat sedang ke atas (&ge;768px) akan tampil tiga kolom, pada perangkat sangat kecil (&lt;576px) hanya tampil satu kolom.
+Hanya bekerja pada perangkat kecil ke atas.
+
+- Pada perangkat sedang ke atas (&ge;768px) akan tampil tiga kolom.
+- Pada perangkat kecil ke atas (&ge;576px) akan tampil dua kolom.
+- Pada perangkat sangat kecil (&lt;576px) hanya tampil satu kolom.
+
+### Examples
 
 Urutan widget dimulai dari atas ke bawah dan dari kiri ke kanan.
 
@@ -441,4 +445,4 @@ Sistem grid untuk widget.
 
 ### Notes
 
-Grid widget menggunakan `calc()` untuk mengkalkulasi lebar dan jarak widget, lihat dukungan *browser* untuk [calc()](http://caniuse.com/#feat=calc). Menggunakan `calc()` adalah untuk menghindari penggunaan `padding` pada `.widget`, agar tidak merusak tampilan komponen widget lainnya, dikarenakan komponen widget lainnya seperti [widget panel]({{ site.baseurl }}/components/widget-panel/), [widget box]({{ site.baseurl }}/components/widget-box/) menerapkan CSS pada `.widget`, juga agar tidak mengganggu ketika Anda membuat komponen baru untuk widget. 
+Grid widget menggunakan `calc()` untuk mengkalkulasi lebar dan jarak widget, lihat dukungan *browser* untuk [calc()](http://caniuse.com/#feat=calc). Menggunakan `calc()` adalah untuk menghindari penggunaan `padding` pada `.widget`, agar tidak terjadi konflik dengan CSS widget lainnya, seperti [widget panel]({{ site.baseurl }}/components/widget-panel/) dan [widget box]({{ site.baseurl }}/components/widget-box/) juga menerapkan CSS pada `.widget`. 

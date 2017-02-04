@@ -9,11 +9,13 @@ Menampilkan daftar label dari data JSON menggunakan beberapa komponen yang sesua
 
 ## Config
 
+Nama fungsi: `labelsCustom`.
+
 {% highlight html %}
 <script>
 var config = {
   postsPerPage: 10,
-  badge: true/false,
+  badge: true|false,
   classes: {
     base: 'Base class',
     item: 'Item class',
@@ -23,15 +25,11 @@ var config = {
 </script>
 {% endhighlight %}
 
-## Function name
-
-Nama fungsi `labelsCustom`.
+**Catatan:** jika `badge: true`, dan Anda mempunyai banyak label, kecepatan memuat halaman mungkin akan berkurang.
 
 ## Examples
 
 Menggunakan [Bootstrap list group](https://v4-alpha.getbootstrap.com/components/list-group/).
-
-**Catatan:** jika `badge: true` dan Anda mempunyai banyak label, kecepatan memuat halaman mungkin akan berkurang.
 
 {% example html %}
 <script>
@@ -40,8 +38,8 @@ var config = {
   badge: true,
   classes: {
     base: 'list-group',
-    item: 'list-group-item list-group-item-action',
-    badge: 'badge badge-default badge-pill float-right'
+    item: 'list-group-item list-group-item-action justify-content-between',
+    badge: 'badge badge-default badge-pill'
   }
 }
 </script>
@@ -78,7 +76,7 @@ var config = {
   postsPerPage: 10,
   badge: true,
   classes: {
-    base: 'nav nav-inline',
+    base: 'nav flex-column',
     item: 'nav-link',
     badge: 'badge badge-default badge-pill'
   }

@@ -9,11 +9,13 @@ Menampilkan daftar label dari data JSON menggunakan `<ul>`.
 
 ## Config
 
+Nama fungsi: `labelsLists`.
+
 {% highlight html %}
 <script>
 var config = {
   postsPerPage: 10,
-  badge: true/false,
+  badge: true|false,
   classes: {
     ul: 'Add class to ul',
     li: 'Add class to li',
@@ -24,13 +26,9 @@ var config = {
 </script>
 {% endhighlight %}
 
-## Function name
-
-Nama fungsi `labelsLists`.
+**Catatan:** jika `badge: true`, dan Anda mempunyai banyak label, kecepatan memuat halaman mungkin akan berkurang.
 
 ## Example
-
-**Catatan:** jika `badge: true` dan Anda mempunyai banyak label, kecepatan memuat halaman mungkin akan berkurang.
 
 {% example html %}
 <script>
@@ -38,7 +36,7 @@ var config = {
   postsPerPage: 10,
   badge: true,
   classes: {
-    ul: 'nav',
+    ul: 'nav flex-column',
     li: 'nav-item',
     a: 'nav-link',
     badge: 'badge badge-default badge-pill'

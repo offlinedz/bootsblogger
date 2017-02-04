@@ -26,7 +26,7 @@ Template Bootsblogger mempunyai 8 tipe halaman yang diciptakan dengan menggunaka
 5. Search results page (halaman hasil pencarian).
 6. Archive page (halaman arsip posting).
 7. Error page (halaman galat).
-8. Default (`https://example.blogspot.com/search`)
+8. Default (`https://example.blogspot.com/search`).
 
 ## Conditional tags
 

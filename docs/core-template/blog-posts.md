@@ -40,7 +40,7 @@ Contoh dasar untuk menampilkan posting.
 
 ## Data tags
 
-Tag data yang tersedia untuk blog posting. Untuk tag data lainya Anda dapat menggunakan [includes](#includes).
+Di bawah ini adalah tag data Blogger yang sering digunakan. Untuk tag data lainnya Anda dapat menggunakan [includes](#includes).
 
 | Kode | Deskripsi |
 | ---- | --------- |
@@ -52,7 +52,7 @@ Tag data yang tersedia untuk blog posting. Untuk tag data lainya Anda dapat meng
 
 ## Unique posts
 
-Buat tampilan posting yang unik/berbeda-beda di setiap tipe halaman. Untuk membuatnya sangat mudah, cukup tempatkan kode posting yang berbeda pada masing-masing bagian berikut:
+Tampilan posting yang unik/berbeda-beda di setiap tipe halaman. Untuk membuatnya sangat mudah, cukup tempatkan kode posting yang berbeda pada masing-masing bagian berikut:
 
 #### Homepage
 
@@ -118,9 +118,9 @@ Tampilan posting untuk halaman dengan URL `https://example.blogspot.com/search`.
 <b:include name='includable-id'/>
 {% endhighlight %}
 
-*Includes* di bawah ini adalah untuk memudahkan dalam menampilkan data dan informasi posting seperti penulis, tanggal, jumlah komentar, label, dan yang lainnya. Nama *includes* selalu dimulai dengan `include-*`.
+*Includes* di bawah ini adalah untuk memudahkan dalam menampilkan data dan informasi posting, seperti penulis, tanggal, jumlah komentar, label, dan lainnya. Nama *includes* selalu dimulai dengan `include-*`.
 
-Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini berhubungan dengan opsi posting [ <a href="javascript:;" data-toggle="modal" data-target=".image-post-options">lihat gambar</a> ]. Untuk mengetahui bagian opsinya samakan nomor pada tabel di bawah dengan nomor pada gambar.
+Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini berhubungan dengan opsi posting, <a href="javascript:;" data-toggle="modal" data-target=".image-post-options">lihat gambar</a>. Untuk mengetahui bagian opsinya, samakan nomor pada tabel di bawah dengan nomor pada gambar.
 
 <table class="table table-bordered table-responsive table-includes">
   <tbody>
@@ -152,7 +152,7 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
   <tbody>
     <tr class="bg-faded">
       <th class="text-nowrap text-right" scope="row">#2</th>
-      <td><strong>Penulis</strong> <br>Untuk menambahkan nama penulis.</td>
+      <td><strong>Penulis</strong> <br>Untuk menampilkan nama penulis.</td>
     </tr>
     <tr class="bg-faded">
       <th class="text-nowrap text-right" scope="row">Includable</th>
@@ -177,7 +177,7 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
   <tbody>
     <tr>
       <th class="text-nowrap text-right" scope="row">#3</th>
-      <td><strong>Tanggal dan waktu</strong> <br>Untuk menambahkan tanggal dan/atau waktu diterbitkannya posting.</td>
+      <td><strong>Tanggal dan waktu</strong> <br>Untuk menampilkan tanggal dan/atau waktu diterbitkannya posting.</td>
     </tr>
     <tr>
       <th class="text-nowrap text-right" scope="row">Includable</th>
@@ -202,7 +202,7 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
   <tbody>
     <tr class="bg-faded">
       <th class="text-nowrap text-right" scope="row">#4</th>
-      <td><strong>Jumlah komentar</strong> <br>Untuk menambahkan jumlah komentar.</td>
+      <td><strong>Jumlah komentar</strong> <br>Untuk menampilkan jumlah komentar.</td>
     </tr>
     <tr class="bg-faded">
       <th class="text-nowrap text-right" scope="row">Includable</th>
@@ -252,7 +252,7 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
   <tbody>
     <tr class="bg-faded">
       <th class="text-nowrap text-right" scope="row">#6</th>
-      <td><strong>Daftar label</strong> <br>Untuk menambahkan daftar label.</td>
+      <td><strong>Daftar label</strong> <br>Untuk menampilkan daftar label.</td>
     </tr>
     <tr class="bg-faded">
       <th class="text-nowrap text-right" scope="row">Includable</th>
@@ -377,7 +377,7 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
   <tbody>
     <tr>
       <th class="text-nowrap text-right" scope="row">#11</th>
-      <td><strong>Lokasi</strong> <br>Untuk menambahkan informasi lokasi diterbitkannya posting.</td>
+      <td><strong>Lokasi</strong> <br>Untuk menampilkan informasi lokasi diterbitkannya posting.</td>
     </tr>
     <tr>
       <th class="text-nowrap text-right" scope="row">Includable</th>
@@ -427,7 +427,7 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
   <tbody>
     <tr>
       <th class="text-nowrap text-right" scope="row">#13</th>
-      <td><strong>Thumbnail</strong> <br>Untuk menambahkan gambar posting.</td>
+      <td><strong>Thumbnail</strong> <br>Untuk menampilkan gambar/thumbnail posting.</td>
     </tr>
     <tr>
       <th class="text-nowrap text-right" scope="row">Includable</th>
@@ -443,14 +443,14 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
     </tr>
     <tr>
       <th class="text-nowrap text-right" scope="row">Catatan</th>
-      <td>Akan mengambil gambar pertama. Jika tidak tersedia akan menampilkan gambar keterangan bahwa gambar tidak tersedia, lihat di bagian <em>includable</em>.</td>
+      <td>Akan mengambil gambar pertama. Jika gambar tidak tersedia, akan menampilkan gambar keterangan bahwa gambar tidak tersedia, lihat di bagian <em>includable</em>.</td>
     </tr>
   </tbody>
 
   <tbody>
     <tr class="bg-faded">
       <th class="text-nowrap text-right" scope="row">#14</th>
-      <td><strong>Ringkasan posting</strong> <br>Untuk menambahkan ringkasan posting.</td>
+      <td><strong>Ringkasan posting</strong> <br>Untuk menampilkan ringkasan posting.</td>
     </tr>
     <tr class="bg-faded">
       <th class="text-nowrap text-right" scope="row">Includable</th>
@@ -466,7 +466,7 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
     </tr>
     <tr class="bg-faded">
       <th class="text-nowrap text-right" scope="row">Catatan</th>
-      <td>Alternatif untuk membuat ringkasan posting menggunakan JavaScript. Kode ini tetap menampilkan posting sesuai aslinya, hanya saja dipotong menggunakan JavaScript. Panjang ringkasan posting dapat berbeda-beda di setiap tipe halaman, atur dengan cara mengubah nilai variabel <code>summary</code> (lihat di bagian <em>includable</em>).</td>
+      <td>Alternatif untuk membuat ringkasan posting menggunakan JavaScript. Kode ini tetap menampilkan posting sesuai aslinya, hanya saja dipotong menggunakan JavaScript. Panjang ringkasan posting dapat berbeda-beda di setiap tipe halaman, atur dengan cara mengubah nilai variabel <code>summary</code>, lihat di bagian <em>includable</em>.</td>
     </tr>
   </tbody>
 
@@ -517,7 +517,7 @@ Perhatikan ketika menggunakan *includes* yang berhubungan dengan <a href="javasc
 
 <!-- Benar -->
 <b:if cond='data:top.showAuthor'>
-  <ul>
+  <ul><!-- `ul` akan menghilang ketika opsi penulis tidak dicentang -->
     <li>
       <b:include name='include-author'/>
     </li>
@@ -567,7 +567,7 @@ Perhatikan ketika menggunakan *includes* yang berhubungan dengan <a href="javasc
 
 <!-- Benar (gunakan operator logika `or`) -->
 <b:if cond='data:top.showAuthor or data:top.showTimestamp'>
-  <ul>
+  <ul><!-- `ul` akan menghilang ketika opsi penulis dan tanggal tidak dicentang -->
     <b:if cond='data:top.showAuthor'>
       <li>
         <b:include name='include-author'/>

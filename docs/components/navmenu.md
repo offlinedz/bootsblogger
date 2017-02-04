@@ -1,11 +1,11 @@
 ---
 layout: docs
 title: Navmenu
-description: Navmenu sederhana dengan dukungan `fixed to left` dan `fixed to right`, kemudahan mengatur warna, dan dukungan konten lainnya.
+description: Navmenu sederhana, dengan dukungan fixed to left dan fixed to right, kemudahan mengatur warna, dan dukungan konten lainnya.
 group: components
 ---
 
-Navmenu sederhana dengan dukungan *fixed to left* dan *fixed to right*, kemudahan mengatur warna, dan dukungan konten lainnya.
+Navmenu sederhana, dengan dukungan *fixed to left* dan *fixed to right*, kemudahan mengatur warna, dan dukungan konten lainnya.
 
 ## Contents
 
@@ -14,7 +14,7 @@ Navmenu sederhana dengan dukungan *fixed to left* dan *fixed to right*, kemudaha
 
 ## Basic example
 
-Gunakan `.navmenu` untuk membungkus konten dan tambahkan kelas [skema warna](#color-schemes).
+Gunakan `.navmenu` untuk membungkus konten, dan tambahkan kelas [skema warna](#color-schemes).
 
 {% example html %}
 <nav class="navmenu navmenu-light bg-faded">
@@ -66,7 +66,7 @@ Gunakan `.navmenu` untuk membungkus konten dan tambahkan kelas [skema warna](#co
 
 ## Color schemes
 
-Untuk mengubah warna navmenu sangatlah mudah, gunakan `.navmenu-light` atau `.navmenu-inverse` untuk menyesuaikan warna teks dengan latar belakang yang terang atau gelap. Untuk warna latar belakang dapat menggunakan kelas utilitas atau dengan menambahkan `background-color`.
+Untuk mengubah warna navmenu sangatlah mudah, gunakan `.navmenu-light` atau `.navmenu-inverse` untuk menyesuaikan warna teks dengan latar belakang yang terang atau gelap. Untuk menentukan warna latar belakang dapat menggunakan [kelas utilitas warna]({{ site.baseurl }}/utilities/colors/#background-colors) atau dengan menambahkan `background-color`.
 
 {% example html %}
 <nav class="navmenu navmenu-light bg-faded">

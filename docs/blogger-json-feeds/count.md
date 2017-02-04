@@ -1,15 +1,13 @@
 ---
 layout: docs
 title: Count
-description: Untuk menghitung jumlah posting dan komentar.
+description: Untuk menghitung jumlah posting atau komentar.
 group: blogger-json-feeds
 ---
 
-Untuk menghitung jumlah posting dan komentar.
+Untuk menghitung jumlah posting atau komentar.
 
-## Function name
-
-Nama fungsi `count`.
+Nama fungsi: `count`.
 
 ## Examples
 
@@ -34,7 +32,7 @@ Nama fungsi `count`.
 ### Jumlah komentar dari posting tertentu
 
 {% example html %}
-<p>Jumlah komentar dari posting dengan judul "More custom template flexibility" ID "6241485945632143555" = <script src="https://blogger.googleblog.com/feeds/6241485945632143555/comments/summary?max-results=0&amp;alt=json-in-script&amp;callback=count"></script></p>
+<p>Jumlah komentar dari posting dengan judul: More custom template flexibility, ID: <code>6241485945632143555</code> = <script src="https://blogger.googleblog.com/feeds/6241485945632143555/comments/summary?max-results=0&amp;alt=json-in-script&amp;callback=count"></script></p>
 {% endexample %}
 
-**Catatan:** sekarang blog resmi Blogger menggunakan sistem komentar Google+, jadi ini hanya berfungsi jika komentar ditulis dalam sistem komentar bawaan Blogger.
+**Catatan:** blog resmi Blogger sudah tidak menggunakan sistem komentar bawaan Blogger/blogspot, mereka menggunakan sistem komentar Google+. Artinya, ini hanya berfungsi jika komentar ditulis dalam sistem komentar bawaan Blogger.

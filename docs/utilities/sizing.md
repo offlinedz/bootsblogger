@@ -1,11 +1,11 @@
 ---
 layout: docs
 title: Sizing
-description: Kelas-kelas untuk mengatur lebar suatu element dengan dukungan responsif.
+description: Kelas-kelas untuk mengatur lebar suatu element, dengan dukungan responsif.
 group: utilities
 ---
 
-Kelas-kelas untuk mengatur lebar suatu element dengan dukungan responsif.
+Kelas-kelas untuk mengatur lebar suatu element, dengan dukungan responsif.
 
 ## Options
 
@@ -26,7 +26,7 @@ Kelas-kelas untuk mengatur lebar suatu element dengan dukungan responsif.
 
 ## Example
 
-Coba ubah ukuran *browser* Anda untuk melihat perubahannya.
+Ubah ukuran layar *browser* Anda untuk melihat perubahannya.
 
 <div class="bd-example bg-inverse">
   <div class="bg-faded text-gray p-1 mb-1 w-25 w-sm-50 w-md-75 w-lg-100">

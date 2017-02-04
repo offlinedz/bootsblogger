@@ -9,11 +9,13 @@ Menampilkan daftar label dari data JSON menggunakan `<select>`.
 
 ## Config
 
+Nama fungsi: `labelsSelect`.
+
 {% highlight html %}
 <script>
 var config = {
   postsPerPage: 10,
-  badge: true/false,
+  badge: true|false,
   text: '-- Select category --',
   classes: {
     select: 'custom-select'
@@ -22,13 +24,9 @@ var config = {
 </script>
 {% endhighlight %}
 
-## Function name
-
-Nama fungsi `labelsSelect`.
+**Catatan:** jika `badge: true`, dan Anda mempunyai banyak label, kecepatan memuat halaman mungkin akan berkurang.
 
 ## Example
-
-**Catatan:** jika `badge: true` dan Anda mempunyai banyak label, kecepatan memuat halaman mungkin akan berkurang.
 
 {% example html %}
 <script>
