@@ -11,17 +11,6 @@ function labelsSelect(json) {
   var category = feed.category
   var scriptTag = 'script'
 
-  /* Config
-  var config = {
-    postsPerPage: 10,
-    badge: true/false,
-    text: '-- Select category --',
-    classes: {
-      select: 'custom-select'
-    }
-  }
-  */
-
   document.write('<select class="' + config.classes.select + '" onchange="if (this.value) window.location.href=this.value">')
   document.write('<option value="" selected>' + config.text + '</option>')
   if (config.badge === true) {

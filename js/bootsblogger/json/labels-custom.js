@@ -11,18 +11,6 @@ function labelsCustom(json) {
   var category = feed.category
   var scriptTag = 'script'
 
-  /* Config
-  var config = {
-    postsPerPage: 10,
-    badge: true/false,
-    classes: {
-      base: 'Base class',
-      item: 'Item class',
-      badge: 'badge badge-default badge-pill'
-    }
-  }
-  */
-
   document.write('<div class="' + config.classes.base + '">')
   if (config.badge === true) {
     for (var i = 0, ien = category.length; i < ien; ++i) {
