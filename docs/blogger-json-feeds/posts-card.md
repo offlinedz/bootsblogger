@@ -62,7 +62,7 @@ var config = {
     active: true|false,
     placement: 'top|bottom',
     size: '512',
-    none: 'https:||placehold.it|512|eee|777?text=NO+IMAGE+AVAILABLE'
+    none: 'https://placehold.it/512/eee/777?text=NO+IMAGE+AVAILABLE'
   },
   group: {
     active: true|false
@@ -121,11 +121,11 @@ var config = {
     }
   },
   date: {
-    active: false,
-    placement: '',
+    active: true,
+    placement: 'footer',
     before: '',
     after: '',
-    monthNames: []
+    monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
   },
   numComments: {
     active: false,
