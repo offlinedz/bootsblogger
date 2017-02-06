@@ -26,7 +26,6 @@ function postsCard(json) {
 
   // Card decks' start
   if (config.deck.active === true) {
-    html += '<div class="card-deck-wrapper">'
     html += '<div class="card-deck">'
   }
 
@@ -260,7 +259,6 @@ function postsCard(json) {
 
   // Card decks' end
   if (config.deck.active === true) {
-    html += '</div>'
     html += '</div>'
   }
 
