@@ -14,7 +14,7 @@
     "blogspot"
   ],
   "homepage": "https://bootsblogger.github.io",
-  "author": "Igoy Nawamreh (@igoynawamreh)",
+  "author": "Igoy Nawamreh",
   "scripts": {
     "test": "grunt test"
   },
