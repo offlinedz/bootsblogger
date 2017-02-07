@@ -1,11 +1,11 @@
 ---
 layout: docs
 title: Posts - cards
-description: Menampilkan data JSON—posting dan halaman statis menggunakan komponen Bootstrap cards.
+description: Menampilkan data JSON posting dan halaman statis menggunakan komponen Bootstrap cards.
 group: blogger-json-feeds
 ---
 
-Menampilkan data JSON—posting dan halaman statis menggunakan komponen [Bootstrap cards](https://v4-alpha.getbootstrap.com/components/card/).
+Menampilkan data JSON posting dan halaman statis menggunakan komponen [Bootstrap cards](https://v4-alpha.getbootstrap.com/components/card/).
 
 ## Config
 

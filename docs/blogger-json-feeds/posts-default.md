@@ -1,11 +1,11 @@
 ---
 layout: docs
 title: Posts - default
-description: Menampilkan data JSON—posting dan halaman statis menggunakan komponen posting.
+description: Menampilkan data JSON posting dan halaman statis menggunakan komponen posting.
 group: blogger-json-feeds
 ---
 
-Menampilkan data JSON—posting dan halaman statis menggunakan komponen [posting]({{ site.baseurl }}/components/posts/).
+Menampilkan data JSON posting dan halaman statis menggunakan komponen [posting]({{ site.baseurl }}/components/posts/).
 
 ## Config
 

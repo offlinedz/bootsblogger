@@ -1,11 +1,11 @@
 ---
 layout: docs
 title: Count
-description: Untuk menghitung jumlah posting atau komentar.
+description: Untuk menghitung jumlah posting dan komentar.
 group: blogger-json-feeds
 ---
 
-Untuk menghitung jumlah posting atau komentar.
+Untuk menghitung jumlah posting dan komentar.
 
 Nama fungsi: `count`.
 
