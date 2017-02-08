@@ -95,7 +95,7 @@
 
     <!-- WIDGET 1
     ================================================== -->
-    <div class='widget-1' id='widget-1'>
+    <div class='widget-1 mt-5' id='widget-1'>
       <div class='container'>
         <b:section class='wg-box wg-box-white wg-md-4 wg-sm-6' id='widget-1-section'></b:section>
       </div>
