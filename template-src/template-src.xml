@@ -86,7 +86,7 @@
         </main><!-- /.blog-main -->
 
         <!-- Sidebar -->
-        <aside class='blog-sidebar col-md-3 blogger-col-4' id='blog-sidebar'>
+        <aside class='blog-sidebar col-md-3 blogger-col-4 mt-5 mt-md-0' id='blog-sidebar'>
           <b:section class='wg-box wg-box-faded wg-md-12 wg-sm-6' id='sidebar-section'></b:section>
         </aside><!-- /.blog-sidebar -->
       </div><!-- /.row -->
