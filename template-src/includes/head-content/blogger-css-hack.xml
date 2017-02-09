@@ -1,6 +1,6 @@
 <!-- Remove Blogger's default CSS -->
 <!-- And create grid system for Blogger layout. -->
-&lt;style type=&quot;text/css&quot;&gt;
+&lt;style&gt;
 &lt;!--/*<b:skin><![CDATA[
 
 ul, ol, hr { display: none; }

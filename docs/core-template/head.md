@@ -329,7 +329,7 @@ Blogger memiliki CSS bawaan, yaitu `*-css_bundle_v2.css`, yang digunakan untuk w
 Bundel CSS tersebut dihilangkan dengan menggunakan metode hack sederhana, yaitu dengan kode di bawah ini:
 
 {% highlight html %}
-&lt;style type=&quot;text/css&quot;&gt;
+&lt;style&gt;
 &lt;!--/*<b:skin><![CDATA[
 
 */]]></b:skin>
@@ -344,7 +344,7 @@ Pada tulisan di atas ini, kita sudah membahas tentang membuang CSS bawaan Blogge
 **Catatan:** CSS ini tidak akan mempengaruhi template, hanya bekerja pada halaman Blogger.
 
 {% highlight html %}
-&lt;style type=&quot;text/css&quot;&gt;
+&lt;style&gt;
 &lt;!--/*<b:skin><![CDATA[
 
 ul, ol, hr { display: none; }

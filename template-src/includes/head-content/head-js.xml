@@ -8,7 +8,6 @@ function loadStyleSheet(src){
     var stylesheet = document.createElement(&#39;link&#39;)
     stylesheet.href = src
     stylesheet.rel = &#39;stylesheet&#39;
-    stylesheet.type = &#39;text/css&#39;
     document.head.appendChild(stylesheet)
   }
 }
