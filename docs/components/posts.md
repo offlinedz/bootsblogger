@@ -17,7 +17,7 @@ Sebelum Anda membaca dokumentasi ini, pastikan Anda sudah membaca dokumentasi [w
 
 ## Basic example
 
-Gunakan `.post` sebagai kelas utama, dan di dalamnya bungkus konten seperti judul, tubuh posting, atau konten lainnya dengan `.post-content`.
+Bungkus semua konten dengan `.post`, bungkus konten seperti judul (`.post-title`), tubuh posting, dan konten lainnya dengan `.post-content`.
 
 <div class="bd-example">
   <div class="post">
@@ -160,16 +160,14 @@ Gunakan `.post-meta`, dan tempatkan di dalam `.post-content`. Untuk membuat list
 
 ## Thumbnails
 
-Anda dapat membuat posting dengan thumbnail dalam enam variasi, yaitu:
+Anda dapat menampilkan posting dengan thumbnail dalam enam variasi, yaitu:
 
 - `.post-img-only` : hanya thumbnail.
-- `.post-img-top` : thumbnail berada di atas tubuh posting.
-- `.post-img-bottom` : thumbnail berada di bawah tubuh posting.
-- `.post-img-left` : thumbnail berada di sebelah kiri dan tubuh posting berada di sebelah kanan.
-- `.post-img-right` : thumbnail berada di sebelah kanan dan tubuh posting berada di sebelah kiri.
-- `.post-img-overlay` : thumbnail berada di belakang tubuh posting dengan efek transparan.
-
-Thumbnail horizontal hanya bekerja pada perangkat kecil ke atas (&ge;576px).
+- `.post-img-top` : thumbnail berada di atas konten posting.
+- `.post-img-bottom` : thumbnail berada di bawah konten posting.
+- `.post-img-left` : thumbnail berada di sebelah kiri konten posting.
+- `.post-img-right` : thumbnail berada di sebelah kanan konten posting.
+- `.post-img-overlay` : thumbnail berada di belakang konten posting dengan efek transparan.
 
 **Catatan:** perhatikan penempatan antara thumbnail dan konten (`.post-img-*` dan `.post-content`).
 
@@ -276,13 +274,105 @@ Gunakan `.post-img-bottom`.
 </b:loop>
 {% endhighlight %}
 
-### Left image
+### Horizontal thumbnail (left and right image)
 
-Gunakan `.post-img-left`, dan bungkus thumbnail dan konten dengan `.post-horizontal`.
+Menampilkan thumbnail dan konten secara horizontal.
+
+#### Wrapper
+
+Kelas pembungkus untuk thumbnail (`.post-img-left` atau `.post-img-right`) dan konten (`.post-content`).
+
+<table class="table table-bordered table-striped table-responsive">
+  <thead>
+    <tr>
+      <th></th>
+      <th class="text-center">
+        Extra small<br>
+        <small>0</small>
+      </th>
+      <th class="text-center">
+        Small<br>
+        <small>&ge;576px</small>
+      </th>
+      <th class="text-center">
+        Medium<br>
+        <small>&ge;768px</small>
+      </th>
+      <th class="text-center">
+        Large<br>
+        <small>&ge;992px</small>
+      </th>
+      <th class="text-center">
+        Extra large<br>
+        <small>&ge;1200px</small>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th class="text-nowrap" scope="row">Behavior</th>
+      <td>Horizontal at all times</td>
+      <td colspan="4">Collapsed to start, horizontal above breakpoints</td>
+    </tr>
+    <tr>
+      <th class="text-nowrap" scope="row">Class name</th>
+      <td><code>.post-horizontal</code></td>
+      <td><code>.post-horizontal-sm</code></td>
+      <td><code>.post-horizontal-md</code></td>
+      <td><code>.post-horizontal-lg</code></td>
+      <td><code>.post-horizontal-xl</code></td>
+    </tr>
+  </tbody>
+</table>
+
+#### Sizing
+
+Thumbnail horizontal membutuhkan penggunaan kelas untuk mengatur lebar thumbnail dan konten, format kelasnya adalah `.thumbnail-{size}` untuk `xs` dan `.thumbnail-{breakpoint}-{size}` untuk `sm`, `md`, `lg`, dan `xl`.
+
+`{Size}`:
+
+- `1` - thumbnail width `10%`, content width `90%`.
+- `2` - thumbnail width `20%`, content width `80%`.
+- `3` - thumbnail width `30%`, content width `70%`.
+- `4` - thumbnail width `40%`, content width `60%`.
+- `5` - thumbnail width `50%`, content width `50%`.
+
+Usage:
+
+{% highlight html %}
+<!-- For `xs` -->
+<div class="post-horizontal thumbnail-{size}">...</div>
+<!-- or -->
+<div class="post-horizontal thumbnail-{size} thumbnail-sm-{size} thumbnail-md-{size} thumbnail-lg-{size} thumbnail-xl-{size}">...</div>
+
+<!-- For `sm` -->
+<div class="post-horizontal-sm thumbnail-sm-{size}">...</div>
+<!-- or -->
+<div class="post-horizontal-sm thumbnail-sm-{size} thumbnail-md-{size} thumbnail-lg-{size} thumbnail-xl-{size}">...</div>
+
+<!-- For `md` -->
+<div class="post-horizontal-md thumbnail-md-{size}">...</div>
+<!-- or -->
+<div class="post-horizontal-md thumbnail-md-{size} thumbnail-lg-{size} thumbnail-xl-{size}">...</div>
+
+<!-- For `lg` -->
+<div class="post-horizontal-lg thumbnail-lg-{size}">...</div>
+<!-- or -->
+<div class="post-horizontal-lg thumbnail-lg-{size} thumbnail-xl-{size}">...</div>
+
+<!-- For `xl` -->
+<div class="post-horizontal-xl thumbnail-xl-{size}">...</div>
+{% endhighlight %}
+
+#### Example
+
+Berikut adalah contoh thumbnail horizontal.
+
+##### Left image
 
 <div class="bd-example">
   <div class="post">
-    <div class="post-horizontal">
+    <div class="post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3">
       <div class="post-img-left">
         <a href="#"><img data-src="holder.js/100px180/?auto=yes&text=Image" alt="Image"/></a>
       </div>
@@ -298,7 +388,7 @@ Gunakan `.post-img-left`, dan bungkus thumbnail dan konten dengan `.post-horizon
 {% highlight html %}
 <b:loop values='data:posts' var='post'>
   <article class='post' expr:id='"post-" + data:post.id' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
-    <div class='post-horizontal'>
+    <div class='post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3'>
       <!-- Image -->
       <div class='post-img-left' itemprop='thumbnail'>
         <b:include name='include-thumbnail'/>
@@ -315,18 +405,16 @@ Gunakan `.post-img-left`, dan bungkus thumbnail dan konten dengan `.post-horizon
         <p itemprop='articleBody description'><data:post.snippet/></p>
         <p><a class='btn btn-primary' expr:href='data:post.url' itemprop='url' role='button'>Read more <span class='sr-only'>read more <data:post.id/></span></a></p>
       </div><!-- /.post-content -->
-    </div><!-- /.post-horizontal -->
+    </div><!-- /.post-horizontal-sm -->
   </article><!-- /.post -->
 </b:loop>
 {% endhighlight %}
 
-### Right image
-
-Gunakan `.post-img-right`, dan bungkus thumbnail dan konten dengan `.post-horizontal`.
+##### Right image
 
 <div class="bd-example">
   <div class="post">
-    <div class="post-horizontal">
+    <div class="post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3">
       <div class="post-content">
         <h2 class="post-title"><a class="post-title-link" href="#">Post title</a></h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
@@ -342,7 +430,7 @@ Gunakan `.post-img-right`, dan bungkus thumbnail dan konten dengan `.post-horizo
 {% highlight html %}
 <b:loop values='data:posts' var='post'>
   <article class='post' expr:id='"post-" + data:post.id' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
-    <div class='post-horizontal'>
+    <div class='post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3'>
       <!-- Content -->
       <div class='post-content'>
         <!-- Post title -->
@@ -359,7 +447,7 @@ Gunakan `.post-img-right`, dan bungkus thumbnail dan konten dengan `.post-horizo
       <div class='post-img-right' itemprop='thumbnail'>
         <b:include name='include-thumbnail'/>
       </div><!-- /.post-img-right -->
-    </div><!-- /.post-horizontal -->
+    </div><!-- /.post-horizontal-sm -->
   </article><!-- /.post -->
 </b:loop>
 {% endhighlight %}
@@ -707,7 +795,7 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header pada posisi pertama 
         <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
       </ul>
     </div>
-    <div class="post-horizontal">
+    <div class="post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3">
       <div class="post-img-left">
         <a href="#"><img data-src="holder.js/100px180/?auto=yes&text=Image" alt="Image"/></a>
       </div>
@@ -749,7 +837,7 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header pada posisi pertama 
         </ul>
       </header><!-- /.post-header -->
     </b:if>
-    <div class='post-horizontal'>
+    <div class='post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3'>
       <!-- Image -->
       <div class='post-img-left' itemprop='thumbnail'>
         <b:include name='include-thumbnail'/>
@@ -766,7 +854,7 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header pada posisi pertama 
         <p itemprop='articleBody description'><data:post.snippet/></p>
         <p><a class='btn btn-primary' expr:href='data:post.url' itemprop='url' role='button'>Read more <span class='sr-only'>read more <data:post.id/></span></a></p>
       </div><!-- /.post-content -->
-    </div><!-- /.post-horizontal -->
+    </div><!-- /.post-horizontal-sm -->
     <!-- Footer -->
     <b:if cond='data:top.showPostLabels'>
       <footer class='post-footer'>
@@ -788,7 +876,7 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header pada posisi pertama 
         <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
       </ul>
     </div>
-    <div class="post-horizontal">
+    <div class="post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3">
       <div class="post-content">
         <h2 class="post-title"><a class="post-title-link" href="#">Post title</a></h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
@@ -830,7 +918,7 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header pada posisi pertama 
         </ul>
       </header><!-- /.post-header -->
     </b:if>
-    <div class='post-horizontal'>
+    <div class='post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3'>
       <!-- Content -->
       <div class='post-content'>
         <!-- Post title -->
@@ -847,7 +935,7 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header pada posisi pertama 
       <div class='post-img-right' itemprop='thumbnail'>
         <b:include name='include-thumbnail'/>
       </div><!-- /.post-img-right -->
-    </div><!-- /.post-horizontal -->
+    </div><!-- /.post-horizontal-sm -->
     <!-- Footer -->
     <b:if cond='data:top.showPostLabels'>
       <footer class='post-footer'>
@@ -1047,7 +1135,7 @@ Tambahkan `.post-img-cover` ke `.post-img-{only, top, bottom, left, right, overl
 
 <div class="bd-example">
   <div class="post">
-    <div class="post-horizontal">
+    <div class="post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3">
       <div class="post-img-left post-img-cover holderjs" style="min-height: 150px;" data-background-src="?holder.js/500x250/?text=Image"></div>
       <div class="post-content">
         <h2 class="post-title"><a class="post-title-link" href="#">Post title</a></h2>
@@ -1061,7 +1149,7 @@ Tambahkan `.post-img-cover` ke `.post-img-{only, top, bottom, left, right, overl
 {% highlight html %}
 <b:loop values='data:posts' var='post'>
   <article class='post' expr:id='"post-" + data:post.id' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
-    <div class='post-horizontal'>
+    <div class='post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3'>
       <!-- Image -->
       <b:if cond='data:post.firstImageUrl'>
         <div class='post-img-left post-img-cover' expr:style='&quot;min-height: 150px; background-image: url(&quot; + data:post.firstImageUrl + &quot;);&quot;'></div><!-- /.post-img-left -->
@@ -1081,7 +1169,7 @@ Tambahkan `.post-img-cover` ke `.post-img-{only, top, bottom, left, right, overl
         <p itemprop='articleBody description'><data:post.snippet/></p>
         <p><a class='btn btn-primary' expr:href='data:post.url' itemprop='url' role='button'>Read more <span class='sr-only'>read more <data:post.id/></span></a></p>
       </div><!-- /.post-content -->
-    </div><!-- /.post-horizontal -->
+    </div><!-- /.post-horizontal-sm -->
   </article><!-- /.post -->
 </b:loop>
 {% endhighlight %}
@@ -1090,7 +1178,7 @@ Tambahkan `.post-img-cover` ke `.post-img-{only, top, bottom, left, right, overl
 
 <div class="bd-example">
   <div class="post">
-    <div class="post-horizontal">
+    <div class="post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3">
       <div class="post-content">
         <h2 class="post-title"><a class="post-title-link" href="#">Post title</a></h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
@@ -1104,7 +1192,7 @@ Tambahkan `.post-img-cover` ke `.post-img-{only, top, bottom, left, right, overl
 {% highlight html %}
 <b:loop values='data:posts' var='post'>
   <article class='post' expr:id='"post-" + data:post.id' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
-    <div class='post-horizontal'>
+    <div class='post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3'>
       <!-- Content -->
       <div class='post-content'>
         <!-- Post title -->
@@ -1124,7 +1212,7 @@ Tambahkan `.post-img-cover` ke `.post-img-{only, top, bottom, left, right, overl
         <!-- Default no image -->
         <div class='post-img-right post-img-cover' style='min-height: 150px; background-image: url(https://placehold.it/600x400/eee/777?text=NO+IMAGE+AVAILABLE);'></div><!-- /.post-img-right -->
       </b:if>
-    </div><!-- /.post-horizontal -->
+    </div><!-- /.post-horizontal-sm -->
   </article><!-- /.post -->
 </b:loop>
 {% endhighlight %}
@@ -1277,7 +1365,7 @@ Tambahkan `.post-img-gutter` ke `.post-img-{only, top, bottom, left, right, over
 
 <div class="bd-example">
   <div class="post">
-    <div class="post-horizontal">
+    <div class="post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3">
       <div class="post-img-left post-img-gutter">
         <a href="#"><img data-src="holder.js/100px180/?auto=yes&text=Image" alt="Image"/></a>
       </div>
@@ -1293,7 +1381,7 @@ Tambahkan `.post-img-gutter` ke `.post-img-{only, top, bottom, left, right, over
 {% highlight html %}
 <b:loop values='data:posts' var='post'>
   <article class='post' expr:id='"post-" + data:post.id' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
-    <div class='post-horizontal'>
+    <div class='post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3'>
       <!-- Image -->
       <div class='post-img-left post-img-gutter' itemprop='thumbnail'>
         <b:include name='include-thumbnail'/>
@@ -1310,7 +1398,7 @@ Tambahkan `.post-img-gutter` ke `.post-img-{only, top, bottom, left, right, over
         <p itemprop='articleBody description'><data:post.snippet/></p>
         <p><a class='btn btn-primary' expr:href='data:post.url' itemprop='url' role='button'>Read more <span class='sr-only'>read more <data:post.id/></span></a></p>
       </div><!-- /.post-content -->
-    </div><!-- /.post-horizontal -->
+    </div><!-- /.post-horizontal-sm -->
   </article><!-- /.post -->
 </b:loop>
 {% endhighlight %}
@@ -1319,7 +1407,7 @@ Tambahkan `.post-img-gutter` ke `.post-img-{only, top, bottom, left, right, over
 
 <div class="bd-example">
   <div class="post">
-    <div class="post-horizontal">
+    <div class="post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3">
       <div class="post-content">
         <h2 class="post-title"><a class="post-title-link" href="#">Post title</a></h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
@@ -1335,7 +1423,7 @@ Tambahkan `.post-img-gutter` ke `.post-img-{only, top, bottom, left, right, over
 {% highlight html %}
 <b:loop values='data:posts' var='post'>
   <article class='post' expr:id='"post-" + data:post.id' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
-    <div class='post-horizontal'>
+    <div class='post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3'>
       <!-- Content -->
       <div class='post-content'>
         <!-- Post title -->
@@ -1352,7 +1440,7 @@ Tambahkan `.post-img-gutter` ke `.post-img-{only, top, bottom, left, right, over
       <div class='post-img-right post-img-gutter' itemprop='thumbnail'>
         <b:include name='include-thumbnail'/>
       </div><!-- /.post-img-right -->
-    </div><!-- /.post-horizontal -->
+    </div><!-- /.post-horizontal-sm -->
   </article><!-- /.post -->
 </b:loop>
 {% endhighlight %}
@@ -1585,7 +1673,7 @@ Bungkus semua `.post` dengan `.post-group`.
 <div class="bd-example">
   <div class="post-group">
     <div class="post">
-      <div class="post-horizontal">
+      <div class="post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3">
         <div class="post-img-left">
           <a href="#"><img data-src="holder.js/100px180/?auto=yes&text=Image" alt="Image"/></a>
         </div>
@@ -1597,7 +1685,7 @@ Bungkus semua `.post` dengan `.post-group`.
       </div>
     </div>
     <div class="post">
-      <div class="post-horizontal">
+      <div class="post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3">
         <div class="post-img-left">
           <a href="#"><img data-src="holder.js/100px180/?auto=yes&text=Image" alt="Image"/></a>
         </div>
@@ -1615,7 +1703,7 @@ Bungkus semua `.post` dengan `.post-group`.
 <div class='post-group'>
   <b:loop values='data:posts' var='post'>
     <article class='post' expr:id='"post-" + data:post.id' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
-      <div class='post-horizontal'>
+      <div class='post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3'>
         <!-- Image -->
         <div class='post-img-left' itemprop='thumbnail'>
           <b:include name='include-thumbnail'/>
@@ -1632,7 +1720,7 @@ Bungkus semua `.post` dengan `.post-group`.
           <p itemprop='articleBody description'><data:post.snippet/></p>
           <p><a class='btn btn-primary' expr:href='data:post.url' itemprop='url' role='button'>Read more <span class='sr-only'>read more <data:post.id/></span></a></p>
         </div><!-- /.post-content -->
-      </div><!-- /.post-horizontal -->
+      </div><!-- /.post-horizontal-sm -->
     </article><!-- /.post -->
   </b:loop>
 </div>
@@ -1643,7 +1731,7 @@ Bungkus semua `.post` dengan `.post-group`.
 <div class="bd-example">
   <div class="post-group">
     <div class="post">
-      <div class="post-horizontal">
+      <div class="post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3">
         <div class="post-content">
           <h2 class="post-title"><a class="post-title-link" href="#">Post title</a></h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
@@ -1655,7 +1743,7 @@ Bungkus semua `.post` dengan `.post-group`.
       </div>
     </div>
     <div class="post">
-      <div class="post-horizontal">
+      <div class="post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3">
         <div class="post-content">
           <h2 class="post-title"><a class="post-title-link" href="#">Post title</a></h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
@@ -1673,7 +1761,7 @@ Bungkus semua `.post` dengan `.post-group`.
 <div class='post-group'>
   <b:loop values='data:posts' var='post'>
     <article class='post' expr:id='"post-" + data:post.id' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
-      <div class='post-horizontal'>
+      <div class='post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3'>
         <!-- Content -->
         <div class='post-content'>
           <!-- Post title -->
@@ -1690,7 +1778,7 @@ Bungkus semua `.post` dengan `.post-group`.
         <div class='post-img-right' itemprop='thumbnail'>
           <b:include name='include-thumbnail'/>
         </div><!-- /.post-img-right -->
-      </div><!-- /.post-horizontal -->
+      </div><!-- /.post-horizontal-sm -->
     </article><!-- /.post -->
   </b:loop>
 </div>
@@ -1756,7 +1844,7 @@ Bungkus semua `.post` dengan `.post-group`.
 
 ## Background variants
 
-Komponen posting tersedia dengan beragam varian warna, tentukan warna dengan mengubah `background-color` dan `border-color`, Anda dapat menggunakan kelas-kelas yang tersedia, atau menentukan warna sesuai dengan yang Anda inginkan dengan menggunakan *custom styles*. Latar belakang yang berwarna gelap membutuhkan penggunaan `.post-inverse` untuk mengubah teks menjadi berwarna putih.
+Komponen posting tersedia dengan beragam varian warna, tentukan warna dengan mengubah `background-color` dan `border-color`, Anda dapat menggunakan kelas-kelas yang tersedia, atau menggunakan *custom styles*. Latar belakang yang berwarna gelap membutuhkan penggunaan `.post-inverse` untuk mengubah teks menjadi berwarna putih.
 
 <div class="bd-example">
   <div class="post post-faded">
@@ -2575,7 +2663,7 @@ Gunakan `.post-content` lebih dari satu untuk membungkus setiap konten. Di bawah
       <h2 class="post-title"><a class="post-title-link" href="#">Post title</a></h2>
     </div>
     <div class="post-content">
-      <div class="post-horizontal">
+      <div class="post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3">
         <div class="post-img-left">
           <a href="#"><img data-src="holder.js/100px180/?auto=yes&text=Image" alt="Image"/></a>
         </div>
@@ -2603,7 +2691,7 @@ Gunakan `.post-content` lebih dari satu untuk membungkus setiap konten. Di bawah
     </div>
     <!-- Content horizontal -->
     <div class='post-content'>
-      <div class='post-horizontal'>
+      <div class='post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3'>
         <!-- Image -->
         <div class='post-img-left' itemprop='thumbnail'>
           <b:include name='include-thumbnail'/>
@@ -2613,7 +2701,7 @@ Gunakan `.post-content` lebih dari satu untuk membungkus setiap konten. Di bawah
           <!-- Post snippet -->
           <p itemprop='articleBody description'><data:post.snippet/></p>
         </div><!-- /.post-content -->
-      </div><!-- /.post-horizontal -->
+      </div><!-- /.post-horizontal-sm -->
     </div>
     <!-- Content button -->
     <div class='post-content'>
@@ -2629,7 +2717,7 @@ Gunakan `.post-content` lebih dari satu untuk membungkus setiap konten. Di bawah
       <h2 class="post-title"><a class="post-title-link" href="#">Post title</a></h2>
     </div>
     <div class="post-content">
-      <div class="post-horizontal">
+      <div class="post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3">
         <div class="post-content">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
         </div>
@@ -2657,7 +2745,7 @@ Gunakan `.post-content` lebih dari satu untuk membungkus setiap konten. Di bawah
     </div>
     <!-- Content horizontal -->
     <div class='post-content'>
-      <div class='post-horizontal'>
+      <div class='post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3'>
         <!-- Content -->
         <div class='post-content'>
           <!-- Post snippet -->
@@ -2667,7 +2755,7 @@ Gunakan `.post-content` lebih dari satu untuk membungkus setiap konten. Di bawah
         <div class='post-img-right' itemprop='thumbnail'>
           <b:include name='include-thumbnail'/>
         </div><!-- /.post-img-right -->
-      </div><!-- /.post-horizontal -->
+      </div><!-- /.post-horizontal-sm -->
     </div>
     <!-- Content button -->
     <div class='post-content'>
@@ -2744,7 +2832,7 @@ Hanya pada gambar:
 
 <div class="bd-example">
   <div class="post">
-    <div class="post-horizontal">
+    <div class="post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3">
       <div class="post-img-left post-img-cover post-clickable holderjs" style="min-height: 150px;" data-background-src="?holder.js/500x250/?text=Image" data-url="#post-clickable"></div>
       <div class="post-content">
         <h2 class="post-title"><a class="post-title-link" href="#">Post title</a></h2>
@@ -2758,7 +2846,7 @@ Hanya pada gambar:
 {% highlight html %}
 <b:loop values='data:posts' var='post'>
   <article class='post' expr:id='"post-" + data:post.id' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
-    <div class='post-horizontal'>
+    <div class='post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3'>
       <!-- Image -->
       <b:if cond='data:post.firstImageUrl'>
         <div class='post-img-left post-img-cover post-clickable' expr:data-url='data:post.url' expr:style='&quot;min-height: 150px; background-image: url(&quot; + data:post.firstImageUrl + &quot;);&quot;'></div><!-- /.post-img-left -->
@@ -2778,7 +2866,7 @@ Hanya pada gambar:
         <p itemprop='articleBody description'><data:post.snippet/></p>
         <p><a class='btn btn-primary' expr:href='data:post.url' itemprop='url' role='button'>Read more <span class='sr-only'>read more <data:post.id/></span></a></p>
       </div><!-- /.post-content -->
-    </div><!-- /.post-horizontal -->
+    </div><!-- /.post-horizontal-sm -->
   </article><!-- /.post -->
 </b:loop>
 {% endhighlight %}
@@ -2787,7 +2875,7 @@ Hanya pada gambar:
 
 <div class="bd-example">
   <div class="post">
-    <div class="post-horizontal">
+    <div class="post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3">
       <div class="post-img-left post-img-gutter post-orange">
         <a href="#"><img data-src="holder.js/100px180/?auto=yes&text=Image" alt="Image"/></a>
       </div>
@@ -2802,7 +2890,7 @@ Hanya pada gambar:
 
 {% highlight html %}
 <div class="post">
-  <div class="post-horizontal">
+  <div class="post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3">
     <div class="post-img-left post-img-gutter post-orange">
       ...
     </div>
@@ -2815,7 +2903,7 @@ Hanya pada gambar:
 
 <div class="bd-example">
   <div class="post">
-    <div class="post-horizontal">
+    <div class="post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3">
       <div class="post-img-left post-img-gutter">
         <a href="#"><img data-src="holder.js/100px180/?auto=yes&text=Image" alt="Image"/></a>
       </div>
@@ -2830,7 +2918,7 @@ Hanya pada gambar:
 
 {% highlight html %}
 <div class="post">
-  <div class="post-horizontal">
+  <div class="post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3">
     <div class="post-img-left post-img-gutter">
       ...
     </div>
@@ -2843,7 +2931,7 @@ Hanya pada gambar:
 
 <div class="bd-example">
   <div class="post">
-    <div class="post-horizontal">
+    <div class="post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3">
       <div class="post-img-left post-img-gutter post-gray">
         <a href="#"><img data-src="holder.js/100px180/?auto=yes&text=Image" alt="Image"/></a>
       </div>
@@ -2858,7 +2946,7 @@ Hanya pada gambar:
 
 {% highlight html %}
 <div class="post">
-  <div class="post-horizontal">
+  <div class="post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3">
     <div class="post-img-left post-img-gutter post-gray">
       ...
     </div>
@@ -2871,7 +2959,7 @@ Hanya pada gambar:
 
 <div class="bd-example">
   <div class="post post-inverse post-red">
-    <div class="post-horizontal">
+    <div class="post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3">
       <div class="post-img-left post-img-gutter post-gray">
         <a href="#"><img data-src="holder.js/100px180/?auto=yes&text=Image" alt="Image"/></a>
       </div>
@@ -2886,7 +2974,7 @@ Hanya pada gambar:
 
 {% highlight html %}
 <div class="post post-inverse post-red">
-  <div class="post-horizontal">
+  <div class="post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3">
     <div class="post-img-left post-img-gutter post-gray">
       ...
     </div>

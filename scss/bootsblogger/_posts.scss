@@ -1,3 +1,5 @@
+// scss-lint:disable SelectorDepth
+
 //
 // Base class
 //
@@ -65,10 +67,11 @@
 
 
 //
-// Thumbnail
+// Thumbnails
 //
 
 // Images
+
 .post-img-only,
 .post-img-top,
 .post-img-bottom,
@@ -86,6 +89,7 @@
 }
 
 // Image only
+
 .post-img-only {
   &:first-child {
     &,
@@ -104,6 +108,7 @@
 }
 
 // Top image
+
 .post-img-top:first-child {
   &,
   > img,
@@ -113,6 +118,7 @@
 }
 
 // Bottom image
+
 .post-img-bottom:last-child {
   &,
   > img,
@@ -121,113 +127,213 @@
   }
 }
 
-// Thumbnail horizontal
+// Horizontal thumbnail (left and right image)
 
-@include media-breakpoint-up(sm) {
-  .post-horizontal {
-    display: flex;
-    flex-flow: row wrap;
+.post-horizontal {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    $min: breakpoint-min($breakpoint, $grid-breakpoints);
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
-    // Left image
-    > .post-img-left {
-      flex-basis: 30%;
-      flex-grow: 1;
-      flex-shrink: 0;
-    }
-    > .post-content:last-child {
-      flex-basis: 70%;
-      flex-grow: 2;
-      flex-shrink: 0;
-    }
+    &#{$infix} {
+      @include media-breakpoint-up($breakpoint) {
+        display: flex;
+        flex-flow: row wrap;
 
-    // Right image
-    > .post-img-right {
-      flex-basis: 30%;
-      flex-grow: 2;
-      flex-shrink: 0;
-    }
-    > .post-content:first-child {
-      flex-basis: 70%;
-      flex-grow: 1;
-      flex-shrink: 0;
-    }
+        // Left image
+        > .post-img-left {
+          flex-grow: 1;
+          flex-shrink: 0;
+        }
+        > .post-content:last-child {
+          flex-grow: 2;
+          flex-shrink: 0;
+        }
 
-    // Image border radius
-    > .post-img-left,
-    > .post-img-right {
-      > img,
-      a > img {
-        @include border-radius($post-border-radius);
+        // Right image
+        > .post-img-right {
+          flex-grow: 2;
+          flex-shrink: 0;
+        }
+        > .post-content:first-child {
+          flex-grow: 1;
+          flex-shrink: 0;
+        }
+
+        // Image border radius
+        > .post-img-left,
+        > .post-img-right {
+          > img,
+          a > img {
+            @include border-radius($post-border-radius);
+          }
+        }
+
+        // Padding
+        > .post-img-left {
+          padding: $post-content-padding 0 $post-content-padding $post-content-padding;
+        }
+        > .post-img-right {
+          padding: $post-content-padding $post-content-padding $post-content-padding 0;
+        }
+
+        // Border radius
+        &:first-child {
+          // Left image
+          > .post-img-left {
+            @include border-top-left-radius($post-border-radius-inner);
+          }
+          > .post-content:last-child {
+            @include border-top-right-radius($post-border-radius-inner);
+          }
+          // Right image
+          > .post-img-right {
+            @include border-top-right-radius($post-border-radius-inner);
+          }
+          > .post-content:first-child {
+            @include border-top-left-radius($post-border-radius-inner);
+          }
+        }
+        &:last-child {
+          // Left image
+          > .post-img-left {
+            @include border-bottom-left-radius($post-border-radius-inner);
+          }
+          > .post-content:last-child {
+            @include border-bottom-right-radius($post-border-radius-inner);
+          }
+          // Right image
+          > .post-img-right {
+            @include border-bottom-right-radius($post-border-radius-inner);
+          }
+          > .post-content:first-child {
+            @include border-bottom-left-radius($post-border-radius-inner);
+          }
+        }
       }
-    }
 
-    // Padding
-    > .post-img-left {
-      padding: $post-content-padding 0 $post-content-padding $post-content-padding;
-    }
-    > .post-img-right {
-      padding: $post-content-padding $post-content-padding $post-content-padding 0;
-    }
-  }
-
-  // Border radius
-  .post-horizontal:first-child {
-    // Left image
-    > .post-img-left {
-      @include border-top-left-radius($post-border-radius-inner);
-    }
-    > .post-content:last-child {
-      @include border-top-right-radius($post-border-radius-inner);
-    }
-    // Right image
-    > .post-img-right {
-      @include border-top-right-radius($post-border-radius-inner);
-    }
-    > .post-content:first-child {
-      @include border-top-left-radius($post-border-radius-inner);
-    }
-  }
-  .post-horizontal:last-child {
-    // Left image
-    > .post-img-left {
-      @include border-bottom-left-radius($post-border-radius-inner);
-    }
-    > .post-content:last-child {
-      @include border-bottom-right-radius($post-border-radius-inner);
-    }
-    // Right image
-    > .post-img-right {
-      @include border-bottom-right-radius($post-border-radius-inner);
-    }
-    > .post-content:first-child {
-      @include border-bottom-left-radius($post-border-radius-inner);
+      @if $min {
+        @media (max-width: $min - 1px) {
+          &:first-child {
+            // Left image
+            > .post-img-left,
+            > .post-img-left > img,
+            > .post-img-left a > img {
+              @include border-top-radius($post-border-radius-inner);
+            }
+            // Right image content
+            > .post-content:first-child {
+              @include border-top-radius($post-border-radius-inner);
+            }
+          }
+          &:last-child {
+            // Right image
+            > .post-img-right,
+            > .post-img-right > img,
+            > .post-img-right a > img {
+              @include border-bottom-radius($post-border-radius-inner);
+            }
+            // Left image content
+            > .post-content:last-child {
+              @include border-bottom-radius($post-border-radius-inner);
+            }
+          }
+        }
+      }
     }
   }
 }
 
-@include media-breakpoint-down(xs) {
-  .post-horizontal:first-child {
-    // Left image
-    > .post-img-left,
-    > .post-img-left > img,
-    > .post-img-left a > img {
-      @include border-top-radius($post-border-radius-inner);
-    }
-    // Right image content
-    > .post-content:first-child {
-      @include border-top-radius($post-border-radius-inner);
-    }
-  }
-  .post-horizontal:last-child {
-    // Right image
-    > .post-img-right,
-    > .post-img-right > img,
-    > .post-img-right a > img {
-      @include border-bottom-radius($post-border-radius-inner);
-    }
-    // Left image content
-    > .post-content:last-child {
-      @include border-bottom-radius($post-border-radius-inner);
+// Sizing
+.thumbnail {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    @include media-breakpoint-up($breakpoint) {
+      &#{$infix}-1 {
+        // Left image
+        > .post-img-left {
+          flex-basis: 10%;
+        }
+        > .post-content:last-child {
+          flex-basis: 90%;
+        }
+
+        // Right image
+        > .post-img-right {
+          flex-basis: 10%;
+        }
+        > .post-content:first-child {
+          flex-basis: 90%;
+        }
+      }
+      &#{$infix}-2 {
+        // Left image
+        > .post-img-left {
+          flex-basis: 20%;
+        }
+        > .post-content:last-child {
+          flex-basis: 80%;
+        }
+
+        // Right image
+        > .post-img-right {
+          flex-basis: 20%;
+        }
+        > .post-content:first-child {
+          flex-basis: 80%;
+        }
+      }
+      &#{$infix}-3 {
+        // Left image
+        > .post-img-left {
+          flex-basis: 30%;
+        }
+        > .post-content:last-child {
+          flex-basis: 70%;
+        }
+
+        // Right image
+        > .post-img-right {
+          flex-basis: 30%;
+        }
+        > .post-content:first-child {
+          flex-basis: 70%;
+        }
+      }
+      &#{$infix}-4 {
+        // Left image
+        > .post-img-left {
+          flex-basis: 40%;
+        }
+        > .post-content:last-child {
+          flex-basis: 60%;
+        }
+
+        // Right image
+        > .post-img-right {
+          flex-basis: 40%;
+        }
+        > .post-content:first-child {
+          flex-basis: 60%;
+        }
+      }
+      &#{$infix}-5 {
+        // Left image
+        > .post-img-left {
+          flex-basis: 50%;
+        }
+        > .post-content:last-child {
+          flex-basis: 50%;
+        }
+
+        // Right image
+        > .post-img-right {
+          flex-basis: 50%;
+        }
+        > .post-content:first-child {
+          flex-basis: 50%;
+        }
+      }
     }
   }
 }
@@ -290,38 +396,50 @@
   a > img {
     @include border-radius($post-border-radius !important);
   }
+}
 
-  // Top and bottom image
-  &.post-img-top {
-    border-bottom: 1px solid rgba(0,0,0,.125);
-  }
-  &.post-img-bottom {
-    border-top: 1px solid rgba(0,0,0,.125);
-  }
+// Top and bottom image
+.post-img-gutter.post-img-top {
+  border-bottom: 1px solid rgba(0,0,0,.125);
+}
+.post-img-gutter.post-img-bottom {
+  border-top: 1px solid rgba(0,0,0,.125);
+}
 
-  // Left and right image
-  @include media-breakpoint-up(sm) {
-    &.post-img-left {
-      border-right: 1px solid rgba(0,0,0,.125);
-    }
-    &.post-img-right {
-      border-left: 1px solid rgba(0,0,0,.125);
-    }
-  }
-  @include media-breakpoint-down(xs) {
-    &.post-img-left {
-      border-bottom: 1px solid rgba(0,0,0,.125);
-    }
-    &.post-img-right {
-      border-top: 1px solid rgba(0,0,0,.125);
-    }
-  }
+// Left and right image
+.post-horizontal {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    $min: breakpoint-min($breakpoint, $grid-breakpoints);
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
-  // With image overlays
-  &.post-img-overlay + .post-content {
-    margin: $post-content-padding;
-    @include border-radius($post-border-radius);
+    &#{$infix} {
+      @include media-breakpoint-up($breakpoint) {
+        .post-img-gutter.post-img-left {
+          border-right: 1px solid rgba(0,0,0,.125);
+        }
+        .post-img-gutter.post-img-right {
+          border-left: 1px solid rgba(0,0,0,.125);
+        }
+      }
+
+      @if $min {
+        @media (max-width: $min - 1px) {
+          .post-img-gutter.post-img-left {
+            border-bottom: 1px solid rgba(0,0,0,.125);
+          }
+          .post-img-gutter.post-img-right {
+            border-top: 1px solid rgba(0,0,0,.125);
+          }
+        }
+      }
+    }
   }
+}
+
+// Image overlays
+.post-img-gutter.post-img-overlay + .post-content {
+  margin: $post-content-padding;
+  @include border-radius($post-border-radius);
 }
 
 // Image cover
@@ -380,16 +498,27 @@
   padding-bottom: $post-content-padding;
   padding-left: $post-content-padding;
 }
-@include media-breakpoint-down(xs) {
-  .post-group .post-horizontal > .post-img-left {
-    padding-top: $post-content-padding;
-    padding-right: $post-content-padding;
-    padding-bottom: $post-content-padding;
-  }
-  .post-group .post-horizontal > .post-img-right {
-    padding-right: $post-content-padding;
-    padding-bottom: $post-content-padding;
-    padding-left: $post-content-padding;
+.post-group .post-horizontal {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    $min: breakpoint-min($breakpoint, $grid-breakpoints);
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    &#{$infix} {
+      @if $min {
+        @media (max-width: $min - 1px) {
+          > .post-img-left {
+            padding-top: $post-content-padding;
+            padding-right: $post-content-padding;
+            padding-bottom: $post-content-padding;
+          }
+          > .post-img-right {
+            padding-right: $post-content-padding;
+            padding-bottom: $post-content-padding;
+            padding-left: $post-content-padding;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -596,42 +725,54 @@
 .post-content .post-horizontal > .post-content {
   @include border-radius(0 !important);
 }
-@include media-breakpoint-up(sm) {
-  // Left image
-  .post-content .post-horizontal > .post-img-left {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    padding-left: 0 !important;
-  }
-  .post-content .post-horizontal > .post-content:last-child {
-    padding-top: 0 !important;
-    padding-right: 0 !important;
-    padding-bottom: 0 !important;
-  }
-  // Right image
-  .post-content .post-horizontal > .post-img-right {
-    padding-top: 0 !important;
-    padding-right: 0 !important;
-    padding-bottom: 0 !important;
-  }
-  .post-content .post-horizontal > .post-content:first-child {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    padding-left: 0 !important;
-  }
-}
-@include media-breakpoint-down(xs) {
-  // Left image content
-  .post-content .post-horizontal > .post-content:last-child {
-    padding-right: 0 !important;
-    padding-bottom: 0 !important;
-    padding-left: 0 !important;
-  }
-  // Right image content
-  .post-content .post-horizontal > .post-content:first-child {
-    padding-top: 0 !important;
-    padding-right: 0 !important;
-    padding-left: 0 !important;
+.post-content .post-horizontal {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    $min: breakpoint-min($breakpoint, $grid-breakpoints);
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    &#{$infix} {
+      @include media-breakpoint-up($breakpoint) {
+        // Left image
+        > .post-img-left {
+          padding-top: 0 !important;
+          padding-bottom: 0 !important;
+          padding-left: 0 !important;
+        }
+        > .post-content:last-child {
+          padding-top: 0 !important;
+          padding-right: 0 !important;
+          padding-bottom: 0 !important;
+        }
+        // Right image
+        > .post-img-right {
+          padding-top: 0 !important;
+          padding-right: 0 !important;
+          padding-bottom: 0 !important;
+        }
+        > .post-content:first-child {
+          padding-top: 0 !important;
+          padding-bottom: 0 !important;
+          padding-left: 0 !important;
+        }
+      }
+
+      @if $min {
+        @media (max-width: $min - 1px) {
+          // Left image content
+          > .post-content:last-child {
+            padding-right: 0 !important;
+            padding-bottom: 0 !important;
+            padding-left: 0 !important;
+          }
+          // Right image content
+          > .post-content:first-child {
+            padding-top: 0 !important;
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -792,3 +933,5 @@
   background-color: transparent;
   border-color: $post-black-bg;
 }
+
+// scss-lint:enable SelectorDepth
