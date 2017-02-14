@@ -85,7 +85,8 @@ var config = {
   classes: {
     post: 'Add class to .post',
     image: 'Add class to .post-img-*',
-    content: 'Add class to .post-content'
+    content: 'Add class to .post-content',
+    horizontalThumbnail: 'post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3'
   }
 }
 </script>
@@ -172,7 +173,8 @@ var config = {
   classes: {
     post: '',
     image: '',
-    content: ''
+    content: '',
+    horizontalThumbnail: ''
   }
 }
 </script>
