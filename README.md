@@ -34,7 +34,7 @@ Our Gruntfile includes the following commands and tasks:
 | `grunt dist` | `grunt dist` creates the `/dist` and `/template-src/includes/assets/<bootstrap and bootsblogger>` directory with compiled files. **Uses [Sass (grunt-contrib-sass)](https://github.com/gruntjs/grunt-contrib-sass), [Autoprefixer](https://github.com/postcss/autoprefixer), [UglifyJS (grunt-contrib-uglify)](https://github.com/gruntjs/grunt-contrib-uglify), and [bake (grunt-bake)](https://github.com/MathiasPaumgarten/grunt-bake).** |
 | `grunt test` | Runs [scss-lint (grunt-scss-lint)](https://github.com/ahmednuaman/grunt-scss-lint), [JSCS (grunt-jscs)](https://github.com/jscs-dev/grunt-jscs), [HTML validation (grunt-html)](https://github.com/jzaefferer/grunt-html), and [HTML validation (grunt-htmlhint)](https://github.com/yaniswang/grunt-htmlhint) (used for CI). |
 | `grunt docs` | Builds and tests CSS, JavaScript, and other assets which are used when running the documentation locally via `jekyll serve`. |
-| `grunt watch` | This is a convenience method for watching—template, Sass, and JavaScript—files and automatically building them whenever you save. |
+| `grunt watch` | This is a convenience method for watching Sass, JavaScript, and template files and automatically building them whenever you save. |
 
 
 ## Documentation
