@@ -296,7 +296,7 @@ function postsDefault(json) {
 
     // Left image
     if (config.thumbnail.active === true && config.thumbnail.placement === 'left') {
-      html += '<div class="post-horizontal">'
+      html += '<div class="' + config.classes.horizontalThumbnail + '">'
       if (config.thumbnail.cover.active === true) {
         html += '<div class="post-img-left post-img-cover ' + config.classes.image + '" style="min-height: ' + config.thumbnail.cover.minheight + 'px; background-image: url(' + postThumbnailURL + ');"></div>'
       } else {
@@ -310,7 +310,7 @@ function postsDefault(json) {
 
     // Right image
     if (config.thumbnail.active === true && config.thumbnail.placement === 'right') {
-      html += '<div class="post-horizontal">'
+      html += '<div class="' + config.classes.horizontalThumbnail + '">'
       html += content
       if (config.thumbnail.cover.active === true) {
         html += '<div class="post-img-right post-img-cover ' + config.classes.image + '" style="min-height: ' + config.thumbnail.cover.minheight + 'px; background-image: url(' + postThumbnailURL + ');"></div>'
