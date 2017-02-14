@@ -1,6 +1,6 @@
 <b:loop values='data:posts' var='post'>
   <article class='post' expr:id='"post-" + data:post.id' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
-    <div class='post-horizontal'>
+    <div class='post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3'>
       <!-- Content -->
       <div class='post-content'>
         <!-- Post title -->
