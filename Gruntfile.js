@@ -29,6 +29,23 @@ module.exports = function(grunt) {
       docs: ['docs/assets/bootstrap', 'docs/assets/bootsblogger']
     },
 
+    scsslint: {
+      options: {
+        bundleExec: true,
+        config: 'scss/.scss-lint.yml',
+        reporterOutput: null
+      },
+      bootstrap: {
+        src: ['scss/bootstrap/*.scss', '!scss/bootstrap/_normalize.scss']
+      },
+      bootsblogger: {
+        src: ['scss/bootsblogger/*.scss', '!scss/bootsblogger/_gadgets.scss']
+      },
+      docs: {
+        src: ['docs/assets/scss/*.scss', '!docs/assets/scss/docs.scss']
+      }
+    },
+
     sass: {
       options: {
         precision: 6,
@@ -51,23 +68,6 @@ module.exports = function(grunt) {
         files: {
           'docs/assets/css/docs.css': 'docs/assets/scss/docs.scss'
         }
-      }
-    },
-
-    scsslint: {
-      options: {
-        bundleExec: true,
-        config: 'scss/.scss-lint.yml',
-        reporterOutput: null
-      },
-      bootstrap: {
-        src: ['scss/bootstrap/*.scss', '!scss/bootstrap/_normalize.scss']
-      },
-      bootsblogger: {
-        src: ['scss/bootsblogger/*.scss', '!scss/bootsblogger/_gadgets.scss']
-      },
-      docs: {
-        src: ['docs/assets/scss/*.scss', '!docs/assets/scss/docs.scss']
       }
     },
 
@@ -256,20 +256,6 @@ module.exports = function(grunt) {
       }
     },
 
-    jekyll: {
-      options: {
-        bundleExec: true,
-        config: '_config.yml',
-        incremental: false
-      },
-      docs: {},
-      github: {
-        options: {
-          raw: 'github: true'
-        }
-      }
-    },
-
     htmllint: {
       options: {
         ignore: [
@@ -301,21 +287,17 @@ module.exports = function(grunt) {
       }
     },
 
-    copy: {
-      bootstrapJs: {
-        expand: true,
-        cwd: 'js/bootstrap/',
-        src: 'js/*',
-        dest: 'template-src/includes/assets/bootstrap/'
+    jekyll: {
+      options: {
+        bundleExec: true,
+        config: '_config.yml',
+        incremental: false
       },
-      docs: {
-        expand: true,
-        cwd: 'template-src/includes/assets/',
-        src: [
-          'bootstrap/**/*',
-          'bootsblogger/**/*'
-        ],
-        dest: 'docs/assets/'
+      docs: {},
+      github: {
+        options: {
+          raw: 'github: true'
+        }
       }
     },
 
@@ -331,6 +313,24 @@ module.exports = function(grunt) {
           remote: 'git@github.com:bootsblogger/bootsblogger.github.io.git',
           branch: 'master'
         }
+      }
+    },
+
+    copy: {
+      bootstrapJs: {
+        expand: true,
+        cwd: 'js/bootstrap/',
+        src: 'js/*',
+        dest: 'template-src/includes/assets/bootstrap/'
+      },
+      docs: {
+        expand: true,
+        cwd: 'template-src/includes/assets/',
+        src: [
+          'bootstrap/**/*',
+          'bootsblogger/**/*'
+        ],
+        dest: 'docs/assets/'
       }
     },
 
