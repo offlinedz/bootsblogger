@@ -6,11 +6,6 @@
     <!--(bake /includes/head-content/meta-tags-required.xml)-->
 
 
-    <!-- BLOGGER CSS HACK
-    ================================================= -->
-    <!--(bake /includes/head-content/blogger-css-hack.xml)-->
-
-
     <!-- CUSTOM ALL-HEAD-CONTENT
     ================================================= -->
     <!--(bake /includes/head-content/custom-all-head-content.xml)-->
@@ -34,6 +29,11 @@
     <!-- FACEBOOK OPEN GRAPH
     ========================= -->
     <!--(bake /includes/head-content/meta-tags-facebook.xml)-->
+
+
+    <!-- BLOGGER CSS HACK
+    ================================================= -->
+    <!--(bake /includes/head-content/blogger-css-hack.xml)-->
 
 
     <!-- CSS
