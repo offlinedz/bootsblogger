@@ -141,7 +141,7 @@ Gunakan `.wg-box`, diikuti dengan `.wg-box-{color}`.
 
 ## Outline variants
 
-Ubah `.wg-box-{color}` dengan `.wg-box-outline-{color}`.
+Ubah `.wg-box-{color}` menjadi `.wg-box-outline-{color}`.
 
 <div class="bd-example bg-inverse">
   <div class="wg-box wg-box-outline-faded">
@@ -256,7 +256,7 @@ Ubah `.wg-box-{color}` dengan `.wg-box-outline-{color}`.
 
 ## Collapsible widget
 
-Kelas opsional: tambahkan `.open-all` atau `.open-first` untuk membuat konten widget terlihat terlebih dahulu. `.open-all` hanya bekerja pada `.wg-collapse`.
+Membutuhkan [Bootstrap collapse](https://v4-alpha.getbootstrap.com/components/collapse/).
 
 ### Basic example
 
@@ -319,3 +319,7 @@ Gunakan `.wg-accordion`.
 {% highlight html %}
 <b:section class='wg-box wg-box-orange wg-accordion' id='sectionId'></b:section>
 {% endhighlight %}
+
+### Optional classes
+
+Tambahkan `.open-all` atau `.open-first` ke `.wg-collapse` atau `.wg-accordion` untuk membuat konten widget terlihat saat pertama kali. `.open-all` hanya bekerja untuk `.wg-collapse`.

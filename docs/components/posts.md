@@ -1,14 +1,14 @@
 ---
 layout: docs
 title: Posts
-description: Bootsblogger menyediakan komponen untuk tampilan posting, dengan beragam tampilan, warna, dan fitur.
+description: Komponen untuk tampilan posting, dengan beragam tampilan, warna, dan fitur.
 group: components
 redirect_from: "/components/"
 ---
 
-Bootsblogger menyediakan komponen untuk tampilan posting, dengan beragam tampilan, warna, dan fitur.
+Komponen untuk tampilan posting, dengan beragam tampilan, warna, dan fitur.
 
-Sebelum Anda membaca dokumentasi ini, pastikan Anda sudah membaca dokumentasi [widget blog posts]({{ site.baseurl }}/core-template/blog-posts/), karena dalam menampilkan data postingnya menggunakan fungsi-fungsi yang ada dalam widget tersebut. 
+Sebelum Anda membaca dokumentasi ini, pastikan Anda sudah membaca dokumentasi [widget blog posting]({{ site.baseurl }}/core-template/blog-posts/), karena dalam menampilkan data postingnya menggunakan fungsi-fungsi yang ada di dalam widget tersebut. 
 
 ## Contents
 
@@ -105,8 +105,8 @@ Gunakan `.post-meta`, dan tempatkan di dalam `.post-content`. Untuk membuat list
       <h2 class="post-title"><a class="post-title-link" href="#">Post title</a></h2>
       <div class="post-meta">
         <ul class="post-meta-list">
-          <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-          <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
+          <li><i class="fa fa-user"></i> <span>by</span> <a href="#">Bootsblogger</a></li>
+          <li><i class="fa fa-clock-o"></i> <span>at</span> <time datetime="2017-01-01T00:00:00+00:00">Jan 01, 2017</time></li>
           <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
         </ul>
       </div>
@@ -329,7 +329,7 @@ Kelas pembungkus untuk thumbnail (`.post-img-left` atau `.post-img-right`) dan k
 
 Thumbnail horizontal membutuhkan penggunaan kelas untuk mengatur lebar thumbnail dan konten, format kelasnya adalah `.thumbnail-{size}` untuk `xs` dan `.thumbnail-{breakpoint}-{size}` untuk `sm`, `md`, `lg`, dan `xl`.
 
-`{Size}`:
+`{size}`:
 
 - `1` - thumbnail width `10%`, content width `90%`.
 - `2` - thumbnail width `20%`, content width `80%`.
@@ -454,7 +454,7 @@ Berikut adalah contoh thumbnail horizontal.
 
 ### Image overlays
 
-Gunakan `.post-img-overlay`, dan bungkus thumbnail dan konten dengan `.post-overlay`. Membutuhkan penggunaan `.post-inverse` untuk mengubah teks menjadi berwarna putih.
+Gunakan `.post-img-overlay`, dan bungkus thumbnail dan konten dengan `.post-overlay`. Membutuhkan penggunaan `.post-inverse` untuk mengubah warna teks menjadi berwarna putih.
 
 <div class="bd-example">
   <div class="post post-inverse">
@@ -498,7 +498,7 @@ Gunakan `.post-img-overlay`, dan bungkus thumbnail dan konten dengan `.post-over
 
 ## Header and footer
 
-Gunakan `.post-header` dan `.post-footer`. Tempatkan header pada posisi pertama di dalam `.post` dan footer pada posisi terakhir. Untuk membuat list (daftar) gunakan `.post-header-list` dan `.post-footer-list`.
+Gunakan `.post-header` dan `.post-footer`. Tempatkan header di posisi pertama di dalam `.post` dan footer di posisi terakhir. Untuk membuat list (daftar) gunakan `.post-header-list` dan `.post-footer-list`.
 
 ### Header and footer: basic example
 
@@ -506,8 +506,8 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header pada posisi pertama 
   <div class="post">
     <div class="post-header">
       <ul class="post-header-list">
-        <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-        <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
+        <li><i class="fa fa-user"></i> <span>by</span> <a href="#">Bootsblogger</a></li>
+        <li><i class="fa fa-clock-o"></i> <span>at</span> <time datetime="2017-01-01T00:00:00+00:00">Jan 01, 2017</time></li>
         <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
       </ul>
     </div>
@@ -576,8 +576,8 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header pada posisi pertama 
   <div class="post">
     <div class="post-header">
       <ul class="post-header-list">
-        <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-        <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
+        <li><i class="fa fa-user"></i> <span>by</span> <a href="#">Bootsblogger</a></li>
+        <li><i class="fa fa-clock-o"></i> <span>at</span> <time datetime="2017-01-01T00:00:00+00:00">Jan 01, 2017</time></li>
         <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
       </ul>
     </div>
@@ -636,8 +636,8 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header pada posisi pertama 
   <div class="post">
     <div class="post-header">
       <ul class="post-header-list">
-        <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-        <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
+        <li><i class="fa fa-user"></i> <span>by</span> <a href="#">Bootsblogger</a></li>
+        <li><i class="fa fa-clock-o"></i> <span>at</span> <time datetime="2017-01-01T00:00:00+00:00">Jan 01, 2017</time></li>
         <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
       </ul>
     </div>
@@ -713,8 +713,8 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header pada posisi pertama 
   <div class="post">
     <div class="post-header">
       <ul class="post-header-list">
-        <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-        <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
+        <li><i class="fa fa-user"></i> <span>by</span> <a href="#">Bootsblogger</a></li>
+        <li><i class="fa fa-clock-o"></i> <span>at</span> <time datetime="2017-01-01T00:00:00+00:00">Jan 01, 2017</time></li>
         <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
       </ul>
     </div>
@@ -790,8 +790,8 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header pada posisi pertama 
   <div class="post">
     <div class="post-header">
       <ul class="post-header-list">
-        <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-        <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
+        <li><i class="fa fa-user"></i> <span>by</span> <a href="#">Bootsblogger</a></li>
+        <li><i class="fa fa-clock-o"></i> <span>at</span> <time datetime="2017-01-01T00:00:00+00:00">Jan 01, 2017</time></li>
         <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
       </ul>
     </div>
@@ -871,8 +871,8 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header pada posisi pertama 
   <div class="post">
     <div class="post-header">
       <ul class="post-header-list">
-        <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-        <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
+        <li><i class="fa fa-user"></i> <span>by</span> <a href="#">Bootsblogger</a></li>
+        <li><i class="fa fa-clock-o"></i> <span>at</span> <time datetime="2017-01-01T00:00:00+00:00">Jan 01, 2017</time></li>
         <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
       </ul>
     </div>
@@ -952,8 +952,8 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header pada posisi pertama 
   <div class="post post-inverse">
     <div class="post-header">
       <ul class="post-header-list">
-        <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-        <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
+        <li><i class="fa fa-user"></i> <span>by</span> <a href="#">Bootsblogger</a></li>
+        <li><i class="fa fa-clock-o"></i> <span>at</span> <time datetime="2017-01-01T00:00:00+00:00">Jan 01, 2017</time></li>
         <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
       </ul>
     </div>
@@ -1844,7 +1844,9 @@ Bungkus semua `.post` dengan `.post-group`.
 
 ## Background variants
 
-Komponen posting tersedia dengan beragam varian warna, tentukan warna dengan mengubah `background-color` dan `border-color`, Anda dapat menggunakan kelas-kelas yang tersedia, atau menggunakan *custom styles*. Latar belakang yang berwarna gelap membutuhkan penggunaan `.post-inverse` untuk mengubah teks menjadi berwarna putih.
+Ubah warna posting dengan mengeset `background-color` dan `border-color`, Anda dapat menggunakan kelas-kelas yang tersedia atau menggunakan *custom styles*. Latar belakang yang berwarna gelap membutuhkan penggunaan `.post-inverse` untuk mengubah warna teks menjadi berwarna putih.
+
+Format kelasnya adalah `.post-{color}`.
 
 <div class="bd-example">
   <div class="post post-faded">
@@ -1852,8 +1854,8 @@ Komponen posting tersedia dengan beragam varian warna, tentukan warna dengan men
       <h2 class="post-title"><a class="post-title-link" href="#">Faded</a></h2>
       <div class="post-meta">
         <ul class="post-meta-list">
-          <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-          <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
+          <li><i class="fa fa-user"></i> <span>by</span> <a href="#">Bootsblogger</a></li>
+          <li><i class="fa fa-clock-o"></i> <span>at</span> <time datetime="2017-01-01T00:00:00+00:00">Jan 01, 2017</time></li>
           <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
         </ul>
       </div>
@@ -1865,8 +1867,8 @@ Komponen posting tersedia dengan beragam varian warna, tentukan warna dengan men
       <h2 class="post-title"><a class="post-title-link" href="#">Blue</a></h2>
       <div class="post-meta">
         <ul class="post-meta-list">
-          <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-          <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
+          <li><i class="fa fa-user"></i> <span>by</span> <a href="#">Bootsblogger</a></li>
+          <li><i class="fa fa-clock-o"></i> <span>at</span> <time datetime="2017-01-01T00:00:00+00:00">Jan 01, 2017</time></li>
           <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
         </ul>
       </div>
@@ -1878,8 +1880,8 @@ Komponen posting tersedia dengan beragam varian warna, tentukan warna dengan men
       <h2 class="post-title"><a class="post-title-link" href="#">Green</a></h2>
       <div class="post-meta">
         <ul class="post-meta-list">
-          <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-          <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
+          <li><i class="fa fa-user"></i> <span>by</span> <a href="#">Bootsblogger</a></li>
+          <li><i class="fa fa-clock-o"></i> <span>at</span> <time datetime="2017-01-01T00:00:00+00:00">Jan 01, 2017</time></li>
           <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
         </ul>
       </div>
@@ -1891,8 +1893,8 @@ Komponen posting tersedia dengan beragam varian warna, tentukan warna dengan men
       <h2 class="post-title"><a class="post-title-link" href="#">Teal</a></h2>
       <div class="post-meta">
         <ul class="post-meta-list">
-          <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-          <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
+          <li><i class="fa fa-user"></i> <span>by</span> <a href="#">Bootsblogger</a></li>
+          <li><i class="fa fa-clock-o"></i> <span>at</span> <time datetime="2017-01-01T00:00:00+00:00">Jan 01, 2017</time></li>
           <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
         </ul>
       </div>
@@ -1904,8 +1906,8 @@ Komponen posting tersedia dengan beragam varian warna, tentukan warna dengan men
       <h2 class="post-title"><a class="post-title-link" href="#">Red</a></h2>
       <div class="post-meta">
         <ul class="post-meta-list">
-          <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-          <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
+          <li><i class="fa fa-user"></i> <span>by</span> <a href="#">Bootsblogger</a></li>
+          <li><i class="fa fa-clock-o"></i> <span>at</span> <time datetime="2017-01-01T00:00:00+00:00">Jan 01, 2017</time></li>
           <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
         </ul>
       </div>
@@ -1917,8 +1919,8 @@ Komponen posting tersedia dengan beragam varian warna, tentukan warna dengan men
       <h2 class="post-title"><a class="post-title-link" href="#">Orange</a></h2>
       <div class="post-meta">
         <ul class="post-meta-list">
-          <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-          <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
+          <li><i class="fa fa-user"></i> <span>by</span> <a href="#">Bootsblogger</a></li>
+          <li><i class="fa fa-clock-o"></i> <span>at</span> <time datetime="2017-01-01T00:00:00+00:00">Jan 01, 2017</time></li>
           <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
         </ul>
       </div>
@@ -1930,8 +1932,8 @@ Komponen posting tersedia dengan beragam varian warna, tentukan warna dengan men
       <h2 class="post-title"><a class="post-title-link" href="#">Purple</a></h2>
       <div class="post-meta">
         <ul class="post-meta-list">
-          <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-          <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
+          <li><i class="fa fa-user"></i> <span>by</span> <a href="#">Bootsblogger</a></li>
+          <li><i class="fa fa-clock-o"></i> <span>at</span> <time datetime="2017-01-01T00:00:00+00:00">Jan 01, 2017</time></li>
           <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
         </ul>
       </div>
@@ -1943,8 +1945,8 @@ Komponen posting tersedia dengan beragam varian warna, tentukan warna dengan men
       <h2 class="post-title"><a class="post-title-link" href="#">Yellow</a></h2>
       <div class="post-meta">
         <ul class="post-meta-list">
-          <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-          <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
+          <li><i class="fa fa-user"></i> <span>by</span> <a href="#">Bootsblogger</a></li>
+          <li><i class="fa fa-clock-o"></i> <span>at</span> <time datetime="2017-01-01T00:00:00+00:00">Jan 01, 2017</time></li>
           <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
         </ul>
       </div>
@@ -1956,8 +1958,8 @@ Komponen posting tersedia dengan beragam varian warna, tentukan warna dengan men
       <h2 class="post-title"><a class="post-title-link" href="#">Pink</a></h2>
       <div class="post-meta">
         <ul class="post-meta-list">
-          <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-          <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
+          <li><i class="fa fa-user"></i> <span>by</span> <a href="#">Bootsblogger</a></li>
+          <li><i class="fa fa-clock-o"></i> <span>at</span> <time datetime="2017-01-01T00:00:00+00:00">Jan 01, 2017</time></li>
           <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
         </ul>
       </div>
@@ -1969,8 +1971,8 @@ Komponen posting tersedia dengan beragam varian warna, tentukan warna dengan men
       <h2 class="post-title"><a class="post-title-link" href="#">Gray</a></h2>
       <div class="post-meta">
         <ul class="post-meta-list">
-          <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-          <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
+          <li><i class="fa fa-user"></i> <span>by</span> <a href="#">Bootsblogger</a></li>
+          <li><i class="fa fa-clock-o"></i> <span>at</span> <time datetime="2017-01-01T00:00:00+00:00">Jan 01, 2017</time></li>
           <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
         </ul>
       </div>
@@ -1982,8 +1984,8 @@ Komponen posting tersedia dengan beragam varian warna, tentukan warna dengan men
       <h2 class="post-title"><a class="post-title-link" href="#">Brown</a></h2>
       <div class="post-meta">
         <ul class="post-meta-list">
-          <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-          <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
+          <li><i class="fa fa-user"></i> <span>by</span> <a href="#">Bootsblogger</a></li>
+          <li><i class="fa fa-clock-o"></i> <span>at</span> <time datetime="2017-01-01T00:00:00+00:00">Jan 01, 2017</time></li>
           <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
         </ul>
       </div>
@@ -1995,8 +1997,8 @@ Komponen posting tersedia dengan beragam varian warna, tentukan warna dengan men
       <h2 class="post-title"><a class="post-title-link" href="#">Black</a></h2>
       <div class="post-meta">
         <ul class="post-meta-list">
-          <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-          <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
+          <li><i class="fa fa-user"></i> <span>by</span> <a href="#">Bootsblogger</a></li>
+          <li><i class="fa fa-clock-o"></i> <span>at</span> <time datetime="2017-01-01T00:00:00+00:00">Jan 01, 2017</time></li>
           <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
         </ul>
       </div>
@@ -2008,8 +2010,8 @@ Komponen posting tersedia dengan beragam varian warna, tentukan warna dengan men
       <h2 class="post-title"><a class="post-title-link" href="#">Custom</a></h2>
       <div class="post-meta">
         <ul class="post-meta-list">
-          <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-          <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
+          <li><i class="fa fa-user"></i> <span>by</span> <a href="#">Bootsblogger</a></li>
+          <li><i class="fa fa-clock-o"></i> <span>at</span> <time datetime="2017-01-01T00:00:00+00:00">Jan 01, 2017</time></li>
           <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
         </ul>
       </div>
@@ -2036,7 +2038,7 @@ Komponen posting tersedia dengan beragam varian warna, tentukan warna dengan men
 
 ## Outline variants
 
-Posting berwarna, tetapi bukan pada latar belakang, hanya mengubah `border-color`. Ubah kelas warna posting dengan menambahkan `.post-outline-*`.
+Posting berwarna, tetapi bukan pada latar belakang, hanya mengubah `border-color`. Ubah `.post-{color}` menjadi `.post-outline-{color}`.
 
 <div class="bd-example">
   <div class="post post-outline-faded">
@@ -2139,11 +2141,11 @@ Posting berwarna, tetapi bukan pada latar belakang, hanya mengubah `border-color
 
 Bungkus semua `.post` dengan `.post-columns`.
 
-Hanya bekerja pada perangkat kecil ke atas.
+Hanya bekerja pada perangkat kecil (`sm`) ke atas.
 
-- Pada perangkat sedang ke atas (&ge;768px) akan tampil tiga kolom.
-- Pada perangkat kecil ke atas (&ge;576px) akan tampil dua kolom.
-- Pada perangkat sangat kecil (&lt;576px) hanya tampil satu kolom.
+- Pada perangkat sedang (`md`) ke atas (&ge;768px) akan tampil tiga kolom.
+- Pada perangkat kecil (`sm`) ke atas (&ge;576px) akan tampil dua kolom.
+- Pada perangkat sangat kecil (`xs`) ke bawah (&lt;576px) hanya tampil satu kolom.
 
 Urutan widget dimulai dari atas ke bawah dan dari kiri ke kanan.
 
@@ -2220,7 +2222,7 @@ Urutan widget dimulai dari atas ke bawah dan dari kiri ke kanan.
 </div>
 {% endhighlight %}
 
-## Using grid system
+## Using Bootstrap grid system
 
 Menggunakan [Bootstrap grid system](https://v4-alpha.getbootstrap.com/layout/grid/).
 
@@ -2283,7 +2285,7 @@ Menggunakan [Bootstrap grid system](https://v4-alpha.getbootstrap.com/layout/gri
 
 ## Content block
 
-Gunakan `.post-content` lebih dari satu untuk membungkus setiap konten. Di bawah ini hanya contoh, silakan sesuaikan konten dengan kebutuhan Anda.
+Gunakan `.post-content` lebih dari satu untuk membungkus setiap konten. Lihat beberapa contoh di bawah. Sesuaikan konten dengan kebutuhan Anda.
 
 ### Basic example
 
@@ -2775,8 +2777,8 @@ Tambahkan `.post-clickable` dan `data-url` ke `.post`.
       <h2 class="post-title"><a class="post-title-link" href="#">Post title</a></h2>
       <div class="post-meta">
         <ul class="post-meta-list">
-          <li><i class="fa fa-user"></i> <a href="#">Bootsblogger</a></li>
-          <li><i class="fa fa-clock-o"></i> <time datetime="2016-04-21T13:42:00+07:00">Sep 9, 2015 7:00 PM</time></li>
+          <li><i class="fa fa-user"></i> <span>by</span> <a href="#">Bootsblogger</a></li>
+          <li><i class="fa fa-clock-o"></i> <span>at</span> <time datetime="2017-01-01T00:00:00+00:00">Jan 01, 2017</time></li>
           <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
         </ul>
       </div>
@@ -2828,7 +2830,7 @@ Tambahkan `.post-clickable` dan `data-url` ke `.post`.
 </b:loop>
 {% endhighlight %}
 
-Hanya pada gambar:
+Hanya pada thumbnail:
 
 <div class="bd-example">
   <div class="post">

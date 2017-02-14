@@ -1,11 +1,11 @@
 ---
 layout: docs
 title: Blog posts
-description: Widget blog posts dirancang untuk memudahkan dalam mengelola data posting, seperti untuk menampilkan tanggal, penulis, tentang penulis, jumlah komentar, dan masih banyak lagi. Dan juga dirancang untuk membuat tampilan posting yang unik/berbeda-beda di setiap tipe halaman.
+description: Widget blog posting dirancang untuk memudahkan dalam mengelola data posting, seperti untuk menampilkan tanggal, penulis, tentang penulis, jumlah komentar, dan lainnya. Dan juga dirancang untuk dapat membuat tampilan posting yang unik/berbeda-beda di setiap tipe halaman.
 group: core-template
 ---
 
-Widget *blog posts* dirancang untuk memudahkan dalam mengelola data posting, seperti untuk menampilkan tanggal, penulis, tentang penulis, jumlah komentar, dan masih banyak lagi. Dan juga dirancang untuk membuat tampilan posting yang unik/berbeda-beda di setiap tipe halaman.
+Widget blog posting dirancang untuk memudahkan dalam mengelola data posting, seperti untuk menampilkan tanggal, penulis, tentang penulis, jumlah komentar, dan lainnya. Dan juga dirancang untuk dapat membuat tampilan posting yang unik/berbeda-beda di setiap tipe halaman.
 
 ## Contents
 
@@ -17,8 +17,8 @@ Widget *blog posts* dirancang untuk memudahkan dalam mengelola data posting, sep
 Contoh dasar untuk menampilkan posting.
 
 - Selalu tempatkan kode posting di dalam `b:loop`.
-- Selalu gunakan tag kondisional, seperti `b:if cond='data:post.title'` dan lainya.
-- Selalu gunakan [includes](#includes) yang tersedia.
+- Selalu gunakan tag kondisional, seperti `b:if cond='data:post.title'` dan lainnya.
+- Selalu gunakan [*includes* (`b:include`)](#includes) yang tersedia.
 - Gunakan [Schema](https://schema.org).
 
 {% highlight html %}
@@ -40,7 +40,7 @@ Contoh dasar untuk menampilkan posting.
 
 ## Data tags
 
-Di bawah ini adalah tag data Blogger yang sering digunakan. Untuk tag data lainnya Anda dapat menggunakan [includes](#includes).
+Di bawah ini adalah tag data Blogger yang sering digunakan. Untuk tag data lainnya Anda dapat menggunakan [*includes* (`b:include`)](#includes).
 
 | Kode | Deskripsi |
 | ---- | --------- |
@@ -52,7 +52,7 @@ Di bawah ini adalah tag data Blogger yang sering digunakan. Untuk tag data lainn
 
 ## Unique posts
 
-Tampilan posting yang unik/berbeda-beda di setiap tipe halaman. Untuk membuatnya sangat mudah, cukup tempatkan kode posting yang berbeda pada masing-masing bagian berikut:
+Tampilan posting yang unik/berbeda-beda di setiap tipe halaman. Untuk membuat tampilan posting berbeda-beda di setiap tipe halaman, cukup tempatkan kode posting yang berbeda pada masing-masing bagian berikut:
 
 #### Homepage
 
@@ -64,7 +64,7 @@ Tampilan posting untuk halaman beranda.
 
 #### Item/single page
 
-Tampilan posting untuk halaman posting (item).
+Tampilan posting untuk halaman posting (*item*).
 
 {% highlight html %}
 <b:includable id='post-item' var='post'>...</b:includable>
@@ -112,15 +112,25 @@ Tampilan posting untuk halaman dengan URL `https://example.blogspot.com/search`.
 
 ## Includes
 
-[Includes](https://support.google.com/blogger/answer/46995?hl=en&ref_topic=6321969) sangat berguna ketika kita ingin menggunakan kode yang sama, tanpa harus menulis ulang kode tersebut, cukup panggil bagian yang sudah didefinisikan menggunakan `b:includable` dengan:
+[*Includes* (`b:include`)](https://support.google.com/blogger/answer/46995?hl=en&ref_topic=6321969) sangat berguna untuk membuat bagian-bagian terpisah di dalam widget, yang dapat digunakan di bagian-bagian terpisah lainnya. Contoh, ketika Anda banyak menggunakan potongan kode yang sama, Anda tidak perlu menulis ulang kode tersebut, cukup menyertakan bagian terpisah yang sudah didefinisikan.
+
+Mendefinisikan bagian terpisah:
+
+{% highlight html %}
+<b:includable id='includable-id'>
+  ...
+</b:includable>
+{% endhighlight %}
+
+Menyertakan bagian terpisah yang sudah didefinisikan:
 
 {% highlight html %}
 <b:include name='includable-id'/>
 {% endhighlight %}
 
-*Includes* di bawah ini adalah untuk memudahkan dalam menampilkan data dan informasi posting, seperti penulis, tanggal, jumlah komentar, label, dan lainnya. Nama *includes* selalu dimulai dengan `include-*`.
+Bagian terpisah di dalam widget blog posting ini adalah untuk memudahkan dalam menampilkan data dan informasi posting, seperti tanggal, penulis, tentang penulis, jumlah komentar, dan lainnya. Pendefinisian bagian terpisah di dalam widget blog posting selalu dimulai dengan `include-*`.
 
-Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini berhubungan dengan opsi posting, <a href="javascript:;" data-toggle="modal" data-target=".image-post-options">lihat gambar</a>. Untuk mengetahui bagian opsinya, samakan nomor pada tabel di bawah dengan nomor pada gambar.
+Untuk menyertakan bagian terpisah **#1** sampai **#12** harus menggunakan tag kondisional, karena ini berhubungan dengan opsi posting, <a href="javascript:;" data-toggle="modal" data-target=".image-post-options">lihat gambar</a>. Untuk mengetahui bagian opsinya, samakan nomor pada tabel di bawah dengan nomor pada gambar.
 
 <table class="table table-bordered table-responsive table-includes">
   <tbody>
@@ -133,11 +143,11 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
       <td>None</td>
     </tr>
     <tr>
-      <th class="text-nowrap text-right" scope="row">Penggunaan</th>
+      <th class="text-nowrap text-right" scope="row">Usage</th>
       <td>None</td>
     </tr>
     <tr>
-      <th class="text-nowrap text-right" scope="row">Catatan</th>
+      <th class="text-nowrap text-right" scope="row">Note</th>
       <td>
 {% highlight html %}
 <!-- Gunakan kode di bawah ini -->
@@ -159,7 +169,7 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
       <td>{% highlight html %}<b:includable id='include-author'>...</b:includable>{% endhighlight %}</td>
     </tr>
     <tr class="bg-faded">
-      <th class="text-nowrap text-right" scope="row">Penggunaan</th>
+      <th class="text-nowrap text-right" scope="row">Usage</th>
       <td>
 {% highlight html %}
 <b:if cond='data:top.showAuthor'>
@@ -169,7 +179,7 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
       </td>
     </tr>
     <tr class="bg-faded">
-      <th class="text-nowrap text-right" scope="row">Catatan</th>
+      <th class="text-nowrap text-right" scope="row">Note</th>
       <td>None</td>
     </tr>
   </tbody>
@@ -184,7 +194,7 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
       <td>{% highlight html %}<b:includable id='include-timestamp'>...</b:includable>{% endhighlight %}</td>
     </tr>
     <tr>
-      <th class="text-nowrap text-right" scope="row">Penggunaan</th>
+      <th class="text-nowrap text-right" scope="row">Usage</th>
       <td>
 {% highlight html %}
 <b:if cond='data:top.showTimestamp'>
@@ -194,7 +204,7 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
       </td>
     </tr>
     <tr>
-      <th class="text-nowrap text-right" scope="row">Catatan</th>
+      <th class="text-nowrap text-right" scope="row">Note</th>
       <td>None</td>
     </tr>
   </tbody>
@@ -209,7 +219,7 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
       <td>{% highlight html %}<b:includable id='include-num-comments'>...</b:includable>{% endhighlight %}</td>
     </tr>
     <tr class="bg-faded">
-      <th class="text-nowrap text-right" scope="row">Penggunaan</th>
+      <th class="text-nowrap text-right" scope="row">Usage</th>
       <td>
 {% highlight html %}
 <b:if cond='data:post.allowComments'>
@@ -219,7 +229,7 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
       </td>
     </tr>
     <tr class="bg-faded">
-      <th class="text-nowrap text-right" scope="row">Catatan</th>
+      <th class="text-nowrap text-right" scope="row">Note</th>
       <td>None</td>
     </tr>
   </tbody>
@@ -234,7 +244,7 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
       <td>{% highlight html %}<b:includable id='include-link-post'>...</b:includable>{% endhighlight %}</td>
     </tr>
     <tr>
-      <th class="text-nowrap text-right" scope="row">Penggunaan</th>
+      <th class="text-nowrap text-right" scope="row">Usage</th>
       <td>
 {% highlight html %}
 <b:if cond='data:post.showBacklinks'>
@@ -244,7 +254,7 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
       </td>
     </tr>
     <tr>
-      <th class="text-nowrap text-right" scope="row">Catatan</th>
+      <th class="text-nowrap text-right" scope="row">Note</th>
       <td>Ini adalah pengganti <em>backlinks</em>.</td>
     </tr>
   </tbody>
@@ -259,7 +269,7 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
       <td>{% highlight html %}<b:includable id='include-labels'>...</b:includable>{% endhighlight %}</td>
     </tr>
     <tr class="bg-faded">
-      <th class="text-nowrap text-right" scope="row">Penggunaan</th>
+      <th class="text-nowrap text-right" scope="row">Usage</th>
       <td>
 {% highlight html %}
 <b:if cond='data:top.showPostLabels'>
@@ -269,7 +279,7 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
       </td>
     </tr>
     <tr class="bg-faded">
-      <th class="text-nowrap text-right" scope="row">Catatan</th>
+      <th class="text-nowrap text-right" scope="row">Note</th>
       <td>None</td>
     </tr>
   </tbody>
@@ -284,7 +294,7 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
       <td>{% highlight html %}<b:includable id='include-reactions'>...</b:includable>{% endhighlight %}</td>
     </tr>
     <tr>
-      <th class="text-nowrap text-right" scope="row">Penggunaan</th>
+      <th class="text-nowrap text-right" scope="row">Usage</th>
       <td>
 {% highlight html %}
 <b:if cond='data:top.showReactions'>
@@ -294,7 +304,7 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
       </td>
     </tr>
     <tr>
-      <th class="text-nowrap text-right" scope="row">Catatan</th>
+      <th class="text-nowrap text-right" scope="row">Note</th>
       <td>None</td>
     </tr>
   </tbody>
@@ -309,7 +319,7 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
       <td>{% highlight html %}<b:includable id='include-edit-post'>...</b:includable>{% endhighlight %}</td>
     </tr>
     <tr class="bg-faded">
-      <th class="text-nowrap text-right" scope="row">Penggunaan</th>
+      <th class="text-nowrap text-right" scope="row">Usage</th>
       <td>
 {% highlight html %}
 <b:if cond='data:post.editUrl'>
@@ -319,7 +329,7 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
       </td>
     </tr>
     <tr class="bg-faded">
-      <th class="text-nowrap text-right" scope="row">Catatan</th>
+      <th class="text-nowrap text-right" scope="row">Note</th>
       <td>None</td>
     </tr>
   </tbody>
@@ -334,7 +344,7 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
       <td>{% highlight html %}<b:includable id='include-email-post'>...</b:includable>{% endhighlight %}</td>
     </tr>
     <tr>
-      <th class="text-nowrap text-right" scope="row">Penggunaan</th>
+      <th class="text-nowrap text-right" scope="row">Usage</th>
       <td>
 {% highlight html %}
 <b:if cond='data:post.emailPostUrl'>
@@ -344,7 +354,7 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
       </td>
     </tr>
     <tr>
-      <th class="text-nowrap text-right" scope="row">Catatan</th>
+      <th class="text-nowrap text-right" scope="row">Note</th>
       <td>None</td>
     </tr>
   </tbody>
@@ -359,7 +369,7 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
       <td>{% highlight html %}<b:includable id='include-share-buttons'>...</b:includable>{% endhighlight %}</td>
     </tr>
     <tr class="bg-faded">
-      <th class="text-nowrap text-right" scope="row">Penggunaan</th>
+      <th class="text-nowrap text-right" scope="row">Usage</th>
       <td>
 {% highlight html %}
 <b:if cond='data:post.sharePostUrl'>
@@ -369,7 +379,7 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
       </td>
     </tr>
     <tr class="bg-faded">
-      <th class="text-nowrap text-right" scope="row">Catatan</th>
+      <th class="text-nowrap text-right" scope="row">Note</th>
       <td>None</td>
     </tr>
   </tbody>
@@ -384,7 +394,7 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
       <td>{% highlight html %}<b:includable id='include-location'>...</b:includable>{% endhighlight %}</td>
     </tr>
     <tr>
-      <th class="text-nowrap text-right" scope="row">Penggunaan</th>
+      <th class="text-nowrap text-right" scope="row">Usage</th>
       <td>
 {% highlight html %}
 <b:if cond='data:top.showLocation'>
@@ -394,7 +404,7 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
       </td>
     </tr>
     <tr>
-      <th class="text-nowrap text-right" scope="row">Catatan</th>
+      <th class="text-nowrap text-right" scope="row">Note</th>
       <td>None</td>
     </tr>
   </tbody>
@@ -402,14 +412,14 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
   <tbody>
     <tr class="bg-faded">
       <th class="text-nowrap text-right" scope="row">#12</th>
-      <td><strong>Tentang penulis</strong> <br>Untuk menambahkan kolom tentang penulis.</td>
+      <td><strong>Tentang penulis</strong> <br>Untuk menampilkan kolom tentang penulis.</td>
     </tr>
     <tr class="bg-faded">
       <th class="text-nowrap text-right" scope="row">Includable</th>
       <td>{% highlight html %}<b:includable id='include-about-author'>...</b:includable>{% endhighlight %}</td>
     </tr>
     <tr class="bg-faded">
-      <th class="text-nowrap text-right" scope="row">Penggunaan</th>
+      <th class="text-nowrap text-right" scope="row">Usage</th>
       <td>
 {% highlight html %}
 <b:if cond='data:post.authorAboutMe'>
@@ -419,7 +429,7 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
       </td>
     </tr>
     <tr class="bg-faded">
-      <th class="text-nowrap text-right" scope="row">Catatan</th>
+      <th class="text-nowrap text-right" scope="row">Note</th>
       <td>None</td>
     </tr>
   </tbody>
@@ -434,7 +444,7 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
       <td>{% highlight html %}<b:includable id='include-thumbnail'>...</b:includable>{% endhighlight %}</td>
     </tr>
     <tr>
-      <th class="text-nowrap text-right" scope="row">Penggunaan</th>
+      <th class="text-nowrap text-right" scope="row">Usage</th>
       <td>
 {% highlight html %}
 <b:include name='include-thumbnail'/>
@@ -442,8 +452,8 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
       </td>
     </tr>
     <tr>
-      <th class="text-nowrap text-right" scope="row">Catatan</th>
-      <td>Akan mengambil gambar pertama. Jika gambar tidak tersedia, akan menampilkan gambar keterangan bahwa gambar tidak tersedia, lihat di bagian <em>includable</em>.</td>
+      <th class="text-nowrap text-right" scope="row">Note</th>
+      <td>Akan mengambil gambar pertama. Jika gambar tidak tersedia, akan menampilkan gambar keterangan bahwa gambar tidak tersedia.</td>
     </tr>
   </tbody>
 
@@ -457,7 +467,7 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
       <td>{% highlight html %}<b:includable id='include-summary'>...</b:includable>{% endhighlight %}</td>
     </tr>
     <tr class="bg-faded">
-      <th class="text-nowrap text-right" scope="row">Penggunaan</th>
+      <th class="text-nowrap text-right" scope="row">Usage</th>
       <td>
 {% highlight html %}
 <p><b:include name='include-summary'/></p>
@@ -465,22 +475,22 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
       </td>
     </tr>
     <tr class="bg-faded">
-      <th class="text-nowrap text-right" scope="row">Catatan</th>
-      <td>Alternatif untuk membuat ringkasan posting menggunakan JavaScript. Kode ini tetap menampilkan posting sesuai aslinya, hanya saja dipotong menggunakan JavaScript. Panjang ringkasan posting dapat berbeda-beda di setiap tipe halaman, atur dengan cara mengubah nilai variabel <code>summary</code>, lihat di bagian <em>includable</em>.</td>
+      <th class="text-nowrap text-right" scope="row">Note</th>
+      <td>Alternatif untuk membuat ringkasan posting menggunakan JavaScript. Posting tetap dimuat sesuai aslinya, hanya saja dipotong menggunakan JavaScript. Panjang ringkasan posting dapat berbeda-beda di setiap tipe halaman, atur dengan cara mengubah nilai variabel <code>summary</code>.</td>
     </tr>
   </tbody>
 
   <tbody>
     <tr>
       <th class="text-nowrap text-right" scope="row">#15</th>
-      <td><strong>Breadcrumb</strong> <br>Untuk menambahkan breadcrumb.</td>
+      <td><strong>Breadcrumb</strong> <br>Untuk menambahkan <em>breadcrumb</em>.</td>
     </tr>
     <tr>
       <th class="text-nowrap text-right" scope="row">Includable</th>
       <td>{% highlight html %}<b:includable id='include-breadcrumb'>...</b:includable>{% endhighlight %}</td>
     </tr>
     <tr>
-      <th class="text-nowrap text-right" scope="row">Penggunaan</th>
+      <th class="text-nowrap text-right" scope="row">Usage</th>
       <td>
 {% highlight html %}
 <b:include name='include-breadcrumb'/>
@@ -488,10 +498,10 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
       </td>
     </tr>
     <tr>
-      <th class="text-nowrap text-right" scope="row">Catatan</th>
+      <th class="text-nowrap text-right" scope="row">Note</th>
       <td>
 {% highlight html %}
-<!-- Gunakan di dalam includable main -->
+<!-- Gunakan di dalam bagian `main` -->
 <b:includable id='main' var='top'>...</b:includable>
 {% endhighlight %}
       </td>
@@ -501,13 +511,13 @@ Untuk **#1** sampai dengan **#12** harus menggunakan tag kondisional, karena ini
 
 ### Conditional example
 
-Perhatikan ketika menggunakan *includes* yang berhubungan dengan <a href="javascript:;" data-toggle="modal" data-target=".image-post-options">opsi posting</a>.
+Perhatikan ketika menyertakan bagian terpisah yang berhubungan dengan <a href="javascript:;" data-toggle="modal" data-target=".image-post-options">opsi posting</a>.
 
 {% highlight html %}
 <!-- ========== Contoh 1 ========== -->
 
 <!-- Salah -->
-<ul><!-- `ul` akan tetap ada ketika opsi penulis tidak dicentang -->
+<ul><!-- `ul` akan tetap ada ketika opsi penulis tidak dicentang. -->
   <b:if cond='data:top.showAuthor'>
     <li>
       <b:include name='include-author'/>
@@ -517,7 +527,7 @@ Perhatikan ketika menggunakan *includes* yang berhubungan dengan <a href="javasc
 
 <!-- Benar -->
 <b:if cond='data:top.showAuthor'>
-  <ul><!-- `ul` akan menghilang ketika opsi penulis tidak dicentang -->
+  <ul><!-- `ul` akan menghilang ketika opsi penulis tidak dicentang. -->
     <li>
       <b:include name='include-author'/>
     </li>
@@ -551,7 +561,7 @@ Perhatikan ketika menggunakan *includes* yang berhubungan dengan <a href="javasc
 <!-- ========== Contoh 3 ========== -->
 
 <!-- Salah -->
-<ul><!-- `ul` akan tetap ada ketika opsi penulis dan tanggal tidak dicentang -->
+<ul><!-- `ul` akan tetap ada ketika opsi penulis dan tanggal tidak dicentang. -->
   <b:if cond='data:top.showAuthor'>
     <li>
       <b:include name='include-author'/>
@@ -567,7 +577,7 @@ Perhatikan ketika menggunakan *includes* yang berhubungan dengan <a href="javasc
 
 <!-- Benar (gunakan operator logika `or`) -->
 <b:if cond='data:top.showAuthor or data:top.showTimestamp'>
-  <ul><!-- `ul` akan menghilang ketika opsi penulis dan tanggal tidak dicentang -->
+  <ul><!-- `ul` akan menghilang ketika opsi penulis dan tanggal tidak dicentang. -->
     <b:if cond='data:top.showAuthor'>
       <li>
         <b:include name='include-author'/>

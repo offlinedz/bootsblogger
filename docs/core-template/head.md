@@ -1,11 +1,11 @@
 ---
 layout: docs
 title: Head
-description: Penjelasan konten yang ada di dalam `<head>`.
+description: Penjelasan bagian-bagian yang ada di dalam `<head>`.
 group: core-template
 ---
 
-Berikut ini adalah konten yang ada di dalam `<head>`.
+Berikut ini adalah bagian-bagian yang ada di dalam `<head>`.
 
 ## Contents
 
@@ -14,8 +14,15 @@ Berikut ini adalah konten yang ada di dalam `<head>`.
 
 ## Custom all-head-content <small class="text-muted">custom-all-head-content.xml</small>
 
-Template bawaan Blogger menggunakan `<b:include data='blog' name='all-head-content'/>` untuk favicon, *feeds*, dan lain-lain.
-Pengubahsuaian ini hanya untuk validasi dan penambahan *feeds* untuk komentar dan label.
+Tag `<meta>` dan `<link>`—bawaan Blogger—tersuai.
+
+Bawaan:
+
+{% highlight html %}
+<b:include data='blog' name='all-head-content'/>
+{% endhighlight %}
+
+Tersuai:
 
 {% highlight html %}
 <meta content='blogger' name='generator'/>
@@ -40,9 +47,19 @@ Pengubahsuaian ini hanya untuk validasi dan penambahan *feeds* untuk komentar da
 </b:if>
 {% endhighlight %}
 
+Pengubahsuaian ini untuk validasi dan penambahan *feeds* untuk komentar dan label.
+
 ## Title <small class="text-muted">title.xml</small>
 
-Pada template bawaan Blogger, tag judul biasanya hanya menggunakan `<title><data:blog.pageTitle/></title>`, dengan pengubahsuaian ini Anda dapat menampilkan judul dengan gaya sesuai yang Anda inginkan.
+Tag `<title>` tersuai.
+
+Bawaan:
+
+{% highlight html %}
+<title><data:blog.pageTitle/></title>
+{% endhighlight %}
+
+Tersuai:
 
 {% highlight html %}
 <b:if cond='data:blog.pageType == &quot;item&quot;'>
@@ -75,9 +92,11 @@ Pada template bawaan Blogger, tag judul biasanya hanya menggunakan `<title><data
 </b:if>
 {% endhighlight %}
 
+Dengan pengubahsuaian ini Anda dapat menampilkan judul dengan gaya sesuai yang Anda inginkan.
+
 ## Meta and link tags
 
-Tag meta adalah elemen HTML yang digunakan untuk membentuk struktur metadata dari sebuah halaman web/blog. [Metadata](http://w3schools.com/tags/tag_meta.asp) adalah data (informasi) tentang data atau data informasi tentang berbagai aspek dari blog, seperti judul, deskripsi, gambar, URL, dan lain-lain.
+Tag `<meta>` adalah elemen HTML yang digunakan untuk membentuk struktur metadata dari sebuah halaman web/blog. [Metadata](http://w3schools.com/tags/tag_meta.asp) adalah data (informasi) tentang data atau data informasi tentang berbagai aspek dari blog, seperti judul, deskripsi, gambar, URL, dan lain-lain.
 
 ### Required meta tags <small class="text-muted">meta-tags-required.xml</small>
 
@@ -91,7 +110,7 @@ Tag meta adalah elemen HTML yang digunakan untuk membentuk struktur metadata dar
 
 ### Default <small class="text-muted">meta-tags-default.xml</small>
 
-Tag meta dan link untuk mesin pencari.
+Tag `<meta>` dan `<link>` standar.
 
 {% highlight html %}
 <b:if cond='data:blog.pageType != &quot;error_page&quot;'>
@@ -159,7 +178,7 @@ Tag meta dan link untuk mesin pencari.
 
 ### Twitter Cards <small class="text-muted">meta-tags-twitter.xml</small>
 
-Tag meta untuk jejaring sosial [Twitter](https://twitter.com).
+Tag `<meta>` untuk jejaring sosial [Twitter](https://twitter.com).
 
 {% highlight html %}
 <b:if cond='data:blog.url == data:blog.homepageUrl'>
@@ -242,7 +261,7 @@ Tag meta untuk jejaring sosial [Twitter](https://twitter.com).
 
 ### Facebook Open Graph <small class="text-muted">meta-tags-facebook.xml</small>
 
-Tag meta untuk jejaring sosial [Facebook](https://facebook.com).
+Tag `<meta>` untuk jejaring sosial [Facebook](https://facebook.com).
 
 {% highlight html %}
 <b:if cond='data:blog.pageType in [&quot;item&quot;, &quot;static_page&quot;]'>
@@ -324,9 +343,9 @@ Tag meta untuk jejaring sosial [Facebook](https://facebook.com).
 
 ## Remove Blogger's default CSS <small class="text-muted">blogger-css-hack.xml</small>
 
-Blogger memiliki CSS bawaan, yaitu `*-css_bundle_v2.css`, yang digunakan untuk widget, gadget, dan juga elemen umum, seperti `html`, `body`, `h*`, `p`, dan lain-lain. Oleh karena itu, bundel CSS tersebut harus dibuang, untuk menghindari konflik dengan CSS Bootstrap dan Bootsblogger.
+Blogger memiliki bundel CSS yang digunakan untuk widget, gadget, dan juga elemen umum, seperti `html`, `body`, `h*`, `p`, dan lain-lain. Oleh karena itu, bundel CSS tersebut harus dihilangkan untuk menghindari konflik dengan CSS Bootstrap dan Bootsblogger.
 
-Bundel CSS tersebut dihilangkan dengan menggunakan metode hack sederhana, yaitu dengan kode di bawah ini:
+Bundel CSS tersebut dihilangkan dengan kode di bawah ini:
 
 {% highlight html %}
 &lt;style&gt;
@@ -335,13 +354,13 @@ Bundel CSS tersebut dihilangkan dengan menggunakan metode hack sederhana, yaitu 
 */]]></b:skin>
 {% endhighlight %}
 
-Kode di atas akan mengapit bundel CSS Blogger dengan komentar HTML, sehingga CSS tersebut akan dikenal oleh *browser* hanya sebagai sebuah komentar HTML, bukan eksternal CSS.
+Kode di atas akan membuat bundel CSS Blogger berada di dalam komentar HTML, sehingga bundel CSS tersebut akan dianggap oleh *browser* hanya sebagai sebuah komentar HTML, bukan eksternal CSS.
 
-## Blogger grid system <small class="text-muted">blogger-css-hack.xml</small>
+## Grid system for Blogger <small class="text-muted">blogger-css-hack.xml</small>
 
-Pada tulisan di atas ini, kita sudah membahas tentang membuang CSS bawaan Blogger. Selanjutnya kita akan membahas sistem grid untuk tata letak widget pada halaman Blogger, <a href="javascript:;" data-toggle="modal" data-target=".image-blogger-layout">lihat gambar</a>. CSS sistem grid ini harus diletakan di dalam kode yang di atas tadi, seperti berikut:
+Pada tulisan di atas, kita sudah membahas tentang menghilangkan bundel CSS Blogger. Selanjutnya kita akan membahas **sistem grid untuk tata letak widget** pada *dashboard* Blogger, <a href="javascript:;" data-toggle="modal" data-target=".image-blogger-layout">lihat gambar</a>. CSS sistem grid ini harus diletakan di dalam kode yang di atas tadi, seperti berikut:
 
-**Catatan:** CSS ini tidak akan mempengaruhi template, hanya bekerja pada halaman Blogger.
+**Catatan:** CSS ini hanya bekerja pada *dashboard* Blogger.
 
 {% highlight html %}
 &lt;style&gt;
@@ -450,9 +469,9 @@ Gunakan pada elemen yang di dalamnya terdapat tag `b:section`. Sesuaikan dengan 
 
 Hasilnya akan seperti pada <a href="javascript:;" data-toggle="modal" data-target=".image-blogger-layout">gambar ini</a>.
 
-#### Note
+#### Notation
 
-Jika Anda menggunakan sistem grid Bootstrap dan sistem grid Blogger pada elemen yang sama, **kelas kolom tidak harus sama**, misal Anda menggunakan sistem grid Bootstrap untuk membuat template dua kolom dengan menggunakan `.col-md-9` untuk *main* dan `.col-md-3` untuk *sidebar*, penggunaan sistem grid Blogger tidak harus menggunakan `.blogger-col-9` untuk *main* dan `.blogger-col-3` untuk *sidebar*, tetapi bisa juga `.blogger-col-8` untuk *main* dan `.blogger-col-4` untuk *sidebar*. Untuk lebih jelas lihat kode di bawah ini:
+Jika Anda menggunakan sistem grid Bootstrap dan sistem grid untuk Blogger pada elemen yang sama, **kelas kolom tidak harus sama**, misal Anda menggunakan sistem grid Bootstrap untuk membuat template dua kolom dengan menggunakan `.col-md-9` untuk *main* dan `.col-md-3` untuk *sidebar*, penggunaan sistem grid untuk Blogger tidak harus menggunakan `.blogger-col-9` untuk *main* dan `.blogger-col-3` untuk *sidebar*, tetapi bisa juga `.blogger-col-8` untuk *main* dan `.blogger-col-4` untuk *sidebar*. Untuk lebih jelasnya lihat kode di bawah ini:
 
 {% highlight html %}
 <div class='container blogger-container'>
@@ -460,12 +479,12 @@ Jika Anda menggunakan sistem grid Bootstrap dan sistem grid Blogger pada elemen 
     <!-- Main -->
     <main class='blog-main col-md-9 blogger-col-8' id='blog-main'>
       <b:section id='main-section' maxwidgets='1' showaddelement='no'></b:section>
-    </main><!-- /.main -->
+    </main><!-- /.blog-main -->
 
     <!-- Sidebar -->
     <aside class='blog-sidebar col-md-3 blogger-col-4' id='blog-sidebar'>
       <b:section id='sidebar-section'></section>
-    </aside><!-- /.sidebar -->
+    </aside><!-- /.blog-sidebar -->
   </div><!-- /.row -->
 </div><!-- /.container -->
 {% endhighlight %}

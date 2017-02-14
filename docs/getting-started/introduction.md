@@ -6,7 +6,7 @@ group: getting-started
 redirect_from: "/getting-started/"
 ---
 
-Bootsblogger adalah sebuah template dasar, untuk membangun template Blogger menggunakan Bootstrap, yang fokus memberikan kemudahan, keindahan, dan juga kekinian.
+Bootsblogger adalah sebuah template dasar, untuk membangun template Blogger menggunakan Bootstrap, yang dirancang untuk memberikan kemudahan, keindahan, dan juga kekinian.
 
 #### Kemudahan
 
@@ -14,7 +14,7 @@ Bootsblogger dibangun dengan menggunakan [Grunt](http://gruntjs.com), untuk memu
 
 Template dasar yang fleksibel, mudah dipahami, penulisan kode yang baik, terstruktur, dan menyediakan banyak fitur. Dengan itu semua, Anda dapat dengan mudah membangun template sesuai dengan yang Anda inginkan.
 
-Untuk kode sumber CSS, Bootsblogger menggunakan [Sass](http://sass-lang.com) (*CSS preprocessor* yang sangat populer), dibangun dengan memanfaatkan *variables* dan *mixins* Sass Bootstrap. Dan juga dapat mengubahsuaikan dan mengkompilasi Sass Bootstrap di dalam kode sumber Bootsblogger.
+Kode sumber CSS Bootsblogger menggunakan [Sass](http://sass-lang.com) (*CSS preprocessor* yang sangat populer), dibangun dengan memanfaatkan *variables* dan *mixins* Sass Bootstrap. Dan juga dapat mengubahsuaikan dan mengkompilasi Sass Bootstrap di dalam kode sumber Bootsblogger.
 
 #### Keindahan
 

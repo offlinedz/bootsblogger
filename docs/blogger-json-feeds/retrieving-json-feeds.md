@@ -1,19 +1,21 @@
 ---
 layout: docs
 title: Retrieving JSON feeds
-description: Mengambil data JSON feeds dari Blogger data API.
+description: Mengambil data JSON feeds dari Blogger Data API.
 group: blogger-json-feeds
 redirect_from: "/blogger-json-feeds/"
 ---
 
-Blogger mempunyai data posting, halaman statis, dan komentar dalam bentuk JSON, yang disediakan oleh Blogger Data API. Di bawah ini adalah cara mengambil data JSON feeds dari Blogger Data API.
+Blogger mempunyai data posting, halaman statis, dan komentar dalam bentuk JSON, yang disediakan oleh Blogger Data API.
+
+Di bawah ini adalah cara mengambil data JSON feeds dari Blogger Data API.
 
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
-## Options
+## Notation
 
 <table class="table table-bordered table-striped table-responsive">
   <thead>
@@ -53,7 +55,7 @@ Blogger mempunyai data posting, halaman statis, dan komentar dalam bentuk JSON, 
     </tr>
     <tr>
       <td><code>{x}</code></td>
-      <td>Ganti dengan nomor, yang digunakan untuk mengambil data JSON mulai dari urutan ke-<code>x</code>. <code>x</code> &gt;= <code>1</code> dan tidak boleh lebih besar dari jumlah data yang ada.</td>
+      <td>Ganti dengan nomor, yang digunakan untuk mengambil data JSON mulai dari urutan ke-<code>x</code>. <code>x</code> &ge; <code>1</code> dan tidak boleh lebih besar dari jumlah data yang ada.</td>
     </tr>
     <tr>
       <td><code>{n}</code></td>

@@ -14,7 +14,7 @@ Kelas-kelas utilitas untuk widget.
 
 ## Title: hidden
 
-Untuk menyembunyikan judul widget, gunakan `.wg-title-hidden`.
+Untuk menyembunyikan judul widget gunakan `.wg-title-hidden`.
 
 <div class="bd-example">
   <div class="wg-panel wg-panel-orange wg-title-hidden">
@@ -70,7 +70,7 @@ Terdapat tiga kelas untuk perataan judul widget, yaitu rata kiri `.wg-title-left
 
 ## Title: font size
 
-Kelas-kelas untuk mengubah ukuran judul widget. Anda dapat menggunakan `.wg-title-h1` - `.wg-title-h6`.
+Untuk mengubah ukuran judul widget gunakan `.wg-title-{h1, h2, h3, h4, h5, h6}`.
 
 <div class="bd-example">
   <div class="wg-panel wg-panel-orange wg-title-h1">
@@ -134,15 +134,13 @@ Kelas-kelas untuk mengubah ukuran judul widget. Anda dapat menggunakan `.wg-titl
 
 ## Columns
 
-Tampilan kolom widget seperti [Masonry](http://masonry.desandro.com/), dengan hanya menggunakan CSS. 
-
 Gunakan `.wg-columns`.
 
-Hanya bekerja pada perangkat kecil ke atas.
+Hanya bekerja pada perangkat kecil (`sm`) ke atas.
 
-- Pada perangkat sedang ke atas (&ge;768px) akan tampil tiga kolom.
-- Pada perangkat kecil ke atas (&ge;576px) akan tampil dua kolom.
-- Pada perangkat sangat kecil (&lt;576px) hanya tampil satu kolom.
+- Pada perangkat sedang (`md`) ke atas (&ge;768px) akan tampil tiga kolom.
+- Pada perangkat kecil (`sm`) ke atas (&ge;576px) akan tampil dua kolom.
+- Pada perangkat sangat kecil (`xs`) ke bawah (&lt;576px) hanya tampil satu kolom.
 
 ### Examples
 
@@ -360,6 +358,9 @@ Sistem grid untuk widget.
   </tbody>
 </table>
 
+Grid widget menggunakan `calc()` untuk mengkalkulasi lebar dan jarak widget. Menggunakan `calc()` adalah untuk menghindari penggunaan `padding` pada `.widget`, agar tidak terjadi konflik dengan CSS widget lainnya.
+
+
 ### Examples
 
 <div class="bd-example">
@@ -442,7 +443,3 @@ Sistem grid untuk widget.
 {% highlight html %}
 <b:section class='wg-basic wg-basic-teal wg-sm-6' id='sectionId'></b:section>
 {% endhighlight %}
-
-### Notes
-
-Grid widget menggunakan `calc()` untuk mengkalkulasi lebar dan jarak widget, lihat dukungan *browser* untuk [calc()](http://caniuse.com/#feat=calc). Menggunakan `calc()` adalah untuk menghindari penggunaan `padding` pada `.widget`, agar tidak terjadi konflik dengan CSS widget lainnya, seperti [widget panel]({{ site.baseurl }}/components/widget-panel/) dan [widget box]({{ site.baseurl }}/components/widget-box/) juga menerapkan CSS pada `.widget`. 

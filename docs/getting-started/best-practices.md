@@ -14,7 +14,7 @@ Suatu teknik, metode, atau proses yang lebih efektif dalam bekerja dengan Bootsb
 
 ## Working with Blogger template editor
 
-Pasang Bootsblogger starter template di blog Anda (`dist/template.xml`). Di bawah ini, ada beberapa tips yang akan memudahkan Anda.
+Pasang *Bootsblogger starter template* di blog Anda (`dist/template.xml`). Di bawah ini ada beberapa tips yang akan memudahkan Anda.
 
 ### Code folding
 
@@ -26,7 +26,7 @@ Selalu perhatikan indentasi kode, agar kode lebih mudah dibaca dan dipahami. Atu
 
 ## Working with template source files
 
-Untuk dapat membangun template di dalam kode sumber, Anda harus memahami dasar-dasar **[grunt-bake](https://github.com/MathiasPaumgarten/grunt-bake)**, karena Bootsblogger menggunakan grunt-bake untuk mempermudah proses pembuatan dan pengeditan template.
+Untuk dapat membangun template di dalam kode sumber, Anda harus memahami dasar-dasar **[grunt-bake](https://github.com/MathiasPaumgarten/grunt-bake)**, Bootsblogger menggunakannya untuk mempermudah proses pembuatan dan pengeditan template.
 
 ### Directory structure
 
@@ -43,27 +43,39 @@ bootsblogger/
     └── template-src.xml
 {% endhighlight %}
 
-| `includes` | Wadah untuk konten template. |
-| `includes/assets` | Aset template disimpan di sini. |
-| `includes/blog-posts` | Bagian-bagian widget blog posting disimpan di sini. |
-| `includes/foot-content` | Konten footer disimpan di sini. |
-| `includes/head-content` | Konten yang ada di dalam `<head>` disimpan di sini. |
+| `includes` | Wadah untuk berkas template terpisah. |
+| `includes/assets` | Aset template. |
+| `includes/blog-posts` | Bagian-bagian widget blog posting. |
+| `includes/foot-content` | Bagian-bagian *footer*. |
+| `includes/head-content` | Bagian-bagian yang ada di dalam `<head>`. |
 | `config.json` | Berkas konfigurasi template. |
-| `style.css` | Main CSS. |
+| `style.css` | *Main CSS*. |
 | `template-src.xml` | Berkas utama template yang akan dikompilasi ke dalam `/dist`. |
 
 **Catatan:** Anda dapat membuat direktori dan/atau berkas baru sesuai dengan kebutuhan Anda, disarankan disimpan di dalam `/includes`.
 
 ### Include
 
-Memuat konten atau berkas-berkas yang ada di dalam `/includes`:
+Menyertakan berkas template terpisah:
 
 {% highlight html %}
-<!--(bake /includes/path/to/file)-->
+<!--(bake /path/to/file)-->
 {% endhighlight %}
 
-Untuk penggunaan grunt-bake lebih lanjut, silakan baca dokumentasinya di [repo grunt-bake](https://github.com/MathiasPaumgarten/grunt-bake).
+Contoh menyertakan berkas `/includes/blog-posts.xml`:
+
+{% highlight html %}
+<!--(bake /includes/blog-posts.xml)-->
+{% endhighlight %}
+
+Contoh menyertakan berkas `style.css`:
+
+{% highlight html %}
+<!--(bake style.css)-->
+{% endhighlight %}
+
+Pelajari lebih lanjut tentang penggunaan grunt-bake dengan membaca [dokumentasinya](https://github.com/MathiasPaumgarten/grunt-bake).
 
 ## Code guide
 
-Untuk penulisan kode HTML dan CSS, gunakan pedoman pengkodean [Code Guide by @mdo](http://codeguide.co).
+Semua HTML dan CSS harus sesuai dengan panduan kode ([Code Guide by @mdo](http://codeguide.co)).

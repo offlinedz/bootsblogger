@@ -1,12 +1,12 @@
 ---
 layout: docs
 title: Overview
-description: Template dasar Bootsblogger yang dirancang untuk memberikan kemudahan dan fitur-fitur yang luar biasa.
+description: Template dasar Bootsblogger dirancang untuk memberikan kemudahan dan fitur-fitur yang luar biasa.
 group: core-template
 redirect_from: "/core-template/"
 ---
 
-Template dasar Bootsblogger yang dirancang untuk memberikan kemudahan dan fitur-fitur yang luar biasa.
+Template dasar Bootsblogger dirancang untuk memberikan kemudahan dan fitur-fitur yang luar biasa.
 
 Sebelum Anda melanjutkan ke bagian berikutnya, di bawah ini ada beberapa hal dasar yang harus dipahami.
 
@@ -17,7 +17,7 @@ Sebelum Anda melanjutkan ke bagian berikutnya, di bawah ini ada beberapa hal das
 
 ## Page types
 
-Template Bootsblogger mempunyai 8 tipe halaman yang diciptakan dengan menggunakan [tag kondisional di bawah](#conditional-tags), yaitu:
+Template dasar Bootsblogger mempunyai 8 tipe halaman, yang diciptakan dengan menggunakan [tag kondisional di bawah](#conditional-tags).
 
 1. Homepage (halaman beranda).
 2. Item/single page (halaman posting).
@@ -30,7 +30,7 @@ Template Bootsblogger mempunyai 8 tipe halaman yang diciptakan dengan menggunaka
 
 ## Conditional tags
 
-Tag kondisional **luar biasa** untuk menciptakan 8 tipe halaman di atas.
+Tag kondisional untuk menciptakan 8 tipe halaman di atas.
 
 {% highlight html %}
 <!-- Homepage -->

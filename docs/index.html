@@ -5,7 +5,7 @@ layout: home
 <main class="bd-masthead" id="content">
   <div class="container">
     <span class="bd-booticon outline">B</span>
-    <p class="lead">{{ site.description }}</p>
+    <p class="lead">{{ site.description | escape_once }}</p>
     <p class="lead">
       <a href="{{ site.baseurl }}/getting-started/download/" class="btn btn-outline-inverse btn-lg">Download Bootsblogger</a>
     </p>
@@ -17,7 +17,7 @@ layout: home
 <div class="bd-featurette">
   <div class="container">
     <h2 class="bd-featurette-title">Dirancang untuk siapapun, dimanapun.</h2>
-    <p class="lead">Bootsblogger membantu proses pembuatan template Blogger menjadi lebih cepat, lebih mudah, dan lebih indah.</p>
+    <p class="lead">Bootsblogger membantu proses pembuatan template menjadi lebih cepat, lebih mudah, dan lebih indah.</p>
 
     <hr class="half-rule mx-auto">
 
@@ -40,7 +40,7 @@ layout: home
       <div class="col-sm-4 mb-3">
         <span class="text-orange"><i class="fa fa-cube" style="font-size: 6em;"></i></span>
         <h4>Preprocessor</h4>
-        <p>CSS Bootsblogger dibangun dengan menggunakan <a href="http://sass-lang.com">Sass</a>, <em>CSS preprocessor</em> yang sangat populer.</p>
+        <p>CSS Bootsblogger dibangun dengan menggunakan <a href="http://sass-lang.com">Sass</a>, CSS <em>preprocessor</em> yang sangat populer.</p>
       </div>
       <div class="col-sm-4 mb-3">
         <span class="text-orange"><i class="fa fa-file-code-o" style="font-size: 6em;"></i></span>

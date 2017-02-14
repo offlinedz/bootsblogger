@@ -1,11 +1,11 @@
 ---
 layout: docs
 title: Widget basic
-description: Tampilan widget sederhana, dengan judul yang beragam warna.
+description: Tampilan widget sederhana dengan judul yang beragam warna.
 group: components
 ---
 
-Tampilan widget sederhana, dengan judul yang beragam warna.
+Tampilan widget sederhana dengan judul yang beragam warna.
 
 ## Contents
 
@@ -141,7 +141,7 @@ Gunakan `.wg-basic`, diikuti dengan `.wg-basic-{color}`.
 
 ## Collapsible widget
 
-Kelas opsional: tambahkan `.open-all` atau `.open-first` untuk membuat konten widget terlihat terlebih dahulu. `.open-all` hanya bekerja pada `.wg-collapse`.
+Membutuhkan [Bootstrap collapse](https://v4-alpha.getbootstrap.com/components/collapse/).
 
 ### Basic example
 
@@ -204,3 +204,7 @@ Gunakan `.wg-accordion`.
 {% highlight html %}
 <b:section class='wg-basic wg-basic-orange wg-accordion' id='sectionId'></b:section>
 {% endhighlight %}
+
+### Optional classes
+
+Tambahkan `.open-all` atau `.open-first` ke `.wg-collapse` atau `.wg-accordion` untuk membuat konten widget terlihat saat pertama kali. `.open-all` hanya bekerja untuk `.wg-collapse`.

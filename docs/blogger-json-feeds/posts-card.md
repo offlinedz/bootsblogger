@@ -86,7 +86,7 @@ var config = {
 </script>
 {% endhighlight %}
 
-**Catatan:** `group`, `deck`, `columns` dan `grid` pilih salah satu yang bernilai `true` atau semua `false`.
+**Catatan:** `group`, `deck`, `columns`, dan `grid` pilih salah satu yang bernilai `true` atau semua `false`.
 
 ## Example
 

@@ -141,7 +141,7 @@ Gunakan `.wg-panel`, diikuti dengan `.wg-panel-{color}`.
 
 ## Outline variants
 
-Ubah `.wg-panel-{color}` dengan `.wg-panel-outline-{color}`.
+Ubah `.wg-panel-{color}` menjadi `.wg-panel-outline-{color}`.
 
 <div class="bd-example bg-inverse">
   <div class="wg-panel wg-panel-outline-faded">
@@ -315,7 +315,7 @@ Tambahkan `.wg-panel-group`.
 
 ## Collapsible widget
 
-Kelas opsional: tambahkan `.open-all` atau `.open-first` untuk membuat konten widget terlihat terlebih dahulu. `.open-all` hanya bekerja pada `.wg-collapse`.
+Membutuhkan [Bootstrap collapse](https://v4-alpha.getbootstrap.com/components/collapse/).
 
 ### Basic example
 
@@ -436,3 +436,7 @@ Group:
 {% highlight html %}
 <b:section class='wg-panel wg-panel-red wg-panel-group wg-accordion' id='sectionId'></b:section>
 {% endhighlight %}
+
+### Optional classes
+
+Tambahkan `.open-all` atau `.open-first` ke `.wg-collapse` atau `.wg-accordion` untuk membuat konten widget terlihat saat pertama kali. `.open-all` hanya bekerja untuk `.wg-collapse`.

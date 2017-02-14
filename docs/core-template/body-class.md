@@ -1,11 +1,11 @@
 ---
 layout: docs
 title: Body class
-description: Terdapat kelas pada `<body>` yang akan berubah-ubah di setiap tipe halaman.
+description: Terdapat kelas pada `<body>`, yang berbeda di setiap tipe halaman.
 group: core-template
 ---
 
-Terdapat kelas pada `<body>` yang akan berubah-ubah di setiap tipe halaman.
+Terdapat kelas pada `<body>`, yang berbeda di setiap tipe halaman.
 
 {% highlight html %}
 <!-- Menggunakan `ternary selector` -->
