@@ -41,7 +41,7 @@
 
         <!-- Parent -->
 
-        <div class='media media-parent mt-4' expr:id='data:comment.anchorName'>
+        <div class='media comment-parent mt-4' expr:id='data:comment.anchorName'>
 
           <div class='d-flex mr-3 comment-avatar'>
             <b:if cond='data:blog.enabledCommentProfileImages'>
@@ -51,7 +51,7 @@
 
           <div class='media-body'>
             <!-- Header -->
-            <div class='comment-body-header'>
+            <div class='comment-header'>
               <div class='clearfix'>
                 <div class='float-left'>
                   <ul class='list-inline mb-0'>
@@ -85,7 +85,7 @@
               </div>
             </div>
             <!-- Content -->
-            <div class='comment-body-content mt-3'>
+            <div class='comment-content mt-3'>
               <b:if cond='data:comment.isDeleted'>
                 <div class='alert alert-danger mb-0' role='alert'>
                   <a class='close' data-placement='top' data-toggle='tooltip' expr:href='&quot;http://www.blogger.com/delete-comment.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;postID=&quot; + data:comment.id' title='Remove forever'><i aria-hidden='true' class='fa fa-remove'/></a>
@@ -99,7 +99,7 @@
             </div>
             <!-- Footer -->
             <b:if cond='!data:comment.isDeleted and data:post.allowNewComments'>
-              <div class='comment-body-footer mt-3'>
+              <div class='comment-footer mt-3'>
                 <ul class='list-inline mb-0'>
                   <li class='list-inline-item'>
                     <a class='comment-reply js-comment-action' expr:href='&quot;#comment-form-container-reply-&quot; + data:comment.id' expr:onclick='&quot;javascript:reply(&amp;quot;&quot; + data:comment.id + &quot;&amp;quot;);&quot;'><i aria-hidden='true' class='fa fa-reply'/> Reply</a>
@@ -122,7 +122,7 @@
             <b:loop values='data:post.comments' var='replies'>
               <b:if cond='data:replies.inReplyTo == data:comment.id'>
 
-                <div class='media media-children mt-4' expr:id='data:replies.anchorName'>
+                <div class='media comment-children mt-4' expr:id='data:replies.anchorName'>
 
                   <div class='d-flex mr-3 comment-avatar'>
                     <b:if cond='data:blog.enabledCommentProfileImages'>
@@ -132,7 +132,7 @@
 
                   <div class='media-body'>
                     <!-- Header -->
-                    <div class='comment-body-header'>
+                    <div class='comment-header'>
                       <div class='clearfix'>
                         <div class='float-left'>
                           <ul class='list-inline mb-0'>
@@ -166,7 +166,7 @@
                       </div>
                     </div>
                     <!-- Content -->
-                    <div class='comment-body-content mt-3'>
+                    <div class='comment-content mt-3'>
                       <b:if cond='data:replies.isDeleted'>
                         <div class='alert alert-danger mb-0' role='alert'>
                           <a class='close' data-placement='top' data-toggle='tooltip' expr:href='&quot;http://www.blogger.com/delete-comment.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;postID=&quot; + data:replies.id' title='Remove forever'><i aria-hidden='true' class='fa fa-remove'/></a>
@@ -209,23 +209,25 @@
     <!-- Comment form -->
     <b:if cond='data:post.allowNewComments'>
       <div class='comment-form-container-original mt-4 active' id='comment-form-container-original'>
+
         <div class='comment-add-wrapper'>
           <a class='btn btn-block btn-success js-comment-action' href='#comment-form-container-original' onclick='javascript:reply(&quot;cancel&quot;);' role='button'><i aria-hidden='true' class='fa fa-comment'/> Add comment</a>
         </div>
+
         <div class='card card-block comment-form comment-form-loading p-2' id='comment-form'>
           <data:blogTeamBlogMessage/>
           <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
-          <!-- Loading icon -->
-          <i aria-hidden='true' class='fa fa-spinner fa-pulse fa-3x fa-fw mx-auto comment-form-loading-icon'/>
-          <!-- Message -->
-          <div class='card card-block comment-form-message mb-2'>
+          <!-- Comment form loading icon -->
+          <i aria-hidden='true' class='fa fa-spinner fa-pulse fa-3x fa-fw comment-form-loading-icon mx-auto'/>
+          <!-- Comment form message -->
+          <div class='card card-block comment-form-message comment-form-loading-hidden mb-2'>
             <h2 class='card-title h4'><data:postCommentMsg/></h2>
             <b:if cond='data:blogCommentMessage'>
               <p class='card-text mb-0'><data:blogCommentMessage/></p>
             </b:if>
           </div>
-          <!-- Comment editor and comment helper -->
-          <div class='card comment-form-tabs'>
+          <!-- Comment form editor and comment form helper -->
+          <div class='card comment-form-loading-hidden'>
             <div class='card-header'>
               <ul class='nav nav-tabs card-header-tabs float-left' role='tablist'>
                 <li class='nav-item'>
@@ -243,7 +245,7 @@
             </div>
             <div class='tab-content'>
               <div class='card-block tab-pane p-1 active' id='tab-comment-editor' role='tabpanel'>
-                <iframe class='blogger-iframe-colorize blogger-comment-from-post comment-editor' id='comment-editor' name='comment-editor'/>
+                <iframe class='blogger-iframe-colorize blogger-comment-from-post comment-form-editor' id='comment-editor' name='comment-editor'/>
                 <data:post.friendConnectJs/>
                 <data:post.cmtfpIframe/>
                 <script>BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;, &#39;<data:post.communityId/>&#39;);</script>
@@ -262,10 +264,10 @@
                 <p class='mb-0'>:)</p>
               </div>
               <div class='card-block tab-pane' id='tab-comment-converter' role='tabpanel'>
-                <textarea class='form-control' id='js-comment-textarea-convert' style='height: 200px;'></textarea>
+                <textarea class='form-control js-comment-convert-textarea' style='height: 200px;'></textarea>
                 <div class='text-center mt-3'>
-                  <button type='button' class='btn btn-sm btn-primary' id='js-comment-btn-convert'>Convert</button>
-                  <button type='button' class='btn btn-sm btn-danger' id='js-comment-btn-convert-clear' style='display: none;'>Clear</button>
+                  <button type='button' class='btn btn-sm btn-primary js-comment-convert-btn'>Convert</button>
+                  <button type='button' class='btn btn-sm btn-danger js-comment-convert-btn-clear' style='display: none;'>Clear</button>
                 </div>
               </div>
             </div>

@@ -169,7 +169,7 @@
   border-color: rgba(0,0,0,.125);
 }
 
-// Message
+// Comment form message
 .comment-form-message {
   background-color: #f5f5f5;
   border-color: rgba(0,0,0,.125);
@@ -186,14 +186,14 @@
   }
 }
 
-// Editor
-.comment-form-tabs .comment-editor {
+// Comment form editor
+.comment-form-editor {
   position: relative;
   width: 100%;
   border: 0;
 }
 
-// Loading
+// Comment form loading
 .comment-form-loading-icon {
   display: none !important;
 }
@@ -202,15 +202,14 @@
     display: inline-block !important;
   }
 
-  .comment-form-message,
-  .comment-form-tabs {
+  .comment-form-loading-hidden {
     display: none;
   }
 }
 
 
 //
-// Wrapper for add comment and cancel reply button
+// Wrapper for `add comment` and `cancel reply` button
 //
 
 .comment-add-wrapper,
