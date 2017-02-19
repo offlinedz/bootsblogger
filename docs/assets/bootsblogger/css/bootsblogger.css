@@ -2964,7 +2964,7 @@
   color: #777;
 }
 
-.comment-form-tabs .comment-editor {
+.comment-form-editor {
   position: relative;
   width: 100%;
   border: 0;
@@ -2977,8 +2977,7 @@
 .comment-form-loading .comment-form-loading-icon {
   display: inline-block !important;
 }
-.comment-form-loading .comment-form-message,
-.comment-form-loading .comment-form-tabs {
+.comment-form-loading .comment-form-loading-hidden {
   display: none;
 }
 
