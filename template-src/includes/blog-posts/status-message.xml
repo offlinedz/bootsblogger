@@ -45,11 +45,11 @@ function searchMsg(json) {
 <b:if cond='data:blog.searchLabel'>
   <b:if cond='data:numPosts &gt;= 1'>
     <div class='alert alert-success' role='alert'>
-      Showing posts with label <strong><data:blog.searchLabel/></strong> : <script expr:src='&quot;/feeds/posts/summary/-/&quot; + data:blog.searchLabel + &quot;?max-results=0&amp;alt=json-in-script&amp;callback=labelMsg&quot;'/>
+      Showing posts with label <strong>&quot;<data:blog.searchLabel/>&quot;</strong> : <script expr:src='&quot;/feeds/posts/summary/-/&quot; + data:blog.searchLabel + &quot;?max-results=0&amp;alt=json-in-script&amp;callback=labelMsg&quot;'/>
     </div>
   <b:else/>
     <div class='alert alert-warning' role='alert'>
-      No posts with label <strong><data:blog.searchLabel/></strong>.
+      No posts with label <strong>&quot;<data:blog.searchLabel/>&quot;</strong>.
     </div>
   </b:if>
 </b:if>
@@ -93,7 +93,7 @@ function searchMsg(json) {
   <b:if cond='data:numPosts &gt;= 1'>
     <div class='alert alert-success' role='alert'>Archive for <strong><data:blog.pageName/></strong></div>
   <b:else/>
-    <div class='alert alert-warning' role='alert'>No archive found.</div>
+    <div class='alert alert-warning' role='alert'>Not found.</div>
   </b:if>
 </b:if>
 
