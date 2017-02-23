@@ -29,24 +29,26 @@
 
   <!-- Label/category page -->
   <b:elseif cond='data:blog.searchLabel'/>
-    <li class='breadcrumb-item active'>Category</li>
-    <li class='breadcrumb-item active'><data:blog.pageName/></li>
+    <li class='breadcrumb-item active'>Search</li>
+    <li class='breadcrumb-item active'>Label</li>
+    <li class='breadcrumb-item active'>&quot;<data:blog.pageName/>&quot;</li>
 
   <!-- Search results page -->
   <b:elseif cond='data:blog.searchQuery'/>
-    <li class='breadcrumb-item active'>Search results</li>
+    <li class='breadcrumb-item active'>Search Results</li>
+    <li class='breadcrumb-item active'>&quot;<data:blog.searchQuery/>&quot;</li>
 
   <!-- Archive page -->
   <b:elseif cond='data:blog.pageType == &quot;archive&quot;'/>
-    <li class='breadcrumb-item active'>Archive</li>
+    <li class='breadcrumb-item active'>Archives</li>
     <li class='breadcrumb-item active'><data:blog.pageName/></li>
 
   <!-- Error page -->
   <b:elseif cond='data:blog.pageType == &quot;error_page&quot;'/>
     <li class='breadcrumb-item active'>404</li>
 
-  <!-- Homepage -->
+  <!-- Homepage and default (https://example.blogspot.com/search) -->
   <b:else/>
-    <li class='breadcrumb-item active'>All posts</li>
+    <li class='breadcrumb-item active'>All Posts</li>
   </b:if>
 </ol>
