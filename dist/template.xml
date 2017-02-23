@@ -580,12 +580,14 @@
 
         <div class='collapse navbar-collapse' id='navbar'>
           <ul class='navbar-nav mr-auto'>
-            <li class='nav-item'><a class='nav-link' href='/search/label/Test'>Test</a></li>
-            <li class='nav-item'><a class='nav-link' href='/search/label/Sample'>Sample</a></li>
+            <li class='nav-item'><a class='nav-link' href='/search/label/Test?max-results=10'>Test</a></li>
+            <li class='nav-item'><a class='nav-link' href='/search/label/Sample?max-results=10'>Sample</a></li>
             <li class='nav-item dropdown'>
               <a class='nav-link dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' href='javascript:;'>Demo</a>
               <div class='dropdown-menu'>
                 <a class='dropdown-item' href='/'>Homepage</a>
+                <div class='dropdown-divider'></div>
+                <a class='dropdown-item' href='/search'>Default</a>
                 <div class='dropdown-divider'></div>
                 <a class='dropdown-item' href='/search/label/Sample?max-results=10'>Category page (yes)</a>
                 <a class='dropdown-item' href='/search/label/Nope?max-results=10'>Category page (nope)</a>
@@ -595,8 +597,6 @@
                 <div class='dropdown-divider'></div>
                 <a class='dropdown-item' href='/2016_11_01_archive.html'>Archive page (yes)</a>
                 <a class='dropdown-item' href='/1945_08_17_archive.html'>Archive page (nope)</a>
-                <div class='dropdown-divider'></div>
-                <a class='dropdown-item' href='/search'>Default</a>
                 <div class='dropdown-divider'></div>
                 <a class='dropdown-item' href='/2016/11/sample-blog-post-03.html'>Item page</a>
                 <a class='dropdown-item' href='/p/static-page.html'>Static page</a>
@@ -1076,25 +1076,27 @@
 
                   <!-- Label/category page -->
                   <b:elseif cond='data:blog.searchLabel'/>
-                    <li class='breadcrumb-item active'>Category</li>
-                    <li class='breadcrumb-item active'><data:blog.pageName/></li>
+                    <li class='breadcrumb-item active'>Search</li>
+                    <li class='breadcrumb-item active'>Label</li>
+                    <li class='breadcrumb-item active'>&quot;<data:blog.pageName/>&quot;</li>
 
                   <!-- Search results page -->
                   <b:elseif cond='data:blog.searchQuery'/>
-                    <li class='breadcrumb-item active'>Search results</li>
+                    <li class='breadcrumb-item active'>Search Results</li>
+                    <li class='breadcrumb-item active'>&quot;<data:blog.searchQuery/>&quot;</li>
 
                   <!-- Archive page -->
                   <b:elseif cond='data:blog.pageType == &quot;archive&quot;'/>
-                    <li class='breadcrumb-item active'>Archive</li>
+                    <li class='breadcrumb-item active'>Archives</li>
                     <li class='breadcrumb-item active'><data:blog.pageName/></li>
 
                   <!-- Error page -->
                   <b:elseif cond='data:blog.pageType == &quot;error_page&quot;'/>
                     <li class='breadcrumb-item active'>404</li>
 
-                  <!-- Homepage -->
+                  <!-- Homepage and default (https://example.blogspot.com/search) -->
                   <b:else/>
-                    <li class='breadcrumb-item active'>All posts</li>
+                    <li class='breadcrumb-item active'>All Posts</li>
                   </b:if>
                 </ol>
 
@@ -1718,11 +1720,11 @@
                 <b:if cond='data:blog.searchLabel'>
                   <b:if cond='data:numPosts &gt;= 1'>
                     <div class='alert alert-success' role='alert'>
-                      Showing posts with label <strong><data:blog.searchLabel/></strong> : <script expr:src='&quot;/feeds/posts/summary/-/&quot; + data:blog.searchLabel + &quot;?max-results=0&amp;alt=json-in-script&amp;callback=labelMsg&quot;'/>
+                      Showing posts with label <strong>&quot;<data:blog.searchLabel/>&quot;</strong> : <script expr:src='&quot;/feeds/posts/summary/-/&quot; + data:blog.searchLabel + &quot;?max-results=0&amp;alt=json-in-script&amp;callback=labelMsg&quot;'/>
                     </div>
                   <b:else/>
                     <div class='alert alert-warning' role='alert'>
-                      No posts with label <strong><data:blog.searchLabel/></strong>.
+                      No posts with label <strong>&quot;<data:blog.searchLabel/>&quot;</strong>.
                     </div>
                   </b:if>
                 </b:if>
@@ -1766,7 +1768,7 @@
                   <b:if cond='data:numPosts &gt;= 1'>
                     <div class='alert alert-success' role='alert'>Archive for <strong><data:blog.pageName/></strong></div>
                   <b:else/>
-                    <div class='alert alert-warning' role='alert'>No archive found.</div>
+                    <div class='alert alert-warning' role='alert'>Not found.</div>
                   </b:if>
                 </b:if>
 
