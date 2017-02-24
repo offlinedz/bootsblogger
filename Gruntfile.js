@@ -251,7 +251,7 @@ module.exports = function(grunt) {
           content: 'template-src/config.json'
         },
         files: {
-          'dist/template.xml': 'template-src/template-src.xml'
+          'dist/template.xml': 'template-src/index.xml'
         }
       }
     },

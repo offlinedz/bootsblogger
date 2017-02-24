@@ -39,11 +39,11 @@ bootsblogger/
     ├── includes/
     ├── config.json
     ├── style.css
-    └── template-src.xml
+    └── index.xml
 {% endhighlight %}
 
 Di dalam direktori `scss/` dan `js/` adalah kode sumber untuk CSS dan JavaScript Bootstrap dan Bootsblogger, yang akan dikompilasi ke dalam `template-src/includes/assets`.
 
 Berkas `scss/_custom.scss` digunakan untuk [mengubahsuaikan variabel Sass]({{ site.baseurl }}/getting-started/options/) Bootstrap dan Bootsblogger.
 
-Di dalam direktori `template-src/` adalah kode sumber untuk template, yang akan dikompilasi ke dalam `/dist`, ini menggunakan **[grunt-bake](https://github.com/MathiasPaumgarten/grunt-bake)**, untuk mengurai template menjadi beberapa bagian, sehingga akan mempermudah proses pembuatan dan pengeditan template, juga memanfaatkan fitur grunt-bake lainnya.
+Di dalam direktori `template-src/` adalah kode sumber untuk template, `index.xml` adalah berkas utama template yang akan dikompilasi ke dalam `/dist`. Bootsblogger menggunakan **[grunt-bake](https://github.com/MathiasPaumgarten/grunt-bake)** untuk mengurai template menjadi beberapa bagian, sehingga akan mempermudah proses pembuatan dan pengeditan template, juga memanfaatkan fitur grunt-bake lainnya.

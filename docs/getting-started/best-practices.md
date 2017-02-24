@@ -36,21 +36,19 @@ bootsblogger/
     ├── includes/
     │   ├── assets
     │   ├── blog-posts
-    │   ├── foot-content
-    │   └── head-content
+    │   └── head
     ├── config.json
     ├── style.css
-    └── template-src.xml
+    └── index.xml
 {% endhighlight %}
 
-| `includes` | Wadah untuk berkas template terpisah. |
-| `includes/assets` | Aset template. |
-| `includes/blog-posts` | Bagian-bagian widget blog posting. |
-| `includes/foot-content` | Bagian-bagian *footer*. |
-| `includes/head-content` | Bagian-bagian yang ada di dalam `<head>`. |
-| `config.json` | Berkas konfigurasi template. |
-| `style.css` | *Main CSS*. |
-| `template-src.xml` | Berkas utama template yang akan dikompilasi ke dalam `/dist`. |
+| `/includes` | Wadah untuk berkas template terpisah. |
+| `/includes/assets` | Aset template. |
+| `/includes/blog-posts` | Bagian-bagian widget blog posting. |
+| `/includes/head` | Bagian-bagian yang ada di dalam `<head>`. |
+| `/config.json` | Berkas konfigurasi template. |
+| `/style.css` | *Main CSS*. |
+| `/index.xml` | Berkas utama template yang akan dikompilasi ke dalam `/dist`. |
 
 **Catatan:** Anda dapat membuat direktori dan/atau berkas baru sesuai dengan kebutuhan Anda, disarankan disimpan di dalam `/includes`.
 
@@ -59,19 +57,23 @@ bootsblogger/
 Menyertakan berkas template terpisah:
 
 {% highlight html %}
+<!-- Relative to the file -->
+<!--(bake path/to/file)-->
+
+<!-- Relative to the `basePath` (`template-src` directory) -->
 <!--(bake /path/to/file)-->
 {% endhighlight %}
 
-Contoh menyertakan berkas `/includes/blog-posts.xml`:
+Contoh menyertakan berkas `/includes/blog-posts/blog-posts.xml`:
 
 {% highlight html %}
-<!--(bake /includes/blog-posts.xml)-->
+<!--(bake /includes/blog-posts/blog-posts.xml)-->
 {% endhighlight %}
 
-Contoh menyertakan berkas `style.css`:
+Contoh menyertakan berkas `/style.css`:
 
 {% highlight html %}
-<!--(bake style.css)-->
+<!--(bake /style.css)-->
 {% endhighlight %}
 
 Pelajari lebih lanjut tentang penggunaan grunt-bake dengan membaca [dokumentasinya](https://github.com/MathiasPaumgarten/grunt-bake).

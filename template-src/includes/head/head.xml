@@ -1,0 +1,49 @@
+<!-- Required meta tags always come first -->
+<!--(bake /includes/head/meta-tags-required.xml)-->
+
+
+<!-- CUSTOM ALL-head
+================================================= -->
+<!--(bake /includes/head/custom-all-head-content.xml)-->
+
+
+<!-- TITLE
+================================================= -->
+<!--(bake /includes/head/title.xml)-->
+
+
+<!-- META AND LINK TAGS FOR DATA INFORMATION
+================================================= -->
+<!-- DEFAULT
+========================= -->
+<!--(bake /includes/head/meta-tags-default.xml)-->
+
+<!-- TWITTER CARDS
+========================= -->
+<!--(bake /includes/head/meta-tags-twitter.xml)-->
+
+<!-- FACEBOOK OPEN GRAPH
+========================= -->
+<!--(bake /includes/head/meta-tags-facebook.xml)-->
+
+
+<!-- BLOGGER CSS HACK
+================================================= -->
+<!--(bake /includes/head/blogger-css-hack.xml)-->
+
+
+<!-- CSS
+================================================= -->
+<!--(bake /includes/head/head-css.xml)-->
+
+
+<!-- MAIN CSS
+================================================= -->
+<style>
+<!--(bake /style.css)-->
+</style>
+
+
+<!-- JavaScript
+================================================= -->
+<!--(bake /includes/head/head-js.xml)-->
