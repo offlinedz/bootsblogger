@@ -1379,48 +1379,34 @@
               </b:includable>
               <b:includable id='post-archive' var='post'>
 
-                <div class='post-group'>
-                  <b:loop values='data:posts' var='post'>
-                    <article class='post' expr:id='"post-" + data:post.id' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
-                      <!-- Content -->
-                      <div class='post-content'>
-                        <!-- Post title -->
-                        <b:if cond='data:post.title'>
-                          <h2 class='post-title' itemprop='name headline'>
-                            <a class='post-title-link' expr:href='data:post.url' expr:title='data:post.title' itemprop='url'><data:post.title/></a>
-                          </h2>
-                        </b:if>
-                        <!-- Metadata -->
-                        <b:if cond='data:top.showAuthor or data:top.showTimestamp or data:post.allowComments'>
-                          <div class='post-meta'>
-                            <ul class='post-meta-list'>
-                              <!-- Author -->
-                              <b:if cond='data:top.showAuthor'>
-                                <li>
-                                  <b:include name='include-author'/>
-                                </li>
-                              </b:if>
-                              <!-- Timestamp -->
-                              <b:if cond='data:top.showTimestamp'>
-                                <li>
-                                  <b:include name='include-timestamp'/>
-                                </li>
-                              </b:if>
-                              <!-- Num comments -->
-                              <b:if cond='data:post.allowComments'>
-                                <li>
-                                  <b:include name='include-num-comments'/>
-                                </li>
-                              </b:if>
-                            </ul>
-                          </div><!-- /.post-meta -->
-                        </b:if>
-                        <!-- Post snippet -->
-                        <p itemprop='articleBody description'><data:post.snippet/></p>
-                      </div><!-- /.post-content -->
-                    </article><!-- /.post -->
-                  </b:loop>
-                </div>
+                <table class='table table-striped table-responsive'>
+                  <tbody>
+                    <b:loop values='data:posts' var='post'>
+                      <tr expr:id='"post-" + data:post.id' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
+                        <td>
+                          <!-- Timestamp -->
+                          <b:if cond='data:top.showTimestamp'>
+                            <b:include name='include-timestamp'/>
+                          </b:if>
+                        </td>
+                        <td>
+                          <!-- Post title -->
+                          <b:if cond='data:post.title'>
+                            <span itemprop='name headline'>
+                              <a expr:href='data:post.url' expr:title='data:post.title' itemprop='url'><data:post.title/></a>
+                            </span>
+                          </b:if>
+                        </td>
+                        <td>
+                          <!-- Author -->
+                          <b:if cond='data:top.showAuthor'>
+                            <b:include name='include-author'/>
+                          </b:if>
+                        </td>
+                      </tr>
+                    </b:loop>
+                  </tbody>
+                </table>
 
               </b:includable>
               <b:includable id='post-default' var='post'>
