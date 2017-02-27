@@ -116,7 +116,7 @@ function postsDefault(json) {
 
     // Post header
     var headerHtml = ''
-    headerHtml += '<div class="post-header">'
+    headerHtml += '<div class="post-header ' + config.classes.header + '">'
     headerHtml += '<ul class="post-header-list">'
     if (config.author.active === true && config.author.placement === 'header') {
       if (config.author.avatar.active === true) {
@@ -140,7 +140,7 @@ function postsDefault(json) {
 
     // Post footer
     var footerHtml = ''
-    footerHtml += '<div class="post-footer">'
+    footerHtml += '<div class="post-footer ' + config.classes.footer + '">'
     footerHtml += '<ul class="post-footer-list">'
     if (config.author.active === true && config.author.placement === 'footer') {
       if (config.author.avatar.active === true) {
@@ -164,7 +164,7 @@ function postsDefault(json) {
 
     // Post meta
     var metaHtml = ''
-    metaHtml += '<div class="post-meta">'
+    metaHtml += '<div class="post-meta ' + config.classes.meta + '">'
     metaHtml += '<ul class="post-meta-list">'
     if (config.author.active === true && config.author.placement === 'meta') {
       if (config.author.avatar.active === true) {
@@ -190,7 +190,13 @@ function postsDefault(json) {
     var contentHtml = ''
     contentHtml += '<div class="post-content ' + config.classes.content + '">'
     contentHtml += '<' + config.content.title.tag + ' class="post-title">'
-    contentHtml += '<a class="' + config.content.title.style + '" href="' + postURL + '">' + postTitle + '</a>'
+    if (config.content.title.link.active === true) {
+      contentHtml += '<a class="' + config.content.title.link.style + '" href="' + postURL + '">'
+    }
+    contentHtml += postTitle
+    if (config.content.title.link.active === true) {
+      contentHtml += '</a>'
+    }
     contentHtml += '</' + config.content.title.tag + '>'
     // Meta
     if (config.author.placement === 'meta' || config.date.placement === 'meta' || config.numComments.placement === 'meta' || config.labels.placement === 'meta') {
@@ -284,7 +290,7 @@ function postsDefault(json) {
 
     // Left image
     if (config.thumbnail.active === true && config.thumbnail.placement === 'left') {
-      html += '<div class="' + config.classes.horizontalThumbnail + '">'
+      html += '<div class="' + config.thumbnail.rightLeft + '">'
       if (config.thumbnail.cover.active === true) {
         html += '<div class="post-img-left post-img-cover ' + config.classes.image + '" style="min-height: ' + config.thumbnail.cover.minheight + 'px; background-image: url(' + postThumbnailURL + ');"></div>'
       } else {
@@ -298,7 +304,7 @@ function postsDefault(json) {
 
     // Right image
     if (config.thumbnail.active === true && config.thumbnail.placement === 'right') {
-      html += '<div class="' + config.classes.horizontalThumbnail + '">'
+      html += '<div class="' + config.thumbnail.rightLeft + '">'
       html += content
       if (config.thumbnail.cover.active === true) {
         html += '<div class="post-img-right post-img-cover ' + config.classes.image + '" style="min-height: ' + config.thumbnail.cover.minheight + 'px; background-image: url(' + postThumbnailURL + ');"></div>'

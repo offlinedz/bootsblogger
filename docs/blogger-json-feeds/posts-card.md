@@ -19,7 +19,11 @@ var config = {
   content: {
     numchars: 'full'|number|0 to disable,
     title: {
-      tag: 'h1|h2|h3|h4|h5|h6'
+      tag: 'h1|h2|h3|h4|h5|h6',
+      link: {
+        active: true|false,
+        style: ''
+      }
     },
     more: {
       active: true|false,
@@ -30,7 +34,7 @@ var config = {
   author: {
     active: true|false,
     placement: 'header|footer',
-    before: 'Posted by ',
+    before: '<i class="fa fa-user" aria-hidden="true"></i> Posted by ',
     after: '',
     none: 'Anonymous',
     avatar: {
@@ -41,20 +45,20 @@ var config = {
   date: {
     active: true|false,
     placement: 'header|footer',
-    before: 'Posted on ',
+    before: '<i class="fa fa-clock-o" aria-hidden="true"></i> Posted on ',
     after: '',
     monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
   },
   numComments: {
     active: true|false,
     placement: 'header|footer',
-    before: 'Comment total: ',
+    before: '<i class="fa fa-comments" aria-hidden="true"></i> ',
     after: ''
   },
   labels: {
     active: true|false,
     placement: 'header|footer',
-    before: 'Labels: ',
+    before: '<i class="fa fa-tags" aria-hidden="true"></i> Labels: ',
     after: '',
     none: 'Unlabelled'
   },
@@ -75,12 +79,14 @@ var config = {
   },
   grid: {
     active: true|false,
-    column: 'col-*-*'
+    column: 'col'
   },
   classes: {
-    card: 'Add class to .card',
-    image: 'Add class to .card-img-*',
-    content: 'Add class to .card-block'
+    card: 'Add class to `.card`',
+    image: 'Add class to `.card-img-*`',
+    content: 'Add class to `.card-block`',
+    header: 'Add class to `.card-header`',
+    footer: 'Add class to `.card-footer`'
   }
 }
 </script>
@@ -101,7 +107,11 @@ var config = {
   content: {
     numchars: 100,
     title: {
-      tag: 'h3'
+      tag: 'h3',
+      link: {
+        active: false,
+        style: ''
+      }
     },
     more: {
       active: true,
@@ -160,9 +170,11 @@ var config = {
     column: ''
   },
   classes: {
-    card: '',
+    card: 'mb-3',
     image: 'img-fluid',
-    content: ''
+    content: '',
+    header: '',
+    footer: 'text-center text-muted'
   }
 }
 </script>

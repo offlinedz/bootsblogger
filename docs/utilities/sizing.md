@@ -1,26 +1,17 @@
 ---
 layout: docs
 title: Sizing
-description: Kelas-kelas untuk mengatur lebar suatu element, dengan dukungan responsif.
+description: Kelas tambahan untuk Bootstrap sizing utilities.
 group: utilities
 ---
 
-Kelas-kelas untuk mengatur lebar suatu element, dengan dukungan responsif.
+Kelas tambahan untuk [Bootstrap sizing utilities](https://v4-alpha.getbootstrap.com/utilities/sizing/).
 
-## Notation
+## Responsive width
 
-Format kelasnya adalah `.w-{width}` untuk `xs` dan `.w-{breakpoint}-{width}` untuk `sm`, `md`, `lg`, dan `xl`.
+Format kelasnya tidak jauh berbeda dengan [Bootstrap sizing utilities](https://v4-alpha.getbootstrap.com/utilities/sizing/), hanya menambahkan `{breakpoint}`, format kelasnya adalah `.w-{breakpoint}-{25, 50, 75, 100}`.
 
-`{width}`:
-
-- 25 = `width: 25%;`
-- 50 = `width: 50%;`
-- 75 = `width: 75%;`
-- 100 = `width: 100%;`
-
-**Catatan:** `.w-25`, `.w-50`, `.w-75`, dan `.w-100` adalah [kelas utilitas dari Bootstrap](https://v4-alpha.getbootstrap.com/utilities/sizing/).
-
-## Example
+### Example
 
 Ubah ukuran layar *browser* Anda untuk melihat perubahannya.
 

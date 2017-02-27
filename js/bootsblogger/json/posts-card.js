@@ -85,7 +85,7 @@ function postsCard(json) {
     if (postNumComments > 1) {
       postNumComments = postNumComments + ' Comments'
     }
-    postNumComments = '<a class="nav-link" href="' + postURL + '#comments">' + postNumComments + '</a>'
+    postNumComments = '<a href="' + postURL + '#comments">' + postNumComments + '</a>'
 
     // Resize thumbnail
     postThumbnailURL = postThumbnailURL.toString()
@@ -95,7 +95,7 @@ function postsCard(json) {
     if (post.category && post.category.length) {
       postLabels = []
       for (var k = 0, ken = post.category.length; k < ken; ++k) {
-        postLabels.push('<a class="nav-link" href="' + homepageURL + '/search/label/' + encodeURIComponent(post.category[k].term) + '">' + post.category[k].term + '</a>')
+        postLabels.push('<a href="' + homepageURL + '/search/label/' + encodeURIComponent(post.category[k].term) + '">' + post.category[k].term + '</a>')
       }
       // Sort the post labels alphabetically
       postLabels = postLabels.sort()
@@ -121,23 +121,23 @@ function postsCard(json) {
 
     // Card header
     var headerHtml = ''
-    headerHtml += '<div class="card-header">'
-    headerHtml += '<ul class="nav nav-inline">'
+    headerHtml += '<div class="card-header ' + config.classes.header + '">'
+    headerHtml += '<ul class="list-inline mb-0">'
     if (config.author.active === true && config.author.placement === 'header') {
       if (config.author.avatar.active === true) {
-        headerHtml += '<li class="nav-item">' + config.author.before + '<a class="nav-link" href="' + postAuthorURL + '" title="Author Avatar"><img src="' + postAuthorAvatar + '" alt="' + postAuthorName + '"></a> <a href="' + postAuthorURL + '" title="Author Profile">' + postAuthorName + '</a>' + config.author.after + '</li>'
+        headerHtml += '<li class="list-inline-item">' + config.author.before + '<a href="' + postAuthorURL + '" title="Author Avatar"><img src="' + postAuthorAvatar + '" alt="' + postAuthorName + '"></a> <a href="' + postAuthorURL + '" title="Author Profile">' + postAuthorName + '</a>' + config.author.after + '</li>'
       } else {
-        headerHtml += '<li class="nav-item">' + config.author.before + '<a class="nav-link" href="' + postAuthorURL + '" title="Author Profile">' + postAuthorName + '</a>' + config.author.after + '</li>'
+        headerHtml += '<li class="list-inline-item">' + config.author.before + '<a href="' + postAuthorURL + '" title="Author Profile">' + postAuthorName + '</a>' + config.author.after + '</li>'
       }
     }
     if (config.date.active === true && config.date.placement === 'header') {
-      headerHtml += '<li class="nav-item">' + config.date.before + '<time datetime="' + postPublish + '" title="' + postPublish + '">' + postDate + '</time>' + config.date.after + '</li>'
+      headerHtml += '<li class="list-inline-item">' + config.date.before + '<time datetime="' + postPublish + '" title="' + postPublish + '">' + postDate + '</time>' + config.date.after + '</li>'
     }
     if (config.numComments.active === true && config.numComments.placement === 'header') {
-      headerHtml += '<li class="nav-item">' + config.numComments.before + postNumComments + config.numComments.after + '</li>'
+      headerHtml += '<li class="list-inline-item">' + config.numComments.before + postNumComments + config.numComments.after + '</li>'
     }
     if (config.labels.active === true && config.labels.placement === 'header') {
-      headerHtml += '<li class="nav-item">' + config.labels.before + postLabels + config.labels.after + '</li>'
+      headerHtml += '<li class="list-inline-item">' + config.labels.before + postLabels + config.labels.after + '</li>'
     }
     headerHtml += '</ul>'
     headerHtml += '</div>'
@@ -145,23 +145,23 @@ function postsCard(json) {
 
     // Card footer
     var footerHtml = ''
-    footerHtml += '<div class="card-footer">'
-    footerHtml += '<ul class="nav nav-inline">'
+    footerHtml += '<div class="card-footer ' + config.classes.footer + '">'
+    footerHtml += '<ul class="list-inline mb-0">'
     if (config.author.active === true && config.author.placement === 'footer') {
       if (config.author.avatar.active === true) {
-        footerHtml += '<li class="nav-item">' + config.author.before + '<a class="nav-link" href="' + postAuthorURL + '" title="Author Avatar"><img src="' + postAuthorAvatar + '" alt="' + postAuthorName + '"></a> <a href="' + postAuthorURL + '" title="Author Profile">' + postAuthorName + '</a>' + config.author.after + '</li>'
+        footerHtml += '<li class="list-inline-item">' + config.author.before + '<a href="' + postAuthorURL + '" title="Author Avatar"><img src="' + postAuthorAvatar + '" alt="' + postAuthorName + '"></a> <a href="' + postAuthorURL + '" title="Author Profile">' + postAuthorName + '</a>' + config.author.after + '</li>'
       } else {
-        footerHtml += '<li class="nav-item">' + config.author.before + '<a class="nav-link" href="' + postAuthorURL + '" title="Author Profile">' + postAuthorName + '</a>' + config.author.after + '</li>'
+        footerHtml += '<li class="list-inline-item">' + config.author.before + '<a href="' + postAuthorURL + '" title="Author Profile">' + postAuthorName + '</a>' + config.author.after + '</li>'
       }
     }
     if (config.date.active === true && config.date.placement === 'footer') {
-      footerHtml += '<li class="nav-item">' + config.date.before + '<time datetime="' + postPublish + '" title="' + postPublish + '">' + postDate + '</time>' + config.date.after + '</li>'
+      footerHtml += '<li class="list-inline-item">' + config.date.before + '<time datetime="' + postPublish + '" title="' + postPublish + '">' + postDate + '</time>' + config.date.after + '</li>'
     }
     if (config.numComments.active === true && config.numComments.placement === 'footer') {
-      footerHtml += '<li class="nav-item">' + config.numComments.before + postNumComments + config.numComments.after + '</li>'
+      footerHtml += '<li class="list-inline-item">' + config.numComments.before + postNumComments + config.numComments.after + '</li>'
     }
     if (config.labels.active === true && config.labels.placement === 'footer') {
-      footerHtml += '<li class="nav-item">' + config.labels.before + postLabels + config.labels.after + '</li>'
+      footerHtml += '<li class="list-inline-item">' + config.labels.before + postLabels + config.labels.after + '</li>'
     }
     footerHtml += '</ul>'
     footerHtml += '</div>'
@@ -171,7 +171,13 @@ function postsCard(json) {
     var contentHtml = ''
     contentHtml += '<div class="card-block ' + config.classes.content + '">'
     contentHtml += '<' + config.content.title.tag + ' class="card-title">'
+    if (config.content.title.link.active === true) {
+      contentHtml += '<a class="' + config.content.title.link.style + '" href="' + postURL + '">'
+    }
     contentHtml += postTitle
+    if (config.content.title.link.active === true) {
+      contentHtml += '</a>'
+    }
     contentHtml += '</' + config.content.title.tag + '>'
     if (config.content.numchars !== 'full' && config.content.numchars !== 0) {
       var re = /<\S[^>]*>/g
