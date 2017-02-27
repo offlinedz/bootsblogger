@@ -19,11 +19,19 @@ Licensed under MIT (https://github.com/bootsblogger/bootsblogger/blob/master/LIC
 ------------------------------------------------- */
 
 
-/*
+/* Table of Contents
+ *
+ * Skip navigation
  * Global styles
+ * Navbar
+ * Jumbotron
+ * Blog main
+ * Blog sidebar
+ * Blog posts
+ * Blog pagination
+ * Blog widget 1
+ * Blog footer
  */
-
-body {}
 
 
 /*
@@ -33,6 +41,13 @@ body {}
 #blog-main:focus {
   outline: none;
 }
+
+
+/*
+ * Global styles
+ */
+
+body {}
 
 
 /*
@@ -55,18 +70,28 @@ body {}
 
 
 /*
- * Widget 1
+ * Blog main
  */
 
-.widget-1 {
-  padding-top: 2rem;
-  padding-bottom: 1rem;
-  background-color: #f7f7f9;
-}
+.class {}
 
 
 /*
- * Pagination
+ * Blog sidebar
+ */
+
+.class {}
+
+
+/*
+ * Blog posts
+ */
+
+.class {}
+
+
+/*
+ * Blog pagination
  */
 
 .blog-pagination > .btn {
@@ -75,7 +100,18 @@ body {}
 
 
 /*
- * Footer
+ * Blog widget 1
+ */
+
+.blog-widget-1 {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  background-color: #f7f7f9;
+}
+
+
+/*
+ * Blog footer
  */
 
 .blog-footer {
@@ -103,6 +139,7 @@ body {}
 .blog-footer-links {
   padding-left: 0;
   margin-bottom: 1rem;
+  list-style: none;
 }
 .blog-footer-links li {
   display: inline-block;

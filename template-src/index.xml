@@ -32,14 +32,14 @@
       <div class='row blogger-row'>
         <!-- Main -->
         <main class='blog-main col-md-9 blogger-col-8' id='blog-main' tabindex='-1'>
-          <b:section id='main-section' maxwidgets='1' showaddelement='no'>
+          <b:section id='blog-main-section' maxwidgets='1' showaddelement='no'>
             <!--(bake /includes/blog-posts/blog-posts.xml)-->
           </b:section>
         </main><!-- /.blog-main -->
 
         <!-- Sidebar -->
         <aside class='blog-sidebar col-md-3 blogger-col-4 mt-5 mt-md-0' id='blog-sidebar'>
-          <b:section class='wg-box wg-box-faded wg-md-12 wg-sm-6' id='sidebar-section'></b:section>
+          <b:section class='wg-box wg-box-faded wg-md-12 wg-sm-6' id='blog-sidebar-section'></b:section>
         </aside><!-- /.blog-sidebar -->
       </div><!-- /.row -->
     </div><!-- /.container -->
@@ -47,9 +47,9 @@
 
     <!-- WIDGET 1
     ================================================== -->
-    <div class='widget-1 mt-5' id='widget-1'>
+    <div class='blog-widget-1 mt-5' id='blog-widget-1'>
       <div class='container'>
-        <b:section class='wg-box wg-box-white wg-md-4 wg-sm-6' id='widget-1-section'></b:section>
+        <b:section class='wg-box wg-box-white wg-md-4 wg-sm-6' id='blog-widget-1-section'></b:section>
       </div>
     </div>
 
