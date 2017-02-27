@@ -1,10 +1,22 @@
 .figure-align-right {
+  display: table;
   float: right;
   margin-left: 1rem;
+
+  .figure-caption {
+    display: table-caption;
+    caption-side: bottom;
+  }
 }
 .figure-align-left {
+  display: table;
   float: left;
   margin-right: 1rem;
+
+  .figure-caption {
+    display: table-caption;
+    caption-side: bottom;
+  }
 }
 .figure-align-none {
   display: block;
