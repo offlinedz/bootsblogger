@@ -1,5 +1,4 @@
 <b:if cond='data:post.allowComments'>
-  <i aria-hidden='true' class='fa fa-comments icon-num-comments'/>
   <a expr:href='data:post.url + &quot;#comments&quot;'>
     <b:if cond='data:post.numComments == 0'>No Comments</b:if>
     <b:if cond='data:post.numComments == 1'>1 Comment</b:if>

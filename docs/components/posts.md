@@ -133,18 +133,23 @@ Gunakan `.post-meta`, dan tempatkan di dalam `.post-content`. Untuk membuat list
             <!-- Author -->
             <b:if cond='data:top.showAuthor'>
               <li>
+                <i aria-hidden='true' class='fa fa-user'/><!-- Icon -->
+                <span><data:top.authorLabel/></span><!-- Label -->
                 <b:include name='include-author'/>
               </li>
             </b:if>
             <!-- Timestamp -->
             <b:if cond='data:top.showTimestamp'>
               <li>
+                <i aria-hidden='true' class='fa fa-clock-o'/><!-- Icon -->
+                <span><data:top.timestampLabel/></span><!-- Label -->
                 <b:include name='include-timestamp'/>
               </li>
             </b:if>
             <!-- Num comments -->
             <b:if cond='data:post.allowComments'>
               <li>
+                <i aria-hidden='true' class='fa fa-comments'/><!-- Icon -->
                 <b:include name='include-num-comments'/>
               </li>
             </b:if>
@@ -517,7 +522,7 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header di posisi pertama di
       </h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
     </div>
-    <div class="post-footer"><i class="fa fa-tags"></i> <a href="#">Label1</a>, <a href="#">Label2</a></div>
+    <div class="post-footer"><i class="fa fa-tags"></i> <span>Labels:</span> <a href="#">Label1</a>, <a href="#">Label2</a></div>
   </div>
 </div><!-- /.bd-example -->
 
@@ -531,18 +536,23 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header di posisi pertama di
           <!-- Author -->
           <b:if cond='data:top.showAuthor'>
             <li>
+              <i aria-hidden='true' class='fa fa-user'/><!-- Icon -->
+              <span><data:top.authorLabel/></span><!-- Label -->
               <b:include name='include-author'/>
             </li>
           </b:if>
           <!-- Timestamp -->
           <b:if cond='data:top.showTimestamp'>
             <li>
+              <i aria-hidden='true' class='fa fa-clock-o'/><!-- Icon -->
+              <span><data:top.timestampLabel/></span><!-- Label -->
               <b:include name='include-timestamp'/>
             </li>
           </b:if>
           <!-- Num comments -->
           <b:if cond='data:post.allowComments'>
             <li>
+              <i aria-hidden='true' class='fa fa-comments'/><!-- Icon -->
               <b:include name='include-num-comments'/>
             </li>
           </b:if>
@@ -563,6 +573,8 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header di posisi pertama di
     <!-- Footer -->
     <b:if cond='data:top.showPostLabels'>
       <footer class='post-footer'>
+        <i aria-hidden='true' class='fa fa-tags'/><!-- Icon -->
+        <span><data:postLabelsLabel/></span><!-- Label -->
         <b:include name='include-labels'/>
       </footer><!-- /.post-footer -->
     </b:if>
@@ -584,7 +596,7 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header di posisi pertama di
     <div class="post-img-only">
       <a href="#"><img data-src="holder.js/100px350/?auto=yes&text=Image" alt="Image"></a>
     </div>
-    <div class="post-footer"><i class="fa fa-tags"></i> <a href="#">Label1</a>, <a href="#">Label2</a></div>
+    <div class="post-footer"><i class="fa fa-tags"></i> <span>Labels:</span> <a href="#">Label1</a>, <a href="#">Label2</a></div>
   </div>
 </div><!-- /.bd-example -->
 
@@ -598,18 +610,23 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header di posisi pertama di
           <!-- Author -->
           <b:if cond='data:top.showAuthor'>
             <li>
+              <i aria-hidden='true' class='fa fa-user'/><!-- Icon -->
+              <span><data:top.authorLabel/></span><!-- Label -->
               <b:include name='include-author'/>
             </li>
           </b:if>
           <!-- Timestamp -->
           <b:if cond='data:top.showTimestamp'>
             <li>
+              <i aria-hidden='true' class='fa fa-clock-o'/><!-- Icon -->
+              <span><data:top.timestampLabel/></span><!-- Label -->
               <b:include name='include-timestamp'/>
             </li>
           </b:if>
           <!-- Num comments -->
           <b:if cond='data:post.allowComments'>
             <li>
+              <i aria-hidden='true' class='fa fa-comments'/><!-- Icon -->
               <b:include name='include-num-comments'/>
             </li>
           </b:if>
@@ -623,6 +640,8 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header di posisi pertama di
     <!-- Footer -->
     <b:if cond='data:top.showPostLabels'>
       <footer class='post-footer'>
+        <i aria-hidden='true' class='fa fa-tags'/><!-- Icon -->
+        <span><data:postLabelsLabel/></span><!-- Label -->
         <b:include name='include-labels'/>
       </footer><!-- /.post-footer -->
     </b:if>
@@ -649,7 +668,7 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header di posisi pertama di
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
       <p><a class="btn btn-primary" href="#">Read more</a></p>
     </div>
-    <div class="post-footer"><i class="fa fa-tags"></i> <a href="#">Label1</a>, <a href="#">Label2</a></div>
+    <div class="post-footer"><i class="fa fa-tags"></i> <span>Labels:</span> <a href="#">Label1</a>, <a href="#">Label2</a></div>
   </div>
 </div><!-- /.bd-example -->
 
@@ -663,18 +682,23 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header di posisi pertama di
           <!-- Author -->
           <b:if cond='data:top.showAuthor'>
             <li>
+              <i aria-hidden='true' class='fa fa-user'/><!-- Icon -->
+              <span><data:top.authorLabel/></span><!-- Label -->
               <b:include name='include-author'/>
             </li>
           </b:if>
           <!-- Timestamp -->
           <b:if cond='data:top.showTimestamp'>
             <li>
+              <i aria-hidden='true' class='fa fa-clock-o'/><!-- Icon -->
+              <span><data:top.timestampLabel/></span><!-- Label -->
               <b:include name='include-timestamp'/>
             </li>
           </b:if>
           <!-- Num comments -->
           <b:if cond='data:post.allowComments'>
             <li>
+              <i aria-hidden='true' class='fa fa-comments'/><!-- Icon -->
               <b:include name='include-num-comments'/>
             </li>
           </b:if>
@@ -700,6 +724,8 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header di posisi pertama di
     <!-- Footer -->
     <b:if cond='data:top.showPostLabels'>
       <footer class='post-footer'>
+        <i aria-hidden='true' class='fa fa-tags'/><!-- Icon -->
+        <span><data:postLabelsLabel/></span><!-- Label -->
         <b:include name='include-labels'/>
       </footer><!-- /.post-footer -->
     </b:if>
@@ -726,7 +752,7 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header di posisi pertama di
     <div class="post-img-bottom">
       <a href="#"><img data-src="holder.js/100px350/?auto=yes&text=Image" alt="Image"/></a>
     </div>
-    <div class="post-footer"><i class="fa fa-tags"></i> <a href="#">Label1</a>, <a href="#">Label2</a></div>
+    <div class="post-footer"><i class="fa fa-tags"></i> <span>Labels:</span> <a href="#">Label1</a>, <a href="#">Label2</a></div>
   </div>
 </div><!-- /.bd-example -->
 
@@ -740,18 +766,23 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header di posisi pertama di
           <!-- Author -->
           <b:if cond='data:top.showAuthor'>
             <li>
+              <i aria-hidden='true' class='fa fa-user'/><!-- Icon -->
+              <span><data:top.authorLabel/></span><!-- Label -->
               <b:include name='include-author'/>
             </li>
           </b:if>
           <!-- Timestamp -->
           <b:if cond='data:top.showTimestamp'>
             <li>
+              <i aria-hidden='true' class='fa fa-clock-o'/><!-- Icon -->
+              <span><data:top.timestampLabel/></span><!-- Label -->
               <b:include name='include-timestamp'/>
             </li>
           </b:if>
           <!-- Num comments -->
           <b:if cond='data:post.allowComments'>
             <li>
+              <i aria-hidden='true' class='fa fa-comments'/><!-- Icon -->
               <b:include name='include-num-comments'/>
             </li>
           </b:if>
@@ -777,6 +808,8 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header di posisi pertama di
     <!-- Footer -->
     <b:if cond='data:top.showPostLabels'>
       <footer class='post-footer'>
+        <i aria-hidden='true' class='fa fa-tags'/><!-- Icon -->
+        <span><data:postLabelsLabel/></span><!-- Label -->
         <b:include name='include-labels'/>
       </footer><!-- /.post-footer -->
     </b:if>
@@ -805,7 +838,7 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header di posisi pertama di
         <p><a class="btn btn-primary" href="#">Read more</a></p>
       </div>
     </div>
-    <div class="post-footer"><i class="fa fa-tags"></i> <a href="#">Label1</a>, <a href="#">Label2</a></div>
+    <div class="post-footer"><i class="fa fa-tags"></i> <span>Labels:</span> <a href="#">Label1</a>, <a href="#">Label2</a></div>
   </div>
 </div><!-- /.bd-example -->
 
@@ -819,18 +852,23 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header di posisi pertama di
           <!-- Author -->
           <b:if cond='data:top.showAuthor'>
             <li>
+              <i aria-hidden='true' class='fa fa-user'/><!-- Icon -->
+              <span><data:top.authorLabel/></span><!-- Label -->
               <b:include name='include-author'/>
             </li>
           </b:if>
           <!-- Timestamp -->
           <b:if cond='data:top.showTimestamp'>
             <li>
+              <i aria-hidden='true' class='fa fa-clock-o'/><!-- Icon -->
+              <span><data:top.timestampLabel/></span><!-- Label -->
               <b:include name='include-timestamp'/>
             </li>
           </b:if>
           <!-- Num comments -->
           <b:if cond='data:post.allowComments'>
             <li>
+              <i aria-hidden='true' class='fa fa-comments'/><!-- Icon -->
               <b:include name='include-num-comments'/>
             </li>
           </b:if>
@@ -858,6 +896,8 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header di posisi pertama di
     <!-- Footer -->
     <b:if cond='data:top.showPostLabels'>
       <footer class='post-footer'>
+        <i aria-hidden='true' class='fa fa-tags'/><!-- Icon -->
+        <span><data:postLabelsLabel/></span><!-- Label -->
         <b:include name='include-labels'/>
       </footer><!-- /.post-footer -->
     </b:if>
@@ -886,7 +926,7 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header di posisi pertama di
         <a href="#"><img data-src="holder.js/100px180/?auto=yes&text=Image" alt="Image"/></a>
       </div>
     </div>
-    <div class="post-footer"><i class="fa fa-tags"></i> <a href="#">Label1</a>, <a href="#">Label2</a></div>
+    <div class="post-footer"><i class="fa fa-tags"></i> <span>Labels:</span> <a href="#">Label1</a>, <a href="#">Label2</a></div>
   </div>
 </div><!-- /.bd-example -->
 
@@ -900,18 +940,23 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header di posisi pertama di
           <!-- Author -->
           <b:if cond='data:top.showAuthor'>
             <li>
+              <i aria-hidden='true' class='fa fa-user'/><!-- Icon -->
+              <span><data:top.authorLabel/></span><!-- Label -->
               <b:include name='include-author'/>
             </li>
           </b:if>
           <!-- Timestamp -->
           <b:if cond='data:top.showTimestamp'>
             <li>
+              <i aria-hidden='true' class='fa fa-clock-o'/><!-- Icon -->
+              <span><data:top.timestampLabel/></span><!-- Label -->
               <b:include name='include-timestamp'/>
             </li>
           </b:if>
           <!-- Num comments -->
           <b:if cond='data:post.allowComments'>
             <li>
+              <i aria-hidden='true' class='fa fa-comments'/><!-- Icon -->
               <b:include name='include-num-comments'/>
             </li>
           </b:if>
@@ -939,6 +984,8 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header di posisi pertama di
     <!-- Footer -->
     <b:if cond='data:top.showPostLabels'>
       <footer class='post-footer'>
+        <i aria-hidden='true' class='fa fa-tags'/><!-- Icon -->
+        <span><data:postLabelsLabel/></span><!-- Label -->
         <b:include name='include-labels'/>
       </footer><!-- /.post-footer -->
     </b:if>
@@ -967,7 +1014,7 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header di posisi pertama di
         <p><a class="btn btn-primary" href="#">Read more</a></p>
       </div>
     </div>
-    <div class="post-footer"><i class="fa fa-tags"></i> <a href="#">Label1</a>, <a href="#">Label2</a></div>
+    <div class="post-footer"><i class="fa fa-tags"></i> <span>Labels:</span> <a href="#">Label1</a>, <a href="#">Label2</a></div>
   </div>
 </div><!-- /.bd-example -->
 
@@ -981,18 +1028,23 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header di posisi pertama di
           <!-- Author -->
           <b:if cond='data:top.showAuthor'>
             <li>
+              <i aria-hidden='true' class='fa fa-user'/><!-- Icon -->
+              <span><data:top.authorLabel/></span><!-- Label -->
               <b:include name='include-author'/>
             </li>
           </b:if>
           <!-- Timestamp -->
           <b:if cond='data:top.showTimestamp'>
             <li>
+              <i aria-hidden='true' class='fa fa-clock-o'/><!-- Icon -->
+              <span><data:top.timestampLabel/></span><!-- Label -->
               <b:include name='include-timestamp'/>
             </li>
           </b:if>
           <!-- Num comments -->
           <b:if cond='data:post.allowComments'>
             <li>
+              <i aria-hidden='true' class='fa fa-comments'/><!-- Icon -->
               <b:include name='include-num-comments'/>
             </li>
           </b:if>
@@ -1020,6 +1072,8 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header di posisi pertama di
     <!-- Footer -->
     <b:if cond='data:top.showPostLabels'>
       <footer class='post-footer'>
+        <i aria-hidden='true' class='fa fa-tags'/><!-- Icon -->
+        <span><data:postLabelsLabel/></span><!-- Label -->
         <b:include name='include-labels'/>
       </footer><!-- /.post-footer -->
     </b:if>

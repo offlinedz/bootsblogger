@@ -10,7 +10,7 @@
 <b:elseif cond='data:blog.pageType == &quot;archive&quot;'/>
   <script>var summary=100</script>
 
-<!-- Homepage -->
+<!-- Homepage and default (https://example.blogspot.com/search) -->
 <b:else/>
   <script>var summary=100</script>
 </b:if>

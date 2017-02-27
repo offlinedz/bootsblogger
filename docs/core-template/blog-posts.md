@@ -150,7 +150,7 @@ Untuk menyertakan bagian terpisah **#1** sampai **#12** harus menggunakan tag ko
       <th class="text-nowrap text-right" scope="row">Note</th>
       <td>
 {% highlight html %}
-<!-- Gunakan kode di bawah ini -->
+<!-- Date header -->
 <b:if cond='data:post.dateHeader'>
   <h2 class='date-header'><data:post.dateHeader/></h2>
 </b:if>
@@ -172,7 +172,10 @@ Untuk menyertakan bagian terpisah **#1** sampai **#12** harus menggunakan tag ko
       <th class="text-nowrap text-right" scope="row">Usage</th>
       <td>
 {% highlight html %}
+<!-- Author -->
 <b:if cond='data:top.showAuthor'>
+  <i aria-hidden='true' class='fa fa-user'/><!-- Icon -->
+  <span><data:top.authorLabel/></span><!-- Label -->
   <b:include name='include-author'/>
 </b:if>
 {% endhighlight %}
@@ -197,7 +200,10 @@ Untuk menyertakan bagian terpisah **#1** sampai **#12** harus menggunakan tag ko
       <th class="text-nowrap text-right" scope="row">Usage</th>
       <td>
 {% highlight html %}
+<!-- Timestamp -->
 <b:if cond='data:top.showTimestamp'>
+  <i aria-hidden='true' class='fa fa-clock-o'/><!-- Icon -->
+  <span><data:top.timestampLabel/></span><!-- Label -->
   <b:include name='include-timestamp'/>
 </b:if>
 {% endhighlight %}
@@ -222,7 +228,9 @@ Untuk menyertakan bagian terpisah **#1** sampai **#12** harus menggunakan tag ko
       <th class="text-nowrap text-right" scope="row">Usage</th>
       <td>
 {% highlight html %}
+<!-- Num comments -->
 <b:if cond='data:post.allowComments'>
+  <i aria-hidden='true' class='fa fa-comments'/><!-- Icon -->
   <b:include name='include-num-comments'/>
 </b:if>
 {% endhighlight %}
@@ -247,7 +255,9 @@ Untuk menyertakan bagian terpisah **#1** sampai **#12** harus menggunakan tag ko
       <th class="text-nowrap text-right" scope="row">Usage</th>
       <td>
 {% highlight html %}
+<!-- Link post -->
 <b:if cond='data:post.showBacklinks'>
+  <i aria-hidden='true' class='fa fa-link'/><!-- Icon -->
   <b:include name='include-link-post'/>
 </b:if>
 {% endhighlight %}
@@ -272,7 +282,10 @@ Untuk menyertakan bagian terpisah **#1** sampai **#12** harus menggunakan tag ko
       <th class="text-nowrap text-right" scope="row">Usage</th>
       <td>
 {% highlight html %}
+<!-- Labels -->
 <b:if cond='data:top.showPostLabels'>
+  <i aria-hidden='true' class='fa fa-tags'/><!-- Icon -->
+  <span><data:postLabelsLabel/></span><!-- Label -->
   <b:include name='include-labels'/>
 </b:if>
 {% endhighlight %}
@@ -297,8 +310,21 @@ Untuk menyertakan bagian terpisah **#1** sampai **#12** harus menggunakan tag ko
       <th class="text-nowrap text-right" scope="row">Usage</th>
       <td>
 {% highlight html %}
+<!-- Reactions -->
 <b:if cond='data:top.showReactions'>
   <b:include name='include-reactions'/>
+</b:if>
+
+<!-- With label -->
+<b:if cond='data:top.showReactions'>
+  <div class='media'>
+    <div class='d-flex align-middle mr-3'>
+      <span><data:top.reactionsLabel/></span>
+    </div>
+    <div class='media-body'>
+      <b:include name='include-reactions'/>
+    </div>
+  </div>
 </b:if>
 {% endhighlight %}
       </td>
@@ -322,7 +348,9 @@ Untuk menyertakan bagian terpisah **#1** sampai **#12** harus menggunakan tag ko
       <th class="text-nowrap text-right" scope="row">Usage</th>
       <td>
 {% highlight html %}
+<!-- Edit post -->
 <b:if cond='data:post.editUrl'>
+  <i aria-hidden='true' class='fa fa-pencil-square'/><!-- Icon -->
   <b:include name='include-edit-post'/>
 </b:if>
 {% endhighlight %}
@@ -347,7 +375,9 @@ Untuk menyertakan bagian terpisah **#1** sampai **#12** harus menggunakan tag ko
       <th class="text-nowrap text-right" scope="row">Usage</th>
       <td>
 {% highlight html %}
+<!-- Email post -->
 <b:if cond='data:post.emailPostUrl'>
+  <i aria-hidden='true' class='fa fa-envelope-square'/><!-- Icon -->
   <b:include name='include-email-post'/>
 </b:if>
 {% endhighlight %}
@@ -372,6 +402,7 @@ Untuk menyertakan bagian terpisah **#1** sampai **#12** harus menggunakan tag ko
       <th class="text-nowrap text-right" scope="row">Usage</th>
       <td>
 {% highlight html %}
+<!-- Share buttons -->
 <b:if cond='data:post.sharePostUrl'>
   <b:include name='include-share-buttons'/>
 </b:if>
@@ -397,7 +428,10 @@ Untuk menyertakan bagian terpisah **#1** sampai **#12** harus menggunakan tag ko
       <th class="text-nowrap text-right" scope="row">Usage</th>
       <td>
 {% highlight html %}
+<!-- Location -->
 <b:if cond='data:top.showLocation'>
+  <i aria-hidden='true' class='fa fa-location-arrow'/><!-- Icon -->
+  <span><data:postLocationLabel/></span><!-- Label -->
   <b:include name='include-location'/>
 </b:if>
 {% endhighlight %}
@@ -422,6 +456,7 @@ Untuk menyertakan bagian terpisah **#1** sampai **#12** harus menggunakan tag ko
       <th class="text-nowrap text-right" scope="row">Usage</th>
       <td>
 {% highlight html %}
+<!-- About author -->
 <b:if cond='data:post.authorAboutMe'>
   <b:include name='include-about-author'/>
 </b:if>
@@ -447,6 +482,7 @@ Untuk menyertakan bagian terpisah **#1** sampai **#12** harus menggunakan tag ko
       <th class="text-nowrap text-right" scope="row">Usage</th>
       <td>
 {% highlight html %}
+<!-- Post thumbnail -->
 <b:include name='include-thumbnail'/>
 {% endhighlight %}
       </td>
@@ -470,6 +506,7 @@ Untuk menyertakan bagian terpisah **#1** sampai **#12** harus menggunakan tag ko
       <th class="text-nowrap text-right" scope="row">Usage</th>
       <td>
 {% highlight html %}
+<!-- Post summary -->
 <p><b:include name='include-summary'/></p>
 {% endhighlight %}
       </td>
@@ -493,6 +530,7 @@ Untuk menyertakan bagian terpisah **#1** sampai **#12** harus menggunakan tag ko
       <th class="text-nowrap text-right" scope="row">Usage</th>
       <td>
 {% highlight html %}
+<!-- Breadcrumb -->
 <b:include name='include-breadcrumb'/>
 {% endhighlight %}
       </td>
@@ -501,7 +539,7 @@ Untuk menyertakan bagian terpisah **#1** sampai **#12** harus menggunakan tag ko
       <th class="text-nowrap text-right" scope="row">Note</th>
       <td>
 {% highlight html %}
-<!-- Gunakan di dalam bagian `main` -->
+<!-- Use in `main` -->
 <b:includable id='main' var='top'>...</b:includable>
 {% endhighlight %}
       </td>
@@ -514,9 +552,9 @@ Untuk menyertakan bagian terpisah **#1** sampai **#12** harus menggunakan tag ko
 Perhatikan ketika menyertakan bagian terpisah yang berhubungan dengan <a href="javascript:;" data-toggle="modal" data-target=".image-post-options">opsi posting</a>.
 
 {% highlight html %}
-<!-- ========== Contoh 1 ========== -->
+<!-- ========== Example 1 ========== -->
 
-<!-- Salah -->
+<!-- Nope -->
 <ul><!-- `ul` akan tetap ada ketika opsi penulis tidak dicentang. -->
   <b:if cond='data:top.showAuthor'>
     <li>
@@ -525,7 +563,7 @@ Perhatikan ketika menyertakan bagian terpisah yang berhubungan dengan <a href="j
   </b:if>
 </ul>
 
-<!-- Benar -->
+<!-- Yep -->
 <b:if cond='data:top.showAuthor'>
   <ul><!-- `ul` akan menghilang ketika opsi penulis tidak dicentang. -->
     <li>
@@ -534,9 +572,9 @@ Perhatikan ketika menyertakan bagian terpisah yang berhubungan dengan <a href="j
   </ul>
 </b:if>
 
-<!-- ========== Contoh 2 ========== -->
+<!-- ========== Example 2 ========== -->
 
-<!-- Salah -->
+<!-- Nope -->
 <b:if cond='data:top.showAuthor'>
   <ul>
     <li>
@@ -547,7 +585,7 @@ Perhatikan ketika menyertakan bagian terpisah yang berhubungan dengan <a href="j
   </ul>
 </b:if>
 
-<!-- Benar -->
+<!-- Yep -->
 <ul>
   <b:if cond='data:top.showAuthor'>
     <li>
@@ -558,9 +596,9 @@ Perhatikan ketika menyertakan bagian terpisah yang berhubungan dengan <a href="j
   <li>Dan akan selalu ada walaupun opsi penulis tidak dicentang.</li>
 </ul>
 
-<!-- ========== Contoh 3 ========== -->
+<!-- ========== Example 3 ========== -->
 
-<!-- Salah -->
+<!-- Nope -->
 <ul><!-- `ul` akan tetap ada ketika opsi penulis dan tanggal tidak dicentang. -->
   <b:if cond='data:top.showAuthor'>
     <li>
@@ -575,7 +613,7 @@ Perhatikan ketika menyertakan bagian terpisah yang berhubungan dengan <a href="j
   </b:if>
 </ul>
 
-<!-- Benar (gunakan operator logika `or`) -->
+<!-- Yep (use `or`) -->
 <b:if cond='data:top.showAuthor or data:top.showTimestamp'>
   <ul><!-- `ul` akan menghilang ketika opsi penulis dan tanggal tidak dicentang. -->
     <b:if cond='data:top.showAuthor'>
