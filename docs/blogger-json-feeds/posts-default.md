@@ -23,7 +23,10 @@ var config = {
     numchars: 'full'|number|0 to disable,
     title: {
       tag: 'h1|h2|h3|h4|h5|h6',
-      style: 'post-title-link'
+      link: {
+        active: true|false,
+        style: 'post-title-link'
+      }
     },
     more: {
       active: true|false,
@@ -34,7 +37,7 @@ var config = {
   author: {
     active: true|false,
     placement: 'meta|header|footer',
-    before: 'Posted by ',
+    before: '<i class="fa fa-user" aria-hidden="true"></i> Posted by ',
     after: '',
     none: 'Anonymous',
     avatar: {
@@ -45,26 +48,27 @@ var config = {
   date: {
     active: true|false,
     placement: 'meta|header|footer',
-    before: 'Posted on ',
+    before: '<i class="fa fa-clock-o" aria-hidden="true"></i> Posted on ',
     after: '',
     monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
   },
   numComments: {
     active: true|false,
     placement: 'meta|header|footer',
-    before: 'Comment total: ',
+    before: '<i class="fa fa-comments" aria-hidden="true"></i> ',
     after: ''
   },
   labels: {
     active: true|false,
     placement: 'meta|header|footer',
-    before: 'Labels: ',
+    before: '<i class="fa fa-tags" aria-hidden="true"></i> Labels: ',
     after: '',
     none: 'Unlabelled'
   },
   thumbnail: {
     active: true|false,
     placement: 'image-only|top|right|bottom|left|overlay',
+    rightLeft: 'post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3',
     size: '512',
     none: 'https://placehold.it/512/eee/777?text=NO+IMAGE+AVAILABLE',
     cover: {
@@ -80,13 +84,15 @@ var config = {
   },
   grid: {
     active: true|false,
-    column: 'col-*-*'
+    column: 'col'
   },
   classes: {
-    post: 'Add class to .post',
-    image: 'Add class to .post-img-*',
-    content: 'Add class to .post-content',
-    horizontalThumbnail: 'post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3'
+    post: 'Add class to `.post`',
+    image: 'Add class to `.post-img-*`',
+    content: 'Add class to `.post-content`',
+    meta: 'Add class to `.post-meta`',
+    header: 'Add class to `.post-header`',
+    footer: 'Add class to `.post-footer`'
   }
 }
 </script>
@@ -111,7 +117,10 @@ var config = {
     numchars: 100,
     title: {
       tag: 'h3',
-      style: 'post-title-link'
+      link: {
+        active: true,
+        style: 'post-title-link'
+      }
     },
     more: {
       active: true,
@@ -153,6 +162,7 @@ var config = {
   thumbnail: {
     active: true,
     placement: 'top',
+    rightLeft: '',
     size: '512',
     none: 'https://placehold.it/512/eee/777?text=NO+IMAGE+AVAILABLE',
     cover: {
@@ -168,15 +178,17 @@ var config = {
   },
   grid: {
     active: true,
-    column: 'col-sm-4'
+    column: 'col-sm-6'
   },
   classes: {
     post: '',
     image: '',
     content: '',
-    horizontalThumbnail: ''
+    meta: '',
+    header: '',
+    footer: ''
   }
 }
 </script>
-<script src="https://blogger.googleblog.com/feeds/posts/default?orderby=published&amp;start-index=1&amp;max-results=3&amp;alt=json-in-script&amp;callback=postsDefault"></script>
+<script src="https://blogger.googleblog.com/feeds/posts/default?orderby=published&amp;start-index=1&amp;max-results=2&amp;alt=json-in-script&amp;callback=postsDefault"></script>
 {% endexample %}
