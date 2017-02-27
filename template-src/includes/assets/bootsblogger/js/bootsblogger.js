@@ -237,7 +237,7 @@
 //
 // Original <http://www.dte.web.id/2013/01/membuat-fitur-komentar-berbalas.html>
 
-if (document.getElementById('comments') !== null) {
+if (document.getElementById('comment-editor') !== null) {
   var commentEditorIframeOriginal = document.getElementById('comment-editor').src.split('#')
   function reply(id) {
     var form = document.getElementById('comment-form')
