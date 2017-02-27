@@ -1,4 +1,4 @@
-<table class='table table-striped table-responsive'>
+<table class='table table-striped'>
   <tbody>
     <b:loop values='data:posts' var='post'>
       <tr expr:id='"post-" + data:post.id' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
