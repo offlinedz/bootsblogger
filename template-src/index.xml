@@ -7,7 +7,7 @@
   <body expr:class='data:blog.url == data:blog.homepageUrl ? &quot;blog-page-home&quot; : data:blog.pageType == &quot;item&quot; ? &quot;blog-page-item&quot; : data:blog.pageType == &quot;static_page&quot; ? &quot;blog-page-static&quot; : data:blog.searchLabel ? &quot;blog-page-label&quot; : data:blog.searchQuery ? &quot;blog-page-search&quot; : data:blog.pageType == &quot;archive&quot; ? &quot;blog-page-archive&quot; : data:blog.pageType == &quot;error_page&quot; ? &quot;blog-page-error&quot; : &quot;blog-page-default&quot;'>
 
 
-    <!-- SKIPPY
+    <!-- SKIP NAVIGATION
     ================================================== -->
     <a class='sr-only sr-only-focusable' href='#blog-main' id='skippy'>
       <div class='container'>
@@ -26,18 +26,18 @@
     <!--(bake /includes/jumbotron.xml)-->
 
 
-    <!-- MAIN AND SIDEBAR
+    <!-- BLOG MAIN AND BLOG SIDEBAR
     ================================================== -->
     <div class='container blogger-container'>
       <div class='row blogger-row'>
-        <!-- Main -->
+        <!-- Blog main -->
         <main class='blog-main col-md-9 blogger-col-8' id='blog-main' tabindex='-1'>
           <b:section id='blog-main-section' maxwidgets='1' showaddelement='no'>
             <!--(bake /includes/blog-posts/blog-posts.xml)-->
           </b:section>
         </main><!-- /.blog-main -->
 
-        <!-- Sidebar -->
+        <!-- Blog sidebar -->
         <aside class='blog-sidebar col-md-3 blogger-col-4 mt-5 mt-md-0' id='blog-sidebar'>
           <b:section class='wg-box wg-box-faded wg-md-12 wg-sm-6' id='blog-sidebar-section'></b:section>
         </aside><!-- /.blog-sidebar -->
@@ -45,16 +45,16 @@
     </div><!-- /.container -->
 
 
-    <!-- WIDGET 1
+    <!-- BLOG WIDGET 1
     ================================================== -->
     <div class='blog-widget-1 mt-5' id='blog-widget-1'>
       <div class='container'>
-        <b:section class='wg-box wg-box-white wg-md-4 wg-sm-6' id='blog-widget-1-section'></b:section>
+        <b:section class='wg-box wg-box-white wg-md-4 wg-sm-6 mnb-3' id='blog-widget-1-section'></b:section>
       </div>
     </div>
 
 
-    <!-- FOOTER
+    <!-- BLOG FOOTER
     ================================================== -->
     <footer class='blog-footer' id='blog-footer'>
       <div class='container'>
@@ -64,8 +64,8 @@
           <li><a href='#'>Google+</a></li>
           <li><a href='#'>Facebook</a></li>
         </ul>
-        <p>&#169; 2017 <data:blog.title/>.</p>
-        <p>Template by <a href='{{ blog.about.templateAuthorURI }}'>{{ blog.about.templateAuthorName }}</a>. Built with <a href='https://bootsblogger.github.io'>Bootsblogger</a>. Powered by <a href='https://blogger.com'>Blogger</a>.</p>
+        <p class='mb-0'>&#169; 2017 <data:blog.title/>.</p>
+        <p class='mb-0'>Template by <a href='{{ blog.about.templateAuthorURI }}'>{{ blog.about.templateAuthorName }}</a>. Built with <a href='https://bootsblogger.github.io'>Bootsblogger</a>. Powered by <a href='https://blogger.com'>Blogger</a>.</p>
       </div>
     </footer>
 
