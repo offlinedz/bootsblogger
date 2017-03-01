@@ -455,16 +455,16 @@ Gunakan pada elemen yang di dalamnya terdapat tag `b:section`. Sesuaikan dengan 
 <div class='blogger-container'>
   <div class='blogger-row'>
     <!-- Main -->
-    <div class='blogger-col-8 main' role='main'>
-      <b:section id='main' maxwidgets='1' showaddelement='no'></b:section>
-    </div><!-- /.main -->
+    <main class='main blogger-col-8' id='main'>
+      <b:section class='' id='main-section' maxwidgets='1' showaddelement='no'></b:section>
+    </main><!-- /.main -->
 
     <!-- Sidebar -->
-    <div class='blogger-col-4 sidebar' role='complementary'>
-      <b:section id='sidebar'></section>
-    </div><!-- /.sidebar -->
-  </div><!-- /.blogger-row -->
-</div><!-- /.blogger-container -->
+    <aside class='sidebar blogger-col-4' id='sidebar'>
+      <b:section class='' id='sidebar-section'></section>
+    </aside><!-- /.sidebar -->
+  </div>
+</div>
 {% endhighlight %}
 
 Hasilnya akan seperti pada <a href="javascript:;" data-toggle="modal" data-target=".image-blogger-layout">gambar ini</a>.
@@ -477,14 +477,14 @@ Jika Anda menggunakan sistem grid Bootstrap dan sistem grid untuk Blogger pada e
 <div class='container blogger-container'>
   <div class='row blogger-row'>
     <!-- Main -->
-    <main class='blog-main col-md-9 blogger-col-8' id='blog-main'>
-      <b:section id='main-section' maxwidgets='1' showaddelement='no'></b:section>
-    </main><!-- /.blog-main -->
+    <main class='main col-md-9 blogger-col-8' id='main'>
+      <b:section class='' id='main-section' maxwidgets='1' showaddelement='no'></b:section>
+    </main><!-- /.main -->
 
     <!-- Sidebar -->
-    <aside class='blog-sidebar col-md-3 blogger-col-4' id='blog-sidebar'>
-      <b:section id='sidebar-section'></section>
-    </aside><!-- /.blog-sidebar -->
+    <aside class='sidebar col-md-3 blogger-col-4' id='sidebar'>
+      <b:section class='' id='sidebar-section'></section>
+    </aside><!-- /.sidebar -->
   </div><!-- /.row -->
 </div><!-- /.container -->
 {% endhighlight %}

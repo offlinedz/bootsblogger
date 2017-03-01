@@ -21,26 +21,18 @@ Licensed under MIT (https://github.com/bootsblogger/bootsblogger/blob/master/LIC
 
 /* Table of Contents
  *
- * Skip navigation
  * Global styles
  * Navbar
  * Jumbotron
- * Blog main
- * Blog sidebar
- * Blog posts
- * Blog pagination
- * Blog widget 1
- * Blog footer
+ * Main
+ *    Skip navigation
+ *    Posts
+ *    Comments
+ *    Pager
+ * Sidebar
+ * Widget 1
+ * Footer
  */
-
-
-/*
- * Skip navigation
- */
-
-#blog-main:focus {
-  outline: none;
-}
 
 
 /*
@@ -65,40 +57,44 @@ body {}
 
 
 /*
- * Blog main
+ * Main
  */
 
-.class {}
+.main {}
 
+/** Skip navigation **/
 
-/*
- * Blog sidebar
- */
+#main:focus {
+  outline: none;
+}
 
-.class {}
+/** Posts **/
 
+.posts {}
 
-/*
- * Blog posts
- */
+/** Comments **/
 
-.class {}
+.comments {}
 
+/** Pager **/
 
-/*
- * Blog pagination
- */
-
-.blog-pagination > .btn {
+.pager > .btn {
   border-radius: 2rem;
 }
 
 
 /*
- * Blog widget 1
+ * Sidebar
  */
 
-.blog-widget-1 {
+.sidebar {}
+
+
+/*
+ * Widget 1
+ */
+
+.widget-1 {
   padding-top: 2rem;
   padding-bottom: 2rem;
   background-color: #f7f7f9;
@@ -106,10 +102,10 @@ body {}
 
 
 /*
- * Blog footer
+ * Footer
  */
 
-.blog-footer {
+.footer {
   padding-top: 3rem;
   padding-bottom: 3rem;
   font-size: 85%;
@@ -118,22 +114,22 @@ body {}
   background-color: #eee;
 }
 
-.blog-footer a {
+.footer a {
   font-weight: 500;
   color: #333;
 }
-.blog-footer a:hover,
-.blog-footer a:focus {
+.footer a:hover,
+.footer a:focus {
   color: #0275d8;
 }
 
-.blog-footer-links {
+.footer-links {
   padding-left: 0;
   list-style: none;
 }
-.blog-footer-links li {
+.footer-links li {
   display: inline-block;
 }
-.blog-footer-links li + li {
+.footer-links li + li {
   margin-left: 1rem;
 }

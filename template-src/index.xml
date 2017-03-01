@@ -9,7 +9,7 @@
 
     <!-- SKIP NAVIGATION
     ================================================== -->
-    <a class='sr-only sr-only-focusable' href='#blog-main' id='skippy'>
+    <a class='sr-only sr-only-focusable' href='#main' id='skippy'>
       <div class='container'>
         <span class='skiplink-text'>Skip to main content</span>
       </div>
@@ -26,39 +26,39 @@
     <!--(bake /includes/jumbotron.xml)-->
 
 
-    <!-- BLOG MAIN AND BLOG SIDEBAR
+    <!-- MAIN AND SIDEBAR
     ================================================== -->
     <div class='container blogger-container'>
       <div class='row blogger-row'>
-        <!-- Blog main -->
-        <main class='blog-main col-md-9 blogger-col-8' id='blog-main' tabindex='-1'>
-          <b:section id='blog-main-section' maxwidgets='1' showaddelement='no'>
+        <!-- Main -->
+        <main class='main col-md-9 blogger-col-8' id='main' tabindex='-1'>
+          <b:section class='' id='main-section' maxwidgets='1' showaddelement='no'>
             <!--(bake /includes/blog-posts/blog-posts.xml)-->
           </b:section>
-        </main><!-- /.blog-main -->
+        </main><!-- /.main -->
 
-        <!-- Blog sidebar -->
-        <aside class='blog-sidebar col-md-3 blogger-col-4 mt-5 mt-md-0' id='blog-sidebar'>
-          <b:section class='wg-box wg-box-faded wg-md-12 wg-sm-6' id='blog-sidebar-section'></b:section>
-        </aside><!-- /.blog-sidebar -->
+        <!-- Sidebar -->
+        <aside class='sidebar col-md-3 blogger-col-4 mt-5 mt-md-0' id='sidebar'>
+          <b:section class='wg-box wg-box-faded wg-md-12 wg-sm-6' id='sidebar-section'></b:section>
+        </aside><!-- /.sidebar -->
       </div><!-- /.row -->
     </div><!-- /.container -->
 
 
-    <!-- BLOG WIDGET 1
+    <!-- WIDGET 1
     ================================================== -->
-    <div class='blog-widget-1 mt-5' id='blog-widget-1'>
+    <div class='widget-1 mt-5' id='widget-1'>
       <div class='container'>
-        <b:section class='wg-box wg-box-white wg-md-4 wg-sm-6 mnb-3' id='blog-widget-1-section'></b:section>
+        <b:section class='wg-box wg-box-white wg-md-4 wg-sm-6 mnb-3' id='widget-1-section'></b:section>
       </div>
     </div>
 
 
-    <!-- BLOG FOOTER
+    <!-- FOOTER
     ================================================== -->
-    <footer class='blog-footer' id='blog-footer'>
+    <footer class='footer' id='footer'>
       <div class='container'>
-        <ul class='blog-footer-links'>
+        <ul class='footer-links'>
           <li><a href='#'>About</a></li>
           <li><a href='#'>Twitter</a></li>
           <li><a href='#'>Google+</a></li>

@@ -4,15 +4,23 @@
   ==================== -->
   <b:include data='top' name='status-message'/>
 
-  <!-- Blog posts
+  <!-- Posts
   ==================== -->
   <b:if cond='data:numPosts != 0'>
-    <div class='blog-posts' id='blog-posts'>
+    <div class='posts' id='posts'>
       <b:include name='post'/>
     </div>
   </b:if>
 
-  <!-- Blog pagination
+  <!-- Comments
+  ==================== -->
+  <b:loop values='data:posts' var='post'>
+    <b:if cond='data:blog.pageType in [&quot;item&quot;, &quot;static_page&quot;]'>
+      <b:include data='post' name='custom-comments'/>
+    </b:if>
+  </b:loop>
+
+  <!-- Pager
   ==================== -->
   <b:include cond='data:blog.pageType != &quot;static_page&quot; and data:numPosts != 0' name='nextprev'/>
 
