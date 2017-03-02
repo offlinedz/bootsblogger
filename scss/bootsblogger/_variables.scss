@@ -102,8 +102,8 @@ $post-black-border:   darken($post-black-bg, 3%) !default;
 //
 
 $wg-basic-margin-bottom:       $spacer-y !default;
-$wg-basic-title-font-size:   1rem !default;
-$wg-basic-title-font-weight: $font-weight-bold !default;
+$wg-basic-title-font-size:     1rem !default;
+$wg-basic-title-font-weight:   $font-weight-bold !default;
 
 $wg-basic-faded:      $color-faded !default;
 $wg-basic-blue:       $color-blue !default;
@@ -126,8 +126,8 @@ $wg-basic-white:      $color-white !default;
 
 $wg-box-margin-bottom:         $spacer-y !default;
 $wg-box-padding:               1.25rem !default;
-$wg-box-title-font-size:     1rem !default;
-$wg-box-title-font-weight:   $font-weight-bold !default;
+$wg-box-title-font-size:       1rem !default;
+$wg-box-title-font-weight:     $font-weight-bold !default;
 $wg-box-border-width:          1px !default;
 $wg-box-border-radius:         $border-radius !default;
 $wg-box-box-shadow:            0 1px 1px rgba(0,0,0,.05) !default;
@@ -191,9 +191,9 @@ $wg-box-white-border:          rgba(0,0,0,.125) !default;
 
 $wg-panel-margin-bottom:         $spacer-y !default;
 $wg-panel-content-padding:       1.25rem !default;
-$wg-panel-title-padding:       .75rem $wg-panel-content-padding !default;
-$wg-panel-title-font-size:     1rem !default;
-$wg-panel-title-font-weight:   $font-weight-bold !default;
+$wg-panel-title-padding:         .75rem $wg-panel-content-padding !default;
+$wg-panel-title-font-size:       1rem !default;
+$wg-panel-title-font-weight:     $font-weight-bold !default;
 $wg-panel-content-bg:            #fff !default;
 $wg-panel-border-width:          1px !default;
 $wg-panel-border-radius:         $border-radius !default;
