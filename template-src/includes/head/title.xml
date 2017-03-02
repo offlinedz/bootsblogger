@@ -1,5 +1,5 @@
 <b:if cond='data:blog.pageType == &quot;item&quot;'>
-  <!-- Item page -->
+  <!-- Item/single page -->
   <title><data:blog.pageName/> | <data:blog.title/></title>
 
 <b:elseif cond='data:blog.pageType == &quot;static_page&quot;'/>
