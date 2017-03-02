@@ -15,8 +15,8 @@
   padding: $wg-panel-title-padding;
   margin-top: 0;
   margin-bottom: 0;
-  font-size: $wg-panel-heading-font-size;
-  font-weight: $wg-panel-heading-font-weight;
+  font-size: $wg-panel-title-font-size;
+  font-weight: $wg-panel-title-font-weight;
   line-height: 1.1;
   border: $wg-panel-border-width solid transparent;
   @include border-top-radius($wg-panel-border-radius);
