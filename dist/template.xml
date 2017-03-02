@@ -34,7 +34,7 @@
     <!-- TITLE
     ================================================= -->
     <b:if cond='data:blog.pageType == &quot;item&quot;'>
-      <!-- Item page -->
+      <!-- Item/single page -->
       <title><data:blog.pageName/> | <data:blog.title/></title>
 
     <b:elseif cond='data:blog.pageType == &quot;static_page&quot;'/>
@@ -423,6 +423,22 @@
     ------------------------------------------------- */
 
 
+    /* Table of Contents
+     *
+     * Global styles
+     * Navbar
+     * Jumbotron
+     * Main
+     *    Skip navigation
+     *    Posts
+     *    Comments
+     *    Pager
+     * Sidebar
+     * Widget 1
+     * Footer
+     */
+
+
     /*
      * Global styles
      */
@@ -431,31 +447,51 @@
 
 
     /*
-     * Skip navigation
-     */
-
-    #blog-main:focus {
-      outline: none;
-    }
-
-
-    /*
      * Navbar
      */
 
-    .navbar {
-      margin-bottom: 1rem;
-    }
+    .navbar {}
 
 
     /*
      * Jumbotron
      */
 
-    .jumbotron {
-      margin-top: -1rem;
-      background-color: #f7f7f9;
+    .jumbotron {}
+
+
+    /*
+     * Main
+     */
+
+    .main {}
+
+    /** Skip navigation **/
+
+    #main:focus {
+      outline: none;
     }
+
+    /** Posts **/
+
+    .posts {}
+
+    /** Comments **/
+
+    .comments {}
+
+    /** Pager **/
+
+    .pager > .btn {
+      border-radius: 2rem;
+    }
+
+
+    /*
+     * Sidebar
+     */
+
+    .sidebar {}
 
 
     /*
@@ -464,17 +500,8 @@
 
     .widget-1 {
       padding-top: 2rem;
-      padding-bottom: 1rem;
+      padding-bottom: 2rem;
       background-color: #f7f7f9;
-    }
-
-
-    /*
-     * Pagination
-     */
-
-    .blog-pagination > .btn {
-      border-radius: 2rem;
     }
 
 
@@ -482,7 +509,7 @@
      * Footer
      */
 
-    .blog-footer {
+    .footer {
       padding-top: 3rem;
       padding-bottom: 3rem;
       font-size: 85%;
@@ -491,27 +518,23 @@
       background-color: #eee;
     }
 
-    .blog-footer p {
-      margin-bottom: 0;
-    }
-
-    .blog-footer a {
+    .footer a {
       font-weight: 500;
       color: #333;
     }
-    .blog-footer a:hover,
-    .blog-footer a:focus {
+    .footer a:hover,
+    .footer a:focus {
       color: #0275d8;
     }
 
-    .blog-footer-links {
+    .footer-links {
       padding-left: 0;
-      margin-bottom: 1rem;
+      list-style: none;
     }
-    .blog-footer-links li {
+    .footer-links li {
       display: inline-block;
     }
-    .blog-footer-links li + li {
+    .footer-links li + li {
       margin-left: 1rem;
     }
     </style>
@@ -557,9 +580,9 @@
   <body expr:class='data:blog.url == data:blog.homepageUrl ? &quot;blog-page-home&quot; : data:blog.pageType == &quot;item&quot; ? &quot;blog-page-item&quot; : data:blog.pageType == &quot;static_page&quot; ? &quot;blog-page-static&quot; : data:blog.searchLabel ? &quot;blog-page-label&quot; : data:blog.searchQuery ? &quot;blog-page-search&quot; : data:blog.pageType == &quot;archive&quot; ? &quot;blog-page-archive&quot; : data:blog.pageType == &quot;error_page&quot; ? &quot;blog-page-error&quot; : &quot;blog-page-default&quot;'>
 
 
-    <!-- SKIPPY
+    <!-- SKIP NAVIGATION
     ================================================== -->
-    <a class='sr-only sr-only-focusable' href='#blog-main' id='skippy'>
+    <a class='sr-only sr-only-focusable' href='#main' id='skippy'>
       <div class='container'>
         <span class='skiplink-text'>Skip to main content</span>
       </div>
@@ -568,7 +591,7 @@
 
     <!-- NAVBAR
     ================================================== -->
-    <header class='navbar navbar-toggleable-md navbar-inverse bg-orange'>
+    <header class='navbar navbar-toggleable-md navbar-inverse bg-orange mb-3'>
       <nav class='container'>
         <button class='navbar-toggler navbar-toggler-right' type='button' data-toggle='collapse' data-target='#navbar' aria-controls='navbar' aria-expanded='false' aria-label='Toggle navigation'>
           <span class="navbar-toggler-icon"></span>
@@ -622,7 +645,7 @@
     <!-- JUMBOTRON
     ================================================== -->
     <b:if cond='data:blog.url == data:blog.homepageUrl'>
-      <div class="jumbotron jumbotron-fluid">
+      <div class="jumbotron jumbotron-fluid mnt-3">
         <div class='container'>
           <h1 class="display-3">Hello, world!</h1>
           <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
@@ -636,8 +659,8 @@
     <div class='container blogger-container'>
       <div class='row blogger-row'>
         <!-- Main -->
-        <main class='blog-main col-md-9 blogger-col-8' id='blog-main' tabindex='-1'>
-          <b:section id='main-section' maxwidgets='1' showaddelement='no'>
+        <main class='main col-md-9 blogger-col-8' id='main' tabindex='-1'>
+          <b:section class='' id='main-section' maxwidgets='1' showaddelement='no'>
             <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog'>
               <b:includable id='main' var='top'>
 
@@ -650,12 +673,20 @@
                   <!-- Posts
                   ==================== -->
                   <b:if cond='data:numPosts != 0'>
-                    <div class='blog-posts' id='blog-posts'>
+                    <div class='posts' id='posts'>
                       <b:include name='post'/>
                     </div>
                   </b:if>
 
-                  <!-- Navigation
+                  <!-- Comments
+                  ==================== -->
+                  <b:loop values='data:posts' var='post'>
+                    <b:if cond='data:blog.pageType in [&quot;item&quot;, &quot;static_page&quot;]'>
+                      <b:include data='post' name='custom-comments'/>
+                    </b:if>
+                  </b:loop>
+
+                  <!-- Pager
                   ==================== -->
                   <b:include cond='data:blog.pageType != &quot;static_page&quot; and data:numPosts != 0' name='nextprev'/>
 
@@ -1266,7 +1297,7 @@
               </b:includable>
               <b:includable id='nextprev'>
 
-                <nav class='blog-pagination text-center mb-3'>
+                <nav class='pager text-center mb-3' id='pager'>
                   <b:if cond='data:newerPageUrl'>
                     <a class='btn btn-secondary float-left' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' role='button'>Newer</a>
                   <b:else/>
@@ -1351,13 +1382,6 @@
                 <b:else/>
                   <b:include cond='data:numPosts != 0' name='post-default'/>
                 </b:if>
-
-                <!-- Comments -->
-                <b:loop values='data:posts' var='post'>
-                  <b:if cond='data:blog.pageType in [&quot;item&quot;, &quot;static_page&quot;]'>
-                    <b:include data='post' name='custom-comments'/>
-                  </b:if>
-                </b:loop>
 
               </b:includable>
               <b:includable id='post-archive' var='post'>
@@ -1809,12 +1833,12 @@
               </b:includable>
             </b:widget>
           </b:section>
-        </main><!-- /.blog-main -->
+        </main><!-- /.main -->
 
         <!-- Sidebar -->
-        <aside class='blog-sidebar col-md-3 blogger-col-4 mt-5 mt-md-0' id='blog-sidebar'>
+        <aside class='sidebar col-md-3 blogger-col-4 mt-5 mt-md-0' id='sidebar'>
           <b:section class='wg-box wg-box-faded wg-md-12 wg-sm-6' id='sidebar-section'></b:section>
-        </aside><!-- /.blog-sidebar -->
+        </aside><!-- /.sidebar -->
       </div><!-- /.row -->
     </div><!-- /.container -->
 
@@ -1823,23 +1847,23 @@
     ================================================== -->
     <div class='widget-1 mt-5' id='widget-1'>
       <div class='container'>
-        <b:section class='wg-box wg-box-white wg-md-4 wg-sm-6' id='widget-1-section'></b:section>
+        <b:section class='wg-box wg-box-white wg-md-4 wg-sm-6 mnb-3' id='widget-1-section'></b:section>
       </div>
     </div>
 
 
     <!-- FOOTER
     ================================================== -->
-    <footer class='blog-footer' id='blog-footer'>
+    <footer class='footer' id='footer'>
       <div class='container'>
-        <ul class='blog-footer-links'>
+        <ul class='footer-links'>
           <li><a href='#'>About</a></li>
           <li><a href='#'>Twitter</a></li>
           <li><a href='#'>Google+</a></li>
           <li><a href='#'>Facebook</a></li>
         </ul>
-        <p>&#169; 2017 <data:blog.title/>.</p>
-        <p>Template by <a href='https://example.com/you'>Your name</a>. Built with <a href='https://bootsblogger.github.io'>Bootsblogger</a>. Powered by <a href='https://blogger.com'>Blogger</a>.</p>
+        <p class='mb-0'>&#169; 2017 <data:blog.title/>.</p>
+        <p class='mb-0'>Template by <a href='https://example.com/you'>Your name</a>. Built with <a href='https://bootsblogger.github.io'>Bootsblogger</a>. Powered by <a href='https://blogger.com'>Blogger</a>.</p>
       </div>
     </footer>
 
