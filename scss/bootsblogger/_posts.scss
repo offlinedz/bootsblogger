@@ -781,13 +781,12 @@
 // Inverted text
 //
 
-.post-inverse .post-content,
-.post-inverse.post-content {
-  color: #fff;
+.post-inverse {
+  color: #fff !important;
 
   // Links
   a:not([class]) {
-    color: rgba(255,255,255,.75) !important;
+    color: rgba(255,255,255,.65) !important;
   }
   a:not([class]):hover,
   a:not([class]):focus {
@@ -795,35 +794,56 @@
   }
 
   // Post title
-  > .post-title {
+  .post-title {
     color: #fff !important;
   }
-  > .post-title .post-title-link,
-  > .post-title a {
-    color: rgba(255,255,255,.75) !important;
+  .post-title .post-title-link,
+  .post-title a {
+    color: rgba(255,255,255,.65) !important;
   }
-  > .post-title .post-title-link:hover,
-  > .post-title .post-title-link:focus,
-  > .post-title a:hover,
-  > .post-title a:focus {
+  .post-title .post-title-link:hover,
+  .post-title .post-title-link:focus,
+  .post-title a:hover,
+  .post-title a:focus {
     color: #fff !important;
   }
 
   // Metadata
   .post-meta {
+    color: #fff !important;
+  }
+
+  // Header and footer within `.post-inverse`
+  .post-header,
+  .post-footer {
+    color: #fff !important;
+    background-color: transparent !important;
+    border-color: rgba(255,255,255,.2) !important;
+  }
+
+  // Image gutters
+  .post-img-gutter {
+    border-color: rgba(255,255,255,.2) !important;
+  }
+
+  // Figures, tables, and more within `.post-inverse`
+  figcaption,
+  caption,
+  .blockquote-footer {
     color: rgba(255,255,255,.65) !important;
   }
-}
+  .figure-align-none {
+    background-color: rgba(255,255,255,.2) !important;
+  }
+  hr {
+    border-color: rgba(255,255,255,.2) !important;
+  }
 
-// Header and footer within `.post-inverse`
-.post-inverse > .post-header,
-.post-inverse > .post-footer {
-  border-color: rgba(0,0,0,.125) !important;
-}
-
-// Figure within `.post-inverse`
-.post-inverse figure figcaption {
-  color: rgba(255,255,255,.75) !important;
+  // Content block
+  &.post-content + &.post-content,
+  .post-content + .post-content {
+    border-color: rgba(255,255,255,.2) !important;
+  }
 }
 
 
