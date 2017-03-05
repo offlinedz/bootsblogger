@@ -16,43 +16,43 @@ Format kelasnya tidak jauh berbeda dengan [Bootstrap spacing utilities](https://
 ### Example
 
 {% example html %}
-<div class="p-3 bg-blue">
-  <div class="mnt-3 bg-red" style="height: 100px;"></div>
+<div class="p-3 bg-purple-50">
+  <div class="mnt-3 bg-orange-50" style="height: 100px;"></div>
 </div>
 {% endexample %}
 
 {% example html %}
-<div class="p-3 bg-blue">
-  <div class="mnr-3 bg-red" style="height: 100px;"></div>
+<div class="p-3 bg-purple-50">
+  <div class="mnr-3 bg-orange-50" style="height: 100px;"></div>
 </div>
 {% endexample %}
 
 {% example html %}
-<div class="p-3 bg-blue">
-  <div class="mnb-3 bg-red" style="height: 100px;"></div>
+<div class="p-3 bg-purple-50">
+  <div class="mnb-3 bg-orange-50" style="height: 100px;"></div>
 </div>
 {% endexample %}
 
 {% example html %}
-<div class="p-3 bg-blue">
-  <div class="mnl-3 bg-red" style="height: 100px;"></div>
+<div class="p-3 bg-purple-50">
+  <div class="mnl-3 bg-orange-50" style="height: 100px;"></div>
 </div>
 {% endexample %}
 
 {% example html %}
-<div class="p-3 bg-blue">
-  <div class="mnx-3 bg-red" style="height: 100px;"></div>
+<div class="p-3 bg-purple-50">
+  <div class="mnx-3 bg-orange-50" style="height: 100px;"></div>
 </div>
 {% endexample %}
 
 {% example html %}
-<div class="p-3 bg-blue">
-  <div class="mny-3 bg-red" style="height: 100px;"></div>
+<div class="p-3 bg-purple-50">
+  <div class="mny-3 bg-orange-50" style="height: 100px;"></div>
 </div>
 {% endexample %}
 
 {% example html %}
-<div class="p-3 bg-blue">
-  <div class="mn-3 bg-red" style="height: 100px;"></div>
+<div class="p-3 bg-purple-50">
+  <div class="mn-3 bg-orange-50" style="height: 100px;"></div>
 </div>
 {% endexample %}

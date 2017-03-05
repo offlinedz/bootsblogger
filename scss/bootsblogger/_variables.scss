@@ -2,6 +2,7 @@
 //
 // Colors
 // Posts
+// Widget title
 // Widget basic
 // Widget box
 // Widget panel
@@ -11,22 +12,263 @@
 
 
 //
-// Colors
+// Colors (Material Design colors)
 //
 
-$color-faded:         darken($body-bg, 3%) !default;
-$color-blue:          #3b83c0 !default;
-$color-green:         #5bbd72 !default;
-$color-teal:          #00b5ad !default;
-$color-red:           #d95c5c !default;
-$color-orange:        #ef6c00 !default;
-$color-purple:        #564f8a !default;
-$color-yellow:        #f2c61f !default;
-$color-pink:          #d9499a !default;
-$color-gray:          $gray !default;
-$color-brown:         #a5673f !default;
-$color-black:         #222 !default;
-$color-white:         #fff !default;
+$color-red: (
+  50:  #ffebee,
+  100: #ffcdd2,
+  200: #ef9a9a,
+  300: #e57373,
+  400: #ef5350,
+  500: #f44336,
+  600: #e53935,
+  700: #d32f2f,
+  800: #c62828,
+  900: #b71c1c
+) !default;
+
+$color-pink: (
+  50:  #fce4ec,
+  100: #f8bbd0,
+  200: #f48fb1,
+  300: #f06292,
+  400: #ec407a,
+  500: #e91e63,
+  600: #d81b60,
+  700: #c2185b,
+  800: #ad1457,
+  900: #880e4f
+) !default;
+
+$color-purple: (
+  50:  #f3e5f5,
+  100: #e1bee7,
+  200: #ce93d8,
+  300: #ba68c8,
+  400: #ab47bc,
+  500: #9c27b0,
+  600: #8e24aa,
+  700: #7b1fa2,
+  800: #6a1b9a,
+  900: #4a148c
+) !default;
+
+$color-deep-purple: (
+  50:  #ede7f6,
+  100: #d1c4e9,
+  200: #b39ddb,
+  300: #9575cd,
+  400: #7e57c2,
+  500: #673ab7,
+  600: #5e35b1,
+  700: #512da8,
+  800: #4527a0,
+  900: #311b92
+) !default;
+
+$color-indigo: (
+  50:  #e8eaf6,
+  100: #c5cae9,
+  200: #9fa8da,
+  300: #7986cb,
+  400: #5c6bc0,
+  500: #3f51b5,
+  600: #3949ab,
+  700: #303f9f,
+  800: #283593,
+  900: #1a237e
+) !default;
+
+$color-blue: (
+  50:  #e3f2fd,
+  100: #bbdefb,
+  200: #90caf9,
+  300: #64b5f6,
+  400: #42a5f5,
+  500: #2196f3,
+  600: #1e88e5,
+  700: #1976d2,
+  800: #1565c0,
+  900: #0d47a1
+) !default;
+
+$color-light-blue: (
+  50:  #e1f5fe,
+  100: #b3e5fc,
+  200: #81d4fa,
+  300: #4fc3f7,
+  400: #29b6f6,
+  500: #03a9f4,
+  600: #039be5,
+  700: #0288d1,
+  800: #0277bd,
+  900: #01579b
+) !default;
+
+$color-cyan: (
+  50:  #e0f7fa,
+  100: #b2ebf2,
+  200: #80deea,
+  300: #4dd0e1,
+  400: #26c6da,
+  500: #00bcd4,
+  600: #00acc1,
+  700: #0097a7,
+  800: #00838f,
+  900: #006064
+) !default;
+
+$color-teal: (
+  50:  #e0f2f1,
+  100: #b2dfdb,
+  200: #80cbc4,
+  300: #4db6ac,
+  400: #26a69a,
+  500: #009688,
+  600: #00897b,
+  700: #00796b,
+  800: #00695c,
+  900: #004d40
+) !default;
+
+$color-green: (
+  50:  #e8f5e9,
+  100: #c8e6c9,
+  200: #a5d6a7,
+  300: #81c784,
+  400: #66bb6a,
+  500: #4caf50,
+  600: #43a047,
+  700: #388e3c,
+  800: #2e7d32,
+  900: #1b5e20
+) !default;
+
+$color-light-green: (
+  50:  #f1f8e9,
+  100: #dcedc8,
+  200: #c5e1a5,
+  300: #aed581,
+  400: #9ccc65,
+  500: #8bc34a,
+  600: #7cb342,
+  700: #689f38,
+  800: #558b2f,
+  900: #33691e
+) !default;
+
+$color-lime: (
+  50:  #f9fbe7,
+  100: #f0f4c3,
+  200: #e6ee9c,
+  300: #dce775,
+  400: #d4e157,
+  500: #cddc39,
+  600: #c0ca33,
+  700: #afb42b,
+  800: #9e9d24,
+  900: #827717
+) !default;
+
+$color-yellow: (
+  50:  #fffde7,
+  100: #fff9c4,
+  200: #fff59d,
+  300: #fff176,
+  400: #ffee58,
+  500: #ffeb3b,
+  600: #fdd835,
+  700: #fbc02d,
+  800: #f9a825,
+  900: #f57f17
+) !default;
+
+$color-amber: (
+  50:  #fff8e1,
+  100: #ffecb3,
+  200: #ffe082,
+  300: #ffd54f,
+  400: #ffca28,
+  500: #ffc107,
+  600: #ffb300,
+  700: #ffa000,
+  800: #ff8f00,
+  900: #ff6f00
+) !default;
+
+$color-orange: (
+  50:  #fff3e0,
+  100: #ffe0b2,
+  200: #ffcc80,
+  300: #ffb74d,
+  400: #ffa726,
+  500: #ff9800,
+  600: #fb8c00,
+  700: #f57c00,
+  800: #ef6c00,
+  900: #e65100
+) !default;
+
+$color-deep-orange: (
+  50:  #fbe9e7,
+  100: #ffccbc,
+  200: #ffab91,
+  300: #ff8a65,
+  400: #ff7043,
+  500: #ff5722,
+  600: #f4511e,
+  700: #e64a19,
+  800: #d84315,
+  900: #bf360c
+) !default;
+
+$color-brown: (
+  50:  #efebe9,
+  100: #d7ccc8,
+  200: #bcaaa4,
+  300: #a1887f,
+  400: #8d6e63,
+  500: #795548,
+  600: #6d4c41,
+  700: #5d4037,
+  800: #4e342e,
+  900: #3e2723
+) !default;
+
+$color-grey: (
+  50:  #fafafa,
+  100: #f5f5f5,
+  200: #eee,
+  300: #e0e0e0,
+  400: #bdbdbd,
+  500: #9e9e9e,
+  600: #757575,
+  700: #616161,
+  800: #424242,
+  900: #212121
+) !default;
+
+$color-blue-grey: (
+  50:  #eceff1,
+  100: #cfd8dc,
+  200: #b0bec5,
+  300: #90a4ae,
+  400: #78909c,
+  500: #607d8b,
+  600: #546e7a,
+  700: #455a64,
+  800: #37474f,
+  900: #263238
+) !default;
+
+$color-black: (
+  'black': #000
+) !default;
+
+$color-white: (
+  'white': #fff
+) !default;
 
 
 //
@@ -60,41 +302,34 @@ $post-footer-color:               $gray-light !default;
 $post-meta-margin-bottom:         .5rem !default;
 $post-meta-color:                 $gray-light !default;
 
-$post-faded-bg:       $color-faded !default;
-$post-faded-border:   darken($post-faded-bg, 3%) !default;
 
-$post-blue-bg:        $color-blue !default;
-$post-blue-border:    darken($post-blue-bg, 3%) !default;
+//
+// Widget title
+//
 
-$post-green-bg:       $color-green !default;
-$post-green-border:   darken($post-green-bg, 3%) !default;
-
-$post-teal-bg:        $color-teal !default;
-$post-teal-border:    darken($post-teal-bg, 3%) !default;
-
-$post-red-bg:         $color-red !default;
-$post-red-border:     darken($post-red-bg, 3%) !default;
-
-$post-orange-bg:      $color-orange !default;
-$post-orange-border:  darken($post-orange-bg, 3%) !default;
-
-$post-purple-bg:      $color-purple !default;
-$post-purple-border:  darken($post-purple-bg, 3%) !default;
-
-$post-yellow-bg:      $color-yellow !default;
-$post-yellow-border:  darken($post-yellow-bg, 3%) !default;
-
-$post-pink-bg:        $color-pink !default;
-$post-pink-border:    darken($post-pink-bg, 3%) !default;
-
-$post-gray-bg:        $color-gray !default;
-$post-gray-border:    darken($post-gray-bg, 3%) !default;
-
-$post-brown-bg:       $color-brown !default;
-$post-brown-border:   darken($post-brown-bg, 3%) !default;
-
-$post-black-bg:       $color-black !default;
-$post-black-border:   darken($post-black-bg, 3%) !default;
+$wg-title-red:             map-get($color-red, 500) !default;
+$wg-title-pink:            map-get($color-pink, 500) !default;
+$wg-title-purple:          map-get($color-purple, 500) !default;
+$wg-title-deep-purple:     map-get($color-deep-purple, 500) !default;
+$wg-title-indigo:          map-get($color-indigo, 500) !default;
+$wg-title-blue:            map-get($color-blue, 500) !default;
+$wg-title-light-blue:      map-get($color-light-blue, 500) !default;
+$wg-title-cyan:            map-get($color-cyan, 500) !default;
+$wg-title-teal:            map-get($color-teal, 500) !default;
+$wg-title-green:           map-get($color-green, 500) !default;
+$wg-title-light-green:     map-get($color-light-green, 500) !default;
+$wg-title-lime:            map-get($color-lime, 500) !default;
+$wg-title-yellow:          map-get($color-yellow, 500) !default;
+$wg-title-amber:           map-get($color-amber, 500) !default;
+$wg-title-orange:          map-get($color-orange, 500) !default;
+$wg-title-deep-orange:     map-get($color-deep-orange, 500) !default;
+$wg-title-brown:           map-get($color-brown, 500) !default;
+$wg-title-grey:            map-get($color-grey, 500) !default;
+$wg-title-light-grey:      map-get($color-grey, 100) !default;
+$wg-title-deep-grey:       map-get($color-grey, 800) !default;
+$wg-title-blue-grey:       map-get($color-blue-grey, 500) !default;
+$wg-title-black:           #000 !default;
+$wg-title-white:           #fff !default;
 
 
 //
@@ -104,20 +339,6 @@ $post-black-border:   darken($post-black-bg, 3%) !default;
 $wg-basic-margin-bottom:       $spacer-y !default;
 $wg-basic-title-font-size:     1rem !default;
 $wg-basic-title-font-weight:   $font-weight-bold !default;
-
-$wg-basic-faded:      $color-faded !default;
-$wg-basic-blue:       $color-blue !default;
-$wg-basic-green:      $color-green !default;
-$wg-basic-teal:       $color-teal !default;
-$wg-basic-red:        $color-red !default;
-$wg-basic-orange:     $color-orange !default;
-$wg-basic-purple:     $color-purple !default;
-$wg-basic-yellow:     $color-yellow !default;
-$wg-basic-pink:       $color-pink !default;
-$wg-basic-gray:       $color-gray !default;
-$wg-basic-brown:      $color-brown !default;
-$wg-basic-black:      $color-black !default;
-$wg-basic-white:      $color-white !default;
 
 
 //
@@ -132,57 +353,74 @@ $wg-box-border-width:          1px !default;
 $wg-box-border-radius:         $border-radius !default;
 $wg-box-box-shadow:            0 1px 1px rgba(0,0,0,.05) !default;
 
-$wg-box-faded-text:            $gray-dark !default;
-$wg-box-faded-bg:              $color-faded !default;
-$wg-box-faded-border:          #eee !default;
-
-$wg-box-blue-text:             #fff !default;
-$wg-box-blue-bg:               $color-blue !default;
-$wg-box-blue-border:           darken($wg-box-blue-bg, 3%) !default;
-
-$wg-box-green-text:            #fff !default;
-$wg-box-green-bg:              $color-green !default;
-$wg-box-green-border:          darken($wg-box-green-bg, 3%) !default;
-
-$wg-box-teal-text:             #fff !default;
-$wg-box-teal-bg:               $color-teal !default;
-$wg-box-teal-border:           darken($wg-box-teal-bg, 3%) !default;
-
-$wg-box-red-text:              #fff !default;
-$wg-box-red-bg:                $color-red !default;
+$wg-box-red-bg:                map-get($color-red, 500) !default;
 $wg-box-red-border:            darken($wg-box-red-bg, 3%) !default;
 
-$wg-box-orange-text:           #fff !default;
-$wg-box-orange-bg:             $color-orange !default;
-$wg-box-orange-border:         darken($wg-box-orange-bg, 3%) !default;
-
-$wg-box-purple-text:           #fff !default;
-$wg-box-purple-bg:             $color-purple !default;
-$wg-box-purple-border:         darken($wg-box-purple-bg, 3%) !default;
-
-$wg-box-yellow-text:           #fff !default;
-$wg-box-yellow-bg:             $color-yellow !default;
-$wg-box-yellow-border:         darken($wg-box-yellow-bg, 3%) !default;
-
-$wg-box-pink-text:             #fff !default;
-$wg-box-pink-bg:               $color-pink !default;
+$wg-box-pink-bg:               map-get($color-pink, 500) !default;
 $wg-box-pink-border:           darken($wg-box-pink-bg, 3%) !default;
 
-$wg-box-gray-text:             #fff !default;
-$wg-box-gray-bg:               $color-gray !default;
-$wg-box-gray-border:           darken($wg-box-gray-bg, 3%) !default;
+$wg-box-purple-bg:             map-get($color-purple, 500) !default;
+$wg-box-purple-border:         darken($wg-box-purple-bg, 3%) !default;
 
-$wg-box-brown-text:            #fff !default;
-$wg-box-brown-bg:              $color-brown !default;
+$wg-box-deep-purple-bg:        map-get($color-deep-purple, 500) !default;
+$wg-box-deep-purple-border:    darken($wg-box-deep-purple-bg, 3%) !default;
+
+$wg-box-indigo-bg:             map-get($color-indigo, 500) !default;
+$wg-box-indigo-border:         darken($wg-box-indigo-bg, 3%) !default;
+
+$wg-box-blue-bg:               map-get($color-blue, 500) !default;
+$wg-box-blue-border:           darken($wg-box-blue-bg, 3%) !default;
+
+$wg-box-light-blue-bg:         map-get($color-light-blue, 500) !default;
+$wg-box-light-blue-border:     darken($wg-box-light-blue-bg, 3%) !default;
+
+$wg-box-cyan-bg:               map-get($color-cyan, 500) !default;
+$wg-box-cyan-border:           darken($wg-box-cyan-bg, 3%) !default;
+
+$wg-box-teal-bg:               map-get($color-teal, 500) !default;
+$wg-box-teal-border:           darken($wg-box-teal-bg, 3%) !default;
+
+$wg-box-green-bg:              map-get($color-green, 500) !default;
+$wg-box-green-border:          darken($wg-box-green-bg, 3%) !default;
+
+$wg-box-light-green-bg:        map-get($color-light-green, 500) !default;
+$wg-box-light-green-border:    darken($wg-box-light-green-bg, 3%) !default;
+
+$wg-box-lime-bg:               map-get($color-lime, 500) !default;
+$wg-box-lime-border:           darken($wg-box-lime-bg, 3%) !default;
+
+$wg-box-yellow-bg:             map-get($color-yellow, 500) !default;
+$wg-box-yellow-border:         darken($wg-box-yellow-bg, 3%) !default;
+
+$wg-box-amber-bg:              map-get($color-amber, 500) !default;
+$wg-box-amber-border:          darken($wg-box-amber-bg, 3%) !default;
+
+$wg-box-orange-bg:             map-get($color-orange, 500) !default;
+$wg-box-orange-border:         darken($wg-box-orange-bg, 3%) !default;
+
+$wg-box-deep-orange-bg:        map-get($color-deep-orange, 500) !default;
+$wg-box-deep-orange-border:    darken($wg-box-deep-orange-bg, 3%) !default;
+
+$wg-box-brown-bg:              map-get($color-brown, 500) !default;
 $wg-box-brown-border:          darken($wg-box-brown-bg, 3%) !default;
 
-$wg-box-black-text:            #fff !default;
-$wg-box-black-bg:              $color-black !default;
-$wg-box-black-border:          darken($wg-box-black-bg, 3%) !default;
+$wg-box-grey-bg:               map-get($color-grey, 500) !default;
+$wg-box-grey-border:           darken($wg-box-grey-bg, 3%) !default;
 
-$wg-box-white-text:            $gray-dark !default;
-$wg-box-white-bg:              $color-white !default;
-$wg-box-white-border:          rgba(0,0,0,.125) !default;
+$wg-box-light-grey-bg:         map-get($color-grey, 100) !default;
+$wg-box-light-grey-border:     darken($wg-box-light-grey-bg, 3%) !default;
+
+$wg-box-deep-grey-bg:          map-get($color-grey, 800) !default;
+$wg-box-deep-grey-border:      darken($wg-box-deep-grey-bg, 3%) !default;
+
+$wg-box-blue-grey-bg:          map-get($color-blue-grey, 500) !default;
+$wg-box-blue-grey-border:      darken($wg-box-blue-grey-bg, 3%) !default;
+
+$wg-box-black-bg:              #000 !default;
+$wg-box-black-border:          #000 !default;
+
+$wg-box-white-bg:              #fff !default;
+$wg-box-white-border:          darken($wg-box-white-bg, 10%) !default;
 
 
 //
@@ -199,57 +437,74 @@ $wg-panel-border-width:          1px !default;
 $wg-panel-border-radius:         $border-radius !default;
 $wg-panel-box-shadow:            0 1px 1px rgba(0,0,0,.05) !default;
 
-$wg-panel-faded-text:            $gray-dark !default;
-$wg-panel-faded-bg:              $color-faded !default;
-$wg-panel-faded-border:          #eee !default;
-
-$wg-panel-blue-text:             #fff !default;
-$wg-panel-blue-bg:               $color-blue !default;
-$wg-panel-blue-border:           darken($wg-panel-blue-bg, 3%) !default;
-
-$wg-panel-green-text:            #fff !default;
-$wg-panel-green-bg:              $color-green !default;
-$wg-panel-green-border:          darken($wg-panel-green-bg, 3%) !default;
-
-$wg-panel-teal-text:             #fff !default;
-$wg-panel-teal-bg:               $color-teal !default;
-$wg-panel-teal-border:           darken($wg-panel-teal-bg, 3%) !default;
-
-$wg-panel-red-text:              #fff !default;
-$wg-panel-red-bg:                $color-red !default;
+$wg-panel-red-bg:                map-get($color-red, 500) !default;
 $wg-panel-red-border:            darken($wg-panel-red-bg, 3%) !default;
 
-$wg-panel-orange-text:           #fff !default;
-$wg-panel-orange-bg:             $color-orange !default;
-$wg-panel-orange-border:         darken($wg-panel-orange-bg, 3%) !default;
-
-$wg-panel-purple-text:           #fff !default;
-$wg-panel-purple-bg:             $color-purple !default;
-$wg-panel-purple-border:         darken($wg-panel-purple-bg, 3%) !default;
-
-$wg-panel-yellow-text:           #fff !default;
-$wg-panel-yellow-bg:             $color-yellow !default;
-$wg-panel-yellow-border:         darken($wg-panel-yellow-bg, 3%) !default;
-
-$wg-panel-pink-text:             #fff !default;
-$wg-panel-pink-bg:               $color-pink !default;
+$wg-panel-pink-bg:               map-get($color-pink, 500) !default;
 $wg-panel-pink-border:           darken($wg-panel-pink-bg, 3%) !default;
 
-$wg-panel-gray-text:             #fff !default;
-$wg-panel-gray-bg:               $color-gray !default;
-$wg-panel-gray-border:           darken($wg-panel-gray-bg, 3%) !default;
+$wg-panel-purple-bg:             map-get($color-purple, 500) !default;
+$wg-panel-purple-border:         darken($wg-panel-purple-bg, 3%) !default;
 
-$wg-panel-brown-text:            #fff !default;
-$wg-panel-brown-bg:              $color-brown !default;
+$wg-panel-deep-purple-bg:        map-get($color-deep-purple, 500) !default;
+$wg-panel-deep-purple-border:    darken($wg-panel-deep-purple-bg, 3%) !default;
+
+$wg-panel-indigo-bg:             map-get($color-indigo, 500) !default;
+$wg-panel-indigo-border:         darken($wg-panel-indigo-bg, 3%) !default;
+
+$wg-panel-blue-bg:               map-get($color-blue, 500) !default;
+$wg-panel-blue-border:           darken($wg-panel-blue-bg, 3%) !default;
+
+$wg-panel-light-blue-bg:         map-get($color-light-blue, 500) !default;
+$wg-panel-light-blue-border:     darken($wg-panel-light-blue-bg, 3%) !default;
+
+$wg-panel-cyan-bg:               map-get($color-cyan, 500) !default;
+$wg-panel-cyan-border:           darken($wg-panel-cyan-bg, 3%) !default;
+
+$wg-panel-teal-bg:               map-get($color-teal, 500) !default;
+$wg-panel-teal-border:           darken($wg-panel-teal-bg, 3%) !default;
+
+$wg-panel-green-bg:              map-get($color-green, 500) !default;
+$wg-panel-green-border:          darken($wg-panel-green-bg, 3%) !default;
+
+$wg-panel-light-green-bg:        map-get($color-light-green, 500) !default;
+$wg-panel-light-green-border:    darken($wg-panel-light-green-bg, 3%) !default;
+
+$wg-panel-lime-bg:               map-get($color-lime, 500) !default;
+$wg-panel-lime-border:           darken($wg-panel-lime-bg, 3%) !default;
+
+$wg-panel-yellow-bg:             map-get($color-yellow, 500) !default;
+$wg-panel-yellow-border:         darken($wg-panel-yellow-bg, 3%) !default;
+
+$wg-panel-amber-bg:              map-get($color-amber, 500) !default;
+$wg-panel-amber-border:          darken($wg-panel-amber-bg, 3%) !default;
+
+$wg-panel-orange-bg:             map-get($color-orange, 500) !default;
+$wg-panel-orange-border:         darken($wg-panel-orange-bg, 3%) !default;
+
+$wg-panel-deep-orange-bg:        map-get($color-deep-orange, 500) !default;
+$wg-panel-deep-orange-border:    darken($wg-panel-deep-orange-bg, 3%) !default;
+
+$wg-panel-brown-bg:              map-get($color-brown, 500) !default;
 $wg-panel-brown-border:          darken($wg-panel-brown-bg, 3%) !default;
 
-$wg-panel-black-text:            #fff !default;
-$wg-panel-black-bg:              $color-black !default;
-$wg-panel-black-border:          darken($wg-panel-black-bg, 3%) !default;
+$wg-panel-grey-bg:               map-get($color-grey, 500) !default;
+$wg-panel-grey-border:           darken($wg-panel-grey-bg, 3%) !default;
 
-$wg-panel-white-text:            $gray-dark !default;
-$wg-panel-white-bg:              $color-white !default;
-$wg-panel-white-border:          rgba(0,0,0,.125) !default;
+$wg-panel-light-grey-bg:         map-get($color-grey, 100) !default;
+$wg-panel-light-grey-border:     darken($wg-panel-light-grey-bg, 3%) !default;
+
+$wg-panel-deep-grey-bg:          map-get($color-grey, 800) !default;
+$wg-panel-deep-grey-border:      darken($wg-panel-deep-grey-bg, 3%) !default;
+
+$wg-panel-blue-grey-bg:          map-get($color-blue-grey, 500) !default;
+$wg-panel-blue-grey-border:      darken($wg-panel-blue-grey-bg, 3%) !default;
+
+$wg-panel-black-bg:              #000 !default;
+$wg-panel-black-border:          #000 !default;
+
+$wg-panel-white-bg:              #fff !default;
+$wg-panel-white-border:          darken($wg-panel-white-bg, 10%) !default;
 
 
 //

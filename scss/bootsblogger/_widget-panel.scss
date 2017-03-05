@@ -209,115 +209,57 @@
 // Background variants
 //
 
-// Faded
-.wg-panel-faded {
-  @include wg-panel-variant($wg-panel-faded-border, $wg-panel-faded-text, $wg-panel-faded-bg);
-}
-// Blue
-.wg-panel-blue {
-  @include wg-panel-variant($wg-panel-blue-border, $wg-panel-blue-text, $wg-panel-blue-bg);
-}
-// Green
-.wg-panel-green {
-  @include wg-panel-variant($wg-panel-green-border, $wg-panel-green-text, $wg-panel-green-bg);
-}
-// Teal
-.wg-panel-teal {
-  @include wg-panel-variant($wg-panel-teal-border, $wg-panel-teal-text, $wg-panel-teal-bg);
-}
-// Red
-.wg-panel-red {
-  @include wg-panel-variant($wg-panel-red-border, $wg-panel-red-text, $wg-panel-red-bg);
-}
-// Orange
-.wg-panel-orange {
-  @include wg-panel-variant($wg-panel-orange-border, $wg-panel-orange-text, $wg-panel-orange-bg);
-}
-// Purple
-.wg-panel-purple {
-  @include wg-panel-variant($wg-panel-purple-border, $wg-panel-purple-text, $wg-panel-purple-bg);
-}
-// Yellow
-.wg-panel-yellow {
-  @include wg-panel-variant($wg-panel-yellow-border, $wg-panel-yellow-text, $wg-panel-yellow-bg);
-}
-// Pink
-.wg-panel-pink {
-  @include wg-panel-variant($wg-panel-pink-border, $wg-panel-pink-text, $wg-panel-pink-bg);
-}
-// gray
-.wg-panel-gray {
-  @include wg-panel-variant($wg-panel-gray-border, $wg-panel-gray-text, $wg-panel-gray-bg);
-}
-// Brown
-.wg-panel-brown {
-  @include wg-panel-variant($wg-panel-brown-border, $wg-panel-brown-text, $wg-panel-brown-bg);
-}
-// Black
-.wg-panel-black {
-  @include wg-panel-variant($wg-panel-black-border, $wg-panel-black-text, $wg-panel-black-bg);
-}
-// White
-.wg-panel-white {
-  @include wg-panel-variant($wg-panel-white-border, $wg-panel-white-text, $wg-panel-white-bg);
-}
+@include wg-panel-variant('.wg-panel-red', $wg-panel-red-bg, $wg-panel-red-border);
+@include wg-panel-variant('.wg-panel-pink', $wg-panel-pink-bg, $wg-panel-pink-border);
+@include wg-panel-variant('.wg-panel-purple', $wg-panel-purple-bg, $wg-panel-purple-border);
+@include wg-panel-variant('.wg-panel-deep-purple', $wg-panel-deep-purple-bg, $wg-panel-deep-purple-border);
+@include wg-panel-variant('.wg-panel-indigo', $wg-panel-indigo-bg, $wg-panel-indigo-border);
+@include wg-panel-variant('.wg-panel-blue', $wg-panel-blue-bg, $wg-panel-blue-border);
+@include wg-panel-variant('.wg-panel-light-blue', $wg-panel-light-blue-bg, $wg-panel-light-blue-border);
+@include wg-panel-variant('.wg-panel-cyan', $wg-panel-cyan-bg, $wg-panel-cyan-border);
+@include wg-panel-variant('.wg-panel-teal', $wg-panel-teal-bg, $wg-panel-teal-border);
+@include wg-panel-variant('.wg-panel-green', $wg-panel-green-bg, $wg-panel-green-border);
+@include wg-panel-variant('.wg-panel-light-green', $wg-panel-light-green-bg, $wg-panel-light-green-border);
+@include wg-panel-variant('.wg-panel-lime', $wg-panel-lime-bg, $wg-panel-lime-border);
+@include wg-panel-variant('.wg-panel-yellow', $wg-panel-yellow-bg, $wg-panel-yellow-border);
+@include wg-panel-variant('.wg-panel-amber', $wg-panel-amber-bg, $wg-panel-amber-border);
+@include wg-panel-variant('.wg-panel-orange', $wg-panel-orange-bg, $wg-panel-orange-border);
+@include wg-panel-variant('.wg-panel-deep-orange', $wg-panel-deep-orange-bg, $wg-panel-deep-orange-border);
+@include wg-panel-variant('.wg-panel-brown', $wg-panel-brown-bg, $wg-panel-brown-border);
+@include wg-panel-variant('.wg-panel-grey', $wg-panel-grey-bg, $wg-panel-grey-border);
+@include wg-panel-variant('.wg-panel-light-grey', $wg-panel-light-grey-bg, $wg-panel-light-grey-border);
+@include wg-panel-variant('.wg-panel-deep-grey', $wg-panel-deep-grey-bg, $wg-panel-deep-grey-border);
+@include wg-panel-variant('.wg-panel-blue-grey', $wg-panel-blue-grey-bg, $wg-panel-blue-grey-border);
+@include wg-panel-variant('.wg-panel-black', $wg-panel-black-bg, $wg-panel-black-border);
+@include wg-panel-variant('.wg-panel-white', $wg-panel-white-bg, $wg-panel-white-border);
 
 
 //
 // Outline variants
 //
 
-// Faded
-.wg-panel-outline-faded {
-  @include wg-panel-outline-variant($wg-panel-faded-bg);
-}
-// Blue
-.wg-panel-outline-blue {
-  @include wg-panel-outline-variant($wg-panel-blue-bg);
-}
-// Green
-.wg-panel-outline-green {
-  @include wg-panel-outline-variant($wg-panel-green-bg);
-}
-// Teal
-.wg-panel-outline-teal {
-  @include wg-panel-outline-variant($wg-panel-teal-bg);
-}
-// Red
-.wg-panel-outline-red {
-  @include wg-panel-outline-variant($wg-panel-red-bg);
-}
-// Orange
-.wg-panel-outline-orange {
-  @include wg-panel-outline-variant($wg-panel-orange-bg);
-}
-// Purple
-.wg-panel-outline-purple {
-  @include wg-panel-outline-variant($wg-panel-purple-bg);
-}
-// Yellow
-.wg-panel-outline-yellow {
-  @include wg-panel-outline-variant($wg-panel-yellow-bg);
-}
-// Pink
-.wg-panel-outline-pink {
-  @include wg-panel-outline-variant($wg-panel-pink-bg);
-}
-// gray
-.wg-panel-outline-gray {
-  @include wg-panel-outline-variant($wg-panel-gray-bg);
-}
-// Brown
-.wg-panel-outline-brown {
-  @include wg-panel-outline-variant($wg-panel-brown-bg);
-}
-// Black
-.wg-panel-outline-black {
-  @include wg-panel-outline-variant($wg-panel-black-bg);
-}
-// White
-.wg-panel-outline-white {
-  @include wg-panel-outline-variant($wg-panel-white-bg);
-}
+@include wg-panel-outline-variant('.wg-panel-outline-red', $wg-panel-red-bg);
+@include wg-panel-outline-variant('.wg-panel-outline-pink', $wg-panel-pink-bg);
+@include wg-panel-outline-variant('.wg-panel-outline-purple', $wg-panel-purple-bg);
+@include wg-panel-outline-variant('.wg-panel-outline-deep-purple', $wg-panel-deep-purple-bg);
+@include wg-panel-outline-variant('.wg-panel-outline-indigo', $wg-panel-indigo-bg);
+@include wg-panel-outline-variant('.wg-panel-outline-blue', $wg-panel-blue-bg);
+@include wg-panel-outline-variant('.wg-panel-outline-light-blue', $wg-panel-light-blue-bg);
+@include wg-panel-outline-variant('.wg-panel-outline-cyan', $wg-panel-cyan-bg);
+@include wg-panel-outline-variant('.wg-panel-outline-teal', $wg-panel-teal-bg);
+@include wg-panel-outline-variant('.wg-panel-outline-green', $wg-panel-green-bg);
+@include wg-panel-outline-variant('.wg-panel-outline-light-green', $wg-panel-light-green-bg);
+@include wg-panel-outline-variant('.wg-panel-outline-lime', $wg-panel-lime-bg);
+@include wg-panel-outline-variant('.wg-panel-outline-yellow', $wg-panel-yellow-bg);
+@include wg-panel-outline-variant('.wg-panel-outline-amber', $wg-panel-amber-bg);
+@include wg-panel-outline-variant('.wg-panel-outline-orange', $wg-panel-orange-bg);
+@include wg-panel-outline-variant('.wg-panel-outline-deep-orange', $wg-panel-deep-orange-bg);
+@include wg-panel-outline-variant('.wg-panel-outline-brown', $wg-panel-brown-bg);
+@include wg-panel-outline-variant('.wg-panel-outline-grey', $wg-panel-grey-bg);
+@include wg-panel-outline-variant('.wg-panel-outline-light-grey', $wg-panel-light-grey-bg);
+@include wg-panel-outline-variant('.wg-panel-outline-deep-grey', $wg-panel-deep-grey-bg);
+@include wg-panel-outline-variant('.wg-panel-outline-blue-grey', $wg-panel-blue-grey-bg);
+@include wg-panel-outline-variant('.wg-panel-outline-black', $wg-panel-black-bg);
+@include wg-panel-outline-variant('.wg-panel-outline-white', $wg-panel-white-bg);
 
 // scss-lint:enable QualifyingElement

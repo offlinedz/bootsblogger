@@ -1,63 +1,55 @@
-// Widget basic
-@mixin wg-basic-variant($heading-text-color) {
-  > .widget > h2 {
-    color: $heading-text-color;
+// Widget title
+@mixin wg-title-variant($parent, $color) {
+  #{$parent} > .widget > h2 {
+    color: $color;
   }
 }
 
 // Widget box
-@mixin wg-box-variant($bg, $border, $color) {
-  > .widget {
+@mixin wg-box-variant($parent, $bg, $border) {
+  #{$parent} > .widget {
     background-color: $bg;
     border-color: $border;
   }
-  > .widget > h2 {
-    color: $color;
-  }
 }
 // Widget box outline
-@mixin wg-box-outline-variant($color) {
-  > .widget {
+@mixin wg-box-outline-variant($parent, $color) {
+  #{$parent} > .widget {
     background-color: transparent;
     border-color: $color;
-  }
-  > .widget > h2 {
-    color: $color;
   }
 }
 
 // Widget panel
-@mixin wg-panel-variant($border, $heading-text-color, $heading-bg-color) {
-  > .widget > .widget-content,
-  > .widget > .widget-collapse {
+@mixin wg-panel-variant($parent, $bg, $border) {
+  #{$parent} > .widget > .widget-content,
+  #{$parent} > .widget > .widget-collapse {
     border-color: $border;
   }
 
-  > .widget > .widget-content,
-  > .widget > .widget-collapse > .widget-content {
+  #{$parent} > .widget > .widget-content,
+  #{$parent} > .widget > .widget-collapse > .widget-content {
     background-color: $wg-panel-content-bg;
   }
 
-  > .widget > h2 {
-    color: $heading-text-color;
-    background-color: $heading-bg-color;
+  #{$parent} > .widget > h2 {
+    background-color: $bg;
     border-color: $border;
   }
 }
 // Widget panel outline
-@mixin wg-panel-outline-variant($color) {
-  > .widget > .widget-content,
-  > .widget > .widget-collapse {
+@mixin wg-panel-outline-variant($parent, $color) {
+  #{$parent} > .widget > .widget-content,
+  #{$parent} > .widget > .widget-collapse {
     border-color: $color;
   }
 
-  > .widget > .widget-content,
-  > .widget > .widget-collapse > .widget-content {
+  #{$parent} > .widget > .widget-content,
+  #{$parent} > .widget > .widget-collapse > .widget-content {
     background-color: transparent;
   }
 
-  > .widget > h2 {
-    color: $color;
+  #{$parent} > .widget > h2 {
     background-color: transparent;
     border-color: $color;
   }

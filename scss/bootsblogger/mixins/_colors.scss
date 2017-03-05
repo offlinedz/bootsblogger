@@ -1,0 +1,16 @@
+// Colors
+@mixin color($parent, $prop, $colors) {
+  @each $i in map-keys($colors) {
+    $level: $i;
+    $color: map-get($colors, $i);
+
+    #{$parent}-#{$level} {
+      #{$prop}: $color !important;
+    }
+    a#{$parent}-#{$level} {
+      @include hover-focus {
+        #{$prop}: darken($color, 10%) !important;
+      }
+    }
+  }
+}
