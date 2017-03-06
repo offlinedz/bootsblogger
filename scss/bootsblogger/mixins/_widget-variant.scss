@@ -1,56 +1,199 @@
 // Widget title
-@mixin wg-title-variant($parent, $color) {
-  #{$parent} > .widget > h2 {
-    color: $color;
+@mixin wg-title-variant($parent, $palettes) {
+  @each $color-name, $level-and-value in $palettes {
+    @each $color-level, $color-value in $level-and-value {
+
+      // $color-name => name (e.g., red, pink)
+      // $color-level => level (e.g., 50, 100) X
+      // $color-value => value (e.g., #ffebee)
+
+      // @if $color-level != 0 {
+      //   $color-level: "-#{$color-level}"
+      // } @else {
+      //   $color-level: ""
+      // }
+
+      @if $color-level == 500 or $color-level == 0 {
+        #{$parent}-#{$color-name} > .widget > h2 {
+          color: $color-value;
+        }
+      }
+
+      // Light Grey
+      @if $color-name == "grey" and $color-level == 100 {
+        #{$parent}-light-#{$color-name} > .widget > h2 {
+          color: $color-value;
+        }
+      }
+
+      // Deep Grey
+      @if $color-name == "grey" and $color-level == 800 {
+        #{$parent}-deep-#{$color-name} > .widget > h2 {
+          color: $color-value;
+        }
+      }
+    }
   }
 }
+
 
 // Widget box
-@mixin wg-box-variant($parent, $bg, $border) {
-  #{$parent} > .widget {
-    background-color: $bg;
-    border-color: $border;
+@mixin wg-box-variant($parent, $palettes) {
+  @each $color-name, $level-and-value in $palettes {
+    @each $color-level, $color-value in $level-and-value {
+
+      // $color-name => name (e.g., red, pink)
+      // $color-level => level (e.g., 50, 100) X
+      // $color-value => value (e.g., #ffebee)
+
+      // @if $color-level != 0 {
+      //   $color-level: "-#{$color-level}"
+      // } @else {
+      //   $color-level: ""
+      // }
+
+      @if $color-level == 500 or $color-level == 0 {
+        #{$parent}-#{$color-name} > .widget {
+          background-color: $color-value;
+          border-color: darken($color-value, 10%);
+        }
+        // Outline
+        #{$parent}-outline-#{$color-name} > .widget {
+          background-color: transparent;
+          border-color: $color-value;
+        }
+      }
+
+      // Light Grey
+      @if $color-name == "grey" and $color-level == 100 {
+        #{$parent}-light-#{$color-name} > .widget {
+          background-color: $color-value;
+          border-color: darken($color-value, 10%);
+        }
+        // Outline
+        #{$parent}-outline-light-#{$color-name} > .widget {
+          background-color: transparent;
+          border-color: $color-value;
+        }
+      }
+
+      // Deep Grey
+      @if $color-name == "grey" and $color-level == 800 {
+        #{$parent}-deep-#{$color-name} > .widget {
+          background-color: $color-value;
+          border-color: darken($color-value, 10%);
+        }
+        // Outline
+        #{$parent}-outline-deep-#{$color-name} > .widget {
+          background-color: transparent;
+          border-color: $color-value;
+        }
+      }
+    }
   }
 }
-// Widget box outline
-@mixin wg-box-outline-variant($parent, $color) {
-  #{$parent} > .widget {
-    background-color: transparent;
-    border-color: $color;
-  }
-}
+
 
 // Widget panel
-@mixin wg-panel-variant($parent, $bg, $border) {
-  #{$parent} > .widget > .widget-content,
-  #{$parent} > .widget > .widget-collapse {
-    border-color: $border;
-  }
+@mixin wg-panel-variant($parent, $palettes) {
+  @each $color-name, $level-and-value in $palettes {
+    @each $color-level, $color-value in $level-and-value {
 
-  #{$parent} > .widget > .widget-content,
-  #{$parent} > .widget > .widget-collapse > .widget-content {
-    background-color: $wg-panel-content-bg;
-  }
+      // $color-name => name (e.g., red, pink)
+      // $color-level => level (e.g., 50, 100) X
+      // $color-value => value (e.g., #ffebee)
 
-  #{$parent} > .widget > h2 {
-    background-color: $bg;
-    border-color: $border;
-  }
-}
-// Widget panel outline
-@mixin wg-panel-outline-variant($parent, $color) {
-  #{$parent} > .widget > .widget-content,
-  #{$parent} > .widget > .widget-collapse {
-    border-color: $color;
-  }
+      // @if $color-level != 0 {
+      //   $color-level: "-#{$color-level}"
+      // } @else {
+      //   $color-level: ""
+      // }
 
-  #{$parent} > .widget > .widget-content,
-  #{$parent} > .widget > .widget-collapse > .widget-content {
-    background-color: transparent;
-  }
+      @if $color-level == 500 or $color-level == 0 {
+        #{$parent}-#{$color-name} > .widget > .widget-content,
+        #{$parent}-#{$color-name} > .widget > .widget-collapse {
+          border-color: darken($color-value, 10%);
+        }
+        #{$parent}-#{$color-name} > .widget > .widget-content,
+        #{$parent}-#{$color-name} > .widget > .widget-collapse > .widget-content {
+          background-color: $wg-panel-content-bg;
+        }
+        #{$parent}-#{$color-name} > .widget > h2 {
+          background-color: $color-value;
+          border-color: darken($color-value, 10%);
+        }
+        // Outline
+        #{$parent}-outline-#{$color-name} > .widget > .widget-content,
+        #{$parent}-outline-#{$color-name} > .widget > .widget-collapse {
+          border-color: $color-value;
+        }
+        #{$parent}-outline-#{$color-name} > .widget > .widget-content,
+        #{$parent}-outline-#{$color-name} > .widget > .widget-collapse > .widget-content {
+          background-color: transparent;
+        }
+        #{$parent}-outline-#{$color-name} > .widget > h2 {
+          background-color: transparent;
+          border-color: $color-value;
+        }
+      }
 
-  #{$parent} > .widget > h2 {
-    background-color: transparent;
-    border-color: $color;
+      // Light Grey
+      @if $color-name == "grey" and $color-level == 100 {
+        #{$parent}-light-#{$color-name} > .widget > .widget-content,
+        #{$parent}-light-#{$color-name} > .widget > .widget-collapse {
+          border-color: darken($color-value, 10%);
+        }
+        #{$parent}-light-#{$color-name} > .widget > .widget-content,
+        #{$parent}-light-#{$color-name} > .widget > .widget-collapse > .widget-content {
+          background-color: $wg-panel-content-bg;
+        }
+        #{$parent}-light-#{$color-name} > .widget > h2 {
+          background-color: $color-value;
+          border-color: darken($color-value, 10%);
+        }
+        // Outline
+        #{$parent}-outline-light-#{$color-name} > .widget > .widget-content,
+        #{$parent}-outline-light-#{$color-name} > .widget > .widget-collapse {
+          border-color: $color-value;
+        }
+        #{$parent}-outline-light-#{$color-name} > .widget > .widget-content,
+        #{$parent}-outline-light-#{$color-name} > .widget > .widget-collapse > .widget-content {
+          background-color: transparent;
+        }
+        #{$parent}-outline-light-#{$color-name} > .widget > h2 {
+          background-color: transparent;
+          border-color: $color-value;
+        }
+      }
+
+      // Deep Grey
+      @if $color-name == "grey" and $color-level == 800 {
+        #{$parent}-deep-#{$color-name} > .widget > .widget-content,
+        #{$parent}-deep-#{$color-name} > .widget > .widget-collapse {
+          border-color: darken($color-value, 10%);
+        }
+        #{$parent}-deep-#{$color-name} > .widget > .widget-content,
+        #{$parent}-deep-#{$color-name} > .widget > .widget-collapse > .widget-content {
+          background-color: $wg-panel-content-bg;
+        }
+        #{$parent}-deep-#{$color-name} > .widget > h2 {
+          background-color: $color-value;
+          border-color: darken($color-value, 10%);
+        }
+        // Outline
+        #{$parent}-outline-deep-#{$color-name} > .widget > .widget-content,
+        #{$parent}-outline-deep-#{$color-name} > .widget > .widget-collapse {
+          border-color: $color-value;
+        }
+        #{$parent}-outline-deep-#{$color-name} > .widget > .widget-content,
+        #{$parent}-outline-deep-#{$color-name} > .widget > .widget-collapse > .widget-content {
+          background-color: transparent;
+        }
+        #{$parent}-outline-deep-#{$color-name} > .widget > h2 {
+          background-color: transparent;
+          border-color: $color-value;
+        }
+      }
+    }
   }
 }

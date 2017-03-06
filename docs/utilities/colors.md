@@ -64,6 +64,16 @@ Example:
 - `bg-deep-orange-500`
 - `border-green-500`
 
+### Hover and focus states
+
+Ubah `.{prop}-{color}-{level}` menjadi `.{prop}-hover-{color}-{level}` untuk memberikan `hover` dan `focus` *states*.
+
+Example:
+
+- `text-hover-red-500`
+- `bg-hover-deep-orange-500`
+- `border-hover-green-500`
+
 ## Colors
 
 Pemilihan warna menggunakan [Material Design color palette](https://material.io/guidelines/style/color.html#color-color-palette).
@@ -1007,7 +1017,7 @@ Untuk warna `black` dan `white` penamaan kelasnya sedikit berbeda, karena tidak 
 <div class="row bg-grey-200 p-3 mb-3">
   <div class="col-sm-6">
     <ul class="list-unstyled mb-sm-0">
-      <li class="bg-grey-100 p-2"><code>.{prop}-black</code></li>
+      <li class="bg-grey-100 text-grey-700 p-2"><code>.{prop}-black</code> and <code>.{prop}-hover-black</code></li>
       <li class="bg-black text-white p-3">
         <span class="d-block font-weight-bold mb-5">Black</span>
         <span>None</span>
@@ -1017,7 +1027,7 @@ Untuk warna `black` dan `white` penamaan kelasnya sedikit berbeda, karena tidak 
   </div>
   <div class="col-sm-6">
     <ul class="list-unstyled mb-0">
-      <li class="bg-grey-100 p-2"><code>.{prop}-white</code></li>
+      <li class="bg-grey-100 text-grey-700 p-2"><code>.{prop}-white</code> and <code>.{prop}-hover-white</code></li>
       <li class="bg-white text-black p-3">
         <span class="d-block font-weight-bold mb-5">White</span>
         <span>None</span>
@@ -1038,9 +1048,10 @@ Untuk warna `black` dan `white` penamaan kelasnya sedikit berbeda, karena tidak 
 Links.
 
 {% example html %}
-<a class="text-red-500" href="#">Red link</a>
-<a class="text-pink-500" href="#">Pink link</a>
-<a class="text-purple-500" href="#">Purple link</a>
+<a class="text-red-500 text-hover-red-800" href="#">Red link</a>
+<a class="text-pink-500 text-hover-pink-800" href="#">Pink link</a>
+<a class="text-purple-500 text-hover-purple-800" href="#">Purple link</a>
+<a class="text-grey-500 text-hover-blue-500" href="#">Mix and match</a>
 {% endexample %}
 
 ## Example background colors
@@ -1054,9 +1065,10 @@ Links.
 Links.
 
 {% example html %}
-<a class="bg-red-500 text-white d-block p-3 mb-3" href="#">Red link</a>
-<a class="bg-pink-500 text-white d-block p-3 mb-3" href="#">Pink link</a>
-<a class="bg-purple-500 text-white d-block p-3 mb-3" href="#">Purple link</a>
+<a class="bg-red-500 bg-hover-red-800 text-white d-block p-3 mb-3" href="#">Red link</a>
+<a class="bg-pink-500 bg-hover-pink-800 text-white d-block p-3 mb-3" href="#">Pink link</a>
+<a class="bg-purple-500 bg-hover-purple-800 text-white d-block p-3 mb-3" href="#">Purple link</a>
+<a class="bg-orange-500 bg-hover-purple-500 text-white text-hover-orange-500 d-block p-3 mb-3" href="#">Mix and match</a>
 {% endexample %}
 
 ## Example border colors
@@ -1070,7 +1082,8 @@ Links.
 Links.
 
 {% example html %}
-<a class="border-red-100 text-grey-700 d-block p-3 mb-3" href="#" style="border: 2px solid transparent;">Red link</a>
-<a class="border-pink-100 text-grey-700 d-block p-3 mb-3" href="#" style="border: 2px solid transparent;">Pink link</a>
-<a class="border-purple-100 text-grey-700 d-block p-3 mb-3" href="#" style="border: 2px solid transparent;">Purple link</a>
+<a class="border-red-100 border-hover-red-500 text-grey-700 d-block p-3 mb-3" href="#" style="border: 2px solid transparent;">Red link</a>
+<a class="border-pink-100 border-hover-pink-500 text-grey-700 d-block p-3 mb-3" href="#" style="border: 2px solid transparent;">Pink link</a>
+<a class="border-purple-100 border-hover-purple-500 text-grey-700 d-block p-3 mb-3" href="#" style="border: 2px solid transparent;">Purple link</a>
+<a class="border-orange-500 border-hover-purple-500 text-grey-700 text-hover-purple-500 d-block p-3 mb-3" href="#" style="border: 2px solid transparent;">Mix and match</a>
 {% endexample %}

@@ -195,7 +195,7 @@ Untuk mengubah ukuran judul widget gunakan `.wg-title-{h1, h2, h3, h4, h5, h6}`.
       </div>
     </div><!-- /.widget -->
   </div>
-  <div class="wg-basic wg-title-cyan">
+  <div class="wg-title-cyan">
     <div class="widget">
       <h2>Cyan</h2>
       <div class="widget-content">

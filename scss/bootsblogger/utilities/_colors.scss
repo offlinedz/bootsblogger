@@ -2,78 +2,18 @@
 // Text colors
 //
 
-@include color('.text-red', 'color', $color-red);
-@include color('.text-pink', 'color', $color-pink);
-@include color('.text-purple', 'color', $color-purple);
-@include color('.text-deep-purple', 'color', $color-deep-purple);
-@include color('.text-indigo', 'color', $color-indigo);
-@include color('.text-blue', 'color', $color-blue);
-@include color('.text-light-blue', 'color', $color-light-blue);
-@include color('.text-cyan', 'color', $color-cyan);
-@include color('.text-teal', 'color', $color-teal);
-@include color('.text-green', 'color', $color-green);
-@include color('.text-light-green', 'color', $color-light-green);
-@include color('.text-lime', 'color', $color-lime);
-@include color('.text-yellow', 'color', $color-yellow);
-@include color('.text-amber', 'color', $color-amber);
-@include color('.text-orange', 'color', $color-orange);
-@include color('.text-deep-orange', 'color', $color-deep-orange);
-@include color('.text-brown', 'color', $color-brown);
-@include color('.text-grey', 'color', $color-grey);
-@include color('.text-blue-grey', 'color', $color-blue-grey);
-@include color('.text', 'color', $color-black);
-@include color('.text', 'color', $color-white);
+@include color('.text', 'color', $palettes);
 
 
 //
 // Background colors
 //
 
-@include color('.bg-red', 'background-color', $color-red);
-@include color('.bg-pink', 'background-color', $color-pink);
-@include color('.bg-purple', 'background-color', $color-purple);
-@include color('.bg-deep-purple', 'background-color', $color-deep-purple);
-@include color('.bg-indigo', 'background-color', $color-indigo);
-@include color('.bg-blue', 'background-color', $color-blue);
-@include color('.bg-light-blue', 'background-color', $color-light-blue);
-@include color('.bg-cyan', 'background-color', $color-cyan);
-@include color('.bg-teal', 'background-color', $color-teal);
-@include color('.bg-green', 'background-color', $color-green);
-@include color('.bg-light-green', 'background-color', $color-light-green);
-@include color('.bg-lime', 'background-color', $color-lime);
-@include color('.bg-yellow', 'background-color', $color-yellow);
-@include color('.bg-amber', 'background-color', $color-amber);
-@include color('.bg-orange', 'background-color', $color-orange);
-@include color('.bg-deep-orange', 'background-color', $color-deep-orange);
-@include color('.bg-brown', 'background-color', $color-brown);
-@include color('.bg-grey', 'background-color', $color-grey);
-@include color('.bg-blue-grey', 'background-color', $color-blue-grey);
-@include color('.bg', 'background-color', $color-black);
-@include color('.bg', 'background-color', $color-white);
+@include color('.bg', 'background-color', $palettes);
 
 
 //
 // Border colors
 //
 
-@include color('.border-red', 'border-color', $color-red);
-@include color('.border-pink', 'border-color', $color-pink);
-@include color('.border-purple', 'border-color', $color-purple);
-@include color('.border-deep-purple', 'border-color', $color-deep-purple);
-@include color('.border-indigo', 'border-color', $color-indigo);
-@include color('.border-blue', 'border-color', $color-blue);
-@include color('.border-light-blue', 'border-color', $color-light-blue);
-@include color('.border-cyan', 'border-color', $color-cyan);
-@include color('.border-teal', 'border-color', $color-teal);
-@include color('.border-green', 'border-color', $color-green);
-@include color('.border-light-green', 'border-color', $color-light-green);
-@include color('.border-lime', 'border-color', $color-lime);
-@include color('.border-yellow', 'border-color', $color-yellow);
-@include color('.border-amber', 'border-color', $color-amber);
-@include color('.border-orange', 'border-color', $color-orange);
-@include color('.border-deep-orange', 'border-color', $color-deep-orange);
-@include color('.border-brown', 'border-color', $color-brown);
-@include color('.border-grey', 'border-color', $color-grey);
-@include color('.border-blue-grey', 'border-color', $color-blue-grey);
-@include color('.border', 'border-color', $color-black);
-@include color('.border', 'border-color', $color-white);
+@include color('.border', 'border-color', $palettes);

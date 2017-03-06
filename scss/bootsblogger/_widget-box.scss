@@ -61,61 +61,9 @@
 
 
 //
-// Background variants
+// Colors
 //
 
-@include wg-box-variant('.wg-box-red', $wg-box-red-bg, $wg-box-red-border);
-@include wg-box-variant('.wg-box-pink', $wg-box-pink-bg, $wg-box-pink-border);
-@include wg-box-variant('.wg-box-purple', $wg-box-purple-bg, $wg-box-purple-border);
-@include wg-box-variant('.wg-box-deep-purple', $wg-box-deep-purple-bg, $wg-box-deep-purple-border);
-@include wg-box-variant('.wg-box-indigo', $wg-box-indigo-bg, $wg-box-indigo-border);
-@include wg-box-variant('.wg-box-blue', $wg-box-blue-bg, $wg-box-blue-border);
-@include wg-box-variant('.wg-box-light-blue', $wg-box-light-blue-bg, $wg-box-light-blue-border);
-@include wg-box-variant('.wg-box-cyan', $wg-box-cyan-bg, $wg-box-cyan-border);
-@include wg-box-variant('.wg-box-teal', $wg-box-teal-bg, $wg-box-teal-border);
-@include wg-box-variant('.wg-box-green', $wg-box-green-bg, $wg-box-green-border);
-@include wg-box-variant('.wg-box-light-green', $wg-box-light-green-bg, $wg-box-light-green-border);
-@include wg-box-variant('.wg-box-lime', $wg-box-lime-bg, $wg-box-lime-border);
-@include wg-box-variant('.wg-box-yellow', $wg-box-yellow-bg, $wg-box-yellow-border);
-@include wg-box-variant('.wg-box-amber', $wg-box-amber-bg, $wg-box-amber-border);
-@include wg-box-variant('.wg-box-orange', $wg-box-orange-bg, $wg-box-orange-border);
-@include wg-box-variant('.wg-box-deep-orange', $wg-box-deep-orange-bg, $wg-box-deep-orange-border);
-@include wg-box-variant('.wg-box-brown', $wg-box-brown-bg, $wg-box-brown-border);
-@include wg-box-variant('.wg-box-grey', $wg-box-grey-bg, $wg-box-grey-border);
-@include wg-box-variant('.wg-box-light-grey', $wg-box-light-grey-bg, $wg-box-light-grey-border);
-@include wg-box-variant('.wg-box-deep-grey', $wg-box-deep-grey-bg, $wg-box-deep-grey-border);
-@include wg-box-variant('.wg-box-blue-grey', $wg-box-blue-grey-bg, $wg-box-blue-grey-border);
-@include wg-box-variant('.wg-box-black', $wg-box-black-bg, $wg-box-black-border);
-@include wg-box-variant('.wg-box-white', $wg-box-white-bg, $wg-box-white-border);
-
-
-//
-// Outline variants
-//
-
-@include wg-box-outline-variant('.wg-box-outline-red', $wg-box-red-bg);
-@include wg-box-outline-variant('.wg-box-outline-pink', $wg-box-pink-bg);
-@include wg-box-outline-variant('.wg-box-outline-purple', $wg-box-purple-bg);
-@include wg-box-outline-variant('.wg-box-outline-deep-purple', $wg-box-deep-purple-bg);
-@include wg-box-outline-variant('.wg-box-outline-indigo', $wg-box-indigo-bg);
-@include wg-box-outline-variant('.wg-box-outline-blue', $wg-box-blue-bg);
-@include wg-box-outline-variant('.wg-box-outline-light-blue', $wg-box-light-blue-bg);
-@include wg-box-outline-variant('.wg-box-outline-cyan', $wg-box-cyan-bg);
-@include wg-box-outline-variant('.wg-box-outline-teal', $wg-box-teal-bg);
-@include wg-box-outline-variant('.wg-box-outline-green', $wg-box-green-bg);
-@include wg-box-outline-variant('.wg-box-outline-light-green', $wg-box-light-green-bg);
-@include wg-box-outline-variant('.wg-box-outline-lime', $wg-box-lime-bg);
-@include wg-box-outline-variant('.wg-box-outline-yellow', $wg-box-yellow-bg);
-@include wg-box-outline-variant('.wg-box-outline-amber', $wg-box-amber-bg);
-@include wg-box-outline-variant('.wg-box-outline-orange', $wg-box-orange-bg);
-@include wg-box-outline-variant('.wg-box-outline-deep-orange', $wg-box-deep-orange-bg);
-@include wg-box-outline-variant('.wg-box-outline-brown', $wg-box-brown-bg);
-@include wg-box-outline-variant('.wg-box-outline-grey', $wg-box-grey-bg);
-@include wg-box-outline-variant('.wg-box-outline-light-grey', $wg-box-light-grey-bg);
-@include wg-box-outline-variant('.wg-box-outline-light-grey', $wg-box-light-grey-bg);
-@include wg-box-outline-variant('.wg-box-outline-deep-grey', $wg-box-deep-grey-bg);
-@include wg-box-outline-variant('.wg-box-outline-blue-grey', $wg-box-blue-grey-bg);
-@include wg-box-outline-variant('.wg-box-outline-black', $wg-box-black-bg);
-@include wg-box-outline-variant('.wg-box-outline-white', $wg-box-white-bg);
+@include wg-box-variant('.wg-box', $palettes)
 
 // scss-lint:enable QualifyingElement

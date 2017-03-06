@@ -23,7 +23,7 @@
   float: none;
   padding: 1rem;
   clear: both;
-  background-color: map-get($color-grey, 100);
+  background-color: palette('grey', 100);
 }
 
 .figure-align-right,

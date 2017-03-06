@@ -1,15 +1,25 @@
-// Colors
-@mixin color($parent, $prop, $colors) {
-  @each $i in map-keys($colors) {
-    $level: $i;
-    $color: map-get($colors, $i);
+@mixin color($parent, $prop, $palettes) {
+  @each $color-name, $level-and-value in $palettes {
+    @each $color-level, $color-value in $level-and-value {
 
-    #{$parent}-#{$level} {
-      #{$prop}: $color !important;
-    }
-    a#{$parent}-#{$level} {
-      @include hover-focus {
-        #{$prop}: darken($color, 10%) !important;
+      // $color-name => name (e.g., red, pink)
+      // $color-level => level (e.g., 50, 100)
+      // $color-value => value (e.g., #ffebee)
+
+      @if $color-level != 0 {
+        $color-level: "-#{$color-level}"
+      } @else {
+        $color-level: ""
+      }
+
+      #{$parent}-#{$color-name}#{$color-level} {
+        #{$prop}: $color-value !important;
+      }
+
+      #{$parent}-hover-#{$color-name}#{$color-level} {
+        @include hover-focus {
+          #{$prop}: $color-value !important;
+        }
       }
     }
   }
