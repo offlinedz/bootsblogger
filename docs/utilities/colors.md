@@ -66,13 +66,27 @@ Example:
 
 ### Hover and focus states
 
-Ubah `.{prop}-{color}-{level}` menjadi `.{prop}-hover-{color}-{level}` untuk memberikan `hover` dan `focus` *states*.
+Ubah `.{prop}-{color}-{level}` menjadi `.{prop}-hover-{color}-{level}` untuk menambahkan `hover` dan `focus` *states*.
 
 Example:
 
-- `text-hover-red-500`
-- `bg-hover-deep-orange-500`
-- `border-hover-green-500`
+{% example html %}
+<a href="#" class="text-hover-red-500">Link</a>
+{% endexample %}
+
+### Active and disabled states
+
+Ubah `.{prop}-{color}-{level}` menjadi `.{prop}-active-{color}-{level}` dan `.{prop}-disabled-{color}-{level}` untuk membuat *active* dan *disabled* *states*.
+
+*Active* dan *disabled* *states* hanya bekerja jika terdapat `.active` dan `.disabled` (atau atribut `disabled`).
+
+Example:
+
+{% example html %}
+<a href="#" class="btn btn-primary text-active-white bg-active-red-500 border-active-red-700 active" role="button" aria-pressed="true">Primary link</a>
+<button type="button" class="btn btn-primary text-disabled-red-200 bg-disabled-red-50 border-disabled-red-100" disabled>Primary button</button>
+<a href="#" class="btn btn-primary text-disabled-red-200 bg-disabled-red-50 border-disabled-red-100 disabled" role="button" aria-disabled="true">Primary link</a>
+{% endexample %}
 
 ## Colors
 
@@ -1017,7 +1031,7 @@ Untuk warna `black` dan `white` penamaan kelasnya sedikit berbeda, karena tidak 
 <div class="row bg-grey-200 p-3 mb-3">
   <div class="col-sm-6">
     <ul class="list-unstyled mb-sm-0">
-      <li class="bg-grey-100 text-grey-700 p-2"><code>.{prop}-black</code> and <code>.{prop}-hover-black</code></li>
+      <li class="bg-grey-100 text-grey-700 p-2"><code>.{prop}-black</code> and <code>.{prop}-{hover, active, disabled}-black</code></li>
       <li class="bg-black text-white p-3">
         <span class="d-block font-weight-bold mb-5">Black</span>
         <span>None</span>
@@ -1027,7 +1041,7 @@ Untuk warna `black` dan `white` penamaan kelasnya sedikit berbeda, karena tidak 
   </div>
   <div class="col-sm-6">
     <ul class="list-unstyled mb-0">
-      <li class="bg-grey-100 text-grey-700 p-2"><code>.{prop}-white</code> and <code>.{prop}-hover-white</code></li>
+      <li class="bg-grey-100 text-grey-700 p-2"><code>.{prop}-white</code> and <code>.{prop}-{hover, active, disabled}-white</code></li>
       <li class="bg-white text-black p-3">
         <span class="d-block font-weight-bold mb-5">White</span>
         <span>None</span>

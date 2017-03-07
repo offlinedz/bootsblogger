@@ -21,6 +21,19 @@
           #{$prop}: $color-value !important;
         }
       }
+
+      #{$parent}-active-#{$color-name}#{$color-level}.active {
+        @include plain-hover-focus {
+          #{$prop}: $color-value !important;
+        }
+      }
+
+      #{$parent}-disabled-#{$color-name}#{$color-level}.disabled,
+      #{$parent}-disabled-#{$color-name}#{$color-level}:disabled {
+        @include plain-hover-focus {
+          #{$prop}: $color-value !important;
+        }
+      }
     }
   }
 }
