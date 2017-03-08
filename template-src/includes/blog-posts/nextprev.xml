@@ -1,15 +1,23 @@
-<nav class='pager text-center mb-3' id='pager'>
-  <b:if cond='data:newerPageUrl'>
-    <a class='btn btn-secondary float-left' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' role='button'>Newer</a>
-  <b:else/>
-    <a class='btn btn-secondary disabled float-left' href='javascript:;' role='button'>Newer</a>
-  </b:if>
+<b:if cond='data:blog.pageType != &quot;static_page&quot;'>
+  <nav class='pager text-center' id='pager'>
+    <b:if cond='data:newerPageUrl'>
+      <a class='btn btn-secondary float-left' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' role='button'>Newer</a>
+    <b:else/>
+      <a class='btn btn-secondary disabled float-left' href='javascript:;' role='button'>Newer</a>
+    </b:if>
 
-  <a class='btn btn-secondary' expr:href='data:blog.homepageUrl' role='button'>Home</a>
+    <a class='btn btn-secondary' expr:href='data:blog.homepageUrl' role='button'>Home</a>
 
-  <b:if cond='data:olderPageUrl'>
-    <a class='btn btn-secondary float-right' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' role='button'>Older</a>
-  <b:else/>
-    <a class='btn btn-secondary disabled float-right' href='javascript:;' role='button'>Older</a>
-  </b:if>
-</nav>
+    <b:if cond='data:olderPageUrl'>
+      <a class='btn btn-secondary float-right' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' role='button'>Older</a>
+    <b:else/>
+      <a class='btn btn-secondary disabled float-right' href='javascript:;' role='button'>Older</a>
+    </b:if>
+  </nav>
+</b:if>
+
+<b:if cond='data:blog.pageType == &quot;static_page&quot;'>
+  <nav class='pager text-center' id='pager'>
+    <a class='btn btn-secondary' expr:href='data:blog.homepageUrl' role='button'>Home</a>
+  </nav>
+</b:if>

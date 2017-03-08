@@ -38,7 +38,7 @@ function searchMsg(json) {
 
 <!-- Homepage -->
 <b:if cond='data:blog.url == data:blog.homepageUrl and data:numPosts == 0'>
-  <div class='alert alert-warning' role='alert'>No posts yet.</div>
+  <div class='alert alert-warning mb-0' role='alert'>No posts yet.</div>
 </b:if>
 
 <!-- Label/category page -->
@@ -48,7 +48,7 @@ function searchMsg(json) {
       Showing posts with label <strong>&quot;<data:blog.searchLabel/>&quot;</strong> : <script expr:src='&quot;/feeds/posts/summary/-/&quot; + data:blog.searchLabel + &quot;?max-results=0&amp;alt=json-in-script&amp;callback=labelMsg&quot;'/>
     </div>
   <b:else/>
-    <div class='alert alert-warning' role='alert'>
+    <div class='alert alert-warning mb-0' role='alert'>
       No posts with label <strong>&quot;<data:blog.searchLabel/>&quot;</strong>.
     </div>
   </b:if>
@@ -65,12 +65,12 @@ function searchMsg(json) {
       <i aria-hidden='true' class='fa fa-search-minus'/> Your search <strong>&quot;<data:blog.searchQuery/>&quot;</strong> did not match any documents.
     </div>
   	<!-- Search form -->
-    <div class='card mb-3'>
+    <div class='card mb-0'>
       <div class='card-block'>
         <form action='/search' method='get' role='search'>
           <div class='input-group'>
             <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
-            <label class="sr-only" for="status-message-search-form">Search</label>
+            <label class='sr-only' for='status-message-search-form'>Search</label>
             <input class='form-control' name='q' placeholder='Search' type='text' id='status-message-search-form'/>
             <span class='input-group-btn'>
               <button class='btn btn-secondary' type='submit'>Search</button>
@@ -93,7 +93,7 @@ function searchMsg(json) {
   <b:if cond='data:numPosts &gt;= 1'>
     <div class='alert alert-success' role='alert'>Archive for <strong><data:blog.pageName/></strong></div>
   <b:else/>
-    <div class='alert alert-warning' role='alert'>Not found.</div>
+    <div class='alert alert-warning mb-0' role='alert'>Not found.</div>
   </b:if>
 </b:if>
 
@@ -103,12 +103,12 @@ function searchMsg(json) {
     <strong>404: sorry, the page you were looking for in this blog does not exist.</strong>
   </div>
   <!-- Search form -->
-  <div class='card mb-3'>
+  <div class='card mb-0'>
     <div class='card-block'>
       <form action='/search' method='get' role='search'>
         <div class='input-group'>
           <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
-          <label class="sr-only" for="status-message-search-form">Search</label>
+          <label class='sr-only' for='status-message-search-form'>Search</label>
           <input class='form-control' name='q' placeholder='Search' type='text' id='status-message-search-form'/>
           <span class='input-group-btn'>
             <button class='btn btn-secondary' type='submit'>Search</button>

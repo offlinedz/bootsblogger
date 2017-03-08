@@ -44,7 +44,7 @@ function createSummary(id) {
 <b:elseif cond='data:blog.pageType == &quot;static_page&quot;'/>
   <b:include name='post-static'/>
 
-  <!-- Label/category page -->
+<!-- Label/category page -->
 <b:elseif cond='data:blog.searchLabel'/>
   <b:include cond='data:numPosts != 0' name='post-label'/>
 

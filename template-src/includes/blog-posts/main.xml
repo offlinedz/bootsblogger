@@ -22,7 +22,7 @@
 
   <!-- Pager
   ==================== -->
-  <b:include cond='data:blog.pageType != &quot;static_page&quot; and data:numPosts != 0' name='nextprev'/>
+  <b:include cond='data:numPosts != 0' name='nextprev'/>
 
 <b:else/><!-- Mobile -->
   <p>Mobile version not available. <a expr:href='data:blog.homepageUrl'>View Desktop Version</a>.</p>

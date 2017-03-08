@@ -1,81 +1,83 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html>
 <HTML lang='en'>
-  <head>
-    <!--(bake /includes/head/head.xml)-->
-  </head>
-  <body expr:class='data:blog.url == data:blog.homepageUrl ? &quot;blog-page-home&quot; : data:blog.pageType == &quot;item&quot; ? &quot;blog-page-item&quot; : data:blog.pageType == &quot;static_page&quot; ? &quot;blog-page-static&quot; : data:blog.searchLabel ? &quot;blog-page-label&quot; : data:blog.searchQuery ? &quot;blog-page-search&quot; : data:blog.pageType == &quot;archive&quot; ? &quot;blog-page-archive&quot; : data:blog.pageType == &quot;error_page&quot; ? &quot;blog-page-error&quot; : &quot;blog-page-default&quot;'>
+<head>
+<!--(bake /includes/head/head.xml)-->
+</head>
+<body expr:class='data:blog.url == data:blog.homepageUrl ? &quot;blog-page-home&quot; : data:blog.pageType == &quot;item&quot; ? &quot;blog-page-item&quot; : data:blog.pageType == &quot;static_page&quot; ? &quot;blog-page-static&quot; : data:blog.searchLabel ? &quot;blog-page-label&quot; : data:blog.searchQuery ? &quot;blog-page-search&quot; : data:blog.pageType == &quot;archive&quot; ? &quot;blog-page-archive&quot; : data:blog.pageType == &quot;error_page&quot; ? &quot;blog-page-error&quot; : &quot;blog-page-default&quot;'>
 
 
-    <!-- SKIP NAVIGATION
-    ================================================== -->
-    <a class='sr-only sr-only-focusable' href='#main' id='skippy'>
-      <div class='container'>
-        <span class='skiplink-text'>Skip to main content</span>
-      </div>
-    </a>
+<!-- SKIP NAVIGATION
+================================================= -->
+<a class='sr-only sr-only-focusable' href='#main' id='skippy'>
+  <div class='container'>
+    <span class='skiplink-text'>Skip to main content</span>
+  </div>
+</a>
 
 
-    <!-- NAVBAR
-    ================================================== -->
-    <!--(bake /includes/navbar.xml)-->
+<!-- NAVBAR
+================================================= -->
+<!--(bake /includes/navbar.xml)-->
 
 
-    <!-- JUMBOTRON
-    ================================================== -->
-    <!--(bake /includes/jumbotron.xml)-->
+<!-- JUMBOTRON
+================================================= -->
+<!--(bake /includes/jumbotron.xml)-->
 
 
-    <!-- MAIN AND SIDEBAR
-    ================================================== -->
-    <div class='container blogger-container'>
-      <div class='row blogger-row'>
-        <!-- Main -->
-        <main class='main col-md-9 blogger-col-8' id='main' tabindex='-1'>
-          <b:section class='' id='main-section' maxwidgets='1' showaddelement='no'>
-            <!--(bake /includes/blog-posts/blog-posts.xml)-->
-          </b:section>
-        </main><!-- /.main -->
+<!-- MAIN AND SIDEBAR
+================================================= -->
+<div class='main-and-sidebar py-5 bg-grey-50' id='main-and-sidebar'>
+  <div class='container blogger-container'>
+    <div class='row blogger-row'>
+      <!-- Main -->
+      <main class='main col-md-9 blogger-col-8' id='main' tabindex='-1'>
+<b:section class='' id='main-section' maxwidgets='1' showaddelement='no'>
+<!--(bake /includes/blog-posts/blog-posts.xml)-->
+</b:section>
+      </main><!-- /.main -->
 
-        <!-- Sidebar -->
-        <aside class='sidebar col-md-3 blogger-col-4 mt-5 mt-md-0' id='sidebar'>
-          <b:section class='wg-box wg-box-light-grey wg-title-deep-grey wg-md-12 wg-sm-6' id='sidebar-section'></b:section>
-        </aside><!-- /.sidebar -->
-      </div><!-- /.row -->
-    </div><!-- /.container -->
-
-
-    <!-- WIDGET 1
-    ================================================== -->
-    <div class='widget-1 mt-5' id='widget-1'>
-      <div class='container'>
-        <b:section class='wg-box wg-box-white wg-title-deep-orange wg-md-4 wg-sm-6 mnb-3' id='widget-1-section'></b:section>
-      </div>
-    </div>
+      <!-- Sidebar -->
+      <aside class='sidebar col-md-3 blogger-col-4 mt-5 mt-md-0' id='sidebar'>
+        <b:section class='wg-box wg-box-white wg-title-deep-grey wg-md-12 wg-sm-6 mnb-3' id='sidebar-section'></b:section>
+      </aside><!-- /.sidebar -->
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</div>
 
 
-    <!-- FOOTER
-    ================================================== -->
-    <footer class='footer' id='footer'>
-      <div class='container'>
-        <ul class='footer-links'>
-          <li><a href='#'>About</a></li>
-          <li><a href='#'>Twitter</a></li>
-          <li><a href='#'>Google+</a></li>
-          <li><a href='#'>Facebook</a></li>
-        </ul>
-        <p class='mb-0'>&#169; 2017 <data:blog.title/>.</p>
-        <p class='mb-0'>Template by <a href='{{ blog.about.templateAuthorURI }}'>{{ blog.about.templateAuthorName }}</a>. Built with <a href='https://bootsblogger.github.io'>Bootsblogger</a>. Powered by <a href='https://blogger.com'>Blogger</a>.</p>
-      </div>
-    </footer>
+<!-- WIDGET 1
+================================================= -->
+<div class='widget-1 py-5 bg-grey-100' id='widget-1'>
+  <div class='container'>
+    <b:section class='wg-box wg-box-white wg-title-deep-grey wg-md-4 wg-sm-6 mnb-3' id='widget-1-section'></b:section>
+  </div>
+</div>
 
 
-    <!-- JavaScript
-    ================================================== -->
-    <!--(bake /includes/js.xml)-->
+<!-- FOOTER
+================================================= -->
+<footer class='footer py-5 text-center text-grey-600 bg-grey-200' id='footer'>
+  <div class='container'>
+    <ul class='list-inline'>
+      <li class='list-inline-item'><a class='text-grey-900 text-hover-blue-500' href='#'>About</a></li>
+      <li class='list-inline-item'><a class='text-grey-900 text-hover-blue-500' href='#'>Twitter</a></li>
+      <li class='list-inline-item'><a class='text-grey-900 text-hover-blue-500' href='#'>Google+</a></li>
+      <li class='list-inline-item'><a class='text-grey-900 text-hover-blue-500' href='#'>Facebook</a></li>
+    </ul>
+    <p class='mb-0'>&#169; 2017 <data:blog.title/>.</p>
+    <p class='mb-0'>Template by <a class='text-grey-900 text-hover-blue-500' href='{{ blog.about.templateAuthorURI }}'>{{ blog.about.templateAuthorName }}</a>. Built with <a class='text-grey-900 text-hover-blue-500' href='https://bootsblogger.github.io'>Bootsblogger</a>. Powered by <a class='text-grey-900 text-hover-blue-500' href='https://blogger.com'>Blogger</a>.</p>
+  </div>
+</footer>
 
 
-  <!-- Remove Blogger's default JavaScript -->
-  &lt;!--</body>--&gt;
-  &lt;/body&gt;
+<!-- JavaScript
+================================================= -->
+<!--(bake /includes/js.xml)-->
+
+
+<!-- Remove Blogger's default JavaScript -->
+&lt;!--</body>--&gt;
+&lt;/body&gt;
 </HTML>

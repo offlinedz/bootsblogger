@@ -1,19 +1,19 @@
-<header class='navbar navbar-toggleable-md navbar-inverse bg-deep-orange-500 mb-3'>
+<header class='navbar navbar-toggleable-md mb-0 bg-deep-orange-500'>
   <nav class='container'>
-    <button class='navbar-toggler navbar-toggler-right' type='button' data-toggle='collapse' data-target='#navbar' aria-controls='navbar' aria-expanded='false' aria-label='Toggle navigation'>
-      <span class="navbar-toggler-icon"></span>
+    <button class='navbar-toggler navbar-toggler-right border-deep-orange-200 border-hover-deep-orange-100' type='button' data-toggle='collapse' data-target='#navbar' aria-controls='navbar' aria-expanded='false' aria-label='Toggle navigation'>
+      <span class='navbar-toggler-icon'></span>
     </button>
 
-    <a class='navbar-brand' expr:href='data:blog.homepageUrl'>
+    <a class='navbar-brand text-deep-orange-100 text-hover-white text-active-white' expr:href='data:blog.homepageUrl'>
       <data:blog.title/>
     </a>
 
     <div class='collapse navbar-collapse' id='navbar'>
       <ul class='navbar-nav mr-auto'>
-        <li class='nav-item'><a class='nav-link' href='/search/label/Test?max-results=10'>Test</a></li>
-        <li class='nav-item'><a class='nav-link' href='/search/label/Sample?max-results=10'>Sample</a></li>
+        <li class='nav-item'><a class='nav-link text-deep-orange-100 text-hover-white text-active-white text-disabled-deep-orange-300' href='/search/label/Test?max-results=10'>Test</a></li>
+        <li class='nav-item'><a class='nav-link text-deep-orange-100 text-hover-white text-active-white text-disabled-deep-orange-300' href='/search/label/Sample?max-results=10'>Sample</a></li>
         <li class='nav-item dropdown'>
-          <a class='nav-link dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' href='javascript:;'>Demo</a>
+          <a class='nav-link dropdown-toggle text-deep-orange-100 text-hover-white text-active-white text-disabled-deep-orange-300' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' href='javascript:;'>Demo</a>
           <div class='dropdown-menu'>
             <a class='dropdown-item' href='/'>Homepage</a>
             <div class='dropdown-divider'></div>
@@ -40,7 +40,7 @@
         </li>
       </ul>
       <form action='/search' class='form-inline my-2 my-lg-0' method='get' role='search'>
-        <label class="sr-only" for="search-form">Search</label>
+        <label class='sr-only' for='search-form'>Search</label>
         <input class='form-control mr-sm-2' name='q' placeholder='Search' id='search-form'/>
         <button type='submit' class='btn btn-secondary my-2 my-sm-0'>Search</button>
       </form>
