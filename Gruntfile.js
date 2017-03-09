@@ -270,7 +270,8 @@ module.exports = function(grunt) {
           'The “datetime-local” input type is not supported in all browsers. Please be sure to test, and consider using a polyfill.',
           'The “month” input type is not supported in all browsers. Please be sure to test, and consider using a polyfill.',
           'The “time” input type is not supported in all browsers. Please be sure to test, and consider using a polyfill.',
-          'The “week” input type is not supported in all browsers. Please be sure to test, and consider using a polyfill.'
+          'The “week” input type is not supported in all browsers. Please be sure to test, and consider using a polyfill.',
+          /This document appears to be written in .* but the “html”./
         ]
       },
       docs: {
