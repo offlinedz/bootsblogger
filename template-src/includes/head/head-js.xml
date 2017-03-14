@@ -20,7 +20,7 @@ window.onload = function() {
 //]]&gt;
 </script>
 
-<!-- Bootsblogger JSON plugins -->
+<!-- Bootsblogger JavaScript (JSON) -->
 <!-- This plugins should be placed in `<head>`. -->
 <script>
 //<![CDATA[
