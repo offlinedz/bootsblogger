@@ -366,29 +366,7 @@ Pada tulisan di atas, kita sudah membahas tentang menghilangkan bundel CSS Blogg
 &lt;style&gt;
 &lt;!--/*<b:skin><![CDATA[
 
-ul, ol, hr { display: none; }
-
-.blogger-container:after,
-.blogger-container:before,
-.blogger-row:after,
-.blogger-row:before {
-  display: table;
-  content: "";
-}
-.blogger-container:after,
-.blogger-row:after {
-  clear: both;
-}
-
-.blogger-container {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-}
-.blogger-row {
-  margin-right: 0;
-  margin-left: 0;
-}
+ul, ol { display: none; }
 
 .blogger-col-1,
 .blogger-col-2,
@@ -403,9 +381,6 @@ ul, ol, hr { display: none; }
 .blogger-col-11,
 .blogger-col-12 {
   float: left;
-  min-height: 1px;
-  padding-right: 0;
-  padding-left: 0;
 }
 .blogger-col-1 {
   width: 8.33333333%;
@@ -423,7 +398,7 @@ ul, ol, hr { display: none; }
   width: 41.66666667%;
 }
 .blogger-col-6 {
-width: 50%;
+  width: 50%;
 }
 .blogger-col-7 {
   width: 58.33333333%;
@@ -452,18 +427,16 @@ width: 50%;
 Gunakan pada elemen yang di dalamnya terdapat tag `b:section`. Sesuaikan dengan kerangka template.
 
 {% highlight html %}
-<div class='blogger-container'>
-  <div class='blogger-row'>
-    <!-- Main -->
-    <main class='main blogger-col-8' id='main'>
-      <b:section class='' id='main-section' maxwidgets='1' showaddelement='no'></b:section>
-    </main><!-- /.main -->
+<div class='container'>
+  <!-- Main -->
+  <main class='main blogger-col-8' id='main'>
+    <b:section class='' id='main-section' maxwidgets='1' showaddelement='no'></b:section>
+  </main><!-- /.main -->
 
-    <!-- Sidebar -->
-    <aside class='sidebar blogger-col-4' id='sidebar'>
-      <b:section class='' id='sidebar-section'></section>
-    </aside><!-- /.sidebar -->
-  </div>
+  <!-- Sidebar -->
+  <aside class='sidebar blogger-col-4' id='sidebar'>
+    <b:section class='' id='sidebar-section'></section>
+  </aside><!-- /.sidebar -->
 </div>
 {% endhighlight %}
 
@@ -474,8 +447,8 @@ Hasilnya akan seperti pada <a href="javascript:;" data-toggle="modal" data-targe
 Jika Anda menggunakan sistem grid Bootstrap dan sistem grid untuk Blogger pada elemen yang sama, **kelas kolom tidak harus sama**, misal Anda menggunakan sistem grid Bootstrap untuk membuat template dua kolom dengan menggunakan `.col-md-9` untuk *main* dan `.col-md-3` untuk *sidebar*, penggunaan sistem grid untuk Blogger tidak harus menggunakan `.blogger-col-9` untuk *main* dan `.blogger-col-3` untuk *sidebar*, tetapi bisa juga `.blogger-col-8` untuk *main* dan `.blogger-col-4` untuk *sidebar*. Untuk lebih jelasnya lihat kode di bawah ini:
 
 {% highlight html %}
-<div class='container blogger-container'>
-  <div class='row blogger-row'>
+<div class='container'>
+  <div class='row'>
     <!-- Main -->
     <main class='main col-md-9 blogger-col-8' id='main'>
       <b:section class='' id='main-section' maxwidgets='1' showaddelement='no'></b:section>

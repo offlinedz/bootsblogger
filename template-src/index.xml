@@ -29,8 +29,8 @@
 <!-- MAIN AND SIDEBAR
 ================================================= -->
 <div class='main-and-sidebar py-5 bg-grey-50' id='main-and-sidebar'>
-  <div class='container blogger-container'>
-    <div class='row blogger-row'>
+  <div class='container'>
+    <div class='row'>
       <!-- Main -->
       <main class='main col-md-9 blogger-col-8' id='main' tabindex='-1'>
 <b:section class='' id='main-section' maxwidgets='1' showaddelement='no'>
