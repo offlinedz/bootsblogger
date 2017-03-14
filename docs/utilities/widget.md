@@ -16,12 +16,12 @@ Kelas-kelas utilitas untuk widget.
 
 Kelas utilitas untuk judul widget.
 
-### Hidden
+### Hide
 
-Untuk menyembunyikan judul widget gunakan `.wg-title-hidden`.
+Untuk menyembunyikan judul widget gunakan `.wg-title-hide`.
 
 <div class="bd-example">
-  <div class="wg-panel wg-panel-orange wg-title-black wg-title-hidden">
+  <div class="wg-panel wg-panel-orange wg-title-black wg-title-hide">
     <div class="widget">
       <h2>Hidden</h2>
       <div class="widget-content">
@@ -32,7 +32,7 @@ Untuk menyembunyikan judul widget gunakan `.wg-title-hidden`.
 </div><!-- /.bd-example -->
 
 {% highlight html %}
-<b:section class='wg-panel wg-panel-orange wg-title-black wg-title-hidden' id='sectionId'></b:section>
+<b:section class='wg-panel wg-panel-orange wg-title-black wg-title-hide' id='sectionId'></b:section>
 {% endhighlight %}
 
 ### Alignment

@@ -56,10 +56,10 @@
 
 
 //
-// With `.wg-title-hidden`
+// With `.wg-title-hide`
 //
 
-.wg-panel.wg-title-hidden > .widget > .widget-content {
+.wg-panel.wg-title-hide > .widget > .widget-content {
   border-width: $wg-panel-border-width;
   @include border-radius($wg-panel-border-radius);
 }
@@ -116,8 +116,8 @@
   }
 }
 
-// Within `.wg-title-hidden`
-.wg-panel.wg-title-hidden .list-group-flush > .list-group-item:first-child {
+// Within `.wg-title-hide`
+.wg-panel.wg-title-hide .list-group-flush > .list-group-item:first-child {
   border-top-width: 0;
   @include border-top-radius(calc(#{$wg-panel-border-radius} - #{$wg-panel-border-width}));
 }
