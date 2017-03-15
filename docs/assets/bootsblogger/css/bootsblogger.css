@@ -44,10 +44,6 @@
   text-decoration: none;
 }
 
-.post-clickable {
-  cursor: pointer;
-}
-
 .post-img-only > img,
 .post-img-only a > img,
 .post-img-top > img,
