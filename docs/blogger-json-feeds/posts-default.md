@@ -16,9 +16,6 @@ Nama fungsi: `postsDefault`.
 var config = {
   containerID: 'id',
 
-  clickable: {
-    active: true|false
-  },
   content: {
     numchars: 'full'|number|0 to disable,
     title: {
@@ -110,9 +107,6 @@ var config = {
 var config = {
   containerID: 'example-result-container',
 
-  clickable: {
-    active: false
-  },
   content: {
     numchars: 100,
     title: {
