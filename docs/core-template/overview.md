@@ -45,7 +45,7 @@ Tag kondisional untuk menciptakan 8 tipe halaman di atas.
 <b:elseif cond='data:blog.pageType == &quot;static_page&quot;'/>
   <p>Teks ini akan tampil di halaman statis.</p>
 
-  <!-- Label/category page -->
+<!-- Label/category page -->
 <b:elseif cond='data:blog.searchLabel'/>
   <p>Teks ini akan tampil di halaman kategori.</p>
 
