@@ -2023,7 +2023,9 @@ Untuk mengubah latar belakang menjadi transparan, tambahkan `background-color: t
 <div class="post" style="background-color: transparent; border-color: #333;">...</div>
 {% endhighlight %}
 
-## Columns
+## Post layout
+
+### Columns
 
 Bungkus semua `.post` dengan `.post-columns`.
 
@@ -2108,7 +2110,7 @@ Urutan widget dimulai dari atas ke bawah dan dari kiri ke kanan.
 </div>
 {% endhighlight %}
 
-## Using Bootstrap grid system
+### Using Bootstrap grid system
 
 Menggunakan [Bootstrap grid system](https://v4-alpha.getbootstrap.com/layout/grid/).
 
