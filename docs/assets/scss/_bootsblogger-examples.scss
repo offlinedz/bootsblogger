@@ -1,10 +1,16 @@
-// scss-lint:disable QualifyingElement
-
 //
 // Docs examples
 //
 
+// Posts
+
+.bd-example > .post:last-child,
+.bd-example > .post-group {
+  margin-bottom: 0;
+}
+
 // Widgets
+
 .bd-example {
   &.bd-example-widget {
     background-color: #7d7d7d;
@@ -29,16 +35,16 @@
   }
 
   .wg-grid-example {
-    display: inline-block;
     max-width: none !important;
-    margin-bottom: -1.25rem !important;
   }
 }
 
 // Navmenu
+
 .bd-example {
   .navmenu {
     max-width: 20rem;
+    margin-bottom: 0;
   }
 
   .navmenu-fixed-left,
@@ -48,7 +54,6 @@
 
   .navmenu-fixed-left {
     float: left;
-    width: 15rem;
     margin-top: -1.5rem;
     margin-bottom: -1.5rem;
     margin-left: -1.5rem;
@@ -62,6 +67,7 @@
 }
 
 // Table post includes
+
 .table-includes {
   .highlight {
     padding: 0;

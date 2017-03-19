@@ -40,18 +40,15 @@
 // $bd-danger:         #d9534f;
 // $bd-warning:        #f0ad4e;
 // $bd-info:           #5bc0de;
-$bd-purple:         #ef6c00;
-$bd-purple-bright:  lighten(saturate($bd-purple, 5%), 15%);
-$bd-purple-light:   #ffd9ba;
-$bd-graphite:       #393029;
-$bd-graphite-light: lighten($bd-graphite, 40%);
-$bd-yellow:         #ffe484;
-$bd-danger:         #d9534f;
-$bd-warning:        #f0ad4e;
-$bd-info:           #5bc0de;
-
-$blogger-orange:        #f57d00;
-$blogger-orange-light: #fcd0a2;
+$bd-purple:            #ef6c00;
+$bd-purple-bright:     #ff8f33;
+$bd-purple-light:      #ffe5d0;
+$bd-graphite:          #463c34;
+$bd-graphite-light:    #a78f7c;
+$bd-yellow:            #ffe484;
+$bd-danger:            #d9534f;
+$bd-warning:           #f0ad4e;
+$bd-info:              #5bc0de;
 
 // Load docs components
 @import "booticon";
