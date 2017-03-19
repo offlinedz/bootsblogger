@@ -175,7 +175,6 @@ module.exports = function(grunt) {
     concat: {
       bootsblogger: {
         src: [
-          'js/bootsblogger/widget-collapse.js',
           'js/bootsblogger/comments.js'
         ],
         dest: 'template-src/includes/assets/bootsblogger/js/bootsblogger.js'

@@ -138,217 +138,118 @@ Untuk mengubah ukuran judul widget gunakan `.wg-title-{h1, h2, h3, h4, h5, h6}`.
 
 ### Color
 
-<div class="bd-example bg-inverse">
-  <div class="wg-title-red mb-3">
+<div class="bd-example bd-example-widget text-white">
+  <div class="wg-title-gray-light">
     <div class="widget">
-      <h2>Red</h2>
+      <h2>Gray Light</h2>
       <div class="widget-content">
-        <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
     </div><!-- /.widget -->
   </div>
-  <div class="wg-title-pink mb-3">
+  <div class="wg-title-gray-dark">
     <div class="widget">
-      <h2>Pink</h2>
+      <h2>Gray Dark</h2>
       <div class="widget-content">
-        <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
     </div><!-- /.widget -->
   </div>
-  <div class="wg-title-purple mb-3">
-    <div class="widget">
-      <h2>Purple</h2>
-      <div class="widget-content">
-        <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
-      </div>
-    </div><!-- /.widget -->
-  </div>
-  <div class="wg-title-deep-purple mb-3">
-    <div class="widget">
-      <h2>Deep Purple</h2>
-      <div class="widget-content">
-        <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
-      </div>
-    </div><!-- /.widget -->
-  </div>
-  <div class="wg-title-indigo mb-3">
-    <div class="widget">
-      <h2>Indigo</h2>
-      <div class="widget-content">
-        <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
-      </div>
-    </div><!-- /.widget -->
-  </div>
-  <div class="wg-title-blue mb-3">
-    <div class="widget">
-      <h2>Blue</h2>
-      <div class="widget-content">
-        <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
-      </div>
-    </div><!-- /.widget -->
-  </div>
-  <div class="wg-title-light-blue mb-3">
-    <div class="widget">
-      <h2>Light Blue</h2>
-      <div class="widget-content">
-        <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
-      </div>
-    </div><!-- /.widget -->
-  </div>
-  <div class="wg-title-cyan">
-    <div class="widget">
-      <h2>Cyan</h2>
-      <div class="widget-content">
-        <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
-      </div>
-    </div><!-- /.widget -->
-  </div>
-  <div class="wg-title-teal mb-3">
-    <div class="widget">
-      <h2>Teal</h2>
-      <div class="widget-content">
-        <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
-      </div>
-    </div><!-- /.widget -->
-  </div>
-  <div class="wg-title-green mb-3">
-    <div class="widget">
-      <h2>Green</h2>
-      <div class="widget-content">
-        <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
-      </div>
-    </div><!-- /.widget -->
-  </div>
-  <div class="wg-title-light-green mb-3">
-    <div class="widget">
-      <h2>Light Green</h2>
-      <div class="widget-content">
-        <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
-      </div>
-    </div><!-- /.widget -->
-  </div>
-  <div class="wg-title-lime mb-3">
-    <div class="widget">
-      <h2>Lime</h2>
-      <div class="widget-content">
-        <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
-      </div>
-    </div><!-- /.widget -->
-  </div>
-  <div class="wg-title-yellow mb-3">
-    <div class="widget">
-      <h2>Yellow</h2>
-      <div class="widget-content">
-        <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
-      </div>
-    </div><!-- /.widget -->
-  </div>
-  <div class="wg-title-amber mb-3">
-    <div class="widget">
-      <h2>Amber</h2>
-      <div class="widget-content">
-        <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
-      </div>
-    </div><!-- /.widget -->
-  </div>
-  <div class="wg-title-orange mb-3">
-    <div class="widget">
-      <h2>Orange</h2>
-      <div class="widget-content">
-        <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
-      </div>
-    </div><!-- /.widget -->
-  </div>
-  <div class="wg-title-deep-orange mb-3">
-    <div class="widget">
-      <h2>Deep Orange</h2>
-      <div class="widget-content">
-        <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
-      </div>
-    </div><!-- /.widget -->
-  </div>
-  <div class="wg-title-brown mb-3">
-    <div class="widget">
-      <h2>Brown</h2>
-      <div class="widget-content">
-        <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
-      </div>
-    </div><!-- /.widget -->
-  </div>
-  <div class="wg-title-grey mb-3">
-    <div class="widget">
-      <h2>Grey</h2>
-      <div class="widget-content">
-        <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
-      </div>
-    </div><!-- /.widget -->
-  </div>
-  <div class="wg-title-light-grey mb-3">
-    <div class="widget">
-      <h2>Light Grey</h2>
-      <div class="widget-content">
-        <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
-      </div>
-    </div><!-- /.widget -->
-  </div>
-  <div class="wg-title-deep-grey mb-3">
-    <div class="widget">
-      <h2>Deep Grey</h2>
-      <div class="widget-content">
-        <p class="text-grey-800">&lt;p class="text-grey-800"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
-      </div>
-    </div><!-- /.widget -->
-  </div>
-  <div class="wg-title-blue-grey mb-3">
-    <div class="widget">
-      <h2>Blue Grey</h2>
-      <div class="widget-content">
-        <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
-      </div>
-    </div><!-- /.widget -->
-  </div>
-  <div class="wg-title-black mb-3">
-    <div class="widget">
-      <h2>Black</h2>
-      <div class="widget-content">
-        <p class="text-black">&lt;p class="text-black"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
-      </div>
-    </div><!-- /.widget -->
-  </div>
-  <div class="wg-title-white mb-3">
+  <div class="wg-title-white">
     <div class="widget">
       <h2>White</h2>
       <div class="widget-content">
-        <p class="text-white">&lt;p class="text-white"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+      </div>
+    </div><!-- /.widget -->
+  </div>
+  <div class="wg-title-black">
+    <div class="widget">
+      <h2>Black</h2>
+      <div class="widget-content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+      </div>
+    </div><!-- /.widget -->
+  </div>
+  <div class="wg-title-red">
+    <div class="widget">
+      <h2>Red</h2>
+      <div class="widget-content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+      </div>
+    </div><!-- /.widget -->
+  </div>
+  <div class="wg-title-orange">
+    <div class="widget">
+      <h2>Orange</h2>
+      <div class="widget-content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+      </div>
+    </div><!-- /.widget -->
+  </div>
+  <div class="wg-title-yellow">
+    <div class="widget">
+      <h2>Yellow</h2>
+      <div class="widget-content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+      </div>
+    </div><!-- /.widget -->
+  </div>
+  <div class="wg-title-green">
+    <div class="widget">
+      <h2>Green</h2>
+      <div class="widget-content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+      </div>
+    </div><!-- /.widget -->
+  </div>
+  <div class="wg-title-blue">
+    <div class="widget">
+      <h2>Blue</h2>
+      <div class="widget-content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+      </div>
+    </div><!-- /.widget -->
+  </div>
+  <div class="wg-title-teal">
+    <div class="widget">
+      <h2>Teal</h2>
+      <div class="widget-content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+      </div>
+    </div><!-- /.widget -->
+  </div>
+  <div class="wg-title-pink">
+    <div class="widget">
+      <h2>Pink</h2>
+      <div class="widget-content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+      </div>
+    </div><!-- /.widget -->
+  </div>
+  <div class="wg-title-purple">
+    <div class="widget">
+      <h2>Purple</h2>
+      <div class="widget-content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
     </div><!-- /.widget -->
   </div>
 </div><!-- /.bd-example -->
 
 {% highlight html %}
+<b:section class='wg-title-gray-light' id='sectionId'></b:section>
+<b:section class='wg-title-gray-dark' id='sectionId'></b:section>
+<b:section class='wg-title-white' id='sectionId'></b:section>
+<b:section class='wg-title-black' id='sectionId'></b:section>
 <b:section class='wg-title-red' id='sectionId'></b:section>
+<b:section class='wg-title-orange' id='sectionId'></b:section>
+<b:section class='wg-title-yellow' id='sectionId'></b:section>
+<b:section class='wg-title-green' id='sectionId'></b:section>
+<b:section class='wg-title-blue' id='sectionId'></b:section>
+<b:section class='wg-title-teal' id='sectionId'></b:section>
 <b:section class='wg-title-pink' id='sectionId'></b:section>
 <b:section class='wg-title-purple' id='sectionId'></b:section>
-<b:section class='wg-title-deep-purple' id='sectionId'></b:section>
-<b:section class='wg-title-indigo' id='sectionId'></b:section>
-<b:section class='wg-title-blue' id='sectionId'></b:section>
-<b:section class='wg-title-light-blue' id='sectionId'></b:section>
-<b:section class='wg-title-cyan' id='sectionId'></b:section>
-<b:section class='wg-title-teal' id='sectionId'></b:section>
-<b:section class='wg-title-green' id='sectionId'></b:section>
-<b:section class='wg-title-light-green' id='sectionId'></b:section>
-<b:section class='wg-title-lime' id='sectionId'></b:section>
-<b:section class='wg-title-yellow' id='sectionId'></b:section>
-<b:section class='wg-title-amber' id='sectionId'></b:section>
-<b:section class='wg-title-orange' id='sectionId'></b:section>
-<b:section class='wg-title-deep-orange' id='sectionId'></b:section>
-<b:section class='wg-title-brown' id='sectionId'></b:section>
-<b:section class='wg-title-grey' id='sectionId'></b:section>
-<b:section class='wg-title-light-grey' id='sectionId'></b:section>
-<b:section class='wg-title-deep-grey' id='sectionId'></b:section>
-<b:section class='wg-title-blue-grey' id='sectionId'></b:section>
-<b:section class='wg-title-black' id='sectionId'></b:section>
-<b:section class='wg-title-white' id='sectionId'></b:section>
 {% endhighlight %}
 
 ## Columns
@@ -365,53 +266,53 @@ Hanya bekerja pada perangkat kecil (`sm`) ke atas.
 
 Urutan widget dimulai dari atas ke bawah dan dari kiri ke kanan.
 
-<div class="bd-example">
-  <div class="wg-columns wg-box wg-box-amber wg-title-black">
+<div class="bd-example bd-example-widget text-gray-dark">
+  <div class="wg-columns wg-box wg-box-orange wg-title-black">
     <div class="widget">
       <h2>Widget title 1</h2>
       <div class="widget-content">
-        <p class="text-black">&lt;p class="text-black"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
     </div><!-- /.widget -->
     <div class="widget">
       <h2>Widget title 2</h2>
       <div class="widget-content">
-        <p class="text-black">&lt;p class="text-black"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
-        <p class="text-black">&lt;p class="text-black"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
     </div><!-- /.widget -->
     <div class="widget">
       <h2>Widget title 3</h2>
       <div class="widget-content">
-        <p class="text-black">&lt;p class="text-black"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
-        <p class="text-black">&lt;p class="text-black"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
-        <p class="text-black">&lt;p class="text-black"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
     </div><!-- /.widget -->
     <div class="widget">
       <h2>Widget title 4</h2>
       <div class="widget-content">
-        <p class="text-black">&lt;p class="text-black"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
     </div><!-- /.widget -->
     <div class="widget">
       <h2>Widget title 5</h2>
       <div class="widget-content">
-        <p class="text-black">&lt;p class="text-black"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
-        <p class="text-black">&lt;p class="text-black"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
     </div><!-- /.widget -->
     <div class="widget">
       <h2>Widget title 6</h2>
       <div class="widget-content">
-        <p class="text-black">&lt;p class="text-black"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
     </div><!-- /.widget -->
   </div>
 </div><!-- /.bd-example -->
 
 {% highlight html %}
-<b:section class='wg-box wg-box-amber wg-title-black wg-columns' id='sectionId'></b:section>
+<b:section class='wg-columns wg-box wg-box-orange wg-title-black' id='sectionId'></b:section>
 {% endhighlight %}
 
 ## Grid
@@ -483,7 +384,7 @@ Grid widget menggunakan `calc()` untuk mengkalkulasi lebar dan jarak widget. Men
 
 ### Examples
 
-<div class="bd-example">
+<div class="bd-example bd-example-widget text-gray-dark">
   <div class="wg-panel wg-panel-orange wg-title-black wg-sm-6 wg-md-4 wg-lg-3 wg-grid-example">
     <div class="widget">
       <h2>Widget title</h2>
@@ -516,34 +417,34 @@ Grid widget menggunakan `calc()` untuk mengkalkulasi lebar dan jarak widget. Men
 <b:section class='wg-panel wg-panel-orange wg-title-black wg-sm-6 wg-md-4 wg-lg-3' id='sectionId'></b:section>
 {% endhighlight %}
 
-<div class="bd-example">
-  <div class="wg-box wg-box-amber wg-title-black wg-sm-6 wg-md-4 wg-grid-example">
+<div class="bd-example bd-example-widget text-gray-dark">
+  <div class="wg-box wg-box-orange wg-title-black wg-sm-6 wg-md-4 wg-grid-example">
     <div class="widget">
       <h2>Widget title</h2>
       <div class="widget-content">
-        <p class="text-black">&lt;p class="text-black"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
     </div><!-- /.widget -->
     <div class="widget">
       <h2>Widget title</h2>
       <div class="widget-content">
-        <p class="text-black">&lt;p class="text-black"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
     </div><!-- /.widget -->
     <div class="widget">
       <h2>Widget title</h2>
       <div class="widget-content">
-        <p class="text-black">&lt;p class="text-black"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
     </div><!-- /.widget -->
   </div>
 </div><!-- /.bd-example -->
 
 {% highlight html %}
-<b:section class='wg-box wg-box-amber wg-title-black wg-sm-6 wg-md-4' id='sectionId'></b:section>
+<b:section class='wg-box wg-box-orange wg-title-black wg-sm-6 wg-md-4' id='sectionId'></b:section>
 {% endhighlight %}
 
-<div class="bd-example">
+<div class="bd-example bd-example-widget text-white">
   <div class="wg-basic wg-title-teal wg-sm-6 wg-grid-example">
     <div class="widget">
       <h2>Widget title</h2>

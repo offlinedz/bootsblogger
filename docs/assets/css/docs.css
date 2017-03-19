@@ -1181,6 +1181,9 @@
     display: block;
   }
 }
+.bd-example.bd-example-widget {
+  background-color: #7d7d7d;
+}
 .bd-example .wg-basic:not(.wg-columns),
 .bd-example .wg-box:not(.wg-columns),
 .bd-example .wg-panel:not(.wg-columns) {
@@ -1216,7 +1219,6 @@
 }
 .bd-example .navmenu-fixed-right {
   float: right;
-  width: 15rem;
   margin-top: -1.5rem;
   margin-right: -1.5rem;
   margin-bottom: -1.5rem;

@@ -28,7 +28,7 @@
 
 <!-- MAIN AND SIDEBAR
 ================================================= -->
-<div class='main-and-sidebar py-5 bg-grey-50' id='main-and-sidebar'>
+<div class='main-and-sidebar py-5' id='main-and-sidebar'>
   <div class='container'>
     <div class='row'>
       <!-- Main -->
@@ -40,7 +40,7 @@
 
       <!-- Sidebar -->
       <aside class='sidebar col-md-3 blogger-col-4 mt-5 mt-md-0' id='sidebar'>
-        <b:section class='wg-box wg-box-white wg-title-deep-grey wg-md-12 wg-sm-6 mnb-3' id='sidebar-section'></b:section>
+        <b:section class='wg-box wg-box-white wg-title-gray-dark wg-md-12 wg-sm-6 mnb-3' id='sidebar-section'></b:section>
       </aside><!-- /.sidebar -->
     </div><!-- /.row -->
   </div><!-- /.container -->
@@ -49,25 +49,25 @@
 
 <!-- WIDGET 1
 ================================================= -->
-<div class='widget-1 py-5 bg-grey-100' id='widget-1'>
+<div class='widget-1 py-5' id='widget-1'>
   <div class='container'>
-    <b:section class='wg-box wg-box-white wg-title-deep-grey wg-md-4 wg-sm-6 mnb-3' id='widget-1-section'></b:section>
+    <b:section class='wg-box wg-box-white wg-title-gray-dark wg-md-4 wg-sm-6 mnb-3' id='widget-1-section'></b:section>
   </div>
 </div>
 
 
 <!-- FOOTER
 ================================================= -->
-<footer class='footer py-5 text-center text-grey-600 bg-grey-200' id='footer'>
+<footer class='footer py-5' id='footer'>
   <div class='container'>
     <ul class='list-inline'>
-      <li class='list-inline-item'><a class='text-grey-900 text-hover-blue-500' href='#'>About</a></li>
-      <li class='list-inline-item'><a class='text-grey-900 text-hover-blue-500' href='#'>Twitter</a></li>
-      <li class='list-inline-item'><a class='text-grey-900 text-hover-blue-500' href='#'>Google+</a></li>
-      <li class='list-inline-item'><a class='text-grey-900 text-hover-blue-500' href='#'>Facebook</a></li>
+      <li class='list-inline-item'><a href='#'>About</a></li>
+      <li class='list-inline-item'><a href='#'>Twitter</a></li>
+      <li class='list-inline-item'><a href='#'>Google+</a></li>
+      <li class='list-inline-item'><a href='#'>Facebook</a></li>
     </ul>
     <p class='mb-0'>&#169; 2017 <data:blog.title/>.</p>
-    <p class='mb-0'>Template by <a class='text-grey-900 text-hover-blue-500' href='{{ blog.about.templateAuthorURI }}'>{{ blog.about.templateAuthorName }}</a>. Built with <a class='text-grey-900 text-hover-blue-500' href='https://bootsblogger.github.io'>Bootsblogger</a>. Powered by <a class='text-grey-900 text-hover-blue-500' href='https://blogger.com'>Blogger</a>.</p>
+    <p class='mb-0'>Template by <a href='{{ blog.about.templateAuthorURI }}'>{{ blog.about.templateAuthorName }}</a>. Built with <a href='https://bootsblogger.github.io'>Bootsblogger</a>. Powered by <a href='https://blogger.com'>Blogger</a>.</p>
   </div>
 </footer>
 

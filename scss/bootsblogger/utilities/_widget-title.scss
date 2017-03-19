@@ -48,15 +48,46 @@
 // Right
 .wg-title-right > .widget > h2 {
   text-align: right;
-
-  > .indicator {
-    float: left !important;
-  }
 }
 
 
 //
-// Colors
+// Color
 //
 
-@include wg-title-variant('.wg-title', $palettes)
+.wg-title-gray-light {
+  @include wg-title-variant($wg-gray-light-color)
+}
+.wg-title-gray-dark {
+  @include wg-title-variant($wg-gray-dark-color)
+}
+.wg-title-white {
+  @include wg-title-variant($wg-white-color)
+}
+.wg-title-black {
+  @include wg-title-variant($wg-black-color)
+}
+.wg-title-red {
+  @include wg-title-variant($wg-red-color)
+}
+.wg-title-orange {
+  @include wg-title-variant($wg-orange-color)
+}
+.wg-title-yellow {
+  @include wg-title-variant($wg-yellow-color)
+}
+.wg-title-green {
+  @include wg-title-variant($wg-green-color)
+}
+.wg-title-blue {
+  @include wg-title-variant($wg-blue-color)
+}
+.wg-title-teal {
+  @include wg-title-variant($wg-teal-color)
+}
+.wg-title-pink {
+  @include wg-title-variant($wg-pink-color)
+}
+.wg-title-purple {
+  @include wg-title-variant($wg-purple-color)
+}

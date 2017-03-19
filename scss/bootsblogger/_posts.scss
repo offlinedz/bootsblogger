@@ -589,15 +589,6 @@
     padding-right: .25rem;
     padding-left: .25rem;
   }
-
-  @include media-breakpoint-down(xs) {
-    > li {
-      display: block;
-    }
-    > li + li {
-      margin-top: .65rem;
-    }
-  }
 }
 
 
@@ -631,15 +622,6 @@
     display: inline-block;
     padding-right: .25rem;
     padding-left: .25rem;
-  }
-
-  @include media-breakpoint-down(xs) {
-    > li {
-      display: block;
-    }
-    > li + li {
-      margin-top: .65rem;
-    }
   }
 }
 
@@ -712,7 +694,7 @@
   }
 }
 
-// Post horizontal within content block
+// Horizontal thumbnail within content block
 .post-content .post-horizontal > .post-content {
   @include border-radius(0 !important);
 }
@@ -835,6 +817,47 @@
   .post-content + .post-content {
     border-color: rgba(255,255,255,.2) !important;
   }
+}
+
+
+//
+// Background variations
+//
+
+.post-primary {
+  @include post-variant($brand-primary, $brand-primary);
+}
+.post-success {
+  @include post-variant($brand-success, $brand-success);
+}
+.post-info {
+  @include post-variant($brand-info, $brand-info);
+}
+.post-warning {
+  @include post-variant($brand-warning, $brand-warning);
+}
+.post-danger {
+  @include post-variant($brand-danger, $brand-danger);
+}
+
+// Remove all backgrounds
+.post-outline-primary {
+  @include post-outline-variant($btn-primary-bg);
+}
+.post-outline-secondary {
+  @include post-outline-variant($btn-secondary-border);
+}
+.post-outline-info {
+  @include post-outline-variant($btn-info-bg);
+}
+.post-outline-success {
+  @include post-outline-variant($btn-success-bg);
+}
+.post-outline-warning {
+  @include post-outline-variant($btn-warning-bg);
+}
+.post-outline-danger {
+  @include post-outline-variant($btn-danger-bg);
 }
 
 // scss-lint:enable SelectorDepth

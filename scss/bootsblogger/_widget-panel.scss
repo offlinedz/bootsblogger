@@ -1,5 +1,3 @@
-// scss-lint:disable QualifyingElement
-
 .wg-panel > .widget {
   margin-bottom: $wg-panel-margin-bottom;
   @include border-radius($wg-panel-border-radius);
@@ -20,11 +18,6 @@
   line-height: 1.1;
   border: $wg-panel-border-width solid transparent;
   @include border-top-radius($wg-panel-border-radius);
-
-  // Title only
-  &:last-child {
-    @include border-bottom-radius($wg-panel-border-radius);
-  }
 }
 
 
@@ -35,11 +28,10 @@
 .wg-panel > .widget > .widget-content {
   padding: $wg-panel-content-padding;
   border: $wg-panel-border-width solid transparent;
+  border-top-width: 0;
   @include border-radius($wg-panel-border-radius);
-}
+  @include border-top-radius(0);
 
-// Remove margin top and bottom for first and last element in widget content.
-.wg-panel > .widget .widget-content {
   > :first-child {
     margin-top: 0;
   }
@@ -48,20 +40,15 @@
   }
 }
 
-// Widget with title (title + .widget-content)
-.wg-panel > .widget > h2 + .widget-content {
-  border-top-width: 0;
-  @include border-top-radius(0);
-}
-
-
-//
 // With `.wg-title-hide`
-//
-
 .wg-panel.wg-title-hide > .widget > .widget-content {
   border-width: $wg-panel-border-width;
   @include border-radius($wg-panel-border-radius);
+}
+
+// Remove background
+.wg-panel-transparent > .widget > .widget-content {
+  background-color: transparent !important;
 }
 
 
@@ -84,10 +71,6 @@
   &:not(:first-child) > h2 {
     @include border-top-radius(0);
   }
-  // Title only
-  &:not(:last-child) > h2:last-child {
-    @include border-bottom-radius(0);
-  }
   // Content
   &:not(:last-child) > .widget-content {
     border-bottom-width: 0;
@@ -104,11 +87,12 @@
   margin: -$wg-panel-content-padding !important;
 
   > .list-group-item {
-    border-width: 1px 0;
+    border-right-width: 0;
+    border-left-width: 0;
   }
   > .list-group-item:first-child {
     border-top-width: 0;
-    @include border-top-radius(calc(#{$wg-panel-border-radius} - #{$wg-panel-border-width}));
+    @include border-top-radius(0);
   }
   > .list-group-item:last-child {
     border-bottom-width: 0;
@@ -118,97 +102,86 @@
 
 // Within `.wg-title-hide`
 .wg-panel.wg-title-hide .list-group-flush > .list-group-item:first-child {
-  border-top-width: 0;
   @include border-top-radius(calc(#{$wg-panel-border-radius} - #{$wg-panel-border-width}));
 }
 
-// Widget with title (title + .widget-content) and (title + .widget-collapse)
-.wg-panel h2 + .widget-content .list-group-flush > .list-group-item:first-child,
-.wg-panel h2 + .widget-collapse .list-group-flush > .list-group-item:first-child {
-  border-top-width: 0;
-  @include border-top-radius(0);
-}
-
 
 //
-// Collapse
+// Variations
 //
 
-// Styling
-
-.wg-panel.wg-collapse > .widget > .widget-collapse,
-.wg-panel.wg-accordion > .widget > .widget-collapse {
-  border-style: solid;
-  border-width: $wg-panel-border-width;
-  @include border-radius($wg-panel-border-radius);
-
-  > .widget-content {
-    padding: $wg-panel-content-padding;
-    @include border-radius(calc(#{$wg-panel-border-radius} - #{$wg-panel-border-width}));
-  }
+.wg-panel-gray-light {
+  @include wg-panel-variant($wg-gray-light-color, $wg-gray-light-border)
+}
+.wg-panel-gray-dark {
+  @include wg-panel-variant($wg-gray-dark-color, $wg-gray-dark-border)
+}
+.wg-panel-white {
+  @include wg-panel-variant($wg-white-color, $wg-white-border)
+}
+.wg-panel-black {
+  @include wg-panel-variant($wg-black-color, $wg-black-border)
+}
+.wg-panel-red {
+  @include wg-panel-variant($wg-red-color, $wg-red-border)
+}
+.wg-panel-orange {
+  @include wg-panel-variant($wg-orange-color, $wg-orange-border)
+}
+.wg-panel-yellow {
+  @include wg-panel-variant($wg-yellow-color, $wg-yellow-border)
+}
+.wg-panel-green {
+  @include wg-panel-variant($wg-green-color, $wg-green-border)
+}
+.wg-panel-blue {
+  @include wg-panel-variant($wg-blue-color, $wg-blue-border)
+}
+.wg-panel-teal {
+  @include wg-panel-variant($wg-teal-color, $wg-teal-border)
+}
+.wg-panel-pink {
+  @include wg-panel-variant($wg-pink-color, $wg-pink-border)
+}
+.wg-panel-purple {
+  @include wg-panel-variant($wg-purple-color, $wg-purple-border)
 }
 
-// Widget with title (title + .widget-collapse)
-.wg-panel.wg-collapse > .widget > h2 + .widget-collapse,
-.wg-panel.wg-accordion > .widget > h2 + .widget-collapse {
-  border-top-width: 0;
-  @include border-top-radius(0);
+// Outline
 
-  > .widget-content {
-    @include border-top-radius(0);
-  }
+.wg-panel-outline-gray-light {
+  @include wg-panel-outline-variant($wg-gray-light-color)
 }
-
-// Group
-.wg-panel-group {
-  > .widget:not(:last-child) > .widget-collapse {
-    border-bottom-width: 0;
-    @include border-bottom-radius(0);
-
-    > .widget-content {
-      @include border-bottom-radius(0);
-    }
-  }
+.wg-panel-outline-gray-dark {
+  @include wg-panel-outline-variant($wg-gray-dark-color)
 }
-
-// Collapse
-
-// Collapsed title
-.wg-panel.wg-collapse > .widget > h2.collapsed:not(.wg-title-hide-collapsing),
-.wg-panel.wg-accordion > .widget > h2.collapsed:not(.wg-title-hide-collapsing) {
-  @include border-bottom-radius($wg-panel-border-radius);
+.wg-panel-outline-white {
+  @include wg-panel-outline-variant($wg-white-color)
 }
-
-// Group
-.wg-panel-group {
-  // Collapsed title
-  > .widget:not(:last-child) > h2.collapsed:not(.wg-title-hide-collapsing) {
-    border-bottom-width: 0;
-    @include border-bottom-radius(0 !important);
-  }
+.wg-panel-outline-black {
+  @include wg-panel-outline-variant($wg-black-color)
 }
-
-// Card reset
-.wg-panel > .card {
-  background-color: transparent;
-  border: 0;
+.wg-panel-outline-red {
+  @include wg-panel-outline-variant($wg-red-color)
 }
-
-
-//
-// Transparent content
-//
-
-.wg-panel-transparent > .widget > .widget-content,
-.wg-panel-transparent > .widget > .widget-collapse > .widget-content {
-  background-color: transparent !important;
+.wg-panel-outline-orange {
+  @include wg-panel-outline-variant($wg-orange-color)
 }
-
-
-//
-// Colors
-//
-
-@include wg-panel-variant('.wg-panel', $palettes)
-
-// scss-lint:enable QualifyingElement
+.wg-panel-outline-yellow {
+  @include wg-panel-outline-variant($wg-yellow-color)
+}
+.wg-panel-outline-green {
+  @include wg-panel-outline-variant($wg-green-color)
+}
+.wg-panel-outline-blue {
+  @include wg-panel-outline-variant($wg-blue-color)
+}
+.wg-panel-outline-teal {
+  @include wg-panel-outline-variant($wg-teal-color)
+}
+.wg-panel-outline-pink {
+  @include wg-panel-outline-variant($wg-pink-color)
+}
+.wg-panel-outline-purple {
+  @include wg-panel-outline-variant($wg-purple-color)
+}

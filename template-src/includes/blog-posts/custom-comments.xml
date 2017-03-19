@@ -67,7 +67,7 @@
                 </div>
                 <div class='float-right'>
                   <div class='dropdown'>
-                    <a class='comment-dropdown p-1' data-toggle='dropdown' href='javascript:;'><i aria-hidden='true' class='fa fa-ellipsis-v comment-dropdown-icon'/></a>
+                    <a class='comment-dropdown p-1' data-toggle='dropdown' href='#'><i aria-hidden='true' class='fa fa-ellipsis-v comment-dropdown-icon'/></a>
                     <div class='dropdown-menu dropdown-menu-right'>
                       <b:if cond='!data:comment.isDeleted'>
                         <a class='dropdown-item' expr:href='&quot;http://www.blogger.com/delete-comment.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;postID=&quot; + data:comment.id'><i aria-hidden='true' class='fa fa-trash'/> Delete</a>
@@ -148,7 +148,7 @@
                         </div>
                         <div class='float-right'>
                           <div class='dropdown'>
-                            <a class='comment-dropdown p-1' data-toggle='dropdown' href='javascript:;'><i aria-hidden='true' class='fa fa-ellipsis-v comment-dropdown-icon'/></a>
+                            <a class='comment-dropdown p-1' data-toggle='dropdown' href='#'><i aria-hidden='true' class='fa fa-ellipsis-v comment-dropdown-icon'/></a>
                             <div class='dropdown-menu dropdown-menu-right'>
                               <b:if cond='!data:replies.isDeleted'>
                                 <a class='dropdown-item' expr:href='&quot;http://www.blogger.com/delete-comment.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;postID=&quot; + data:replies.id'><i aria-hidden='true' class='fa fa-trash'/> Delete</a>

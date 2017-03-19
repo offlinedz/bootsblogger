@@ -1,0 +1,9 @@
+@mixin post-variant($background, $border) {
+  background-color: $background;
+  border-color: $border;
+}
+
+@mixin post-outline-variant($color) {
+  background-color: transparent;
+  border-color: $color;
+}

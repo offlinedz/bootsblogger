@@ -5,8 +5,8 @@
     <b:loop values='data:posts' var='post'>
       <b:if cond='data:post.labels'>
         <li class='breadcrumb-item dropdown'>
-          <a class='dropdown-toggle' href='javascript:;' id='dropdownMenuLabels' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Labels</a>
-          <div class='dropdown-menu' aria-labelledby='dropdownMenuLabels'>
+          <a class='dropdown-toggle' href='#' id='dropdownMenuBreadcrumbLabels' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Labels</a>
+          <div class='dropdown-menu' aria-labelledby='dropdownMenuBreadcrumbLabels'>
             <b:loop values='data:post.labels' var='label'>
               <b:if cond='data:label.isLast'>
                 <a class='dropdown-item label-is-last' expr:href='data:label.url'><data:label.name/></a>

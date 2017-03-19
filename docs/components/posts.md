@@ -1904,7 +1904,7 @@ Komponen posting meliputi berbagai pilihan untuk mengubah *backgrounds*, *border
 
 Gunakan `.post-inverse` untuk mengubah warna teks menjadi berwarna putih. Kemudian, tentukan warna `background-color` dan `border-color` dengan warna yang gelap.
 
-Anda juga dapat menggunakan `.post-inverse` dengan kelas utilitas warna, lihat [background variants](#background-variants).
+Anda juga dapat menggunakan `.post-inverse` dengan [contextual backgrounds variants](#background-variants).
 
 <div class="bd-example">            
   <div class="post post-inverse" style="background-color: #333; border-color: #333;">
@@ -1938,12 +1938,10 @@ Anda juga dapat menggunakan `.post-inverse` dengan kelas utilitas warna, lihat [
 
 ### Background variants
 
-Ubah warna posting dengan mengeset `background-color` dan `border-color`, Anda dapat menggunakan [kelas utilitas warna]({{ site.baseurl }}/utilities/colors/) atau menggunakan *custom styles*. **Latar belakang yang berwarna gelap membutuhkan penggunaan `.post-inverse`**.
-
-Berikut adalah beberapa contoh dengan menggunakan kelas utilitas warna:
+**Latar belakang yang berwarna gelap membutuhkan penggunaan `.post-inverse`**.
 
 <div class="bd-example">
-  <div class="post post-inverse bg-blue-500 border-blue-600">
+  <div class="post post-inverse post-primary">
     <div class="post-content">
       <h2 class="post-title"><a class="post-title-link" href="#">Post title</a></h2>
       <div class="post-meta">
@@ -1956,7 +1954,7 @@ Berikut adalah beberapa contoh dengan menggunakan kelas utilitas warna:
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
     </div><!-- /.post-content -->
   </div><!-- /.post -->
-  <div class="post post-inverse bg-teal-500 border-teal-600">
+  <div class="post post-inverse post-success">
     <div class="post-content">
       <h2 class="post-title"><a class="post-title-link" href="#">Post title</a></h2>
       <div class="post-meta">
@@ -1969,7 +1967,33 @@ Berikut adalah beberapa contoh dengan menggunakan kelas utilitas warna:
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
     </div><!-- /.post-content -->
   </div><!-- /.post -->
-  <div class="post bg-grey-100 border-grey-200">
+  <div class="post post-inverse post-info">
+    <div class="post-content">
+      <h2 class="post-title"><a class="post-title-link" href="#">Post title</a></h2>
+      <div class="post-meta">
+        <ul class="post-meta-list">
+          <li><i class="fa fa-user"></i> <span>by</span> <a href="#">Bootsblogger</a></li>
+          <li><i class="fa fa-clock-o"></i> <span>at</span> <time datetime="2017-01-01T00:00:00+00:00">Jan 01, 2017</time></li>
+          <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
+        </ul>
+      </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
+    </div><!-- /.post-content -->
+  </div><!-- /.post -->
+  <div class="post post-inverse post-warning">
+    <div class="post-content">
+      <h2 class="post-title"><a class="post-title-link" href="#">Post title</a></h2>
+      <div class="post-meta">
+        <ul class="post-meta-list">
+          <li><i class="fa fa-user"></i> <span>by</span> <a href="#">Bootsblogger</a></li>
+          <li><i class="fa fa-clock-o"></i> <span>at</span> <time datetime="2017-01-01T00:00:00+00:00">Jan 01, 2017</time></li>
+          <li><i class="fa fa-comments"></i> <a href="#">5 Comments</a></li>
+        </ul>
+      </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
+    </div><!-- /.post-content -->
+  </div><!-- /.post -->
+  <div class="post post-inverse post-danger">
     <div class="post-content">
       <h2 class="post-title"><a class="post-title-link" href="#">Post title</a></h2>
       <div class="post-meta">
@@ -1985,31 +2009,43 @@ Berikut adalah beberapa contoh dengan menggunakan kelas utilitas warna:
 </div><!-- /.bd-example -->
 
 {% highlight html %}
-<div class="post post-inverse bg-blue-500 border-blue-600">...</div>
-<div class="post post-inverse bg-teal-500 border-teal-600">...</div>
-<div class="post bg-grey-100 border-grey-200">...</div>
+<div class="post post-inverse post-primary">...</div>
+<div class="post post-inverse post-success">...</div>
+<div class="post post-inverse post-info">...</div>
+<div class="post post-inverse post-warning">...</div>
+<div class="post post-inverse post-danger">...</div>
 {% endhighlight %}
 
 ### Outline variants
 
 Posting berwarna, tetapi bukan pada latar belakang, hanya mengeset `border-color`.
 
-Untuk mengubah latar belakang menjadi transparan, tambahkan `background-color: transparent;`.
-
 <div class="bd-example">
-  <div class="post border-orange-500">
+  <div class="post post-outline-primary">
     <div class="post-content">
       <h2 class="post-title"><a class="post-title-link" href="#">Post title</a></h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
     </div><!-- /.post-content -->
   </div><!-- /.post -->
-  <div class="post border-red-500">
+  <div class="post post-outline-success">
     <div class="post-content">
       <h2 class="post-title"><a class="post-title-link" href="#">Post title</a></h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
     </div><!-- /.post-content -->
   </div><!-- /.post -->
-  <div class="post" style="border-color: #333;">
+  <div class="post post-outline-info">
+    <div class="post-content">
+      <h2 class="post-title"><a class="post-title-link" href="#">Post title</a></h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
+    </div><!-- /.post-content -->
+  </div><!-- /.post -->
+  <div class="post post-outline-warning">
+    <div class="post-content">
+      <h2 class="post-title"><a class="post-title-link" href="#">Post title</a></h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
+    </div><!-- /.post-content -->
+  </div><!-- /.post -->
+  <div class="post post-outline-danger">
     <div class="post-content">
       <h2 class="post-title"><a class="post-title-link" href="#">Post title</a></h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
@@ -2018,9 +2054,11 @@ Untuk mengubah latar belakang menjadi transparan, tambahkan `background-color: t
 </div><!-- /.bd-example -->
 
 {% highlight html %}
-<div class="post border-orange-500">...</div>
-<div class="post border-red-500">...</div>
-<div class="post" style="background-color: transparent; border-color: #333;">...</div>
+<div class="post post-outline-primary">...</div>
+<div class="post post-outline-success">...</div>
+<div class="post post-outline-info">...</div>
+<div class="post post-outline-warning">...</div>
+<div class="post post-outline-danger">...</div>
 {% endhighlight %}
 
 ## Post layout
@@ -2660,7 +2698,7 @@ Gunakan `.post-content` lebih dari satu untuk membungkus setiap konten. Lihat be
 <div class="bd-example">
   <div class="post">
     <div class="post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3">
-      <div class="post-img-left post-img-gutter bg-orange-500">
+      <div class="post-img-left post-img-gutter bg-inverse">
         <a href="#"><img data-src="holder.js/100px180/?auto=yes&text=Image" alt="Image"/></a>
       </div>
       <div class="post-content">
@@ -2675,7 +2713,7 @@ Gunakan `.post-content` lebih dari satu untuk membungkus setiap konten. Lihat be
 {% highlight html %}
 <div class="post">
   <div class="post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3">
-    <div class="post-img-left post-img-gutter bg-orange-500">
+    <div class="post-img-left post-img-gutter bg-inverse">
       ...
     </div>
     <div class="post-content">
@@ -2691,7 +2729,7 @@ Gunakan `.post-content` lebih dari satu untuk membungkus setiap konten. Lihat be
       <div class="post-img-left post-img-gutter">
         <a href="#"><img data-src="holder.js/100px180/?auto=yes&text=Image" alt="Image"/></a>
       </div>
-      <div class="post-content post-inverse bg-orange-500">
+      <div class="post-content post-inverse bg-success">
         <h2 class="post-title"><a class="post-title-link" href="#">Post title</a></h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
         <p><a class="btn btn-primary" href="#">Read more</a></p>
@@ -2706,7 +2744,7 @@ Gunakan `.post-content` lebih dari satu untuk membungkus setiap konten. Lihat be
     <div class="post-img-left post-img-gutter">
       ...
     </div>
-    <div class="post-content post-inverse bg-orange-500">
+    <div class="post-content post-inverse bg-success">
       ...
     </div>
   </div>
@@ -2716,10 +2754,10 @@ Gunakan `.post-content` lebih dari satu untuk membungkus setiap konten. Lihat be
 <div class="bd-example">
   <div class="post">
     <div class="post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3">
-      <div class="post-img-left post-img-gutter bg-grey-500">
+      <div class="post-img-left post-img-gutter bg-inverse">
         <a href="#"><img data-src="holder.js/100px180/?auto=yes&text=Image" alt="Image"/></a>
       </div>
-      <div class="post-content post-inverse bg-orange-500">
+      <div class="post-content post-inverse bg-success">
         <h2 class="post-title"><a class="post-title-link" href="#">Post title</a></h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
         <p><a class="btn btn-primary" href="#">Read more</a></p>
@@ -2731,10 +2769,10 @@ Gunakan `.post-content` lebih dari satu untuk membungkus setiap konten. Lihat be
 {% highlight html %}
 <div class="post">
   <div class="post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3">
-    <div class="post-img-left post-img-gutter bg-grey-500">
+    <div class="post-img-left post-img-gutter bg-inverse">
       ...
     </div>
-    <div class="post-content post-inverse bg-orange-500">
+    <div class="post-content post-inverse bg-success">
       ...
     </div>
   </div>
@@ -2742,12 +2780,12 @@ Gunakan `.post-content` lebih dari satu untuk membungkus setiap konten. Lihat be
 {% endhighlight %}
 
 <div class="bd-example">
-  <div class="post post-inverse bg-red-500">
+  <div class="post post-inverse post-outline-danger">
     <div class="post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3">
-      <div class="post-img-left post-img-gutter bg-grey-500">
+      <div class="post-img-left post-img-gutter bg-inverse">
         <a href="#"><img data-src="holder.js/100px180/?auto=yes&text=Image" alt="Image"/></a>
       </div>
-      <div class="post-content bg-orange-500">
+      <div class="post-content bg-success">
         <h2 class="post-title"><a class="post-title-link" href="#">Post title</a></h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
         <p><a class="btn btn-primary" href="#">Read more</a></p>
@@ -2757,12 +2795,12 @@ Gunakan `.post-content` lebih dari satu untuk membungkus setiap konten. Lihat be
 </div><!-- /.bd-example -->
 
 {% highlight html %}
-<div class="post post-inverse bg-red-500">
+<div class="post post-inverse post-outline-danger">
   <div class="post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3">
-    <div class="post-img-left post-img-gutter bg-grey-500">
+    <div class="post-img-left post-img-gutter bg-inverse">
       ...
     </div>
-    <div class="post-content bg-orange-500">
+    <div class="post-content bg-success">
       ...
     </div>
   </div>

@@ -17,7 +17,7 @@ Navmenu adalah pembungkus untuk navigasi dan elemen lainnya. Navmenu tampil seca
 Bungkus semua konten dengan `.navmenu`, dan tambahkan [skema warna](#color-schemes).
 
 {% example html %}
-<nav class="navmenu navmenu-light bg-grey-100">
+<nav class="navmenu navmenu-light" style="background-color: #f7f7f7;">
   <a class="navmenu-brand" href="#">Bootsblogger</a>
   <div class="navmenu-nav">
     <a class="nav-item nav-link" href="#">Nav item</a>
@@ -33,12 +33,12 @@ Bungkus semua konten dengan `.navmenu`, dan tambahkan [skema warna](#color-schem
 
 ## Color schemes
 
-Ubah warna navmenu dengan mengeset `background-color`, Anda dapat menggunakan [kelas utilitas warna]({{ site.baseurl }}/utilities/colors/) atau menggunakan *custom styles*.
+Ubah warna navmenu dengan mengeset `background-color`, Anda dapat menggunakan kelas utilitas warna atau menggunakan *custom styles*.
 
-Gunakan `.navmenu-light` atau `.navmenu-inverse` untuk menyesuaikan warna teks dengan warna latar belakang. `.navmenu-light` untuk latar belakang yang terang, `.navmenu-inverse` untuk latar belakang yang gelap.
+Gunakan `.navmenu-light` atau `.navmenu-inverse` untuk menyesuaikan warna teks dengan warna latar belakang. `.navmenu-light` untuk latar belakang yang berwarna terang dan `.navmenu-inverse` untuk latar belakang yang berwarna gelap.
 
 {% example html %}
-<nav class="navmenu navmenu-light bg-orange-50">
+<nav class="navmenu navmenu-light" style="background-color: #f7f7f7;">
   <a class="navmenu-brand" href="#">Bootsblogger</a>
   <div class="navmenu-nav">
     <a class="nav-item nav-link" href="#">Nav item</a>
@@ -49,29 +49,7 @@ Gunakan `.navmenu-light` atau `.navmenu-inverse` untuk menyesuaikan warna teks d
 {% endexample %}
 
 {% example html %}
-<nav class="navmenu navmenu-light" style="background-color: #e1f5fe;">
-  <a class="navmenu-brand" href="#">Bootsblogger</a>
-  <div class="navmenu-nav">
-    <a class="nav-item nav-link" href="#">Nav item</a>
-    <a class="nav-item nav-link" href="#">Nav item again</a>
-    <a class="nav-item nav-link" href="#">Another nav item</a>
-  </div>
-</nav>
-{% endexample %}
-
-{% example html %}
-<nav class="navmenu navmenu-inverse bg-blue-500">
-  <a class="navmenu-brand" href="#">Bootsblogger</a>
-  <div class="navmenu-nav">
-    <a class="nav-item nav-link" href="#">Nav item</a>
-    <a class="nav-item nav-link" href="#">Nav item again</a>
-    <a class="nav-item nav-link" href="#">Another nav item</a>
-  </div>
-</nav>
-{% endexample %}
-
-{% example html %}
-<nav class="navmenu navmenu-inverse" style="background-color: #009688;">
+<nav class="navmenu navmenu-inverse" style="background-color: #292b2c;">
   <a class="navmenu-brand" href="#">Bootsblogger</a>
   <div class="navmenu-nav">
     <a class="nav-item nav-link" href="#">Nav item</a>
@@ -84,7 +62,7 @@ Gunakan `.navmenu-light` atau `.navmenu-inverse` untuk menyesuaikan warna teks d
 ## Supported content
 
 {% example html %}
-<nav class="navmenu navmenu-light bg-grey-100">
+<nav class="navmenu navmenu-light" style="background-color: #f7f7f7;">
   <!-- Brand -->
   <a class="navmenu-brand" href="#">Bootsblogger</a>
 
@@ -109,7 +87,7 @@ Gunakan `.navmenu-light` atau `.navmenu-inverse` untuk menyesuaikan warna teks d
 
   <!-- Text -->
   <div class="navmenu-text">
-    <p class="text-green-500">Bootsblogger is awesome.</p>
+    <p class="text-success">Bootsblogger is awesome.</p>
   </div>
 </nav>
 {% endexample %}
@@ -117,13 +95,13 @@ Gunakan `.navmenu-light` atau `.navmenu-inverse` untuk menyesuaikan warna teks d
 ## Dropdowns
 
 {% example html %}
-<nav class="navmenu navmenu-light bg-grey-100">
+<nav class="navmenu navmenu-light" style="background-color: #f7f7f7;">
   <a class="navmenu-brand" href="#">Bootsblogger</a>
   <ul class="navmenu-nav">
     <li class="nav-item"><a class="nav-link" href="#">Nav item</a></li>
     <li class="nav-item"><a class="nav-link" href="#">Nav item again</a></li>
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="javascript:;" id="navmenuDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="nav-link dropdown-toggle" href="#" id="navmenuDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Dropdown link
       </a>
       <div class="dropdown-menu" aria-labelledby="navmenuDropdownMenuLink">
@@ -133,7 +111,7 @@ Gunakan `.navmenu-light` atau `.navmenu-inverse` untuk menyesuaikan warna teks d
       </div>
     </li>
     <li class="nav-item dropup">
-      <a class="nav-link dropdown-toggle" href="javascript:;" id="navmenuDropupMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="nav-link dropdown-toggle" href="#" id="navmenuDropupMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Dropup
       </a>
       <div class="dropdown-menu" aria-labelledby="navmenuDropupMenuLink">
@@ -149,7 +127,7 @@ Gunakan `.navmenu-light` atau `.navmenu-inverse` untuk menyesuaikan warna teks d
 ## Placement
 
 {% example html %}
-<nav class="navmenu navmenu-fixed-left navmenu-inverse bg-purple-500">
+<nav class="navmenu navmenu-fixed-left navmenu-light" style="width: 15rem; background-color: #f7f7f7;">
   <a class="navmenu-brand" href="#">Fixed left</a>
   <div class="navmenu-nav">
     <a class="nav-item nav-link" href="#">Nav item</a>
@@ -160,7 +138,7 @@ Gunakan `.navmenu-light` atau `.navmenu-inverse` untuk menyesuaikan warna teks d
 {% endexample %}
 
 {% example html %}
-<nav class="navmenu navmenu-fixed-right navmenu-inverse bg-teal-500">
+<nav class="navmenu navmenu-fixed-right navmenu-light" style="width: 15rem; background-color: #f7f7f7;">
   <a class="navmenu-brand" href="#">Fixed right</a>
   <div class="navmenu-nav">
     <a class="nav-item nav-link" href="#">Nav item</a>
