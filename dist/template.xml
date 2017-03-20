@@ -47,7 +47,7 @@
 
 <b:elseif cond='data:blog.searchQuery'/>
   <!-- Search results page -->
-  <title>Search Results for &amp;ldquo;<data:blog.searchQuery/>&amp;rdquo; | <data:blog.title/></title>
+  <title>Search Results for *<data:blog.searchQuery/>* | <data:blog.title/></title>
 
 <b:elseif cond='data:blog.pageType == &quot;archive&quot;'/>
   <!-- Archive page -->
@@ -87,7 +87,7 @@
   <b:elseif cond='data:blog.postImageThumbnailUrl'/><!-- 72 x 72 -->
     <link expr:href='data:blog.postThumbnailUrl' rel='image_src'/>
   <b:else/><!-- No image -->
-    <link href='https://placehold.it/512/eee/777?text=NO+IMAGE+AVAILABLE' rel='image_src'/>
+    <link expr:href='&quot;https://placehold.it/512/eee/777?text=&quot; + data:blog.title' rel='image_src'/>
   </b:if>
 
 <b:elseif cond='data:blog.pageType == &quot;static_page&quot;'/>
@@ -97,36 +97,35 @@
   <b:else/>
     <meta expr:content='data:blog.pageName' name='description'/>
   </b:if>
-  <link href='https://placehold.it/256/eee/777?text=Page' rel='image_src'/>
+  <link expr:href='&quot;https://placehold.it/512/eee/777?text=&quot; + data:blog.title' rel='image_src'/>
 
 <b:elseif cond='data:blog.searchLabel'/>
   <!-- Label/category page -->
-  <meta expr:content='&quot;Showing posts with label -&quot; + data:blog.pageName + &quot;-&quot;' name='description'/>
+  <meta expr:content='&quot;Showing posts with label *&quot; + data:blog.pageName + &quot;*.&quot;' name='description'/>
   <link expr:href='&quot;https://placehold.it/512/eee/777?text=&quot; + data:blog.pageName' rel='image_src'/>
 
 <b:elseif cond='data:blog.searchQuery'/>
   <!-- Search results page -->
-  <meta expr:content='&quot;Search Results for -&quot; + data:blog.searchQuery + &quot;-&quot;' name='description'/>
-  <link href='https://placehold.it/256/eee/777?text=Search' rel='image_src'/>
+  <meta expr:content='&quot;Search Results for *&quot; + data:blog.searchQuery + &quot;*.&quot;' name='description'/>
+  <link href='https://placehold.it/512/eee/777?text=Search+Results' rel='image_src'/>
 
 <b:elseif cond='data:blog.pageType == &quot;archive&quot;'/>
   <!-- Archive page -->
-  <meta expr:content='&quot;Archive for &quot; + data:blog.pageName' name='description'/>
+  <meta expr:content='&quot;Archive for &quot; + data:blog.pageName + &quot;.&quot;' name='description'/>
   <link expr:href='&quot;https://placehold.it/512/eee/777?text=&quot; + data:blog.pageName' rel='image_src'/>
 
 <b:elseif cond='data:blog.pageType == &quot;error_page&quot;'/>
   <!-- Error page -->
   <meta content='404: sorry, the page you were looking for in this blog does not exist.' name='description'/>
-  <link href='https://placehold.it/256/eee/777?text=404' rel='image_src'/>
+  <link href='https://placehold.it/512/eee/777?text=404' rel='image_src'/>
 
 <b:else/>
   <!-- Homepage and default (https://example.blogspot.com/search) -->
   <b:if cond='data:blog.metaDescription'>
     <meta expr:content='data:blog.metaDescription' name='description'/>
   <b:else/>
-    <meta content='Default blog description' name='description'/>
+    <meta expr:content='data:blog.title' name='description'/>
   </b:if>
-  <meta content='keyword1, keyword2, ...' name='keywords'/>
   <link href='https://example.com/path/to/image.png' rel='image_src'/>
 </b:if>
 
@@ -138,8 +137,8 @@
   <meta content='summary' name='twitter:card'/>
 </b:if>
 
-<meta content='' name='twitter:site'/>
-<meta content='' name='twitter:creator'/>
+<meta content='@username_of_website' name='twitter:site'/>
+<meta content='@username_of_content_creator' name='twitter:creator'/>
 
 <b:if cond='data:blog.pageType != &quot;error_page&quot;'>
   <meta expr:content='data:blog.canonicalUrl' name='twitter:url'/>
@@ -161,7 +160,7 @@
   <b:elseif cond='data:blog.postImageThumbnailUrl'/><!-- 72 x 72 -->
     <meta expr:content='data:blog.postThumbnailUrl' property='twitter:image'/>
   <b:else/><!-- No image -->
-    <meta content='https://placehold.it/512/eee/777?text=NO+IMAGE+AVAILABLE' property='twitter:image'/>
+    <meta expr:content='&quot;https://placehold.it/512/eee/777?text=&quot; + data:blog.title' property='twitter:image'/>
   </b:if>
 
 <b:elseif cond='data:blog.pageType == &quot;static_page&quot;'/>
@@ -172,31 +171,31 @@
   <b:else/>
     <meta expr:content='data:blog.pageName' name='twitter:description'/>
   </b:if>
-  <meta content='https://placehold.it/256/eee/777?text=Page' property='twitter:image'/>
+  <meta expr:content='&quot;https://placehold.it/512/eee/777?text=&quot; + data:blog.title' property='twitter:image'/>
 
 <b:elseif cond='data:blog.searchLabel'/>
   <!-- Label/category page -->
   <meta expr:content='data:blog.pageName + &quot; | &quot; + data:blog.title' name='twitter:title'/>
-  <meta expr:content='&quot;Showing posts with label -&quot; + data:blog.pageName + &quot;-&quot;' name='twitter:description'/>
+  <meta expr:content='&quot;Showing posts with label *&quot; + data:blog.pageName + &quot;*.&quot;' name='twitter:description'/>
   <meta expr:content='&quot;https://placehold.it/512/eee/777?text=&quot; + data:blog.pageName' property='twitter:image'/>
 
 <b:elseif cond='data:blog.searchQuery'/>
   <!-- Search results page -->
-  <meta expr:content='&quot;Search Results for -&quot; + data:blog.searchQuery + &quot;- | &quot; + data:blog.title' name='twitter:title'/>
-  <meta expr:content='&quot;Search Results for -&quot; + data:blog.searchQuery + &quot;-&quot;' name='twitter:description'/>
-  <meta content='https://placehold.it/256/eee/777?text=Search' property='twitter:image'/>
+  <meta expr:content='&quot;Search Results for *&quot; + data:blog.searchQuery + &quot;* | &quot; + data:blog.title' name='twitter:title'/>
+  <meta expr:content='&quot;Search Results for *&quot; + data:blog.searchQuery + &quot;*.&quot;' name='twitter:description'/>
+  <meta content='https://placehold.it/512/eee/777?text=Search+Results' property='twitter:image'/>
 
 <b:elseif cond='data:blog.pageType == &quot;archive&quot;'/>
   <!-- Archive page -->
   <meta expr:content='&quot;Archive for &quot; + data:blog.pageName + &quot; | &quot; + data:blog.title' name='twitter:title'/>
-  <meta expr:content='&quot;Archive for &quot; + data:blog.pageName' name='twitter:description'/>
+  <meta expr:content='&quot;Archive for &quot; + data:blog.pageName + &quot;.&quot;' name='twitter:description'/>
   <meta expr:content='&quot;https://placehold.it/512/eee/777?text=&quot; + data:blog.pageName' property='twitter:image'/>
 
 <b:elseif cond='data:blog.pageType == &quot;error_page&quot;'/>
   <!-- Error page -->
   <meta content='Page Not Found' name='twitter:title'/>
   <meta content='404: sorry, the page you were looking for in this blog does not exist.' name='twitter:description'/>
-  <meta content='https://placehold.it/256/eee/777?text=404' property='twitter:image'/>
+  <meta content='https://placehold.it/512/eee/777?text=404' property='twitter:image'/>
 
 <b:else/>
   <!-- Homepage and default (https://example.blogspot.com/search) -->
@@ -204,7 +203,7 @@
   <b:if cond='data:blog.metaDescription'>
     <meta expr:content='data:blog.metaDescription' name='twitter:description'/>
   <b:else/>
-    <meta content='Default blog description' name='twitter:description'/>
+    <meta expr:content='data:blog.title' name='twitter:description'/>
   </b:if>
   <meta content='https://example.com/path/to/image.png' property='twitter:image'/>
 </b:if>
@@ -239,7 +238,7 @@
   <b:elseif cond='data:blog.postImageThumbnailUrl'/><!-- 72 x 72 -->
     <meta expr:content='data:blog.postThumbnailUrl' property='og:image'/>
   <b:else/><!-- No image -->
-    <meta content='https://placehold.it/512/eee/777?text=NO+IMAGE+AVAILABLE' property='og:image'/>
+    <meta expr:content='&quot;https://placehold.it/512/eee/777?text=&quot; + data:blog.title' property='og:image'/>
   </b:if>
 
 <b:elseif cond='data:blog.pageType == &quot;static_page&quot;'/>
@@ -250,31 +249,31 @@
   <b:else/>
     <meta expr:content='data:blog.pageName' property='og:description'/>
   </b:if>
-  <meta content='https://placehold.it/256/eee/777?text=Page' property='og:image'/>
+  <meta expr:content='&quot;https://placehold.it/512/eee/777?text=&quot; + data:blog.title' property='og:image'/>
 
 <b:elseif cond='data:blog.searchLabel'/>
   <!-- Label/category page -->
   <meta expr:content='data:blog.pageName + &quot; | &quot; + data:blog.title' property='og:title'/>
-  <meta expr:content='&quot;Showing posts with label -&quot; + data:blog.pageName + &quot;-&quot;' property='og:description'/>
+  <meta expr:content='&quot;Showing posts with label *&quot; + data:blog.pageName + &quot;*.&quot;' property='og:description'/>
   <meta expr:content='&quot;https://placehold.it/512/eee/777?text=&quot; + data:blog.pageName' property='og:image'/>
 
 <b:elseif cond='data:blog.searchQuery'/>
   <!-- Search results page -->
-  <meta expr:content='&quot;Search Results for -&quot; + data:blog.searchQuery + &quot;- | &quot; + data:blog.title' property='og:title'/>
-  <meta expr:content='&quot;Search Results for -&quot; + data:blog.searchQuery + &quot;-&quot;' property='og:description'/>
-  <meta content='https://placehold.it/256/eee/777?text=Search' property='og:image'/>
+  <meta expr:content='&quot;Search Results for *&quot; + data:blog.searchQuery + &quot;* | &quot; + data:blog.title' property='og:title'/>
+  <meta expr:content='&quot;Search Results for *&quot; + data:blog.searchQuery + &quot;*.&quot;' property='og:description'/>
+  <meta content='https://placehold.it/512/eee/777?text=Search+Results' property='og:image'/>
 
 <b:elseif cond='data:blog.pageType == &quot;archive&quot;'/>
   <!-- Archive page -->
   <meta expr:content='&quot;Archive for &quot; + data:blog.pageName + &quot; | &quot; + data:blog.title' property='og:title'/>
-  <meta expr:content='&quot;Archive for &quot; + data:blog.pageName' property='og:description'/>
+  <meta expr:content='&quot;Archive for &quot; + data:blog.pageName + &quot;.&quot;' property='og:description'/>
   <meta expr:content='&quot;https://placehold.it/512/eee/777?text=&quot; + data:blog.pageName' property='og:image'/>
 
 <b:elseif cond='data:blog.pageType == &quot;error_page&quot;'/>
   <!-- Error page -->
   <meta content='Page Not Found' property='og:title'/>
   <meta content='404: sorry, the page you were looking for in this blog does not exist.' property='og:description'/>
-  <meta content='https://placehold.it/256/eee/777?text=404' property='og:image'/>
+  <meta content='https://placehold.it/512/eee/777?text=404' property='og:image'/>
 
 <b:else/>
   <!-- Homepage and default (https://example.blogspot.com/search) -->
@@ -282,7 +281,7 @@
   <b:if cond='data:blog.metaDescription'>
     <meta expr:content='data:blog.metaDescription' property='og:description'/>
   <b:else/>
-    <meta content='Default blog description' property='og:description'/>
+    <meta expr:content='data:blog.title' property='og:description'/>
   </b:if>
   <meta content='https://example.com/path/to/image.png' property='og:image'/>
 </b:if>
