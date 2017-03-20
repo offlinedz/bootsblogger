@@ -4,8 +4,8 @@
   <meta content='summary' name='twitter:card'/>
 </b:if>
 
-<meta content='{{ social.twitterUsernameWebsite }}' name='twitter:site'/>
-<meta content='{{ social.twitterUsernameCreator }}' name='twitter:creator'/>
+<meta content='{{ blog.social.twitterUsernameWebsite }}' name='twitter:site'/>
+<meta content='{{ blog.social.twitterUsernameCreator }}' name='twitter:creator'/>
 
 <b:if cond='data:blog.pageType != &quot;error_page&quot;'>
   <meta expr:content='data:blog.canonicalUrl' name='twitter:url'/>
@@ -27,7 +27,7 @@
   <b:elseif cond='data:blog.postImageThumbnailUrl'/><!-- 72 x 72 -->
     <meta expr:content='data:blog.postThumbnailUrl' property='twitter:image'/>
   <b:else/><!-- No image -->
-    <meta content='https://placehold.it/512/eee/777?text=NO+IMAGE+AVAILABLE' property='twitter:image'/>
+    <meta expr:content='&quot;https://placehold.it/512/eee/777?text=&quot; + data:blog.title' property='twitter:image'/>
   </b:if>
 
 <b:elseif cond='data:blog.pageType == &quot;static_page&quot;'/>
@@ -38,39 +38,39 @@
   <b:else/>
     <meta expr:content='data:blog.pageName' name='twitter:description'/>
   </b:if>
-  <meta content='https://placehold.it/256/eee/777?text=Page' property='twitter:image'/>
+  <meta expr:content='&quot;https://placehold.it/512/eee/777?text=&quot; + data:blog.title' property='twitter:image'/>
 
 <b:elseif cond='data:blog.searchLabel'/>
   <!-- Label/category page -->
-  <meta expr:content='{{ blog.meta.title.labelPage }}' name='twitter:title'/>
-  <meta expr:content='{{ blog.meta.description.labelPage }}' name='twitter:description'/>
+  <meta expr:content='data:blog.pageName + &quot; | &quot; + data:blog.title' name='twitter:title'/>
+  <meta expr:content='&quot;Showing posts with label *&quot; + data:blog.pageName + &quot;*.&quot;' name='twitter:description'/>
   <meta expr:content='&quot;https://placehold.it/512/eee/777?text=&quot; + data:blog.pageName' property='twitter:image'/>
 
 <b:elseif cond='data:blog.searchQuery'/>
   <!-- Search results page -->
-  <meta expr:content='{{ blog.meta.title.searchResultsPage }}' name='twitter:title'/>
-  <meta expr:content='{{ blog.meta.description.searchResultsPage }}' name='twitter:description'/>
-  <meta content='https://placehold.it/256/eee/777?text=Search' property='twitter:image'/>
+  <meta expr:content='&quot;Search Results for *&quot; + data:blog.searchQuery + &quot;* | &quot; + data:blog.title' name='twitter:title'/>
+  <meta expr:content='&quot;Search Results for *&quot; + data:blog.searchQuery + &quot;*.&quot;' name='twitter:description'/>
+  <meta content='https://placehold.it/512/eee/777?text=Search+Results' property='twitter:image'/>
 
 <b:elseif cond='data:blog.pageType == &quot;archive&quot;'/>
   <!-- Archive page -->
-  <meta expr:content='{{ blog.meta.title.archivePage }}' name='twitter:title'/>
-  <meta expr:content='{{ blog.meta.description.archivePage }}' name='twitter:description'/>
+  <meta expr:content='&quot;Archive for &quot; + data:blog.pageName + &quot; | &quot; + data:blog.title' name='twitter:title'/>
+  <meta expr:content='&quot;Archive for &quot; + data:blog.pageName + &quot;.&quot;' name='twitter:description'/>
   <meta expr:content='&quot;https://placehold.it/512/eee/777?text=&quot; + data:blog.pageName' property='twitter:image'/>
 
 <b:elseif cond='data:blog.pageType == &quot;error_page&quot;'/>
   <!-- Error page -->
-  <meta content='{{ blog.meta.title.errorPage }}' name='twitter:title'/>
-  <meta content='{{ blog.meta.description.errorPage }}' name='twitter:description'/>
-  <meta content='https://placehold.it/256/eee/777?text=404' property='twitter:image'/>
+  <meta content='Page Not Found' name='twitter:title'/>
+  <meta content='404: sorry, the page you were looking for in this blog does not exist.' name='twitter:description'/>
+  <meta content='https://placehold.it/512/eee/777?text=404' property='twitter:image'/>
 
 <b:else/>
   <!-- Homepage and default (https://example.blogspot.com/search) -->
-  <meta expr:content='{{ blog.meta.title.homePage }}' name='twitter:title'/>
+  <meta expr:content='data:blog.title' name='twitter:title'/>
   <b:if cond='data:blog.metaDescription'>
     <meta expr:content='data:blog.metaDescription' name='twitter:description'/>
   <b:else/>
-    <meta content='{{ blog.meta.description.homePage }}' name='twitter:description'/>
+    <meta expr:content='data:blog.title' name='twitter:description'/>
   </b:if>
   <meta content='{{ blog.social.image }}' property='twitter:image'/>
 </b:if>

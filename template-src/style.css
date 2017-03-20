@@ -3,14 +3,14 @@
    ============================================== */
 
 /**
- * Template Name : {{ blog.about.templateName }}
- * Template URI  : {{ blog.about.templateURI }}
- * Author Name   : {{ blog.about.templateAuthorName }}
- * Author URI    : {{ blog.about.templateAuthorURI }}
- * Date          : {{ blog.about.templateDate }}
- * Version       : {{ blog.about.templateVersion }}
- * License       : {{ blog.about.templateLicense }}
- * License URI   : {{ blog.about.templateLicenseURI }}
+ * Template Name : {{ blog.templateName }}
+ * Template URI  : {{ blog.templateURI }}
+ * Author Name   : {{ blog.templateAuthorName }}
+ * Author URI    : {{ blog.templateAuthorURI }}
+ * Date          : {{ blog.templateDate }}
+ * Version       : {{ blog.templateVersion }}
+ * License       : {{ blog.templateLicense }}
+ * License URI   : {{ blog.templateLicenseURI }}
  */
 
 /**
