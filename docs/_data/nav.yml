@@ -18,16 +18,13 @@
   pages:
     - title: Posts
     - title: Navmenu
-    - title: Widget basic
-    - title: Widget box
-    - title: Widget panel
+    - title: Widget
 
 - title: Utilities
   pages:
     - title: Sizing
     - title: Spacing
     - title: Figures
-    - title: Widget
 
 - title: Blogger JSON feeds
   pages:

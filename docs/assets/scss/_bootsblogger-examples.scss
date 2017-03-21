@@ -9,36 +9,6 @@
   margin-bottom: 0;
 }
 
-// Widgets
-
-.bd-example {
-  &.bd-example-widget {
-    background-color: #7d7d7d;
-  }
-
-  .wg-basic:not(.wg-columns),
-  .wg-box:not(.wg-columns),
-  .wg-panel:not(.wg-columns) {
-    max-width: 20rem;
-  }
-
-  .wg-basic,
-  .wg-box,
-  .wg-panel:not(.wg-panel-group) {
-    &:last-child {
-      margin-bottom: -1rem;
-    }
-  }
-
-  .wg-panel-group:last-child {
-    margin-bottom: 0;
-  }
-
-  .wg-grid-example {
-    max-width: none !important;
-  }
-}
-
 // Navmenu
 
 .bd-example {
@@ -63,6 +33,28 @@
     margin-top: -1.5rem;
     margin-right: -1.5rem;
     margin-bottom: -1.5rem;
+  }
+}
+
+// Widget
+
+.bd-example {
+  &.bd-example-widget {
+    background-color: #7d7d7d;
+  }
+
+  .wg:not(.wg-columns):not(.wg-grid-example) {
+    max-width: 20rem;
+  }
+
+  .wg:not(.wg-panel-group) {
+    &:last-child {
+      margin-bottom: -$wg-margin-bottom;
+    }
+  }
+
+  .wg-panel-group:last-child {
+    margin-bottom: 0;
   }
 }
 

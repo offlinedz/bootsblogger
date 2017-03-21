@@ -3,6 +3,7 @@ layout: docs
 title: Sizing
 description: Kelas tambahan untuk Bootstrap sizing utilities.
 group: utilities
+redirect_from: "/utilities/"
 ---
 
 Kelas tambahan untuk [Bootstrap sizing utilities](https://v4-alpha.getbootstrap.com/utilities/sizing/).

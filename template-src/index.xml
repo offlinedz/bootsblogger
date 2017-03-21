@@ -40,7 +40,7 @@
 
       <!-- Sidebar -->
       <aside class='sidebar col-md-3 blogger-col-4 mt-5 mt-md-0' id='sidebar'>
-        <b:section class='wg-box wg-box-white wg-title-gray-dark wg-md-12 wg-sm-6 mnb-3' id='sidebar-section'></b:section>
+        <b:section class='wg wg-box wg-box-white wg-title-gray-dark wg-md-12 wg-sm-6 mnb-3' id='sidebar-section'></b:section>
       </aside><!-- /.sidebar -->
     </div><!-- /.row -->
   </div><!-- /.container -->
@@ -51,7 +51,7 @@
 ================================================= -->
 <div class='widget-1 py-5' id='widget-1'>
   <div class='container'>
-    <b:section class='wg-box wg-box-white wg-title-gray-dark wg-md-4 wg-sm-6 mnb-3' id='widget-1-section'></b:section>
+    <b:section class='wg wg-panel wg-panel-orange wg-title-gray-dark wg-md-4 mnb-3' id='widget-1-section'></b:section>
   </div>
 </div>
 

@@ -2,12 +2,7 @@
 //
 // Posts
 // Navmenu
-// Widget colors
-// Widget basic
-// Widget box
-// Widget panel
-// Widget columns
-// Widget grid
+// Widget
 
 
 //
@@ -70,8 +65,14 @@ $navmenu-inverse-disabled-color: rgba(255,255,255,.25) !default;
 
 
 //
-// Widget colors
+// Widget
 //
+
+$wg-margin-bottom:               $spacer-y !default;
+$wg-font-size:                   1rem !default;
+$wg-font-weight:                 $font-weight-bold !default;
+
+// Colors
 
 $wg-gray-light-color:            $gray-lightest !default;
 $wg-gray-light-border:           darken($wg-gray-light-color, 5%) !default;
@@ -109,54 +110,36 @@ $wg-pink-border:                 darken($wg-pink-color, 5%) !default;
 $wg-purple-color:                $purple !default;
 $wg-purple-border:               darken($wg-purple-color, 5%) !default;
 
+// Widget title
 
-//
-// Widget basic
-//
+$wg-title-h1:                    $font-size-h1 !default;
+$wg-title-h2:                    $font-size-h2 !default;
+$wg-title-h3:                    $font-size-h3 !default;
+$wg-title-h4:                    $font-size-h4 !default;
+$wg-title-h5:                    $font-size-h5 !default;
+$wg-title-h6:                    $font-size-h6 !default;
 
-$wg-basic-margin-bottom:         $spacer-y !default;
-$wg-basic-title-font-size:       1rem !default;
-$wg-basic-title-font-weight:     $font-weight-bold !default;
-
-
-//
 // Widget box
-//
 
-$wg-box-margin-bottom:           $spacer-y !default;
 $wg-box-padding:                 1.25rem !default;
-$wg-box-title-font-size:         1rem !default;
-$wg-box-title-font-weight:       $font-weight-bold !default;
 $wg-box-border-width:            1px !default;
 $wg-box-border-radius:           $border-radius !default;
 $wg-box-box-shadow:              0 1px 1px rgba(0,0,0,.05) !default;
 
-
-//
 // Widget panel
-//
 
-$wg-panel-margin-bottom:         $spacer-y !default;
 $wg-panel-content-padding:       1.25rem !default;
 $wg-panel-title-padding:         .75rem $wg-panel-content-padding !default;
-$wg-panel-title-font-size:       1rem !default;
-$wg-panel-title-font-weight:     $font-weight-bold !default;
 $wg-panel-content-bg:            #fff !default;
 $wg-panel-border-width:          1px !default;
 $wg-panel-border-radius:         $border-radius !default;
 $wg-panel-box-shadow:            0 1px 1px rgba(0,0,0,.05) !default;
 
-
-//
 // Widget columns
-//
 
 $wg-columns-sm-up-column-gap:    1rem !default;
 $wg-columns-md-up-column-gap:    1.25rem !default;
 
-
-//
 // Widget grid
-//
 
 $wg-grid-gutter-width-base:      30px !default;
