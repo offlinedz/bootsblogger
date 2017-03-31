@@ -1,0 +1,48 @@
+<b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='showDateHeader'>false</b:widget-setting>
+    <b:widget-setting name='style.textcolor'>#000000</b:widget-setting>
+    <b:widget-setting name='showShareButtons'>true</b:widget-setting>
+    <b:widget-setting name='showCommentLink'>true</b:widget-setting>
+    <b:widget-setting name='style.urlcolor'>#008000</b:widget-setting>
+    <b:widget-setting name='showAuthor'>true</b:widget-setting>
+    <b:widget-setting name='style.linkcolor'>#0000ff</b:widget-setting>
+    <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
+    <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
+    <b:widget-setting name='showAuthorProfile'>true</b:widget-setting>
+    <b:widget-setting name='style.layout'>1x1</b:widget-setting>
+    <b:widget-setting name='showLabels'>true</b:widget-setting>
+    <b:widget-setting name='showLocation'>true</b:widget-setting>
+    <b:widget-setting name='showTimestamp'>true</b:widget-setting>
+    <b:widget-setting name='postsPerAd'>1</b:widget-setting>
+    <b:widget-setting name='showBacklinks'>true</b:widget-setting>
+    <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
+    <b:widget-setting name='showInlineAds'>true</b:widget-setting>
+    <b:widget-setting name='showReactions'>true</b:widget-setting>
+  </b:widget-settings>
+  <b:includable id='main'>
+
+    <b:if cond='!data:view.isMobile'>
+
+      <b:comment>=== Status message ===</b:comment>
+      <b:include name='status-message.custom'/>
+
+      <b:comment>=== Posts ===</b:comment>
+      <b:if cond='data:numPosts != 0'>
+        <div class='posts' id='posts'>
+          <b:include name='posts.custom'/>
+        </div>
+      </b:if>
+
+      <b:comment>=== Comments ===</b:comment>
+      <b:loop values='data:posts' var='post'>
+        <b:include cond='data:view.isSingleItem' name='comments.custom'/>
+      </b:loop>
+
+      <b:comment>=== Pager ===</b:comment>
+      <b:include cond='data:numPosts != 0' name='pager.custom'/>
+
+    </b:if>
+
+  </b:includable>
+</b:widget>

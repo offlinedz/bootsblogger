@@ -118,10 +118,10 @@ project (indentation, accurate comments, etc.) and any other requirements
 **Do not edit:** 
 
 - `/bootsblogger/dist/` (automatically generated)
-- `/bootsblogger/scss/bootstrap/`
-- `/bootsblogger/js/bootstrap/`
-- `/bootsblogger/template-src/includes/assets/bootsblogger/` (automatically generated)
-- `/bootsblogger/template-src/includes/assets/bootstrap/` (automatically generated)
+- `/bootsblogger/scss/bootstrap/` (Bootstrap source code)
+- `/bootsblogger/js/bootstrap/` (Bootstrap precompiled JavaScript)
+- `/bootsblogger/template-src/core/assets/bootstrap/` (automatically generated)
+- `/bootsblogger/template-src/core/assets/bootsblogger/` (automatically generated)
 
 **You should edit the source files in:**
 

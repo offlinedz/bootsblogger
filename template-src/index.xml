@@ -1,14 +1,112 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html>
-<HTML lang='en'>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 <head>
-<!--(bake /includes/head/head.xml)-->
+
+
+<b:comment>
+=================================================
+Meta, link, and title tags
+================================================= </b:comment>
+
+<b:include name='head.required-meta-tags'/>
+<b:include name='head.custom-all-head-content'/>
+<b:include name='head.title'/>
+
+<b:with value='&quot;https://example.com/path/to/image.png&quot;' var='image'>
+<b:with value='&quot;@username_of_website&quot;' var='twitterUsernameWebsite'>
+<b:with value='&quot;@username_of_content_creator&quot;' var='twitterUsernameCreator'>
+  <b:include name='head.default-tags'/>
+  <b:include name='head.facebook-tags'/>
+  <b:include name='head.twitter-tags'/>
+</b:with>
+</b:with>
+</b:with>
+
+
+<b:comment>
+=================================================
+CSS
+================================================= </b:comment>
+
+<b:comment>=== Core CSS ===</b:comment>
+<b:include name='bootstrap.min.css'/>
+<b:include name='bootsblogger.min.css'/>
+
+<b:comment>=== Font Awesome ===</b:comment>
+<b:include name='font-awesome.min.css'/>
+
+<b:comment>=== Template CSS ===</b:comment>
+<b:skin>
+<![CDATA[
+<!--(bake /style.css)-->
+]]>
+</b:skin>
+
+<b:comment>=== Layout mode CSS ===</b:comment>
+<b:include name='head.layout-mode.css'/>
+
+
+<b:comment>
+=================================================
+JavaScript (head)
+================================================= </b:comment>
+
+<b:comment>=== Bootsblogger JavaScript (JSON) ===</b:comment>
+<b:include name='bootsblogger-json.min.js'/>
+
+
+<b:comment>
+=================================================
+Post layout and styles
+================================================= </b:comment>
+
+<b:defaultmarkups>
+  <b:defaultmarkup type='Common'>
+    <b:includable id='post-home'>
+  <!--(bake /content/blog-posts/post-home.xml)-->
+</b:includable>
+    <b:includable id='post-item'>
+  <!--(bake /content/blog-posts/post-item.xml)-->
+</b:includable>
+    <b:includable id='post-static'>
+  <!--(bake /content/blog-posts/post-static.xml)-->
+</b:includable>
+    <b:includable id='post-search-label'>
+  <!--(bake /content/blog-posts/post-search-label.xml)-->
+</b:includable>
+    <b:includable id='post-search-query'>
+  <!--(bake /content/blog-posts/post-search-query.xml)-->
+</b:includable>
+    <b:includable id='post-search-default'>
+  <!--(bake /content/blog-posts/post-search-default.xml)-->
+</b:includable>
+    <b:includable id='post-archive'>
+  <!--(bake /content/blog-posts/post-archive.xml)-->
+</b:includable>
+  </b:defaultmarkup>
+</b:defaultmarkups>
+
+
 </head>
-<body expr:class='data:blog.url == data:blog.homepageUrl ? &quot;blog-page-home&quot; : data:blog.pageType == &quot;item&quot; ? &quot;blog-page-item&quot; : data:blog.pageType == &quot;static_page&quot; ? &quot;blog-page-static&quot; : data:blog.searchLabel ? &quot;blog-page-label&quot; : data:blog.searchQuery ? &quot;blog-page-search&quot; : data:blog.pageType == &quot;archive&quot; ? &quot;blog-page-archive&quot; : data:blog.pageType == &quot;error_page&quot; ? &quot;blog-page-error&quot; : &quot;blog-page-default&quot;'>
+<body>
+<b:class cond='data:view.isHomepage' name='blog-view-home'/>
+<b:class cond='data:view.isPost' name='blog-view-item'/>
+<b:class cond='data:view.isPage' name='blog-view-static'/>
+<b:class cond='data:view.search.label' name='blog-view-search-label'/>
+<b:class cond='data:view.search.query' name='blog-view-search-query'/>
+<b:class cond='data:view.search and !data:view.search.label and !data:view.search.query' name='blog-view-search-default'/>
+<b:class cond='data:view.isArchive' name='blog-view-archive'/>
+<b:class cond='data:view.isError' name='blog-view-error'/>
+<b:class cond='data:view.isPreview' name='blog-view-preview'/>
+<b:class name='your-body-class'/>
 
 
-<!-- SKIP NAVIGATION
-================================================= -->
+<b:comment>
+=================================================
+Skip navigation
+================================================= </b:comment>
+
 <a class='sr-only sr-only-focusable' href='#main' id='skippy'>
   <div class='container'>
     <span class='skiplink-text'>Skip to main content</span>
@@ -16,48 +114,63 @@
 </a>
 
 
-<!-- NAVBAR
-================================================= -->
-<!--(bake /includes/navbar.xml)-->
+<b:comment>
+=================================================
+Navbar
+================================================= </b:comment>
+
+<!--(bake /content/navbar.xml)-->
 
 
-<!-- JUMBOTRON
-================================================= -->
-<!--(bake /includes/jumbotron.xml)-->
+<b:comment>
+=================================================
+Jumbotron
+================================================= </b:comment>
+
+<!--(bake /content/jumbotron.xml)-->
 
 
-<!-- MAIN AND SIDEBAR
-================================================= -->
+<b:comment>
+=================================================
+Main and sidebar
+================================================= </b:comment>
+
 <div class='main-and-sidebar py-5' id='main-and-sidebar'>
   <div class='container'>
     <div class='row'>
       <!-- Main -->
-      <main class='main col-md-9 blogger-col-8' id='main' tabindex='-1'>
-<b:section class='' id='main-section' maxwidgets='1' showaddelement='no'>
-<!--(bake /includes/blog-posts/blog-posts.xml)-->
-</b:section>
+      <main class='main col-md-9 blogger-col-8' id='main'>
+        <b:section class='' id='main-section' maxwidgets='1' name='Main' showaddelement='no'>
+          <!--(bake /core/blog-posts/widget.xml)-->
+        </b:section>
       </main><!-- /.main -->
 
       <!-- Sidebar -->
       <aside class='sidebar col-md-3 blogger-col-4 mt-5 mt-md-0' id='sidebar'>
-        <b:section class='wg wg-box wg-box-white wg-title-gray-dark wg-md-12 wg-sm-6 mnb-3' id='sidebar-section'></b:section>
+        <b:section class='wg wg-box wg-box-white wg-title-gray-dark wg-md-12 wg-sm-6 mnb-3' id='sidebar-section' name='Sidebar'/>
       </aside><!-- /.sidebar -->
     </div><!-- /.row -->
   </div><!-- /.container -->
 </div>
 
 
-<!-- WIDGET 1
-================================================= -->
+<b:comment>
+=================================================
+Widget 1
+================================================= </b:comment>
+
 <div class='widget-1 py-5' id='widget-1'>
   <div class='container'>
-    <b:section class='wg wg-panel wg-panel-orange wg-title-gray-dark wg-md-4 mnb-3' id='widget-1-section'></b:section>
+    <b:section class='wg wg-panel wg-panel-orange wg-title-gray-dark wg-md-4 mnb-3' id='widget-1-section' name='Widget 1'></b:section>
   </div>
 </div>
 
 
-<!-- FOOTER
-================================================= -->
+<b:comment>
+=================================================
+Footer
+================================================= </b:comment>
+
 <footer class='footer py-5' id='footer'>
   <div class='container'>
     <ul class='list-inline'>
@@ -72,12 +185,31 @@
 </footer>
 
 
-<!-- JavaScript
-================================================= -->
-<!--(bake /includes/js.xml)-->
+<b:comment>
+=================================================
+JavaScript
+================================================= </b:comment>
+
+<b:include name='jquery.min.js'/>
+<b:include name='tether.min.js'/>
+<b:include name='bootstrap.min.js'/>
+<b:include name='bootsblogger.min.js'/>
+
+<b:comment>=== Template JavaScript ===</b:comment>
+<script>
+//<![CDATA[
+<!--(bake /script.js)-->
+//]]>
+</script>
 
 
-<!-- Remove Blogger's default JavaScript -->
-&lt;!--</body>--&gt;
-&lt;/body&gt;
-</HTML>
+<b:comment>
+=================================================
+Bootsblogger Core Template
+================================================= </b:comment>
+
+<!--(bake /core/core.xml)-->
+
+
+</body>
+</html>

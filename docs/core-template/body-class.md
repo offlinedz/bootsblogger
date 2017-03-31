@@ -1,51 +1,61 @@
 ---
 layout: docs
 title: Body class
-description: Terdapat kelas pada `<body>`, yang berbeda di setiap tipe halaman.
+description: Terdapat kelas pada `<body>`, yang berbeda-beda berdasarkan tipe halaman.
 group: core-template
 ---
 
-Terdapat kelas pada `<body>`, yang berbeda di setiap tipe halaman.
+Terdapat kelas pada `<body>`, yang berbeda-beda berdasarkan tipe halaman.
 
 {% highlight html %}
-<!-- Menggunakan `ternary selector` -->
-<body expr:class='data:blog.url == data:blog.homepageUrl ? &quot;blog-page-home&quot; : data:blog.pageType == &quot;item&quot; ? &quot;blog-page-item&quot; : data:blog.pageType == &quot;static_page&quot; ? &quot;blog-page-static&quot; : data:blog.searchLabel ? &quot;blog-page-label&quot; : data:blog.searchQuery ? &quot;blog-page-search&quot; : data:blog.pageType == &quot;archive&quot; ? &quot;blog-page-archive&quot; : data:blog.pageType == &quot;error_page&quot; ? &quot;blog-page-error&quot; : &quot;blog-page-default&quot;'>
+<b:class cond='data:view.isHomepage' name='blog-view-home'/>
+<b:class cond='data:view.isPost' name='blog-view-item'/>
+<b:class cond='data:view.isPage' name='blog-view-static'/>
+<b:class cond='data:view.search.label' name='blog-view-search-label'/>
+<b:class cond='data:view.search.query' name='blog-view-search-query'/>
+<b:class cond='data:view.search and !data:view.search.label and !data:view.search.query' name='blog-view-search-default'/>
+<b:class cond='data:view.isArchive' name='blog-view-archive'/>
+<b:class cond='data:view.isError' name='blog-view-error'/>
+<b:class cond='data:view.isPreview' name='blog-view-preview'/>
 {% endhighlight %}
 
 {% highlight html %}
 <!-- Homepage -->
-<body class="blog-page-home">...</body>
+<body class="blog-view-home">...</body>
 
-<!-- Item/single page -->
-<body class="blog-page-item">...</body>
+<!-- Item page -->
+<body class="blog-view-item">...</body>
 
 <!-- Static page -->
-<body class="blog-page-static">...</body>
+<body class="blog-view-static">...</body>
 
-<!-- Label/category page -->
-<body class="blog-page-label">...</body>
+<!-- Search (label) page -->
+<body class="blog-view-search-label">...</body>
 
-<!-- Search results page -->
-<body class="blog-page-search">...</body>
+<!-- Search (query) page -->
+<body class="blog-view-search-query">...</body>
+
+<!-- Search (default) page -->
+<body class="blog-view-search-default">...</body>
 
 <!-- Archive page -->
-<body class="blog-page-archive">...</body>
+<body class="blog-view-archive">...</body>
 
 <!-- Error page -->
-<body class="blog-page-error">...</body>
+<body class="blog-view-error">...</body>
 
-<!-- Default (https://example.blogspot.com/search) -->
-<body class="blog-page-default">...</body>
+<!-- Preview page -->
+<body class="blog-view-preview">...</body>
 {% endhighlight %}
 
 Contoh pemanfaatan:
 
 {% highlight css %}
-.blog-page-item .element {
+.blog-view-item .element {
   background-color: #e07b53;
 }
 
-.blog-page-label .element {
+.blog-view-search-label .element {
   display: none;
 }
 {% endhighlight %}

@@ -1,3 +1,0 @@
-<b:if cond='data:top.showLocation and data:post.location'>
-  <a expr:href='data:post.location.mapsUrl' target='_blank'><data:post.location.name/></a>
-</b:if>

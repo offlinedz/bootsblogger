@@ -9,13 +9,9 @@
     "templateLicense": "MIT",
     "templateLicenseURI": "https://opensource.org/licenses/MIT",
 
-    "social": {
-      "image": "https://example.com/path/to/image.png",
-      "twitterUsernameWebsite": "@username_of_website",
-      "twitterUsernameCreator": "@username_of_content_creator"
-    },
-
     "cdn": {
+      "fontAwesome": "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css",
+      "fontAwesome_hash": "sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN",
       "jquery": "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js",
       "jquery_hash": "sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7",
       "tether": "https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js",

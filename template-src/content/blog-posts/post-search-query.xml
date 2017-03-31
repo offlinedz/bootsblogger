@@ -1,0 +1,10 @@
+<b:loop values='data:posts' var='post'>
+  <article class='post' expr:id='"post-" + data:post.id'>
+    <!-- Test -->
+    <b:if cond='data:post.title'>
+      <h2>
+        <a expr:href='data:post.url'><data:post.title/></a>
+      </h2>
+    </b:if>
+  </article><!-- /.post -->
+</b:loop>

@@ -143,45 +143,50 @@
 
 
 /* ==============================================
-   Page types
+   <body> classes
    ============================================== */
 
 /* Homepage
    ============================================== */
 
-/* .blog-page-home .element {} */
+/* .blog-view-home .element {} */
 
-/* Item/single page
+/* Item page
    ============================================== */
 
-/* .blog-page-item .element {} */
+/* .blog-view-item .element {} */
 
 /* Static page
    ============================================== */
 
-/* .blog-page-static .element {} */
+/* .blog-view-static .element {} */
 
-/* Label/category page
+/* Search (label) page
    ============================================== */
 
-/* .blog-page-label .element {} */
+/* .blog-view-search-label .element {} */
 
-/* Search results page
+/* Search (query) page
    ============================================== */
 
-/* .blog-page-search .element {} */
+/* .blog-view-search-query .element {} */
+
+/* Search (default) page
+   ============================================== */
+
+/* .blog-view-search-default .element {} */
 
 /* Archive page
    ============================================== */
 
-/* .blog-page-archive .element {} */
+/* .blog-view-archive .element {} */
 
 /* Error page
    ============================================== */
 
-/* .blog-page-error .element {} */
+/* .blog-view-error .element {} */
 
-/* Default (https://example.blogspot.com/search)
+/* Preview page
    ============================================== */
 
-/* .blog-page-default .element {} */
+/* .blog-view-preview .element {} */

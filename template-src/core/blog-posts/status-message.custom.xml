@@ -1,0 +1,126 @@
+<b:if cond='data:view.search.label'>
+<script>
+//<![CDATA[
+function labelMsg(json) {
+  'use strict';
+
+  var tr = json.feed.openSearch$totalResults.$t
+
+  if (tr == 1) {
+    document.write(tr + ' post')
+  }
+  if (tr > 1) {
+    document.write(tr + ' posts')
+  }
+}
+//]]>
+</script>
+</b:if>
+
+<b:if cond='data:view.search.query'>
+<script>
+//<![CDATA[
+function searchMsg(json) {
+  'use strict';
+
+  var tr = json.feed.openSearch$totalResults.$t
+
+  if (tr == 1) {
+    document.write(tr + ' result')
+  }
+  if (tr > 1) {
+    document.write(tr + ' results')
+  }
+}
+//]]>
+</script>
+</b:if>
+
+<b:comment>=== Homepage ===</b:comment>
+<b:if cond='data:view.isHomepage and data:numPosts == 0'>
+  <div class='alert alert-warning mb-0' role='alert'>No posts yet.</div>
+</b:if>
+
+<b:comment>=== Search (label) page ===</b:comment>
+<b:if cond='data:view.search.label'>
+  <b:if cond='data:numPosts &gt;= 1'>
+    <div class='alert alert-success' role='alert'>
+      Showing posts with label <strong>&quot;<data:view.search.label/>&quot;</strong> : <script expr:src='&quot;/feeds/posts/summary/-/&quot; + data:view.search.label.jsEscaped + &quot;?max-results=0&amp;alt=json-in-script&amp;callback=labelMsg&quot;'/>
+    </div>
+  <b:else/>
+    <div class='alert alert-warning mb-0' role='alert'>
+      No posts with label <strong>&quot;<data:view.search.label/>&quot;</strong>.
+    </div>
+  </b:if>
+</b:if>
+
+<b:comment>=== Search (query) page ===</b:comment>
+<b:if cond='data:view.search.query'>
+  <b:if cond='data:numPosts &gt;= 1'>
+    <div class='alert alert-success' role='alert'>
+      <i aria-hidden='true' class='fa fa-search-plus'/> Search Results for <strong>&quot;<data:view.search.query/>&quot;</strong> : <script expr:src='&quot;/feeds/posts/summary?q=&quot; + data:view.search.query.jsEscaped + &quot;&amp;alt=json-in-script&amp;callback=searchMsg&quot;'/>
+    </div>
+  <b:else/>
+    <div class='alert alert-warning' role='alert'>
+      <i aria-hidden='true' class='fa fa-search-minus'/> Your search <strong>&quot;<data:view.search.query/>&quot;</strong> did not match any documents.
+    </div>
+  	<b:comment>=== Search form ===</b:comment>
+    <div class='card mb-0'>
+      <div class='card-block'>
+        <form action='/search' method='get' role='search'>
+          <div class='input-group'>
+            <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
+            <label class='sr-only' for='status-message-search-form'>Search</label>
+            <input class='form-control' name='q' placeholder='Search' type='text' id='status-message-search-form'/>
+            <span class='input-group-btn'>
+              <button class='btn btn-secondary' type='submit'>Search</button>
+            </span>
+          </div><!-- /.input-group -->
+        </form>
+      </div>
+      <ul class='list-group list-group-flush'>
+        <li class='list-group-item'>Make sure all words are spelled correctly.</li>
+        <li class='list-group-item'>Try different keywords.</li>
+        <li class='list-group-item'>Try more general keywords.</li>
+        <li class='list-group-item'>Try fewer keywords.</li>
+      </ul>
+    </div>
+  </b:if>
+</b:if>
+
+<b:comment>=== Archive page ===</b:comment>
+<b:if cond='data:view.isArchive'>
+  <b:if cond='data:numPosts &gt;= 1'>
+    <div class='alert alert-success' role='alert'>Archive for <strong><data:blog.pageName/></strong></div>
+  <b:else/>
+    <div class='alert alert-warning mb-0' role='alert'>Not found.</div>
+  </b:if>
+</b:if>
+
+<b:comment>=== Error page ===</b:comment>
+<b:if cond='data:view.isError'>
+  <div class='alert alert-danger' role='alert'>
+    <strong>404: sorry, the page you were looking for in this blog does not exist.</strong>
+  </div>
+  <b:comment>=== Search form ===</b:comment>
+  <div class='card mb-0'>
+    <div class='card-block'>
+      <form action='/search' method='get' role='search'>
+        <div class='input-group'>
+          <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
+          <label class='sr-only' for='status-message-search-form'>Search</label>
+          <input class='form-control' name='q' placeholder='Search' type='text' id='status-message-search-form'/>
+          <span class='input-group-btn'>
+            <button class='btn btn-secondary' type='submit'>Search</button>
+          </span>
+        </div><!-- /.input-group -->
+      </form>
+    </div>
+    <ul class='list-group list-group-flush'>
+      <li class='list-group-item'>Make sure all words are spelled correctly.</li>
+      <li class='list-group-item'>Try different keywords.</li>
+      <li class='list-group-item'>Try more general keywords.</li>
+      <li class='list-group-item'>Try fewer keywords.</li>
+    </ul>
+  </div>
+</b:if>

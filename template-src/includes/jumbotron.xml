@@ -1,9 +1,0 @@
-<b:if cond='data:blog.url == data:blog.homepageUrl'>
-  <div class='jumbotron custom-jumbotron mb-0'>
-    <div class='container'>
-      <h1 class='display-3'><span class='text-color-1'>A</span> <span class='text-color-2'>hackable</span> <span class='text-color-1'>template</span></h1>
-      <p class='lead'>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-      <a class='btn btn-lg btn-jumbotron' href='https://bootsblogger.github.io' role='button'>Getting started</a>
-    </div>
-  </div>
-</b:if>

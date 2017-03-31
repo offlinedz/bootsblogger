@@ -1,7 +1,0 @@
-<b:if cond='data:post.editUrl'>
-  <span expr:class='&quot;item-control &quot; + data:post.adminClass'>
-    <a expr:href='data:post.editUrl' expr:title='data:top.editPostMsg'>
-      <data:top.editPostMsg/>
-    </a>
-  </span>
-</b:if>

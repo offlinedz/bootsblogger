@@ -36,14 +36,25 @@ bootsblogger/
 │   ├── bootstrap/
 │   └── _custom.scss
 └── template-src/
-    ├── includes/
+    ├── content/
+    ├── core/
     ├── config.json
-    ├── style.css
-    └── index.xml
+    ├── index.xml
+    ├── script.js
+    └── style.css
 {% endhighlight %}
 
-Di dalam direktori `scss/` dan `js/` adalah kode sumber untuk CSS dan JavaScript Bootstrap dan Bootsblogger, yang akan dikompilasi ke dalam `template-src/includes/assets`.
+Di dalam direktori `js/` dan `scss/` adalah kode sumber CSS dan JavaScript Bootstrap dan Bootsblogger, yang akan dikompilasi ke dalam `template-src/core/assets`.
 
 Berkas `scss/_custom.scss` digunakan untuk [mengubahsuaikan variabel Sass]({{ site.baseurl }}/getting-started/options/) Bootstrap dan Bootsblogger.
 
-Di dalam direktori `template-src/` adalah kode sumber untuk template, `index.xml` adalah berkas utama template yang akan dikompilasi ke dalam `/dist`. Bootsblogger menggunakan **[grunt-bake](https://github.com/MathiasPaumgarten/grunt-bake)** untuk mengurai template menjadi beberapa bagian, sehingga akan mempermudah proses pembuatan dan pengeditan template, juga memanfaatkan fitur grunt-bake lainnya.
+Di dalam direktori `template-src/` adalah kode sumber template.
+
+- `content/` - digunakan untuk menyimpan berkas-berkas template terpisah, seperti komponen dan lainnya.
+- `core/` - berisi berkas-berkas inti template.
+- `config.json` - berkas konfigurasi template.
+- `index.xml` - berkas yang akan dikompilasi ke dalam `/dist`.
+- `script.js` - template JavaScript.
+- `style.css` - template CSS (`b:skin`).
+
+Bootsblogger menggunakan **[grunt-bake](https://github.com/MathiasPaumgarten/grunt-bake)** untuk mengurai template menjadi beberapa bagian, sehingga akan mempermudah proses pembuatan dan pengeditan template, juga memanfaatkan fitur-fitur grunt-bake lainnya.

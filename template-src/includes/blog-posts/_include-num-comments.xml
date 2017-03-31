@@ -1,7 +1,0 @@
-<b:if cond='data:post.allowComments'>
-  <a expr:href='data:post.url + &quot;#comments&quot;'>
-    <b:if cond='data:post.numComments == 0'>No Comments</b:if>
-    <b:if cond='data:post.numComments == 1'>1 Comment</b:if>
-    <b:if cond='data:post.numComments &gt; 1'><data:post.numComments/> Comments</b:if>
-  </a>
-</b:if>

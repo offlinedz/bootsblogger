@@ -1,0 +1,159 @@
+<b:comment>
+-------------------------------------------------
+Head
+
+- `required-meta-tags`      (Required meta tags)
+- `custom-all-head-content` (Custom all-head-content)
+- `title`                   (Title)
+- `default-tags`            (Default tags)
+- `facebook-tags`           (Facebook tags)
+- `twitter-tags`            (Twitter tags)
+- `layout-mode.css`         (CSS for layout mode)
+------------------------------------------------- </b:comment>
+
+<b:defaultmarkups>
+  <b:defaultmarkup type='Common'>
+    <b:includable id='head.required-meta-tags'>
+  <!--(bake /core/head/head.required-meta-tags.xml)-->
+</b:includable>
+    <b:includable id='head.custom-all-head-content'>
+  <!--(bake /core/head/head.custom-all-head-content.xml)-->
+</b:includable>
+    <b:includable id='head.title'>
+  <!--(bake /core/head/head.title.xml)-->
+</b:includable>
+    <b:includable id='head.default-tags'>
+  <!--(bake /core/head/head.default-tags.xml)-->
+</b:includable>
+    <b:includable id='head.facebook-tags'>
+  <!--(bake /core/head/head.facebook-tags.xml)-->
+</b:includable>
+    <b:includable id='head.twitter-tags'>
+  <!--(bake /core/head/head.twitter-tags.xml)-->
+</b:includable>
+    <b:includable id='head.layout-mode.css'>
+  <b:template-skin>
+    <![CDATA[
+    <!--(bake /core/head/head.layout-mode.css)-->
+    ]]>
+  </b:template-skin>
+</b:includable>
+  </b:defaultmarkup>
+</b:defaultmarkups>
+
+<b:comment>
+-------------------------------------------------
+Blog posts (widget type `Blog`)
+------------------------------------------------- </b:comment>
+
+<b:defaultmarkups>
+  <b:defaultmarkup type='Common'>
+    <b:includable id='status-message.custom' var='post'>
+  <!--(bake /core/blog-posts/status-message.custom.xml)-->
+</b:includable>
+    <b:includable id='posts.custom' var='post'>
+  <!--(bake /core/blog-posts/posts.custom.xml)-->
+</b:includable>
+    <b:includable id='comments.custom' var='post'>
+  <!--(bake /core/blog-posts/comments.custom.xml)-->
+</b:includable>
+    <b:includable id='pager.custom' var='post'>
+  <!--(bake /core/blog-posts/pager.custom.xml)-->
+</b:includable>
+  </b:defaultmarkup>
+</b:defaultmarkups>
+
+<b:comment>
+Unused default inclusions
+  Default inclusions can not be deleted.
+  But, you can close an inclusion (e.g., `<b:includable id='foo'/>`).
+</b:comment>
+
+<b:defaultmarkups>
+  <b:defaultmarkup type='Blog'>
+    <b:includable id='aboutPostAuthor'/>
+    <b:includable id='addComments'/>
+    <b:includable id='commentAuthorAvatar'/>
+    <b:includable id='commentDeleteIcon'/>
+    <b:includable id='commentForm'/>
+    <b:includable id='commentFormIframeSrc'/>
+    <b:includable id='commentItem'/>
+    <b:includable id='commentList'/>
+    <b:includable id='commentPicker'/>
+    <b:includable id='comments'/>
+    <b:includable id='commentsTitle'/>
+    <b:includable id='feedLinks'/>
+    <b:includable id='feedLinksBody'/>
+    <b:includable id='homePageLink'/>
+    <b:includable id='iframeComments'/>
+    <b:includable id='inlineAd'/>
+    <b:includable id='nextPageLink'/>
+    <b:includable id='post'/>
+    <b:includable id='postBody'/>
+    <b:includable id='postBodySnippet'/>
+    <b:includable id='postCommentsAndAd'/>
+    <b:includable id='postCommentsLink'/>
+    <b:includable id='postFooter'/>
+    <b:includable id='postFooterAuthorProfile'/>
+    <b:includable id='postHeader'/>
+    <b:includable id='postJumpLink'/>
+    <b:includable id='postMeta'/>
+    <b:includable id='postPagination'/>
+    <b:includable id='postTitle'/>
+    <b:includable id='previousPageLink'/>
+    <b:includable id='status-message'/>
+    <b:includable id='threadedCommentForm'/>
+    <b:includable id='threadedCommentJs'/>
+    <b:includable id='threadedComments'/>
+  </b:defaultmarkup>
+</b:defaultmarkups>
+
+<b:comment>
+-------------------------------------------------
+Assets
+------------------------------------------------- </b:comment>
+
+<b:defaultmarkups>
+  <b:defaultmarkup type='Common'>
+    <b:includable id='bootsblogger.min.css'>
+      <style>
+        <!--(bake /core/assets/bootsblogger/css/bootsblogger.min.css)-->
+      </style>
+    </b:includable>
+    <b:includable id='bootsblogger.min.js'>
+      <script>
+        //<![CDATA[
+        <!--(bake /core/assets/bootsblogger/js/bootsblogger.min.js)-->
+        //]]>
+      </script>
+    </b:includable>
+    <b:includable id='bootsblogger-json.min.js'>
+      <script>
+        //<![CDATA[
+        <!--(bake /core/assets/bootsblogger/js/bootsblogger-json.min.js)-->
+        //]]>
+      </script>
+    </b:includable>
+    <b:includable id='bootstrap.min.css'>
+      <style>
+        <!--(bake /core/assets/bootstrap/css/bootstrap.min.css)-->
+      </style>
+    </b:includable>
+    <b:includable id='bootstrap.min.js'>
+      <script>
+        //<![CDATA[
+        <!--(bake /core/assets/bootstrap/js/bootstrap.min.js)-->
+        //]]>
+      </script>
+    </b:includable>
+    <b:includable id='font-awesome.min.css'>
+      <link crossorigin='anonymous' href='{{ blog.cdn.fontAwesome }}' integrity='{{ blog.cdn.fontAwesome_hash }}' rel='stylesheet'/>
+    </b:includable>
+    <b:includable id='jquery.min.js'>
+      <script crossorigin='anonymous' integrity='{{ blog.cdn.jquery_hash }}' src='{{ blog.cdn.jquery }}'/>
+    </b:includable>
+    <b:includable id='tether.min.js'>
+      <script crossorigin='anonymous' integrity='{{ blog.cdn.tether_hash }}' src='{{ blog.cdn.tether }}'/>
+    </b:includable>
+  </b:defaultmarkup>
+</b:defaultmarkups>

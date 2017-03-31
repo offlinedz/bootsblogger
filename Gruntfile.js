@@ -25,7 +25,7 @@ module.exports = function(grunt) {
 
     clean: {
       dist: 'dist',
-      templateAssets: ['template-src/includes/assets/bootstrap', 'template-src/includes/assets/bootsblogger'],
+      templateAssets: ['template-src/core/assets/bootstrap', 'template-src/core/assets/bootsblogger'],
       docs: ['docs/assets/bootstrap', 'docs/assets/bootsblogger']
     },
 
@@ -56,12 +56,12 @@ module.exports = function(grunt) {
       },
       bootstrap: {
         files: {
-          'template-src/includes/assets/bootstrap/css/bootstrap.css': 'scss/bootstrap/bootstrap.scss'
+          'template-src/core/assets/bootstrap/css/bootstrap.css': 'scss/bootstrap/bootstrap.scss'
         }
       },
       bootsblogger: {
         files: {
-          'template-src/includes/assets/bootsblogger/css/bootsblogger.css': 'scss/bootsblogger/bootsblogger.scss'
+          'template-src/core/assets/bootsblogger/css/bootsblogger.css': 'scss/bootsblogger/bootsblogger.scss'
         }
       },
       docs: {
@@ -81,18 +81,18 @@ module.exports = function(grunt) {
       bootstrap: {
         files: [{
           expand: true,
-          cwd: 'template-src/includes/assets/bootstrap/css',
+          cwd: 'template-src/core/assets/bootstrap/css',
           src: ['*.css', '!*.min.css'],
-          dest: 'template-src/includes/assets/bootstrap/css',
+          dest: 'template-src/core/assets/bootstrap/css',
           ext: '.min.css'
         }]
       },
       bootsblogger: {
         files: [{
           expand: true,
-          cwd: 'template-src/includes/assets/bootsblogger/css',
+          cwd: 'template-src/core/assets/bootsblogger/css',
           src: ['*.css', '!*.min.css'],
-          dest: 'template-src/includes/assets/bootsblogger/css',
+          dest: 'template-src/core/assets/bootsblogger/css',
           ext: '.min.css'
         }]
       },
@@ -150,10 +150,10 @@ module.exports = function(grunt) {
         ]
       },
       bootstrap: {
-        src: 'template-src/includes/assets/bootstrap/css/*.css'
+        src: 'template-src/core/assets/bootstrap/css/*.css'
       },
       bootsblogger: {
-        src: 'template-src/includes/assets/bootsblogger/css/*.css'
+        src: 'template-src/core/assets/bootsblogger/css/*.css'
       },
       docs: {
         src: 'docs/assets/css/*.css'
@@ -177,7 +177,7 @@ module.exports = function(grunt) {
         src: [
           'js/bootsblogger/comments.js'
         ],
-        dest: 'template-src/includes/assets/bootsblogger/js/bootsblogger.js'
+        dest: 'template-src/core/assets/bootsblogger/js/bootsblogger.js'
       },
       bootsbloggerJSON: {
         src: [
@@ -188,7 +188,7 @@ module.exports = function(grunt) {
           'js/bootsblogger/json/labels-custom.js',
           'js/bootsblogger/json/labels-select.js'
         ],
-        dest: 'template-src/includes/assets/bootsblogger/js/bootsblogger-json.js'
+        dest: 'template-src/core/assets/bootsblogger/js/bootsblogger-json.js'
       },
       docs: {
         src: [
@@ -230,11 +230,11 @@ module.exports = function(grunt) {
       },
       bootsblogger: {
         src: '<%= concat.bootsblogger.dest %>',
-        dest: 'template-src/includes/assets/bootsblogger/js/bootsblogger.min.js'
+        dest: 'template-src/core/assets/bootsblogger/js/bootsblogger.min.js'
       },
       bootsbloggerJSON: {
         src: '<%= concat.bootsbloggerJSON.dest %>',
-        dest: 'template-src/includes/assets/bootsblogger/js/bootsblogger-json.min.js'
+        dest: 'template-src/core/assets/bootsblogger/js/bootsblogger-json.min.js'
       },
       docs: {
         src: '<%= concat.docs.dest %>',
@@ -320,11 +320,11 @@ module.exports = function(grunt) {
         expand: true,
         cwd: 'js/bootstrap/',
         src: 'js/*',
-        dest: 'template-src/includes/assets/bootstrap/'
+        dest: 'template-src/core/assets/bootstrap/'
       },
       docs: {
         expand: true,
-        cwd: 'template-src/includes/assets/',
+        cwd: 'template-src/core/assets/',
         src: [
           'bootstrap/**/*',
           'bootsblogger/**/*'

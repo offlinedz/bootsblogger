@@ -22,7 +22,7 @@ Gunakan fitur code folding yang ada pada template editor Blogger, agar kode temp
 
 ### Code indentation
 
-Selalu perhatikan indentasi kode, agar kode lebih mudah dibaca dan dipahami. Atur indentasi menggunakan dua spasi.
+Selalu perhatikan indentasi kode, agar kode lebih mudah dibaca dan dipahami. Atur indentasi menggunakan `2` spasi.
 
 ## Working with template source files
 
@@ -30,29 +30,11 @@ Untuk dapat membangun template di dalam kode sumber, Anda harus memahami dasar-d
 
 ### Directory structure
 
-{% highlight plaintext %}
-bootsblogger/
-└── template-src/
-    ├── includes/
-    │   ├── assets
-    │   ├── blog-posts
-    │   └── head
-    ├── config.json
-    ├── style.css
-    └── index.xml
-{% endhighlight %}
+Lihat [Bootsblogger source code]({{ site.baseurl }}/getting-started/contents/#bootsblogger-source-code)
 
-| `/includes` | Wadah untuk berkas template terpisah. |
-| `/includes/assets` | Aset template. |
-| `/includes/blog-posts` | Bagian-bagian widget blog posting. |
-| `/includes/head` | Bagian-bagian yang ada di dalam `<head>`. |
-| `/config.json` | Berkas konfigurasi template. |
-| `/style.css` | *Main CSS*. |
-| `/index.xml` | Berkas utama template yang akan dikompilasi ke dalam `/dist`. |
+**Catatan:** Anda dapat membuat direktori dan/atau berkas baru sesuai dengan kebutuhan Anda, disarankan disimpan di dalam `template-src/content/`.
 
-**Catatan:** Anda dapat membuat direktori dan/atau berkas baru sesuai dengan kebutuhan Anda, disarankan disimpan di dalam `/includes`.
-
-### Include
+### Inclusions
 
 Menyertakan berkas template terpisah:
 
@@ -64,10 +46,10 @@ Menyertakan berkas template terpisah:
 <!--(bake /path/to/file)-->
 {% endhighlight %}
 
-Contoh menyertakan berkas `/includes/blog-posts/blog-posts.xml`:
+Contoh menyertakan berkas `/content/navbar.xml`:
 
 {% highlight html %}
-<!--(bake /includes/blog-posts/blog-posts.xml)-->
+<!--(bake /content/navbar.xml)-->
 {% endhighlight %}
 
 Contoh menyertakan berkas `/style.css`:

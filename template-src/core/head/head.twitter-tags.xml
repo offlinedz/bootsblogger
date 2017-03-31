@@ -1,0 +1,93 @@
+<b:if cond='data:view.isHomepage'>
+  <meta content='summary_large_image' name='twitter:card'/>
+<b:else/>
+  <meta content='summary' name='twitter:card'/>
+</b:if>
+
+<meta expr:content='data:twitterUsernameWebsite' name='twitter:site'/>
+<meta expr:content='data:twitterUsernameCreator' name='twitter:creator'/>
+
+<b:if cond='!data:view.isError'>
+  <meta expr:content='data:blog.canonicalUrl' name='twitter:url'/>
+</b:if>
+<b:if cond='data:view.isError'>
+  <meta expr:content='data:blog.homepageUrl + &quot;404&quot;' name='twitter:url'/>
+</b:if>
+
+<b:comment>=== Homepage ===</b:comment>
+<b:if cond='data:view.isHomepage'>
+  <meta expr:content='data:blog.title' name='twitter:title'/>
+  <b:if cond='data:blog.metaDescription'>
+    <meta expr:content='data:blog.metaDescription' name='twitter:description'/>
+  <b:else/>
+    <meta expr:content='data:blog.title' name='twitter:description'/>
+  </b:if>
+  <meta expr:content='data:image' property='twitter:image'/>
+</b:if>
+
+<b:comment>=== Item page ===</b:comment>
+<b:if cond='data:view.isPost'>
+  <meta expr:content='data:blog.pageName + &quot; | &quot; + data:blog.title' name='twitter:title'/>
+  <b:if cond='data:blog.metaDescription'>
+    <meta expr:content='data:blog.metaDescription' name='twitter:description'/>
+  <b:else/>
+    <meta expr:content='data:blog.pageName' name='twitter:description'/>
+  </b:if>
+  <b:if cond='data:blog.postImageUrl'><!-- Original size -->
+    <meta expr:content='data:blog.postImageUrl' property='twitter:image'/>
+  <b:elseif cond='data:blog.postImageThumbnailUrl'/><!-- 72 x 72 -->
+    <meta expr:content='data:blog.postThumbnailUrl' property='twitter:image'/>
+  <b:else/><!-- No image -->
+    <meta expr:content='&quot;https://placehold.it/512/eee/777?text=&quot; + data:blog.title' property='twitter:image'/>
+  </b:if>
+</b:if>
+
+<b:comment>=== Static page ===</b:comment>
+<b:if cond='data:view.isPage'>
+  <meta expr:content='data:blog.pageName + &quot; | &quot; + data:blog.title' name='twitter:title'/>
+  <b:if cond='data:blog.metaDescription'>
+    <meta expr:content='data:blog.metaDescription' name='twitter:description'/>
+  <b:else/>
+    <meta expr:content='data:blog.pageName' name='twitter:description'/>
+  </b:if>
+  <meta expr:content='&quot;https://placehold.it/512/eee/777?text=&quot; + data:blog.title' property='twitter:image'/>
+</b:if>
+
+<b:comment>=== Search (label) page ===</b:comment>
+<b:if cond='data:view.search.label'>
+  <meta expr:content='data:blog.pageName + &quot; | &quot; + data:blog.title' name='twitter:title'/>
+  <meta expr:content='&quot;Showing posts with label *&quot; + data:blog.pageName + &quot;*.&quot;' name='twitter:description'/>
+  <meta expr:content='&quot;https://placehold.it/512/eee/777?text=&quot; + data:blog.pageName' property='twitter:image'/>
+</b:if>
+
+<b:comment>=== Search (query) page ===</b:comment>
+<b:if cond='data:view.search.query'>
+  <meta expr:content='&quot;Search Results for *&quot; + data:blog.searchQuery + &quot;* | &quot; + data:blog.title' name='twitter:title'/>
+  <meta expr:content='&quot;Search Results for *&quot; + data:blog.searchQuery + &quot;*.&quot;' name='twitter:description'/>
+  <meta content='https://placehold.it/512/eee/777?text=Search+Results' property='twitter:image'/>
+</b:if>
+
+<b:comment>=== Search (default) page ===</b:comment>
+<b:if cond='data:view.search and !data:view.search.label and !data:view.search.query'>
+  <meta expr:content='data:blog.title' name='twitter:title'/>
+  <b:if cond='data:blog.metaDescription'>
+    <meta expr:content='data:blog.metaDescription' name='twitter:description'/>
+  <b:else/>
+    <meta expr:content='data:blog.title' name='twitter:description'/>
+  </b:if>
+  <meta expr:content='data:image' property='twitter:image'/>
+</b:if>
+
+<b:comment>=== Archive page ===</b:comment>
+<b:if cond='data:view.isArchive'>
+  <meta expr:content='&quot;Archive for &quot; + data:blog.pageName + &quot; | &quot; + data:blog.title' name='twitter:title'/>
+  <meta expr:content='&quot;Archive for &quot; + data:blog.pageName + &quot;.&quot;' name='twitter:description'/>
+  <meta expr:content='&quot;https://placehold.it/512/eee/777?text=&quot; + data:blog.pageName' property='twitter:image'/>
+</b:if>
+
+<b:comment>=== Error page ===</b:comment>
+<b:if cond='data:view.isError'>
+  <meta content='Page Not Found' name='twitter:title'/>
+  <meta content='404: sorry, the page you were looking for in this blog does not exist.' name='twitter:description'/>
+  <meta content='https://placehold.it/512/eee/777?text=404' property='twitter:image'/>
+</b:if>
