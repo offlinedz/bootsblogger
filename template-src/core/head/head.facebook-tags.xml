@@ -1,4 +1,4 @@
-<b:if cond='data:blog.pageType in [&quot;item&quot;, &quot;static_page&quot;]'>
+<b:if cond='data:view.type == &quot;item&quot;'>
   <meta content='article' property='og:type'/>
 <b:else/>
   <meta content='website' property='og:type'/>
