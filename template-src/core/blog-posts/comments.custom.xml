@@ -1,14 +1,15 @@
+<b:loop values='data:posts' var='post'>
 <b:if cond='data:post.allowComments'>
 
-  <div class='comments p-3 mb-3' id='comments'>
+  <div class='comments my-4' id='comments'>
 
     <!-- Heading -->
-    <h1 class='comments-title h2 m-0'>
-      <i aria-hidden='true' class='fa fa-comments-o'/> Comments <span class='text-nowrap'><small><data:post.numComments/></small> <b:if cond='data:post.allowNewComments'><a class='js-comment-action' href='#comment-form-container-original' onclick='javascript:reply(&quot;cancel&quot;);' role='button' title='Add comment'><i aria-hidden='true' class='fa fa-plus-circle'/></a></b:if></span>
+    <h1 class='comments-title mb-0'>
+      <i aria-hidden='true' class='fa fa-comments-o'/> Comments <span class='text-nowrap'><small><data:post.numberOfComments/></small></span>
     </h1>
 
     <!-- No comments -->
-    <b:if cond='data:post.numComments == 0 and data:post.allowNewComments'>
+    <b:if cond='data:post.numberOfComments == 0 and data:post.allowNewComments'>
       <div class='alert alert-info mt-4 mb-0' role='alert'>Be the first to comment.</div>
     </b:if>
 
@@ -19,258 +20,276 @@
       </div>
     </b:if>
 
-    <!-- Pagination -->
-    <b:if cond='data:post.commentPagingRequired'>
-      <div class='mt-4'>
-        <div class='text-center'>
-          <div class='btn-group'>
-            <a class='btn btn-secondary' expr:href='data:post.oldestLinkUrl' role='button'><data:post.oldestLinkText/></a>
-            <a class='btn btn-secondary' expr:href='data:post.olderLinkUrl' role='button'><data:post.olderLinkText/></a>
-          </div>
-          <span class='badge badge-default badge-pill'><data:post.commentRangeText/></span>
-          <div class='btn-group'>
-            <a class='btn btn-secondary' expr:href='data:post.newerLinkUrl' role='button'><data:post.newerLinkText/></a>
-            <a class='btn btn-secondary' expr:href='data:post.newestLinkUrl' role='button'><data:post.newestLinkText/></a>
-          </div>
-        </div>
-      </div>
-    </b:if>
-
-    <b:loop values='data:post.comments' var='comment'>
-      <b:if cond='!data:comment.inReplyTo'>
-
-        <!-- Parent -->
-
-        <div class='media comment-parent mt-4' expr:id='data:comment.anchorName'>
-
-          <div class='d-flex mr-3 comment-avatar'>
-            <b:if cond='data:blog.enabledCommentProfileImages'>
-              <data:comment.authorAvatarImage/>
-            </b:if>
-          </div>
-
-          <div class='media-body'>
-            <!-- Header -->
-            <div class='comment-header'>
-              <div class='clearfix'>
-                <div class='float-left'>
-                  <ul class='list-inline mb-0'>
-                    <b:if cond='data:comment.authorUrl'>
-                      <li class='list-inline-item'><a class='comment-name comment-name-link' expr:href='data:comment.authorUrl'><data:comment.author/></a></li>
-                    <b:else/>
-                      <li class='list-inline-item'><span class='comment-name'><data:comment.author/></span></li>
-                    </b:if>
-                    <b:if cond='data:comment.author == data:post.author'>
-                      <li class='list-inline-item'><span class='badge badge-default comment-mod'>MOD</span></li>
-                    </b:if>
-                  </ul>
-                </div>
-                <div class='float-right'>
-                  <div class='dropdown'>
-                    <a class='comment-dropdown p-1' data-toggle='dropdown' href='#'><i aria-hidden='true' class='fa fa-ellipsis-v comment-dropdown-icon'/></a>
-                    <div class='dropdown-menu dropdown-menu-right'>
-                      <b:if cond='!data:comment.isDeleted'>
-                        <a class='dropdown-item' expr:href='&quot;http://www.blogger.com/delete-comment.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;postID=&quot; + data:comment.id'><i aria-hidden='true' class='fa fa-trash'/> Delete</a>
-                      <b:else/>
-                        <a class='dropdown-item' expr:href='&quot;http://www.blogger.com/delete-comment.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;postID=&quot; + data:comment.id'><i aria-hidden='true' class='fa fa-trash'/> Remove forever</a>
-                      </b:if>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class='clearfix'>
-                <ul class='list-inline mb-0'>
-                  <li class='list-inline-item'><a class='comment-permalink' data-placement='top' data-toggle='tooltip' expr:href='data:comment.url' title='Permalink'>#</a> <span class='comment-timestamp'><data:comment.timestamp/></span></li>
-                </ul>
-              </div>
-            </div>
-            <!-- Content -->
-            <div class='comment-content mt-3'>
-              <b:if cond='data:comment.isDeleted'>
-                <div class='alert alert-danger mb-0' role='alert'>
-                  <a class='close' data-placement='top' data-toggle='tooltip' expr:href='&quot;http://www.blogger.com/delete-comment.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;postID=&quot; + data:comment.id' title='Remove forever'><i aria-hidden='true' class='fa fa-remove'/></a>
-                  <data:comment.body/>
-                </div>
-              <b:else/>
-                <div class='comment-body'>
-                  <data:comment.body/>
-                </div>
-              </b:if>
-            </div>
-            <!-- Footer -->
-            <b:if cond='!data:comment.isDeleted and data:post.allowNewComments'>
-              <div class='comment-footer mt-3'>
-                <ul class='list-inline mb-0'>
-                  <li class='list-inline-item'>
-                    <a class='comment-reply js-comment-action' expr:href='&quot;#comment-form-container-reply-&quot; + data:comment.id' expr:onclick='&quot;javascript:reply(&amp;quot;&quot; + data:comment.id + &quot;&amp;quot;);&quot;'><i aria-hidden='true' class='fa fa-reply'/> Reply</a>
-                  </li>
-                </ul>
-              </div>
-            </b:if>
-
-            <!-- Reply form -->
-            <b:if cond='!data:comment.isDeleted and data:post.allowNewComments'>
-              <div class='comment-form-container-reply' expr:id='&quot;comment-form-container-reply-&quot; + data:comment.id'>
-                <div class='comment-cancel-wrapper mt-3 mb-3'>
-                  <a class='btn btn-sm btn-danger js-comment-action' expr:href='&quot;#comment-form-container-reply-&quot; + data:comment.id' onclick='javascript:reply(&quot;cancel&quot;);' role='button'>Cancel reply</a>
-                </div>
-              </div>
-            </b:if>
-
-            <!-- Children -->
-
-            <b:loop values='data:post.comments' var='replies'>
-              <b:if cond='data:replies.inReplyTo == data:comment.id'>
-
-                <div class='media comment-children mt-4' expr:id='data:replies.anchorName'>
-
-                  <div class='d-flex mr-3 comment-avatar'>
-                    <b:if cond='data:blog.enabledCommentProfileImages'>
-                      <data:replies.authorAvatarImage/>
-                    </b:if>
-                  </div>
-
-                  <div class='media-body'>
-                    <!-- Header -->
-                    <div class='comment-header'>
-                      <div class='clearfix'>
-                        <div class='float-left'>
-                          <ul class='list-inline mb-0'>
-                            <b:if cond='data:replies.authorUrl'>
-                              <li class='list-inline-item'><a class='comment-name comment-name-link' expr:href='data:replies.authorUrl'><data:replies.author/></a></li>
-                            <b:else/>
-                              <li class='list-inline-item'><span class='comment-name'><data:replies.author/></span></li>
-                            </b:if>
-                            <b:if cond='data:replies.author == data:post.author'>
-                              <li class='list-inline-item'><span class='badge badge-default comment-mod'>MOD</span></li>
-                            </b:if>
-                          </ul>
-                        </div>
-                        <div class='float-right'>
-                          <div class='dropdown'>
-                            <a class='comment-dropdown p-1' data-toggle='dropdown' href='#'><i aria-hidden='true' class='fa fa-ellipsis-v comment-dropdown-icon'/></a>
-                            <div class='dropdown-menu dropdown-menu-right'>
-                              <b:if cond='!data:replies.isDeleted'>
-                                <a class='dropdown-item' expr:href='&quot;http://www.blogger.com/delete-comment.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;postID=&quot; + data:replies.id'><i aria-hidden='true' class='fa fa-trash'/> Delete</a>
-                              <b:else/>
-                                <a class='dropdown-item' expr:href='&quot;http://www.blogger.com/delete-comment.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;postID=&quot; + data:replies.id'><i aria-hidden='true' class='fa fa-trash'/> Remove forever</a>
-                              </b:if>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class='clearfix'>
-                        <ul class='list-inline mb-0'>
-                          <li class='list-inline-item'><a class='comment-permalink' data-placement='top' data-toggle='tooltip' expr:href='data:replies.url' title='Permalink'>#</a> <span class='comment-timestamp'><data:replies.timestamp/></span></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <!-- Content -->
-                    <div class='comment-content mt-3'>
-                      <b:if cond='data:replies.isDeleted'>
-                        <div class='alert alert-danger mb-0' role='alert'>
-                          <a class='close' data-placement='top' data-toggle='tooltip' expr:href='&quot;http://www.blogger.com/delete-comment.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;postID=&quot; + data:replies.id' title='Remove forever'><i aria-hidden='true' class='fa fa-remove'/></a>
-                          <data:replies.body/>
-                        </div>
-                      <b:else/>
-                        <div class='comment-body'>
-                          <data:replies.body/>
-                        </div>
-                      </b:if>
-                    </div>
-                  </div><!-- /.media-body children -->
-                </div><!-- /.media children -->
-              </b:if><!-- / replies.inReplyTo -->
-            </b:loop>
-            <!-- Replies END -->
-
-          </div><!-- /.media-body parent -->
-        </div><!-- /.media parent -->
-      </b:if><!-- / !comment.inReplyTo -->
-    </b:loop>
-
-    <!-- Pagination -->
-    <b:if cond='data:post.commentPagingRequired'>
-      <div class='mt-4'>
-        <div class='text-center'>
-          <div class='btn-group'>
-            <a class='btn btn-secondary' expr:href='data:post.oldestLinkUrl' role='button'><data:post.oldestLinkText/></a>
-            <a class='btn btn-secondary' expr:href='data:post.olderLinkUrl' role='button'><data:post.olderLinkText/></a>
-          </div>
-          <span class='badge badge-default badge-pill'><data:post.commentRangeText/></span>
-          <div class='btn-group'>
-            <a class='btn btn-secondary' expr:href='data:post.newerLinkUrl' role='button'><data:post.newerLinkText/></a>
-            <a class='btn btn-secondary' expr:href='data:post.newestLinkUrl' role='button'><data:post.newestLinkText/></a>
-          </div>
-        </div>
-      </div>
-    </b:if>
-
     <!-- Comment form -->
     <b:if cond='data:post.allowNewComments'>
       <div class='comment-form-container-original mt-4 active' id='comment-form-container-original'>
 
         <div class='comment-add-wrapper'>
-          <a class='btn btn-block btn-success js-comment-action' href='#comment-form-container-original' onclick='javascript:reply(&quot;cancel&quot;);' role='button'><i aria-hidden='true' class='fa fa-comment'/> Add comment</a>
+          <a class='btn btn-block btn-success js-comment-action' href='#comment-form-container-original' onclick='javascript:reply(&quot;cancel&quot;);' role='button'><i aria-hidden='true' class='fa fa-comment fa-fw'/> Add comment</a>
         </div>
 
-        <div class='card card-block comment-form comment-form-loading p-2' id='comment-form'>
-          <data:blogTeamBlogMessage/>
-          <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
-          <!-- Comment form loading icon -->
-          <i aria-hidden='true' class='fa fa-spinner fa-pulse fa-3x fa-fw comment-form-loading-icon mx-auto'/>
-          <!-- Comment form message -->
-          <div class='card card-block comment-form-message comment-form-loading-hidden mb-2'>
-            <h2 class='card-title h4'><data:postCommentMsg/></h2>
-            <b:if cond='data:blogCommentMessage'>
-              <p class='card-text mb-0'><data:blogCommentMessage/></p>
-            </b:if>
+        <div class='comment-form js-comment-form-loading' id='comment-form'>
+          <!-- Comment form loading -->
+          <div class='comment-form-loading card card-block loading-show'>
+            <i aria-hidden='true' class='d-block mx-auto comment-text-muted fa fa-cog fa-spin fa-3x fa-fw'/>
+            <span class="sr-only">Loading...</span>
           </div>
-          <!-- Comment form editor and comment form helper -->
-          <div class='card comment-form-loading-hidden'>
-            <div class='card-header'>
-              <ul class='nav nav-tabs card-header-tabs float-left' role='tablist'>
-                <li class='nav-item'>
-                  <a class='nav-link active' data-toggle='tab' href='#tab-comment-editor' role='tab'>Comment Form</a>
+          <!-- Comment form editor -->
+          <div class='comment-form-editor card loading-hide'>
+            <div class='card-block'>
+              <a expr:href='data:post.commentFormIframeSrc + &quot;&amp;skin=emporio&quot;' id='comment-editor-src'/>
+              <iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' data-resized='true' frameborder='0' expr:height='data:cmtIframeInitialHeight' id='comment-editor' name='comment-editor' width='100%'/>
+              <data:post.friendConnectJs/>
+              <data:post.cmtfpIframe/>
+              <script>BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;, &#39;<data:post.communityId/>&#39;);</script>
+            </div>
+            <div class='card-footer'>
+              <ul class='list-inline mb-0'>
+                <li class='list-inline-item'>
+                  <a class='comment-text-muted-link' href='#'>
+                    <i aria-hidden='true' class='fa fa-smile-o fa-lg'/>
+                  </a>
                 </li>
-                <li class='nav-item dropdown'>
-                  <a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='false'>Help</a>
-                  <div class='dropdown-menu'>
-                    <a class='dropdown-item' data-toggle='tab' href='#tab-comment-html' role='tab'>Supported HTML</a>
-                    <a class='dropdown-item' data-toggle='tab' href='#tab-comment-emo' role='tab'>Emoticons</a>
-                    <a class='dropdown-item' data-toggle='tab' href='#tab-comment-converter' role='tab'>HTML Converter</a>
-                  </div>
+                <li class='list-inline-item float-right comment-add-wrapper'>
+                  <a class='comment-text-muted-link js-comment-action' href='javascript:void(0)' onclick='javascript:reply(&quot;cancel&quot;);' role='button' title='Cancel reply'>
+                    <i aria-hidden='true' class='fa fa-times-circle fa-lg'/>
+                  </a>
                 </li>
               </ul>
             </div>
-            <div class='tab-content'>
-              <div class='card-block tab-pane p-1 active' id='tab-comment-editor' role='tabpanel'>
-                <iframe class='blogger-iframe-colorize blogger-comment-from-post comment-form-editor' id='comment-editor' name='comment-editor'/>
-                <data:post.friendConnectJs/>
-                <data:post.cmtfpIframe/>
-                <script>BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;, &#39;<data:post.communityId/>&#39;);</script>
+          </div><!-- /.comment-form-editor -->
+        </div><!-- /.comment-form -->
+      </div><!-- /.comment-form-container-original -->
+    </b:if>
+
+    <!-- Pagination -->
+    <b:if cond='data:post.commentPagingRequired'>
+      <div class='mt-4'>
+        <div class='d-flex flex-wrap flex-column flex-sm-row align-items-stretch align-items-sm-center justify-content-sm-center'>
+          <div class='btn-group'>
+            <a class='btn btn-secondary w-100' expr:href='data:post.oldestLinkUrl' role='button'><data:post.oldestLinkText/></a>
+            <a class='btn btn-secondary w-100' expr:href='data:post.olderLinkUrl' role='button'><data:post.olderLinkText/></a>
+          </div>
+          <span class='mx-0 mx-sm-3 my-3 my-sm-0 text-center'>
+            <span class='badge badge-default badge-pill'><data:post.commentRangeText/></span>
+          </span>
+          <div class='btn-group'>
+            <a class='btn btn-secondary w-100' expr:href='data:post.newerLinkUrl' role='button'><data:post.newerLinkText/></a>
+            <a class='btn btn-secondary w-100' expr:href='data:post.newestLinkUrl' role='button'><data:post.newestLinkText/></a>
+          </div>
+        </div>
+      </div>
+    </b:if>
+
+    <ol class='comment-list-parent list-unstyled mb-0'>
+      <b:loop values='data:post.comments' var='comment'>
+        <b:if cond='!data:comment.inReplyTo'>
+
+          <li class='comment-list-parent-item mt-4' expr:id='data:comment.anchorName'>
+            <div class='media media-parent'>
+              <div class='d-flex mr-3'>
+                <b:if cond='data:comment.authorPhoto'>
+                  <img class='comment-avatar comment-avatar-parent' expr:height='data:comment.authorPhoto.thumbHeight' expr:src='data:comment.authorPhoto.thumbUrl' expr:width='data:comment.authorPhoto.thumbWidth'/>
+                <b:else/>
+                  <img class='comment-avatar comment-avatar-parent comment-avatar-no-photo' src='https://placehold.it/50/777/eee?text=?'/>
+                </b:if>
               </div>
-              <div class='card-block tab-pane' id='tab-comment-html' role='tabpanel'>
-                <table class='table table-sm table-bordered mb-0'>
-                  <tbody>
-                    <tr>
-                      <td>Lorem</td>
-                      <td>Ipsum</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class='card-block tab-pane' id='tab-comment-emo' role='tabpanel'>
-                <p class='mb-0'>:)</p>
-              </div>
-              <div class='card-block tab-pane' id='tab-comment-converter' role='tabpanel'>
-                <textarea class='form-control js-comment-convert-textarea' style='height: 200px;'></textarea>
-                <div class='text-center mt-3'>
-                  <button type='button' class='btn btn-sm btn-primary js-comment-convert-btn'>Convert</button>
-                  <button type='button' class='btn btn-sm btn-danger js-comment-convert-btn-clear' style='display: none;'>Clear</button>
+
+              <div class='media-body'>
+                <!-- Header -->
+                <div class='comment-header'>
+                  <div class='clearfix'>
+                    <div class='float-left'>
+                      <ul class='list-inline mb-0'>
+                        <b:if cond='data:comment.authorUrl'>
+                          <li class='list-inline-item'>
+                            <a class='comment-name comment-name-link' expr:href='data:comment.authorUrl'>
+                              <data:comment.author/>
+                            </a>
+                          </li>
+                        <b:else/>
+                          <li class='list-inline-item'>
+                            <span class='comment-name'><data:comment.author/></span>
+                          </li>
+                        </b:if>
+                        <b:if cond='data:comment.author == data:post.author.name'>
+                          <li class='list-inline-item'>
+                            <span class='badge badge-default comment-mod'>MOD</span>
+                          </li>
+                        </b:if>
+                      </ul>
+                    </div>
+                    <div class='float-right'>
+                      <div class='dropdown'>
+                        <a class='comment-text-muted-link' data-toggle='dropdown' href='#'>
+                          <i aria-hidden='true' class='fa fa-ellipsis-v fa-lg'/>
+                        </a>
+                        <div class='dropdown-menu dropdown-menu-right'>
+                          <b:if cond='!data:comment.isDeleted'>
+                            <a class='dropdown-item' expr:href='data:comment.deleteUrl'>
+                              <i aria-hidden='true' class='fa fa-trash-o fa-fw'/> Delete
+                            </a>
+                          <b:else/>
+                            <a class='dropdown-item' expr:href='data:comment.deleteUrl'>
+                              <i aria-hidden='true' class='fa fa-trash-o fa-fw'/> Remove forever
+                            </a>
+                          </b:if>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class='clearfix'>
+                    <ul class='list-inline mb-0'>
+                      <li class='list-inline-item'>
+                        <a class='comment-permalink' data-placement='top' data-toggle='tooltip' expr:href='data:comment.url' title='Permalink'>#</a>
+                        <span class='comment-timestamp'><data:comment.timestamp/></span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-              </div>
-            </div>
+                <!-- Content -->
+                <div class='comment-content mt-3'>
+                  <b:if cond='data:comment.isDeleted'>
+                    <div class='alert alert-danger mb-0' role='alert'>
+                      <a class='close' data-placement='top' data-toggle='tooltip' expr:href='data:comment.deleteUrl' title='Remove forever'>
+                        <i aria-hidden='true' class='fa fa-remove'/>
+                      </a>
+                      <data:comment.body/>
+                    </div>
+                  <b:else/>
+                    <div class='comment-body'>
+                      <data:comment.body/>
+                    </div>
+                  </b:if>
+                </div>
+                <!-- Footer -->
+                <b:if cond='!data:comment.isDeleted and data:post.allowNewComments'>
+                  <div class='comment-footer mt-3'>
+                    <ul class='list-inline mb-0'>
+                      <li class='list-inline-item'>
+                        <a class='comment-reply js-comment-action' expr:href='&quot;#comment-form-container-reply-&quot; + data:comment.id' expr:onclick='&quot;javascript:reply(&amp;quot;&quot; + data:comment.id + &quot;&amp;quot;);&quot;'>
+                          <i aria-hidden='true' class='fa fa-reply fa-fw'/> Reply
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </b:if>
+              </div><!-- /.media-body -->
+            </div><!-- /.media -->
+
+            <!-- Reply form -->
+            <b:if cond='!data:comment.isDeleted and data:post.allowNewComments'>
+              <div class='comment-form-container-reply mt-3' expr:id='&quot;comment-form-container-reply-&quot; + data:comment.id'/>
+            </b:if>
+
+            <!-- Children -->
+            <ul class='comment-list-children list-unstyled mb-0'>
+              <b:loop values='data:post.comments' var='replies'>
+                <b:if cond='data:replies.inReplyTo == data:comment.id'>
+
+                  <li class='comment-list-children-item mt-3' expr:id='data:replies.anchorName'>
+                    <div class='media media-children'>
+                      <div class='d-flex mr-3'>
+                        <b:if cond='data:replies.authorPhoto'>
+                          <img class='comment-avatar comment-avatar-children' expr:height='data:replies.authorPhoto.thumbHeight' expr:src='data:replies.authorPhoto.thumbUrl' expr:width='data:replies.authorPhoto.thumbWidth'/>
+                        <b:else/>
+                          <img class='comment-avatar comment-avatar-children comment-avatar-no-photo' src='https://placehold.it/50/777/eee?text=?'/>
+                        </b:if>
+                      </div>
+
+                      <div class='media-body'>
+                        <!-- Header -->
+                        <div class='comment-header'>
+                          <div class='clearfix'>
+                            <div class='float-left'>
+                              <ul class='list-inline mb-0'>
+                                <b:if cond='data:replies.authorUrl'>
+                                  <li class='list-inline-item'>
+                                    <a class='comment-name comment-name-link' expr:href='data:replies.authorUrl'>
+                                      <data:replies.author/>
+                                    </a>
+                                  </li>
+                                <b:else/>
+                                  <li class='list-inline-item'>
+                                    <span class='comment-name'><data:replies.author/></span>
+                                  </li>
+                                </b:if>
+                                <b:if cond='data:replies.author == data:post.author.name'>
+                                  <li class='list-inline-item'>
+                                    <span class='badge badge-default comment-mod'>MOD</span>
+                                  </li>
+                                </b:if>
+                              </ul>
+                            </div>
+                            <div class='float-right'>
+                              <div class='dropdown'>
+                                <a class='comment-text-muted-link' data-toggle='dropdown' href='#'>
+                                  <i aria-hidden='true' class='fa fa-ellipsis-v fa-lg'/>
+                                </a>
+                                <div class='dropdown-menu dropdown-menu-right'>
+                                  <b:if cond='!data:replies.isDeleted'>
+                                    <a class='dropdown-item' expr:href='data:replies.deleteUrl'>
+                                      <i aria-hidden='true' class='fa fa-trash-o fa-fw'/> Delete
+                                    </a>
+                                  <b:else/>
+                                    <a class='dropdown-item' expr:href='data:replies.deleteUrl'>
+                                      <i aria-hidden='true' class='fa fa-trash-o fa-fw'/> Remove forever
+                                    </a>
+                                  </b:if>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class='clearfix'>
+                            <ul class='list-inline mb-0'>
+                              <li class='list-inline-item'>
+                                <a class='comment-permalink' data-placement='top' data-toggle='tooltip' expr:href='data:replies.url' title='Permalink'>#</a>
+                                <span class='comment-timestamp'><data:replies.timestamp/></span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <!-- Content -->
+                        <div class='comment-content mt-3'>
+                          <b:if cond='data:replies.isDeleted'>
+                            <div class='alert alert-danger mb-0' role='alert'>
+                              <a class='close' data-placement='top' data-toggle='tooltip' expr:href='data:replies.deleteUrl' title='Remove forever'>
+                                <i aria-hidden='true' class='fa fa-remove'/>
+                              </a>
+                              <data:replies.body/>
+                            </div>
+                          <b:else/>
+                            <div class='comment-body'>
+                              <data:replies.body/>
+                            </div>
+                          </b:if>
+                        </div>
+                      </div><!-- /.media-body -->
+                    </div><!-- /.media -->
+                  </li><!-- /.comment-list-children-item -->
+                </b:if><!-- / replies.inReplyTo == data:comment.id -->
+              </b:loop><!-- / replies -->
+            </ul><!-- /.comment-list-children -->
+            <!-- Children END -->
+          </li><!-- /.comment-list-parent-item -->
+        </b:if><!-- / !comment.inReplyTo -->
+      </b:loop><!-- / comment -->
+    </ol><!-- /.comment-list-parent -->
+
+    <!-- Pagination -->
+    <b:if cond='data:post.commentPagingRequired'>
+      <div class='mt-4'>
+        <div class='d-flex flex-wrap flex-column flex-sm-row align-items-stretch align-items-sm-center justify-content-sm-center'>
+          <div class='btn-group'>
+            <a class='btn btn-secondary w-100' expr:href='data:post.oldestLinkUrl' role='button'><data:post.oldestLinkText/></a>
+            <a class='btn btn-secondary w-100' expr:href='data:post.olderLinkUrl' role='button'><data:post.olderLinkText/></a>
+          </div>
+          <span class='mx-0 mx-sm-3 my-3 my-sm-0 text-center'>
+            <span class='badge badge-default badge-pill'><data:post.commentRangeText/></span>
+          </span>
+          <div class='btn-group'>
+            <a class='btn btn-secondary w-100' expr:href='data:post.newerLinkUrl' role='button'><data:post.newerLinkText/></a>
+            <a class='btn btn-secondary w-100' expr:href='data:post.newestLinkUrl' role='button'><data:post.newestLinkText/></a>
           </div>
         </div>
       </div>
@@ -278,4 +297,25 @@
 
   </div><!-- /.comments -->
 
+  <b:if cond='data:post.allowNewComments'>
+    <script>
+    //<![CDATA[
+    // Comment reply iframe
+    //
+    // Thanks <dte.web.id/2013/01/membuat-fitur-komentar-berbalas.html>
+
+    var commentIframeOriginal = document.getElementById('comment-editor').src
+    function reply(id) {
+      var form = document.getElementById('comment-form')
+      var frame = document.getElementById('comment-editor')
+      var container = (id != 'cancel') ? document.getElementById('comment-form-container-reply-' + id) : document.getElementById('comment-form-container-original')
+
+      container.insertBefore(form, null)
+      frame.src = (id != 'cancel') ? commentIframeOriginal + '&parentID=' + id : commentIframeOriginal
+    }
+    //]]>
+    </script>
+  </b:if>
+
 </b:if>
+</b:loop>

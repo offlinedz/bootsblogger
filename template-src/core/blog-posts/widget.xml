@@ -35,9 +35,7 @@
       </b:if>
 
       <b:comment>=== Comments ===</b:comment>
-      <b:loop values='data:posts' var='post'>
-        <b:include cond='data:view.isSingleItem' name='comments.custom'/>
-      </b:loop>
+      <b:include cond='data:view.isSingleItem' name='comments.custom'/>
 
       <b:comment>=== Pager ===</b:comment>
       <b:include cond='data:numPosts != 0' name='pager.custom'/>

@@ -1,7 +1,5 @@
 .comments {
-  background-color: #f8f8f8;
-  border: 1px solid rgba(0,0,0,.125);
-  @include border-radius($border-radius);
+  background-color: transparent;
 }
 
 .comments-title {
@@ -11,21 +9,34 @@
   small {
     font-size: 60%;
     color: #777;
-  }
-
-  a {
-    font-size: 1rem;
-    color: #8899a6;
-
-    &:hover,
-    &:focus {
-      color: #3b94d9;
-    }
-  }
-
-  small,
-  a {
     vertical-align: middle;
+  }
+}
+
+
+//
+// Comment lists
+//
+
+// Parent
+
+.comment-list-parent {
+  .comment-list-parent-item {
+    padding: 1rem;
+    background-color: #f7f7f9;
+    border: 1px solid rgba(0,0,0,.125);
+    @include border-radius(.25rem);
+  }
+}
+
+// Children
+
+.comment-list-children {
+  .comment-list-children-item {
+    padding: 1rem;
+    background-color: #eee;
+    border: 1px solid transparent;
+    @include border-radius(.25rem);
   }
 }
 
@@ -34,7 +45,7 @@
 // Avatar
 //
 
-.comment-avatar img {
+.comment-avatar {
   width: 50px;
   height: 50px;
   @include border-radius($border-radius);
@@ -83,21 +94,6 @@
   color: #8899a6;
 }
 
-// Dropdown icon
-.comment-dropdown {
-  color: #8899a6;
-
-  &:hover,
-  &:focus {
-    color: #3b94d9;
-  }
-
-  .comment-dropdown-icon {
-    font-size: $font-size-lg;
-    font-weight: $font-weight-normal;
-  }
-}
-
 // MOD
 .comment-mod {
   font-size: $font-size-xs;
@@ -140,9 +136,32 @@
   text-decoration: none;
 
   &:hover,
-  &:focus {
+  &:focus,
+  &.active {
     color: #3b94d9;
     text-decoration: none;
+  }
+}
+
+
+//
+// Text muted
+//
+
+.comment-text-muted {
+  color: #8899a6;
+}
+.comment-text-muted-link {
+  color: #8899a6;
+
+  @include plain-hover-focus {
+    text-decoration: none;
+  }
+  @include hover-focus {
+    color: #3b94d9;
+  }
+  .dropdown.show > & {
+    color: #3b94d9;
   }
 }
 
@@ -165,46 +184,43 @@
 
 // Comment form
 .comment-form {
-  background-color: #f8f8f8;
-  border-color: rgba(0,0,0,.125);
+  background-color: transparent;
 }
 
-// Comment form message
-.comment-form-message {
-  background-color: #f5f5f5;
-  border-color: rgba(0,0,0,.125);
-
-  .card-title {
-    color: #333;
-  }
-  .card-title:last-child {
-    margin-bottom: 0;
+.js-comment-form-loading {
+  .loading-show {
+    display: block !important;
   }
 
-  .card-text {
-    color: #777;
+  .loading-hide {
+    display: none !important;
   }
 }
 
 // Comment form editor
 .comment-form-editor {
-  position: relative;
-  width: 100%;
-  border: 0;
+  background-color: #fff;
+  border-color: rgba(0,0,0,.125);
+
+  .card-footer,
+  & {
+    border-width: 2px;
+  }
+
+  .blogger-comment-from-post[height="92px"] {
+    margin-bottom: -1rem;
+  }
+  .blogger-comment-from-post[height="586px"] {
+    height: 149px;
+  }
 }
 
 // Comment form loading
-.comment-form-loading-icon {
-  display: none !important;
-}
 .comment-form-loading {
-  .comment-form-loading-icon {
-    display: inline-block !important;
-  }
-
-  .comment-form-loading-hidden {
-    display: none;
-  }
+  display: none !important;
+  background-color: #fff;
+  border-color: rgba(0,0,0,.125);
+  border-width: 2px;
 }
 
 
