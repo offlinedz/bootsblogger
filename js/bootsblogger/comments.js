@@ -23,7 +23,7 @@
     })
 
 
-    // Toogle `.active` for `.comment-form-container-original` and `.comment-form-container-reply`
+    // Toggle `.active` for `.comment-form-container-original` and `.comment-form-container-reply`
 
     $('.comment-form-container-original').addClass('active')
 
