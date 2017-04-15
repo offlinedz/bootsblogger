@@ -63,17 +63,17 @@
 
     // Loading animation
 
-    $('.comment-form').addClass('js-comment-form-loading')
+    $('.comment-form').addClass('comment-form-loading-wrapper')
 
     $('#comment-editor').on('load', function () {
-      $('.comment-form').removeClass('js-comment-form-loading')
+      $('.comment-form').removeClass('comment-form-loading-wrapper')
     })
 
     $('.js-comment-action').click(function () {
-      $('.comment-form').addClass('js-comment-form-loading')
+      $('.comment-form').addClass('comment-form-loading-wrapper')
 
       $('#comment-editor').on('load', function () {
-        $('.comment-form').removeClass('js-comment-form-loading')
+        $('.comment-form').removeClass('comment-form-loading-wrapper')
       })
     })
 

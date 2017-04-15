@@ -28,7 +28,7 @@
           <a class='btn btn-block btn-success js-comment-action' href='#comment-form-container-original' onclick='javascript:reply(&quot;cancel&quot;);' role='button'><i aria-hidden='true' class='fa fa-comment fa-fw'/> Add comment</a>
         </div>
 
-        <div class='comment-form js-comment-form-loading' id='comment-form'>
+        <div class='comment-form comment-form-loading-wrapper' id='comment-form'>
           <!-- Comment form loading -->
           <div class='comment-form-loading card card-block loading-show'>
             <i aria-hidden='true' class='d-block mx-auto comment-text-muted fa fa-cog fa-spin fa-3x fa-fw'/>
