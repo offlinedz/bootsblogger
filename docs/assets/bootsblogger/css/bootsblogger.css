@@ -3068,10 +3068,10 @@
   background-color: transparent;
 }
 
-.js-comment-form-loading .loading-show {
+.comment-form-loading-wrapper .loading-show {
   display: block !important;
 }
-.js-comment-form-loading .loading-hide {
+.comment-form-loading-wrapper .loading-hide {
   display: none !important;
 }
 
