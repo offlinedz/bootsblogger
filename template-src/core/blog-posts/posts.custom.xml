@@ -1,3 +1,52 @@
+<b:comment>=== https://schema.org ===</b:comment>
+<b:loop values='data:posts' var='post'>
+<script type='application/ld+json'>
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Blogger",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lh3.googleusercontent.com/ULB6iBuCeTVvSjjjU1A-O8e9ZpVba6uvyhtiWRti_rBAs9yMYOFBujxriJRZ-A=h60",
+      "width": 206,
+      "height": 60
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "<data:post.url/>"
+  },
+  "headline": "<data:post.title/>",
+  "description": "<data:post.snippets.short/>",
+  "datePublished": "<data:post.date.iso8601/>",
+  "dateModified": "<data:post.lastUpdated.iso8601/>"
+  <b:if cond='data:post.featuredImage'>
+  , "image": {
+    "@type": "ImageObject",
+    "url": "<data:post.featuredImage/>",
+    "width": 1200,
+    "height": 348
+  }
+  </b:if>
+  <b:if cond='data:post.author'>
+  , "author": {
+    "@type": "Person",
+    "name": "<data:post.author.name/>",
+    "image": "<data:post.author.authorPhoto.image/>"
+    <b:if cond='data:post.author.profileUrl'>
+    , "url": "<data:post.author.profileUrl/>"
+    </b:if>
+    <b:if cond='data:post.author.aboutMe'>
+    , "description": "<data:post.author.aboutMe/>"
+    </b:if>
+  }
+  </b:if>
+}
+</script>
+</b:loop>
+
 <b:comment>=== Homepage ===</b:comment>
 <b:if cond='data:view.isHomepage'>
   <b:include name='post-home'/>
