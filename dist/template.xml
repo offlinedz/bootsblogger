@@ -1138,6 +1138,55 @@ Blog posts (widget type `Blog`)
   </b:if>
 </b:includable>
     <b:includable id='posts.custom' var='post'>
+  <b:comment>=== https://schema.org ===</b:comment>
+  <b:loop values='data:posts' var='post'>
+  <script type='application/ld+json'>
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Blogger",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://lh3.googleusercontent.com/ULB6iBuCeTVvSjjjU1A-O8e9ZpVba6uvyhtiWRti_rBAs9yMYOFBujxriJRZ-A=h60",
+        "width": 206,
+        "height": 60
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "<data:post.url/>"
+    },
+    "headline": "<data:post.title/>",
+    "description": "<data:post.snippets.short/>",
+    "datePublished": "<data:post.date.iso8601/>",
+    "dateModified": "<data:post.lastUpdated.iso8601/>"
+    <b:if cond='data:post.featuredImage'>
+    , "image": {
+      "@type": "ImageObject",
+      "url": "<data:post.featuredImage/>",
+      "width": 1200,
+      "height": 348
+    }
+    </b:if>
+    <b:if cond='data:post.author'>
+    , "author": {
+      "@type": "Person",
+      "name": "<data:post.author.name/>",
+      "image": "<data:post.author.authorPhoto.image/>"
+      <b:if cond='data:post.author.profileUrl'>
+      , "url": "<data:post.author.profileUrl/>"
+      </b:if>
+      <b:if cond='data:post.author.aboutMe'>
+      , "description": "<data:post.author.aboutMe/>"
+      </b:if>
+    }
+    </b:if>
+  }
+  </script>
+  </b:loop>
+
   <b:comment>=== Homepage ===</b:comment>
   <b:if cond='data:view.isHomepage'>
     <b:include name='post-home'/>
@@ -1181,12 +1230,12 @@ Blog posts (widget type `Blog`)
 
       <!-- Heading -->
       <h1 class='comments-title mb-0'>
-        <i aria-hidden='true' class='fa fa-comments-o'/> <data:messages.comments/> <span class='text-nowrap'><small><data:post.numberOfComments/></small></span>
+        <i aria-hidden='true' class='fa fa-comments-o'/> Comments <span class='text-nowrap'><small><data:post.numberOfComments/></small></span>
       </h1>
 
       <!-- No comments -->
       <b:if cond='data:post.numberOfComments == 0 and data:post.allowNewComments'>
-        <div class='alert alert-info mt-4 mb-0' role='alert'><data:messages.postAComment/></div>
+        <div class='alert alert-info mt-4 mb-0' role='alert'>Be the first to comment.</div>
       </b:if>
 
       <!-- New comments are not allowed -->
@@ -1201,7 +1250,7 @@ Blog posts (widget type `Blog`)
         <div class='comment-form-container-original mt-4 active' id='comment-form-container-original'>
 
           <div class='comment-add-wrapper'>
-            <a class='btn btn-block btn-success js-comment-action' href='#comment-form-container-original' onclick='javascript:reply(&quot;cancel&quot;);' role='button'><i aria-hidden='true' class='fa fa-comment fa-fw'/> <data:messages.postAComment/></a>
+            <a class='btn btn-block btn-success js-comment-action' href='#comment-form-container-original' onclick='javascript:reply(&quot;cancel&quot;);' role='button'><i aria-hidden='true' class='fa fa-comment fa-fw'/> Add comment</a>
           </div>
 
           <div class='comment-form comment-form-loading-wrapper' id='comment-form'>
@@ -1227,8 +1276,8 @@ Blog posts (widget type `Blog`)
                     </a>
                   </li>
                   <li class='list-inline-item float-right comment-add-wrapper'>
-                    <a class='comment-text-muted-link js-comment-action' href='javascript:void(0)' onclick='javascript:reply(&quot;cancel&quot;);' role='button' expr:title='data:messages.postAComment'>
-                      <i aria-hidden='true' class='fa fa-plus-circle fa-lg'/>
+                    <a class='comment-text-muted-link js-comment-action' href='javascript:void(0)' onclick='javascript:reply(&quot;cancel&quot;);' role='button' title='Cancel reply'>
+                      <i aria-hidden='true' class='fa fa-times-circle fa-lg'/>
                     </a>
                   </li>
                 </ul>
@@ -1303,11 +1352,11 @@ Blog posts (widget type `Blog`)
                           <div class='dropdown-menu dropdown-menu-right'>
                             <b:if cond='!data:comment.isDeleted'>
                               <a class='dropdown-item' expr:href='data:comment.deleteUrl'>
-                                <i aria-hidden='true' class='fa fa-trash-o fa-fw'/> <data:messages.deleteComment/>
+                                <i aria-hidden='true' class='fa fa-trash-o fa-fw'/> Delete
                               </a>
                             <b:else/>
                               <a class='dropdown-item' expr:href='data:comment.deleteUrl'>
-                                <i aria-hidden='true' class='fa fa-trash-o fa-fw text-danger'/> <data:messages.deleteComment/>
+                                <i aria-hidden='true' class='fa fa-trash-o fa-fw'/> Remove forever
                               </a>
                             </b:if>
                           </div>
@@ -1327,6 +1376,9 @@ Blog posts (widget type `Blog`)
                   <div class='comment-content mt-3'>
                     <b:if cond='data:comment.isDeleted'>
                       <div class='alert alert-danger mb-0' role='alert'>
+                        <a class='close' data-placement='top' data-toggle='tooltip' expr:href='data:comment.deleteUrl' title='Remove forever'>
+                          <i aria-hidden='true' class='fa fa-remove'/>
+                        </a>
                         <data:comment.body/>
                       </div>
                     <b:else/>
@@ -1402,11 +1454,11 @@ Blog posts (widget type `Blog`)
                                   <div class='dropdown-menu dropdown-menu-right'>
                                     <b:if cond='!data:replies.isDeleted'>
                                       <a class='dropdown-item' expr:href='data:replies.deleteUrl'>
-                                        <i aria-hidden='true' class='fa fa-trash-o fa-fw'/> <data:messages.deleteComment/>
+                                        <i aria-hidden='true' class='fa fa-trash-o fa-fw'/> Delete
                                       </a>
                                     <b:else/>
                                       <a class='dropdown-item' expr:href='data:replies.deleteUrl'>
-                                        <i aria-hidden='true' class='fa fa-trash-o fa-fw text-danger'/> <data:messages.deleteComment/>
+                                        <i aria-hidden='true' class='fa fa-trash-o fa-fw'/> Remove forever
                                       </a>
                                     </b:if>
                                   </div>
@@ -1426,6 +1478,9 @@ Blog posts (widget type `Blog`)
                           <div class='comment-content mt-3'>
                             <b:if cond='data:replies.isDeleted'>
                               <div class='alert alert-danger mb-0' role='alert'>
+                                <a class='close' data-placement='top' data-toggle='tooltip' expr:href='data:replies.deleteUrl' title='Remove forever'>
+                                  <i aria-hidden='true' class='fa fa-remove'/>
+                                </a>
                                 <data:replies.body/>
                               </div>
                             <b:else/>
