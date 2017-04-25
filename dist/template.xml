@@ -1587,6 +1587,9 @@ Blog posts (widget type `Blog`)
             </b:if>
             <div expr:class='data:itemShareWrapper'>
               <b:class cond='!data:itemShareWrapper' name='d-inline'/>
+              <b:if cond='data:itemShareMessage != false'>
+                <span class='post-share-message'><b:message name='messages.share'/>:</span>
+              </b:if>
               <b:loop index='i' values='data:sharing.platforms' var='platform'>
                 <b:if cond='data:post.shareUrl'>
                   <b:if cond='data:platform.key == &quot;twitter&quot;'>
@@ -1819,6 +1822,10 @@ Blog posts (widget type `Blog`)
     - type: `boolean`
     - default: `true`
 
+  - `data:itemShareMessage`
+    - type: `boolean`
+    - default: `true`
+
   # Labels
 
   - `data:itemLabelsComma`
@@ -1922,6 +1929,9 @@ Blog posts (widget type `Blog`)
               </b:if>
               <div expr:class='data:itemShareWrapper'>
                 <b:class cond='!data:itemShareWrapper' name='d-inline'/>
+                <b:if cond='data:itemShareMessage != false'>
+                  <span class='post-share-message'><b:message name='messages.share'/>:</span>
+                </b:if>
                 <b:loop index='i' values='data:sharing.platforms' var='platform'>
                   <b:if cond='data:post.shareUrl'>
                     <b:if cond='data:platform.key == &quot;twitter&quot;'>
@@ -2119,7 +2129,7 @@ Blog posts (widget type `Blog`)
         </ul>
       </b:loop><!-- data:footerBylines -->
     </div>
-  </b:if><!-- data:footerBylines.items.notEmpty -->
+  </b:if><!-- data:footerBylines.notEmpty -->
 
   <b:comment>
   # Wrapper
@@ -2152,6 +2162,10 @@ Blog posts (widget type `Blog`)
     - default: `empty`
 
   - `data:itemShareName`
+    - type: `boolean`
+    - default: `true`
+
+  - `data:itemShareMessage`
     - type: `boolean`
     - default: `true`
 
@@ -2249,6 +2263,7 @@ Blog posts (widget type `Blog`)
   <b:comment>=== Share ===</b:comment>
   <b:with value='&quot;dropdown-menu&quot;' var='itemShareWrapper'>
   <b:with value='&quot;dropdown-item&quot;' var='itemShareClass'>
+  <b:with value='false' var='itemShareMessage'>
   <b:with value='true' var='itemShareIcon'>
   <b:with value='true' var='itemShareName'>
 
@@ -2311,6 +2326,7 @@ Blog posts (widget type `Blog`)
   </b:with>
   </b:with>
   </b:with>
+  </b:with>
 </b:includable>
     <b:includable id='customFooterBylinesOverride'>
   <b:comment>=== Wrapper ===</b:comment>
@@ -2321,6 +2337,7 @@ Blog posts (widget type `Blog`)
   <b:comment>=== Share ===</b:comment>
   <b:with value='&quot;dropdown-menu&quot;' var='itemShareWrapper'>
   <b:with value='&quot;dropdown-item&quot;' var='itemShareClass'>
+  <b:with value='false' var='itemShareMessage'>
   <b:with value='true' var='itemShareIcon'>
   <b:with value='true' var='itemShareName'>
 
@@ -2359,6 +2376,7 @@ Blog posts (widget type `Blog`)
 
     <b:include name='customFooterBylines'/>
 
+  </b:with>
   </b:with>
   </b:with>
   </b:with>
