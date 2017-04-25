@@ -25,20 +25,20 @@
     <b:if cond='!data:view.isMobile'>
 
       <b:comment>=== Status message ===</b:comment>
-      <b:include name='status-message.custom'/>
+      <b:include name='customStatusMessage'/>
 
       <b:comment>=== Posts ===</b:comment>
       <b:if cond='data:numPosts != 0'>
         <div class='posts' id='posts'>
-          <b:include name='posts.custom'/>
+          <b:include name='customPost'/>
         </div>
       </b:if>
 
       <b:comment>=== Comments ===</b:comment>
-      <b:include cond='data:view.isSingleItem' name='comments.custom'/>
+      <b:include cond='data:view.isSingleItem' name='customComments'/>
 
       <b:comment>=== Pager ===</b:comment>
-      <b:include cond='data:numPosts != 0' name='pager.custom'/>
+      <b:include cond='data:numPosts != 0' name='customPager'/>
 
     </b:if>
 

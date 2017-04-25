@@ -9,16 +9,16 @@
 Meta, link, and title tags
 ================================================= </b:comment>
 
-<b:include name='head.required-meta-tags'/>
-<b:include name='head.custom-all-head-content'/>
-<b:include name='head.title'/>
+<b:include name='requiredMetaTags'/>
+<b:include name='customAllHeadContent'/>
+<b:include name='customTitle'/>
 
 <b:with value='&quot;https://example.com/path/to/image.png&quot;' var='image'>
 <b:with value='&quot;@username_of_website&quot;' var='twitterUsernameWebsite'>
 <b:with value='&quot;@username_of_content_creator&quot;' var='twitterUsernameCreator'>
-  <b:include name='head.default-tags'/>
-  <b:include name='head.facebook-tags'/>
-  <b:include name='head.twitter-tags'/>
+  <b:include name='defaultTags'/>
+  <b:include name='facebookTags'/>
+  <b:include name='twitterTags'/>
 </b:with>
 </b:with>
 </b:with>
@@ -30,11 +30,11 @@ CSS
 ================================================= </b:comment>
 
 <b:comment>=== Core CSS ===</b:comment>
-<b:include name='bootstrap.min.css'/>
-<b:include name='bootsblogger.min.css'/>
+<b:include name='bootstrapCss'/>
+<b:include name='bootsbloggerCss'/>
 
 <b:comment>=== Font Awesome ===</b:comment>
-<b:include name='font-awesome.min.css'/>
+<b:include name='fontAwesome'/>
 
 <b:comment>=== Template CSS ===</b:comment>
 <b:skin>
@@ -44,7 +44,7 @@ CSS
 </b:skin>
 
 <b:comment>=== Layout mode CSS ===</b:comment>
-<b:include name='head.layout-mode.css'/>
+<b:include name='layoutModeCss'/>
 
 
 <b:comment>
@@ -53,7 +53,7 @@ JavaScript (head)
 ================================================= </b:comment>
 
 <b:comment>=== Bootsblogger JavaScript (JSON) ===</b:comment>
-<b:include name='bootsblogger-json.min.js'/>
+<b:include name='bootsbloggerJsonJs'/>
 
 
 <b:comment>
@@ -190,10 +190,10 @@ Footer
 JavaScript
 ================================================= </b:comment>
 
-<b:include name='jquery.min.js'/>
-<b:include name='tether.min.js'/>
-<b:include name='bootstrap.min.js'/>
-<b:include name='bootsblogger.min.js'/>
+<b:include name='jquery'/>
+<b:include name='tether'/>
+<b:include name='bootstrapJs'/>
+<b:include name='bootsbloggerJs'/>
 
 <b:comment>=== Template JavaScript ===</b:comment>
 <script>

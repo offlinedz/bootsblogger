@@ -1,40 +1,32 @@
 <b:comment>
 -------------------------------------------------
 Head
-
-- `required-meta-tags`      (Required meta tags)
-- `custom-all-head-content` (Custom all-head-content)
-- `title`                   (Title)
-- `default-tags`            (Default tags)
-- `facebook-tags`           (Facebook tags)
-- `twitter-tags`            (Twitter tags)
-- `layout-mode.css`         (CSS for layout mode)
 ------------------------------------------------- </b:comment>
 
 <b:defaultmarkups>
   <b:defaultmarkup type='Common'>
-    <b:includable id='head.required-meta-tags'>
-  <!--(bake /core/head/head.required-meta-tags.xml)-->
+    <b:includable id='requiredMetaTags'>
+  <!--(bake /core/head/requiredMetaTags.xml)-->
 </b:includable>
-    <b:includable id='head.custom-all-head-content'>
-  <!--(bake /core/head/head.custom-all-head-content.xml)-->
+    <b:includable id='customAllHeadContent'>
+  <!--(bake /core/head/customAllHeadContent.xml)-->
 </b:includable>
-    <b:includable id='head.title'>
-  <!--(bake /core/head/head.title.xml)-->
+    <b:includable id='customTitle'>
+  <!--(bake /core/head/customTitle.xml)-->
 </b:includable>
-    <b:includable id='head.default-tags'>
-  <!--(bake /core/head/head.default-tags.xml)-->
+    <b:includable id='defaultTags'>
+  <!--(bake /core/head/defaultTags.xml)-->
 </b:includable>
-    <b:includable id='head.facebook-tags'>
-  <!--(bake /core/head/head.facebook-tags.xml)-->
+    <b:includable id='facebookTags'>
+  <!--(bake /core/head/facebookTags.xml)-->
 </b:includable>
-    <b:includable id='head.twitter-tags'>
-  <!--(bake /core/head/head.twitter-tags.xml)-->
+    <b:includable id='twitterTags'>
+  <!--(bake /core/head/twitterTags.xml)-->
 </b:includable>
-    <b:includable id='head.layout-mode.css'>
+    <b:includable id='layoutModeCss'>
   <b:template-skin>
     <![CDATA[
-    <!--(bake /core/head/head.layout-mode.css)-->
+    <!--(bake /core/head/layout-mode.css)-->
     ]]>
   </b:template-skin>
 </b:includable>
@@ -48,17 +40,17 @@ Blog posts (widget type `Blog`)
 
 <b:defaultmarkups>
   <b:defaultmarkup type='Common'>
-    <b:includable id='status-message.custom' var='post'>
-  <!--(bake /core/blog-posts/status-message.custom.xml)-->
+    <b:includable id='customStatusMessage' var='post'>
+  <!--(bake /core/blog-posts/customStatusMessage.xml)-->
 </b:includable>
-    <b:includable id='posts.custom' var='post'>
-  <!--(bake /core/blog-posts/posts.custom.xml)-->
+    <b:includable id='customPost' var='post'>
+  <!--(bake /core/blog-posts/customPost.xml)-->
 </b:includable>
-    <b:includable id='comments.custom' var='post'>
-  <!--(bake /core/blog-posts/comments.custom.xml)-->
+    <b:includable id='customComments' var='post'>
+  <!--(bake /core/blog-posts/customComments.xml)-->
 </b:includable>
-    <b:includable id='pager.custom' var='post'>
-  <!--(bake /core/blog-posts/pager.custom.xml)-->
+    <b:includable id='customPager' var='post'>
+  <!--(bake /core/blog-posts/customPager.xml)-->
 </b:includable>
   </b:defaultmarkup>
 </b:defaultmarkups>
@@ -115,44 +107,44 @@ Assets
 
 <b:defaultmarkups>
   <b:defaultmarkup type='Common'>
-    <b:includable id='bootsblogger.min.css'>
+    <b:includable id='bootsbloggerCss'>
       <style>
         <!--(bake /core/assets/bootsblogger/css/bootsblogger.min.css)-->
       </style>
     </b:includable>
-    <b:includable id='bootsblogger.min.js'>
+    <b:includable id='bootsbloggerJs'>
       <script>
         //<![CDATA[
         <!--(bake /core/assets/bootsblogger/js/bootsblogger.min.js)-->
         //]]>
       </script>
     </b:includable>
-    <b:includable id='bootsblogger-json.min.js'>
+    <b:includable id='bootsbloggerJsonJs'>
       <script>
         //<![CDATA[
         <!--(bake /core/assets/bootsblogger/js/bootsblogger-json.min.js)-->
         //]]>
       </script>
     </b:includable>
-    <b:includable id='bootstrap.min.css'>
+    <b:includable id='bootstrapCss'>
       <style>
         <!--(bake /core/assets/bootstrap/css/bootstrap.min.css)-->
       </style>
     </b:includable>
-    <b:includable id='bootstrap.min.js'>
+    <b:includable id='bootstrapJs'>
       <script>
         //<![CDATA[
         <!--(bake /core/assets/bootstrap/js/bootstrap.min.js)-->
         //]]>
       </script>
     </b:includable>
-    <b:includable id='font-awesome.min.css'>
+    <b:includable id='fontAwesome'>
       <link crossorigin='anonymous' href='{{ blog.cdn.fontAwesome }}' integrity='{{ blog.cdn.fontAwesome_hash }}' rel='stylesheet'/>
     </b:includable>
-    <b:includable id='jquery.min.js'>
+    <b:includable id='jquery'>
       <script crossorigin='anonymous' integrity='{{ blog.cdn.jquery_hash }}' src='{{ blog.cdn.jquery }}'/>
     </b:includable>
-    <b:includable id='tether.min.js'>
+    <b:includable id='tether'>
       <script crossorigin='anonymous' integrity='{{ blog.cdn.tether_hash }}' src='{{ blog.cdn.tether }}'/>
     </b:includable>
   </b:defaultmarkup>
