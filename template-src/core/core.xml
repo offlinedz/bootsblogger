@@ -67,6 +67,7 @@ Blog posts (widget type `Blog`)
   <b:comment>=== Share ===</b:comment>
   <b:with value='&quot;dropdown-menu&quot;' var='itemShareWrapper'>
   <b:with value='&quot;dropdown-item&quot;' var='itemShareClass'>
+  <b:with value='false' var='itemShareMessage'>
   <b:with value='true' var='itemShareIcon'>
   <b:with value='true' var='itemShareName'>
 
@@ -129,6 +130,7 @@ Blog posts (widget type `Blog`)
   </b:with>
   </b:with>
   </b:with>
+  </b:with>
 </b:includable>
     <b:includable id='customFooterBylinesOverride'>
   <b:comment>=== Wrapper ===</b:comment>
@@ -139,6 +141,7 @@ Blog posts (widget type `Blog`)
   <b:comment>=== Share ===</b:comment>
   <b:with value='&quot;dropdown-menu&quot;' var='itemShareWrapper'>
   <b:with value='&quot;dropdown-item&quot;' var='itemShareClass'>
+  <b:with value='false' var='itemShareMessage'>
   <b:with value='true' var='itemShareIcon'>
   <b:with value='true' var='itemShareName'>
 
@@ -177,6 +180,7 @@ Blog posts (widget type `Blog`)
 
     <b:include name='customFooterBylines'/>
 
+  </b:with>
   </b:with>
   </b:with>
   </b:with>

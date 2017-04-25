@@ -15,6 +15,9 @@
             </b:if>
             <div expr:class='data:itemShareWrapper'>
               <b:class cond='!data:itemShareWrapper' name='d-inline'/>
+              <b:if cond='data:itemShareMessage != false'>
+                <span class='post-share-message'><b:message name='messages.share'/>:</span>
+              </b:if>
               <b:loop index='i' values='data:sharing.platforms' var='platform'>
                 <b:if cond='data:post.shareUrl'>
                   <b:if cond='data:platform.key == &quot;twitter&quot;'>
@@ -245,6 +248,10 @@
   - default: `empty`
 
 - `data:itemShareName`
+  - type: `boolean`
+  - default: `true`
+
+- `data:itemShareMessage`
   - type: `boolean`
   - default: `true`
 
