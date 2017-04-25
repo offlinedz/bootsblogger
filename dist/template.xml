@@ -9,16 +9,16 @@
 Meta, link, and title tags
 ================================================= </b:comment>
 
-<b:include name='head.required-meta-tags'/>
-<b:include name='head.custom-all-head-content'/>
-<b:include name='head.title'/>
+<b:include name='requiredMetaTags'/>
+<b:include name='customAllHeadContent'/>
+<b:include name='customTitle'/>
 
 <b:with value='&quot;https://example.com/path/to/image.png&quot;' var='image'>
 <b:with value='&quot;@username_of_website&quot;' var='twitterUsernameWebsite'>
 <b:with value='&quot;@username_of_content_creator&quot;' var='twitterUsernameCreator'>
-  <b:include name='head.default-tags'/>
-  <b:include name='head.facebook-tags'/>
-  <b:include name='head.twitter-tags'/>
+  <b:include name='defaultTags'/>
+  <b:include name='facebookTags'/>
+  <b:include name='twitterTags'/>
 </b:with>
 </b:with>
 </b:with>
@@ -30,11 +30,11 @@ CSS
 ================================================= </b:comment>
 
 <b:comment>=== Core CSS ===</b:comment>
-<b:include name='bootstrap.min.css'/>
-<b:include name='bootsblogger.min.css'/>
+<b:include name='bootstrapCss'/>
+<b:include name='bootsbloggerCss'/>
 
 <b:comment>=== Font Awesome ===</b:comment>
-<b:include name='font-awesome.min.css'/>
+<b:include name='fontAwesome'/>
 
 <b:comment>=== Template CSS ===</b:comment>
 <b:skin>
@@ -235,7 +235,7 @@ CSS
 </b:skin>
 
 <b:comment>=== Layout mode CSS ===</b:comment>
-<b:include name='head.layout-mode.css'/>
+<b:include name='layoutModeCss'/>
 
 
 <b:comment>
@@ -244,7 +244,7 @@ JavaScript (head)
 ================================================= </b:comment>
 
 <b:comment>=== Bootsblogger JavaScript (JSON) ===</b:comment>
-<b:include name='bootsblogger-json.min.js'/>
+<b:include name='bootsbloggerJsonJs'/>
 
 
 <b:comment>
@@ -480,20 +480,20 @@ Main and sidebar
               <b:if cond='!data:view.isMobile'>
 
                 <b:comment>=== Status message ===</b:comment>
-                <b:include name='status-message.custom'/>
+                <b:include name='customStatusMessage'/>
 
                 <b:comment>=== Posts ===</b:comment>
                 <b:if cond='data:numPosts != 0'>
                   <div class='posts' id='posts'>
-                    <b:include name='posts.custom'/>
+                    <b:include name='customPost'/>
                   </div>
                 </b:if>
 
                 <b:comment>=== Comments ===</b:comment>
-                <b:include cond='data:view.isSingleItem' name='comments.custom'/>
+                <b:include cond='data:view.isSingleItem' name='customComments'/>
 
                 <b:comment>=== Pager ===</b:comment>
-                <b:include cond='data:numPosts != 0' name='pager.custom'/>
+                <b:include cond='data:numPosts != 0' name='customPager'/>
 
               </b:if>
 
@@ -547,10 +547,10 @@ Footer
 JavaScript
 ================================================= </b:comment>
 
-<b:include name='jquery.min.js'/>
-<b:include name='tether.min.js'/>
-<b:include name='bootstrap.min.js'/>
-<b:include name='bootsblogger.min.js'/>
+<b:include name='jquery'/>
+<b:include name='tether'/>
+<b:include name='bootstrapJs'/>
+<b:include name='bootsbloggerJs'/>
 
 <b:comment>=== Template JavaScript ===</b:comment>
 <script>
@@ -581,23 +581,15 @@ Bootsblogger Core Template
 <b:comment>
 -------------------------------------------------
 Head
-
-- `required-meta-tags`      (Required meta tags)
-- `custom-all-head-content` (Custom all-head-content)
-- `title`                   (Title)
-- `default-tags`            (Default tags)
-- `facebook-tags`           (Facebook tags)
-- `twitter-tags`            (Twitter tags)
-- `layout-mode.css`         (CSS for layout mode)
 ------------------------------------------------- </b:comment>
 
 <b:defaultmarkups>
   <b:defaultmarkup type='Common'>
-    <b:includable id='head.required-meta-tags'>
+    <b:includable id='requiredMetaTags'>
   <meta charset='utf-8'/>
   <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'/>
 </b:includable>
-    <b:includable id='head.custom-all-head-content'>
+    <b:includable id='customAllHeadContent'>
   <meta content='blogger' name='generator'/>
 
   <link expr:href='data:blog.homepageUrl + &quot;favicon.ico&quot;' rel='icon'/>
@@ -619,7 +611,7 @@ Head
     <link expr:href='data:blog.homepageUrl' rel='openid.delegate'/>
   </b:if>
 </b:includable>
-    <b:includable id='head.title'>
+    <b:includable id='customTitle'>
   <b:comment>=== Homepage ===</b:comment>
   <b:if cond='data:view.isHomepage'>
     <title><data:blog.title/></title>
@@ -660,7 +652,7 @@ Head
     <title>Page Not Found</title>
   </b:if>
 </b:includable>
-    <b:includable id='head.default-tags'>
+    <b:includable id='defaultTags'>
   <b:if cond='!data:view.isError'>
     <link expr:href='data:blog.canonicalUrl' rel='canonical'/>
   </b:if>
@@ -738,7 +730,7 @@ Head
     <link href='https://placehold.it/512/eee/777?text=404' rel='image_src'/>
   </b:if>
 </b:includable>
-    <b:includable id='head.facebook-tags'>
+    <b:includable id='facebookTags'>
   <b:if cond='data:view.type == &quot;item&quot;'>
     <meta content='article' property='og:type'/>
   <b:else/>
@@ -832,7 +824,7 @@ Head
     <meta content='https://placehold.it/512/eee/777?text=404' property='og:image'/>
   </b:if>
 </b:includable>
-    <b:includable id='head.twitter-tags'>
+    <b:includable id='twitterTags'>
   <b:if cond='data:view.isHomepage'>
     <meta content='summary_large_image' name='twitter:card'/>
   <b:else/>
@@ -927,7 +919,7 @@ Head
     <meta content='https://placehold.it/512/eee/777?text=404' property='twitter:image'/>
   </b:if>
 </b:includable>
-    <b:includable id='head.layout-mode.css'>
+    <b:includable id='layoutModeCss'>
   <b:template-skin>
     <![CDATA[
     /* Hide from layout mode */
@@ -1009,7 +1001,7 @@ Blog posts (widget type `Blog`)
 
 <b:defaultmarkups>
   <b:defaultmarkup type='Common'>
-    <b:includable id='status-message.custom' var='post'>
+    <b:includable id='customStatusMessage' var='post'>
   <b:if cond='data:view.search.label'>
   <script>
   //<![CDATA[
@@ -1137,7 +1129,7 @@ Blog posts (widget type `Blog`)
     </div>
   </b:if>
 </b:includable>
-    <b:includable id='posts.custom' var='post'>
+    <b:includable id='customPost' var='post'>
   <b:comment>=== https://schema.org ===</b:comment>
   <b:loop values='data:posts' var='post'>
   <script type='application/ld+json'>
@@ -1222,7 +1214,7 @@ Blog posts (widget type `Blog`)
     <b:include name='post-archive'/>
   </b:if>
 </b:includable>
-    <b:includable id='comments.custom' var='post'>
+    <b:includable id='customComments' var='post'>
   <b:loop values='data:posts' var='post'>
   <b:if cond='data:post.allowComments'>
 
@@ -1545,7 +1537,7 @@ Blog posts (widget type `Blog`)
   </b:if>
   </b:loop>
 </b:includable>
-    <b:includable id='pager.custom' var='post'>
+    <b:includable id='customPager' var='post'>
   <b:if cond='!data:view.isPage'>
     <nav class='pager text-center' id='pager'>
       <b:if cond='data:newerPageUrl'>
@@ -1625,7 +1617,7 @@ Assets
 
 <b:defaultmarkups>
   <b:defaultmarkup type='Common'>
-    <b:includable id='bootsblogger.min.css'>
+    <b:includable id='bootsbloggerCss'>
       <style>
         /*!
          * Bootsblogger v1.0.0-alpha.1 (https://bootsblogger.github.io)
@@ -1635,7 +1627,7 @@ Assets
         /*# sourceMappingURL=bootsblogger.min.css.map */
       </style>
     </b:includable>
-    <b:includable id='bootsblogger.min.js'>
+    <b:includable id='bootsbloggerJs'>
       <script>
         //<![CDATA[
         /*!
@@ -1647,7 +1639,7 @@ Assets
         //]]>
       </script>
     </b:includable>
-    <b:includable id='bootsblogger-json.min.js'>
+    <b:includable id='bootsbloggerJsonJs'>
       <script>
         //<![CDATA[
         /*!
@@ -1659,7 +1651,7 @@ Assets
         //]]>
       </script>
     </b:includable>
-    <b:includable id='bootstrap.min.css'>
+    <b:includable id='bootstrapCss'>
       <style>
         /*!
          * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.com)
@@ -1670,7 +1662,7 @@ Assets
         /*# sourceMappingURL=bootstrap.min.css.map */
       </style>
     </b:includable>
-    <b:includable id='bootstrap.min.js'>
+    <b:includable id='bootstrapJs'>
       <script>
         //<![CDATA[
         /*!
@@ -1683,13 +1675,13 @@ Assets
         //]]>
       </script>
     </b:includable>
-    <b:includable id='font-awesome.min.css'>
+    <b:includable id='fontAwesome'>
       <link crossorigin='anonymous' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' integrity='sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN' rel='stylesheet'/>
     </b:includable>
-    <b:includable id='jquery.min.js'>
+    <b:includable id='jquery'>
       <script crossorigin='anonymous' integrity='sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7' src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'/>
     </b:includable>
-    <b:includable id='tether.min.js'>
+    <b:includable id='tether'>
       <script crossorigin='anonymous' integrity='sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb' src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js'/>
     </b:includable>
   </b:defaultmarkup>
