@@ -52,6 +52,156 @@ Blog posts (widget type `Blog`)
     <b:includable id='customPager' var='post'>
   <!--(bake /core/blog-posts/customPager.xml)-->
 </b:includable>
+    <b:includable id='customHeaderByline'>
+  <!--(bake /core/blog-posts/customHeaderByline.xml)-->
+</b:includable>
+    <b:includable id='customFooterBylines'>
+  <!--(bake /core/blog-posts/customFooterBylines.xml)-->
+</b:includable>
+    <b:includable id='customHeaderBylineOverride'>
+  <b:comment>=== Wrapper ===</b:comment>
+  <b:with value='&quot;post-header&quot;' var='headerBylineClass'>
+  <b:with value='&quot;post-header-list&quot;' var='headerBylineUlClass'>
+  <b:with value='&quot;&quot;' var='headerBylineLiClass'>
+
+  <b:comment>=== Share ===</b:comment>
+  <b:with value='&quot;dropdown-menu&quot;' var='itemShareWrapper'>
+  <b:with value='&quot;dropdown-item&quot;' var='itemShareClass'>
+  <b:with value='true' var='itemShareIcon'>
+  <b:with value='true' var='itemShareName'>
+
+  <b:comment>=== Comments ===</b:comment>
+  <b:with value='true' var='itemCommentsIcon'>
+  <b:with value='&quot;&quot;' var='itemCommentsClass'>
+  <b:with value='true' var='itemCommentsMessage'>
+
+  <b:comment>=== Location ===</b:comment>
+  <b:with value='true' var='itemLocationIcon'>
+  <b:with value='&quot;&quot;' var='itemLocationClass'>
+
+  <b:comment>=== Backlinks ===</b:comment>
+  <b:with value='true' var='itemBacklinksIcon'>
+  <b:with value='&quot;&quot;' var='itemBacklinksClass'>
+
+  <b:comment>=== Timestamp ===</b:comment>
+  <b:with value='true' var='itemTimestampIcon'>
+  <b:with value='&quot;&quot;' var='itemTimestampClass'>
+
+  <b:comment>=== Author ===</b:comment>
+  <b:with value='true' var='itemAuthorIcon'>
+  <b:with value='&quot;&quot;' var='itemAuthorClass'>
+
+  <b:comment>=== Labels ===</b:comment>
+  <b:with value='false' var='itemLabelsComma'>
+  <b:with value='10' var='itemLabelsMaxResults'>
+  <b:with value='true' var='itemLabelsIcon'>
+  <b:with value='&quot;badge badge-default&quot;' var='itemLabelsClass'>
+
+  <b:comment>=== Icons ===</b:comment>
+  <b:with value='&quot;&quot;' var='itemIconsClass'>
+
+  <b:comment>=== Reactions ===</b:comment>
+  <b:with value='true' var='itemReactionsIcon'>
+
+    <b:include name='customHeaderByline'/>
+
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+</b:includable>
+    <b:includable id='customFooterBylinesOverride'>
+  <b:comment>=== Wrapper ===</b:comment>
+  <b:with value='&quot;post-footer&quot;' var='footerBylinesClass'>
+  <b:with value='&quot;post-footer-list mb-0&quot;' var='footerBylinesUlClass'>
+  <b:with value='&quot;&quot;' var='footerBylinesLiClass'>
+
+  <b:comment>=== Share ===</b:comment>
+  <b:with value='&quot;dropdown-menu&quot;' var='itemShareWrapper'>
+  <b:with value='&quot;dropdown-item&quot;' var='itemShareClass'>
+  <b:with value='true' var='itemShareIcon'>
+  <b:with value='true' var='itemShareName'>
+
+  <b:comment>=== Comments ===</b:comment>
+  <b:with value='true' var='itemCommentsIcon'>
+  <b:with value='&quot;&quot;' var='itemCommentsClass'>
+  <b:with value='true' var='itemCommentsMessage'>
+
+  <b:comment>=== Location ===</b:comment>
+  <b:with value='true' var='itemLocationIcon'>
+  <b:with value='&quot;&quot;' var='itemLocationClass'>
+
+  <b:comment>=== Backlinks ===</b:comment>
+  <b:with value='true' var='itemBacklinksIcon'>
+  <b:with value='&quot;&quot;' var='itemBacklinksClass'>
+
+  <b:comment>=== Timestamp ===</b:comment>
+  <b:with value='true' var='itemTimestampIcon'>
+  <b:with value='&quot;&quot;' var='itemTimestampClass'>
+
+  <b:comment>=== Author ===</b:comment>
+  <b:with value='true' var='itemAuthorIcon'>
+  <b:with value='&quot;&quot;' var='itemAuthorClass'>
+
+  <b:comment>=== Labels ===</b:comment>
+  <b:with value='false' var='itemLabelsComma'>
+  <b:with value='10' var='itemLabelsMaxResults'>
+  <b:with value='true' var='itemLabelsIcon'>
+  <b:with value='&quot;badge badge-default&quot;' var='itemLabelsClass'>
+
+  <b:comment>=== Icons ===</b:comment>
+  <b:with value='&quot;&quot;' var='itemIconsClass'>
+
+  <b:comment>=== Reactions ===</b:comment>
+  <b:with value='true' var='itemReactionsIcon'>
+
+    <b:include name='customFooterBylines'/>
+
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+  </b:with>
+</b:includable>
   </b:defaultmarkup>
 </b:defaultmarkups>
 

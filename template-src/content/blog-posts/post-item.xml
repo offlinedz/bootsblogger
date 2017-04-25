@@ -1,5 +1,6 @@
 <b:loop values='data:posts' var='post'>
   <article class='post' expr:id='"post-" + data:post.id'>
+    <b:include name='customHeaderBylineOverride'/>
     <!-- Test -->
     <b:if cond='data:post.title'>
       <h2>
@@ -7,5 +8,6 @@
       </h2>
     </b:if>
     <data:post.body/>
+    <b:include name='customFooterBylinesOverride'/>
   </article><!-- /.post -->
 </b:loop>

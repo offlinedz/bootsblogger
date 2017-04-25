@@ -1,10 +1,16 @@
 <b:loop values='data:posts' var='post'>
   <article class='post' expr:id='"post-" + data:post.id'>
+    <b:with value='&quot;post-header&quot;' var='headerBylineClass'>
+      <b:include name='customHeaderByline'/>
+    </b:with>
     <!-- Test -->
     <b:if cond='data:post.title'>
       <h2>
         <a expr:href='data:post.url'><data:post.title/></a>
       </h2>
     </b:if>
+    <b:with value='&quot;post-footer&quot;' var='footerBylinesClass'>
+      <b:include name='customFooterBylines'/>
+    </b:with>
   </article><!-- /.post -->
 </b:loop>

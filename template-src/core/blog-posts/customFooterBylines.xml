@@ -1,0 +1,334 @@
+<b:if cond='data:footerBylines.notEmpty'>
+  <div expr:class='data:footerBylinesClass'>
+    <b:loop values='data:footerBylines' var='itemBylines'>
+      <ul expr:class='data:footerBylinesUlClass'>
+      <b:class cond='!data:footerBylinesUlClass' name='list-inline mb-0'/>
+        <b:loop values='data:itemBylines.items' var='item'>
+
+          <b:comment>=== Share ===</b:comment>
+          <b:if cond='data:item.name == &quot;share&quot;'><li expr:class='data:footerBylinesLiClass'><b:class cond='!data:footerBylinesUlClass' name='list-inline-item'/>
+            <b:if cond='data:itemShareWrapper == &quot;dropdown-menu&quot;'>
+              &lt;div class="d-inline-block dropdown"&gt;
+              <a class='post-share-toggle' href='#' data-toggle='dropdown' expr:title='data:messages.share'>
+                <span aria-hidden='true' class='post-share-icon fa fa-share-alt'/>
+              </a>
+            </b:if>
+            <div expr:class='data:itemShareWrapper'>
+              <b:class cond='!data:itemShareWrapper' name='d-inline'/>
+              <b:loop index='i' values='data:sharing.platforms' var='platform'>
+                <b:if cond='data:post.shareUrl'>
+                  <b:if cond='data:platform.key == &quot;twitter&quot;'>
+                    <a expr:class='&quot;post-share-item post-share-twitter &quot; + data:itemShareClass' expr:href='data:post.shareUrl + &quot;&amp;target=twitter&quot;' expr:title='data:platform.shareMessage' target='_blank'>
+                      <b:if cond='data:itemShareIcon != false'>
+                        <span aria-hidden='true' class='post-share-icon fa fa-twitter-square'/>
+                      </b:if>
+                      <b:if cond='data:itemShareName != false'>
+                        <span class='post-share-name'><data:platform.name/></span>
+                      </b:if>
+                    </a>
+                  </b:if>
+                  <b:if cond='data:platform.key == &quot;facebook&quot;'>
+                    <a expr:class='&quot;post-share-item post-share-facebook &quot; + data:itemShareClass' expr:href='data:post.shareUrl + &quot;&amp;target=facebook&quot;' expr:title='data:platform.shareMessage' target='_blank'>
+                      <b:if cond='data:itemShareIcon != false'>
+                        <span aria-hidden='true' class='post-share-icon fa fa-facebook-square'/>
+                      </b:if>
+                      <b:if cond='data:itemShareName != false'>
+                        <span class='post-share-name'><data:platform.name/></span>
+                      </b:if>
+                    </a>
+                  </b:if>
+                  <b:if cond='data:platform.key == &quot;googlePlus&quot;'>
+                    <a expr:class='&quot;post-share-item post-share-google-plus &quot; + data:itemShareClass' expr:href='data:post.shareUrl + &quot;&amp;target=googlePlus&quot;' expr:title='data:platform.shareMessage' target='_blank'>
+                      <b:if cond='data:itemShareIcon != false'>
+                        <span aria-hidden='true' class='post-share-icon fa fa-google-plus-square'/>
+                      </b:if>
+                      <b:if cond='data:itemShareName != false'>
+                        <span class='post-share-name'><data:platform.name/></span>
+                      </b:if>
+                    </a>
+                  </b:if>
+                  <b:if cond='data:platform.key == &quot;pinterest&quot;'>
+                    <a expr:class='&quot;post-share-item post-share-pinterest &quot; + data:itemShareClass' expr:href='data:post.shareUrl + &quot;&amp;target=pinterest&quot;' expr:title='data:platform.shareMessage' target='_blank'>
+                      <b:if cond='data:itemShareIcon != false'>
+                        <span aria-hidden='true' class='post-share-icon fa fa-pinterest-square'/>
+                      </b:if>
+                      <b:if cond='data:itemShareName != false'>
+                        <span class='post-share-name'><data:platform.name/></span>
+                      </b:if>
+                    </a>
+                  </b:if>
+                  <b:if cond='data:platform.key == &quot;email&quot;'>
+                    <a expr:class='&quot;post-share-item post-share-email &quot; + data:itemShareClass' expr:href='data:post.shareUrl + &quot;&amp;target=email&quot;' expr:title='data:platform.shareMessage' target='_blank'>
+                      <b:if cond='data:itemShareIcon != false'>
+                        <span aria-hidden='true' class='post-share-icon fa fa-envelope'/>
+                      </b:if>
+                      <b:if cond='data:itemShareName != false'>
+                        <span class='post-share-name'><data:platform.name/></span>
+                      </b:if>
+                    </a>
+                  </b:if>
+                  <b:if cond='data:platform.key == &quot;blogThis&quot;'>
+                    <a expr:class='&quot;post-share-item post-share-blog-this &quot; + data:itemShareClass' expr:href='data:post.shareUrl + &quot;&amp;target=blogThis&quot;' expr:title='data:platform.shareMessage' target='_blank'>
+                      <b:if cond='data:itemShareIcon != false'>
+                        <span aria-hidden='true' class='post-share-icon fa fa-pencil-square'/>
+                      </b:if>
+                      <b:if cond='data:itemShareName != false'>
+                        <span class='post-share-name'><data:platform.name/></span>
+                      </b:if>
+                    </a>
+                  </b:if>
+                </b:if>
+              </b:loop>
+            </div>
+            <b:if cond='data:itemShareWrapper == &quot;dropdown-menu&quot;'>
+              &lt;/div&gt;
+            </b:if>
+          </li></b:if>
+
+          <b:comment>=== Comments ===</b:comment>
+          <b:if cond='data:item.name == &quot;comments&quot;'><li expr:class='data:footerBylinesLiClass'><b:class cond='!data:footerBylinesUlClass' name='list-inline-item'/>
+            <b:if cond='data:post.allowComments'>
+              <b:if cond='data:itemCommentsIcon != false'>
+                <span aria-hidden='true' class='post-comments-icon fa fa-comments'/>
+              </b:if>
+              <b:if cond='data:item.label != &quot;&quot;'>
+                <span class='post-comments-label'><data:item.label/></span>
+              </b:if>
+              <a expr:class='data:itemCommentsClass' expr:href='data:post.commentsUrl'>
+                <b:if cond='data:itemCommentsMessage != false'>
+                  <span class='post-comments-message'>
+                    <b:message name='messages.numberOfComments'>
+                      <b:param expr:value='data:post.numberOfComments' name='numComments'/>
+                    </b:message>
+                  </span>
+                <b:else/>
+                  <span><data:post.numberOfComments/></span>
+                </b:if>
+              </a>
+            </b:if>
+          </li></b:if>
+
+          <b:comment>=== Location ===</b:comment>
+          <b:if cond='data:item.name == &quot;location&quot;'><li expr:class='data:footerBylinesLiClass'><b:class cond='!data:footerBylinesUlClass' name='list-inline-item'/>
+            <b:if cond='data:itemLocationIcon != false'>
+              <span aria-hidden='true' class='post-location-icon fa fa-location-arrow'/>
+            </b:if>
+            <b:if cond='data:item.label != &quot;&quot;'>
+              <span class='post-location-label'><data:item.label/></span>
+            </b:if>
+            <b:if cond='data:post.location'>
+              <a expr:class='data:itemLocationClass' expr:href='data:post.location.mapsUrl' target='_blank'>
+                <data:post.location.name/>
+              </a>
+            </b:if>
+          </li></b:if>
+
+          <b:comment>=== Backlinks ===</b:comment>
+          <b:if cond='data:item.name == &quot;backlinks&quot;'><li expr:class='data:footerBylinesLiClass'><b:class cond='!data:footerBylinesUlClass' name='list-inline-item'/>
+            <a expr:class='data:itemBacklinksClass' expr:onclick='&quot;window.open(&amp;quot;https://www.blogger.com/blog-this.g?n=&quot; + data:blog.title + &quot;: &quot; + data:post.title + &quot;&amp;u=&quot; + data:post.url + &quot;&amp;t=&amp;quot;, &amp;quot;_blank&amp;quot;, &amp;quot;directories=no, titlebar=no, toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=800, height=600&amp;quot;);&quot;' href='javascript:;'>
+              <b:if cond='data:itemBacklinksIcon != false'>
+                <span aria-hidden='true' class='post-backlinks-icon fa fa-pencil-square'/>
+              </b:if>
+              <span class='post-backlinks-label'><data:item.label/></span>
+            </a>
+          </li></b:if>
+
+          <b:comment>=== Timestamp ===</b:comment>
+          <b:if cond='data:item.name == &quot;timestamp&quot;'><li expr:class='data:footerBylinesLiClass'><b:class cond='!data:footerBylinesUlClass' name='list-inline-item'/>
+            <b:if cond='data:itemTimestampIcon != false'>
+              <span aria-hidden='true' class='post-timestamp-icon fa fa-clock-o'/>
+            </b:if>
+            <b:if cond='data:item.label != &quot;&quot;'>
+              <span class='post-timestamp-label'><data:item.label/></span>
+            </b:if>
+            <time expr:class='data:itemTimestampClass' expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
+              <data:post.date/>
+            </time>
+          </li></b:if>
+
+          <b:comment>=== Author ===</b:comment>
+          <b:if cond='data:item.name == &quot;author&quot;'><li expr:class='data:footerBylinesLiClass'><b:class cond='!data:footerBylinesUlClass' name='list-inline-item'/>
+            <b:if cond='data:itemAuthorIcon != false'>
+              <span aria-hidden='true' class='post-author-icon fa fa-user'/>
+            </b:if>
+            <b:if cond='data:item.label != &quot;&quot;'>
+              <span class='post-author-label'><data:item.label/></span>
+            </b:if>
+            <b:if cond='data:post.author'>
+              <b:if cond='data:post.author.profileUrl'>
+                <a expr:class='data:itemAuthorClass' expr:href='data:post.author.profileUrl' title='Author profile'><data:post.author.name/></a>
+              <b:else/>
+                <span expr:class='data:itemAuthorClass'><data:post.author.name/></span>
+              </b:if>
+            </b:if>
+          </li></b:if>
+
+          <b:comment>=== Labels ===</b:comment>
+          <b:if cond='data:item.name == &quot;labels&quot;'><li expr:class='data:footerBylinesLiClass'><b:class cond='!data:footerBylinesUlClass' name='list-inline-item'/>
+            <b:if cond='data:itemLabelsIcon != false'>
+              <span aria-hidden='true' class='post-labels-icon fa fa-tags'/>
+            </b:if>
+            <b:if cond='data:item.label != &quot;&quot;'>
+              <span class='post-labels-label'><data:item.label/></span>
+            </b:if>
+            <b:if cond='data:post.labels'>
+              <b:loop index='i' values='data:post.labels' var='label'>
+                <a expr:class='data:itemLabelsClass' expr:href='data:label.url + &quot;?max-results=&quot; + (data:itemLabelsMaxResults ? data:itemLabelsMaxResults : 10)'><data:label.name/></a><b:eval expr='data:itemLabelsComma != false and (data:i != (data:post.labels.size - 1)) ? &quot;,&quot; : &quot;&quot;'/>
+              </b:loop>
+            <b:else/>
+              <span expr:class='data:itemLabelsClass'>Unlabelled</span>
+            </b:if>
+          </li></b:if>
+
+          <b:comment>=== Icons ===</b:comment>
+          <b:if cond='data:item.name == &quot;icons&quot;'><li expr:class='data:footerBylinesLiClass'><b:class cond='!data:footerBylinesUlClass' name='list-inline-item'/>
+            <a expr:class='data:itemIconsClass' expr:href='data:post.emailPostUrl'>
+              <span aria-hidde='true' class='post-icons-icon fa fa-envelope'/>
+            </a>
+          </li></b:if>
+
+          <b:comment>=== Reactions ===</b:comment>
+          <b:if cond='data:item.name == &quot;reactions&quot;'><li expr:class='data:footerBylinesLiClass'><b:class cond='!data:footerBylinesUlClass' name='list-inline-item'/>
+            <table>
+              <tr>
+                <b:if cond='data:itemReactionsIcon != false'>
+                  <td>
+                    <span aria-hidden='true' class='post-reactions-icon fa fa-check-square'/>
+                  </td>
+                </b:if>
+                <b:if cond='data:item.label != &quot;&quot;'>
+                  <td>
+                    <span class='post-reactions-label'><data:item.label/></span>
+                  </td>
+                </b:if>
+                <td>
+                  <iframe expr:src='data:post.reactionsUrl' name='reactions' style='position: relative; width: 100%; height: 1.5rem; vertical-align: middle; border: 0;'/>
+                </td>
+              </tr>
+            </table>
+          </li></b:if>
+
+        </b:loop><!-- item -->
+      </ul>
+    </b:loop><!-- data:footerBylines -->
+  </div>
+</b:if><!-- data:footerBylines.notEmpty -->
+
+<b:comment>
+# Wrapper
+
+- `data:footerBylinesClass`
+  - type: `string`
+  - default: `empty`
+
+- `data:footerBylinesUlClass`
+  - type: `string`
+  - default: `list-inline mb-0`
+
+- `data:footerBylinesLiClass`
+  - type: `string`
+  - default: `list-inline-item`
+
+# Share
+
+- `data:itemShareWrapper`
+  - type: `string`
+  - default: `d-inline`
+  - special class: `dropdown-menu`
+
+- `data:itemShareIcon`
+  - type: `boolean`
+  - default: `true`
+
+- `data:itemShareClass`
+  - type: `string`
+  - default: `empty`
+
+- `data:itemShareName`
+  - type: `boolean`
+  - default: `true`
+
+# Labels
+
+- `data:itemLabelsComma`
+  - type: `boolean`
+  - default: `true`
+
+- `data:itemLabelsMaxResults`
+  - type: `integer`
+  - default: `10`
+
+- `data:itemLabelsIcon`
+  - type: `boolean`
+  - default `true`
+
+- `data:itemLabelsClass`
+  - type: `string`
+  - default: `empty`
+
+# Comments
+
+- `data:itemCommentsIcon`
+  - type: `boolean`
+  - default: `true`
+
+- `data:itemCommentsClass`
+  - type: `string`
+  - default: `empty`
+
+- `data:itemCommentsMessage`
+  - type: `boolean`
+  - default: `true`
+
+# Location
+
+- `data:itemLocationIcon`
+  - type: `boolean`
+  - default: `true`
+
+- `data:itemLocationClass`
+  - type: `string`
+  - default: `empty`
+
+# Backlinks
+
+- `data:itemBacklinksIcon`
+  - type: `boolean`
+  - default: `true`
+
+- `data:itemBacklinksClass`
+  - type: `string`
+  - default: `empty`
+
+# Timestamp
+
+- `data:itemTimestampIcon`
+  - type: `boolean`
+  - default: `true`
+
+- `data:itemTimestampClass`
+  - type: `string`
+  - default: `empty`
+
+# Author
+
+- `data:itemAuthorIcon`
+  - type: `boolean`
+  - default: `true`
+
+- `data:itemAuthorClass`
+  - type: `string`
+  - default: `empty`
+
+# Icons
+
+- `data:itemIconsClass`
+  - type: `string`
+  - default: `empty`
+
+# Reactions
+
+- `data:itemReactionsIcon`
+  - type: `boolean`
+  - default: `true`
+</b:comment>
