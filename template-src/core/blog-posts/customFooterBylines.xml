@@ -1,6 +1,6 @@
 <b:if cond='data:footerBylines.notEmpty'>
   <b:loop values='data:footerBylines' var='itemBylines'>
-    <div>
+    <div expr:class='data:itemBylines.regionName'>
       <b:loop values='data:itemBylines.items' var='item'>
 
         <b:comment>=== Share ===</b:comment>
