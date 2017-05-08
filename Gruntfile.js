@@ -42,7 +42,7 @@ module.exports = function(grunt) {
         src: ['scss/bootsblogger/*.scss', '!scss/bootsblogger/_gadgets.scss']
       },
       docs: {
-        src: ['docs/assets/scss/*.scss', '!docs/assets/scss/docs.scss']
+        src: ['docs/assets/src/scss/*.scss', '!docs/assets/src/scss/docs.scss']
       }
     },
 
@@ -66,7 +66,7 @@ module.exports = function(grunt) {
       },
       docs: {
         files: {
-          'docs/assets/css/docs.css': 'docs/assets/scss/docs.scss'
+          'docs/assets/css/docs.css': 'docs/assets/src/scss/docs.scss'
         }
       }
     },
@@ -168,7 +168,7 @@ module.exports = function(grunt) {
         src: 'js/bootsblogger/**/*.js'
       },
       docs: {
-        src: 'docs/assets/js/src/*.js'
+        src: 'docs/assets/src/js/*.js'
       }
     },
 
@@ -192,10 +192,7 @@ module.exports = function(grunt) {
       },
       docs: {
         src: [
-          'docs/assets/js/vendor/anchor.min.js',
-          'docs/assets/js/vendor/clipboard.min.js',
-          'docs/assets/js/vendor/holder.min.js',
-          'docs/assets/js/src/application.js'
+          'docs/assets/src/js/docs.js'
         ],
         dest: 'docs/assets/js/docs.js'
       }
@@ -362,7 +359,7 @@ module.exports = function(grunt) {
         tasks: ['test-scss-bootsblogger', 'compile-sass-bootsblogger', 'copy:docs', 'compile-template']
       },
       docsSass: {
-        files: 'docs/assets/scss/**/*.scss',
+        files: 'docs/assets/src/scss/**/*.scss',
         tasks: ['test-scss-docs', 'compile-sass-docs']
       },
       bootstrapJs: {
@@ -374,7 +371,7 @@ module.exports = function(grunt) {
         tasks: ['test-js-bootsblogger', 'compile-js-bootsblogger', 'copy:docs', 'compile-template']
       },
       docsJs: {
-        files: 'docs/assets/js/src/*.js',
+        files: 'docs/assets/src/js/*.js',
         tasks: ['test-js-docs', 'compile-js-docs']
       },
       bake: {
