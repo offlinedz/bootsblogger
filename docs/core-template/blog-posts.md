@@ -111,3 +111,57 @@ Tampilan posting untuk halaman arsip.
 {% highlight html %}
 <b:includable id='post-archive'>...</b:includable>
 {% endhighlight %}
+
+## Custom headerByline and footerBylines
+
+### Header
+
+`customHeaderByline`.
+
+##### Source
+
+{% highlight plaintext %}
+template-src/core/blog-posts/customHeaderByline.xml
+{% endhighlight %}
+
+##### Includable
+
+{% highlight html %}
+<b:includable id='customHeaderByline'>...</b:includable>
+{% endhighlight %}
+
+##### Usage
+
+{% highlight html %}
+<b:if cond='data:headerByline.items.notEmpty'>
+  <div class='wrapper'>
+    <b:include name='customHeaderByline'/>
+  </div>
+</b:if>
+{% endhighlight %}
+
+### Footer
+
+`customFooterBylines`.
+
+##### Source
+
+{% highlight plaintext %}
+template-src/core/blog-posts/customFooterBylines.xml
+{% endhighlight %}
+
+##### Includable
+
+{% highlight html %}
+<b:includable id='customFooterBylines'>...</b:includable>
+{% endhighlight %}
+
+##### Usage
+
+{% highlight html %}
+<b:if cond='data:footerBylines.notEmpty'>
+  <div class='wrapper'>
+    <b:include name='customFooterBylines'/>
+  </div>
+</b:if>
+{% endhighlight %}
