@@ -18,11 +18,19 @@ Tag `<meta>` adalah elemen HTML yang digunakan untuk membentuk struktur metadata
 
 ## Custom all-head-content
 
-### Source
+##### Source
 
-`template-src/core/head/customAllHeadContent.xml`
+{% highlight plaintext %}
+template-src/core/head/customAllHeadContent.xml
+{% endhighlight %}
 
-### Usage
+##### Includable
+
+{% highlight html %}
+<b:includable id='customAllHeadContent'>...</b:includable>
+{% endhighlight %}
+
+##### Usage
 
 {% highlight html %}
 <b:include name='customAllHeadContent'/>
@@ -30,25 +38,46 @@ Tag `<meta>` adalah elemen HTML yang digunakan untuk membentuk struktur metadata
 
 ## Custom title
 
-### Source
+##### Source
 
-`template-src/core/head/customTitle.xml`
+{% highlight plaintext %}
+template-src/core/head/customTitle.xml
+{% endhighlight %}
 
-### Usage
+##### Includable
+
+{% highlight html %}
+<b:includable id='customTitle'>...</b:includable>
+{% endhighlight %}
+
+##### Usage
 
 {% highlight html %}
 <b:include name='customTitle'/>
 {% endhighlight %}
 
-## SERP and social tags
+## <abbr title="Search Engine Results Page">SERP</abbr> and social tags
 
-### Source
+##### Source
 
-- Default/<abbr title="Search Engine Results Page">SERP</abbr>: `template-src/core/head/defaultTags.xml`
-- Twitter Cards: `template-src/core/head/twitterTags.xml`
-- Facebook Open Graph: `template-src/core/head/facebookTags.xml`
+{% highlight plaintext %}
+- Default/SERP: template-src/core/head/defaultTags.xml
+- Twitter Cards: template-src/core/head/twitterTags.xml
+- Facebook Open Graph: template-src/core/head/facebookTags.xml
+{% endhighlight %}
 
-### Usage
+##### Includable
+
+{% highlight html %}
+<!-- Default/SERF -->
+<b:includable id='defaultTags'>...</b:includable>
+<!-- Twitter Cards -->
+<b:includable id='facebookTags'>...</b:includable>
+<!-- Facebook Open Graph -->
+<b:includable id='twitterTags'>...</b:includable>
+{% endhighlight %}
+
+##### Usage
 
 {% highlight html %}
 <b:with value='&quot;https://example.com/path/to/image.png&quot;' var='image'>
@@ -64,11 +93,19 @@ Tag `<meta>` adalah elemen HTML yang digunakan untuk membentuk struktur metadata
 
 ## Layout mode CSS
 
-### Source
+##### Source
 
-`template-src/core/head/layout-mode.css`
+{% highlight plaintext %}
+template-src/core/head/layout-mode.css
+{% endhighlight %}
 
-### Usage
+##### Includable
+
+{% highlight html %}
+<b:includable id='layoutModeCss'>...</b:includable>
+{% endhighlight %}
+
+##### Usage
 
 {% highlight html %}
 <b:include name='layoutModeCss'/>

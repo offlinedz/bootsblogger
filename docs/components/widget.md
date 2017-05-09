@@ -14,7 +14,7 @@ Komponen untuk tampilan widget.
 
 ## Base class
 
-Komponen widget membutuhkan penggunaan kelas dasar `.wg`. `.wg` hanya mengatur `margin` dan ukuran judul widget (dapat diubah menggunakan kelas pengubah [ukuran judul widget](#font-size).
+Komponen widget membutuhkan penggunaan kelas dasar `.wg`. `.wg` hanya mengatur `margin` dan ukuran judul widget (dapat diubah menggunakan kelas pengubah [ukuran judul widget](#font-size)).
 
 **Catatan:** komponen widget tidak mengubah warna konten yang berada di dalamnya (di dalam `.widget-content`), dalam beberapa widget Anda perlu menyesuaikannya.
 

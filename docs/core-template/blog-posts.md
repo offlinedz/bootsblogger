@@ -1,11 +1,11 @@
 ---
 layout: docs
 title: Blog posts
-description: Widget blog posting dirancang untuk memudahkan dalam mengelola data posting, seperti untuk menampilkan tanggal, penulis, tentang penulis, jumlah komentar, dan lainnya. Dan juga dirancang untuk dapat membuat tampilan posting yang unik/berbeda-beda di setiap tipe halaman.
+description: Widget `Blog` posting dirancang untuk memudahkan dalam mengatur tampilan posting. Dan juga dirancang untuk dapat membuat tampilan posting yang unik/berbeda-beda di setiap tipe halaman.
 group: core-template
 ---
 
-Widget blog posting dirancang untuk memudahkan dalam mengelola data posting, seperti untuk menampilkan tanggal, penulis, tentang penulis, jumlah komentar, dan lainnya. Dan juga dirancang untuk dapat membuat tampilan posting yang unik/berbeda-beda di setiap tipe halaman.
+Widget `Blog` posting dirancang untuk memudahkan dalam mengatur tampilan posting. Dan juga dirancang untuk dapat membuat tampilan posting yang unik/berbeda-beda di setiap tipe halaman.
 
 ## Contents
 
@@ -52,61 +52,117 @@ Di bawah ini adalah tag data Blogger yang sering digunakan. Untuk tag data lainn
 | `data:post.snippet` | Tubuh posting yang sudah dipotong (ringkasan). |
 {% endcomment %}
 
-## Unique posts
+## Posts
 
-Tampilan posting yang unik/berbeda-beda di setiap tipe halaman. Untuk membuat tampilan posting berbeda-beda di setiap tipe halaman, cukup tempatkan kode posting yang berbeda pada masing-masing bagian berikut:
+Posting dibagi menjadi beberapa bagian berdasarkan tipe halaman. Untuk membuat tampilan posting yang berbeda-beda di setiap tipe halaman, Anda hanya perlu menyesuaikan tampilan posting pada masing-masing bagian.
 
-#### Homepage
+### Homepage
 
 Tampilan posting untuk halaman beranda.
+
+##### Source
+
+{% highlight plaintext %}
+template-src/content/blog-posts/post-home.xml
+{% endhighlight %}
+
+##### Includable
 
 {% highlight html %}
 <b:includable id='post-home'>...</b:includable>
 {% endhighlight %}
 
-#### Item page
+### Item page
 
 Tampilan posting untuk halaman posting (*item*).
+
+##### Source
+
+{% highlight plaintext %}
+template-src/content/blog-posts/post-item.xml
+{% endhighlight %}
+
+##### Includable
 
 {% highlight html %}
 <b:includable id='post-item'>...</b:includable>
 {% endhighlight %}
 
-#### Static page
+### Static page
 
 Tampilan posting untuk halaman statis.
+
+##### Source
+
+{% highlight plaintext %}
+template-src/content/blog-posts/post-static.xml
+{% endhighlight %}
+
+##### Includable
 
 {% highlight html %}
 <b:includable id='post-static'>...</b:includable>
 {% endhighlight %}
 
-#### Search (label) page
+### Search (label) page
 
 Tampilan posting untuk halaman kategori.
+
+##### Source
+
+{% highlight plaintext %}
+template-src/content/blog-posts/post-search-label.xml
+{% endhighlight %}
+
+##### Includable
 
 {% highlight html %}
 <b:includable id='post-search-label'>...</b:includable>
 {% endhighlight %}
 
-#### Search (query) page
+### Search (query) page
 
 Tampilan posting untuk halaman hasil pencarian.
+
+##### Source
+
+{% highlight plaintext %}
+template-src/content/blog-posts/post-search-query.xml
+{% endhighlight %}
+
+##### Includable
 
 {% highlight html %}
 <b:includable id='post-search-query'>...</b:includable>
 {% endhighlight %}
 
-#### Search (default) page
+### Search (default) page
 
 Tampilan posting untuk halaman dengan URL `https://example.blogspot.com/search`.
+
+##### Source
+
+{% highlight plaintext %}
+template-src/content/blog-posts/post-search-default.xml
+{% endhighlight %}
+
+##### Includable
 
 {% highlight html %}
 <b:includable id='post-search-default'>...</b:includable>
 {% endhighlight %}
 
-#### Archive page
+### Archive page
 
 Tampilan posting untuk halaman arsip.
+
+##### Source
+
+{% highlight plaintext %}
+template-src/content/blog-posts/post-archive.xml
+{% endhighlight %}
+
+##### Includable
 
 {% highlight html %}
 <b:includable id='post-archive'>...</b:includable>

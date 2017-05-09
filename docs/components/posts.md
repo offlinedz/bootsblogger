@@ -996,7 +996,7 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header di posisi pertama di
 ### Header and footer: image overlays
 
 <div class="bd-example">
-  <div class="post post-inverse">
+  <div class="post">
     <div class="post-header">
       <ul class="post-header-list">
         <li><i class="fa fa-user"></i> <span>by</span> <a href="#">Bootsblogger</a></li>
@@ -1008,7 +1008,7 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header di posisi pertama di
       <div class="post-img-overlay">
         <a href="#"><img data-src="holder.js/100px350/?auto=yes&text=Image" alt="Image"/></a>
       </div>
-      <div class="post-content">
+      <div class="post-content post-inverse">
         <h2 class="post-title"><a class="post-title-link" href="#">Post title</a></h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
         <p><a class="btn btn-primary" href="#">Read more</a></p>
@@ -1057,7 +1057,7 @@ Gunakan `.post-header` dan `.post-footer`. Tempatkan header di posisi pertama di
         <b:include name='include-thumbnail'/>
       </div><!-- /.post-img-overlay -->
       <!-- Content -->
-      <div class='post-content'>
+      <div class='post-content post-inverse'>
         <!-- Post title -->
         <b:if cond='data:post.title'>
           <h2 class='post-title' itemprop='name headline'>
