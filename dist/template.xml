@@ -255,6 +255,7 @@ Post layout and styles
 <b:defaultmarkups>
   <b:defaultmarkup type='Common'>
     <b:includable id='post-home'>
+  <!-- Test -->
   <b:loop values='data:posts' var='post'>
     <article class='post' expr:id='"post-" + data:post.id'>
       <b:if cond='data:headerByline.items.notEmpty'>
@@ -262,12 +263,22 @@ Post layout and styles
           <b:include name='customHeaderByline'/>
         </div>
       </b:if>
-      <!-- Test -->
-      <b:if cond='data:post.title'>
-        <h2>
-          <a expr:href='data:post.url'><data:post.title/></a>
-        </h2>
-      </b:if>
+
+      <div class='post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3'>
+        <div class='post-img-left'>
+          <b:include data='{ size: 250, aspectRatioWidth: 250, aspectRatioHeight: 250 }' name='post.image'/>
+        </div>
+        <div class='post-content'>
+          <b:if cond='data:post.title'>
+            <h2 class='post-title'>
+              <a class='post-title-link' expr:href='data:post.link ? data:post.link : data:post.url'><data:post.title/></a>
+            </h2>
+          </b:if>
+          <p><b:include data='{ length: 250, links: true, linebreaks: true, ellipsis: true }' name='post.snippet'/></p>
+          <p><b:include data='{ class: &quot;btn btn-primary&quot; }' name='post.readMore'/></p>
+        </div>
+      </div>
+
       <b:if cond='data:footerBylines.notEmpty'>
         <div class='post-footer'>
           <b:include name='customFooterBylines'/>
@@ -1885,6 +1896,42 @@ Blog posts (widget type `Blog`)
       </div>
     </b:loop><!-- data:footerBylines -->
   </b:if><!-- data:footerBylines.notEmpty -->
+</b:includable>
+    <b:includable id='post.image'>
+  <b:if cond='data:post.featuredImage'>
+    <b:if cond='data:post.featuredImage.isYoutube'>
+      <a expr:href='data:post.url'>
+        <img expr:src='resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl,data:size,(data:aspectRatioWidth + &quot;:&quot; + data:aspectRatioHeight))' expr:alt='data:post.title ? data:post.title : &quot;Image&quot;'/>
+      </a>
+    <b:else/>
+      <a expr:href='data:post.url'>
+        <img expr:src='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage,data:size,(data:aspectRatioWidth + &quot;:&quot; + data:aspectRatioHeight)) : data:post.featuredImage' expr:alt='data:post.title ? data:post.title : &quot;Image&quot;'/>
+      </a>
+    </b:if>
+  <b:else/>
+    <a expr:href='data:post.url'>
+      <img expr:src='&quot;https://placehold.it/&quot; + data:aspectRatioWidth + &quot;x&quot; + data:aspectRatioHeight + &quot;/eee/777?text=NO+IMAGE+AVAILABLE&quot;' expr:alt='data:post.title ? data:post.title : &quot;Image&quot;'/>
+    </a>
+  </b:if>
+</b:includable>
+    <b:includable id='post.imageBg'>
+  <b:if cond='data:post.featuredImage'>
+    <b:if cond='data:post.featuredImage.isYoutube'>
+      <div expr:class='data:class' expr:style='data:style + &quot;background-image: url(&quot; + (resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl,data:size,(data:aspectRatioWidth + &quot;:&quot; + data:aspectRatioHeight))) + &quot;);&quot;'/>
+    <b:else/>
+      <div expr:class='data:class' expr:style='data:style + &quot;background-image: url(&quot; + (data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage,data:size,(data:aspectRatioWidth + &quot;:&quot; + data:aspectRatioHeight)) : data:post.featuredImage) + &quot;);&quot;'/>
+    </b:if>
+  <b:else/>
+    <div expr:class='data:class' expr:style='data:style + &quot;background-image: url(https://placehold.it/&quot; + data:aspectRatioWidth + &quot;x&quot; + data:aspectRatioHeight + &quot;/eee/777?text=NO+IMAGE+AVAILABLE);&quot;'/>
+  </b:if>
+</b:includable>
+    <b:includable id='post.snippet'>
+  <b:eval expr='data:post.body snippet { length: data:length, links: data:links, linebreaks: data:linebreaks, ellipsis: data:ellipsis }'/>
+</b:includable>
+    <b:includable id='post.readMore'>
+  <a expr:class='data:class' expr:href='data:post.url' role='button'>
+    <b:message name='messages.readMore'/><span class='sr-only'>readMore-<data:post.id/></span>
+  </a>
 </b:includable>
   </b:defaultmarkup>
 </b:defaultmarkups>
