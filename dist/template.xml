@@ -1702,7 +1702,7 @@ Blog posts (widget type `Blog`)
 
       <b:comment>=== Reactions ===</b:comment>
       <b:if cond='data:item.name == &quot;reactions&quot;'>
-        <span class='byline byline-reactions'>
+        <span class='byline byline-reactions' style='display: inline-block;'>
           <table>
             <tr>
               <td>
@@ -1887,7 +1887,7 @@ Blog posts (widget type `Blog`)
 
           <b:comment>=== Reactions ===</b:comment>
           <b:if cond='data:item.name == &quot;reactions&quot;'>
-            <span class='byline byline-reactions'>
+            <span class='byline byline-reactions' style='display: inline-block;'>
               <table>
                 <tr>
                   <td>
