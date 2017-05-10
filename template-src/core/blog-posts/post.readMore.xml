@@ -1,3 +1,4 @@
 <a expr:class='data:class' expr:href='data:post.url' role='button'>
+  <b:attr name='title' expr:value='data:post.title ? data:post.title : data:messages.noTitle'/>
   <b:message name='messages.readMore'/><span class='sr-only'>readMore-<data:post.id/></span>
 </a>
