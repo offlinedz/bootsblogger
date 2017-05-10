@@ -1603,7 +1603,7 @@ Blog posts (widget type `Blog`)
         <span class='byline byline-comments'>
           <b:if cond='data:post.allowComments'>
             <span aria-hidden='true' class='post-comments-icon fa fa-comments'/>
-            <a class='post-comments-link' expr:href='data:post.commentsUrl'>
+            <a class='post-comments-link' expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
               <b:message name='messages.numberOfComments'>
                 <b:param expr:value='data:post.numberOfComments' name='numComments'/>
               </b:message>
@@ -1630,9 +1630,15 @@ Blog posts (widget type `Blog`)
       <b:comment>=== Backlinks ===</b:comment>
       <b:if cond='data:item.name == &quot;backlinks&quot;'>
         <span class='byline byline-backlinks'>
-          <a class='post-backlinks-link' expr:onclick='&quot;window.open(&amp;quot;https://www.blogger.com/blog-this.g?n=&quot; + data:blog.title + &quot;: &quot; + data:post.title + &quot;&amp;u=&quot; + data:post.url + &quot;&amp;t=&amp;quot;, &amp;quot;_blank&amp;quot;, &amp;quot;directories=no, titlebar=no, toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=800, height=600&amp;quot;);&quot;' href='javascript:;'>
-            <span aria-hidden='true' class='post-backlinks-link-icon fa fa-pencil-square'/>
-            <span class='post-backlinks-link-label'><data:item.label/></span>
+          <span aria-hidden='true' class='post-backlinks-icon fa fa-pencil-square'/>
+          <a class='post-backlinks-link' expr:onclick='&quot;window.open(&amp;quot;https://www.blogger.com/blog-this.g?n=&quot; + data:blog.title + &quot;: &quot; + (data:post.title ? data:post.title : data:messages.noTitle) + &quot;&amp;u=&quot; + data:post.url + &quot;&amp;t=&amp;quot;, &amp;quot;_blank&amp;quot;, &amp;quot;directories=no, titlebar=no, toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=800, height=600&amp;quot;);&quot;' href='javascript:void(0)'>
+            <b:if cond='data:item.label != &quot;&quot;'>
+              <b:attr name='title' expr:value='data:item.label'/>
+              <data:item.label/>
+            <b:else/>
+              <b:attr name='title' value='Links to this post'/>
+              Links to this post
+            </b:if>
           </a>
         </span>
       </b:if>
@@ -1687,8 +1693,9 @@ Blog posts (widget type `Blog`)
       <b:comment>=== Icons ===</b:comment>
       <b:if cond='data:item.name == &quot;icons&quot;'>
         <span class='byline byline-icons'>
+          <span aria-hidde='true' class='post-email-icon fa fa-envelope'/>
           <a class='post-email-link' expr:href='data:post.emailPostUrl' expr:title='data:messages.emailPost'>
-            <span aria-hidde='true' class='post-email-link-icon fa fa-envelope'/>
+            <b:message name='messages.emailPost'/>
           </a>
         </span>
       </b:if>
@@ -1781,7 +1788,7 @@ Blog posts (widget type `Blog`)
             <span class='byline byline-comments'>
               <b:if cond='data:post.allowComments'>
                 <span aria-hidden='true' class='post-comments-icon fa fa-comments'/>
-                <a class='post-comments-link' expr:href='data:post.commentsUrl'>
+                <a class='post-comments-link' expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
                   <b:message name='messages.numberOfComments'>
                     <b:param expr:value='data:post.numberOfComments' name='numComments'/>
                   </b:message>
@@ -1808,9 +1815,15 @@ Blog posts (widget type `Blog`)
           <b:comment>=== Backlinks ===</b:comment>
           <b:if cond='data:item.name == &quot;backlinks&quot;'>
             <span class='byline byline-backlinks'>
-              <a class='post-backlinks-link' expr:onclick='&quot;window.open(&amp;quot;https://www.blogger.com/blog-this.g?n=&quot; + data:blog.title + &quot;: &quot; + data:post.title + &quot;&amp;u=&quot; + data:post.url + &quot;&amp;t=&amp;quot;, &amp;quot;_blank&amp;quot;, &amp;quot;directories=no, titlebar=no, toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=800, height=600&amp;quot;);&quot;' href='javascript:;'>
-                <span aria-hidden='true' class='post-backlinks-link-icon fa fa-pencil-square'/>
-                <span class='post-backlinks-link-label'><data:item.label/></span>
+              <span aria-hidden='true' class='post-backlinks-icon fa fa-pencil-square'/>
+              <a class='post-backlinks-link' expr:onclick='&quot;window.open(&amp;quot;https://www.blogger.com/blog-this.g?n=&quot; + data:blog.title + &quot;: &quot; + (data:post.title ? data:post.title : data:messages.noTitle) + &quot;&amp;u=&quot; + data:post.url + &quot;&amp;t=&amp;quot;, &amp;quot;_blank&amp;quot;, &amp;quot;directories=no, titlebar=no, toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=800, height=600&amp;quot;);&quot;' href='javascript:void(0)'>
+                <b:if cond='data:item.label != &quot;&quot;'>
+                  <b:attr name='title' expr:value='data:item.label'/>
+                  <data:item.label/>
+                <b:else/>
+                  <b:attr name='title' value='Links to this post'/>
+                  Links to this post
+                </b:if>
               </a>
             </span>
           </b:if>
@@ -1865,8 +1878,9 @@ Blog posts (widget type `Blog`)
           <b:comment>=== Icons ===</b:comment>
           <b:if cond='data:item.name == &quot;icons&quot;'>
             <span class='byline byline-icons'>
+              <span aria-hidde='true' class='post-email-icon fa fa-envelope'/>
               <a class='post-email-link' expr:href='data:post.emailPostUrl' expr:title='data:messages.emailPost'>
-                <span aria-hidde='true' class='post-email-link-icon fa fa-envelope'/>
+                <b:message name='messages.emailPost'/>
               </a>
             </span>
           </b:if>
