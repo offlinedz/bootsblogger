@@ -1,0 +1,1 @@
+<b:eval expr='data:post.body snippet { length: data:length, links: data:links, linebreaks: data:linebreaks, ellipsis: data:ellipsis }'/>

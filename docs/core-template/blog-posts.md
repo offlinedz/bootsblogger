@@ -52,7 +52,7 @@ Di bawah ini adalah tag data Blogger yang sering digunakan. Untuk tag data lainn
 | `data:post.snippet` | Tubuh posting yang sudah dipotong (ringkasan). |
 {% endcomment %}
 
-## Posts
+## Post layout and styles
 
 Posting dibagi menjadi beberapa bagian berdasarkan tipe halaman. Untuk membuat tampilan posting yang berbeda-beda di setiap tipe halaman, Anda hanya perlu menyesuaikan tampilan posting pada masing-masing bagian.
 
@@ -60,13 +60,13 @@ Posting dibagi menjadi beberapa bagian berdasarkan tipe halaman. Untuk membuat t
 
 Tampilan posting untuk halaman beranda.
 
-##### Source
+###### Source
 
 {% highlight plaintext %}
 template-src/content/blog-posts/post-home.xml
 {% endhighlight %}
 
-##### Includable
+###### Includable
 
 {% highlight html %}
 <b:includable id='post-home'>...</b:includable>
@@ -76,13 +76,13 @@ template-src/content/blog-posts/post-home.xml
 
 Tampilan posting untuk halaman posting (*item*).
 
-##### Source
+###### Source
 
 {% highlight plaintext %}
 template-src/content/blog-posts/post-item.xml
 {% endhighlight %}
 
-##### Includable
+###### Includable
 
 {% highlight html %}
 <b:includable id='post-item'>...</b:includable>
@@ -92,13 +92,13 @@ template-src/content/blog-posts/post-item.xml
 
 Tampilan posting untuk halaman statis.
 
-##### Source
+###### Source
 
 {% highlight plaintext %}
 template-src/content/blog-posts/post-static.xml
 {% endhighlight %}
 
-##### Includable
+###### Includable
 
 {% highlight html %}
 <b:includable id='post-static'>...</b:includable>
@@ -108,13 +108,13 @@ template-src/content/blog-posts/post-static.xml
 
 Tampilan posting untuk halaman kategori.
 
-##### Source
+###### Source
 
 {% highlight plaintext %}
 template-src/content/blog-posts/post-search-label.xml
 {% endhighlight %}
 
-##### Includable
+###### Includable
 
 {% highlight html %}
 <b:includable id='post-search-label'>...</b:includable>
@@ -124,13 +124,13 @@ template-src/content/blog-posts/post-search-label.xml
 
 Tampilan posting untuk halaman hasil pencarian.
 
-##### Source
+###### Source
 
 {% highlight plaintext %}
 template-src/content/blog-posts/post-search-query.xml
 {% endhighlight %}
 
-##### Includable
+###### Includable
 
 {% highlight html %}
 <b:includable id='post-search-query'>...</b:includable>
@@ -140,13 +140,13 @@ template-src/content/blog-posts/post-search-query.xml
 
 Tampilan posting untuk halaman dengan URL `https://example.blogspot.com/search`.
 
-##### Source
+###### Source
 
 {% highlight plaintext %}
 template-src/content/blog-posts/post-search-default.xml
 {% endhighlight %}
 
-##### Includable
+###### Includable
 
 {% highlight html %}
 <b:includable id='post-search-default'>...</b:includable>
@@ -156,13 +156,13 @@ template-src/content/blog-posts/post-search-default.xml
 
 Tampilan posting untuk halaman arsip.
 
-##### Source
+###### Source
 
 {% highlight plaintext %}
 template-src/content/blog-posts/post-archive.xml
 {% endhighlight %}
 
-##### Includable
+###### Includable
 
 {% highlight html %}
 <b:includable id='post-archive'>...</b:includable>
@@ -174,19 +174,19 @@ template-src/content/blog-posts/post-archive.xml
 
 `customHeaderByline`.
 
-##### Source
+###### Source
 
 {% highlight plaintext %}
 template-src/core/blog-posts/customHeaderByline.xml
 {% endhighlight %}
 
-##### Includable
+###### Includable
 
 {% highlight html %}
 <b:includable id='customHeaderByline'>...</b:includable>
 {% endhighlight %}
 
-##### Usage
+###### Usage
 
 {% highlight html %}
 <b:if cond='data:headerByline.items.notEmpty'>
@@ -200,19 +200,19 @@ template-src/core/blog-posts/customHeaderByline.xml
 
 `customFooterBylines`.
 
-##### Source
+###### Source
 
 {% highlight plaintext %}
 template-src/core/blog-posts/customFooterBylines.xml
 {% endhighlight %}
 
-##### Includable
+###### Includable
 
 {% highlight html %}
 <b:includable id='customFooterBylines'>...</b:includable>
 {% endhighlight %}
 
-##### Usage
+###### Usage
 
 {% highlight html %}
 <b:if cond='data:footerBylines.notEmpty'>
@@ -220,4 +220,94 @@ template-src/core/blog-posts/customFooterBylines.xml
     <b:include name='customFooterBylines'/>
   </div>
 </b:if>
+{% endhighlight %}
+
+## Includes
+
+### Images
+
+Untuk membuat *featured image*.
+
+###### Source
+
+{% highlight plaintext %}
+template-src/core/blog-posts/post.image.xml
+{% endhighlight %}
+
+###### Includable
+
+{% highlight html %}
+<b:includable id='post.image'>...</b:includable>
+{% endhighlight %}
+
+###### Usage
+
+{% highlight html %}
+<b:include data='{ size: number, aspectRatioWidth: number, aspectRatioHeight: number }' name='post.image'/>
+{% endhighlight %}
+
+### Background images
+
+Untuk membuat *featured image* dengan `background-image`.
+
+###### Source
+
+{% highlight plaintext %}
+template-src/core/blog-posts/post.imageBg.xml
+{% endhighlight %}
+
+###### Includable
+
+{% highlight html %}
+<b:includable id='post.imageBg'>...</b:includable>
+{% endhighlight %}
+
+###### Usage
+
+{% highlight html %}
+<b:include data='{ size: number, aspectRatioWidth: number, aspectRatioHeight: number, class: &quot;class-name&quot;, style: &quot;min-height: 250px;&quot; }' name='post.imageBg'/>
+{% endhighlight %}
+
+### Snippets
+
+Untuk membuat ringkasan posting.
+
+###### Source
+
+{% highlight plaintext %}
+template-src/core/blog-posts/post.snippet.xml
+{% endhighlight %}
+
+###### Includable
+
+{% highlight html %}
+<b:includable id='post.snippet'>...</b:includable>
+{% endhighlight %}
+
+###### Usage
+
+{% highlight html %}
+<b:include data='{ length: number, links: true|false, linebreaks: true|false, ellipsis: true|false }' name='post.snippet'/>
+{% endhighlight %}
+
+### Read more 
+
+Untuk membuat *read more link*. 
+
+###### Source
+
+{% highlight plaintext %}
+template-src/core/blog-posts/post.readMore.xml
+{% endhighlight %}
+
+###### Includable
+
+{% highlight html %}
+<b:includable id='post.readMore'>...</b:includable>
+{% endhighlight %}
+
+###### Usage
+
+{% highlight html %}
+<b:include data='{ class: &quot;btn btn-primary&quot; }' name='post.readMore'/>
 {% endhighlight %}

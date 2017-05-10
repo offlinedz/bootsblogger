@@ -1,0 +1,3 @@
+<a expr:class='data:class' expr:href='data:post.url' role='button'>
+  <b:message name='messages.readMore'/><span class='sr-only'>readMore-<data:post.id/></span>
+</a>

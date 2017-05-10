@@ -1,0 +1,9 @@
+<b:if cond='data:post.featuredImage'>
+  <b:if cond='data:post.featuredImage.isYoutube'>
+    <div expr:class='data:class' expr:style='data:style + &quot;background-image: url(&quot; + (resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl,data:size,(data:aspectRatioWidth + &quot;:&quot; + data:aspectRatioHeight))) + &quot;);&quot;'/>
+  <b:else/>
+    <div expr:class='data:class' expr:style='data:style + &quot;background-image: url(&quot; + (data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage,data:size,(data:aspectRatioWidth + &quot;:&quot; + data:aspectRatioHeight)) : data:post.featuredImage) + &quot;);&quot;'/>
+  </b:if>
+<b:else/>
+  <div expr:class='data:class' expr:style='data:style + &quot;background-image: url(https://placehold.it/&quot; + data:aspectRatioWidth + &quot;x&quot; + data:aspectRatioHeight + &quot;/eee/777?text=NO+IMAGE+AVAILABLE);&quot;'/>
+</b:if>

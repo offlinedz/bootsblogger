@@ -18,19 +18,21 @@ Tag `<meta>` adalah elemen HTML yang digunakan untuk membentuk struktur metadata
 
 ## Custom all-head-content
 
-##### Source
+Custom `<b:include data='blog' name='all-head-content'/>`.
+
+###### Source
 
 {% highlight plaintext %}
 template-src/core/head/customAllHeadContent.xml
 {% endhighlight %}
 
-##### Includable
+###### Includable
 
 {% highlight html %}
 <b:includable id='customAllHeadContent'>...</b:includable>
 {% endhighlight %}
 
-##### Usage
+###### Usage
 
 {% highlight html %}
 <b:include name='customAllHeadContent'/>
@@ -38,27 +40,30 @@ template-src/core/head/customAllHeadContent.xml
 
 ## Custom title
 
-##### Source
+Custom `<title>`.
+
+###### Source
 
 {% highlight plaintext %}
 template-src/core/head/customTitle.xml
 {% endhighlight %}
 
-##### Includable
+###### Includable
 
 {% highlight html %}
 <b:includable id='customTitle'>...</b:includable>
 {% endhighlight %}
 
-##### Usage
+###### Usage
 
 {% highlight html %}
 <b:include name='customTitle'/>
 {% endhighlight %}
 
-## <abbr title="Search Engine Results Page">SERP</abbr> and social tags
+## SERP and social tags
 
-##### Source
+Tag `<meta>` dan `<link>` untuk <abbr title="Search Engine Results Page">SERP</abbr> dan jejaring sosial.
+###### Source
 
 {% highlight plaintext %}
 - Default/SERP: template-src/core/head/defaultTags.xml
@@ -66,7 +71,7 @@ template-src/core/head/customTitle.xml
 - Facebook Open Graph: template-src/core/head/facebookTags.xml
 {% endhighlight %}
 
-##### Includable
+###### Includable
 
 {% highlight html %}
 <!-- Default/SERF -->
@@ -77,7 +82,7 @@ template-src/core/head/customTitle.xml
 <b:includable id='twitterTags'>...</b:includable>
 {% endhighlight %}
 
-##### Usage
+###### Usage
 
 {% highlight html %}
 <b:with value='&quot;https://example.com/path/to/image.png&quot;' var='image'>
@@ -93,19 +98,21 @@ template-src/core/head/customTitle.xml
 
 ## Layout mode CSS
 
-##### Source
+CSS untuk <a href="#" data-toggle="modal" data-target=".image-blogger-layout">Blogger layout</a>.
+
+###### Source
 
 {% highlight plaintext %}
 template-src/core/head/layout-mode.css
 {% endhighlight %}
 
-##### Includable
+###### Includable
 
 {% highlight html %}
 <b:includable id='layoutModeCss'>...</b:includable>
 {% endhighlight %}
 
-##### Usage
+###### Usage
 
 {% highlight html %}
 <b:include name='layoutModeCss'/>
@@ -129,7 +136,7 @@ Gunakan pada elemen yang di dalamnya terdapat tag `b:section`. Sesuaikan dengan 
 </div>
 {% endhighlight %}
 
-Hasilnya akan seperti pada <a href="javascript:;" data-toggle="modal" data-target=".image-blogger-layout">gambar ini</a>.
+Hasilnya akan seperti pada <a href="#" data-toggle="modal" data-target=".image-blogger-layout">gambar ini</a>.
 
 #### Notation
 

@@ -58,6 +58,18 @@ Blog posts (widget type `Blog`)
     <b:includable id='customFooterBylines'>
   <!--(bake /core/blog-posts/customFooterBylines.xml)-->
 </b:includable>
+    <b:includable id='post.image'>
+  <!--(bake /core/blog-posts/post.image.xml)-->
+</b:includable>
+    <b:includable id='post.imageBg'>
+  <!--(bake /core/blog-posts/post.imageBg.xml)-->
+</b:includable>
+    <b:includable id='post.snippet'>
+  <!--(bake /core/blog-posts/post.snippet.xml)-->
+</b:includable>
+    <b:includable id='post.readMore'>
+  <!--(bake /core/blog-posts/post.readMore.xml)-->
+</b:includable>
   </b:defaultmarkup>
 </b:defaultmarkups>
 

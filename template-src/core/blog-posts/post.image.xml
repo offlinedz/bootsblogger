@@ -1,0 +1,15 @@
+<b:if cond='data:post.featuredImage'>
+  <b:if cond='data:post.featuredImage.isYoutube'>
+    <a expr:href='data:post.url'>
+      <img expr:src='resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl,data:size,(data:aspectRatioWidth + &quot;:&quot; + data:aspectRatioHeight))' expr:alt='data:post.title ? data:post.title : &quot;Image&quot;'/>
+    </a>
+  <b:else/>
+    <a expr:href='data:post.url'>
+      <img expr:src='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage,data:size,(data:aspectRatioWidth + &quot;:&quot; + data:aspectRatioHeight)) : data:post.featuredImage' expr:alt='data:post.title ? data:post.title : &quot;Image&quot;'/>
+    </a>
+  </b:if>
+<b:else/>
+  <a expr:href='data:post.url'>
+    <img expr:src='&quot;https://placehold.it/&quot; + data:aspectRatioWidth + &quot;x&quot; + data:aspectRatioHeight + &quot;/eee/777?text=NO+IMAGE+AVAILABLE&quot;' expr:alt='data:post.title ? data:post.title : &quot;Image&quot;'/>
+  </a>
+</b:if>
