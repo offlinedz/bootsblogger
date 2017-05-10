@@ -10,6 +10,6 @@
   </b:if>
 <b:else/>
   <a expr:href='data:post.url'>
-    <img expr:src='&quot;https://placehold.it/&quot; + data:aspectRatioWidth + &quot;x&quot; + data:aspectRatioHeight + &quot;/eee/777?text=NO+IMAGE+AVAILABLE&quot;' expr:alt='data:post.title ? data:post.title : &quot;Image&quot;'/>
+    <img expr:src='&quot;https://placehold.it/&quot; + data:aspectRatioWidth + &quot;x&quot; + data:aspectRatioHeight + &quot;/eee/777?text=∅&quot;' expr:alt='data:post.title ? data:post.title : &quot;Image&quot;'/>
   </a>
 </b:if>
