@@ -1924,7 +1924,7 @@ Blog posts (widget type `Blog`)
     </b:if>
   <b:else/>
     <a expr:href='data:post.url'>
-      <img expr:src='&quot;https://placehold.it/&quot; + data:aspectRatioWidth + &quot;x&quot; + data:aspectRatioHeight + &quot;/eee/777?text=NO+IMAGE+AVAILABLE&quot;' expr:alt='data:post.title ? data:post.title : &quot;Image&quot;'/>
+      <img expr:src='&quot;https://placehold.it/&quot; + data:aspectRatioWidth + &quot;x&quot; + data:aspectRatioHeight + &quot;/eee/777?text=∅&quot;' expr:alt='data:post.title ? data:post.title : &quot;Image&quot;'/>
     </a>
   </b:if>
 </b:includable>
@@ -1936,7 +1936,7 @@ Blog posts (widget type `Blog`)
       <div expr:class='data:class' expr:style='data:style + &quot;background-image: url(&quot; + (data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage,data:size,(data:aspectRatioWidth + &quot;:&quot; + data:aspectRatioHeight)) : data:post.featuredImage) + &quot;);&quot;'/>
     </b:if>
   <b:else/>
-    <div expr:class='data:class' expr:style='data:style + &quot;background-image: url(https://placehold.it/&quot; + data:aspectRatioWidth + &quot;x&quot; + data:aspectRatioHeight + &quot;/eee/777?text=NO+IMAGE+AVAILABLE);&quot;'/>
+    <div expr:class='data:class' expr:style='data:style + &quot;background-image: url(https://placehold.it/&quot; + data:aspectRatioWidth + &quot;x&quot; + data:aspectRatioHeight + &quot;/eee/777?text=∅);&quot;'/>
   </b:if>
 </b:includable>
     <b:includable id='post.snippet'>
@@ -1944,6 +1944,7 @@ Blog posts (widget type `Blog`)
 </b:includable>
     <b:includable id='post.readMore'>
   <a expr:class='data:class' expr:href='data:post.url' role='button'>
+    <b:attr name='title' expr:value='data:post.title ? data:post.title : data:messages.noTitle'/>
     <b:message name='messages.readMore'/><span class='sr-only'>readMore-<data:post.id/></span>
   </a>
 </b:includable>
