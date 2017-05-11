@@ -93,6 +93,17 @@
 /* .posts {} */
 
 /**
+ * Post byline items
+ *
+ * - `customHeaderByline`
+ * - `customFooterBylines`
+ */
+
+.byline + .byline {
+  margin-left: .5rem;
+}
+
+/**
  * Comments
  */
 
