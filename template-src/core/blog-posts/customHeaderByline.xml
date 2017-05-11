@@ -159,21 +159,19 @@
     <b:comment>=== Reactions ===</b:comment>
     <b:if cond='data:item.name == &quot;reactions&quot;'>
       <span class='byline byline-reactions' style='display: inline-block;'>
-        <table>
-          <tr>
-            <td>
-              <span aria-hidden='true' class='post-reactions-icon fa fa-check-square'/>
-            </td>
-            <b:if cond='data:item.label != &quot;&quot;'>
-              <td>
-                <span class='post-reactions-label'><data:item.label/></span>
-              </td>
-            </b:if>
-            <td>
-              <iframe expr:src='data:post.reactionsUrl' name='reactions' style='position: relative; width: 100%; height: 1.5rem; vertical-align: middle; border: 0;'/>
-            </td>
-          </tr>
-        </table>
+        <div class='d-flex justify-content-start'>
+          <div>
+            <span aria-hidden='true' class='post-reactions-icon fa fa-check-square'/>
+          </div>
+          <b:if cond='data:item.label != &quot;&quot;'>
+            <div style='margin-left: 4px;'>
+              <span class='post-reactions-label'><data:item.label/></span>
+            </div>
+          </b:if>
+          <div>
+            <iframe expr:src='data:post.reactionsUrl' name='reactions' style='position: relative; width: 100%; height: 1.5rem; vertical-align: middle; border: 0;'/>
+          </div>
+        </div>
       </span>
     </b:if>
 
