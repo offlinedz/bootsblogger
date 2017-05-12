@@ -54,11 +54,8 @@
   border-radius: 0;
 }
 
-.custom-jumbotron .text-color-1 {
+.custom-jumbotron h1 {
   color: #777;
-}
-.custom-jumbotron .text-color-2 {
-  color: #ef6c00;
 }
 
 .custom-jumbotron .btn-jumbotron {
