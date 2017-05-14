@@ -17,16 +17,16 @@
           <div class='dropdown-menu'>
             <a class='dropdown-item' href='/'>Homepage</a>
             <div class='dropdown-divider'></div>
-            <a class='dropdown-item' href='/search'>Default</a>
+            <a class='dropdown-item' href='/search'>Search (default) page</a>
             <div class='dropdown-divider'></div>
-            <a class='dropdown-item' href='/search/label/Sample?max-results=10'>Category page (yes)</a>
-            <a class='dropdown-item' href='/search/label/Nope?max-results=10'>Category page (nope)</a>
+            <a class='dropdown-item' href='/search/label/Sample?max-results=10'>Search (label) page <span class='badge badge-success'>yes</span></a>
+            <a class='dropdown-item' href='/search/label/Nope?max-results=10'>Search (label) page <span class='badge badge-danger'>nope</span></a>
             <div class='dropdown-divider'></div>
-            <a class='dropdown-item' href='/search?q=lorem+ipsum'>Search results page (yes)</a>
-            <a class='dropdown-item' href='/search?q=nope'>Search results page (nope)</a>
+            <a class='dropdown-item' href='/search?q=lorem+ipsum'>Search (query) page <span class='badge badge-success'>yes</span></a>
+            <a class='dropdown-item' href='/search?q=nope'>Search (query) page <span class='badge badge-danger'>nope</span></a>
             <div class='dropdown-divider'></div>
-            <a class='dropdown-item' href='/2016_11_01_archive.html'>Archive page (yes)</a>
-            <a class='dropdown-item' href='/1945_08_17_archive.html'>Archive page (nope)</a>
+            <a class='dropdown-item' href='/2016_11_01_archive.html'>Archive page <span class='badge badge-success'>yes</span></a>
+            <a class='dropdown-item' href='/1945_08_17_archive.html'>Archive page <span class='badge badge-danger'>nope</span></a>
             <div class='dropdown-divider'></div>
             <a class='dropdown-item' href='/2016/11/sample-blog-post-03.html'>Item page</a>
             <a class='dropdown-item' href='/p/static-page.html'>Static page</a>
