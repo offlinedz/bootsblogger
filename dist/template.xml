@@ -95,11 +95,8 @@ CSS
   border-radius: 0;
 }
 
-.custom-jumbotron .text-color-1 {
+.custom-jumbotron h1 {
   color: #777;
-}
-.custom-jumbotron .text-color-2 {
-  color: #ef6c00;
 }
 
 .custom-jumbotron .btn-jumbotron {
@@ -266,113 +263,198 @@ Post layout and styles
 <b:defaultmarkups>
   <b:defaultmarkup type='Common'>
     <b:includable id='post-home'>
-  <!-- Test -->
   <b:loop values='data:posts' var='post'>
-    <article class='post' expr:id='"post-" + data:post.id'>
+    <article class='post' expr:id='&quot;post-&quot; + data:post.id'>
+      <!-- Header -->
       <b:if cond='data:headerByline.items.notEmpty'>
         <div class='post-header'>
           <b:include name='customHeaderByline'/>
         </div>
       </b:if>
-
+      <!-- Horizontal thumbnail -->
       <div class='post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3'>
-        <div class='post-img-left'>
+        <!-- Post image -->
+        <div class='post-img-left' itemprop='thumbnail'>
           <b:include data='{ size: 250, aspectRatioWidth: 250, aspectRatioHeight: 250 }' name='post.image'/>
-        </div>
+        </div><!-- /.post-img-left -->
+        <!-- Content -->
         <div class='post-content'>
+          <!-- Post title -->
           <b:if cond='data:post.title'>
             <h2 class='post-title'>
               <a class='post-title-link' expr:href='data:post.link ? data:post.link : data:post.url'><data:post.title/></a>
             </h2>
           </b:if>
+          <!-- Post snippet -->
           <p><b:include data='{ length: 250, links: true, linebreaks: true, ellipsis: true }' name='post.snippet'/></p>
+          <!-- Post read more -->
           <p><b:include data='{ class: &quot;btn btn-primary&quot; }' name='post.readMore'/></p>
-        </div>
-      </div>
-
+        </div><!-- /.post-content -->
+      </div><!-- /.post-horizontal-sm -->
+      <!-- Footer -->
       <b:if cond='data:footerBylines.notEmpty'>
         <div class='post-footer'>
           <b:include name='customFooterBylines'/>
         </div>
       </b:if>
-    </article><!-- /.post -->
+    </article>
   </b:loop>
 </b:includable>
     <b:includable id='post-item'>
   <b:loop values='data:posts' var='post'>
-    <article class='post' expr:id='"post-" + data:post.id'>
-      <b:include name='customHeaderBylineOverride'/>
-      <!-- Test -->
-      <b:if cond='data:post.title'>
-        <h2>
-          <a expr:href='data:post.url'><data:post.title/></a>
-        </h2>
+    <article class='post' expr:id='&quot;post-&quot; + data:post.id'>
+      <!-- Header -->
+      <b:if cond='data:headerByline.items.notEmpty'>
+        <div class='post-header'>
+          <b:include name='customHeaderByline'/>
+        </div>
       </b:if>
-      <data:post.body/>
-      <b:include name='customFooterBylinesOverride'/>
-    </article><!-- /.post -->
+      <!-- Content -->
+      <div class='post-content'>
+        <!-- Post title -->
+        <b:if cond='data:post.title'>
+          <h1>
+            <data:post.title/>
+          </h1>
+        </b:if>
+        <data:post.body/>
+      </div>
+      <!-- Footer -->
+      <b:if cond='data:footerBylines.notEmpty'>
+        <div class='post-footer'>
+          <b:include name='customFooterBylines'/>
+        </div>
+      </b:if>
+    </article>
   </b:loop>
 </b:includable>
     <b:includable id='post-static'>
   <b:loop values='data:posts' var='post'>
-    <article class='post' expr:id='"post-" + data:post.id'>
-      <!-- Test -->
-      <b:if cond='data:post.title'>
-        <h2>
-          <a expr:href='data:post.url'><data:post.title/></a>
-        </h2>
-      </b:if>
-      <data:post.body/>
-    </article><!-- /.post -->
+    <article class='post' expr:id='&quot;post-&quot; + data:post.id'>
+      <!-- Content -->
+      <div class='post-content'>
+        <!-- Post title -->
+        <b:if cond='data:post.title'>
+          <h1>
+            <data:post.title/>
+          </h1>
+        </b:if>
+        <data:post.body/>
+      </div>
+    </article>
   </b:loop>
 </b:includable>
     <b:includable id='post-search-label'>
-  <b:loop values='data:posts' var='post'>
-    <article class='post' expr:id='"post-" + data:post.id'>
-      <!-- Test -->
-      <b:if cond='data:post.title'>
-        <h2>
-          <a expr:href='data:post.url'><data:post.title/></a>
-        </h2>
-      </b:if>
-    </article><!-- /.post -->
-  </b:loop>
+   <div class='row'>
+    <b:loop values='data:posts' var='post'>
+      <div class='col-sm-6 mb-3 mb-sm-4'>
+        <article class='post h-100 mb-0' expr:id='&quot;post-&quot; + data:post.id'>
+          <!-- Post image -->
+          <b:include data='{ size: 500, aspectRatioWidth: 500, aspectRatioHeight: 250, class: &quot;post-img-top post-img-cover&quot;, style: &quot;min-height: 250px;&quot; }' name='post.imageBg'/>
+          <!-- Content -->
+          <div class='post-content'>
+            <!-- Post title -->
+            <b:if cond='data:post.title'>
+              <h2 class='post-title h4'>
+                <a class='post-title-link' expr:href='data:post.link ? data:post.link : data:post.url'><data:post.title/></a>
+              </h2>
+            </b:if>
+            <!-- Post snippet -->
+            <p><b:include data='{ length: 100, links: true, linebreaks: true, ellipsis: true }' name='post.snippet'/></p>
+            <!-- Post read more -->
+            <p><b:include data='{ class: &quot;btn btn-primary&quot; }' name='post.readMore'/></p>
+          </div><!-- /.post-content -->
+        </article>
+      </div>
+    </b:loop>
+  </div>
 </b:includable>
     <b:includable id='post-search-query'>
   <b:loop values='data:posts' var='post'>
-    <article class='post' expr:id='"post-" + data:post.id'>
-      <!-- Test -->
-      <b:if cond='data:post.title'>
-        <h2>
-          <a expr:href='data:post.url'><data:post.title/></a>
-        </h2>
-      </b:if>
-    </article><!-- /.post -->
+    <article class='post' expr:id='&quot;post-&quot; + data:post.id'>
+      <!-- Content -->
+      <div class='post-content'>
+        <!-- Post title -->
+        <b:if cond='data:post.title'>
+          <h2 class='post-title'>
+            <a class='post-title-link' expr:href='data:post.link ? data:post.link : data:post.url'><data:post.title/></a>
+          </h2>
+        </b:if>
+        <!-- Post snippet -->
+        <p><b:include data='{ length: 150, links: true, linebreaks: true, ellipsis: true }' name='post.snippet'/></p>
+      </div><!-- /.post-content -->
+    </article>
   </b:loop>
 </b:includable>
     <b:includable id='post-search-default'>
   <b:loop values='data:posts' var='post'>
-    <article class='post' expr:id='"post-" + data:post.id'>
-      <!-- Test -->
-      <b:if cond='data:post.title'>
-        <h2>
-          <a expr:href='data:post.url'><data:post.title/></a>
-        </h2>
+    <article class='post' expr:id='&quot;post-&quot; + data:post.id'>
+      <!-- Header -->
+      <b:if cond='data:headerByline.items.notEmpty'>
+        <div class='post-header'>
+          <b:include name='customHeaderByline'/>
+        </div>
       </b:if>
-    </article><!-- /.post -->
+      <!-- Horizontal thumbnail -->
+      <div class='post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3'>
+        <!-- Post image -->
+        <div class='post-img-left' itemprop='thumbnail'>
+          <b:include data='{ size: 250, aspectRatioWidth: 250, aspectRatioHeight: 250 }' name='post.image'/>
+        </div><!-- /.post-img-left -->
+        <!-- Content -->
+        <div class='post-content'>
+          <!-- Post title -->
+          <b:if cond='data:post.title'>
+            <h2 class='post-title'>
+              <a class='post-title-link' expr:href='data:post.link ? data:post.link : data:post.url'><data:post.title/></a>
+            </h2>
+          </b:if>
+          <!-- Post snippet -->
+          <p><b:include data='{ length: 250, links: true, linebreaks: true, ellipsis: true }' name='post.snippet'/></p>
+          <!-- Post read more -->
+          <p><b:include data='{ class: &quot;btn btn-primary&quot; }' name='post.readMore'/></p>
+        </div><!-- /.post-content -->
+      </div><!-- /.post-horizontal-sm -->
+      <!-- Footer -->
+      <b:if cond='data:footerBylines.notEmpty'>
+        <div class='post-footer'>
+          <b:include name='customFooterBylines'/>
+        </div>
+      </b:if>
+    </article>
   </b:loop>
 </b:includable>
     <b:includable id='post-archive'>
-  <b:loop values='data:posts' var='post'>
-    <article class='post' expr:id='"post-" + data:post.id'>
-      <!-- Test -->
-      <b:if cond='data:post.title'>
-        <h2>
-          <a expr:href='data:post.url'><data:post.title/></a>
-        </h2>
-      </b:if>
-    </article><!-- /.post -->
-  </b:loop>
+  <table class='table table-striped'>
+    <tbody>
+      <b:loop values='data:posts' var='post'>
+        <tr expr:id='&quot;post-&quot; + data:post.id'>
+          <!-- Post date -->
+          <td class='text-nowrap'>
+            <time expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'><b:eval expr='data:post.date format &quot;dd/MM/YYYY&quot;'/></time>
+          </td>
+          <!-- Post title -->
+          <td>
+            <b:if cond='data:post.title'>
+              <a expr:href='data:post.link ? data:post.link : data:post.url'><data:post.title/></a>
+            <b:else/>
+              <a expr:href='data:post.link ? data:post.link : data:post.url'><b:message name='messages.noTitle'/></a>
+            </b:if>
+          </td>
+          <!-- Post author -->
+          <td class='text-nowrap'>
+            <b:if cond='data:post.author'>
+              <b:if cond='data:post.author.profileUrl'>
+                <a expr:href='data:post.author.profileUrl' title='Author profile'><data:post.author.name/></a>
+              <b:else/>
+                <data:post.author.name/>
+              </b:if>
+            </b:if>
+          </td>
+        </tr>
+      </b:loop>
+    </tbody>
+  </table>
 </b:includable>
   </b:defaultmarkup>
 </b:defaultmarkups>
@@ -428,16 +510,16 @@ Navbar
           <div class='dropdown-menu'>
             <a class='dropdown-item' href='/'>Homepage</a>
             <div class='dropdown-divider'></div>
-            <a class='dropdown-item' href='/search'>Default</a>
+            <a class='dropdown-item' href='/search'>Search (default) page</a>
             <div class='dropdown-divider'></div>
-            <a class='dropdown-item' href='/search/label/Sample?max-results=10'>Category page (yes)</a>
-            <a class='dropdown-item' href='/search/label/Nope?max-results=10'>Category page (nope)</a>
+            <a class='dropdown-item' href='/search/label/Sample?max-results=10'>Search (label) page <span class='badge badge-success'>yes</span></a>
+            <a class='dropdown-item' href='/search/label/Nope?max-results=10'>Search (label) page <span class='badge badge-danger'>nope</span></a>
             <div class='dropdown-divider'></div>
-            <a class='dropdown-item' href='/search?q=lorem+ipsum'>Search results page (yes)</a>
-            <a class='dropdown-item' href='/search?q=nope'>Search results page (nope)</a>
+            <a class='dropdown-item' href='/search?q=lorem+ipsum'>Search (query) page <span class='badge badge-success'>yes</span></a>
+            <a class='dropdown-item' href='/search?q=nope'>Search (query) page <span class='badge badge-danger'>nope</span></a>
             <div class='dropdown-divider'></div>
-            <a class='dropdown-item' href='/2016_11_01_archive.html'>Archive page (yes)</a>
-            <a class='dropdown-item' href='/1945_08_17_archive.html'>Archive page (nope)</a>
+            <a class='dropdown-item' href='/2016_11_01_archive.html'>Archive page <span class='badge badge-success'>yes</span></a>
+            <a class='dropdown-item' href='/1945_08_17_archive.html'>Archive page <span class='badge badge-danger'>nope</span></a>
             <div class='dropdown-divider'></div>
             <a class='dropdown-item' href='/2016/11/sample-blog-post-03.html'>Item page</a>
             <a class='dropdown-item' href='/p/static-page.html'>Static page</a>
@@ -468,7 +550,7 @@ Jumbotron
 <b:if cond='data:view.isHomepage'>
   <div class='jumbotron custom-jumbotron mb-0'>
     <div class='container'>
-      <h1 class='display-3'><span class='text-color-1'>A</span> <span class='text-color-2'>hackable</span> <span class='text-color-1'>template</span></h1>
+      <h1 class='display-3'>Bootsblogger</h1>
       <p class='lead'>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
       <a class='btn btn-lg btn-jumbotron' href='https://bootsblogger.github.io' role='button'>Getting started</a>
     </div>
