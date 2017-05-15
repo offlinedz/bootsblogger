@@ -1,11 +1,14 @@
 <b:loop values='data:posts' var='post'>
-  <article class='post' expr:id='"post-" + data:post.id'>
-    <!-- Test -->
-    <b:if cond='data:post.title'>
-      <h2>
-        <a expr:href='data:post.url'><data:post.title/></a>
-      </h2>
-    </b:if>
-    <data:post.body/>
-  </article><!-- /.post -->
+  <article class='post' expr:id='&quot;post-&quot; + data:post.id'>
+    <!-- Content -->
+    <div class='post-content'>
+      <!-- Post title -->
+      <b:if cond='data:post.title'>
+        <h1>
+          <data:post.title/>
+        </h1>
+      </b:if>
+      <data:post.body/>
+    </div>
+  </article>
 </b:loop>

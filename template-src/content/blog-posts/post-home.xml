@@ -1,31 +1,36 @@
-<!-- Test -->
 <b:loop values='data:posts' var='post'>
-  <article class='post' expr:id='"post-" + data:post.id'>
+  <article class='post' expr:id='&quot;post-&quot; + data:post.id'>
+    <!-- Header -->
     <b:if cond='data:headerByline.items.notEmpty'>
       <div class='post-header'>
         <b:include name='customHeaderByline'/>
       </div>
     </b:if>
-
+    <!-- Horizontal thumbnail -->
     <div class='post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3'>
-      <div class='post-img-left'>
+      <!-- Post image -->
+      <div class='post-img-left' itemprop='thumbnail'>
         <b:include data='{ size: 250, aspectRatioWidth: 250, aspectRatioHeight: 250 }' name='post.image'/>
-      </div>
+      </div><!-- /.post-img-left -->
+      <!-- Content -->
       <div class='post-content'>
+        <!-- Post title -->
         <b:if cond='data:post.title'>
           <h2 class='post-title'>
             <a class='post-title-link' expr:href='data:post.link ? data:post.link : data:post.url'><data:post.title/></a>
           </h2>
         </b:if>
+        <!-- Post snippet -->
         <p><b:include data='{ length: 250, links: true, linebreaks: true, ellipsis: true }' name='post.snippet'/></p>
+        <!-- Post read more -->
         <p><b:include data='{ class: &quot;btn btn-primary&quot; }' name='post.readMore'/></p>
-      </div>
-    </div>
-
+      </div><!-- /.post-content -->
+    </div><!-- /.post-horizontal-sm -->
+    <!-- Footer -->
     <b:if cond='data:footerBylines.notEmpty'>
       <div class='post-footer'>
         <b:include name='customFooterBylines'/>
       </div>
     </b:if>
-  </article><!-- /.post -->
+  </article>
 </b:loop>

@@ -1,13 +1,26 @@
 <b:loop values='data:posts' var='post'>
-  <article class='post' expr:id='"post-" + data:post.id'>
-    <b:include name='customHeaderBylineOverride'/>
-    <!-- Test -->
-    <b:if cond='data:post.title'>
-      <h2>
-        <a expr:href='data:post.url'><data:post.title/></a>
-      </h2>
+  <article class='post' expr:id='&quot;post-&quot; + data:post.id'>
+    <!-- Header -->
+    <b:if cond='data:headerByline.items.notEmpty'>
+      <div class='post-header'>
+        <b:include name='customHeaderByline'/>
+      </div>
     </b:if>
-    <data:post.body/>
-    <b:include name='customFooterBylinesOverride'/>
-  </article><!-- /.post -->
+    <!-- Content -->
+    <div class='post-content'>
+      <!-- Post title -->
+      <b:if cond='data:post.title'>
+        <h1>
+          <data:post.title/>
+        </h1>
+      </b:if>
+      <data:post.body/>
+    </div>
+    <!-- Footer -->
+    <b:if cond='data:footerBylines.notEmpty'>
+      <div class='post-footer'>
+        <b:include name='customFooterBylines'/>
+      </div>
+    </b:if>
+  </article>
 </b:loop>

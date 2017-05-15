@@ -1,10 +1,30 @@
-<b:loop values='data:posts' var='post'>
-  <article class='post' expr:id='"post-" + data:post.id'>
-    <!-- Test -->
-    <b:if cond='data:post.title'>
-      <h2>
-        <a expr:href='data:post.url'><data:post.title/></a>
-      </h2>
-    </b:if>
-  </article><!-- /.post -->
-</b:loop>
+<table class='table table-striped'>
+  <tbody>
+    <b:loop values='data:posts' var='post'>
+      <tr expr:id='&quot;post-&quot; + data:post.id'>
+        <!-- Post date -->
+        <td class='text-nowrap'>
+          <time expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'><b:eval expr='data:post.date format &quot;dd/MM/YYYY&quot;'/></time>
+        </td>
+        <!-- Post title -->
+        <td>
+          <b:if cond='data:post.title'>
+            <a expr:href='data:post.link ? data:post.link : data:post.url'><data:post.title/></a>
+          <b:else/>
+            <a expr:href='data:post.link ? data:post.link : data:post.url'><b:message name='messages.noTitle'/></a>
+          </b:if>
+        </td>
+        <!-- Post author -->
+        <td class='text-nowrap'>
+          <b:if cond='data:post.author'>
+            <b:if cond='data:post.author.profileUrl'>
+              <a expr:href='data:post.author.profileUrl' title='Author profile'><data:post.author.name/></a>
+            <b:else/>
+              <data:post.author.name/>
+            </b:if>
+          </b:if>
+        </td>
+      </tr>
+    </b:loop>
+  </tbody>
+</table>
