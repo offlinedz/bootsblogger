@@ -31,7 +31,7 @@
    Global styles
    ============================================== */
 
-/* body {} */
+body {}
 
 
 /* ==============================================
@@ -81,13 +81,13 @@
 /* Main
    ============================================== */
 
-/* .main {} */
+.main {}
 
 /**
  * Posts
  */
 
-/* .posts {} */
+.posts {}
 
 /**
  * Post byline items
@@ -104,7 +104,7 @@
  * Comments
  */
 
-/* .comments {} */
+.comments {}
 
 /**
  * Pager
@@ -117,7 +117,7 @@
 /* Sidebar
    ============================================== */
 
-/* .sidebar {} */
+.sidebar {}
 
 
 /* ==============================================
@@ -134,19 +134,19 @@
    ============================================== */
 
 .footer {
- font-size: 85%;
- color: #777;
- text-align: center;
- background-color: #fafafa;
+  font-size: 85%;
+  color: #777;
+  text-align: center;
+  background-color: #fafafa;
 }
 
 .footer a {
- font-weight: 500;
- color: #333;
+  font-weight: 500;
+  color: #333;
 }
 .footer a:hover,
 .footer a:focus {
- color: #0275d8;
+  color: #0275d8;
 }
 
 
@@ -157,44 +157,44 @@
 /* Homepage
    ============================================== */
 
-/* .blog-view-home .element {} */
+.blog-view-home .element {}
 
 /* Item page
    ============================================== */
 
-/* .blog-view-item .element {} */
+.blog-view-item .element {}
 
 /* Static page
    ============================================== */
 
-/* .blog-view-static .element {} */
+.blog-view-static .element {}
 
 /* Search (label) page
    ============================================== */
 
-/* .blog-view-search-label .element {} */
+.blog-view-search-label .element {}
 
 /* Search (query) page
    ============================================== */
 
-/* .blog-view-search-query .element {} */
+.blog-view-search-query .element {}
 
 /* Search (default) page
    ============================================== */
 
-/* .blog-view-search-default .element {} */
+.blog-view-search-default .element {}
 
 /* Archive page
    ============================================== */
 
-/* .blog-view-archive .element {} */
+.blog-view-archive .element {}
 
 /* Error page
    ============================================== */
 
-/* .blog-view-error .element {} */
+.blog-view-error .element {}
 
 /* Preview page
    ============================================== */
 
-/* .blog-view-preview .element {} */
+.blog-view-preview .element {}
