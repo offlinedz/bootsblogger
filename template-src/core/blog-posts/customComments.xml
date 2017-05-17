@@ -103,7 +103,7 @@
                       <ul class='list-inline mb-0'>
                         <b:if cond='data:comment.authorUrl'>
                           <li class='list-inline-item'>
-                            <a class='comment-name comment-name-link' expr:href='data:comment.authorUrl'>
+                            <a class='comment-name-link' expr:href='data:comment.authorUrl'>
                               <data:comment.author/>
                             </a>
                           </li>
@@ -205,7 +205,7 @@
                               <ul class='list-inline mb-0'>
                                 <b:if cond='data:replies.authorUrl'>
                                   <li class='list-inline-item'>
-                                    <a class='comment-name comment-name-link' expr:href='data:replies.authorUrl'>
+                                    <a class='comment-name-link' expr:href='data:replies.authorUrl'>
                                       <data:replies.author/>
                                     </a>
                                   </li>
