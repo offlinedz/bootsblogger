@@ -15,29 +15,40 @@
 
 
 //
-// Comment lists
+// Block, media
 //
 
-// Parent
+// Block
 
-.comment-list-parent {
-  .comment-list-parent-item {
-    padding: 1rem;
-    background-color: #f7f7f9;
-    border: 1px solid rgba(0,0,0,.125);
-    @include border-radius(.25rem);
-  }
+.comment-block {
+  padding: 1rem;
+  background-color: #f7f7f9;
+  border: 1px solid rgba(0,0,0,.125);
+  @include border-radius(.25rem);
 }
 
-// Children
+// Parent media
 
-.comment-list-children {
-  .comment-list-children-item {
-    padding: 1rem;
-    background-color: #eee;
-    border: 1px solid transparent;
-    @include border-radius(.25rem);
-  }
+.comment-parent-media {
+  padding: 1rem;
+  background-color: transparent;
+  border: 1px solid transparent;
+  @include border-radius(.25rem);
+}
+
+// Children media
+
+.comment-children-media {
+  padding: 1rem;
+  background-color: #efefef;
+  border: 1px solid transparent;
+  @include border-radius(.25rem);
+}
+
+// Comment post author
+
+.comment-post-author {
+  border-top: 6px solid #ffb87d;
 }
 
 
@@ -57,6 +68,7 @@
 //
 
 // Name
+
 .comment-name {
   font-size: $font-size-base;
   font-weight: $font-weight-bold;
@@ -76,6 +88,7 @@
 }
 
 // Permalink
+
 .comment-permalink {
   font-size: $font-size-base;
   font-weight: $font-weight-normal;
@@ -90,6 +103,7 @@
 }
 
 // Timestamp
+
 .comment-timestamp {
   font-size: $font-size-sm;
   font-weight: $font-weight-normal;
@@ -97,6 +111,7 @@
 }
 
 // MOD
+
 .comment-mod {
   font-size: $font-size-xs;
   vertical-align: middle;
@@ -108,6 +123,7 @@
 //
 
 // Body
+
 .comment-body {
   font-size: $font-size-base;
   line-height: $line-height-base;
@@ -131,6 +147,7 @@
 //
 
 // Reply link
+
 .comment-reply {
   font-size: $font-size-base;
   font-weight: $font-weight-bold;
@@ -172,11 +189,19 @@
 // Comment form
 //
 
-// Original container
-// .comment-form-container-original {}
+// Original wrapper
 
-// Reply container
-.comment-form-container-reply {
+.comment-form-original-wrapper {
+  display: block;
+
+  &.active {
+    display: block;
+  }
+}
+
+// Reply wrapper
+
+.comment-form-reply-wrapper {
   display: none;
 
   &.active {
@@ -185,6 +210,7 @@
 }
 
 // Comment form
+
 .comment-form {
   background-color: transparent;
 }
@@ -200,6 +226,7 @@
 }
 
 // Comment form editor
+
 .comment-form-editor {
   background-color: #fff;
   border-color: rgba(0,0,0,.125);
@@ -218,6 +245,7 @@
 }
 
 // Comment form loading
+
 .comment-form-loading {
   display: none !important;
   background-color: #fff;
