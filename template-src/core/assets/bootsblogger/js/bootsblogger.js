@@ -29,12 +29,12 @@
     })
 
 
-    // Toggle `.active` for `.comment-form-container-original` and `.comment-form-container-reply`
+    // Toggle `.active` for `.comment-form-original-wrapper` and `.comment-form-reply-wrapper`
 
-    $('.comment-form-container-original').addClass('active')
+    $('.comment-form-original-wrapper').addClass('active')
 
     $('.js-comment-action').on('click', function () {
-      $('.comment-form-container-original, .comment-form-container-reply').each(function () {
+      $('.comment-form-original-wrapper, .comment-form-reply-wrapper').each(function () {
         if ($(this).find('.comment-form').length) {
           $(this).addClass('active')
         } else {
@@ -50,14 +50,14 @@
       $('.js-comment-action').removeClass('active')
       $(this).addClass('active')
 
-      $('.comment-form-container-original').each(function () {
+      $('.comment-form-original-wrapper').each(function () {
         if ($(this).find('.comment-form').length) {
           $('body').find('.comment-add-wrapper').removeClass('show')
         } else {
           $('body').find('.comment-add-wrapper').addClass('show')
         }
       })
-      $('.comment-form-container-reply').each(function () {
+      $('.comment-form-reply-wrapper').each(function () {
         if ($(this).find('.comment-form').length) {
           $('body').find('.comment-cancel-wrapper').addClass('show')
         } else {
