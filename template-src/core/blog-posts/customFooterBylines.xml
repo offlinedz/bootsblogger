@@ -116,7 +116,7 @@
         <b:comment>=== Author ===</b:comment>
         <b:if cond='data:item.name == &quot;author&quot;'>
           <span class='byline byline-author'>
-            <span aria-hidden='true' class='post-author-icon fa fa-user'/>
+            <span aria-hidden='true' class='post-author-icon fa fa-user-circle'/>
             <b:if cond='data:item.label != &quot;&quot;'>
               <span class='post-author-label'><data:item.label/></span>
             </b:if>
@@ -162,7 +162,7 @@
           <span class='byline byline-reactions' style='display: inline-block;'>
             <div class='d-flex justify-content-start'>
               <div>
-                <span aria-hidden='true' class='post-reactions-icon fa fa-check-square'/>
+                <span aria-hidden='true' class='post-reactions-icon fa fa-star'/>
               </div>
               <b:if cond='data:item.label != &quot;&quot;'>
                 <div style='margin-left: 4px;'>
