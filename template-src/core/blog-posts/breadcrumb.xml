@@ -1,0 +1,69 @@
+<ol class='breadcrumb'>
+  <li class='breadcrumb-item'><a expr:href='data:blog.homepageUrl'>Home</a></li>
+
+  <b:comment>=== Homepage ===</b:comment>
+  <b:if cond='data:view.isHomepage'>
+    <li class='breadcrumb-item active'>All Posts</li>
+  </b:if>
+
+  <b:comment>=== Item page ===</b:comment>
+  <b:if cond='data:view.isPost'>
+    <b:loop values='data:posts' var='post'>
+      <li class='breadcrumb-item dropdown'>
+        <a class='dropdown-toggle' href='#' id='dropdownMenuBreadcrumbLabels' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Labels</a>
+        <div class='dropdown-menu' aria-labelledby='dropdownMenuBreadcrumbLabels'>
+          <b:if cond='data:post.labels'>
+            <b:loop values='data:post.labels' var='label'>
+              <a class='dropdown-item' expr:href='data:label.url'><data:label.name/></a>
+            </b:loop>
+          <b:else/>
+            <a class='dropdown-item disabled' href='#'>Unlabelled</a>
+          </b:if>
+        </div>
+      </li>
+      <li class='breadcrumb-item active'>
+        <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+      </li>
+    </b:loop>
+  </b:if>
+
+  <b:comment>=== Static page ===</b:comment>
+  <b:if cond='data:view.isPage'>
+    <li class='breadcrumb-item active'>Page</li>
+    <li class='breadcrumb-item active'>
+      <b:loop values='data:posts' var='post'>
+        <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+      </b:loop>
+    </li>
+  </b:if>
+
+  <b:comment>=== Search (label) page ===</b:comment>
+  <b:if cond='data:view.search.label'>
+    <li class='breadcrumb-item active'>Search</li>
+    <li class='breadcrumb-item active'>Label</li>
+    <li class='breadcrumb-item active'>&quot;<data:blog.pageName/>&quot;</li>
+  </b:if>
+
+  <b:comment>=== Search (query) page ===</b:comment>
+  <b:if cond='data:view.search.query'>
+    <li class='breadcrumb-item active'>Search</li>
+    <li class='breadcrumb-item active'>Query</li>
+    <li class='breadcrumb-item active'>&quot;<data:view.search.query/>&quot;</li>
+  </b:if>
+
+  <b:comment>=== Search (default) page ===</b:comment>
+  <b:if cond='data:view.search and !data:view.search.label and !data:view.search.query'>
+    <li class='breadcrumb-item active'>All Posts</li>
+  </b:if>
+
+  <b:comment>=== Archive page ===</b:comment>
+  <b:if cond='data:view.isArchive'>
+    <li class='breadcrumb-item active'>Archive</li>
+    <li class='breadcrumb-item active'><data:blog.pageName/></li>
+  </b:if>
+
+  <b:comment>=== Error page ===</b:comment>
+  <b:if cond='data:view.isError'>
+    <li class='breadcrumb-item active'>404</li>
+  </b:if>
+</ol>

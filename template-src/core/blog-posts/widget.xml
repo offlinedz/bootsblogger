@@ -24,6 +24,9 @@
 
     <b:if cond='!data:view.isMobile'>
 
+      <b:comment>=== Breadcrumb ===</b:comment>
+      <b:include name='breadcrumb'/>
+
       <b:comment>=== Status message ===</b:comment>
       <b:include name='customStatusMessage'/>
 

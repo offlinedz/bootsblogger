@@ -40,6 +40,9 @@ Blog posts (widget type `Blog`)
 
 <b:defaultmarkups>
   <b:defaultmarkup type='Common'>
+    <b:includable id='breadcrumb' var='post'>
+  <!--(bake /core/blog-posts/breadcrumb.xml)-->
+</b:includable>
     <b:includable id='customStatusMessage' var='post'>
   <!--(bake /core/blog-posts/customStatusMessage.xml)-->
 </b:includable>
