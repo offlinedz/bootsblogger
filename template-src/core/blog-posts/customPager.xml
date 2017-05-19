@@ -1,23 +1,23 @@
 <b:if cond='!data:view.isPage'>
-  <nav class='pager text-center' id='pager'>
+  <nav class='pager text-center mt-5' id='pager'>
     <b:if cond='data:newerPageUrl'>
-      <a class='btn btn-secondary float-left' expr:href='data:newerPageUrl' role='button'>Newer</a>
+      <a class='btn btn-secondary float-left' expr:href='data:newerPageUrl' role='button'><data:messages.newer/></a>
     <b:else/>
-      <a class='btn btn-secondary disabled float-left' href='#' role='button'>Newer</a>
+      <a class='btn btn-secondary disabled float-left' href='#' role='button'><data:messages.newer/></a>
     </b:if>
 
-    <a class='btn btn-secondary' expr:href='data:blog.homepageUrl' role='button'>Home</a>
+    <a class='btn btn-secondary' expr:href='data:blog.homepageUrl' role='button'><data:messages.home/></a>
 
     <b:if cond='data:olderPageUrl'>
-      <a class='btn btn-secondary float-right' expr:href='data:olderPageUrl' role='button'>Older</a>
+      <a class='btn btn-secondary float-right' expr:href='data:olderPageUrl' role='button'><data:messages.older/></a>
     <b:else/>
-      <a class='btn btn-secondary disabled float-right' href='#' role='button'>Older</a>
+      <a class='btn btn-secondary disabled float-right' href='#' role='button'><data:messages.older/></a>
     </b:if>
   </nav>
 </b:if>
 
 <b:if cond='data:view.isPage'>
-  <nav class='pager text-center' id='pager'>
-    <a class='btn btn-secondary' expr:href='data:blog.homepageUrl' role='button'>Home</a>
+  <nav class='pager text-center mt-5' id='pager'>
+    <a class='btn btn-secondary' expr:href='data:blog.homepageUrl' role='button'><data:messages.home/></a>
   </nav>
 </b:if>
