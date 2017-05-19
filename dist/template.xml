@@ -345,7 +345,7 @@ Post layout and styles
   </b:loop>
 </b:includable>
     <b:includable id='post-search-label'>
-   <div class='row'>
+   <div class='row mnb-3 mnb-sm-4'>
     <b:loop values='data:posts' var='post'>
       <div class='col-sm-6 mb-3 mb-sm-4'>
         <article class='post h-100 mb-0' expr:id='&quot;post-&quot; + data:post.id'>
@@ -594,6 +594,9 @@ Main and sidebar
             <b:includable id='main'>
 
               <b:if cond='!data:view.isMobile'>
+
+                <b:comment>=== Breadcrumb ===</b:comment>
+                <b:include name='breadcrumb'/>
 
                 <b:comment>=== Status message ===</b:comment>
                 <b:include name='customStatusMessage'/>
@@ -1117,6 +1120,77 @@ Blog posts (widget type `Blog`)
 
 <b:defaultmarkups>
   <b:defaultmarkup type='Common'>
+    <b:includable id='breadcrumb' var='post'>
+  <ol class='breadcrumb'>
+    <li class='breadcrumb-item'><a expr:href='data:blog.homepageUrl'>Home</a></li>
+
+    <b:comment>=== Homepage ===</b:comment>
+    <b:if cond='data:view.isHomepage'>
+      <li class='breadcrumb-item active'>All Posts</li>
+    </b:if>
+
+    <b:comment>=== Item page ===</b:comment>
+    <b:if cond='data:view.isPost'>
+      <b:loop values='data:posts' var='post'>
+        <li class='breadcrumb-item dropdown'>
+          <a class='dropdown-toggle' href='#' id='dropdownMenuBreadcrumbLabels' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Labels</a>
+          <div class='dropdown-menu' aria-labelledby='dropdownMenuBreadcrumbLabels'>
+            <b:if cond='data:post.labels'>
+              <b:loop values='data:post.labels' var='label'>
+                <a class='dropdown-item' expr:href='data:label.url'><data:label.name/></a>
+              </b:loop>
+            <b:else/>
+              <a class='dropdown-item disabled' href='#'>Unlabelled</a>
+            </b:if>
+          </div>
+        </li>
+        <li class='breadcrumb-item active'>
+          <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+        </li>
+      </b:loop>
+    </b:if>
+
+    <b:comment>=== Static page ===</b:comment>
+    <b:if cond='data:view.isPage'>
+      <li class='breadcrumb-item active'>Page</li>
+      <li class='breadcrumb-item active'>
+        <b:loop values='data:posts' var='post'>
+          <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+        </b:loop>
+      </li>
+    </b:if>
+
+    <b:comment>=== Search (label) page ===</b:comment>
+    <b:if cond='data:view.search.label'>
+      <li class='breadcrumb-item active'>Search</li>
+      <li class='breadcrumb-item active'>Label</li>
+      <li class='breadcrumb-item active'>&quot;<data:blog.pageName/>&quot;</li>
+    </b:if>
+
+    <b:comment>=== Search (query) page ===</b:comment>
+    <b:if cond='data:view.search.query'>
+      <li class='breadcrumb-item active'>Search</li>
+      <li class='breadcrumb-item active'>Query</li>
+      <li class='breadcrumb-item active'>&quot;<data:view.search.query/>&quot;</li>
+    </b:if>
+
+    <b:comment>=== Search (default) page ===</b:comment>
+    <b:if cond='data:view.search and !data:view.search.label and !data:view.search.query'>
+      <li class='breadcrumb-item active'>All Posts</li>
+    </b:if>
+
+    <b:comment>=== Archive page ===</b:comment>
+    <b:if cond='data:view.isArchive'>
+      <li class='breadcrumb-item active'>Archive</li>
+      <li class='breadcrumb-item active'><data:blog.pageName/></li>
+    </b:if>
+
+    <b:comment>=== Error page ===</b:comment>
+    <b:if cond='data:view.isError'>
+      <li class='breadcrumb-item active'>404</li>
+    </b:if>
+  </ol>
+</b:includable>
     <b:includable id='customStatusMessage' var='post'>
   <b:if cond='data:view.search.label'>
   <script>
@@ -1601,26 +1675,26 @@ Blog posts (widget type `Blog`)
 </b:includable>
     <b:includable id='customPager' var='post'>
   <b:if cond='!data:view.isPage'>
-    <nav class='pager text-center' id='pager'>
+    <nav class='pager text-center mt-5' id='pager'>
       <b:if cond='data:newerPageUrl'>
-        <a class='btn btn-secondary float-left' expr:href='data:newerPageUrl' role='button'>Newer</a>
+        <a class='btn btn-secondary float-left' expr:href='data:newerPageUrl' role='button'><data:messages.newer/></a>
       <b:else/>
-        <a class='btn btn-secondary disabled float-left' href='#' role='button'>Newer</a>
+        <a class='btn btn-secondary disabled float-left' href='#' role='button'><data:messages.newer/></a>
       </b:if>
 
-      <a class='btn btn-secondary' expr:href='data:blog.homepageUrl' role='button'>Home</a>
+      <a class='btn btn-secondary' expr:href='data:blog.homepageUrl' role='button'><data:messages.home/></a>
 
       <b:if cond='data:olderPageUrl'>
-        <a class='btn btn-secondary float-right' expr:href='data:olderPageUrl' role='button'>Older</a>
+        <a class='btn btn-secondary float-right' expr:href='data:olderPageUrl' role='button'><data:messages.older/></a>
       <b:else/>
-        <a class='btn btn-secondary disabled float-right' href='#' role='button'>Older</a>
+        <a class='btn btn-secondary disabled float-right' href='#' role='button'><data:messages.older/></a>
       </b:if>
     </nav>
   </b:if>
 
   <b:if cond='data:view.isPage'>
-    <nav class='pager text-center' id='pager'>
-      <a class='btn btn-secondary' expr:href='data:blog.homepageUrl' role='button'>Home</a>
+    <nav class='pager text-center mt-5' id='pager'>
+      <a class='btn btn-secondary' expr:href='data:blog.homepageUrl' role='button'><data:messages.home/></a>
     </nav>
   </b:if>
 </b:includable>
@@ -1741,7 +1815,7 @@ Blog posts (widget type `Blog`)
       <b:comment>=== Author ===</b:comment>
       <b:if cond='data:item.name == &quot;author&quot;'>
         <span class='byline byline-author'>
-          <span aria-hidden='true' class='post-author-icon fa fa-user'/>
+          <span aria-hidden='true' class='post-author-icon fa fa-user-circle'/>
           <b:if cond='data:item.label != &quot;&quot;'>
             <span class='post-author-label'><data:item.label/></span>
           </b:if>
@@ -1787,7 +1861,7 @@ Blog posts (widget type `Blog`)
         <span class='byline byline-reactions' style='display: inline-block;'>
           <div class='d-flex justify-content-start'>
             <div>
-              <span aria-hidden='true' class='post-reactions-icon fa fa-check-square'/>
+              <span aria-hidden='true' class='post-reactions-icon fa fa-star'/>
             </div>
             <b:if cond='data:item.label != &quot;&quot;'>
               <div style='margin-left: 4px;'>
@@ -1923,7 +1997,7 @@ Blog posts (widget type `Blog`)
           <b:comment>=== Author ===</b:comment>
           <b:if cond='data:item.name == &quot;author&quot;'>
             <span class='byline byline-author'>
-              <span aria-hidden='true' class='post-author-icon fa fa-user'/>
+              <span aria-hidden='true' class='post-author-icon fa fa-user-circle'/>
               <b:if cond='data:item.label != &quot;&quot;'>
                 <span class='post-author-label'><data:item.label/></span>
               </b:if>
@@ -1969,7 +2043,7 @@ Blog posts (widget type `Blog`)
             <span class='byline byline-reactions' style='display: inline-block;'>
               <div class='d-flex justify-content-start'>
                 <div>
-                  <span aria-hidden='true' class='post-reactions-icon fa fa-check-square'/>
+                  <span aria-hidden='true' class='post-reactions-icon fa fa-star'/>
                 </div>
                 <b:if cond='data:item.label != &quot;&quot;'>
                   <div style='margin-left: 4px;'>
