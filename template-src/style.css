@@ -84,6 +84,15 @@ body {}
 .main {}
 
 /**
+ * Status message
+ */
+
+.search-label,
+.search-query {
+  font-weight: bold;
+}
+
+/**
  * Posts
  */
 
