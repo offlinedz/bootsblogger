@@ -7,7 +7,7 @@
         <b:if cond='data:item.name == &quot;share&quot;'>
           <span class='byline byline-share'>
             <div class='d-inline-block dropdown'>
-              <a class='post-share-toggle' href='#' data-toggle='dropdown' expr:title='data:messages.share'>
+              <a b:whitespace='remove' class='post-share-toggle' href='#' data-toggle='dropdown' expr:title='data:messages.share'>
                 <span aria-hidden='true' class='post-share-icon fa fa-share-alt'/>
               </a>
               <div class='dropdown-menu'>
@@ -78,7 +78,7 @@
               <span class='post-location-label'><data:item.label/></span>
             </b:if>
             <b:if cond='data:post.location'>
-              <a class='post-location-link' expr:href='data:post.location.mapsUrl' target='_blank'>
+              <a b:whitespace='remove' class='post-location-link' expr:href='data:post.location.mapsUrl' target='_blank'>
                 <data:post.location.name/>
               </a>
             </b:if>
@@ -125,7 +125,7 @@
             </b:if>
             <b:if cond='data:post.author'>
               <b:if cond='data:post.author.profileUrl'>
-                <a class='post-author-name-link' expr:href='data:post.author.profileUrl' title='Author profile'><data:post.author.name/></a>
+                <a b:whitespace='remove' class='post-author-name-link' expr:href='data:post.author.profileUrl' title='Author profile'><data:post.author.name/></a>
               <b:else/>
                 <span class='post-author-name'><data:post.author.name/></span>
               </b:if>
@@ -142,7 +142,7 @@
             </b:if>
             <b:if cond='data:post.labels'>
               <b:loop index='i' values='data:post.labels' var='label'>
-                <a class='post-labels-link' expr:href='data:label.url + &quot;?max-results=10&quot;'><data:label.name/></a><b:eval expr='data:i != (data:post.labels.size - 1) ? &quot;,&quot; : &quot;&quot;'/>
+                <a b:whitespace='remove' class='post-labels-link' expr:href='data:label.url + &quot;?max-results=10&quot;'><data:label.name/></a><b:eval expr='data:i != (data:post.labels.size - 1) ? &quot;,&quot; : &quot;&quot;'/>
               </b:loop>
             <b:else/>
               <span class='post-labels-unlabelled'>Unlabelled</span>
@@ -154,7 +154,7 @@
         <b:if cond='data:item.name == &quot;icons&quot;'>
           <span class='byline byline-icons'>
             <span aria-hidde='true' class='post-email-icon fa fa-envelope'/>
-            <a class='post-email-link' expr:href='data:post.emailPostUrl' expr:title='data:messages.emailPost'>
+            <a b:whitespace='remove' class='post-email-link' expr:href='data:post.emailPostUrl' expr:title='data:messages.emailPost'>
               <b:message name='messages.emailPost'/>
             </a>
           </span>
