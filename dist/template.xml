@@ -125,6 +125,15 @@ body {}
 .main {}
 
 /**
+ * Status message
+ */
+
+.search-label,
+.search-query {
+  font-weight: bold;
+}
+
+/**
  * Posts
  */
 
@@ -753,7 +762,7 @@ Head
 
   <b:comment>=== Search (query) page ===</b:comment>
   <b:if cond='data:view.search.query'>
-    <title>Search Results for *<data:blog.searchQuery/>* | <data:blog.title/></title>
+    <title><data:view.search.resultsMessage/> | <data:blog.title/></title>
   </b:if>
 
   <b:comment>=== Search (default) page ===</b:comment>
@@ -763,12 +772,12 @@ Head
 
   <b:comment>=== Archive page ===</b:comment>
   <b:if cond='data:view.isArchive'>
-    <title>Archive for <data:blog.pageName/> | <data:blog.title/></title>
+    <title><data:view.archive.rangeMessage/> | <data:blog.title/></title>
   </b:if>
 
   <b:comment>=== Error page ===</b:comment>
   <b:if cond='data:view.isError'>
-    <title>Page Not Found</title>
+    <title>404</title>
   </b:if>
 </b:includable>
     <b:includable id='defaultTags'>
@@ -1164,7 +1173,7 @@ Blog posts (widget type `Blog`)
     <b:if cond='data:view.search.label'>
       <li class='breadcrumb-item active'>Search</li>
       <li class='breadcrumb-item active'>Label</li>
-      <li class='breadcrumb-item active'>&quot;<data:blog.pageName/>&quot;</li>
+      <li class='breadcrumb-item active'>&quot;<data:view.search.label/>&quot;</li>
     </b:if>
 
     <b:comment>=== Search (query) page ===</b:comment>
@@ -1182,7 +1191,10 @@ Blog posts (widget type `Blog`)
     <b:comment>=== Archive page ===</b:comment>
     <b:if cond='data:view.isArchive'>
       <li class='breadcrumb-item active'>Archive</li>
-      <li class='breadcrumb-item active'><data:blog.pageName/></li>
+      <li class='breadcrumb-item active'><data:view.archive.year/></li>
+      <b:if cond='data:view.archive.month'>
+        <li class='breadcrumb-item active'><data:view.archive.month/></li>
+      </b:if>
     </b:if>
 
     <b:comment>=== Error page ===</b:comment>
@@ -1192,87 +1204,68 @@ Blog posts (widget type `Blog`)
   </ol>
 </b:includable>
     <b:includable id='customStatusMessage' var='post'>
-  <b:if cond='data:view.search.label'>
-  <script>
-  //<![CDATA[
-  function labelMsg(json) {
-    'use strict';
-
-    var tr = json.feed.openSearch$totalResults.$t
-
-    if (tr == 1) {
-      document.write(tr + ' post')
-    }
-    if (tr > 1) {
-      document.write(tr + ' posts')
-    }
-  }
-  //]]>
-  </script>
-  </b:if>
-
-  <b:if cond='data:view.search.query'>
-  <script>
-  //<![CDATA[
-  function searchMsg(json) {
-    'use strict';
-
-    var tr = json.feed.openSearch$totalResults.$t
-
-    if (tr == 1) {
-      document.write(tr + ' result')
-    }
-    if (tr > 1) {
-      document.write(tr + ' results')
-    }
-  }
-  //]]>
-  </script>
-  </b:if>
-
   <b:comment>=== Homepage ===</b:comment>
   <b:if cond='data:view.isHomepage and data:numPosts == 0'>
-    <div class='alert alert-warning mb-0' role='alert'>No posts yet.</div>
+    <div class='alert alert-warning mb-0' role='alert'><data:messages.theresNothingHere/></div>
   </b:if>
 
   <b:comment>=== Search (label) page ===</b:comment>
   <b:if cond='data:view.search.label'>
-    <b:if cond='data:numPosts &gt;= 1'>
+    <b:if cond='data:numPosts gte 1'>
       <div class='alert alert-success' role='alert'>
-        Showing posts with label <strong>&quot;<data:view.search.label/>&quot;</strong> : <script expr:src='&quot;/feeds/posts/summary/-/&quot; + data:view.search.label.jsEscaped + &quot;?max-results=0&amp;alt=json-in-script&amp;callback=labelMsg&quot;'/>
+        <data:view.search.resultsMessageHtml/>
       </div>
     <b:else/>
-      <div class='alert alert-warning mb-0' role='alert'>
-        No posts with label <strong>&quot;<data:view.search.label/>&quot;</strong>.
+      <div class='alert alert-warning' role='alert'>
+        <data:view.search.resultsMessageHtml/>
+      </div>
+      <b:comment>=== Search form ===</b:comment>
+      <div class='card mb-0'>
+        <div class='card-block'>
+          <p class='mb-0'><data:messages.noResultsFound/>.</p>
+        </div>
+        <ul class='list-group list-group-flush'>
+          <li class='list-group-item'>
+            <form class='w-100' expr:action='data:blog.searchUrl' method='get' role='search'>
+              <div class='input-group'>
+                <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
+                <label class='sr-only' for='status-message-search-form'><data:messages.search/></label>
+                <input class='form-control' name='q' expr:placeholder='data:messages.searchBlog' type='text' id='status-message-search-form'/>
+              </div>
+            </form>
+          </li>
+        </ul>
       </div>
     </b:if>
   </b:if>
 
   <b:comment>=== Search (query) page ===</b:comment>
   <b:if cond='data:view.search.query'>
-    <b:if cond='data:numPosts &gt;= 1'>
+    <b:if cond='data:numPosts gte 1'>
       <div class='alert alert-success' role='alert'>
-        <i aria-hidden='true' class='fa fa-search-plus'/> Search Results for <strong>&quot;<data:view.search.query/>&quot;</strong> : <script expr:src='&quot;/feeds/posts/summary?q=&quot; + data:view.search.query.jsEscaped + &quot;&amp;alt=json-in-script&amp;callback=searchMsg&quot;'/>
+        <i aria-hidden='true' class='fa fa-search-plus'/>
+        <data:view.search.resultsMessageHtml/>
       </div>
     <b:else/>
       <div class='alert alert-warning' role='alert'>
-        <i aria-hidden='true' class='fa fa-search-minus'/> Your search <strong>&quot;<data:view.search.query/>&quot;</strong> did not match any documents.
+        <i aria-hidden='true' class='fa fa-search-minus'/>
+        <data:view.search.resultsMessageHtml/>
       </div>
     	<b:comment>=== Search form ===</b:comment>
       <div class='card mb-0'>
         <div class='card-block'>
-          <form action='/search' method='get' role='search'>
-            <div class='input-group'>
-              <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
-              <label class='sr-only' for='status-message-search-form'>Search</label>
-              <input class='form-control' name='q' placeholder='Search' type='text' id='status-message-search-form'/>
-              <span class='input-group-btn'>
-                <button class='btn btn-secondary' type='submit'>Search</button>
-              </span>
-            </div><!-- /.input-group -->
-          </form>
+          <p class='mb-0'><data:messages.noResultsFound/>.</p>
         </div>
         <ul class='list-group list-group-flush'>
+          <li class='list-group-item'>
+            <form class='w-100' expr:action='data:blog.searchUrl' method='get' role='search'>
+              <div class='input-group'>
+                <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
+                <label class='sr-only' for='status-message-search-form'><data:messages.search/></label>
+                <input class='form-control' name='q' expr:placeholder='data:messages.search' type='text' id='status-message-search-form'/>
+              </div>
+            </form>
+          </li>
           <li class='list-group-item'>Make sure all words are spelled correctly.</li>
           <li class='list-group-item'>Try different keywords.</li>
           <li class='list-group-item'>Try more general keywords.</li>
@@ -1284,38 +1277,48 @@ Blog posts (widget type `Blog`)
 
   <b:comment>=== Archive page ===</b:comment>
   <b:if cond='data:view.isArchive'>
-    <b:if cond='data:numPosts &gt;= 1'>
-      <div class='alert alert-success' role='alert'>Archive for <strong><data:blog.pageName/></strong></div>
+    <b:if cond='data:numPosts gte 1'>
+      <div class='alert alert-success' role='alert'>
+        <data:view.archive.rangeMessage/>
+      </div>
     <b:else/>
-      <div class='alert alert-warning mb-0' role='alert'>Not found.</div>
+      <div class='alert alert-warning' role='alert'>
+        <data:view.archive.rangeMessage/>
+      </div>
+      <b:comment>=== Search form ===</b:comment>
+      <div class='card mb-0'>
+        <div class='card-block'>
+          <p class='mb-0'><data:messages.noResultsFound/>.</p>
+        </div>
+        <ul class='list-group list-group-flush'>
+          <li class='list-group-item'>
+            <form class='w-100' expr:action='data:blog.searchUrl' method='get' role='search'>
+              <div class='input-group'>
+                <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
+                <label class='sr-only' for='status-message-search-form'><data:messages.search/></label>
+                <input class='form-control' name='q' expr:placeholder='data:messages.searchBlog' type='text' id='status-message-search-form'/>
+              </div>
+            </form>
+          </li>
+        </ul>
+      </div>
     </b:if>
   </b:if>
 
   <b:comment>=== Error page ===</b:comment>
   <b:if cond='data:view.isError'>
     <div class='alert alert-danger' role='alert'>
-      <strong>404: sorry, the page you were looking for in this blog does not exist.</strong>
+      <strong><data:navMessage/></strong>
     </div>
     <b:comment>=== Search form ===</b:comment>
-    <div class='card mb-0'>
-      <div class='card-block'>
-        <form action='/search' method='get' role='search'>
-          <div class='input-group'>
-            <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
-            <label class='sr-only' for='status-message-search-form'>Search</label>
-            <input class='form-control' name='q' placeholder='Search' type='text' id='status-message-search-form'/>
-            <span class='input-group-btn'>
-              <button class='btn btn-secondary' type='submit'>Search</button>
-            </span>
-          </div><!-- /.input-group -->
-        </form>
-      </div>
-      <ul class='list-group list-group-flush'>
-        <li class='list-group-item'>Make sure all words are spelled correctly.</li>
-        <li class='list-group-item'>Try different keywords.</li>
-        <li class='list-group-item'>Try more general keywords.</li>
-        <li class='list-group-item'>Try fewer keywords.</li>
-      </ul>
+    <div class='card card-block mb-0'>
+      <form expr:action='data:blog.searchUrl' method='get' role='search'>
+        <div class='input-group'>
+          <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
+          <label class='sr-only' for='status-message-search-form'><data:messages.search/></label>
+          <input class='form-control' name='q' expr:placeholder='data:messages.searchBlog' type='text' id='status-message-search-form'/>
+        </div>
+      </form>
     </div>
   </b:if>
 </b:includable>
@@ -1760,10 +1763,11 @@ Blog posts (widget type `Blog`)
         <span class='byline byline-comments'>
           <b:if cond='data:post.allowComments'>
             <span aria-hidden='true' class='post-comments-icon fa fa-comments'/>
-            <a class='post-comments-link' expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
+            <a b:whitespace='remove' class='post-comments-link' expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
               <b:message name='messages.numberOfComments'>
                 <b:param expr:value='data:post.numberOfComments' name='numComments'/>
-              </b:message></a>
+              </b:message>
+            </a>
           </b:if>
         </span>
       </b:if>
@@ -1788,13 +1792,15 @@ Blog posts (widget type `Blog`)
         <span class='byline byline-backlinks'>
           <span aria-hidden='true' class='post-backlinks-icon fa fa-pencil-square'/>
           <b:if cond='data:item.label != &quot;&quot;'>
-            <a class='post-backlinks-link' expr:onclick='&quot;window.open(&amp;quot;https://www.blogger.com/blog-this.g?n=&quot; + data:blog.title + &quot;: &quot; + (data:post.title ? data:post.title : data:messages.noTitle) + &quot;&amp;u=&quot; + data:post.url + &quot;&amp;t=&amp;quot;, &amp;quot;_blank&amp;quot;, &amp;quot;directories=no, titlebar=no, toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=800, height=600&amp;quot;);&quot;' href='javascript:void(0)'>
+            <a b:whitespace='remove' class='post-backlinks-link' expr:onclick='&quot;window.open(&amp;quot;https://www.blogger.com/blog-this.g?n=&quot; + data:blog.title + &quot;: &quot; + (data:post.title ? data:post.title : data:messages.noTitle) + &quot;&amp;u=&quot; + data:post.url + &quot;&amp;t=&amp;quot;, &amp;quot;_blank&amp;quot;, &amp;quot;directories=no, titlebar=no, toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=800, height=600&amp;quot;);&quot;' href='javascript:void(0)'>
               <b:attr name='title' expr:value='data:item.label'/>
-              <data:item.label/></a>
+              <data:item.label/>
+            </a>
           <b:else/>
-            <a class='post-backlinks-link' expr:onclick='&quot;window.open(&amp;quot;https://www.blogger.com/blog-this.g?n=&quot; + data:blog.title + &quot;: &quot; + (data:post.title ? data:post.title : data:messages.noTitle) + &quot;&amp;u=&quot; + data:post.url + &quot;&amp;t=&amp;quot;, &amp;quot;_blank&amp;quot;, &amp;quot;directories=no, titlebar=no, toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=800, height=600&amp;quot;);&quot;' href='javascript:void(0)'>
+            <a b:whitespace='remove' class='post-backlinks-link' expr:onclick='&quot;window.open(&amp;quot;https://www.blogger.com/blog-this.g?n=&quot; + data:blog.title + &quot;: &quot; + (data:post.title ? data:post.title : data:messages.noTitle) + &quot;&amp;u=&quot; + data:post.url + &quot;&amp;t=&amp;quot;, &amp;quot;_blank&amp;quot;, &amp;quot;directories=no, titlebar=no, toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=800, height=600&amp;quot;);&quot;' href='javascript:void(0)'>
               <b:attr name='title' value='Links to this post'/>
-              Links to this post</a>
+              Links to this post
+            </a>
           </b:if>
         </span>
       </b:if>
@@ -1942,10 +1948,11 @@ Blog posts (widget type `Blog`)
             <span class='byline byline-comments'>
               <b:if cond='data:post.allowComments'>
                 <span aria-hidden='true' class='post-comments-icon fa fa-comments'/>
-                <a class='post-comments-link' expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
+                <a b:whitespace='remove' class='post-comments-link' expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
                   <b:message name='messages.numberOfComments'>
                     <b:param expr:value='data:post.numberOfComments' name='numComments'/>
-                  </b:message></a>
+                  </b:message>
+                </a>
               </b:if>
             </span>
           </b:if>
@@ -1970,13 +1977,15 @@ Blog posts (widget type `Blog`)
             <span class='byline byline-backlinks'>
               <span aria-hidden='true' class='post-backlinks-icon fa fa-pencil-square'/>
               <b:if cond='data:item.label != &quot;&quot;'>
-                <a class='post-backlinks-link' expr:onclick='&quot;window.open(&amp;quot;https://www.blogger.com/blog-this.g?n=&quot; + data:blog.title + &quot;: &quot; + (data:post.title ? data:post.title : data:messages.noTitle) + &quot;&amp;u=&quot; + data:post.url + &quot;&amp;t=&amp;quot;, &amp;quot;_blank&amp;quot;, &amp;quot;directories=no, titlebar=no, toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=800, height=600&amp;quot;);&quot;' href='javascript:void(0)'>
+                <a b:whitespace='remove' class='post-backlinks-link' expr:onclick='&quot;window.open(&amp;quot;https://www.blogger.com/blog-this.g?n=&quot; + data:blog.title + &quot;: &quot; + (data:post.title ? data:post.title : data:messages.noTitle) + &quot;&amp;u=&quot; + data:post.url + &quot;&amp;t=&amp;quot;, &amp;quot;_blank&amp;quot;, &amp;quot;directories=no, titlebar=no, toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=800, height=600&amp;quot;);&quot;' href='javascript:void(0)'>
                   <b:attr name='title' expr:value='data:item.label'/>
-                  <data:item.label/></a>
+                  <data:item.label/>
+                </a>
               <b:else/>
-                <a class='post-backlinks-link' expr:onclick='&quot;window.open(&amp;quot;https://www.blogger.com/blog-this.g?n=&quot; + data:blog.title + &quot;: &quot; + (data:post.title ? data:post.title : data:messages.noTitle) + &quot;&amp;u=&quot; + data:post.url + &quot;&amp;t=&amp;quot;, &amp;quot;_blank&amp;quot;, &amp;quot;directories=no, titlebar=no, toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=800, height=600&amp;quot;);&quot;' href='javascript:void(0)'>
+                <a b:whitespace='remove' class='post-backlinks-link' expr:onclick='&quot;window.open(&amp;quot;https://www.blogger.com/blog-this.g?n=&quot; + data:blog.title + &quot;: &quot; + (data:post.title ? data:post.title : data:messages.noTitle) + &quot;&amp;u=&quot; + data:post.url + &quot;&amp;t=&amp;quot;, &amp;quot;_blank&amp;quot;, &amp;quot;directories=no, titlebar=no, toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=800, height=600&amp;quot;);&quot;' href='javascript:void(0)'>
                   <b:attr name='title' value='Links to this post'/>
-                  Links to this post</a>
+                  Links to this post
+                </a>
               </b:if>
             </span>
           </b:if>
