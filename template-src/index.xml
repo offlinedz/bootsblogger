@@ -179,7 +179,7 @@ Footer
       <li class='list-inline-item'><a href='#'>Google+</a></li>
     </ul>
     <p class='mb-0'>&#169; <data:blog.title/>.</p>
-    <p class='mb-0'>Template <span class='text-lowercase'><data:messages.by/></span> <a href='{{ blog.templateAuthorURI }}'>{{ blog.templateAuthorName }}</a> + <a href='https://bootsblogger.github.io'>Bootsblogger</a>. <b:message name='messages.poweredByBloggerLink'><b:param expr:value='data:blog.bloggerUrl'/></b:message>.</p>
+    <p class='mb-0'>Template <span class='text-lowercase'><data:messages.by/></span> <a href='{{ blog.templateAuthorUrl }}'>{{ blog.templateAuthorName }}</a> + <a href='https://bootsblogger.github.io'>Bootsblogger</a>. <b:message name='messages.poweredByBloggerLink'><b:param expr:value='data:blog.bloggerUrl'/></b:message>.</p>
   </div>
 </footer>
 

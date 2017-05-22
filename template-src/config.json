@@ -1,13 +1,13 @@
 {
   "blog": {
     "templateName": "Template name",
-    "templateURI": "https://example.com/template",
+    "templateUrl": "https://example.com/template",
     "templateAuthorName": "Your name",
-    "templateAuthorURI": "https://example.com/you",
+    "templateAuthorUrl": "https://example.com/you",
     "templateDate": "August 17, 1945",
     "templateVersion": "1.0",
     "templateLicense": "MIT",
-    "templateLicenseURI": "https://opensource.org/licenses/MIT",
+    "templateLicenseUrl": "https://opensource.org/licenses/MIT",
 
     "cdn": {
       "fontAwesome": "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css",

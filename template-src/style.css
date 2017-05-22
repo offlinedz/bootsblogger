@@ -4,13 +4,13 @@
 
 /**
  * Template Name : {{ blog.templateName }}
- * Template URI  : {{ blog.templateURI }}
+ * Template URL  : {{ blog.templateUrl }}
  * Author Name   : {{ blog.templateAuthorName }}
- * Author URI    : {{ blog.templateAuthorURI }}
+ * Author URL    : {{ blog.templateAuthorUrl }}
  * Date          : {{ blog.templateDate }}
  * Version       : {{ blog.templateVersion }}
  * License       : {{ blog.templateLicense }}
- * License URI   : {{ blog.templateLicenseURI }}
+ * License URL   : {{ blog.templateLicenseUrl }}
  */
 
 /**
