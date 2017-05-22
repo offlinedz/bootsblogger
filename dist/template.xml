@@ -6,12 +6,12 @@
 
 <b:comment>
 =================================================
-Meta, link, and title tags
+Title, meta, and link tags
 ================================================= </b:comment>
 
 <b:include name='requiredMetaTags'/>
-<b:include name='customAllHeadContent'/>
 <b:include name='customTitle'/>
+<b:include name='customAllHeadContent'/>
 
 <b:with value='&quot;https://example.com/path/to/image.png&quot;' var='image'>
 <b:with value='&quot;@username_of_website&quot;' var='twitterUsernameWebsite'>
@@ -35,6 +35,9 @@ CSS
 
 <b:comment>=== Font Awesome ===</b:comment>
 <b:include name='fontAwesome'/>
+
+<b:comment>=== Layout mode CSS ===</b:comment>
+<b:include name='layoutModeCss'/>
 
 <b:comment>=== Template CSS ===</b:comment>
 <b:skin>
@@ -250,9 +253,6 @@ body {}
 .blog-view-preview .element {}
 ]]>
 </b:skin>
-
-<b:comment>=== Layout mode CSS ===</b:comment>
-<b:include name='layoutModeCss'/>
 
 
 <b:comment>
@@ -717,28 +717,6 @@ Head
   <meta charset='utf-8'/>
   <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'/>
 </b:includable>
-    <b:includable id='customAllHeadContent'>
-  <meta content='blogger' name='generator'/>
-
-  <link expr:href='data:blog.homepageUrl + &quot;favicon.ico&quot;' rel='icon'/>
-
-  <link expr:href='data:blog.homepageUrl + &quot;feeds/posts/default&quot;' expr:title='data:blog.title + &quot; » Atom&quot;' rel='alternate' type='application/atom+xml'/>
-
-  <link expr:href='data:blog.homepageUrl + &quot;feeds/comments/default&quot;' expr:title='data:blog.title + &quot; » Comments Feed&quot;' rel='alternate' type='application/atom+xml'/>
-
-  <b:if cond='data:view.isPost'>
-    <link expr:href='data:blog.homepageUrl + &quot;feeds/&quot; + data:blog.postId + &quot;/comments/default&quot;' expr:title='data:blog.title + &quot; » &quot; + data:blog.pageName + &quot; Comments Feed&quot;' rel='alternate' type='application/atom+xml'/>
-  </b:if>
-
-  <b:if cond='data:view.isLabelSearch'>
-    <link expr:href='data:blog.homepageUrl + &quot;feeds/posts/default/-/&quot; + data:blog.pageName' expr:title='data:blog.title + &quot; » &quot; + data:blog.pageName' rel='alternate' type='application/atom+xml'/>
-  </b:if>
-
-  <b:if cond='!data:view.isPost and !data:view.isPage and !data:view.isArchive'>
-    <link href='https://www.blogger.com/openid-server.g' rel='openid.server'/>
-    <link expr:href='data:blog.homepageUrl' rel='openid.delegate'/>
-  </b:if>
-</b:includable>
     <b:includable id='customTitle'>
   <b:comment>=== Homepage ===</b:comment>
   <b:if cond='data:view.isHomepage'>
@@ -777,16 +755,25 @@ Head
 
   <b:comment>=== Error page ===</b:comment>
   <b:if cond='data:view.isError'>
-    <title>404</title>
+    <title>404 | <data:blog.title/></title>
+  </b:if>
+</b:includable>
+    <b:includable id='customAllHeadContent'>
+  <link expr:href='data:blog.blogspotFaviconUrl' rel='icon' type='image/x-icon'/>
+
+  <meta content='blogger' name='generator'/>
+  <data:blog.feedLinks/>
+  <data:blog.openIdOpTag/>
+  <data:blog.meTag/>
+  <b:if cond='data:blog.googleProfileUrl'>
+    <link expr:href='data:blog.googleProfileUrl' rel='publisher'/>
+  </b:if>
+  <b:if cond='data:blog.adultContent'>
+    <meta content='adult' name='rating'/>
   </b:if>
 </b:includable>
     <b:includable id='defaultTags'>
-  <b:if cond='!data:view.isError'>
-    <link expr:href='data:blog.canonicalUrl' rel='canonical'/>
-  </b:if>
-  <b:if cond='data:view.isError'>
-    <link expr:href='data:blog.homepageUrl + &quot;404&quot;' rel='canonical'/>
-  </b:if>
+  <link expr:href='data:view.url.canonical' rel='canonical'/>
 
   <b:comment>=== Homepage ===</b:comment>
   <b:if cond='data:view.isHomepage'>
@@ -803,14 +790,14 @@ Head
     <b:if cond='data:blog.metaDescription'>
       <meta expr:content='data:blog.metaDescription' name='description'/>
     <b:else/>
-      <meta expr:content='data:blog.pageName' name='description'/>
+      <meta expr:content='data:blog.pageName + &quot;.&quot;' name='description'/>
     </b:if>
-    <b:if cond='data:blog.postImageUrl'><!-- Original size -->
-      <link expr:href='data:blog.postImageUrl' rel='image_src'/>
-    <b:elseif cond='data:blog.postImageThumbnailUrl'/><!-- 72 x 72 -->
-      <link expr:href='data:blog.postThumbnailUrl' rel='image_src'/>
-    <b:else/><!-- No image -->
-      <link expr:href='&quot;https://placehold.it/512/eee/777?text=&quot; + data:blog.title' rel='image_src'/>
+    <b:if cond='data:view.featuredImage'>
+      <link expr:href='resizeImage(data:view.featuredImage, 1200, "1200:630")' rel='image_src'/>
+    <b:elseif cond='data:blog.postImageUrl'/>
+      <link expr:href='resizeImage(data:blog.postImageUrl, 1200, "1200:630")' rel='image_src'/>
+    <b:else/>
+      <link expr:href='data:image' rel='image_src'/>
     </b:if>
   </b:if>
 
@@ -819,20 +806,26 @@ Head
     <b:if cond='data:blog.metaDescription'>
       <meta expr:content='data:blog.metaDescription' name='description'/>
     <b:else/>
-      <meta expr:content='data:blog.pageName' name='description'/>
+      <meta expr:content='data:blog.pageName + &quot;.&quot;' name='description'/>
     </b:if>
-    <link expr:href='&quot;https://placehold.it/512/eee/777?text=&quot; + data:blog.title' rel='image_src'/>
+    <b:if cond='data:view.featuredImage'>
+      <link expr:href='resizeImage(data:view.featuredImage, 1200, "1200:630")' rel='image_src'/>
+    <b:elseif cond='data:blog.postImageUrl'/>
+      <link expr:href='resizeImage(data:blog.postImageUrl, 1200, "1200:630")' rel='image_src'/>
+    <b:else/>
+      <link expr:href='data:image' rel='image_src'/>
+    </b:if>
   </b:if>
 
   <b:comment>=== Search (label) page ===</b:comment>
   <b:if cond='data:view.search.label'>
-    <meta expr:content='&quot;Showing posts with label *&quot; + data:blog.pageName + &quot;*.&quot;' name='description'/>
+    <meta expr:content='data:view.search.resultsMessage + &quot;.&quot;' name='description'/>
     <link expr:href='&quot;https://placehold.it/512/eee/777?text=&quot; + data:blog.pageName' rel='image_src'/>
   </b:if>
 
   <b:comment>=== Search (query) page ===</b:comment>
   <b:if cond='data:view.search.query'>
-    <meta expr:content='&quot;Search Results for *&quot; + data:blog.searchQuery + &quot;*.&quot;' name='description'/>
+    <meta expr:content='data:view.search.resultsMessage + &quot;.&quot;' name='description'/>
     <link href='https://placehold.it/512/eee/777?text=Search+Results' rel='image_src'/>
   </b:if>
 
@@ -848,13 +841,13 @@ Head
 
   <b:comment>=== Archive page ===</b:comment>
   <b:if cond='data:view.isArchive'>
-    <meta expr:content='&quot;Archive for &quot; + data:blog.pageName + &quot;.&quot;' name='description'/>
-    <link expr:href='&quot;https://placehold.it/512/eee/777?text=&quot; + data:blog.pageName' rel='image_src'/>
+    <meta expr:content='data:view.archive.rangeMessage + &quot;.&quot;' name='description'/>
+    <link expr:href='&quot;https://placehold.it/512/eee/777?text=&quot; + data:view.archive.year' rel='image_src'/>
   </b:if>
 
   <b:comment>=== Error page ===</b:comment>
   <b:if cond='data:view.isError'>
-    <meta content='404: sorry, the page you were looking for in this blog does not exist.' name='description'/>
+    <meta content='404' name='description'/>
     <link href='https://placehold.it/512/eee/777?text=404' rel='image_src'/>
   </b:if>
 </b:includable>
@@ -867,12 +860,7 @@ Head
 
   <meta expr:content='data:blog.title' property='og:site_name'/>
 
-  <b:if cond='!data:view.isError'>
-    <meta expr:content='data:blog.canonicalUrl' property='og:url'/>
-  </b:if>
-  <b:if cond='data:view.isError'>
-    <meta expr:content='data:blog.homepageUrl + &quot;404&quot;' property='og:url'/>
-  </b:if>
+  <meta expr:content='data:view.url.canonical' property='og:url'/>
 
   <b:comment>=== Homepage ===</b:comment>
   <b:if cond='data:view.isHomepage'>
@@ -891,14 +879,14 @@ Head
     <b:if cond='data:blog.metaDescription'>
       <meta expr:content='data:blog.metaDescription' property='og:description'/>
     <b:else/>
-      <meta expr:content='data:blog.pageName' property='og:description'/>
+      <meta expr:content='data:blog.pageName + &quot;.&quot;' property='og:description'/>
     </b:if>
-    <b:if cond='data:blog.postImageUrl'><!-- Original size -->
-      <meta expr:content='data:blog.postImageUrl' property='og:image'/>
-    <b:elseif cond='data:blog.postImageThumbnailUrl'/><!-- 72 x 72 -->
-      <meta expr:content='data:blog.postThumbnailUrl' property='og:image'/>
-    <b:else/><!-- No image -->
-      <meta expr:content='&quot;https://placehold.it/512/eee/777?text=&quot; + data:blog.title' property='og:image'/>
+    <b:if cond='data:view.featuredImage'>
+      <meta expr:content='resizeImage(data:view.featuredImage, 1200, "1200:630")' property='og:image'/>
+    <b:elseif cond='data:blog.postImageUrl'/>
+      <meta expr:content='resizeImage(data:blog.postImageUrl, 1200, "1200:630")' property='og:image'/>
+    <b:else/>
+      <meta expr:content='data:image' property='og:image'/>
     </b:if>
   </b:if>
 
@@ -908,22 +896,28 @@ Head
     <b:if cond='data:blog.metaDescription'>
       <meta expr:content='data:blog.metaDescription' property='og:description'/>
     <b:else/>
-      <meta expr:content='data:blog.pageName' property='og:description'/>
+      <meta expr:content='data:blog.pageName + &quot;.&quot;' property='og:description'/>
     </b:if>
-    <meta expr:content='&quot;https://placehold.it/512/eee/777?text=&quot; + data:blog.title' property='og:image'/>
+    <b:if cond='data:view.featuredImage'>
+      <meta expr:content='resizeImage(data:view.featuredImage, 1200, "1200:630")' property='og:image'/>
+    <b:elseif cond='data:blog.postImageUrl'/>
+      <meta expr:content='resizeImage(data:blog.postImageUrl, 1200, "1200:630")' property='og:image'/>
+    <b:else/>
+      <meta expr:content='data:image' property='og:image'/>
+    </b:if>
   </b:if>
 
   <b:comment>=== Search (label) page ===</b:comment>
   <b:if cond='data:view.search.label'>
     <meta expr:content='data:blog.pageName + &quot; | &quot; + data:blog.title' property='og:title'/>
-    <meta expr:content='&quot;Showing posts with label *&quot; + data:blog.pageName + &quot;*.&quot;' property='og:description'/>
+    <meta expr:content='data:view.search.resultsMessage + &quot;.&quot;' property='og:description'/>
     <meta expr:content='&quot;https://placehold.it/512/eee/777?text=&quot; + data:blog.pageName' property='og:image'/>
   </b:if>
 
   <b:comment>=== Search (query) page ===</b:comment>
   <b:if cond='data:view.search.query'>
-    <meta expr:content='&quot;Search Results for *&quot; + data:blog.searchQuery + &quot;* | &quot; + data:blog.title' property='og:title'/>
-    <meta expr:content='&quot;Search Results for *&quot; + data:blog.searchQuery + &quot;*.&quot;' property='og:description'/>
+    <meta expr:content='data:view.search.resultsMessage + &quot; | &quot; + data:blog.title' property='og:title'/>
+    <meta expr:content='data:view.search.resultsMessage + &quot;.&quot;' property='og:description'/>
     <meta content='https://placehold.it/512/eee/777?text=Search+Results' property='og:image'/>
   </b:if>
 
@@ -940,15 +934,15 @@ Head
 
   <b:comment>=== Archive page ===</b:comment>
   <b:if cond='data:view.isArchive'>
-    <meta expr:content='&quot;Archive for &quot; + data:blog.pageName + &quot; | &quot; + data:blog.title' property='og:title'/>
-    <meta expr:content='&quot;Archive for &quot; + data:blog.pageName + &quot;.&quot;' property='og:description'/>
-    <meta expr:content='&quot;https://placehold.it/512/eee/777?text=&quot; + data:blog.pageName' property='og:image'/>
+    <meta expr:content='data:view.archive.rangeMessage + &quot; | &quot; + data:blog.title' property='og:title'/>
+    <meta expr:content='data:view.archive.rangeMessage + &quot;.&quot;' property='og:description'/>
+    <meta expr:content='&quot;https://placehold.it/512/eee/777?text=&quot; + data:view.archive.year' property='og:image'/>
   </b:if>
 
   <b:comment>=== Error page ===</b:comment>
   <b:if cond='data:view.isError'>
-    <meta content='Page Not Found' property='og:title'/>
-    <meta content='404: sorry, the page you were looking for in this blog does not exist.' property='og:description'/>
+    <meta expr:content='&quot;404 | &quot; + data:blog.title' property='og:title'/>
+    <meta content='404' property='og:description'/>
     <meta content='https://placehold.it/512/eee/777?text=404' property='og:image'/>
   </b:if>
 </b:includable>
@@ -962,12 +956,7 @@ Head
   <meta expr:content='data:twitterUsernameWebsite' name='twitter:site'/>
   <meta expr:content='data:twitterUsernameCreator' name='twitter:creator'/>
 
-  <b:if cond='!data:view.isError'>
-    <meta expr:content='data:blog.canonicalUrl' name='twitter:url'/>
-  </b:if>
-  <b:if cond='data:view.isError'>
-    <meta expr:content='data:blog.homepageUrl + &quot;404&quot;' name='twitter:url'/>
-  </b:if>
+  <meta expr:content='data:view.url.canonical' name='twitter:url'/>
 
   <b:comment>=== Homepage ===</b:comment>
   <b:if cond='data:view.isHomepage'>
@@ -986,14 +975,14 @@ Head
     <b:if cond='data:blog.metaDescription'>
       <meta expr:content='data:blog.metaDescription' name='twitter:description'/>
     <b:else/>
-      <meta expr:content='data:blog.pageName' name='twitter:description'/>
+      <meta expr:content='data:blog.pageName + &quot;.&quot;' name='twitter:description'/>
     </b:if>
-    <b:if cond='data:blog.postImageUrl'><!-- Original size -->
-      <meta expr:content='data:blog.postImageUrl' property='twitter:image'/>
-    <b:elseif cond='data:blog.postImageThumbnailUrl'/><!-- 72 x 72 -->
-      <meta expr:content='data:blog.postThumbnailUrl' property='twitter:image'/>
-    <b:else/><!-- No image -->
-      <meta expr:content='&quot;https://placehold.it/512/eee/777?text=&quot; + data:blog.title' property='twitter:image'/>
+    <b:if cond='data:view.featuredImage'>
+      <meta expr:content='resizeImage(data:view.featuredImage, 1200, "1200:630")' property='twitter:image'/>
+    <b:elseif cond='data:blog.postImageUrl'/>
+      <meta expr:content='resizeImage(data:blog.postImageUrl, 1200, "1200:630")' property='twitter:image'/>
+    <b:else/>
+      <meta expr:content='data:image' property='twitter:image'/>
     </b:if>
   </b:if>
 
@@ -1003,22 +992,28 @@ Head
     <b:if cond='data:blog.metaDescription'>
       <meta expr:content='data:blog.metaDescription' name='twitter:description'/>
     <b:else/>
-      <meta expr:content='data:blog.pageName' name='twitter:description'/>
+      <meta expr:content='data:blog.pageName + &quot;.&quot;' name='twitter:description'/>
     </b:if>
-    <meta expr:content='&quot;https://placehold.it/512/eee/777?text=&quot; + data:blog.title' property='twitter:image'/>
+    <b:if cond='data:view.featuredImage'>
+      <meta expr:content='resizeImage(data:view.featuredImage, 1200, "1200:630")' property='twitter:image'/>
+    <b:elseif cond='data:blog.postImageUrl'/>
+      <meta expr:content='resizeImage(data:blog.postImageUrl, 1200, "1200:630")' property='twitter:image'/>
+    <b:else/>
+      <meta expr:content='data:image' property='twitter:image'/>
+    </b:if>
   </b:if>
 
   <b:comment>=== Search (label) page ===</b:comment>
   <b:if cond='data:view.search.label'>
     <meta expr:content='data:blog.pageName + &quot; | &quot; + data:blog.title' name='twitter:title'/>
-    <meta expr:content='&quot;Showing posts with label *&quot; + data:blog.pageName + &quot;*.&quot;' name='twitter:description'/>
+    <meta expr:content='data:view.search.resultsMessage + &quot;.&quot;' name='twitter:description'/>
     <meta expr:content='&quot;https://placehold.it/512/eee/777?text=&quot; + data:blog.pageName' property='twitter:image'/>
   </b:if>
 
   <b:comment>=== Search (query) page ===</b:comment>
   <b:if cond='data:view.search.query'>
-    <meta expr:content='&quot;Search Results for *&quot; + data:blog.searchQuery + &quot;* | &quot; + data:blog.title' name='twitter:title'/>
-    <meta expr:content='&quot;Search Results for *&quot; + data:blog.searchQuery + &quot;*.&quot;' name='twitter:description'/>
+    <meta expr:content='data:view.search.resultsMessage + &quot; | &quot; + data:blog.title' name='twitter:title'/>
+    <meta expr:content='data:view.search.resultsMessage + &quot;.&quot;' name='twitter:description'/>
     <meta content='https://placehold.it/512/eee/777?text=Search+Results' property='twitter:image'/>
   </b:if>
 
@@ -1035,15 +1030,15 @@ Head
 
   <b:comment>=== Archive page ===</b:comment>
   <b:if cond='data:view.isArchive'>
-    <meta expr:content='&quot;Archive for &quot; + data:blog.pageName + &quot; | &quot; + data:blog.title' name='twitter:title'/>
-    <meta expr:content='&quot;Archive for &quot; + data:blog.pageName + &quot;.&quot;' name='twitter:description'/>
-    <meta expr:content='&quot;https://placehold.it/512/eee/777?text=&quot; + data:blog.pageName' property='twitter:image'/>
+    <meta expr:content='data:view.archive.rangeMessage + &quot; | &quot; + data:blog.title' name='twitter:title'/>
+    <meta expr:content='data:view.archive.rangeMessage + &quot;.&quot;' name='twitter:description'/>
+    <meta expr:content='&quot;https://placehold.it/512/eee/777?text=&quot; + data:view.archive.year' property='twitter:image'/>
   </b:if>
 
   <b:comment>=== Error page ===</b:comment>
   <b:if cond='data:view.isError'>
-    <meta content='Page Not Found' name='twitter:title'/>
-    <meta content='404: sorry, the page you were looking for in this blog does not exist.' name='twitter:description'/>
+    <meta expr:content='&quot;404 | &quot; + data:blog.title' name='twitter:title'/>
+    <meta content='404' name='twitter:description'/>
     <meta content='https://placehold.it/512/eee/777?text=404' property='twitter:image'/>
   </b:if>
 </b:includable>
@@ -1709,7 +1704,7 @@ Blog posts (widget type `Blog`)
       <b:if cond='data:item.name == &quot;share&quot;'>
         <span class='byline byline-share'>
           <div class='d-inline-block dropdown'>
-            <a class='post-share-toggle' href='#' data-toggle='dropdown' expr:title='data:messages.share'>
+            <a b:whitespace='remove' class='post-share-toggle' href='#' data-toggle='dropdown' expr:title='data:messages.share'>
               <span aria-hidden='true' class='post-share-icon fa fa-share-alt'/>
             </a>
             <div class='dropdown-menu'>
@@ -1780,7 +1775,7 @@ Blog posts (widget type `Blog`)
             <span class='post-location-label'><data:item.label/></span>
           </b:if>
           <b:if cond='data:post.location'>
-            <a class='post-location-link' expr:href='data:post.location.mapsUrl' target='_blank'>
+            <a b:whitespace='remove' class='post-location-link' expr:href='data:post.location.mapsUrl' target='_blank'>
               <data:post.location.name/>
             </a>
           </b:if>
@@ -1827,7 +1822,7 @@ Blog posts (widget type `Blog`)
           </b:if>
           <b:if cond='data:post.author'>
             <b:if cond='data:post.author.profileUrl'>
-              <a class='post-author-name-link' expr:href='data:post.author.profileUrl' title='Author profile'><data:post.author.name/></a>
+              <a b:whitespace='remove' class='post-author-name-link' expr:href='data:post.author.profileUrl' title='Author profile'><data:post.author.name/></a>
             <b:else/>
               <span class='post-author-name'><data:post.author.name/></span>
             </b:if>
@@ -1844,7 +1839,7 @@ Blog posts (widget type `Blog`)
           </b:if>
           <b:if cond='data:post.labels'>
             <b:loop index='i' values='data:post.labels' var='label'>
-              <a class='post-labels-link' expr:href='data:label.url + &quot;?max-results=10&quot;'><data:label.name/></a><b:eval expr='data:i != (data:post.labels.size - 1) ? &quot;,&quot; : &quot;&quot;'/>
+              <a b:whitespace='remove' class='post-labels-link' expr:href='data:label.url + &quot;?max-results=10&quot;'><data:label.name/></a><b:eval expr='data:i != (data:post.labels.size - 1) ? &quot;,&quot; : &quot;&quot;'/>
             </b:loop>
           <b:else/>
             <span class='post-labels-unlabelled'>Unlabelled</span>
@@ -1856,7 +1851,7 @@ Blog posts (widget type `Blog`)
       <b:if cond='data:item.name == &quot;icons&quot;'>
         <span class='byline byline-icons'>
           <span aria-hidde='true' class='post-email-icon fa fa-envelope'/>
-          <a class='post-email-link' expr:href='data:post.emailPostUrl' expr:title='data:messages.emailPost'>
+          <a b:whitespace='remove' class='post-email-link' expr:href='data:post.emailPostUrl' expr:title='data:messages.emailPost'>
             <b:message name='messages.emailPost'/>
           </a>
         </span>
@@ -1894,7 +1889,7 @@ Blog posts (widget type `Blog`)
           <b:if cond='data:item.name == &quot;share&quot;'>
             <span class='byline byline-share'>
               <div class='d-inline-block dropdown'>
-                <a class='post-share-toggle' href='#' data-toggle='dropdown' expr:title='data:messages.share'>
+                <a b:whitespace='remove' class='post-share-toggle' href='#' data-toggle='dropdown' expr:title='data:messages.share'>
                   <span aria-hidden='true' class='post-share-icon fa fa-share-alt'/>
                 </a>
                 <div class='dropdown-menu'>
@@ -1965,7 +1960,7 @@ Blog posts (widget type `Blog`)
                 <span class='post-location-label'><data:item.label/></span>
               </b:if>
               <b:if cond='data:post.location'>
-                <a class='post-location-link' expr:href='data:post.location.mapsUrl' target='_blank'>
+                <a b:whitespace='remove' class='post-location-link' expr:href='data:post.location.mapsUrl' target='_blank'>
                   <data:post.location.name/>
                 </a>
               </b:if>
@@ -2012,7 +2007,7 @@ Blog posts (widget type `Blog`)
               </b:if>
               <b:if cond='data:post.author'>
                 <b:if cond='data:post.author.profileUrl'>
-                  <a class='post-author-name-link' expr:href='data:post.author.profileUrl' title='Author profile'><data:post.author.name/></a>
+                  <a b:whitespace='remove' class='post-author-name-link' expr:href='data:post.author.profileUrl' title='Author profile'><data:post.author.name/></a>
                 <b:else/>
                   <span class='post-author-name'><data:post.author.name/></span>
                 </b:if>
@@ -2029,7 +2024,7 @@ Blog posts (widget type `Blog`)
               </b:if>
               <b:if cond='data:post.labels'>
                 <b:loop index='i' values='data:post.labels' var='label'>
-                  <a class='post-labels-link' expr:href='data:label.url + &quot;?max-results=10&quot;'><data:label.name/></a><b:eval expr='data:i != (data:post.labels.size - 1) ? &quot;,&quot; : &quot;&quot;'/>
+                  <a b:whitespace='remove' class='post-labels-link' expr:href='data:label.url + &quot;?max-results=10&quot;'><data:label.name/></a><b:eval expr='data:i != (data:post.labels.size - 1) ? &quot;,&quot; : &quot;&quot;'/>
                 </b:loop>
               <b:else/>
                 <span class='post-labels-unlabelled'>Unlabelled</span>
@@ -2041,7 +2036,7 @@ Blog posts (widget type `Blog`)
           <b:if cond='data:item.name == &quot;icons&quot;'>
             <span class='byline byline-icons'>
               <span aria-hidde='true' class='post-email-icon fa fa-envelope'/>
-              <a class='post-email-link' expr:href='data:post.emailPostUrl' expr:title='data:messages.emailPost'>
+              <a b:whitespace='remove' class='post-email-link' expr:href='data:post.emailPostUrl' expr:title='data:messages.emailPost'>
                 <b:message name='messages.emailPost'/>
               </a>
             </span>
