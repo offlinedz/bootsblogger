@@ -35,5 +35,5 @@
 
 <b:comment>=== Error page ===</b:comment>
 <b:if cond='data:view.isError'>
-  <title>404</title>
+  <title>404 | <data:blog.title/></title>
 </b:if>

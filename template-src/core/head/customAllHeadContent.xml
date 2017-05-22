@@ -1,20 +1,12 @@
+<link expr:href='data:blog.blogspotFaviconUrl' rel='icon' type='image/x-icon'/>
+
 <meta content='blogger' name='generator'/>
-
-<link expr:href='data:blog.homepageUrl + &quot;favicon.ico&quot;' rel='icon'/>
-
-<link expr:href='data:blog.homepageUrl + &quot;feeds/posts/default&quot;' expr:title='data:blog.title + &quot; » Atom&quot;' rel='alternate' type='application/atom+xml'/>
-
-<link expr:href='data:blog.homepageUrl + &quot;feeds/comments/default&quot;' expr:title='data:blog.title + &quot; » Comments Feed&quot;' rel='alternate' type='application/atom+xml'/>
-
-<b:if cond='data:view.isPost'>
-  <link expr:href='data:blog.homepageUrl + &quot;feeds/&quot; + data:blog.postId + &quot;/comments/default&quot;' expr:title='data:blog.title + &quot; » &quot; + data:blog.pageName + &quot; Comments Feed&quot;' rel='alternate' type='application/atom+xml'/>
+<data:blog.feedLinks/>
+<data:blog.openIdOpTag/>
+<data:blog.meTag/>
+<b:if cond='data:blog.googleProfileUrl'>
+  <link expr:href='data:blog.googleProfileUrl' rel='publisher'/>
 </b:if>
-
-<b:if cond='data:view.isLabelSearch'>
-  <link expr:href='data:blog.homepageUrl + &quot;feeds/posts/default/-/&quot; + data:blog.pageName' expr:title='data:blog.title + &quot; » &quot; + data:blog.pageName' rel='alternate' type='application/atom+xml'/>
-</b:if>
-
-<b:if cond='!data:view.isPost and !data:view.isPage and !data:view.isArchive'>
-  <link href='https://www.blogger.com/openid-server.g' rel='openid.server'/>
-  <link expr:href='data:blog.homepageUrl' rel='openid.delegate'/>
+<b:if cond='data:blog.adultContent'>
+  <meta content='adult' name='rating'/>
 </b:if>

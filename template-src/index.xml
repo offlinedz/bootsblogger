@@ -6,12 +6,12 @@
 
 <b:comment>
 =================================================
-Meta, link, and title tags
+Title, meta, and link tags
 ================================================= </b:comment>
 
 <b:include name='requiredMetaTags'/>
-<b:include name='customAllHeadContent'/>
 <b:include name='customTitle'/>
+<b:include name='customAllHeadContent'/>
 
 <b:with value='&quot;https://example.com/path/to/image.png&quot;' var='image'>
 <b:with value='&quot;@username_of_website&quot;' var='twitterUsernameWebsite'>
@@ -36,15 +36,15 @@ CSS
 <b:comment>=== Font Awesome ===</b:comment>
 <b:include name='fontAwesome'/>
 
+<b:comment>=== Layout mode CSS ===</b:comment>
+<b:include name='layoutModeCss'/>
+
 <b:comment>=== Template CSS ===</b:comment>
 <b:skin>
 <![CDATA[
 <!--(bake /style.css)-->
 ]]>
 </b:skin>
-
-<b:comment>=== Layout mode CSS ===</b:comment>
-<b:include name='layoutModeCss'/>
 
 
 <b:comment>

@@ -8,11 +8,11 @@ Head
     <b:includable id='requiredMetaTags'>
   <!--(bake /core/head/requiredMetaTags.xml)-->
 </b:includable>
-    <b:includable id='customAllHeadContent'>
-  <!--(bake /core/head/customAllHeadContent.xml)-->
-</b:includable>
     <b:includable id='customTitle'>
   <!--(bake /core/head/customTitle.xml)-->
+</b:includable>
+    <b:includable id='customAllHeadContent'>
+  <!--(bake /core/head/customAllHeadContent.xml)-->
 </b:includable>
     <b:includable id='defaultTags'>
   <!--(bake /core/head/defaultTags.xml)-->
