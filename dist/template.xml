@@ -541,10 +541,9 @@ Navbar
           </div>
         </li>
       </ul>
-      <form action='/search' class='form-inline my-2 my-lg-0' method='get' role='search'>
-        <label class='sr-only' for='search'>Search</label>
-        <input class='form-control mr-sm-2' name='q' placeholder='Search' id='search'/>
-        <button type='submit' class='btn btn-secondary my-2 my-sm-0'>Search</button>
+      <form class='form-inline my-2 my-lg-0' expr:action='data:blog.searchUrl' method='get' role='search'>
+        <label class='sr-only' for='search'><data:messages.search/></label>
+        <input class='form-control' expr:placeholder='data:messages.search' id='search' name='q'/>
       </form>
     </div><!-- /.navbar-collapse -->
   </nav><!-- /.container -->
