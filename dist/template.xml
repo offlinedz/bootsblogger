@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html>
-<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 <head>
 
 
@@ -48,13 +48,13 @@ CSS
 
 /**
  * Template Name : Template name
- * Template URI  : https://example.com/template
+ * Template URL  : https://example.com/template
  * Author Name   : Your name
- * Author URI    : https://example.com/you
+ * Author URL    : https://example.com/you
  * Date          : August 17, 1945
  * Version       : 1.0
  * License       : MIT
- * License URI   : https://opensource.org/licenses/MIT
+ * License URL   : https://opensource.org/licenses/MIT
  */
 
 /**
@@ -659,13 +659,12 @@ Footer
 <footer class='footer py-5' id='footer'>
   <div class='container'>
     <ul class='list-inline'>
-      <li class='list-inline-item'><a href='#'>About</a></li>
       <li class='list-inline-item'><a href='#'>Twitter</a></li>
-      <li class='list-inline-item'><a href='#'>Google+</a></li>
       <li class='list-inline-item'><a href='#'>Facebook</a></li>
+      <li class='list-inline-item'><a href='#'>Google+</a></li>
     </ul>
-    <p class='mb-0'>&#169; 2017 <data:blog.title/>.</p>
-    <p class='mb-0'>Template by <a href='https://example.com/you'>Your name</a>. Built with <a href='https://bootsblogger.github.io'>Bootsblogger</a>. Powered by <a href='https://blogger.com'>Blogger</a>.</p>
+    <p class='mb-0'>&#169; <data:blog.title/>.</p>
+    <p class='mb-0'>Template <span class='text-lowercase'><data:messages.by/></span> <a href='https://example.com/you'>Your name</a> + <a href='https://bootsblogger.github.io'>Bootsblogger</a>. <b:message name='messages.poweredByBloggerLink'><b:param expr:value='data:blog.bloggerUrl'/></b:message>.</p>
   </div>
 </footer>
 
@@ -1045,7 +1044,7 @@ Head
     <b:includable id='layoutModeCss'>
   <b:template-skin>
     <![CDATA[
-    /* Hide from layout mode */
+    /* Hide */
     body#layout ul,
     body#layout ol {
       display: none;
@@ -1059,7 +1058,7 @@ Head
       clear: both;
     }
 
-    /* Grid system for layout mode */
+    /* Grid */
     body#layout .blogger-col-1,
     body#layout .blogger-col-2,
     body#layout .blogger-col-3,
