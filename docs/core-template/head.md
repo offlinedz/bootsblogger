@@ -16,6 +16,29 @@ Berikut ini adalah bagian-bagian yang ada di dalam `<head>`.
 
 Tag `<meta>` adalah elemen HTML yang digunakan untuk membentuk struktur metadata dari sebuah halaman web/blog. [Metadata](http://w3schools.com/tags/tag_meta.asp) adalah data (informasi) tentang data atau data informasi tentang berbagai aspek dari blog, seperti judul, deskripsi, gambar, URL, dan lain-lain.
 
+## Required meta tags
+
+- Set charset dengan `utf-8`.
+- Gunakan tag meta responsif `viewport`.
+
+###### Source
+
+{% highlight plaintext %}
+template-src/core/head/requiredMetaTags.xml
+{% endhighlight %}
+
+###### Includable
+
+{% highlight html %}
+<b:includable id='requiredMetaTags'>...</b:includable>
+{% endhighlight %}
+
+###### Usage
+
+{% highlight html %}
+<b:include name='requiredMetaTags'/>
+{% endhighlight %}
+
 ## Custom all-head-content
 
 Custom `<b:include data='blog' name='all-head-content'/>`.
