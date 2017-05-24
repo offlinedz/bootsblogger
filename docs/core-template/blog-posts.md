@@ -1,56 +1,16 @@
 ---
 layout: docs
 title: Blog posts
-description: Widget `Blog` posting dirancang untuk memudahkan dalam mengatur tampilan posting. Dan juga dirancang untuk dapat membuat tampilan posting yang unik/berbeda-beda di setiap tipe halaman.
+description: Gadget `Blog` dirancang untuk memudahkan dalam mengatur tampilan posting. Dan juga dirancang untuk dapat membuat tampilan posting yang unik/berbeda-beda di setiap tipe halaman.
 group: core-template
 ---
 
-Widget `Blog` posting dirancang untuk memudahkan dalam mengatur tampilan posting. Dan juga dirancang untuk dapat membuat tampilan posting yang unik/berbeda-beda di setiap tipe halaman.
+Gadget `Blog` (`<b:widget type='Blog'>`) dirancang untuk memudahkan dalam mengatur tampilan posting. Dan juga dirancang untuk dapat membuat tampilan posting yang unik/berbeda-beda di setiap tipe halaman.
 
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
-
-{% comment %}
-## Quick start example
-
-Contoh dasar untuk menampilkan posting.
-
-- Selalu tempatkan kode posting di dalam `b:loop`.
-- Selalu gunakan tag kondisional, seperti `b:if cond='data:post.title'` dan lainnya.
-- Selalu gunakan [*includes* (`b:include`)](#includes) yang tersedia.
-- Gunakan [Schema](https://schema.org).
-
-{% highlight html %}
-<b:loop values='data:posts' var='post'>
-  <article class='post-example' expr:id='"post-" + data:post.id' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
-    <!-- Post title -->
-    <b:if cond='data:post.title'>
-      <h2 class='post-title' itemprop='name headline'>
-        <a expr:href='data:post.url' expr:title='data:post.title' itemprop='url'><data:post.title/></a>
-      </h2>
-    </b:if>
-    <!-- Post author -->
-    <b:if cond='data:top.showAuthor'>
-      <b:include name='include-author'/>
-    </b:if>
-  </article>
-</b:loop>
-{% endhighlight %}
-
-## Data tags
-
-Di bawah ini adalah tag data Blogger yang sering digunakan. Untuk tag data lainnya Anda dapat menggunakan [*includes* (`b:include`)](#includes).
-
-| Kode | Deskripsi |
-| ---- | --------- |
-| `data:post.id` | Nomor unik posting. |
-| `data:post.title` | Judul posting. |
-| `data:post.url` | URL posting. |
-| `data:post.body` | Tubuh posting. |
-| `data:post.snippet` | Tubuh posting yang sudah dipotong (ringkasan). |
-{% endcomment %}
 
 ## Post layout and styles
 
@@ -168,11 +128,13 @@ template-src/content/blog-posts/post-archive.xml
 <b:includable id='post-archive'>...</b:includable>
 {% endhighlight %}
 
-## Custom headerByline and footerBylines
+## Includes
 
-### Header
+Bagian-bagian kode yang dapat Anda sertakan di bagian [post layout and styles](#post-layout-and-styles).
 
-`customHeaderByline`.
+### Custom headerByline
+
+Untuk menampilkan *post items* yang berada di dalam *header* pada konfigurasi posting blog.
 
 ###### Source
 
@@ -196,9 +158,9 @@ template-src/core/blog-posts/customHeaderByline.xml
 </b:if>
 {% endhighlight %}
 
-### Footer
+### Custom footerBylines
 
-`customFooterBylines`.
+Untuk menampilkan *post items* yang berada di dalam *footer* pada konfigurasi posting blog.
 
 ###### Source
 
@@ -221,8 +183,6 @@ template-src/core/blog-posts/customFooterBylines.xml
   </div>
 </b:if>
 {% endhighlight %}
-
-## Includes
 
 ### Images
 
@@ -290,9 +250,9 @@ template-src/core/blog-posts/post.snippet.xml
 <b:include data='{ length: number, links: true|false, linebreaks: true|false, ellipsis: true|false }' name='post.snippet'/>
 {% endhighlight %}
 
-### Read more 
+### Read more
 
-Untuk membuat *read more link*. 
+Untuk membuat *read more link*.
 
 ###### Source
 

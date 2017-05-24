@@ -1,11 +1,11 @@
 ---
 layout: docs
 title: Head
-description: Penjelasan bagian-bagian yang ada di dalam `<head>`.
+description: Bagian-bagian kode yang digunakan di dalam `<head>`.
 group: core-template
 ---
 
-Berikut ini adalah bagian-bagian yang ada di dalam `<head>`.
+Berikut ini adalah bagian-bagian kode yang digunakan di dalam `<head>`.
 
 ## Contents
 
@@ -97,7 +97,7 @@ Tag `<meta>` dan `<link>` untuk <abbr title="Search Engine Results Page">SERP</a
 ###### Includable
 
 {% highlight html %}
-<!-- Default/SERF -->
+<!-- Default/SERP -->
 <b:includable id='defaultTags'>...</b:includable>
 <!-- Twitter Cards -->
 <b:includable id='facebookTags'>...</b:includable>
@@ -163,7 +163,7 @@ Hasilnya akan seperti pada <a href="#" data-toggle="modal" data-target=".image-b
 
 #### Notation
 
-Jika Anda menggunakan sistem grid Bootstrap dan sistem grid untuk layout mode pada elemen yang sama, **kelas kolom tidak harus sama**, misal Anda menggunakan sistem grid Bootstrap untuk membuat template dua kolom dengan menggunakan `.col-md-9` untuk *main* dan `.col-md-3` untuk *sidebar*, penggunaan sistem grid untuk layout mode tidak harus menggunakan `.blogger-col-9` untuk *main* dan `.blogger-col-3` untuk *sidebar*, tetapi bisa juga `.blogger-col-8` untuk *main* dan `.blogger-col-4` untuk *sidebar*. Untuk lebih jelasnya lihat kode di bawah ini:
+Jika Anda menggunakan sistem grid Bootstrap dan sistem grid untuk Blogger layout pada elemen yang sama, **kelas kolom tidak harus sama**, misal Anda menggunakan sistem grid Bootstrap untuk membuat template dua kolom dengan menggunakan `.col-md-9` untuk *main* dan `.col-md-3` untuk *sidebar*, penggunaan sistem grid untuk Blogger layout tidak harus menggunakan `.blogger-col-9` untuk *main* dan `.blogger-col-3` untuk *sidebar*, tetapi bisa juga menggunakan `.blogger-col-8` untuk *main* dan `.blogger-col-4` untuk *sidebar*. Untuk lebih jelasnya lihat kode di bawah ini:
 
 {% highlight html %}
 <div class='container'>

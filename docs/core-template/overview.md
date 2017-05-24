@@ -6,7 +6,7 @@ group: core-template
 redirect_from: "/core-template/"
 ---
 
-Template dasar Bootsblogger dirancang untuk memberikan kemudahan dan fitur-fitur yang luar biasa.
+Template Bootsblogger dirancang untuk memberikan kemudahan dengan mengubahsuaikan fitur-fitur bawaan Blogger.
 
 Sebelum Anda melanjutkan ke bagian berikutnya, di bawah ini ada beberapa hal dasar yang harus dipahami.
 
@@ -52,7 +52,9 @@ Template dasar Bootsblogger menggunakan berbagai tipe halaman untuk mengatur kel
 
 <b:comment>=== Archive page ===</b:comment>
 <b:if cond='data:view.isArchive'>
-  <!-- https://example.blogspot.com/<year>_<month>_<day>_archive.html -->
+  <!-- 1. https://example.blogspot.com/<year> -->
+  <!-- 2. https://example.blogspot.com/<year>/<month> -->
+  <!-- 3. https://example.blogspot.com/<year>_<month>_<day>_archive.html -->
 </b:if>
 
 <b:comment>=== Error page ===</b:comment>
