@@ -15,6 +15,6 @@ group: getting-started
 
 ### Source files
 
-**Ingin mengubahsuaikan dan mengkompilasi Bootsblogger?** Pilih opsi ini untuk mengunduh kode sumber Sass, JavaScript, template, dan berkas dokumentasi. Membutuhkan [beberapa konfigurasi]({{ site.baseurl }}/getting-started/build-tools/#tooling-setup). [Pelajari lebih lanjut]({{ site.baseurl }}/getting-started/contents/#bootsblogger-source-code)
+**Ingin mengubahsuaikan dan mengkompilasi Bootsblogger?** Pilih opsi ini untuk mengunduh kode sumber Sass, JavaScript, template, dan berkas dokumentasi. [Pelajari lebih lanjut]({{ site.baseurl }}/getting-started/contents/#bootsblogger-source-code)
 
 <a href="{{ site.download.source }}" class="btn btn-bs btn-outline">Download source</a>
