@@ -26,9 +26,6 @@ gems:
 title: Bootsblogger
 description: Blogger + Bootstrap + <3
 authors: Igoy Nawamreh
-twitter: #
-googleplus: #
-facebook: #
 social_logo_path: /assets/brand/bootstrap-social-logo.png
 social_image_path: /assets/brand/bootstrap-social.png
 
@@ -42,6 +39,6 @@ download:
   dist:           #
 
 demo:             https://bootsblogger-demo.blogspot.com
-blog:             https://bootsbloggerblog.blogspot.com
-expo:             https://bootsbloggerexpo.blogspot.com
-templates:        #
+blog:             https://bootsblogger-blog.blogspot.com
+expo:             https://bootsblogger-expo.blogspot.com
+themes:           https://bootsblogger-themes.blogspot.com

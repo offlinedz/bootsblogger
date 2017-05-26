@@ -8,7 +8,7 @@ redirect_from: "/components/"
 
 Komponen untuk tampilan posting, dengan beragam tampilan, warna, dan fitur.
 
-Sebelum Anda membaca dokumentasi ini, pastikan Anda sudah membaca dokumentasi [widget blog posting]({{ site.baseurl }}/core-template/blog-posts/), karena dalam menampilkan data postingnya menggunakan fungsi-fungsi yang ada di dalam widget tersebut.
+Sebelum Anda membaca dokumentasi ini, pastikan Anda sudah membaca dokumentasi [gadget `Blog`]({{ site.baseurl }}/core-template/blog-posts/), karena dalam menampilkan data postingnya menggunakan fungsi-fungsi yang disediakan untuk gadget `Blog`.
 
 ## Contents
 

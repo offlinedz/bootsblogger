@@ -5,7 +5,7 @@ description: Navmenu adalah pembungkus untuk navigasi dan elemen lainnya.
 group: components
 ---
 
-Navmenu adalah pembungkus untuk navigasi dan elemen lainnya. Navmenu tampil secara vertikal, dengan dukungan *fixed left* dan *fixed right*, dan juga kemudahan untuk mengatur warna.
+Navmenu adalah pembungkus untuk navigasi dan elemen lainnya. Navmenu tampil secara vertikal.
 
 ## Contents
 
