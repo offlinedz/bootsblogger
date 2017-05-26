@@ -203,7 +203,7 @@ template-src/core/blog-posts/post.image.xml
 ###### Usage
 
 {% highlight html %}
-<b:include data='{ size: number, aspectRatioWidth: number, aspectRatioHeight: number }' name='post.image'/>
+<b:include data='{ size: number, aspectRatioWidth: number, aspectRatioHeight: number, link: true|false, class: &quot;class-name&quot; }' name='post.image'/>
 {% endhighlight %}
 
 ### Background images
