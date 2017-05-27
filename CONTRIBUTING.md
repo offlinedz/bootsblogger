@@ -24,7 +24,7 @@ restrictions:
   respect the opinions of others.
 
 * Please **do not** post comments consisting solely of "+1" or ":thumbsup:".
-  Use [GitHub's "reactions" feature](https://github.com/blog/2119-add-reactions-to-pull-requests-issues-and-comments) 
+  Use [GitHub's "reactions" feature](https://github.com/blog/2119-add-reactions-to-pull-requests-issues-and-comments)
   instead. We reserve the right to delete comments which violate this rule.
 
 * Please **do not** open issues or pull requests regarding the code in
@@ -115,19 +115,17 @@ Please adhere to the [coding guidelines](#code-guidelines) used throughout the
 project (indentation, accurate comments, etc.) and any other requirements
 (such as test coverage).
 
-**Do not edit:** 
+**Do not edit:**
 
-- `/bootsblogger/dist/` (automatically generated)
-- `/bootsblogger/scss/bootstrap/` (Bootstrap source code)
-- `/bootsblogger/js/bootstrap/` (Bootstrap precompiled JavaScript)
-- `/bootsblogger/template-src/core/assets/bootstrap/` (automatically generated)
-- `/bootsblogger/template-src/core/assets/bootsblogger/` (automatically generated)
+- `/bootsblogger/dist/`
+- `/bootsblogger/scss/bootstrap/`
+- `/bootsblogger/template-src/core/assets/css/bootstrap/`
+- `/bootsblogger/template-src/core/assets/css/bootsblogger/`
 
 **You should edit the source files in:**
 
 - [`/bootsblogger/template-src/`](https://github.com/bootsblogger/bootsblogger/tree/master/template-src)
 - [`/bootsblogger/scss/bootsblogger/`](https://github.com/bootsblogger/bootsblogger/tree/master/scss/bootsblogger)
-- [`/bootsblogger/js/bootsblogger/`](https://github.com/bootsblogger/bootsblogger/tree/master/js/bootsblogger)
 
 Similarly, when contributing to Bootsblogger's documentation, you should edit the
 documentation source files in

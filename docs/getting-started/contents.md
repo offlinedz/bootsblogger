@@ -22,23 +22,21 @@ bootsblogger/
     └── template.xml
 {% endhighlight %}
 
-Pilihan ini tersedia untuk Anda yang ingin membangun template dengan hanya menggunakan template editor Blogger, di dalam berkas ini sudah terdapat CSS dan JavaScript Bootstrap dan Bootsblogger, dan juga [Font Awesome](https://fontawesome.io). Jika Anda mengambil pilihan ini, Anda tidak akan dapat mengubah CSS dan JavaScript Bootstrap maupun Bootsblogger, karena CSS dan JavaScript tersebut hasil kompilasi dan kompresi dari kode sumber. Walaupun demikian, Anda tetap dapat mengubahsuaikan Bootstrap maupun Bootsblogger dengan cara membuat *custom* CSS dan JavaScript.
-
 ### Usage
 
 Setelah Anda mengunduh template terkompilasi, pasang Bootsblogger starter template (`dist/template.xml`) di blog Anda.
 
-#### Code folding
+##### Code folding
 
 Gunakan fitur code folding yang ada pada template editor Blogger, agar kode template tidak terlihat berantakan dan membingungkan, juga akan memudahkan untuk menemukan bagian kode tertentu, [lihat gambar]({{ site.baseurl }}/assets/img/blogger-code-folding.png).
 
-#### Code indentation
+##### Code indentation
 
 Selalu perhatikan indentasi kode, agar kode lebih mudah dibaca dan dipahami. Atur indentasi menggunakan `2` spasi.
 
-#### Template CSS
+##### Template CSS
 
-Buat *custom styles* dan/atau buat sebuah komponen baru untuk mengubahsuaikan Bootstrap dan Bootsblogger, buat di bagian *Template CSS*.
+Anda dapat membuat *custom styles* dan/atau sebuah komponen baru untuk mengubahsuaikan Bootstrap dan Bootsblogger, tambahkan di bagian *Template CSS*.
 
 {% highlight html %}
 <b:comment>=== Template CSS ===</b:comment>
@@ -49,9 +47,9 @@ Buat *custom styles* dan/atau buat sebuah komponen baru untuk mengubahsuaikan Bo
 </b:skin>
 {% endhighlight %}
 
-#### Template JavaScript
+##### Template JavaScript
 
-Tambahkan JavaScript Anda di bagian *Template JavaScript*.
+Tambahkan JavaScript di bagian *Template JavaScript*.
 
 {% highlight html %}
 <b:comment>=== Template JavaScript ===</b:comment>
@@ -64,16 +62,13 @@ Tambahkan JavaScript Anda di bagian *Template JavaScript*.
 
 ## Bootsblogger source code
 
-CSS, JavaScript, dan template terkompilasi, beserta kode sumber Sass, JavaScript, template, dan berkas dokumentasi. Untuk lebih jelas lihat struktur di bawah ini:
+Template terkompilasi, beserta kode sumber Sass, template, dan berkas dokumentasi. Untuk lebih jelas lihat struktur di bawah ini:
 
 {% highlight plaintext %}
 bootsblogger/
 ├── dist/
 │   └── template.xml
 ├── docs/
-├── js/
-│   ├── bootsblogger/
-│   └── bootstrap/
 ├── scss/
 │   ├── bootsblogger/
 │   ├── bootstrap/
@@ -87,18 +82,22 @@ bootsblogger/
     └── style.css
 {% endhighlight %}
 
-Di dalam direktori `js/` dan `scss/` adalah kode sumber CSS dan JavaScript Bootstrap dan Bootsblogger, yang akan dikompilasi ke dalam `template-src/core/assets`.
+**`dist/template.xml`** - Template terkompilasi.
 
-Berkas `scss/_custom.scss` digunakan untuk [mengubahsuaikan variabel Sass]({{ site.baseurl }}/getting-started/options/) Bootstrap dan Bootsblogger.
+**`docs/`** - Berkas-berkas dokumentasi.
 
-Di dalam direktori `template-src/` adalah kode sumber template.
+**`scss/`** - Kode sumber CSS Bootstrap dan Bootsblogger yang akan dikompilasi ke dalam `template-src/core/assets/css`.
 
-- `content/` - Digunakan untuk menyimpan berkas-berkas template terpisah, seperti komponen dan lainnya.
-- `core/` - Berisi berkas-berkas inti template.
-- `config.json` - Berkas konfigurasi template.
-- `index.xml` - Berkas yang akan dikompilasi ke dalam `/dist`.
+- `_custom.scss` - Digunakan untuk [mengubahsuaikan variabel Sass]({{ site.baseurl }}/getting-started/options/) Bootstrap dan Bootsblogger.
+
+**`template-src/`** - Kode sumber template.
+
+- `core/` - Bagian-bagian inti template.
+- `content/` - Bagian-bagian template lainnya.
+- `config.json` - Template config.
+- `index.xml` - Template index.
 - `script.js` - Template JavaScript.
-- `style.css` - Template CSS (`b:skin`).
+- `style.css` - Template CSS.
 
 ### Usage
 
@@ -108,21 +107,21 @@ Untuk dapat bekerja dengan kode sumber Bootsblogger, membutuhkan [beberapa konfi
 
 Untuk dapat membangun template di dalam kode sumber, selain harus memahami XML Blogger, Anda harus memahami dasar-dasar **[grunt-bake](https://github.com/MathiasPaumgarten/grunt-bake)**, Bootsblogger menggunakannya untuk mempermudah proses pembuatan dan pengeditan template.
 
-##### Config
+##### Template config
 
-Sesuaikan konfigurasi template (`template-src/config.json`).
+Sesuaikan konfigurasi template (`config.json`).
 
 ##### Template index
 
-Berkas `template-src/index.xml` adalah berkas untuk menyertakan keseluruhan bagian-bagian template, dan akan dikompilasi ke dalam `/dist`.
+Berkas `index.xml` adalah berkas untuk menyertakan keseluruhan bagian-bagian template, dan akan dikompilasi ke dalam `/dist`.
 
 ##### Template CSS
 
-Buat *custom styles* dan/atau buat sebuah komponen baru untuk mengubahsuaikan Bootstrap dan Bootsblogger, buat di bagian *Template CSS* (`template-src/style.css`).
+Anda dapat membuat *custom styles* dan/atau sebuah komponen baru untuk mengubahsuaikan Bootstrap dan Bootsblogger, tambahkan di bagian *Template CSS* (`style.css`).
 
 ##### Template JavaScript
 
-Tambahkan JavaScript Anda di bagian *Template JavaScript* (`template-src/script.js`).
+Tambahkan JavaScript di bagian *Template JavaScript* (`script.js`).
 
 ##### Inclusions
 
@@ -136,13 +135,13 @@ Menyertakan berkas template terpisah:
 <!--(bake /path/to/file)-->
 {% endhighlight %}
 
-Contoh menyertakan berkas `/content/navbar.xml`:
+Contoh menyertakan berkas `content/navbar.xml`:
 
 {% highlight html %}
 <!--(bake /content/navbar.xml)-->
 {% endhighlight %}
 
-Contoh menyertakan berkas `/style.css`:
+Contoh menyertakan berkas `style.css`:
 
 {% highlight html %}
 <!--(bake /style.css)-->
@@ -152,7 +151,7 @@ Contoh menyertakan berkas `/style.css`:
 
 Lihat [struktur direktori](#bootsblogger-source-code) di atas.
 
-**Catatan:** Anda dapat membuat direktori dan/atau berkas baru sesuai dengan kebutuhan Anda, disarankan disimpan di dalam `template-src/content/`.
+**Catatan:** Anda dapat membuat direktori dan/atau berkas baru sesuai dengan kebutuhan Anda, disarankan disimpan di dalam `content/`.
 
 ##### Grunt-bake
 

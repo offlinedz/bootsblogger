@@ -49,15 +49,6 @@ CSS
 
 <b:comment>
 =================================================
-JavaScript (head)
-================================================= </b:comment>
-
-<b:comment>=== Bootsblogger JavaScript (JSON) ===</b:comment>
-<b:include name='bootsbloggerJsonJs'/>
-
-
-<b:comment>
-=================================================
 Post layout and styles
 ================================================= </b:comment>
 
@@ -192,7 +183,6 @@ JavaScript
 <b:include name='jquery'/>
 <b:include name='tether'/>
 <b:include name='bootstrapJs'/>
-<b:include name='bootsbloggerJs'/>
 
 <b:comment>=== Template JavaScript ===</b:comment>
 <script>

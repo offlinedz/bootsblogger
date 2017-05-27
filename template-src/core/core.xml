@@ -76,6 +76,76 @@ Blog posts (widget type `Blog`)
   </b:defaultmarkup>
 </b:defaultmarkups>
 
+<b:comment>=== Comments JS ===</b:comment>
+<b:if cond='data:view.isSingleItem'>
+<script>
+//<![CDATA[
+(function ($) {
+  'use strict';
+
+  $(function () {
+
+    // Toggle `.active` for `.comment-form-original-wrapper` and `.comment-form-reply-wrapper`
+
+    $('.comment-form-original-wrapper').addClass('active')
+
+    $('.js-comment-action').on('click', function () {
+      $('.comment-form-original-wrapper, .comment-form-reply-wrapper').each(function () {
+        if ($(this).find('.comment-form').length) {
+          $(this).addClass('active')
+        } else {
+          $(this).removeClass('active')
+        }
+      })
+    })
+
+
+    // Toggle `.show` for `.comment-add-wrapper` and `.comment-cancel-wrapper`
+
+    $('.js-comment-action').on('click', function () {
+      $('.js-comment-action').removeClass('active')
+      $(this).addClass('active')
+
+      $('.comment-form-original-wrapper').each(function () {
+        if ($(this).find('.comment-form').length) {
+          $('body').find('.comment-add-wrapper').removeClass('show')
+        } else {
+          $('body').find('.comment-add-wrapper').addClass('show')
+        }
+      })
+      $('.comment-form-reply-wrapper').each(function () {
+        if ($(this).find('.comment-form').length) {
+          $('body').find('.comment-cancel-wrapper').addClass('show')
+        } else {
+          $('body').find('.comment-cancel-wrapper:not(.show)').removeClass('show')
+        }
+      })
+    })
+
+
+    // Loading animation
+
+    $('.comment-form').addClass('comment-form-loading-wrapper')
+
+    $('#comment-editor').on('load', function () {
+      $('.comment-form').removeClass('comment-form-loading-wrapper')
+    })
+
+    $('.js-comment-action').click(function () {
+      $('.comment-form').addClass('comment-form-loading-wrapper')
+
+      $('#comment-editor').on('load', function () {
+        $('.comment-form').removeClass('comment-form-loading-wrapper')
+      })
+    })
+
+  })
+
+}(jQuery));
+//]]>
+</script>
+</b:if>
+
 <b:comment>
 Unused default inclusions
   Default inclusions can not be deleted.
@@ -130,34 +200,13 @@ Assets
   <b:defaultmarkup type='Common'>
     <b:includable id='bootsbloggerCss'>
       <style>
-        <!--(bake /core/assets/bootsblogger/css/bootsblogger.min.css)-->
+        <!--(bake /core/assets/css/bootsblogger/bootsblogger.min.css)-->
       </style>
-    </b:includable>
-    <b:includable id='bootsbloggerJs'>
-      <script>
-        //<![CDATA[
-        <!--(bake /core/assets/bootsblogger/js/bootsblogger.min.js)-->
-        //]]>
-      </script>
-    </b:includable>
-    <b:includable id='bootsbloggerJsonJs'>
-      <script>
-        //<![CDATA[
-        <!--(bake /core/assets/bootsblogger/js/bootsblogger-json.min.js)-->
-        //]]>
-      </script>
     </b:includable>
     <b:includable id='bootstrapCss'>
       <style>
-        <!--(bake /core/assets/bootstrap/css/bootstrap.min.css)-->
+        <!--(bake /core/assets/css/bootstrap/bootstrap.min.css)-->
       </style>
-    </b:includable>
-    <b:includable id='bootstrapJs'>
-      <script>
-        //<![CDATA[
-        <!--(bake /core/assets/bootstrap/js/bootstrap.min.js)-->
-        //]]>
-      </script>
     </b:includable>
     <b:includable id='fontAwesome'>
       <link crossorigin='anonymous' href='{{ blog.cdn.fontAwesome }}' integrity='{{ blog.cdn.fontAwesome_hash }}' rel='stylesheet'/>
@@ -167,6 +216,9 @@ Assets
     </b:includable>
     <b:includable id='tether'>
       <script crossorigin='anonymous' integrity='{{ blog.cdn.tether_hash }}' src='{{ blog.cdn.tether }}'/>
+    </b:includable>
+    <b:includable id='bootstrapJs'>
+      <script crossorigin='anonymous' integrity='{{ blog.cdn.bootstrapJs_hash }}' src='{{ blog.cdn.bootstrapJs }}'/>
     </b:includable>
   </b:defaultmarkup>
 </b:defaultmarkups>

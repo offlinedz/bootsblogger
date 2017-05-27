@@ -41,7 +41,7 @@ Kelas-kelas untuk mengatur judul widget—warna, ukuran, perataan, dan menyembun
 
 Kelas-kelas yang tersedia untuk mengubah warna judul widget.
 
-<div class="bd-example bd-example-widget text-white">
+<div class="bd-example bd-example-widget-inverse text-white">
   <div class="wg wg-title-gray-light">
     <div class="widget">
       <h2>Gray Light</h2>
@@ -281,7 +281,7 @@ Untuk menyembunyikan judul widget gunakan `.wg-title-hide`.
 
 Gunakan `.wg-box`, `.wg-box-{color}`, dan [`.wg-title-{color}`](#color).
 
-<div class="bd-example bd-example-widget text-muted">
+<div class="bd-example bd-example-widget-inverse text-muted">
   <div class="wg wg-box wg-box-gray-light wg-title-gray-dark">
     <div class="widget">
       <h2>Gray Light</h2>
@@ -399,7 +399,7 @@ Gunakan `.wg-box`, `.wg-box-{color}`, dan [`.wg-title-{color}`](#color).
 
 Ubah `.wg-box-{color}` menjadi `.wg-box-outline-{color}`.
 
-<div class="bd-example bd-example-widget text-white">
+<div class="bd-example bd-example-widget-inverse text-white">
   <div class="wg wg-box wg-box-outline-gray-light wg-title-gray-light">
     <div class="widget">
       <h2>Gray Light</h2>
@@ -545,7 +545,7 @@ Tambahkan gadget **HTML/JavaScript**. Kemudian, buat list group menggunakan `.li
 
 Gunakan `.wg-panel`, `.wg-panel-{color}`, dan [`.wg-title-{color}`](#color).
 
-<div class="bd-example bd-example-widget text-gray-dark">
+<div class="bd-example bd-example-widget-inverse text-gray-dark">
   <div class="wg wg-panel wg-panel-gray-light wg-title-gray-dark">
     <div class="widget">
       <h2>Gray Light</h2>
@@ -663,7 +663,7 @@ Gunakan `.wg-panel`, `.wg-panel-{color}`, dan [`.wg-title-{color}`](#color).
 
 Ubah `.wg-panel-{color}` menjadi `.wg-panel-outline-{color}`.
 
-<div class="bd-example bd-example-widget text-white">
+<div class="bd-example bd-example-widget-inverse text-white">
   <div class="wg wg-panel wg-panel-outline-gray-light wg-title-gray-light">
     <div class="widget">
       <h2>Gray Light</h2>
@@ -770,7 +770,7 @@ Ubah `.wg-panel-{color}` menjadi `.wg-panel-outline-{color}`.
 
 Gunakan `.wg-panel-{color}` dan tambahkan `.wg-panel-transparent`.
 
-<div class="bd-example bd-example-widget text-white">
+<div class="bd-example bd-example-widget-inverse text-white">
   <div class="wg wg-panel wg-panel-purple wg-panel-transparent wg-title-white">
     <div class="widget">
       <h2>Widget title</h2>
@@ -798,7 +798,7 @@ Gunakan `.wg-panel-{color}` dan tambahkan `.wg-panel-transparent`.
 
 Tambahkan `.wg-panel-group`.
 
-<div class="bd-example bd-example-widget text-gray-dark">
+<div class="bd-example bd-example-widget-inverse text-gray-dark">
   <div class="wg wg-panel wg-panel-teal wg-title-white wg-panel-group">
     <div class="widget">
       <h2>Widget title</h2>
@@ -876,7 +876,7 @@ Hanya bekerja pada perangkat kecil (`sm`) ke atas.
 
 Urutan widget dimulai dari atas ke bawah dan dari kiri ke kanan.
 
-<div class="bd-example bd-example-widget text-gray-dark">
+<div class="bd-example bd-example-widget-inverse text-gray-dark">
   <div class="wg wg-columns wg-box wg-box-orange wg-title-black">
     <div class="widget">
       <h2>Widget title 1</h2>
@@ -994,7 +994,7 @@ Grid widget menggunakan `calc()` untuk mengkalkulasi lebar dan jarak widget. Men
 
 ### Examples
 
-<div class="bd-example bd-example-widget text-white">
+<div class="bd-example bd-example-widget-inverse text-white">
   <div class="wg wg-title-white wg-sm-6 wg-md-4 wg-lg-3 wg-grid-example">
     <div class="widget">
       <h2>Widget title</h2>
@@ -1027,7 +1027,7 @@ Grid widget menggunakan `calc()` untuk mengkalkulasi lebar dan jarak widget. Men
 <b:section class='wg wg-title-white wg-sm-6 wg-md-4 wg-lg-3' id='sectionId'></b:section>
 {% endhighlight %}
 
-<div class="bd-example bd-example-widget text-gray-dark">
+<div class="bd-example bd-example-widget-inverse text-gray-dark">
   <div class="wg wg-box wg-box-orange wg-title-black wg-sm-6 wg-md-4 wg-grid-example">
     <div class="widget">
       <h2>Widget title</h2>
@@ -1060,7 +1060,7 @@ Grid widget menggunakan `calc()` untuk mengkalkulasi lebar dan jarak widget. Men
 <b:section class='wg wg-box wg-box-orange wg-title-black wg-sm-6 wg-md-4' id='sectionId'></b:section>
 {% endhighlight %}
 
-<div class="bd-example bd-example-widget text-gray-dark">
+<div class="bd-example bd-example-widget-inverse text-gray-dark">
   <div class="wg wg-panel wg-panel-orange wg-title-black wg-sm-6 wg-grid-example">
     <div class="widget">
       <h2>Widget title</h2>
