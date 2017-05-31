@@ -2106,6 +2106,76 @@ Blog posts (widget type `Blog`)
   </b:defaultmarkup>
 </b:defaultmarkups>
 
+<b:comment>=== Comments JS ===</b:comment>
+<b:if cond='data:view.isSingleItem'>
+<script>
+//<![CDATA[
+(function ($) {
+  'use strict';
+
+  $(function () {
+
+    // Toggle `.active` for `.comment-form-original-wrapper` and `.comment-form-reply-wrapper`
+
+    $('.comment-form-original-wrapper').addClass('active')
+
+    $('.js-comment-action').on('click', function () {
+      $('.comment-form-original-wrapper, .comment-form-reply-wrapper').each(function () {
+        if ($(this).find('.comment-form').length) {
+          $(this).addClass('active')
+        } else {
+          $(this).removeClass('active')
+        }
+      })
+    })
+
+
+    // Toggle `.show` for `.comment-add-wrapper` and `.comment-cancel-wrapper`
+
+    $('.js-comment-action').on('click', function () {
+      $('.js-comment-action').removeClass('active')
+      $(this).addClass('active')
+
+      $('.comment-form-original-wrapper').each(function () {
+        if ($(this).find('.comment-form').length) {
+          $('body').find('.comment-add-wrapper').removeClass('show')
+        } else {
+          $('body').find('.comment-add-wrapper').addClass('show')
+        }
+      })
+      $('.comment-form-reply-wrapper').each(function () {
+        if ($(this).find('.comment-form').length) {
+          $('body').find('.comment-cancel-wrapper').addClass('show')
+        } else {
+          $('body').find('.comment-cancel-wrapper:not(.show)').removeClass('show')
+        }
+      })
+    })
+
+
+    // Loading animation
+
+    $('.comment-form').addClass('comment-form-loading-wrapper')
+
+    $('#comment-editor').on('load', function () {
+      $('.comment-form').removeClass('comment-form-loading-wrapper')
+    })
+
+    $('.js-comment-action').click(function () {
+      $('.comment-form').addClass('comment-form-loading-wrapper')
+
+      $('#comment-editor').on('load', function () {
+        $('.comment-form').removeClass('comment-form-loading-wrapper')
+      })
+    })
+
+  })
+
+}(jQuery));
+//]]>
+</script>
+</b:if>
+
 <b:comment>
 Unused default inclusions
   Default inclusions can not be deleted.
