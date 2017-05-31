@@ -9,7 +9,7 @@
     <!-- Horizontal thumbnail -->
     <div class='post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3'>
       <!-- Post image -->
-      <div class='post-img-left' itemprop='thumbnail'>
+      <div class='post-img-left'>
         <b:include data='{ size: 250, aspectRatioWidth: 250, aspectRatioHeight: 250, link: true, class: &quot;&quot; }' name='post.image'/>
       </div><!-- /.post-img-left -->
       <!-- Content -->
