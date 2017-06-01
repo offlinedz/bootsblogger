@@ -31,6 +31,8 @@ restrictions:
   [`Bootstrap`](https://github.com/twbs/bootstrap) (open them in
   its repository).
 
+Have a bug or a feature request? Please first search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/bootsblogger/bootsblogger/issues/new).
+
 
 ## Issues and labels
 
@@ -117,19 +119,19 @@ project (indentation, accurate comments, etc.) and any other requirements
 
 **Do not edit:**
 
-- `/bootsblogger/dist/`
-- `/bootsblogger/scss/bootstrap/`
-- `/bootsblogger/template-src/core/assets/css/bootstrap/`
-- `/bootsblogger/template-src/core/assets/css/bootsblogger/`
+- [`/bootsblogger/dist/`](../dist)
+- [`/bootsblogger/scss/bootstrap/`](../scss/bootstrap)
+- [`/bootsblogger/template-src/core/assets/css/bootstrap/`](../template-src/core/assets/css/bootstrap)
+- [`/bootsblogger/template-src/core/assets/css/bootsblogger/`](../template-src/core/assets/css/bootsblogger)
 
 **You should edit the source files in:**
 
-- [`/bootsblogger/template-src/`](https://github.com/bootsblogger/bootsblogger/tree/master/template-src)
-- [`/bootsblogger/scss/bootsblogger/`](https://github.com/bootsblogger/bootsblogger/tree/master/scss/bootsblogger)
+- [`/bootsblogger/template-src/`](../template-src)
+- [`/bootsblogger/scss/bootsblogger/`](../scss/bootsblogger)
 
 Similarly, when contributing to Bootsblogger's documentation, you should edit the
 documentation source files in
-[the `/bootsblogger/docs/` directory of the `master` branch](https://github.com/bootsblogger/bootsblogger/tree/master/docs).
+the [`/bootsblogger/docs/`](../docs) directory.
 
 Adhering to the following process is the best way to get your work
 included in the project:
@@ -182,13 +184,15 @@ included in the project:
     with a clear title and description against the `master` branch.
 
 **IMPORTANT**: By submitting a patch, you agree to allow the project owners to
-license your work under the terms of the [MIT License](LICENSE) (if it
+license your work under the terms of the [MIT License](../LICENSE) (if it
 includes code changes) and under the terms of the
-[Creative Commons Attribution 3.0 Unported License](docs/LICENSE)
+[Creative Commons Attribution 3.0 Unported License](../docs/LICENSE)
 (if it includes documentation changes).
 
 
 ## Code guidelines
+
+All HTML and CSS should conform to the [Code Guide](https://github.com/mdo/code-guide), maintained by [Mark Otto](https://github.com/mdo).
 
 ### HTML
 
@@ -212,6 +216,10 @@ includes code changes) and under the terms of the
 - strict mode
 - "Attractive"
 
+### EditorConfig
+
+Editor preferences are available in the [editor config](../.editorconfig) for easy use in common text editors. Read more and download plugins at <http://editorconfig.org>.
+
 ### Checking coding style
 
 Run `grunt test` before committing to ensure your changes follow our coding standards.
@@ -219,5 +227,5 @@ Run `grunt test` before committing to ensure your changes follow our coding stan
 
 ## License
 
-By contributing your code, you agree to license your contribution under the [MIT License](LICENSE).
-By contributing to the documentation, you agree to license your contribution under the [Creative Commons Attribution 3.0 Unported License](docs/LICENSE).
+By contributing your code, you agree to license your contribution under the [MIT License](../LICENSE).
+By contributing to the documentation, you agree to license your contribution under the [Creative Commons Attribution 3.0 Unported License](../docs/LICENSE).

@@ -26,7 +26,7 @@ When completed, you'll be able to run the various Grunt commands provided from t
 
 ## Using Grunt
 
-Our [Gruntfile](https://github.com/bootsblogger/bootsblogger/blob/master/Gruntfile.js) includes the following commands and tasks:
+Our [Gruntfile](Gruntfile.js) includes the following commands and tasks:
 
 | Task | Description |
 | --- | --- |
@@ -50,17 +50,9 @@ Learn more about using Jekyll by reading its [documentation](https://jekyllrb.co
 
 ## Contributing
 
-Please read through our [contributing guidelines](https://github.com/bootsblogger/bootsblogger/blob/master/CONTRIBUTING.md). Included are directions for [bug reports](https://github.com/bootsblogger/bootsblogger/blob/master/CONTRIBUTING.md#bug-reports), [features requests](https://github.com/bootsblogger/bootsblogger/blob/master/CONTRIBUTING.md#feature-requests), [submitting pull requests](https://github.com/bootsblogger/bootsblogger/blob/master/CONTRIBUTING.md#pull-requests), [coding standards](https://github.com/bootsblogger/bootsblogger/blob/master/CONTRIBUTING.md#code-guidelines), and notes on development.
-
-### Bugs and feature requests
-
-Have a bug or a feature request? Please first read the [issue guidelines](https://github.com/bootsblogger/bootsblogger/blob/master/CONTRIBUTING.md#using-the-issue-tracker) and search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/bootsblogger/bootsblogger/issues/new).
-
-### EditorConfig
-
-Editor preferences are available in the [editor config](https://github.com/bootsblogger/bootsblogger/blob/master/.editorconfig) for easy use in common text editors. Read more and download plugins at <http://editorconfig.org>.
+Please read through our [contributing guidelines](.github/CONTRIBUTING.md). Included are directions for opening issues, coding standards, and notes on development.
 
 
 ## Copyright and license
 
-Code and documentation copyright 2017 Igoy Nawamreh. Code released under the [MIT License](https://github.com/bootsblogger/bootsblogger/blob/master/LICENSE). Docs released under [Creative Commons](https://github.com/bootsblogger/bootsblogger/blob/master/docs/LICENSE).
+Code and documentation copyright 2017 Igoy Nawamreh. Code released under the [MIT License](LICENSE). Docs released under [Creative Commons](docs/LICENSE).
