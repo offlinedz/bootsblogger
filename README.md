@@ -9,7 +9,7 @@
   +
   <a href="https://github.com/twbs/bootstrap"><img align="center" src="https://cdn.rawgit.com/bootsblogger/resources/eef14e8f/assets/img/bootstrap-solid.svg" title="Bootstrap" alt="Bootstrap" width=42 height=42></a>
   +
-  <img align="center" src="https://cdn.rawgit.com/bootsblogger/resources/eef14e8f/assets/img/heart.svg" alt="Heart" width=42 height=42>
+  <img align="center" src="https://cdn.rawgit.com/bootsblogger/resources/dd7120ee/assets/img/heart-solid.svg" alt="Heart" width=42 height=42>
 </p>
 
 <br>
