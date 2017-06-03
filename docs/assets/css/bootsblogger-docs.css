@@ -20,35 +20,35 @@
    Masthead
    ============================================== */
 
- .bd-masthead {
-   color: #ffe5d0;
-   background-image: -webkit-linear-gradient(315deg, #893e00, #ef6c00, #ff943d);
-   background-image: -o-linear-gradient(315deg, #893e00, #ef6c00, #ff943d);
-   background-image: linear-gradient(135deg, #893e00, #ef6c00, #ff943d);
- }
- .bd-masthead .bd-booticon {
-   color: #ffe5d0;
-   border-color: #ffe5d0;
- }
- .bd-masthead .lead {
-   color: #fff;
- }
- .bd-masthead .btn {
-   color: #ffe484;
-   border-color: #ffe484;
- }
- .bd-masthead .btn:hover {
-   color: #463c34;
-   background-color: #ffe484;
-   border-color: #ffe484;
- }
+.bd-masthead {
+  color: #ffe5d0;
+  background-image: -webkit-linear-gradient(315deg, #893e00, #ef6c00, #ff943d);
+  background-image: -o-linear-gradient(315deg, #893e00, #ef6c00, #ff943d);
+  background-image: linear-gradient(135deg, #893e00, #ef6c00, #ff943d);
+}
+.bd-masthead .bd-booticon {
+  color: #ffe5d0;
+  border-color: #ffe5d0;
+}
+.bd-masthead .lead {
+  color: #fff;
+}
+.bd-masthead .btn {
+  color: #ffe484;
+  border-color: #ffe484;
+}
+.bd-masthead .btn:hover {
+  color: #463c34;
+  background-color: #ffe484;
+  border-color: #ffe484;
+}
 
 
- /* ==============================================
-    Page header
-    ============================================== */
+/* ==============================================
+   Page header
+   ============================================== */
 
- .bd-pageheader {
+.bd-pageheader {
   color: #ffe5d0;
   background-color: #ef6c00;
 }
@@ -57,11 +57,11 @@
 }
 
 
- /* ==============================================
-    Buttons
-    ============================================== */
+/* ==============================================
+   Buttons
+   ============================================== */
 
- .btn-bs {
+.btn-bs {
   font-weight: 500;
   color: #ff8f33;
   border-color: #ff8f33;
