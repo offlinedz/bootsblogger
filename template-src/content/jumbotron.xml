@@ -1,7 +1,7 @@
 <b:if cond='data:view.isHomepage'>
   <div class='jumbotron jumbotron-fluid custom-jumbotron mb-0'>
     <div class='container'>
-      <img class='mb-3' height='144' src='https://cdn.rawgit.com/bootsblogger/resources/dd7120ee/assets/img/bootsblogger-solid.svg' width='144'/>
+      <img class='mb-3' height='144' src='https://cdn.rawgit.com/bootsblogger/resources/master/assets/img/bootsblogger-solid.svg' width='144'/>
       <p class='lead'>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
       <a class='btn btn-lg btn-jumbotron' href='https://bootsblogger.github.io' role='button'>Getting started</a>
     </div>
