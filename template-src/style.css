@@ -39,7 +39,18 @@ body {}
    ============================================== */
 
 .custom-navbar {
-  background-color: #ef6c00;
+  min-height: 4rem;
+  background-color: #ff5722;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+@media (min-width: 992px) {
+  .custom-navbar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+  }
 }
 
 
@@ -50,23 +61,18 @@ body {}
 .custom-jumbotron {
   color: #fff;
   text-align: center;
-  background-color: #333;
-  border-radius: 0;
-}
-
-.custom-jumbotron h1 {
-  color: #777;
+  background-color: #ff5722;
 }
 
 .custom-jumbotron .btn-jumbotron {
-  color: #fff59d;
-  border-color: #777;
+  color: #ffe484;
+  border-color: #ffe484;
 }
 .custom-jumbotron .btn-jumbotron:hover,
 .custom-jumbotron .btn-jumbotron:focus {
-  color: #333;
-  background-color: #fff59d;
-  border-color: #fff176;
+  color: #463c34;
+  background-color: #ffe484;
+  border-color: #ffe484;
 }
 
 
@@ -101,8 +107,8 @@ body {}
 /**
  * Post byline items
  *
- * - `customHeaderByline`
- * - `customFooterBylines`
+ * `customHeaderByline`
+ * `customFooterBylines`
  */
 
 .byline + .byline {
