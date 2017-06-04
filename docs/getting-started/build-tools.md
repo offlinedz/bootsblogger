@@ -5,7 +5,7 @@ description: Bootsblogger menggunakan Grunt untuk sistem pembuatan CSS, template
 group: getting-started
 ---
 
-Bootsblogger menggunakan [Grunt](http://gruntjs.com) untuk sistem pembuatan CSS, template, dan Jekyll untuk menulis dokumentasi. Di dalam Gruntfile terdapat kumpulan perintah Grunt yang memberikan kemudahan dalam bekerja dengan Bootsblogger, seperti untuk kompilasi kode, menjalankan pengujian, dan lainnya.
+Gruntfile Bootsblogger (`bootsblogger/Gruntfile.js`) menyediakan berbagai perintah Grunt untuk memberikan kemudahan dalam bekerja dengan Bootsblogger, seperti untuk kompilasi kode, menjalankan pengujian, dan lainnya.
 
 ## Contents
 
@@ -26,7 +26,7 @@ Setelah selesai, Anda dapat menjalankan berbagai perintah Grunt yang disediakan 
 
 ## Using Grunt
 
-`bootsblogger/Gruntfile.js` meliputi *commands* dan *tasks* berikut:
+Gruntfile Bootsblogger meliputi *commands* dan *tasks* berikut:
 
 | Task | Description |
 | --- | --- |

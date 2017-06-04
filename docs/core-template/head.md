@@ -1,11 +1,9 @@
 ---
 layout: docs
 title: Head
-description: Bagian-bagian kode yang digunakan di dalam `<head>`.
+description: Bagian-bagian kode yang digunakan di dalam tag head HTML.
 group: core-template
 ---
-
-Berikut ini adalah bagian-bagian kode yang digunakan di dalam `<head>`.
 
 ## Contents
 

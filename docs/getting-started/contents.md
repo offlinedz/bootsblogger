@@ -5,8 +5,6 @@ description: Bootsblogger tersedia dalam dua pilihan, yaitu terkompilasi atau ko
 group: getting-started
 ---
 
-Bootsblogger tersedia dalam dua pilihan, yaitu terkompilasi atau kode sumber.
-
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header

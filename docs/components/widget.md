@@ -5,8 +5,6 @@ description: Komponen untuk tampilan widget.
 group: components
 ---
 
-Komponen untuk tampilan widget.
-
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header

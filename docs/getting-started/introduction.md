@@ -1,12 +1,10 @@
 ---
 layout: docs
 title: Introduction
-description: Perkenalan Bootsblogger.
+description: Bootsblogger adalah sebuah template dasar, untuk membangun template Blogger menggunakan Bootstrap, yang dirancang untuk memberikan kemudahan, keindahan, dan juga kekinian.
 group: getting-started
 redirect_from: "/getting-started/"
 ---
-
-Bootsblogger adalah sebuah template dasar, untuk membangun template Blogger menggunakan Bootstrap, yang dirancang untuk memberikan kemudahan, keindahan, dan juga kekinian.
 
 #### Kemudahan
 

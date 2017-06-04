@@ -1,12 +1,10 @@
 ---
 layout: docs
 title: Overview
-description: Template dasar Bootsblogger dirancang untuk memberikan kemudahan dan fitur-fitur yang luar biasa.
+description: Template dasar Bootsblogger dirancang untuk memberikan kemudahan dengan mengubahsuaikan fitur bawaan Blogger dan menambahkan fitur-fitur baru.
 group: core-template
 redirect_from: "/core-template/"
 ---
-
-Template Bootsblogger dirancang untuk memberikan kemudahan dengan mengubahsuaikan fitur-fitur bawaan Blogger.
 
 Sebelum Anda melanjutkan ke bagian berikutnya, di bawah ini ada beberapa hal dasar yang harus dipahami.
 

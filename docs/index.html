@@ -2,15 +2,14 @@
 layout: home
 ---
 
-<main class="bd-masthead" id="content">
+<main class="jumbotron jumbotron-fluid bd-jumbotron" id="content">
   <div class="container">
     <p class="lead"><img class="img-fluid" src="{{ site.baseurl }}/assets/brand/bootsblogger-outline.svg" width="144" height="144" alt="Bootsblogger"></p>
     <p class="lead">{{ site.description | escape_once }}</p>
     <p class="lead">
-      <a href="{{ site.baseurl }}/getting-started/download/" class="btn btn-outline-inverse btn-lg">Download Bootsblogger</a>
+      <a href="{{ site.baseurl }}/getting-started/download/" class="btn btn-bd-jumbotron btn-lg">Download Bootsblogger</a>
     </p>
-    <p class="version">Currently v{{ site.current_version }} (Bootstrap v{{ site.bootstrap_version }})</p>
-    {% include ads.html %}
+    <p class="bd-jumbotron-version">Currently v{{ site.current_version }} (Bootstrap v{{ site.bootstrap_version }})</p>
   </div>
 </main>
 
@@ -19,7 +18,7 @@ layout: home
     <h2 class="bd-featurette-title">Dirancang untuk siapapun, dimanapun.</h2>
     <p class="lead">Bootsblogger membantu proses pembuatan template menjadi lebih cepat, lebih mudah, dan lebih indah.</p>
 
-    <hr class="half-rule mx-auto">
+    <hr class="half-rule">
 
     <div class="row text-center">
       <div class="col-sm-4 mb-3">
@@ -54,27 +53,27 @@ layout: home
       </div>
     </div>
 
-    <hr class="half-rule mx-auto">
+    <hr class="half-rule">
 
     <p class="lead mb-3">Bootsblogger is open source. It's hosted, developed, and maintained on GitHub.</p>
-    <p class="lead mb-3"><a href="{{ site.repo }}" class="btn btn-bs"><i class="fa fa-github"></i> View the GitHub project</a></p>
+    <p class="lead mb-3"><a href="{{ site.repo }}" class="btn btn-bb"><i class="fa fa-github"></i> View the GitHub project</a></p>
   </div>
 </div>
 
-<div class="bd-featurette">
+<div class="bd-featurette bd-featurette-icons">
   <div class="container">
-    <div class="row align-items-center text-center">
+    <div class="row align-items-center">
       <div class="col">
         <a href="https://blogger.com"><img class="img-fluid" src="{{ site.baseurl }}/assets/brand/blogger.svg" width="100" height="100" alt="Blogger"></a>
       </div>
       <div class="col">
-        <span class="h2 text-muted">+</span>
+        <span class="plus">+</span>
       </div>
       <div class="col">
         <a href="https://v4-alpha.getbootstrap.com"><img class="img-fluid" src="{{ site.baseurl }}/assets/brand/bootstrap-solid.svg" width="100" height="100" alt="Bootstrap"></a>
       </div>
       <div class="col">
-        <span class="h2 text-muted">+</span>
+        <span class="plus">+</span>
       </div>
       <div class="col">
         <img class="img-fluid" src="{{ site.baseurl }}/assets/img/heart.svg" width="100" height="100" alt="Heart">

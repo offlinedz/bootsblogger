@@ -1,11 +1,11 @@
 ---
 layout: docs
 title: Blog posts
-description: Gadget `Blog` dirancang untuk memudahkan dalam mengatur tampilan posting. Dan juga dirancang untuk dapat membuat tampilan posting yang unik/berbeda-beda di setiap tipe halaman.
+description: Gadget Blog dirancang untuk memudahkan dalam mengatur tampilan posting. Dan juga dirancang untuk dapat membuat tampilan posting yang berbeda di setiap tipe halaman.
 group: core-template
 ---
 
-Gadget `Blog` (`<b:widget type='Blog'>`) dirancang untuk memudahkan dalam mengatur tampilan posting. Dan juga dirancang untuk dapat membuat tampilan posting yang unik/berbeda-beda di setiap tipe halaman.
+Gadget Blog atau `<b:widget type='Blog'></b:widget>`.
 
 ## Contents
 

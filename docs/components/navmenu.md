@@ -1,11 +1,9 @@
 ---
 layout: docs
 title: Navmenu
-description: Navmenu adalah pembungkus untuk navigasi dan elemen lainnya.
+description: Navmenu adalah pembungkus untuk navigasi dan elemen lainnya. Navmenu tampil secara vertikal.
 group: components
 ---
-
-Navmenu adalah pembungkus untuk navigasi dan elemen lainnya. Navmenu tampil secara vertikal.
 
 ## Contents
 
