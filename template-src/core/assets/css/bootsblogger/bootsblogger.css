@@ -1816,6 +1816,16 @@
 .navmenu-nav .nav-link:focus, .navmenu-nav .nav-link:hover {
   text-decoration: none;
 }
+.navmenu-nav .nav-link.nav-link-sm {
+  padding: 0.25rem 1.25rem;
+}
+
+.navmenu-nav .nav-item-bordered {
+  border-bottom: 1px solid transparent;
+}
+.navmenu-nav .nav-item-bordered:first-child {
+  border-top: 1px solid transparent;
+}
 
 .navmenu-form,
 .navmenu-btn,
@@ -1867,6 +1877,9 @@
 .navmenu-light .navmenu-nav .nav-link.disabled, .navmenu-light .navmenu-nav .nav-link.disabled:focus, .navmenu-light .navmenu-nav .nav-link.disabled:hover {
   color: rgba(0, 0, 0, 0.15);
 }
+.navmenu-light .navmenu-nav .nav-item-bordered {
+  border-color: rgba(0, 0, 0, 0.05);
+}
 
 .navmenu-inverse .navmenu-brand {
   color: white;
@@ -1885,6 +1898,9 @@
 }
 .navmenu-inverse .navmenu-nav .nav-link.disabled, .navmenu-inverse .navmenu-nav .nav-link.disabled:focus, .navmenu-inverse .navmenu-nav .nav-link.disabled:hover {
   color: rgba(255, 255, 255, 0.25);
+}
+.navmenu-inverse .navmenu-nav .nav-item-bordered {
+  border-color: rgba(0, 0, 0, 0.25);
 }
 
 .wg > .widget {
