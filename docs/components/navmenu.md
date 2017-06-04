@@ -14,7 +14,7 @@ Navmenu adalah pembungkus untuk navigasi dan elemen lainnya. Navmenu tampil seca
 
 ## Basic example
 
-Bungkus semua konten dengan `.navmenu`, dan tambahkan [skema warna](#color-schemes).
+Bungkus [konten](#supported-content) dengan `.navmenu`, dan tambahkan [skema warna](#color-schemes).
 
 {% example html %}
 <nav class="navmenu navmenu-light" style="background-color: #f7f7f7;">
@@ -23,10 +23,6 @@ Bungkus semua konten dengan `.navmenu`, dan tambahkan [skema warna](#color-schem
     <a class="nav-item nav-link" href="#">Nav item</a>
     <a class="nav-item nav-link" href="#">Nav item again</a>
     <a class="nav-item nav-link" href="#">Another nav item</a>
-  </div>
-  <div class="navmenu-nav">
-    <a class="nav-item nav-link active" href="#">Active</a>
-    <a class="nav-item nav-link disabled" href="#">Disabled</a>
   </div>
 </nav>
 {% endexample %}
@@ -45,6 +41,11 @@ Gunakan `.navmenu-light` atau `.navmenu-inverse` untuk menyesuaikan warna teks d
     <a class="nav-item nav-link" href="#">Nav item again</a>
     <a class="nav-item nav-link" href="#">Another nav item</a>
   </div>
+
+  <div class="navmenu-nav">
+    <a class="nav-item nav-link active" href="#">Active</a>
+    <a class="nav-item nav-link disabled" href="#">Disabled</a>
+  </div>
 </nav>
 {% endexample %}
 
@@ -56,10 +57,17 @@ Gunakan `.navmenu-light` atau `.navmenu-inverse` untuk menyesuaikan warna teks d
     <a class="nav-item nav-link" href="#">Nav item again</a>
     <a class="nav-item nav-link" href="#">Another nav item</a>
   </div>
+
+  <div class="navmenu-nav">
+    <a class="nav-item nav-link active" href="#">Active</a>
+    <a class="nav-item nav-link disabled" href="#">Disabled</a>
+  </div>
 </nav>
 {% endexample %}
 
 ## Supported content
+
+Konten yang dapat digunakan di dalam navmenu.
 
 {% example html %}
 <nav class="navmenu navmenu-light" style="background-color: #f7f7f7;">
@@ -87,12 +95,157 @@ Gunakan `.navmenu-light` atau `.navmenu-inverse` untuk menyesuaikan warna teks d
 
   <!-- Text -->
   <div class="navmenu-text">
-    <p class="text-success">Bootsblogger is awesome.</p>
+    <p class="text-success">Hello, world!</p>
+  </div>
+</nav>
+{% endexample %}
+
+## Small nav
+
+Nav item yang lebih kecil, tambahkan `.nav-link-sm` ke `.nav-link`.
+
+{% example html %}
+<nav class="navmenu navmenu-light" style="background-color: #f7f7f7;">
+  <a class="navmenu-brand" href="#">Bootsblogger</a>
+  <div class="navmenu-nav">
+    <a class="nav-item nav-link nav-link-sm" href="#">Nav item</a>
+    <a class="nav-item nav-link nav-link-sm" href="#">Nav item again</a>
+    <a class="nav-item nav-link nav-link-sm" href="#">Another nav item</a>
+  </div>
+</nav>
+{% endexample %}
+
+Untuk mengubah ukuran font dapat menggunakan `.small`:
+
+{% example html %}
+<nav class="navmenu navmenu-light" style="background-color: #f7f7f7;">
+  <a class="navmenu-brand" href="#">Bootsblogger</a>
+  <div class="navmenu-nav">
+    <a class="nav-item nav-link nav-link-sm small" href="#">Nav item</a>
+    <a class="nav-item nav-link nav-link-sm small" href="#">Nav item again</a>
+    <a class="nav-item nav-link nav-link-sm small" href="#">Another nav item</a>
+  </div>
+</nav>
+{% endexample %}
+
+## Bordered
+
+Nav item dengan `border` atas dan bawah, tambahkan `.nav-item-bordered` ke `.nav-item`.
+
+{% example html %}
+<nav class="navmenu navmenu-light" style="background-color: #f7f7f7;">
+  <a class="navmenu-brand" href="#">Bootsblogger</a>
+  <div class="navmenu-nav">
+    <a class="nav-item nav-item-bordered nav-link" href="#">Nav item</a>
+    <a class="nav-item nav-item-bordered nav-link" href="#">Nav item again</a>
+    <a class="nav-item nav-item-bordered nav-link" href="#">Another nav item</a>
+  </div>
+</nav>
+{% endexample %}
+
+Atau:
+
+{% example html %}
+<nav class="navmenu navmenu-inverse" style="background-color: #292b2c;">
+  <a class="navmenu-brand" href="#">Bootsblogger</a>
+  <div class="navmenu-nav">
+    <div class="nav-item nav-item-bordered">
+      <a class="nav-link" href="#">Nav item</a>
+    </div>
+    <div class="nav-item nav-item-bordered">
+      <a class="nav-link" href="#">Nav item again</a>
+    </div>
+    <div class="nav-item nav-item-bordered">
+      <a class="nav-link" href="#">Another nav item</a>
+    </div>
+  </div>
+</nav>
+{% endexample %}
+
+Dengan `.nav-link-sm`:
+
+{% example html %}
+<nav class="navmenu navmenu-light" style="background-color: #f7f7f7;">
+  <a class="navmenu-brand" href="#">Bootsblogger</a>
+  <div class="navmenu-nav">
+    <a class="nav-item nav-item-bordered nav-link nav-link-sm" href="#">Nav item</a>
+    <a class="nav-item nav-item-bordered nav-link nav-link-sm" href="#">Nav item again</a>
+    <a class="nav-item nav-item-bordered nav-link nav-link-sm" href="#">Another nav item</a>
+  </div>
+</nav>
+{% endexample %}
+
+## Collapse
+
+Menggunakan [Bootstrap collapse plugin](https://v4-alpha.getbootstrap.com/components/collapse/).
+
+{% example html %}
+<nav class="navmenu navmenu-light" style="background-color: #f7f7f7;">
+  <a class="navmenu-brand" href="#">Bootsblogger</a>
+  <div class="navmenu-nav">
+    <a class="nav-item nav-link dropdown-toggle" data-toggle="collapse" href="#navmenuCollapseExample1" aria-expanded="false" aria-controls="navmenuCollapseExample1">
+      Nav item collapse
+    </a>
+    <div class="collapse" id="navmenuCollapseExample1">
+      <div style="border-left: 4px solid #ddd;">
+        <a class="nav-item nav-link nav-link-sm small" href="#">Nav item</a>
+        <a class="nav-item nav-link nav-link-sm small" href="#">Nav item again</a>
+        <a class="nav-item nav-link nav-link-sm small" href="#">Another nav item</a>
+      </div>
+    </div>
+    <a class="nav-item nav-link" href="#">Nav item again</a>
+    <a class="nav-item nav-link" href="#">Another nav item</a>
+  </div>
+</nav>
+{% endexample %}
+
+{% example html %}
+<nav class="navmenu navmenu-light" style="background-color: #f7f7f7;">
+  <a class="navmenu-brand" href="#">Bootsblogger</a>
+  <div class="navmenu-nav">
+    <a class="nav-item nav-link dropdown-toggle" data-toggle="collapse" href="#navmenuCollapseExample2" aria-expanded="false" aria-controls="navmenuCollapseExample2">
+      Nav item collapse
+    </a>
+    <div class="collapse" id="navmenuCollapseExample2">
+      <a class="nav-item nav-item-bordered nav-link nav-link-sm small" href="#">Nav item</a>
+      <a class="nav-item nav-item-bordered nav-link nav-link-sm small" href="#">Nav item again</a>
+      <a class="nav-item nav-item-bordered nav-link nav-link-sm small" href="#">Another nav item</a>
+    </div>
+    <a class="nav-item nav-link" href="#">Nav item again</a>
+    <a class="nav-item nav-link" href="#">Another nav item</a>
+  </div>
+</nav>
+{% endexample %}
+
+{% example html %}
+<nav class="navmenu navmenu-inverse" style="background-color: #292b2c;">
+  <a class="navmenu-brand" href="#">Bootsblogger</a>
+  <div class="navmenu-nav">
+    <div class="nav-item nav-item-bordered">
+      <a class="nav-link dropdown-toggle" data-toggle="collapse" href="#navmenuCollapseExample3" aria-expanded="false" aria-controls="navmenuCollapseExample3">
+        Nav item collapse
+      </a>
+      <div class="collapse" id="navmenuCollapseExample3">
+        <div class="pb-2"><!-- padding bottom -->
+          <a class="nav-item nav-link nav-link-sm small" href="#">Nav item</a>
+          <a class="nav-item nav-link nav-link-sm small" href="#">Nav item again</a>
+          <a class="nav-item nav-link nav-link-sm small" href="#">Another nav item</a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item nav-item-bordered">
+      <a class="nav-link" href="#">Nav item again</a>
+    </div>
+    <div class="nav-item nav-item-bordered">
+      <a class="nav-link" href="#">Another nav item</a>
+    </div>
   </div>
 </nav>
 {% endexample %}
 
 ## Dropdowns
+
+Menggunakan [Bootstrap dropdown plugin](https://v4-alpha.getbootstrap.com/components/dropdowns/).
 
 {% example html %}
 <nav class="navmenu navmenu-light" style="background-color: #f7f7f7;">

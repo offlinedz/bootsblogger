@@ -41,27 +41,31 @@ $post-meta-color:                $gray-light !default;
 // Navmenu
 //
 
-$navmenu-margin-bottom:          $spacer-y !default;
-$navmenu-padding-x:              1.25rem !default;
-$navmenu-padding-y:              1.25rem !default;
-$navmenu-border-radius:          $border-radius !default;
+$navmenu-margin-bottom:             $spacer-y !default;
+$navmenu-padding-x:                 1.25rem !default;
+$navmenu-padding-y:                 1.25rem !default;
+$navmenu-border-radius:             $border-radius !default;
 
-$navmenu-brand-padding-x:        1.25rem !default;
-$navmenu-brand-padding-y:        .5rem !default;
-$navmenu-brand-font-size:        $font-size-lg !default;
+$navmenu-brand-padding-x:           1.25rem !default;
+$navmenu-brand-padding-y:           .5rem !default;
+$navmenu-brand-font-size:           $font-size-lg !default;
 
-$navmenu-link-padding-x:         1.25rem !default;
-$navmenu-link-padding-y:         .5rem !default;
+$navmenu-link-padding-x:            1.25rem !default;
+$navmenu-link-padding-y:            .5rem !default;
+$navmenu-link-sm-padding-x:         $navmenu-link-padding-x !default;
+$navmenu-link-sm-padding-y:         .25rem !default;
 
-$navmenu-light-color:            rgba(0,0,0,.3) !default;
-$navmenu-light-hover-color:      rgba(0,0,0,.6) !default;
-$navmenu-light-active-color:     rgba(0,0,0,.8) !default;
-$navmenu-light-disabled-color:   rgba(0,0,0,.15) !default;
+$navmenu-light-color:               rgba(0,0,0,.3) !default;
+$navmenu-light-hover-color:         rgba(0,0,0,.6) !default;
+$navmenu-light-active-color:        rgba(0,0,0,.8) !default;
+$navmenu-light-disabled-color:      rgba(0,0,0,.15) !default;
+$navmenu-light-item-border-color:   rgba(0,0,0,.05) !default;
 
-$navmenu-inverse-color:          rgba(255,255,255,.5) !default;
-$navmenu-inverse-hover-color:    rgba(255,255,255,.75) !default;
-$navmenu-inverse-active-color:   rgba(255,255,255,1) !default;
-$navmenu-inverse-disabled-color: rgba(255,255,255,.25) !default;
+$navmenu-inverse-color:             rgba(255,255,255,.5) !default;
+$navmenu-inverse-hover-color:       rgba(255,255,255,.75) !default;
+$navmenu-inverse-active-color:      rgba(255,255,255,1) !default;
+$navmenu-inverse-disabled-color:    rgba(255,255,255,.25) !default;
+$navmenu-inverse-item-border-color: rgba(0,0,0,.25) !default;
 
 
 //
