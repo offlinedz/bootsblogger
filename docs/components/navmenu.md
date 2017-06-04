@@ -16,14 +16,45 @@ Navmenu adalah pembungkus untuk navigasi dan elemen lainnya. Navmenu tampil seca
 
 Bungkus [konten](#supported-content) dengan `.navmenu`, dan tambahkan [skema warna](#color-schemes).
 
+Navmenu-nav membutuhkan penggunaan [Bootstrap navs](https://v4-alpha.getbootstrap.com/components/navs/) untuk `.nav-item` dan `.nav-link`.
+
+*Markup* navmenu-nav sangat fleksibel, Anda dapat menulisnya dengan beberapa cara berikut:
+
 {% example html %}
 <nav class="navmenu navmenu-light" style="background-color: #f7f7f7;">
   <a class="navmenu-brand" href="#">Bootsblogger</a>
+  <!-- 1 -->
   <div class="navmenu-nav">
     <a class="nav-item nav-link" href="#">Nav item</a>
     <a class="nav-item nav-link" href="#">Nav item again</a>
     <a class="nav-item nav-link" href="#">Another nav item</a>
   </div>
+
+  <!-- 2 -->
+  <div class="navmenu-nav">
+    <div class="nav-item">
+      <a class="nav-link" href="#">Nav item</a>
+    </div>
+    <div class="nav-item">
+      <a class="nav-link" href="#">Nav item again</a>
+    </div>
+    <div class="nav-item">
+      <a class="nav-link" href="#">Another nav item</a>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <ul class="navmenu-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#">Nav item</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Nav item again</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Another nav item</a>
+    </li>
+  </ul>
 </nav>
 {% endexample %}
 
@@ -115,7 +146,7 @@ Nav item yang lebih kecil, tambahkan `.nav-link-sm` ke `.nav-link`.
 </nav>
 {% endexample %}
 
-Untuk mengubah ukuran font dapat menggunakan `.small`:
+Untuk memperkecil ukuran font dapat menggunakan `.small`:
 
 {% example html %}
 <nav class="navmenu navmenu-light" style="background-color: #f7f7f7;">
