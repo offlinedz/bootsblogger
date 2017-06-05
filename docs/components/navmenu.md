@@ -159,7 +159,7 @@ Untuk memperkecil ukuran font dapat menggunakan `.small`:
 </nav>
 {% endexample %}
 
-## Bordered
+## Bordered nav
 
 Nav item dengan `border` atas dan bawah, tambahkan `.nav-item-bordered` ke `.nav-item`.
 
@@ -328,6 +328,106 @@ Menggunakan [Bootstrap dropdown plugin](https://v4-alpha.getbootstrap.com/compon
     <a class="nav-item nav-link" href="#">Nav item</a>
     <a class="nav-item nav-link" href="#">Nav item again</a>
     <a class="nav-item nav-link" href="#">Another nav item</a>
+  </div>
+</nav>
+{% endexample %}
+
+## Responsive behaviors
+
+Dengan menggunakan `.navmenu-toggler`, `.navmenu-collapse`, dan `.navmenu-expand{-sm|-md|-lg|-xl}` Anda dapat menentukan kapan menampilkan atau menyembunyikan elemen navmenu.
+
+Jika ingin elemen navmenu selalu tersembunyi, jangan tambahkan `.navmenu-expand-*`, dan juga dapat menghilangkan penggunaan `.navmenu-toggler` dan `.navmenu-collapse`.
+
+Kelas untuk `xs` tidak tersedia (`.navmenu-expand`).
+
+### Examples
+
+Selalu tersembunyi:
+
+{% example html %}
+<nav class="navmenu navmenu-light" style="background-color: #f7f7f7;">
+  <div class="navmenu-btn">
+    <button class="btn btn-secondary btn-block" type="button" data-toggle="collapse" data-target="#navmenuTogglerDemo0" aria-controls="navmenuTogglerDemo0" aria-expanded="false" aria-label="Toggle navigation">Toggle nav</button>
+  </div>
+
+  <div class="collapse" id="navmenuTogglerDemo0">
+    <div class="navmenu-nav mt-3">
+      <a class="nav-item nav-link" href="#">Nav item</a>
+      <a class="nav-item nav-link" href="#">Nav item again</a>
+      <a class="nav-item nav-link" href="#">Another nav item</a>
+    </div>
+  </div>
+</nav>
+{% endexample %}
+
+`sm` - tersembunyi ketika lebar layar &le;576px:
+
+{% example html %}
+<nav class="navmenu navmenu-light navmenu-expand-sm" style="background-color: #f7f7f7;">
+  <div class="navmenu-btn navmenu-toggler">
+    <button class="btn btn-secondary btn-block" type="button" data-toggle="collapse" data-target="#navmenuTogglerDemo01" aria-controls="navmenuTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">Toggle nav</button>
+  </div>
+
+  <div class="collapse navmenu-collapse" id="navmenuTogglerDemo01">
+    <div class="navmenu-nav mt-3 mt-sm-0">
+      <a class="nav-item nav-link" href="#">Nav item</a>
+      <a class="nav-item nav-link" href="#">Nav item again</a>
+      <a class="nav-item nav-link" href="#">Another nav item</a>
+    </div>
+  </div>
+</nav>
+{% endexample %}
+
+`md` - tersembunyi ketika lebar layar &le;768px:
+
+{% example html %}
+<nav class="navmenu navmenu-light navmenu-expand-md" style="background-color: #f7f7f7;">
+  <div class="navmenu-btn navmenu-toggler">
+    <button class="btn btn-secondary btn-block" type="button" data-toggle="collapse" data-target="#navmenuTogglerDemo02" aria-controls="navmenuTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">Toggle nav</button>
+  </div>
+
+  <div class="collapse navmenu-collapse" id="navmenuTogglerDemo02">
+    <div class="navmenu-nav mt-3 mt-md-0">
+      <a class="nav-item nav-link" href="#">Nav item</a>
+      <a class="nav-item nav-link" href="#">Nav item again</a>
+      <a class="nav-item nav-link" href="#">Another nav item</a>
+    </div>
+  </div>
+</nav>
+{% endexample %}
+
+`lg` - tersembunyi ketika lebar layar &le;992px:
+
+{% example html %}
+<nav class="navmenu navmenu-light navmenu-expand-lg" style="background-color: #f7f7f7;">
+  <div class="navmenu-btn navmenu-toggler">
+    <button class="btn btn-secondary btn-block" type="button" data-toggle="collapse" data-target="#navmenuTogglerDemo03" aria-controls="navmenuTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">Toggle nav</button>
+  </div>
+
+  <div class="collapse navmenu-collapse" id="navmenuTogglerDemo03">
+    <div class="navmenu-nav mt-3 mt-lg-0">
+      <a class="nav-item nav-link" href="#">Nav item</a>
+      <a class="nav-item nav-link" href="#">Nav item again</a>
+      <a class="nav-item nav-link" href="#">Another nav item</a>
+    </div>
+  </div>
+</nav>
+{% endexample %}
+
+`xl` - tersembunyi ketika lebar layar &le;1200px:
+
+{% example html %}
+<nav class="navmenu navmenu-light navmenu-expand-xl" style="background-color: #f7f7f7;">
+  <div class="navmenu-btn navmenu-toggler">
+    <button class="btn btn-secondary btn-block" type="button" data-toggle="collapse" data-target="#navmenuTogglerDemo04" aria-controls="navmenuTogglerDemo04" aria-expanded="false" aria-label="Toggle navigation">Toggle nav</button>
+  </div>
+
+  <div class="collapse navmenu-collapse" id="navmenuTogglerDemo04">
+    <div class="navmenu-nav mt-3 mt-xl-0">
+      <a class="nav-item nav-link" href="#">Nav item</a>
+      <a class="nav-item nav-link" href="#">Nav item again</a>
+      <a class="nav-item nav-link" href="#">Another nav item</a>
+    </div>
   </div>
 </nav>
 {% endexample %}

@@ -124,6 +124,32 @@
 
 
 //
+// Responsive navmenu
+//
+
+// Generate series of `.navmenu-expand-*` responsive classes.
+@each $breakpoint in map-keys($grid-breakpoints) {
+  $next: breakpoint-next($breakpoint, $grid-breakpoints);
+  $infix: breakpoint-infix($next, $grid-breakpoints);
+
+  @if $infix != "" {
+    .navmenu-expand#{$infix} {
+      // @include media-breakpoint-down($breakpoint) {}
+
+      @include media-breakpoint-up($next) {
+        .navmenu-toggler {
+          display: none;
+        }
+        .navmenu-collapse {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+
+//
 // Themes
 //
 
