@@ -457,7 +457,7 @@
 
 .bd-sidebar-navmenu .sub {
   display: none;
-  padding-bottom: .75rem;
+  margin-bottom: .75rem;
 }
 .bd-sidebar-navmenu .active .sub {
   display: block;
