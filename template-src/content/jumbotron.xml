@@ -3,7 +3,7 @@
     <div class='container'>
       <img alt='Bootsblogger' class='mb-3' height='144' src='https://cdn.rawgit.com/bootsblogger/resources/master/assets/img/bootsblogger-solid.svg' width='144'/>
       <p class='lead'>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-      <a class='btn btn-lg btn-jumbotron' href='https://bootsblogger.github.io' role='button'>Getting started</a>
+      <a class='btn btn-jumbotron btn-lg' href='https://bootsblogger.github.io' role='button'>Getting started</a>
     </div>
   </div>
 </b:if>
