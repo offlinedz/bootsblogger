@@ -40,7 +40,7 @@ Menjalankan dokumentasi secara lokal membutuhkan penggunaan Jekyll. Berikut adal
 
 1. Pastikan sudah menyelesaikan [*tooling setup*](#tooling-setup) di atas untuk instalasi Jekyll (*the site builder*) dan dependensi Ruby lainnya dengan `bundle install`.
 2. Dari direktori *root* `/bootsblogger`, jalankan perintah `bundle exec jekyll serve`.
-3. Buka <http://localhost:9001> di *browser* Anda, selesai.
+3. Buka <http://localhost:9002> di *browser* Anda, selesai.
 
 Pelajari lebih lanjut tentang penggunaan Jekyll dengan membaca [dokumentasinya](https://jekyllrb.com/docs/home/).
 
