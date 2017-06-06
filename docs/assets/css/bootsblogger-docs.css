@@ -136,14 +136,14 @@
    Buttons
    ============================================== */
 
-.btn-bb {
+.btn-bsb {
   font-weight: 500;
   color: #ff5722;
   border-color: #ff5722;
 }
-.btn-bb:hover,
-.btn-bb:focus,
-.btn-bb:active {
+.btn-bsb:hover,
+.btn-bsb:focus,
+.btn-bsb:active {
   color: #fff;
   background-color: #ff5722;
   border-color: #ff5722;
