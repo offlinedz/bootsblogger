@@ -16,7 +16,6 @@ port:             9001
 baseurl:          ""
 url:              https://bootsblogger.github.io
 encoding:         UTF-8
-exclude:          [assets/scss/]
 
 gems:
   - jekyll-redirect-from
