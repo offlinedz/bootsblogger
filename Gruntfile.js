@@ -147,77 +147,9 @@ module.exports = function(grunt) {
       }
     },
 
-    htmllint: {
-      options: {
-        ignore: [
-          'Attribute “autocomplete” is only allowed when the input type is “color”, “date”, “datetime”, “datetime-local”, “email”, “hidden”, “month”, “number”, “password”, “range”, “search”, “tel”, “text”, “time”, “url”, or “week”.',
-          'Attribute “autocomplete” not allowed on element “button” at this point.',
-          'Consider using the “h1” element as a top-level heading only (all “h1” elements are treated as top-level headings by many screen readers and other tools).',
-          'Element “div” not allowed as child of element “progress” in this context. (Suppressing further errors from this subtree.)',
-          'Element “img” is missing required attribute “src”.',
-          'The “color” input type is not supported in all browsers. Please be sure to test, and consider using a polyfill.',
-          'The “date” input type is not supported in all browsers. Please be sure to test, and consider using a polyfill.',
-          'The “datetime” input type is not supported in all browsers. Please be sure to test, and consider using a polyfill.',
-          'The “datetime-local” input type is not supported in all browsers. Please be sure to test, and consider using a polyfill.',
-          'The “month” input type is not supported in all browsers. Please be sure to test, and consider using a polyfill.',
-          'The “time” input type is not supported in all browsers. Please be sure to test, and consider using a polyfill.',
-          'The “week” input type is not supported in all browsers. Please be sure to test, and consider using a polyfill.',
-          /This document appears to be written in .* but the “html”./
-        ]
-      },
-      docs: {
-        src: '_gh_pages/**/*.html'
-      }
-    },
-
-    htmlhint: {
-      docs: {
-        options: {
-          htmlhintrc: 'docs/.htmlhintrc'
-        },
-        src: '_gh_pages/**/*.html'
-      }
-    },
-
-    jekyll: {
-      options: {
-        bundleExec: true,
-        config: '_config.yml',
-        incremental: false
-      },
-      docs: {},
-      github: {
-        options: {
-          raw: 'github: true'
-        }
-      }
-    },
-
-    buildcontrol: {
-      options: {
-        dir: '_gh_pages',
-        commit: true,
-        push: true,
-        message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
-      },
-      pages: {
-        options: {
-          remote: 'git@github.com:bootsblogger/bootsblogger.github.io.git',
-          branch: 'master'
-        }
-      }
-    },
-
-    gitcheckout: {
-      revertCompiledFiles: {
-        options: {
-          branch: [
-            'dist/.',
-            'template-src/core/assets/css/bootstrap/.',
-            'template-src/core/assets/css/bootsblogger/.',
-            'docs/assets/css/bootsblogger/.'
-          ]
-        }
+    exec: {
+      'docs-lint': {
+        command: 'npm run docs-lint'
       }
     },
 
@@ -227,25 +159,6 @@ module.exports = function(grunt) {
         cwd: 'template-src/core/assets/css',
         src: 'bootsblogger/*',
         dest: 'docs/assets/css'
-      }
-    },
-
-    compress: {
-      main: {
-        options: {
-          archive: 'bootsblogger-<%= pkg.version %>-dist.zip',
-          mode: 'zip',
-          level: 9,
-          pretty: true
-        },
-        files: [
-          {
-            expand: true,
-            cwd: 'dist/',
-            src: ['**'],
-            dest: 'bootsblogger-<%= pkg.version %>-dist'
-          }
-        ]
       }
     },
 
@@ -292,6 +205,67 @@ module.exports = function(grunt) {
           'compile-template'
         ]
       }
+    },
+
+    gitcheckout: {
+      revertCompiledFiles: {
+        options: {
+          branch: [
+            'dist/.',
+            'template-src/core/assets/css/bootstrap/.',
+            'template-src/core/assets/css/bootsblogger/.',
+            'docs/assets/css/bootsblogger/.'
+          ]
+        }
+      }
+    },
+
+    jekyll: {
+      options: {
+        bundleExec: true,
+        config: '_config.yml',
+        incremental: false
+      },
+      docs: {},
+      github: {
+        options: {
+          raw: 'github: true'
+        }
+      }
+    },
+
+    buildcontrol: {
+      options: {
+        dir: '_gh_pages',
+        commit: true,
+        push: true,
+        message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+      },
+      pages: {
+        options: {
+          remote: 'git@github.com:bootsblogger/bootsblogger.github.io.git',
+          branch: 'master'
+        }
+      }
+    },
+
+    compress: {
+      main: {
+        options: {
+          archive: 'bootsblogger-<%= pkg.version %>-dist.zip',
+          mode: 'zip',
+          level: 9,
+          pretty: true
+        },
+        files: [
+          {
+            expand: true,
+            cwd: 'dist/',
+            src: ['**'],
+            dest: 'bootsblogger-<%= pkg.version %>-dist'
+          }
+        ]
+      }
     }
 
   });
@@ -316,7 +290,7 @@ module.exports = function(grunt) {
   grunt.registerTask('compile-template', ['bake:template']);
 
   // Docs task.
-  grunt.registerTask('validate-html-docs', ['jekyll:docs', 'htmllint:docs', 'htmlhint:docs']);
+  grunt.registerTask('validate-html-docs', ['jekyll:docs', 'exec:docs-lint']);
 
   // Test task.
   var testSubtasks = [];
