@@ -5,15 +5,15 @@ description: Kelas tambahan untuk Bootstrap spacing utilities.
 group: utilities
 ---
 
-Baca dokumentasi [Bootstrap spacing utilities](https://v4-alpha.getbootstrap.com/utilities/spacing/).
+Lihat dokumentasi [Bootstrap spacing utilities](https://v4-alpha.getbootstrap.com/utilities/spacing/).
 
 ## Negative margin
 
-Format kelasnya tidak jauh berbeda dengan [Bootstrap spacing utilities](https://v4-alpha.getbootstrap.com/utilities/spacing/), hanya menambahkan `n` di antara `{property} (m)` dan `{sides}`, format kelasnya adalah `.mn{sides}-{size}` untuk `xs` dan `.mn{sides}-{breakpoint}-{size}` untuk `sm`, `md`, `lg`, dan `xl`.
+Format kelasnya tidak jauh berbeda, hanya menambahkan `n` pada `{property}`, format kelasnya adalah `.mn{sides}-{size}` untuk `xs` dan `.mn{sides}-{breakpoint}-{size}` untuk `sm`, `md`, `lg`, dan `xl`.
 
-**Catatan:** kelas utilitas *margin* negatif tidak memiliki `.*-0`.
+**Catatan:** kelas utilitas *margin* negatif tidak memiliki ukuran `0` (`.mn{sides}-0`).
 
-### Example
+### Examples
 
 {% example html %}
 <div class="p-3 bg-inverse">

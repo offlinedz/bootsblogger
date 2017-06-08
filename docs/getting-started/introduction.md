@@ -1,27 +1,80 @@
 ---
 layout: docs
 title: Introduction
-description: Bootsblogger adalah sebuah template dasar, untuk membangun template Blogger menggunakan Bootstrap, yang dirancang untuk memberikan kemudahan, keindahan, dan juga kekinian.
+description: Bootsblogger adalah sebuah template dasar, untuk membangun template Blogger menggunakan Bootstrap, yang dirancang untuk memberikan kemudahan dan keindahan.
 group: getting-started
 redirect_from: "/getting-started/"
 ---
 
-#### Kemudahan
+Template dasar Bootsblogger sangat fleksibel, mudah dipahami, penulisan kode yang baik, terstruktur, dan menyediakan banyak fitur. Dengan itu semua, Anda dapat dengan mudah membangun template sesuai dengan yang Anda inginkan.
 
-Bootsblogger dibangun dengan menggunakan [Grunt](http://gruntjs.com), untuk memudahkan proses pembuatan template, seperti untuk kompilasi dan kompresi kode, dan lain-lain.
+## Quick start
 
-Template dasar yang fleksibel, mudah dipahami, penulisan kode yang baik, terstruktur, dan menyediakan banyak fitur. Dengan itu semua, Anda dapat dengan mudah membangun template sesuai dengan yang Anda inginkan.
+Anda dapat menggunakan Bootsblogger dengan dua cara, yaitu:
 
-Kode sumber CSS Bootsblogger menggunakan [Sass](http://sass-lang.com) (*CSS preprocessor* yang sangat populer), dibangun dengan memanfaatkan *variables* dan *mixins* Sass Bootstrap. Dan juga dapat mengubahsuaikan dan mengkompilasi Sass Bootstrap di dalam kode sumber Bootsblogger.
+### Compiled template
 
-#### Keindahan
+Membangun template langsung di editor HTML Blogger.
 
-Dari banyaknya komponen yang tersedia, Anda dapat dengan mudah mengubahsuaikan semua komponen, baik itu komponen Bootstrap maupun Bootsblogger, dengan [mengubahsuaikan variabel Sass]({{ site.baseurl }}/getting-started/options/), atau Anda dapat menciptakan komponen baru.
+<a href="{{ site.download.dist }}" class="btn btn-bd">Download compiled template</a>
 
-#### Kekinian
+**Content:**
 
-Bootsblogger dirancang menggunakan aturan standar *design* dan *development* terbaru—menggunakan HTML5 dan CSS3, desain yang responsif, dan dukungan lainnya.
+Hanya berisi template terkompilasi.
+
+{% highlight plaintext %}
+bootsblogger/
+└── dist/
+    └── template.xml
+{% endhighlight %}
+
+Pasang `template.xml` di blog Anda, dan ubahsuaikan template.
+
+### Source files
+
+Membangun template menggunakan [build tools]({{ site.baseurl }}/getting-started/build-tools/) dan *text editor* pilihan Anda.
+
+<a href="{{ site.download.source }}" class="btn btn-bd">Download source files</a>
+
+**Content:**
+
+Template terkompilasi, beserta kode sumber Sass, template, dan berkas dokumentasi. Untuk lebih jelas lihat struktur di bawah ini.
+
+{% highlight plaintext %}
+bootsblogger/
+├── dist/
+│   └── template.xml
+├── docs/
+├── scss/
+│   ├── bootsblogger/
+│   ├── bootstrap/
+│   └── _custom.scss
+└── template-src/
+    ├── content/
+    ├── core/
+    ├── config.json
+    ├── index.xml
+    ├── script.js
+    └── style.css
+{% endhighlight %}
+
+**`dist/template.xml`** - Template terkompilasi.
+
+**`docs/`** - Berkas-berkas dokumentasi.
+
+**`scss/`** - Kode sumber CSS Bootstrap dan Bootsblogger yang akan dikompilasi ke dalam `template-src/core/assets/css`.
+
+- `_custom.scss` - Digunakan untuk [mengubahsuaikan variabel Sass]({{ site.baseurl }}/getting-started/options/) Bootstrap dan Bootsblogger.
+
+**`template-src/`** - Kode sumber template.
+
+- `core/` - Bagian-bagian inti template.
+- `content/` - Simpan konten template Anda di dalam direktori ini, seperti komponen dan lain-lain.
+- `index.xml` - Berkas untuk menyertakan keseluruhan bagian-bagian template, dan akan dikompilasi ke dalam `/dist`.
+- `config.json` - Template config.
+- `script.js` - Template JavaScript.
+- `style.css` - Template CSS.
 
 ## Bootstrap
 
-Sebelum memulai, pastikan Anda mengetahui tentang Bootstrap, untuk mempelajarinya silakan kunjungi halaman dokumentasi Bootstrap di <https://v4-alpha.getbootstrap.com>.
+Sebelum memulai, pastikan Anda mengetahui apa itu Bootstrap, untuk mempelajarinya silakan kunjungi halaman dokumentasi Bootstrap di <https://v4-alpha.getbootstrap.com>.

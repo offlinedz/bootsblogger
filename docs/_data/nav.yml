@@ -1,14 +1,13 @@
 - title: Getting started
   pages:
     - title: Introduction
-    - title: Download
-    - title: Contents
     - title: Build tools
     - title: Options
 
 - title: Core template
   pages:
     - title: Overview
+    - title: Page types
     - title: Head
     - title: Body class
     - title: Blog posts

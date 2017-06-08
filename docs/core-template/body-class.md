@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Body class
-description: Terdapat kelas yang berbeda pada tag body HTML untuk identifikasi tipe halaman.
+description: Pada tag body HTML, terdapat kelas yang berbeda untuk identifikasi tipe halaman.
 group: core-template
 ---
 
@@ -49,11 +49,11 @@ group: core-template
 Contoh pemanfaatan:
 
 {% highlight css %}
-.blog-view-item .element {
-  background-color: #e07b53;
+.blog-view-item {
+  ...
 }
 
-.blog-view-search-label .element {
-  display: none;
+.blog-view-item .element {
+  ...
 }
 {% endhighlight %}

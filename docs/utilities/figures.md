@@ -5,7 +5,7 @@ description: Kelas tambahan untuk Bootstrap figures.
 group: utilities
 ---
 
-Baca dokumentasi [Bootstrap figures](https://v4-alpha.getbootstrap.com/content/figures/).
+Lihat dokumentasi [Bootstrap figures](https://v4-alpha.getbootstrap.com/content/figures/).
 
 ## Examples
 

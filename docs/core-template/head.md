@@ -10,10 +10,6 @@ group: core-template
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
-## Introduction
-
-Tag `<meta>` adalah elemen HTML yang digunakan untuk membentuk struktur metadata dari sebuah halaman web/blog. [Metadata](http://w3schools.com/tags/tag_meta.asp) adalah data (informasi) tentang data atau data informasi tentang berbagai aspek dari blog, seperti judul, deskripsi, gambar, URL, dan lain-lain.
-
 ## Required meta tags
 
 - Set charset dengan `utf-8`.
@@ -159,9 +155,23 @@ Gunakan pada elemen yang di dalamnya terdapat tag `b:section`. Sesuaikan dengan 
 
 Hasilnya akan seperti pada <a href="#" data-toggle="modal" data-target=".image-blogger-layout">gambar ini</a>.
 
-#### Notation
+Contoh-contoh lainnya:
 
-Jika Anda menggunakan sistem grid Bootstrap dan sistem grid untuk Blogger layout pada elemen yang sama, **kelas kolom tidak harus sama**, misal Anda menggunakan sistem grid Bootstrap untuk membuat template dua kolom dengan menggunakan `.col-md-9` untuk *main* dan `.col-md-3` untuk *sidebar*, penggunaan sistem grid untuk Blogger layout tidak harus menggunakan `.blogger-col-9` untuk *main* dan `.blogger-col-3` untuk *sidebar*, tetapi bisa juga menggunakan `.blogger-col-8` untuk *main* dan `.blogger-col-4` untuk *sidebar*. Untuk lebih jelasnya lihat kode di bawah ini:
+{% highlight html %}
+<div class='container'>
+  <div class='row'>
+    <!-- Main -->
+    <main class='main col-md-9 blogger-col-9' id='main'>
+      <b:section class='' id='main-section' maxwidgets='1' name='Main' showaddelement='no'></b:section>
+    </main><!-- /.main -->
+
+    <!-- Sidebar -->
+    <aside class='sidebar col-md-3 blogger-col-3' id='sidebar'>
+      <b:section class='' id='sidebar-section' name='Sidebar'></section>
+    </aside><!-- /.sidebar -->
+  </div><!-- /.row -->
+</div><!-- /.container -->
+{% endhighlight %}
 
 {% highlight html %}
 <div class='container'>

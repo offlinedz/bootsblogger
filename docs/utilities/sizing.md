@@ -6,30 +6,21 @@ group: utilities
 redirect_from: "/utilities/"
 ---
 
-Baca dokumentasi [Bootstrap sizing utilities](https://v4-alpha.getbootstrap.com/utilities/sizing/).
+Lihat dokumentasi [Bootstrap sizing utilities](https://v4-alpha.getbootstrap.com/utilities/sizing/).
 
 ## Responsive width
 
-Format kelasnya tidak jauh berbeda dengan [Bootstrap sizing utilities](https://v4-alpha.getbootstrap.com/utilities/sizing/), hanya menambahkan `{breakpoint}`, format kelasnya adalah `.w-{breakpoint}-{25, 50, 75, 100}`.
+Format kelasnya tidak jauh berbeda, hanya menambahkan `{breakpoint}`, format kelasnya adalah `.w-{breakpoint}-{25, 50, 75, 100}`.
 
-### Example
+### Examples
 
 Ubah ukuran layar *browser* Anda untuk melihat perubahannya.
 
-<div class="bd-example">
-  <div class="p-3 bg-faded w-25 w-sm-50 w-md-75 w-lg-100">
-    <div class="hidden-md-down hidden-xl-up"><code>.w-lg-100 (100%)</code></div>
-    <div class="hidden-sm-down hidden-lg-up"><code>.w-md-75 (75%)</code></div>
-    <div class="hidden-xs-down hidden-md-up"><code>.w-sm-50 (50%)</code></div>
-    <div class="hidden-sm-up"><code>.w-25 (25%)</code></div>
-  </div>
+{% example html %}
+<div class="w-25 w-sm-50 w-md-75 w-lg-100 p-3 bg-faded">
+  <div class="d-none d-lg-block"><code>.w-lg-100 (100%)</code></div>
+  <div class="d-none d-md-block d-lg-none"><code>.w-md-75 (75%)</code></div>
+  <div class="d-none d-sm-block d-md-none"><code>.w-sm-50 (50%)</code></div>
+  <div class="d-sm-none"><code>.w-25 (25%)</code></div>
 </div>
-
-{% highlight html %}
-<div class="w-25 w-sm-50 w-md-75 w-lg-100">
-  <div class="hidden-md-down hidden-xl-up"><code>.w-lg-100 (100%)</code></div>
-  <div class="hidden-sm-down hidden-lg-up"><code>.w-md-75 (75%)</code></div>
-  <div class="hidden-xs-down hidden-md-up"><code>.w-sm-50 (50%)</code></div>
-  <div class="hidden-sm-up"><code>.w-25 (25%)</code></div>
-</div>
-{% endhighlight %}
+{% endexample %}

@@ -14,13 +14,13 @@ Gruntfile Bootsblogger (`bootsblogger/Gruntfile.js`) menyediakan berbagai perint
 
 ## Tooling setup
 
-Untuk dapat bekerja dengan Bootsblogger dan menjalankan dokumentasi secara lokal, Anda membutuhkan kode sumber Bootsblogger, Node, dan Grunt. Ikuti langkah-langkah di bawah ini:
+Untuk dapat menggunakan *build system* Bootsblogger dan menjalankan dokumentasi secara lokal, Anda membutuhkan kode sumber Bootsblogger, Node, dan Grunt. Ikuti langkah-langkah di bawah ini:
 
 1. [Unduh dan pasang Node](https://nodejs.org/download), yang digunakan untuk manajemen dependensi.
 2. Pasang *Grunt command line tools*, `grunt-cli`, dengan `npm install -g grunt-cli`.
 3. Pindah ke direktori *root* `/bootsblogger` dan jalankan perintah `npm install` untuk instalasi dependensi yang sudah terdaftar di dalam berkas `bootsblogger/package.json`.
 4. [Pasang Ruby](https://www.ruby-lang.org/en/documentation/installation/), pasang [Bundler](https://bundler.io/) dengan `gem install bundler`, dan terakhir jalankan perintah `bundle install`. Ini akan memasang semua dependensi Ruby, seperti Jekyll dan *plugins*.
-  - **Pengguna Windows:** Baca [*unofficial guide* ini](http://jekyll-windows.juthilo.com/) agar Jekyll berjalan lancar tanpa masalah.
+  - **Pengguna Windows:** Baca [panduan tidak resmi ini](http://jekyll-windows.juthilo.com/) agar Jekyll berjalan lancar tanpa masalah.
 
 Setelah selesai, Anda dapat menjalankan berbagai perintah Grunt yang disediakan dari *command line*.
 

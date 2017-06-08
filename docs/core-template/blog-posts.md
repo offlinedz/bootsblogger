@@ -1,11 +1,11 @@
 ---
 layout: docs
 title: Blog posts
-description: Gadget Blog dirancang untuk memudahkan dalam mengatur tampilan posting. Dan juga dirancang untuk dapat membuat tampilan posting yang berbeda di setiap tipe halaman.
+description: Gadget Blog dirancang untuk memberikan kemudahan dalam mengatur tampilan posting, dan juga dirancang untuk dapat membuat tampilan posting yang berbeda di setiap tipe halaman.
 group: core-template
 ---
 
-Gadget Blog atau `<b:widget type='Blog'></b:widget>`.
+Bagian-bagian kode untuk posting blog hanya dapat disertakan di dalam widget yang bertipe `Blog` (`<b:widget type='Blog'>`).
 
 ## Contents
 
@@ -14,7 +14,7 @@ Gadget Blog atau `<b:widget type='Blog'></b:widget>`.
 
 ## Post layout and styles
 
-Posting dibagi menjadi beberapa bagian berdasarkan tipe halaman. Untuk membuat tampilan posting yang berbeda-beda di setiap tipe halaman, Anda hanya perlu menyesuaikan tampilan posting pada masing-masing bagian.
+Posting dibagi menjadi beberapa bagian berdasarkan tipe halaman. Untuk membuat tampilan posting yang berbeda di setiap tipe halaman, Anda hanya perlu menyesuaikan tampilan posting pada masing-masing bagian.
 
 ### Homepage
 
@@ -130,11 +130,13 @@ template-src/content/blog-posts/post-archive.xml
 
 ## Includes
 
-Bagian-bagian kode yang dapat Anda sertakan di bagian [post layout and styles](#post-layout-and-styles).
+Bagian-bagian kode yang dapat disertakan di bagian lain yang membutuhkannya.
 
-### Custom headerByline
+### Custom headerByline and footerBylines
 
-Untuk menampilkan *post items* yang berada di dalam *header* pada konfigurasi posting blog.
+Untuk menampilkan *item* posting yang berada di dalam *header* dan *footer* pada konfigurasi posting blog.
+
+#### Header
 
 ###### Source
 
@@ -158,9 +160,7 @@ template-src/core/blog-posts/customHeaderByline.xml
 </b:if>
 {% endhighlight %}
 
-### Custom footerBylines
-
-Untuk menampilkan *post items* yang berada di dalam *footer* pada konfigurasi posting blog.
+#### Footer
 
 ###### Source
 

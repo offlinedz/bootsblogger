@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Widget
-description: Komponen untuk tampilan widget.
+description: Komponen untuk tampilan widget/gadget.
 group: components
 ---
 
@@ -14,7 +14,7 @@ group: components
 
 Komponen widget membutuhkan penggunaan kelas dasar `.wg`. `.wg` hanya mengatur `margin` dan ukuran judul widget (dapat diubah menggunakan kelas pengubah [ukuran judul widget](#font-size)).
 
-**Catatan:** komponen widget tidak mengubah warna konten yang berada di dalamnya (di dalam `.widget-content`), dalam beberapa widget Anda perlu menyesuaikannya.
+**Catatan:** komponen widget tidak mengubah warna konten yang berada di dalamnya (di dalam `.widget-content`), oleh karena itu, Anda perlu menyesuaikannya dengan *custom styles* atau kelas utilitas.
 
 <div class="bd-example">
   <div class="wg">
@@ -33,7 +33,7 @@ Komponen widget membutuhkan penggunaan kelas dasar `.wg`. `.wg` hanya mengatur `
 
 ## Widget title
 
-Kelas-kelas untuk mengatur judul widget—warna, ukuran, perataan, dan menyembunyikan judul widget.
+Kelas-kelas untuk mengatur judul widget—warna, ukuran, perataan, dan kelas untuk menyembunyikan judul widget.
 
 ### Color
 
@@ -502,7 +502,7 @@ Ubah `.wg-box-{color}` menjadi `.wg-box-outline-{color}`.
 
 ### List groups
 
-Buat list group (flush) di dalam widget box.
+Buat daftar konten di dalam widget-box dengan *flush list group*.
 
 <div class="bd-example">
   <div class="wg wg-box wg-box-white wg-title-gray-dark">
@@ -525,7 +525,7 @@ Buat list group (flush) di dalam widget box.
 <b:section class='wg wg-box wg-box-white wg-title-gray-dark' id='sectionId'></b:section>
 {% endhighlight %}
 
-Tambahkan gadget **HTML/JavaScript**. Kemudian, buat list group menggunakan `.list-group-flush`, lihat contoh di bawah ini.
+Tambahkan gadget **HTML/JavaScript**. Kemudian, buat *list group* menggunakan `.list-group-flush`:
 
 {% highlight html %}
 <div class="list-group list-group-flush">
@@ -825,7 +825,7 @@ Tambahkan `.wg-panel-group`.
 
 ### List groups
 
-Buat list group (flush) di dalam widget panel.
+Buat daftar konten di dalam widget-panel dengan *flush list group*.
 
 <div class="bd-example">
   <div class="wg wg-panel wg-panel-purple wg-title-white">
@@ -848,7 +848,7 @@ Buat list group (flush) di dalam widget panel.
 <b:section class='wg wg-panel wg-panel-purple wg-title-white' id='sectionId'></b:section>
 {% endhighlight %}
 
-Tambahkan gadget **HTML/JavaScript**. Kemudian, buat list group menggunakan `.list-group-flush`, lihat contoh di bawah ini.
+Tambahkan gadget **HTML/JavaScript**. Kemudian, buat *list group* menggunakan `.list-group-flush`:
 
 {% highlight html %}
 <div class="list-group list-group-flush">
