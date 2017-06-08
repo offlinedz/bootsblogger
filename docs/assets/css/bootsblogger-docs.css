@@ -41,17 +41,6 @@
   background-color: #ff5722;
 }
 
-.bd-jumbotron .btn-bd-jumbotron {
-  color: #ffe484;
-  border-color: #ffe484;
-}
-.bd-jumbotron .btn-bd-jumbotron:hover,
-.bd-jumbotron .btn-bd-jumbotron:focus {
-  color: #463c34;
-  background-color: #ffe484;
-  border-color: #ffe484;
-}
-
 .bd-jumbotron-version {
   color: #ffab91;
 }
@@ -136,17 +125,28 @@
    Buttons
    ============================================== */
 
-.btn-bsb {
+.btn-bd {
   font-weight: 500;
   color: #ff5722;
   border-color: #ff5722;
 }
-.btn-bsb:hover,
-.btn-bsb:focus,
-.btn-bsb:active {
+.btn-bd:hover,
+.btn-bd:focus,
+.btn-bd:active {
   color: #fff;
   background-color: #ff5722;
   border-color: #ff5722;
+}
+
+.btn-bd-yellow {
+  color: #ffe484;
+  border-color: #ffe484;
+}
+.btn-bd-yellow:hover,
+.btn-bd-yellow:focus {
+  color: #463c34;
+  background-color: #ffe484;
+  border-color: #ffe484;
 }
 
 

@@ -38,14 +38,14 @@ body {}
    Navbar
    ============================================== */
 
-.custom-navbar {
+.navbar-custom {
   min-height: 4rem;
   background-color: #ff5722;
   border-bottom: 1px solid rgba(0,0,0,.1);
 }
 
 @media (min-width: 992px) {
-  .custom-navbar {
+  .navbar-custom {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
@@ -58,18 +58,23 @@ body {}
    Jumbotron
    ============================================== */
 
-.custom-jumbotron {
+.jumbotron-custom {
   color: #fff;
   text-align: center;
   background-color: #ff5722;
 }
 
-.custom-jumbotron .btn-jumbotron {
+
+/* ==============================================
+   Buttons
+   ============================================== */
+
+.btn-custom {
   color: #ffe484;
   border-color: #ffe484;
 }
-.custom-jumbotron .btn-jumbotron:hover,
-.custom-jumbotron .btn-jumbotron:focus {
+.btn-custom:hover,
+.btn-custom:focus {
   color: #463c34;
   background-color: #ffe484;
   border-color: #ffe484;
