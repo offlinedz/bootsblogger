@@ -82,14 +82,14 @@ body {}
    Navbar
    ============================================== */
 
-.custom-navbar {
+.navbar-custom {
   min-height: 4rem;
   background-color: #ff5722;
   border-bottom: 1px solid rgba(0,0,0,.1);
 }
 
 @media (min-width: 992px) {
-  .custom-navbar {
+  .navbar-custom {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
@@ -102,18 +102,23 @@ body {}
    Jumbotron
    ============================================== */
 
-.custom-jumbotron {
+.jumbotron-custom {
   color: #fff;
   text-align: center;
   background-color: #ff5722;
 }
 
-.custom-jumbotron .btn-jumbotron {
+
+/* ==============================================
+   Buttons
+   ============================================== */
+
+.btn-custom {
   color: #ffe484;
   border-color: #ffe484;
 }
-.custom-jumbotron .btn-jumbotron:hover,
-.custom-jumbotron .btn-jumbotron:focus {
+.btn-custom:hover,
+.btn-custom:focus {
   color: #463c34;
   background-color: #ffe484;
   border-color: #ffe484;
@@ -277,7 +282,7 @@ Post layout and styles
           <b:include name='customHeaderByline'/>
         </div>
       </b:if>
-      <!-- Horizontal thumbnail -->
+      <!-- Horizontal post -->
       <div class='post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3'>
         <!-- Post image -->
         <div class='post-img-left'>
@@ -401,7 +406,7 @@ Post layout and styles
           <b:include name='customHeaderByline'/>
         </div>
       </b:if>
-      <!-- Horizontal thumbnail -->
+      <!-- Horizontal post -->
       <div class='post-horizontal-sm thumbnail-sm-5 thumbnail-md-4 thumbnail-lg-3 thumbnail-xl-3'>
         <!-- Post image -->
         <div class='post-img-left'>
@@ -497,7 +502,7 @@ Skip navigation
 Navbar
 ================================================= </b:comment>
 
-<header class='navbar navbar-inverse navbar-toggleable-md custom-navbar mb-0'>
+<header class='navbar navbar-inverse navbar-toggleable-md navbar-custom mb-0'>
   <nav class='container'>
     <button class='navbar-toggler navbar-toggler-right' type='button' data-toggle='collapse' data-target='#navbar' aria-controls='navbar' aria-expanded='false' aria-label='Toggle navigation'>
       <span class='navbar-toggler-icon'></span>
@@ -553,11 +558,11 @@ Jumbotron
 ================================================= </b:comment>
 
 <b:if cond='data:view.isHomepage'>
-  <div class='jumbotron jumbotron-fluid custom-jumbotron mb-0'>
+  <div class='jumbotron jumbotron-fluid jumbotron-custom mb-0'>
     <div class='container'>
       <img alt='Bootsblogger' class='mb-3' height='144' src='https://cdn.rawgit.com/bootsblogger/resources/master/assets/img/bootsblogger-solid.svg' width='144'/>
       <p class='lead'>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-      <a class='btn btn-jumbotron btn-lg' href='https://bootsblogger.github.io' role='button'>Getting started</a>
+      <a class='btn btn-custom btn-lg' href='https://bootsblogger.github.io' role='button'>Getting started</a>
     </div>
   </div>
 </b:if>
