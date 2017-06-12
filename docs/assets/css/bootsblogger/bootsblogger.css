@@ -1943,7 +1943,7 @@
   margin-bottom: 1rem;
 }
 
-.wg > .widget > h2 {
+.wg > .widget > .title {
   margin-top: 0;
   font-size: 1rem;
   font-weight: bold;
@@ -1957,91 +1957,91 @@
   margin-bottom: 0;
 }
 
-.wg-title-gray-light > .widget > h2 {
+.wg-title-gray-light > .widget > .title {
   color: #f7f7f9;
 }
 
-.wg-title-gray-dark > .widget > h2 {
+.wg-title-gray-dark > .widget > .title {
   color: #292b2c;
 }
 
-.wg-title-white > .widget > h2 {
+.wg-title-white > .widget > .title {
   color: #fff;
 }
 
-.wg-title-black > .widget > h2 {
+.wg-title-black > .widget > .title {
   color: #000;
 }
 
-.wg-title-red > .widget > h2 {
+.wg-title-red > .widget > .title {
   color: #d9534f;
 }
 
-.wg-title-orange > .widget > h2 {
+.wg-title-orange > .widget > .title {
   color: #f0ad4e;
 }
 
-.wg-title-yellow > .widget > h2 {
+.wg-title-yellow > .widget > .title {
   color: #ffd500;
 }
 
-.wg-title-green > .widget > h2 {
+.wg-title-green > .widget > .title {
   color: #5cb85c;
 }
 
-.wg-title-blue > .widget > h2 {
+.wg-title-blue > .widget > .title {
   color: #0275d8;
 }
 
-.wg-title-teal > .widget > h2 {
+.wg-title-teal > .widget > .title {
   color: #5bc0de;
 }
 
-.wg-title-pink > .widget > h2 {
+.wg-title-pink > .widget > .title {
   color: #ff5b77;
 }
 
-.wg-title-purple > .widget > h2 {
+.wg-title-purple > .widget > .title {
   color: #613d7c;
 }
 
-.wg-title-h1 > .widget > h2 {
+.wg-title-h1 > .widget > .title {
   font-size: 2.5rem;
 }
 
-.wg-title-h2 > .widget > h2 {
+.wg-title-h2 > .widget > .title {
   font-size: 2rem;
 }
 
-.wg-title-h3 > .widget > h2 {
+.wg-title-h3 > .widget > .title {
   font-size: 1.75rem;
 }
 
-.wg-title-h4 > .widget > h2 {
+.wg-title-h4 > .widget > .title {
   font-size: 1.5rem;
 }
 
-.wg-title-h5 > .widget > h2 {
+.wg-title-h5 > .widget > .title {
   font-size: 1.25rem;
 }
 
-.wg-title-h6 > .widget > h2 {
+.wg-title-h6 > .widget > .title {
   font-size: 1rem;
 }
 
-.wg-title-left > .widget > h2 {
+.wg-title-left > .widget > .title {
   text-align: left;
 }
 
-.wg-title-center > .widget > h2 {
+.wg-title-center > .widget > .title {
   text-align: center;
 }
 
-.wg-title-right > .widget > h2 {
+.wg-title-right > .widget > .title {
   text-align: right;
 }
 
-.wg-title-hide > .widget > h2 {
+.wg-title-hide > .widget > .title {
   display: none !important;
 }
 
@@ -2051,7 +2051,7 @@
   border-radius: 0.25rem;
 }
 
-.wg-box > .widget > h2 {
+.wg-box > .widget > .title {
   margin-bottom: .5rem;
 }
 
@@ -2183,7 +2183,7 @@
   border-radius: 0.25rem;
 }
 
-.wg-panel > .widget > h2 {
+.wg-panel > .widget > .title {
   padding: 0.75rem 1.25rem;
   margin-bottom: 0;
   border: 1px solid transparent;
@@ -2218,7 +2218,7 @@
   margin-bottom: 0 !important;
   border-radius: 0 !important;
 }
-.wg-panel-group > .widget:not(:first-child) > h2 {
+.wg-panel-group > .widget:not(:first-child) > .title {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
@@ -2241,7 +2241,7 @@
   border-top-left-radius: calc(0.25rem - 1px);
 }
 
-.wg-panel-gray-light > .widget > h2 {
+.wg-panel-gray-light > .widget > .title {
   background-color: #f7f7f9;
   border-color: #e8e8ee;
 }
@@ -2250,7 +2250,7 @@
   border-color: #e8e8ee;
 }
 
-.wg-panel-gray-dark > .widget > h2 {
+.wg-panel-gray-dark > .widget > .title {
   background-color: #292b2c;
   border-color: #1d1e1f;
 }
@@ -2259,7 +2259,7 @@
   border-color: #1d1e1f;
 }
 
-.wg-panel-white > .widget > h2 {
+.wg-panel-white > .widget > .title {
   background-color: #fff;
   border-color: rgba(0, 0, 0, 0.125);
 }
@@ -2268,7 +2268,7 @@
   border-color: rgba(0, 0, 0, 0.125);
 }
 
-.wg-panel-black > .widget > h2 {
+.wg-panel-black > .widget > .title {
   background-color: #000;
   border-color: black;
 }
@@ -2277,7 +2277,7 @@
   border-color: black;
 }
 
-.wg-panel-red > .widget > h2 {
+.wg-panel-red > .widget > .title {
   background-color: #d9534f;
   border-color: #d43f3a;
 }
@@ -2286,7 +2286,7 @@
   border-color: #d43f3a;
 }
 
-.wg-panel-orange > .widget > h2 {
+.wg-panel-orange > .widget > .title {
   background-color: #f0ad4e;
   border-color: #eea236;
 }
@@ -2295,7 +2295,7 @@
   border-color: #eea236;
 }
 
-.wg-panel-yellow > .widget > h2 {
+.wg-panel-yellow > .widget > .title {
   background-color: #ffd500;
   border-color: #e6c000;
 }
@@ -2304,7 +2304,7 @@
   border-color: #e6c000;
 }
 
-.wg-panel-green > .widget > h2 {
+.wg-panel-green > .widget > .title {
   background-color: #5cb85c;
   border-color: #4cae4c;
 }
@@ -2313,7 +2313,7 @@
   border-color: #4cae4c;
 }
 
-.wg-panel-blue > .widget > h2 {
+.wg-panel-blue > .widget > .title {
   background-color: #0275d8;
   border-color: #0267bf;
 }
@@ -2322,7 +2322,7 @@
   border-color: #0267bf;
 }
 
-.wg-panel-teal > .widget > h2 {
+.wg-panel-teal > .widget > .title {
   background-color: #5bc0de;
   border-color: #46b8da;
 }
@@ -2331,7 +2331,7 @@
   border-color: #46b8da;
 }
 
-.wg-panel-pink > .widget > h2 {
+.wg-panel-pink > .widget > .title {
   background-color: #ff5b77;
   border-color: #ff4262;
 }
@@ -2340,7 +2340,7 @@
   border-color: #ff4262;
 }
 
-.wg-panel-purple > .widget > h2 {
+.wg-panel-purple > .widget > .title {
   background-color: #613d7c;
   border-color: #54356b;
 }
@@ -2349,7 +2349,7 @@
   border-color: #54356b;
 }
 
-.wg-panel-outline-gray-light > .widget > h2 {
+.wg-panel-outline-gray-light > .widget > .title {
   background-color: transparent;
   border-color: #f7f7f9;
 }
@@ -2358,7 +2358,7 @@
   border-color: #f7f7f9;
 }
 
-.wg-panel-outline-gray-dark > .widget > h2 {
+.wg-panel-outline-gray-dark > .widget > .title {
   background-color: transparent;
   border-color: #292b2c;
 }
@@ -2367,7 +2367,7 @@
   border-color: #292b2c;
 }
 
-.wg-panel-outline-white > .widget > h2 {
+.wg-panel-outline-white > .widget > .title {
   background-color: transparent;
   border-color: #fff;
 }
@@ -2376,7 +2376,7 @@
   border-color: #fff;
 }
 
-.wg-panel-outline-black > .widget > h2 {
+.wg-panel-outline-black > .widget > .title {
   background-color: transparent;
   border-color: #000;
 }
@@ -2385,7 +2385,7 @@
   border-color: #000;
 }
 
-.wg-panel-outline-red > .widget > h2 {
+.wg-panel-outline-red > .widget > .title {
   background-color: transparent;
   border-color: #d9534f;
 }
@@ -2394,7 +2394,7 @@
   border-color: #d9534f;
 }
 
-.wg-panel-outline-orange > .widget > h2 {
+.wg-panel-outline-orange > .widget > .title {
   background-color: transparent;
   border-color: #f0ad4e;
 }
@@ -2403,7 +2403,7 @@
   border-color: #f0ad4e;
 }
 
-.wg-panel-outline-yellow > .widget > h2 {
+.wg-panel-outline-yellow > .widget > .title {
   background-color: transparent;
   border-color: #ffd500;
 }
@@ -2412,7 +2412,7 @@
   border-color: #ffd500;
 }
 
-.wg-panel-outline-green > .widget > h2 {
+.wg-panel-outline-green > .widget > .title {
   background-color: transparent;
   border-color: #5cb85c;
 }
@@ -2421,7 +2421,7 @@
   border-color: #5cb85c;
 }
 
-.wg-panel-outline-blue > .widget > h2 {
+.wg-panel-outline-blue > .widget > .title {
   background-color: transparent;
   border-color: #0275d8;
 }
@@ -2430,7 +2430,7 @@
   border-color: #0275d8;
 }
 
-.wg-panel-outline-teal > .widget > h2 {
+.wg-panel-outline-teal > .widget > .title {
   background-color: transparent;
   border-color: #5bc0de;
 }
@@ -2439,7 +2439,7 @@
   border-color: #5bc0de;
 }
 
-.wg-panel-outline-pink > .widget > h2 {
+.wg-panel-outline-pink > .widget > .title {
   background-color: transparent;
   border-color: #ff5b77;
 }
@@ -2448,7 +2448,7 @@
   border-color: #ff5b77;
 }
 
-.wg-panel-outline-purple > .widget > h2 {
+.wg-panel-outline-purple > .widget > .title {
   background-color: transparent;
   border-color: #613d7c;
 }
@@ -2457,34 +2457,6 @@
   border-color: #613d7c;
 }
 
-@media (min-width: 576px) {
-  .wg-columns {
-    -webkit-column-count: 2;
-       -moz-column-count: 2;
-            column-count: 2;
-    -webkit-column-gap: 1rem;
-       -moz-column-gap: 1rem;
-            column-gap: 1rem;
-  }
-  .wg-columns > .widget {
-    display: inline-block;
-    width: 100%;
-  }
-}
-@media (min-width: 768px) {
-  .wg-columns {
-    -webkit-column-count: 3;
-       -moz-column-count: 3;
-            column-count: 3;
-    -webkit-column-gap: 1.25rem;
-       -moz-column-gap: 1.25rem;
-            column-gap: 1.25rem;
-  }
-  .wg-columns > .widget {
-    display: inline-block;
-    width: 100%;
-  }
-}
 .wg-1,
 .wg-2,
 .wg-3,
