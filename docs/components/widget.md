@@ -860,69 +860,6 @@ Tambahkan gadget **HTML/JavaScript**. Kemudian, buat *list group* menggunakan `.
 </div>
 {% endhighlight %}
 
-## Columns
-
-Gunakan `.wg-columns`.
-
-Hanya bekerja pada perangkat kecil (`sm`) ke atas.
-
-- Pada perangkat sedang (`md`) ke atas (&ge;768px) akan tampil tiga kolom.
-- Pada perangkat kecil (`sm`) ke atas (&ge;576px) akan tampil dua kolom.
-- Pada perangkat sangat kecil (`xs`) ke bawah (&lt;576px) hanya tampil satu kolom.
-
-### Example
-
-Urutan widget dimulai dari atas ke bawah dan dari kiri ke kanan.
-
-<div class="bd-example bd-example-widget-inverse text-gray-dark">
-  <div class="wg wg-columns wg-box wg-box-orange wg-title-black">
-    <div class="widget">
-      <h3 class="title">Widget title 1</h3>
-      <div class="widget-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      </div>
-    </div><!-- /.widget -->
-    <div class="widget">
-      <h3 class="title">Widget title 2</h3>
-      <div class="widget-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      </div>
-    </div><!-- /.widget -->
-    <div class="widget">
-      <h3 class="title">Widget title 3</h3>
-      <div class="widget-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      </div>
-    </div><!-- /.widget -->
-    <div class="widget">
-      <h3 class="title">Widget title 4</h3>
-      <div class="widget-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      </div>
-    </div><!-- /.widget -->
-    <div class="widget">
-      <h3 class="title">Widget title 5</h3>
-      <div class="widget-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      </div>
-    </div><!-- /.widget -->
-    <div class="widget">
-      <h3 class="title">Widget title 6</h3>
-      <div class="widget-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      </div>
-    </div><!-- /.widget -->
-  </div>
-</div><!-- /.bd-example -->
-
-{% highlight html %}
-<b:section class='wg wg-columns wg-box wg-box-orange wg-title-black' id='sectionId'></b:section>
-{% endhighlight %}
-
 ## Grid
 
 Sistem grid untuk widget.
