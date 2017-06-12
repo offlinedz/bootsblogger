@@ -1,4 +1,4 @@
-<div class="navmenu navmenu-light navmenu-expand-md bd-sidebar-navmenu">
+<div class="navmenu navmenu-expand-md bd-navmenu">
   <div class="navmenu-form">
     <form class="bd-search d-flex align-items-center">
       <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
@@ -36,9 +36,11 @@
               {% assign active = 'active' %}
             {% endif %}
 
-            <a class="nav-item nav-link nav-link-sm small {{ active }}" href="{{ site.baseurl }}/{{ group_slug }}/{{ doc_slug }}/">
-              {{ doc.title }}
-            </a>
+            <div class="nav-item">
+              <a class="nav-link nav-link-sm {{ active }}" href="{{ site.baseurl }}/{{ group_slug }}/{{ doc_slug }}/">
+                {{ doc.title }}
+              </a>
+            </div>
           {% endfor %}
         </div>
       </div>
