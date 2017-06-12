@@ -8,7 +8,7 @@
 
 // Title
 
-.wg > .widget > h2 {
+.wg > .widget > .title {
   margin-top: 0;
   font-size: $wg-font-size;
   font-weight: $wg-font-weight;
@@ -72,45 +72,45 @@
 
 // Font size
 
-.wg-title-h1 > .widget > h2 {
+.wg-title-h1 > .widget > .title {
   font-size: $wg-title-h1;
 }
-.wg-title-h2 > .widget > h2 {
+.wg-title-h2 > .widget > .title {
   font-size: $wg-title-h2;
 }
-.wg-title-h3 > .widget > h2 {
+.wg-title-h3 > .widget > .title {
   font-size: $wg-title-h3;
 }
-.wg-title-h4 > .widget > h2 {
+.wg-title-h4 > .widget > .title {
   font-size: $wg-title-h4;
 }
-.wg-title-h5 > .widget > h2 {
+.wg-title-h5 > .widget > .title {
   font-size: $wg-title-h5;
 }
-.wg-title-h6 > .widget > h2 {
+.wg-title-h6 > .widget > .title {
   font-size: $wg-title-h6;
 }
 
 // Alignment
 
 // Left
-.wg-title-left > .widget > h2 {
+.wg-title-left > .widget > .title {
   text-align: left;
 }
 
 // Center
-.wg-title-center > .widget > h2 {
+.wg-title-center > .widget > .title {
   text-align: center;
 }
 
 // Right
-.wg-title-right > .widget > h2 {
+.wg-title-right > .widget > .title {
   text-align: right;
 }
 
 // Hide
 
-.wg-title-hide > .widget > h2 {
+.wg-title-hide > .widget > .title {
   display: none !important;
 }
 
@@ -128,7 +128,7 @@
 
 // Title
 
-.wg-box > .widget > h2 {
+.wg-box > .widget > .title {
   margin-bottom: .5rem;
 }
 
@@ -228,7 +228,7 @@
 
 // Title
 
-.wg-panel > .widget > h2 {
+.wg-panel > .widget > .title {
   padding: $wg-panel-title-padding;
   margin-bottom: 0;
   border: $wg-panel-border-width solid transparent;
@@ -270,7 +270,7 @@
   @include box-shadow(none !important);
 
   // Title
-  &:not(:first-child) > h2 {
+  &:not(:first-child) > .title {
     @include border-top-radius(0);
   }
   // Content

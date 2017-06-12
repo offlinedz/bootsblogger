@@ -1,7 +1,7 @@
 // Widget title
 
 @mixin wg-title-variant($color) {
-  > .widget > h2 {
+  > .widget > .title {
     color: $color;
   }
 }
@@ -27,7 +27,7 @@
 // Widget panel
 
 @mixin wg-panel-variant($background, $border) {
-  > .widget > h2 {
+  > .widget > .title {
     background-color: $background;
     border-color: $border;
   }
@@ -38,7 +38,7 @@
 }
 
 @mixin wg-panel-outline-variant($color) {
-  > .widget > h2 {
+  > .widget > .title {
     background-color: transparent;
     border-color: $color;
   }
