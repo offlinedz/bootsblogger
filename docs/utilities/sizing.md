@@ -6,7 +6,7 @@ group: utilities
 redirect_from: "/utilities/"
 ---
 
-Lihat dokumentasi [Bootstrap sizing utilities](https://v4-alpha.getbootstrap.com/utilities/sizing/).
+Baca dokumentasi [Bootstrap sizing utilities](https://v4-alpha.getbootstrap.com/utilities/sizing/).
 
 ## Responsive width
 

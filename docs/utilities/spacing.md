@@ -5,7 +5,7 @@ description: Kelas tambahan untuk Bootstrap spacing utilities.
 group: utilities
 ---
 
-Lihat dokumentasi [Bootstrap spacing utilities](https://v4-alpha.getbootstrap.com/utilities/spacing/).
+Baca dokumentasi [Bootstrap spacing utilities](https://v4-alpha.getbootstrap.com/utilities/spacing/).
 
 ## Negative margin
 
