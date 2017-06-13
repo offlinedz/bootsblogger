@@ -3,6 +3,204 @@
  * Copyright 2017 Igoy Nawamreh
  * Licensed under MIT (https://github.com/bootsblogger/bootsblogger/blob/master/LICENSE)
  */
+.card-block-img-left {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  padding-left: 1.25rem;
+  border-bottom-left-radius: calc(0.25rem - 1px);
+  border-top-left-radius: calc(0.25rem - 1px);
+}
+.card-block-img-left .card-img-left {
+  border-radius: 0.25rem;
+}
+
+.card-block-img-right {
+  padding-top: 1.25rem;
+  padding-right: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom-right-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
+}
+.card-block-img-right .card-img-right {
+  border-radius: 0.25rem;
+}
+
+@media (max-width: 575px) {
+  .card .row:first-child .card-block-img-left-sm {
+    border-top-right-radius: calc(0.25rem - 1px);
+    border-top-left-radius: calc(0.25rem - 1px);
+  }
+  .card .row:first-child .card-block-img-left-sm .card-img-left {
+    border-top-right-radius: calc(0.25rem - 1px);
+    border-top-left-radius: calc(0.25rem - 1px);
+  }
+
+  .card .row:last-child .card-block-img-right-sm {
+    border-bottom-right-radius: calc(0.25rem - 1px);
+    border-bottom-left-radius: calc(0.25rem - 1px);
+  }
+  .card .row:last-child .card-block-img-right-sm .card-img-right {
+    border-bottom-right-radius: calc(0.25rem - 1px);
+    border-bottom-left-radius: calc(0.25rem - 1px);
+  }
+}
+@media (min-width: 576px) {
+  .card-block-img-left-sm {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    padding-left: 1.25rem;
+    border-bottom-left-radius: calc(0.25rem - 1px);
+    border-top-left-radius: calc(0.25rem - 1px);
+  }
+  .card-block-img-left-sm .card-img-left {
+    border-radius: 0.25rem;
+  }
+
+  .card-block-img-right-sm {
+    padding-top: 1.25rem;
+    padding-right: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom-right-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
+  }
+  .card-block-img-right-sm .card-img-right {
+    border-radius: 0.25rem;
+  }
+}
+@media (max-width: 767px) {
+  .card .row:first-child .card-block-img-left-md {
+    border-top-right-radius: calc(0.25rem - 1px);
+    border-top-left-radius: calc(0.25rem - 1px);
+  }
+  .card .row:first-child .card-block-img-left-md .card-img-left {
+    border-top-right-radius: calc(0.25rem - 1px);
+    border-top-left-radius: calc(0.25rem - 1px);
+  }
+
+  .card .row:last-child .card-block-img-right-md {
+    border-bottom-right-radius: calc(0.25rem - 1px);
+    border-bottom-left-radius: calc(0.25rem - 1px);
+  }
+  .card .row:last-child .card-block-img-right-md .card-img-right {
+    border-bottom-right-radius: calc(0.25rem - 1px);
+    border-bottom-left-radius: calc(0.25rem - 1px);
+  }
+}
+@media (min-width: 768px) {
+  .card-block-img-left-md {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    padding-left: 1.25rem;
+    border-bottom-left-radius: calc(0.25rem - 1px);
+    border-top-left-radius: calc(0.25rem - 1px);
+  }
+  .card-block-img-left-md .card-img-left {
+    border-radius: 0.25rem;
+  }
+
+  .card-block-img-right-md {
+    padding-top: 1.25rem;
+    padding-right: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom-right-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
+  }
+  .card-block-img-right-md .card-img-right {
+    border-radius: 0.25rem;
+  }
+}
+@media (max-width: 991px) {
+  .card .row:first-child .card-block-img-left-lg {
+    border-top-right-radius: calc(0.25rem - 1px);
+    border-top-left-radius: calc(0.25rem - 1px);
+  }
+  .card .row:first-child .card-block-img-left-lg .card-img-left {
+    border-top-right-radius: calc(0.25rem - 1px);
+    border-top-left-radius: calc(0.25rem - 1px);
+  }
+
+  .card .row:last-child .card-block-img-right-lg {
+    border-bottom-right-radius: calc(0.25rem - 1px);
+    border-bottom-left-radius: calc(0.25rem - 1px);
+  }
+  .card .row:last-child .card-block-img-right-lg .card-img-right {
+    border-bottom-right-radius: calc(0.25rem - 1px);
+    border-bottom-left-radius: calc(0.25rem - 1px);
+  }
+}
+@media (min-width: 992px) {
+  .card-block-img-left-lg {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    padding-left: 1.25rem;
+    border-bottom-left-radius: calc(0.25rem - 1px);
+    border-top-left-radius: calc(0.25rem - 1px);
+  }
+  .card-block-img-left-lg .card-img-left {
+    border-radius: 0.25rem;
+  }
+
+  .card-block-img-right-lg {
+    padding-top: 1.25rem;
+    padding-right: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom-right-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
+  }
+  .card-block-img-right-lg .card-img-right {
+    border-radius: 0.25rem;
+  }
+}
+@media (max-width: 1199px) {
+  .card .row:first-child .card-block-img-left-xl {
+    border-top-right-radius: calc(0.25rem - 1px);
+    border-top-left-radius: calc(0.25rem - 1px);
+  }
+  .card .row:first-child .card-block-img-left-xl .card-img-left {
+    border-top-right-radius: calc(0.25rem - 1px);
+    border-top-left-radius: calc(0.25rem - 1px);
+  }
+
+  .card .row:last-child .card-block-img-right-xl {
+    border-bottom-right-radius: calc(0.25rem - 1px);
+    border-bottom-left-radius: calc(0.25rem - 1px);
+  }
+  .card .row:last-child .card-block-img-right-xl .card-img-right {
+    border-bottom-right-radius: calc(0.25rem - 1px);
+    border-bottom-left-radius: calc(0.25rem - 1px);
+  }
+}
+@media (min-width: 1200px) {
+  .card-block-img-left-xl {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    padding-left: 1.25rem;
+    border-bottom-left-radius: calc(0.25rem - 1px);
+    border-top-left-radius: calc(0.25rem - 1px);
+  }
+  .card-block-img-left-xl .card-img-left {
+    border-radius: 0.25rem;
+  }
+
+  .card-block-img-right-xl {
+    padding-top: 1.25rem;
+    padding-right: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom-right-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
+  }
+  .card-block-img-right-xl .card-img-right {
+    border-radius: 0.25rem;
+  }
+}
+.card-img-cover {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+          background-size: cover;
+}
+
 .post {
   position: relative;
   margin-bottom: 1rem;
