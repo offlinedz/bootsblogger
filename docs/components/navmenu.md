@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Navmenu
-description: Navmenu adalah pembungkus untuk navigasi dan elemen lainnya. Navmenu tampil secara vertikal.
+description: Navmenu adalah komponen untuk membuat navigasi, dan dukungan elemen lainnya. Navmenu tampil secara vertikal.
 group: components
 ---
 
@@ -80,11 +80,11 @@ Gunakan `.navmenu-light` atau `.navmenu-inverse` untuk menyesuaikan warna teks d
 
 ## Supported content
 
-Konten yang dapat digunakan di dalam navmenu.
+Navmenu mendukung beberapa sub-komponen. Pilih dari beberapa berikut sesuai kebutuhan:
 
 ### Brand
 
-**As a link:**
+As a link:
 
 {% example html %}
 <nav class="navmenu navmenu-light bg-faded">
@@ -92,7 +92,7 @@ Konten yang dapat digunakan di dalam navmenu.
 </nav>
 {% endexample %}
 
-**As a heading:**
+As a heading:
 
 {% example html %}
 <nav class="navmenu navmenu-light bg-faded">
@@ -100,7 +100,7 @@ Konten yang dapat digunakan di dalam navmenu.
 </nav>
 {% endexample %}
 
-**Just an image:**
+Just an image:
 
 {% example html %}
 <nav class="navmenu navmenu-light bg-faded">
@@ -110,7 +110,7 @@ Konten yang dapat digunakan di dalam navmenu.
 </nav>
 {% endexample %}
 
-**Image and text:**
+Image and text:
 
 {% example html %}
 <nav class="navmenu navmenu-light bg-faded">
@@ -133,7 +133,7 @@ Konten yang dapat digunakan di dalam navmenu.
 </nav>
 {% endexample %}
 
-*Markup* navmenu-nav sangat fleksibel, Anda dapat menulisnya dengan beberapa cara:
+*Markup* navmenu-nav sangat fleksibel, Anda dapat menulisnya dengan beberapa cara berikut:
 
 {% example html %}
 <nav class="navmenu navmenu-light bg-faded">
@@ -173,9 +173,7 @@ Konten yang dapat digunakan di dalam navmenu.
 </nav>
 {% endexample %}
 
-**Small nav**
-
-*Item* nav yang lebih kecil, tambahkan `.nav-link-sm` ke `.nav-link`.
+**Small nav** - *Item* nav dengan *padding* atas dan bawah yang lebih kecil, tambahkan `.nav-link-sm` ke `.nav-link`:
 
 {% example html %}
 <nav class="navmenu navmenu-light" style="background-color: #f7f7f7;">
@@ -188,22 +186,7 @@ Konten yang dapat digunakan di dalam navmenu.
 </nav>
 {% endexample %}
 
-Untuk memperkecil ukuran font dapat menggunakan `.small`:
-
-{% example html %}
-<nav class="navmenu navmenu-light" style="background-color: #f7f7f7;">
-  <a class="navmenu-brand" href="#">Bootsblogger</a>
-  <div class="navmenu-nav">
-    <a class="nav-item nav-link nav-link-sm small" href="#">Nav item</a>
-    <a class="nav-item nav-link nav-link-sm small" href="#">Nav item again</a>
-    <a class="nav-item nav-link nav-link-sm small" href="#">Another nav item</a>
-  </div>
-</nav>
-{% endexample %}
-
-**Bordered nav**
-
-*Item* nav dengan `border` atas dan bawah, tambahkan `.nav-item-bordered` ke `.nav-item`.
+**Bordered nav** - *Item* nav dengan *border* atas dan bawah, tambahkan `.nav-item-bordered` ke `.nav-item`:
 
 {% example html %}
 <nav class="navmenu navmenu-light bg-faded">
@@ -213,14 +196,7 @@ Untuk memperkecil ukuran font dapat menggunakan `.small`:
     <a class="nav-item nav-item-bordered nav-link" href="#">Nav item again</a>
     <a class="nav-item nav-item-bordered nav-link" href="#">Another nav item</a>
   </div>
-</nav>
-{% endexample %}
 
-Atau:
-
-{% example html %}
-<nav class="navmenu navmenu-light bg-faded">
-  <a class="navmenu-brand" href="#">Bootsblogger</a>
   <div class="navmenu-nav">
     <div class="nav-item nav-item-bordered">
       <a class="nav-link" href="#">Nav item</a>
@@ -263,7 +239,7 @@ Atau:
 {% example html %}
 <nav class="navmenu navmenu-light bg-faded">
   <div class="navmenu-btn">
-    <a class="btn btn-block btn-primary" href="#">Link</a>
+    <a class="btn btn-block btn-primary" href="#">Go somewhere</a>
   </div>
 </nav>
 {% endexample %}
@@ -302,7 +278,7 @@ Atau:
 
   <!-- Button -->
   <div class="navmenu-btn">
-    <a class="btn btn-block btn-success" href="#">Link</a>
+    <a class="btn btn-block btn-success" href="#">Go somewhere</a>
   </div>
 
   <!-- Text -->
@@ -315,6 +291,8 @@ Atau:
 ## Collapse
 
 Membutuhkan [Bootstrap collapse plugin](https://v4-alpha.getbootstrap.com/components/collapse/).
+
+Example 1:
 
 {% example html %}
 <nav class="navmenu navmenu-light bg-faded">
@@ -336,6 +314,8 @@ Membutuhkan [Bootstrap collapse plugin](https://v4-alpha.getbootstrap.com/compon
 </nav>
 {% endexample %}
 
+Example 2:
+
 {% example html %}
 <nav class="navmenu navmenu-light bg-faded">
   <a class="navmenu-brand" href="#">Bootsblogger</a>
@@ -353,6 +333,8 @@ Membutuhkan [Bootstrap collapse plugin](https://v4-alpha.getbootstrap.com/compon
   </div>
 </nav>
 {% endexample %}
+
+Example 3:
 
 {% example html %}
 <nav class="navmenu navmenu-inverse bg-inverse">
@@ -448,7 +430,7 @@ Kelas untuk `xs` tidak tersedia (`.navmenu-expand`).
 
 ### Examples
 
-Selalu tersembunyi:
+Always:
 
 {% example html %}
 <nav class="navmenu navmenu-light bg-faded">
@@ -466,7 +448,7 @@ Selalu tersembunyi:
 </nav>
 {% endexample %}
 
-`sm` - tersembunyi ketika lebar layar &le;576px:
+`sm` (&le;576px):
 
 {% example html %}
 <nav class="navmenu navmenu-light navmenu-expand-sm bg-faded">
@@ -484,7 +466,7 @@ Selalu tersembunyi:
 </nav>
 {% endexample %}
 
-`md` - tersembunyi ketika lebar layar &le;768px:
+`md` (&le;768px):
 
 {% example html %}
 <nav class="navmenu navmenu-light navmenu-expand-md bg-faded">
@@ -502,7 +484,7 @@ Selalu tersembunyi:
 </nav>
 {% endexample %}
 
-`lg` - tersembunyi ketika lebar layar &le;992px:
+`lg` (&le;992px):
 
 {% example html %}
 <nav class="navmenu navmenu-light navmenu-expand-lg bg-faded">
@@ -520,7 +502,7 @@ Selalu tersembunyi:
 </nav>
 {% endexample %}
 
-`xl` - tersembunyi ketika lebar layar &le;1200px:
+`xl` (&le;1200px):
 
 {% example html %}
 <nav class="navmenu navmenu-light navmenu-expand-xl bg-faded">
