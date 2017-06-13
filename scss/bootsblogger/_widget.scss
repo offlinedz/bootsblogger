@@ -93,17 +93,12 @@
 
 // Alignment
 
-// Left
 .wg-title-left > .widget > .title {
   text-align: left;
 }
-
-// Center
 .wg-title-center > .widget > .title {
   text-align: center;
 }
-
-// Right
 .wg-title-right > .widget > .title {
   text-align: right;
 }
@@ -132,7 +127,7 @@
   margin-bottom: .5rem;
 }
 
-// List groups (flush) in widget box
+// Flush list group
 
 .wg-box .list-group-flush {
   margin: 0 (-$wg-box-padding) !important;
@@ -280,7 +275,7 @@
   }
 }
 
-// List groups (flush) in widget panel
+// Flush list group
 
 .wg-panel .list-group-flush {
   margin: -$wg-panel-content-padding !important;

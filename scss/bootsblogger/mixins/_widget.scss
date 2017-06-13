@@ -1,4 +1,6 @@
+//
 // Widget title
+//
 
 @mixin wg-title-variant($color) {
   > .widget > .title {
@@ -7,7 +9,9 @@
 }
 
 
+//
 // Widget box
+//
 
 @mixin wg-box-variant($background, $border) {
   > .widget {
@@ -24,7 +28,9 @@
 }
 
 
+//
 // Widget panel
+//
 
 @mixin wg-panel-variant($background, $border) {
   > .widget > .title {
