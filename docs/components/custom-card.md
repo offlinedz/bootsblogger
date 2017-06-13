@@ -32,7 +32,7 @@ Elemen pembungkus untuk `.card-img-left` dan `.card-img-right`:
 
 ### Examples
 
-Lihat beberapa contoh di bawah ini.
+Pelajari beberapa contoh di bawah ini.
 
 #### Always
 
