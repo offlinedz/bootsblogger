@@ -1,0 +1,59 @@
+//
+// Custom card
+//
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  $min: breakpoint-min($breakpoint, $grid-breakpoints);
+  $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+  @if $min {
+    @media (max-width: $min - 1px) {
+      .card .row:first-child .card-block-img-left#{$infix} {
+        @include border-top-radius($card-border-radius-inner);
+
+        .card-img-left {
+          @include border-top-radius($card-border-radius-inner);
+        }
+      }
+
+      .card .row:last-child .card-block-img-right#{$infix} {
+        @include border-bottom-radius($card-border-radius-inner);
+
+        .card-img-right {
+          @include border-bottom-radius($card-border-radius-inner);
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up($breakpoint) {
+    .card-block-img-left#{$infix} {
+      padding-top: $card-spacer-x;
+      padding-bottom: $card-spacer-x;
+      padding-left: $card-spacer-x;
+      @include border-left-radius($card-border-radius-inner);
+
+      .card-img-left {
+        @include border-radius($card-border-radius);
+      }
+    }
+
+    .card-block-img-right#{$infix} {
+      padding-top: $card-spacer-x;
+      padding-right: $card-spacer-x;
+      padding-bottom: $card-spacer-x;
+      @include border-right-radius($card-border-radius-inner);
+
+      .card-img-right {
+        @include border-radius($card-border-radius);
+      }
+    }
+  }
+}
+
+.card-img-cover {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
