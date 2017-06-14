@@ -518,6 +518,20 @@ Buat daftar konten di dalam widget-box dengan *flush list group*.
         </div>
       </div>
     </div><!-- /.widget -->
+    <div class="widget">
+      <h3 class="title">Widget title</h3>
+      <div class="widget-content">
+        <p><code>&lt;p&gt;...&lt;/p&gt;</code></p>
+        <div class="list-group list-group-flush">
+          <a class="list-group-item list-group-item-action" href="#">Cras justo odio</a>
+          <a class="list-group-item list-group-item-action" href="#">Dapibus ac facilisis in</a>
+          <a class="list-group-item list-group-item-action" href="#">Morbi leo risus</a>
+          <a class="list-group-item list-group-item-action" href="#">Porta ac consectetur ac</a>
+          <a class="list-group-item list-group-item-action" href="#">Vestibulum at eros</a>
+        </div>
+        <p class="mt-3"><code>&lt;p class="mt-3"&gt;...&lt;/p&gt;</code></p>
+      </div>
+    </div><!-- /.widget -->
   </div>
 </div><!-- /.bd-example -->
 
@@ -811,6 +825,20 @@ Buat daftar konten di dalam widget-panel dengan *flush list group*.
           <a class="list-group-item list-group-item-action" href="#">Porta ac consectetur ac</a>
           <a class="list-group-item list-group-item-action" href="#">Vestibulum at eros</a>
         </div>
+      </div>
+    </div><!-- /.widget -->
+    <div class="widget">
+      <h3 class="title">Widget title</h3>
+      <div class="widget-content">
+        <p><code>&lt;p&gt;...&lt;/p&gt;</code></p>
+        <div class="list-group list-group-flush">
+          <a class="list-group-item list-group-item-action" href="#">Cras justo odio</a>
+          <a class="list-group-item list-group-item-action" href="#">Dapibus ac facilisis in</a>
+          <a class="list-group-item list-group-item-action" href="#">Morbi leo risus</a>
+          <a class="list-group-item list-group-item-action" href="#">Porta ac consectetur ac</a>
+          <a class="list-group-item list-group-item-action" href="#">Vestibulum at eros</a>
+        </div>
+        <p class="mt-3"><code>&lt;p class="mt-3"&gt;...&lt;/p&gt;</code></p>
       </div>
     </div><!-- /.widget -->
   </div>

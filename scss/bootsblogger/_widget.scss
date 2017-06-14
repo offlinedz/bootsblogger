@@ -129,8 +129,36 @@
 
 // Flush list group
 
-.wg-box .list-group-flush {
-  margin: 0 (-$wg-box-padding) !important;
+.wg-box .widget-content > .list-group-flush {
+  margin-right: -$wg-box-padding;
+  margin-left: -$wg-box-padding;
+
+  &:first-child {
+    .list-group-item:not(.active):first-child {
+      border-top: $list-group-border-width solid $list-group-border-color;
+    }
+    .list-group-item.active:first-child {
+      border-top: $list-group-border-width solid $list-group-active-border;
+    }
+  }
+
+  &:last-child {
+    margin-bottom: -$wg-box-padding;
+
+    .list-group-item:last-child {
+      @include border-bottom-radius(calc(#{$wg-box-border-radius} - #{$wg-box-border-width}));
+    }
+  }
+}
+
+// With `.wg-title-hide`
+.wg-box.wg-title-hide .widget-content > .list-group-flush:first-child {
+  margin-top: -$wg-box-padding;
+
+  .list-group-item:first-child {
+    border-top: 0;
+    @include border-top-radius(calc(#{$wg-box-border-radius} - #{$wg-box-border-width}));
+  }
 }
 
 // Background variations
@@ -271,16 +299,25 @@
 
 // Flush list group
 
-.wg-panel .list-group-flush {
-  margin: -$wg-panel-content-padding !important;
+.wg-panel .widget-content > .list-group-flush {
+  margin-right: -$wg-panel-content-padding;
+  margin-left: -$wg-panel-content-padding;
 
-  > .list-group-item:last-child {
-    @include border-bottom-radius(calc(#{$wg-panel-border-radius} - #{$wg-panel-border-width}));
+  &:first-child {
+    margin-top: -$wg-panel-content-padding;
+  }
+
+  &:last-child {
+    margin-bottom: -$wg-panel-content-padding;
+
+    .list-group-item:last-child {
+      @include border-bottom-radius(calc(#{$wg-panel-border-radius} - #{$wg-panel-border-width}));
+    }
   }
 }
 
 // With `.wg-title-hide`
-.wg-panel.wg-title-hide .list-group-flush > .list-group-item:first-child {
+.wg-panel.wg-title-hide .widget-content > .list-group-flush:first-child .list-group-item:first-child {
   @include border-top-radius(calc(#{$wg-panel-border-radius} - #{$wg-panel-border-width}));
 }
 
