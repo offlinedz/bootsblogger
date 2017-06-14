@@ -133,7 +133,7 @@
   margin: 0 (-$wg-box-padding) !important;
 }
 
-// Background variants
+// Background variations
 
 .wg-box-gray-light {
   @include wg-box-variant($wg-gray-light-color, $wg-gray-light-border)
@@ -172,8 +172,7 @@
   @include wg-box-variant($wg-purple-color, $wg-purple-border)
 }
 
-// Outline variants
-
+// Remove all backgrounds
 .wg-box-outline-gray-light {
   @include wg-box-outline-variant($wg-gray-light-color)
 }
@@ -290,7 +289,7 @@
   @include border-top-radius(calc(#{$wg-panel-border-radius} - #{$wg-panel-border-width}));
 }
 
-// Background variants
+// Background variations
 
 .wg-panel-gray-light {
   @include wg-panel-variant($wg-gray-light-color, $wg-gray-light-border)
@@ -329,8 +328,7 @@
   @include wg-panel-variant($wg-purple-color, $wg-purple-border)
 }
 
-// Outline variants
-
+// Remove all backgrounds
 .wg-panel-outline-gray-light {
   @include wg-panel-outline-variant($wg-gray-light-color)
 }

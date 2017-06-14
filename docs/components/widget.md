@@ -393,7 +393,7 @@ Gunakan `.wg-box`, `.wg-box-{color}`, dan [`.wg-title-{color}`](#color).
 <b:section class='wg wg-box wg-box-purple wg-title-white' id='sectionId'></b:section>
 {% endhighlight %}
 
-### Outline variants
+### Outline
 
 Ubah `.wg-box-{color}` menjadi `.wg-box-outline-{color}`.
 
@@ -657,7 +657,7 @@ Gunakan `.wg-panel`, `.wg-panel-{color}`, dan [`.wg-title-{color}`](#color).
 <b:section class='wg wg-panel wg-panel-purple wg-title-white' id='sectionId'></b:section>
 {% endhighlight %}
 
-### Outline variants
+### Outline
 
 Ubah `.wg-panel-{color}` menjadi `.wg-panel-outline-{color}`.
 
@@ -797,7 +797,7 @@ Gunakan `.wg-panel-{color}` dan tambahkan `.wg-panel-transparent`.
 Tambahkan `.wg-panel-group`.
 
 <div class="bd-example bd-example-widget-inverse text-gray-dark">
-  <div class="wg wg-panel wg-panel-teal wg-title-white wg-panel-group">
+  <div class="wg wg-panel wg-panel-group wg-panel-teal wg-title-white">
     <div class="widget">
       <h3 class="title">Widget title</h3>
       <div class="widget-content">
@@ -820,7 +820,7 @@ Tambahkan `.wg-panel-group`.
 </div><!-- /.bd-example -->
 
 {% highlight html %}
-<b:section class='wg wg-panel wg-panel-teal wg-title-white wg-panel-group' id='sectionId'></b:section>
+<b:section class='wg wg-panel wg-panel-group wg-panel-teal wg-title-white' id='sectionId'></b:section>
 {% endhighlight %}
 
 ### List groups
