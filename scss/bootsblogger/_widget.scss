@@ -245,11 +245,6 @@
   @include border-radius($wg-panel-border-radius);
 }
 
-// Remove background
-.wg-panel-transparent > .widget > .widget-content {
-  background-color: transparent !important;
-}
-
 // Group
 
 .wg-panel-group {

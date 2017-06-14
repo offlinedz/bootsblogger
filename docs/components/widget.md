@@ -764,34 +764,6 @@ Ubah `.wg-panel-{color}` menjadi `.wg-panel-outline-{color}`.
 <b:section class='wg wg-panel wg-panel-outline-{color} wg-title-{color}' id='sectionId'></b:section>
 {% endhighlight %}
 
-### Transparent contents
-
-Gunakan `.wg-panel-{color}` dan tambahkan `.wg-panel-transparent`.
-
-<div class="bd-example bd-example-widget-inverse text-white">
-  <div class="wg wg-panel wg-panel-purple wg-panel-transparent wg-title-white">
-    <div class="widget">
-      <h3 class="title">Widget title</h3>
-      <div class="widget-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      </div>
-    </div><!-- /.widget -->
-  </div>
-  <div class="wg wg-panel wg-panel-orange wg-panel-transparent wg-title-black">
-    <div class="widget">
-      <h3 class="title">Widget title</h3>
-      <div class="widget-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      </div>
-    </div><!-- /.widget -->
-  </div>
-</div><!-- /.bd-example -->
-
-{% highlight html %}
-<b:section class='wg wg-panel wg-panel-purple wg-title-white wg-panel-transparent' id='sectionId'></b:section>
-<b:section class='wg wg-panel wg-panel-orange wg-title-black wg-panel-transparent' id='sectionId'></b:section>
-{% endhighlight %}
-
 ### Group
 
 Tambahkan `.wg-panel-group`.
