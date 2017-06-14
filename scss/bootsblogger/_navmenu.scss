@@ -133,14 +133,11 @@
 
 // Generate series of `.navmenu-expand-*` responsive classes.
 @each $breakpoint in map-keys($grid-breakpoints) {
-  $next: breakpoint-next($breakpoint, $grid-breakpoints);
-  $infix: breakpoint-infix($next, $grid-breakpoints);
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
-  @if $infix != "" {
-    .navmenu-expand#{$infix} {
-      // @include media-breakpoint-down($breakpoint) {}
-
-      @include media-breakpoint-up($next) {
+    @if $infix != "" {
+      .navmenu-expand#{$infix} {
         .navmenu-toggler {
           display: none;
         }

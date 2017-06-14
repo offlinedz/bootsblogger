@@ -176,7 +176,7 @@ Image and text:
 **Small nav** - *Item* nav dengan *padding* atas dan bawah yang lebih kecil, tambahkan `.nav-link-sm` ke `.nav-link`:
 
 {% example html %}
-<nav class="navmenu navmenu-light" style="background-color: #f7f7f7;">
+<nav class="navmenu navmenu-light bg-faded">
   <a class="navmenu-brand" href="#">Bootsblogger</a>
   <div class="navmenu-nav">
     <a class="nav-item nav-link nav-link-sm" href="#">Nav item</a>
@@ -428,7 +428,7 @@ Jika ingin elemen navmenu selalu tersembunyi, jangan tambahkan `.navmenu-expand-
 
 Kelas untuk `xs` tidak tersedia (`.navmenu-expand`).
 
-### Examples
+### Toggler
 
 Always:
 
