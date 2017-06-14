@@ -1,5 +1,32 @@
 //
-// Custom card
+// Title links
+//
+
+.card-title-link {
+  color: $card-title-link-color;
+  text-decoration: $card-title-link-decoration;
+
+  &:hover,
+  &:focus {
+    color: $card-title-link-hover-color;
+    text-decoration: $card-title-link-hover-decoration;
+  }
+}
+
+.card-title-link-inverse {
+  color: $card-inverse-title-link-color;
+  text-decoration: $card-inverse-title-link-decoration;
+
+  &:hover,
+  &:focus {
+    color: $card-inverse-title-link-hover-color;
+    text-decoration: $card-inverse-title-link-hover-decoration;
+  }
+}
+
+
+//
+// Images
 //
 
 @each $breakpoint in map-keys($grid-breakpoints) {
