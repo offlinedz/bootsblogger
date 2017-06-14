@@ -3,6 +3,7 @@ layout: docs
 title: Figures
 description: Kelas tambahan untuk Bootstrap figures.
 group: utilities
+redirect_from: "/utilities/"
 ---
 
 Baca dokumentasi [Bootstrap figures](https://v4-alpha.getbootstrap.com/content/figures/).
