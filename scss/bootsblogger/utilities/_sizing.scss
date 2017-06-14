@@ -2,30 +2,16 @@
 // Responsive width
 //
 
-@include media-breakpoint-up(sm) {
-  .w-sm-25 { width: map-get($sizes, 25) !important; }
-  .w-sm-50 { width: map-get($sizes, 50) !important; }
-  .w-sm-75 { width: map-get($sizes, 75) !important; }
-  .w-sm-100 { width: map-get($sizes, 100) !important; }
-}
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
-@include media-breakpoint-up(md) {
-  .w-md-25 { width: map-get($sizes, 25) !important; }
-  .w-md-50 { width: map-get($sizes, 50) !important; }
-  .w-md-75 { width: map-get($sizes, 75) !important; }
-  .w-md-100 { width: map-get($sizes, 100) !important; }
-}
-
-@include media-breakpoint-up(lg) {
-  .w-lg-25 { width: map-get($sizes, 25) !important; }
-  .w-lg-50 { width: map-get($sizes, 50) !important; }
-  .w-lg-75 { width: map-get($sizes, 75) !important; }
-  .w-lg-100 { width: map-get($sizes, 100) !important; }
-}
-
-@include media-breakpoint-up(xl) {
-  .w-xl-25 { width: map-get($sizes, 25) !important; }
-  .w-xl-50 { width: map-get($sizes, 50) !important; }
-  .w-xl-75 { width: map-get($sizes, 75) !important; }
-  .w-xl-100 { width: map-get($sizes, 100) !important; }
+    @each $size, $length in $sizes {
+      @if $infix != "" {
+        .w#{$infix}-#{$size} {
+          width: $length !important;
+        }
+      }
+    }
+  }
 }

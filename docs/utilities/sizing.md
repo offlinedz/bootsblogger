@@ -9,7 +9,7 @@ Baca dokumentasi [Bootstrap sizing utilities](https://v4-alpha.getbootstrap.com/
 
 ## Responsive width
 
-Format kelasnya tidak jauh berbeda, hanya menambahkan `{breakpoint}`, format kelasnya adalah `.w-{breakpoint}-{25, 50, 75, 100}`.
+Format kelasnya tidak jauh berbeda, hanya menambahkan `{breakpoint}`, format kelasnya adalah `.w-{sm|md|lg|xl}-{25|50|75|100}`.
 
 ### Examples
 
