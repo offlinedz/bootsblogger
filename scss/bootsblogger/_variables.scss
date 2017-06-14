@@ -1,40 +1,7 @@
 // Table of Contents
 //
-// Posts
 // Navmenu
 // Widget
-
-
-//
-// Posts
-//
-
-$post-margin-bottom:             $spacer-y !default;
-$post-content-padding:           1.25rem !default;
-$post-bg-color:                  #fff !default;
-$post-border-color:              rgba(0,0,0,.125) !default;
-$post-border-width:              1px !default;
-$post-border-radius:             $border-radius !default;
-$post-border-radius-inner:       calc(#{$post-border-radius} - #{$post-border-width}) !default;
-$post-box-shadow:                0 1px 1px rgba(0,0,0,.05) !default;
-
-$post-columns-sm-up-column-gap:  1rem !default;
-$post-columns-md-up-column-gap:  1.25rem !default;
-
-$post-title-margin-bottom:       .5rem !default;
-$post-title-link-color:          inherit !default;
-$post-title-link-hover-color:    #3f77a8 !default;
-
-$post-header-padding:            .75rem $post-content-padding !default;
-$post-header-bg-color:           #f5f5f5 !default;
-$post-header-color:              $gray-light !default;
-
-$post-footer-padding:            .75rem $post-content-padding !default;
-$post-footer-bg-color:           #f5f5f5 !default;
-$post-footer-color:              $gray-light !default;
-
-$post-meta-margin-bottom:        .5rem !default;
-$post-meta-color:                $gray-light !default;
 
 
 //
