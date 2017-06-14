@@ -10,7 +10,7 @@
       $length-x:   map-get($lengths, x);
       $length-y:   map-get($lengths, y);
 
-      @if ($size != 0) {
+      @if $size != 0 {
         .mn#{$infix}-#{$size}  { margin:        ($length-y * -1 ) ($length-x * -1 ) !important; }
         .mnt#{$infix}-#{$size} { margin-top:    ($length-y * -1 ) !important; }
         .mnr#{$infix}-#{$size} { margin-right:  ($length-x * -1 ) !important; }
