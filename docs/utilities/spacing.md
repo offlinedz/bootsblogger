@@ -11,7 +11,7 @@ Baca dokumentasi [Bootstrap spacing utilities](https://v4-alpha.getbootstrap.com
 
 Format kelasnya tidak jauh berbeda, hanya menambahkan `n` pada `{property}`, format kelasnya adalah `.mn{sides}-{size}` untuk `xs` dan `.mn{sides}-{breakpoint}-{size}` untuk `sm`, `md`, `lg`, dan `xl`.
 
-**Catatan:** kelas utilitas *margin* negatif tidak memiliki ukuran `0` (`.mn{sides}-0`).
+**Catatan:** kelas utilitas *margin* negatif tidak memiliki ukuran `0`.
 
 ### Examples
 
