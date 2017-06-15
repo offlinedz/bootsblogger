@@ -28,7 +28,6 @@ Gunakan `.navmenu-light` atau `.navmenu-inverse` untuk menyesuaikan warna teks d
       <a class="nav-item nav-link" href="#">Nav item again</a>
       <a class="nav-item nav-link" href="#">Another nav item</a>
     </div>
-
     <div class="navmenu-nav">
       <a class="nav-item nav-link active" href="#">Active</a>
       <a class="nav-item nav-link disabled" href="#">Disabled</a>
@@ -42,7 +41,6 @@ Gunakan `.navmenu-light` atau `.navmenu-inverse` untuk menyesuaikan warna teks d
       <a class="nav-item nav-link" href="#">Nav item again</a>
       <a class="nav-item nav-link" href="#">Another nav item</a>
     </div>
-
     <div class="navmenu-nav">
       <a class="nav-item nav-link active" href="#">Active</a>
       <a class="nav-item nav-link disabled" href="#">Disabled</a>
@@ -56,7 +54,6 @@ Gunakan `.navmenu-light` atau `.navmenu-inverse` untuk menyesuaikan warna teks d
       <a class="nav-item nav-link" href="#">Nav item again</a>
       <a class="nav-item nav-link" href="#">Another nav item</a>
     </div>
-
     <div class="navmenu-nav">
       <a class="nav-item nav-link active" href="#">Active</a>
       <a class="nav-item nav-link disabled" href="#">Disabled</a>
@@ -116,7 +113,7 @@ Image and text:
 <nav class="navmenu navmenu-light bg-faded">
   <a class="navmenu-brand" href="#">
     <img src="{{ site.baseurl }}/assets/brand/bootsblogger-solid.svg" width="30" height="30" alt="">
-    Bootsblogger
+    <span class="ml-1">Bootsblogger</span>
   </a>
 </nav>
 {% endexample %}
@@ -137,7 +134,6 @@ Image and text:
 
 {% example html %}
 <nav class="navmenu navmenu-light bg-faded">
-  <a class="navmenu-brand" href="#">Bootsblogger</a>
   <!-- 1 -->
   <div class="navmenu-nav">
     <a class="nav-item nav-link" href="#">Nav item</a>
@@ -177,7 +173,6 @@ Image and text:
 
 {% example html %}
 <nav class="navmenu navmenu-light bg-faded">
-  <a class="navmenu-brand" href="#">Bootsblogger</a>
   <div class="navmenu-nav">
     <a class="nav-item nav-link nav-link-sm" href="#">Nav item</a>
     <a class="nav-item nav-link nav-link-sm" href="#">Nav item again</a>
@@ -190,7 +185,6 @@ Image and text:
 
 {% example html %}
 <nav class="navmenu navmenu-light bg-faded">
-  <a class="navmenu-brand" href="#">Bootsblogger</a>
   <div class="navmenu-nav">
     <a class="nav-item nav-item-bordered nav-link" href="#">Nav item</a>
     <a class="nav-item nav-item-bordered nav-link" href="#">Nav item again</a>
@@ -207,6 +201,19 @@ Image and text:
     <div class="nav-item nav-item-bordered">
       <a class="nav-link" href="#">Another nav item</a>
     </div>
+  </div>
+</nav>
+{% endexample %}
+
+### Headers
+
+{% example html %}
+<nav class="navmenu navmenu-light bg-faded">
+  <h6 class="navmenu-header">Header</h6>
+  <div class="navmenu-nav">
+    <a class="nav-item nav-link" href="#">Nav item</a>
+    <a class="nav-item nav-link" href="#">Nav item again</a>
+    <a class="nav-item nav-link" href="#">Another nav item</a>
   </div>
 </nav>
 {% endexample %}
@@ -254,36 +261,65 @@ Image and text:
 </nav>
 {% endexample %}
 
-### Mix and match
+### Dividers
 
 {% example html %}
 <nav class="navmenu navmenu-light bg-faded">
-  <!-- Brand -->
-  <a class="navmenu-brand" href="#">Bootsblogger</a>
-
-  <!-- Nav -->
   <div class="navmenu-nav">
     <a class="nav-item nav-link" href="#">Nav item</a>
     <a class="nav-item nav-link" href="#">Nav item again</a>
     <a class="nav-item nav-link" href="#">Another nav item</a>
   </div>
 
-  <!-- Form -->
+  <div class="navmenu-divider"></div>
+
+  <div class="navmenu-nav">
+    <a class="nav-item nav-link" href="#">Nav item</a>
+    <a class="nav-item nav-link" href="#">Nav item again</a>
+    <a class="nav-item nav-link" href="#">Another nav item</a>
+  </div>
+</nav>
+{% endexample %}
+
+### Mix and match
+
+{% example html %}
+<nav class="navmenu navmenu-light bg-faded">
+  <a class="navmenu-brand" href="#">Bootsblogger</a>
+
+  <div class="navmenu-divider"></div>
+
+  <h6 class="navmenu-header">Nav</h6>
+  <div class="navmenu-nav">
+    <a class="nav-item nav-link" href="#">Nav item</a>
+    <a class="nav-item nav-link" href="#">Nav item again</a>
+    <a class="nav-item nav-link" href="#">Another nav item</a>
+  </div>
+
+  <div class="navmenu-divider"></div>
+
+  <h6 class="navmenu-header">Form</h6>
   <div class="navmenu-form">
-    <form class="d-flex align-items-center">
+    <form>
       <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for...">
-      <button class="btn btn-primary ml-2" type="submit">Go!</button>
     </form>
   </div>
 
-  <!-- Button -->
-  <div class="navmenu-btn">
-    <a class="btn btn-block btn-success" href="#">Go somewhere</a>
+  <div class="navmenu-divider"></div>
+
+  <h6 class="navmenu-header">Button</h6>
+  <div class="navmenu-btn d-flex flex-wrap flex-column">
+    <div class="btn-group">
+      <a class="btn btn-secondary w-100" href="#">Action 1</a>
+      <a class="btn btn-secondary w-100" href="#">Action 2</a>
+    </div>
   </div>
 
-  <!-- Text -->
+  <div class="navmenu-divider"></div>
+
+  <h6 class="navmenu-header">Text</h6>
   <div class="navmenu-text">
-    <p class="text-success">Hello, world!</p>
+    <p class="text-muted">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
   </div>
 </nav>
 {% endexample %}

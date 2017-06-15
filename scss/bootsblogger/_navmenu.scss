@@ -86,9 +86,10 @@
 
 
 //
-// Forms, buttons, text
+// Headers, forms, buttons, text, dividers
 //
 
+.navmenu-header,
 .navmenu-form,
 .navmenu-btn,
 .navmenu-text {
@@ -98,8 +99,20 @@
   margin-left: -$navmenu-padding-x;
 }
 
+.navmenu-header {
+  margin-bottom: $navmenu-header-margin-bottom;
+}
+
 .navmenu-text p:last-child {
   margin-bottom: 0;
+}
+
+.navmenu-divider {
+  height: 0;
+  margin-right: -$navmenu-padding-x;
+  margin-left: -$navmenu-padding-x;
+  overflow: hidden;
+  border-top: 1px solid transparent;
 }
 
 
@@ -123,7 +136,27 @@
 .navmenu-text + .navmenu-nav,
 .navmenu-text + .navmenu-form,
 .navmenu-text + .navmenu-btn {
-  margin-top: 1rem;
+  margin-top: $navmenu-content-spacer-y;
+}
+
+.navmenu-brand + .navmenu-header,
+.navmenu-brand + .navmenu-nav,
+.navmenu-brand + .navmenu-form,
+.navmenu-brand + .navmenu-btn,
+.navmenu-brand + .navmenu-text {
+  margin-top: ($navmenu-content-spacer-y / 2);
+}
+
+.navmenu-nav + .navmenu-header,
+.navmenu-form + .navmenu-header,
+.navmenu-btn + .navmenu-header,
+.navmenu-text + .navmenu-header {
+  margin-top: $navmenu-content-spacer-y;
+}
+
+.navmenu-divider {
+  margin-top: $navmenu-content-spacer-y;
+  margin-bottom: $navmenu-content-spacer-y;
 }
 
 
@@ -184,8 +217,16 @@
     }
 
     .nav-item-bordered {
-      border-color: $navmenu-light-item-border-color;
+      border-color: $navmenu-light-content-border-color;
     }
+  }
+
+  .navmenu-header {
+    color: $navmenu-light-header-color;
+  }
+
+  .navmenu-divider {
+    border-color: $navmenu-light-content-border-color;
   }
 }
 
@@ -219,7 +260,15 @@
     }
 
     .nav-item-bordered {
-      border-color: $navmenu-inverse-item-border-color;
+      border-color: $navmenu-inverse-content-border-color;
     }
+  }
+
+  .navmenu-header {
+    color: $navmenu-inverse-header-color;
+  }
+
+  .navmenu-divider {
+    border-color: $navmenu-inverse-content-border-color;
   }
 }
