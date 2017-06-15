@@ -3,6 +3,24 @@
  * Copyright 2017 Igoy Nawamreh
  * Licensed under MIT (https://github.com/bootsblogger/bootsblogger/blob/master/LICENSE)
  */
+.card-title-link {
+  color: #292b2c;
+  text-decoration: none;
+}
+.card-title-link:hover, .card-title-link:focus {
+  color: #014c8c;
+  text-decoration: none;
+}
+
+.card-title-link-inverse {
+  color: #fff;
+  text-decoration: none;
+}
+.card-title-link-inverse:hover, .card-title-link-inverse:focus {
+  color: #fff;
+  text-decoration: none;
+}
+
 .card-block-img-left {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
@@ -386,7 +404,6 @@
 }
 
 .wg > .widget > .title {
-  margin-top: 0;
   font-size: 1rem;
   font-weight: bold;
   line-height: 1.1;
@@ -494,7 +511,7 @@
 }
 
 .wg-box > .widget > .title {
-  margin-bottom: .5rem;
+  margin-bottom: 1rem;
 }
 
 .wg-box .widget-content > .list-group-flush {
