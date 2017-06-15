@@ -4,7 +4,6 @@
 
 .navmenu {
   padding: $navmenu-padding-y $navmenu-padding-x;
-  margin-bottom: $navmenu-margin-bottom;
   @include border-radius($navmenu-border-radius);
 }
 
@@ -19,7 +18,6 @@
   top: 0;
   bottom: 0;
   z-index: $zindex-fixed;
-  margin-bottom: 0;
   overflow-y: auto;
   border-radius: 0;
 }
