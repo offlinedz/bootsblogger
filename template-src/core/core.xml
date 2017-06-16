@@ -61,6 +61,9 @@ Blog posts (widget type `Blog`)
     <b:includable id='customFooterBylines'>
   <!--(bake /core/blog-posts/customFooterBylines.xml)-->
 </b:includable>
+    <b:includable id='post.author'>
+  <!--(bake /core/blog-posts/post.author.xml)-->
+</b:includable>
     <b:includable id='post.date'>
   <!--(bake /core/blog-posts/post.date.xml)-->
 </b:includable>

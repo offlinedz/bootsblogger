@@ -184,6 +184,28 @@ template-src/core/blog-posts/customFooterBylines.xml
 </b:if>
 {% endhighlight %}
 
+### Author
+
+Untuk menampilkan nama penulis.
+
+###### Source
+
+{% highlight plaintext %}
+template-src/core/blog-posts/post.author.xml
+{% endhighlight %}
+
+###### Includable
+
+{% highlight html %}
+<b:includable id='post.author'>...</b:includable>
+{% endhighlight %}
+
+###### Usage
+
+{% highlight html %}
+<b:include data='{ class: &quot;class-name&quot; }' name='post.author'/>
+{% endhighlight %}
+
 ### Dates
 
 Untuk menampilkan tanggal diterbitkannya posting.
