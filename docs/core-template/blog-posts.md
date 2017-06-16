@@ -414,6 +414,28 @@ Format:
   </tbody>
 </table>
 
+### Number of comments
+
+Untuk menampilkan jumlah komentar per posting.
+
+###### Source
+
+{% highlight plaintext %}
+template-src/core/blog-posts/post.numComments.xml
+{% endhighlight %}
+
+###### Includable
+
+{% highlight html %}
+<b:includable id='post.numComments'>...</b:includable>
+{% endhighlight %}
+
+###### Usage
+
+{% highlight html %}
+<b:include data='{ class: "class-name" }' name='post.numComments'/>
+{% endhighlight %}
+
 ### Images
 
 Untuk menampilkan *featured image*.
