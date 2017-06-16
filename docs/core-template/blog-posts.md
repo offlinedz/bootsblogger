@@ -132,11 +132,9 @@ template-src/content/blog-posts/post-archive.xml
 
 Bagian-bagian kode yang dapat disertakan di bagian lain yang membutuhkannya.
 
-### Custom headerByline and footerBylines
+### Custom headerByline
 
-Untuk menampilkan *item* posting yang berada di dalam *header* dan *footer* pada konfigurasi posting blog.
-
-#### Header
+Untuk menampilkan *item* posting yang berada di dalam *header* pada konfigurasi posting blog.
 
 ###### Source
 
@@ -160,7 +158,9 @@ template-src/core/blog-posts/customHeaderByline.xml
 </b:if>
 {% endhighlight %}
 
-#### Footer
+### Custom footerBylines
+
+Untuk menampilkan *item* posting yang berada di dalam *footer* pada konfigurasi posting blog.
 
 ###### Source
 
