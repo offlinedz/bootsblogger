@@ -73,8 +73,8 @@ Blog posts (widget type `Blog`)
     <b:includable id='post.snippet'>
   <!--(bake /core/blog-posts/post.snippet.xml)-->
 </b:includable>
-    <b:includable id='post.readMore'>
-  <!--(bake /core/blog-posts/post.readMore.xml)-->
+    <b:includable id='post.jumpLink'>
+  <!--(bake /core/blog-posts/post.jumpLink.xml)-->
 </b:includable>
   </b:defaultmarkup>
 </b:defaultmarkups>

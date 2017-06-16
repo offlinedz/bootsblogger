@@ -436,24 +436,24 @@ template-src/core/blog-posts/post.snippet.xml
 <b:include data='{ length: number, links: true|false, linebreaks: true|false, ellipsis: true|false }' name='post.snippet'/>
 {% endhighlight %}
 
-### Read more
+### Jump link
 
-Untuk menampilkan *read more link*.
+Untuk menampilkan *jump link*.
 
 ###### Source
 
 {% highlight plaintext %}
-template-src/core/blog-posts/post.readMore.xml
+template-src/core/blog-posts/post.jumpLink.xml
 {% endhighlight %}
 
 ###### Includable
 
 {% highlight html %}
-<b:includable id='post.readMore'>...</b:includable>
+<b:includable id='post.jumpLink'>...</b:includable>
 {% endhighlight %}
 
 ###### Usage
 
 {% highlight html %}
-<b:include data='{ class: &quot;btn btn-primary&quot; }' name='post.readMore'/>
+<b:include data='{ class: &quot;btn btn-primary&quot; }' name='post.jumpLink'/>
 {% endhighlight %}
