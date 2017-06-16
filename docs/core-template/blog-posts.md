@@ -203,7 +203,7 @@ template-src/core/blog-posts/post.author.xml
 ###### Usage
 
 {% highlight html %}
-<b:include data='{ class: &quot;class-name&quot; }' name='post.author'/>
+<b:include data='{ class: "class-name" }' name='post.author'/>
 {% endhighlight %}
 
 ### Dates
@@ -225,7 +225,7 @@ template-src/core/blog-posts/post.date.xml
 ###### Usage
 
 {% highlight html %}
-<b:include data='{ format: &quot;dd/MM/YYYY&quot;, class: &quot;class-name&quot; }' name='post.date'/>
+<b:include data='{ format: "dd/MM/YYYY", class: "class-name" }' name='post.date'/>
 {% endhighlight %}
 
 Format:
@@ -411,7 +411,7 @@ template-src/core/blog-posts/post.image.xml
 ###### Usage
 
 {% highlight html %}
-<b:include data='{ size: number, aspectRatioWidth: number, aspectRatioHeight: number, link: true|false, class: &quot;class-name&quot; }' name='post.image'/>
+<b:include data='{ size: number, aspectRatioWidth: number, aspectRatioHeight: number, link: true|false, class: "class-name" }' name='post.image'/>
 {% endhighlight %}
 
 ### Background images
@@ -433,7 +433,7 @@ template-src/core/blog-posts/post.imageBg.xml
 ###### Usage
 
 {% highlight html %}
-<b:include data='{ size: number, aspectRatioWidth: number, aspectRatioHeight: number, class: &quot;class-name&quot;, style: &quot;min-height: 180px;&quot; }' name='post.imageBg'/>
+<b:include data='{ size: number, aspectRatioWidth: number, aspectRatioHeight: number, class: "class-name", style: "min-height: 180px;" }' name='post.imageBg'/>
 {% endhighlight %}
 
 ### Snippets
@@ -477,5 +477,5 @@ template-src/core/blog-posts/post.jumpLink.xml
 ###### Usage
 
 {% highlight html %}
-<b:include data='{ class: &quot;btn btn-primary&quot; }' name='post.jumpLink'/>
+<b:include data='{ class: "btn btn-primary" }' name='post.jumpLink'/>
 {% endhighlight %}

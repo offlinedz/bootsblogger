@@ -102,9 +102,9 @@ Tag `<meta>` dan `<link>` untuk <abbr title="Search Engine Results Page">SERP</a
 ###### Usage
 
 {% highlight html %}
-<b:with value='&quot;https://example.com/path/to/image.png&quot;' var='image'>
-<b:with value='&quot;@username_of_website&quot;' var='twitterUsernameWebsite'>
-<b:with value='&quot;@username_of_content_creator&quot;' var='twitterUsernameCreator'>
+<b:with value='"https://example.com/path/to/image.png"' var='image'>
+<b:with value='"@username_of_website"' var='twitterUsernameWebsite'>
+<b:with value='"@username_of_content_creator"' var='twitterUsernameCreator'>
   <b:include name='defaultTags'/>
   <b:include name='facebookTags'/>
   <b:include name='twitterTags'/>
