@@ -203,7 +203,7 @@ template-src/core/blog-posts/post.date.xml
 ###### Usage
 
 {% highlight html %}
-<b:include data='{ format: &quot;dd/MM/YYYY&quot; }' name='post.date'/>
+<b:include data='{ format: &quot;dd/MM/YYYY&quot;, class: &quot;class-name&quot; }' name='post.date'/>
 {% endhighlight %}
 
 Format:
