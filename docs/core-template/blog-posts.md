@@ -184,26 +184,48 @@ template-src/core/blog-posts/customFooterBylines.xml
 </b:if>
 {% endhighlight %}
 
-### Author
+### Author name
 
 Untuk menampilkan nama penulis.
 
 ###### Source
 
 {% highlight plaintext %}
-template-src/core/blog-posts/post.author.xml
+template-src/core/blog-posts/post.authorName.xml
 {% endhighlight %}
 
 ###### Includable
 
 {% highlight html %}
-<b:includable id='post.author'>...</b:includable>
+<b:includable id='post.authorName'>...</b:includable>
 {% endhighlight %}
 
 ###### Usage
 
 {% highlight html %}
-<b:include data='{ class: "class-name" }' name='post.author'/>
+<b:include data='{ class: "class-name" }' name='post.authorName'/>
+{% endhighlight %}
+
+### Author image
+
+Untuk menampilkan foto penulis.
+
+###### Source
+
+{% highlight plaintext %}
+template-src/core/blog-posts/post.authorImage.xml
+{% endhighlight %}
+
+###### Includable
+
+{% highlight html %}
+<b:includable id='post.authorImage'>...</b:includable>
+{% endhighlight %}
+
+###### Usage
+
+{% highlight html %}
+<b:include data='{ size: number, aspectRatioWidth: number, aspectRatioHeight: number, class: "class-name" }' name='post.authorImage'/>
 {% endhighlight %}
 
 ### Dates

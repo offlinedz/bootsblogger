@@ -1,0 +1,27 @@
+<b:if cond='data:post.author and data:post.author.authorPhoto'>
+  <b:if cond='data:post.author.authorPhoto.image.isYoutube'>
+    <b:if cond='data:post.author.profileUrl'>
+      <a expr:href='data:post.author.profileUrl'>
+        <img expr:class='data:class' expr:src='resizeImage(data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl,data:size,(data:aspectRatioWidth + &quot;:&quot; + data:aspectRatioHeight))' expr:alt='data:post.author.name'/>
+      </a>
+    <b:else/>
+      <img expr:class='data:class' expr:src='resizeImage(data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl,data:size,(data:aspectRatioWidth + &quot;:&quot; + data:aspectRatioHeight))' expr:alt='data:post.author.name'/>
+    </b:if>
+  <b:else/>
+    <b:if cond='data:post.author.profileUrl'>
+      <a expr:href='data:post.author.profileUrl'>
+        <img expr:class='data:class' expr:src='data:post.author.authorPhoto.image.isResizable ? resizeImage(data:post.author.authorPhoto.image,data:size,(data:aspectRatioWidth + &quot;:&quot; + data:aspectRatioHeight)) : data:post.author.authorPhoto.image' expr:alt='data:post.author.name'/>
+      </a>
+    <b:else/>
+      <img expr:class='data:class' expr:src='data:post.author.authorPhoto.image.isResizable ? resizeImage(data:post.author.authorPhoto.image,data:size,(data:aspectRatioWidth + &quot;:&quot; + data:aspectRatioHeight)) : data:post.author.authorPhoto.image' expr:alt='data:post.author.name'/>
+    </b:if>
+  </b:if>
+<b:else/>
+  <b:if cond='data:post.author.profileUrl'>
+    <a expr:href='data:post.author.profileUrl'>
+      <img expr:class='data:class' expr:src='&quot;https://placehold.it/&quot; + data:aspectRatioWidth + &quot;x&quot; + data:aspectRatioHeight + &quot;/ff5722/fff?text=B&quot;' expr:alt='data:post.author.name'/>
+    </a>
+  <b:else/>
+    <img expr:class='data:class' expr:src='&quot;https://placehold.it/&quot; + data:aspectRatioWidth + &quot;x&quot; + data:aspectRatioHeight + &quot;/ff5722/fff?text=B&quot;' expr:alt='data:post.author.name'/>
+  </b:if>
+</b:if>
