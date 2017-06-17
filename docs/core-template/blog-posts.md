@@ -5,7 +5,7 @@ description: Gadget Blog dirancang untuk memberikan kemudahan dalam mengatur tam
 group: core-template
 ---
 
-Bagian-bagian kode untuk posting blog hanya dapat disertakan di dalam widget yang bertipe `Blog` (`<b:widget type='Blog'>`).
+Bagian-bagian kode untuk posting blog hanya dapat disertakan di dalam widget `Blog` (`<b:widget type='Blog'>`).
 
 ## Contents
 
@@ -128,13 +128,13 @@ template-src/content/blog-posts/post-archive.xml
 <b:includable id='post-archive'>...</b:includable>
 {% endhighlight %}
 
-## Includes
+## Includes <small class="text-muted">byline items</small>
 
-Bagian-bagian kode yang dapat disertakan di bagian lain yang membutuhkannya.
+Untuk menampilkan *item* posting yang ada dalam daftar konfigurasi posting blog.
 
-### Custom headerByline
+### headerByline
 
-Untuk menampilkan *item* posting yang berada di dalam *header* pada konfigurasi posting blog.
+Bagian *header*.
 
 ###### Source
 
@@ -158,9 +158,9 @@ template-src/core/blog-posts/customHeaderByline.xml
 </b:if>
 {% endhighlight %}
 
-### Custom footerBylines
+### footerBylines
 
-Untuk menampilkan *item* posting yang berada di dalam *footer* pada konfigurasi posting blog.
+Bagian *footer*.
 
 ###### Source
 
@@ -183,6 +183,10 @@ template-src/core/blog-posts/customFooterBylines.xml
   </div>
 </b:if>
 {% endhighlight %}
+
+## Includes <small class="text-muted">individual</small>
+
+Gunakan dari beberapa berikut sesuai kebutuhan:
 
 ### Author name
 

@@ -35,7 +35,7 @@ Head
 
 <b:comment>
 -------------------------------------------------
-Blog posts (widget type `Blog`)
+Blog `<widget type='Blog'>`
 ------------------------------------------------- </b:comment>
 
 <b:defaultmarkups>
