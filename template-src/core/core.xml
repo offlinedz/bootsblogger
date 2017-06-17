@@ -46,9 +46,6 @@ Blog `<widget type='Blog'>`
     <b:includable id='customStatusMessage' var='post'>
   <!--(bake /core/blog-posts/customStatusMessage.xml)-->
 </b:includable>
-    <b:includable id='customPost' var='post'>
-  <!--(bake /core/blog-posts/customPost.xml)-->
-</b:includable>
     <b:includable id='customComments' var='post'>
   <!--(bake /core/blog-posts/customComments.xml)-->
 </b:includable>
