@@ -239,19 +239,19 @@ Untuk menampilkan tanggal diterbitkannya posting.
 ###### Source
 
 {% highlight plaintext %}
-template-src/core/blog-posts/post.date.xml
+template-src/core/blog-posts/post.datePublished.xml
 {% endhighlight %}
 
 ###### Includable
 
 {% highlight html %}
-<b:includable id='post.date'>...</b:includable>
+<b:includable id='post.datePublished'>...</b:includable>
 {% endhighlight %}
 
 ###### Usage
 
 {% highlight html %}
-<b:include data='{ format: "dd/MM/YYYY", class: "class-name" }' name='post.date'/>
+<b:include data='{ format: "dd/MM/YYYY", class: "class-name" }' name='post.datePublished'/>
 {% endhighlight %}
 
 Format:
