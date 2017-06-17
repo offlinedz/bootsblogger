@@ -1,0 +1,9 @@
+<span class='data-post-labels'>
+  <b:if cond='data:post.labels'>
+    <b:loop index='i' values='data:post.labels' var='label'>
+      <a b:whitespace='remove' expr:class='data:class' expr:href='params(data:label.url, { max-results: data:max-results })'><data:label.name/></a><b:if cond='(data:comma == true) and (data:i != (data:post.labels.size - 1))'>,</b:if>
+    </b:loop>
+  <b:else/>
+    <span>Unlabelled</span>
+  </b:if>
+</span>

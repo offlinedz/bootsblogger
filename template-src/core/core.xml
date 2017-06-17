@@ -73,6 +73,9 @@ Blog `<widget type='Blog'>`
     <b:includable id='post.numComments'>
   <!--(bake /core/blog-posts/post.numComments.xml)-->
 </b:includable>
+    <b:includable id='post.labels'>
+  <!--(bake /core/blog-posts/post.labels.xml)-->
+</b:includable>
     <b:includable id='post.image'>
   <!--(bake /core/blog-posts/post.image.xml)-->
 </b:includable>

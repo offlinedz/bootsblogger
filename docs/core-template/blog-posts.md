@@ -442,6 +442,28 @@ template-src/core/blog-posts/post.numComments.xml
 </b:if>
 {% endhighlight %}
 
+### Labels
+
+Untuk menampilkan label posting.
+
+###### Source
+
+{% highlight plaintext %}
+template-src/core/blog-posts/post.labels.xml
+{% endhighlight %}
+
+###### Includable
+
+{% highlight html %}
+<b:includable id='post.labels'>...</b:includable>
+{% endhighlight %}
+
+###### Usage
+
+{% highlight html %}
+<b:include data='{ comma: true|false, max-results: number, class: "class-name" }' name='post.labels'/>
+{% endhighlight %}
+
 ### Images
 
 Untuk menampilkan *featured image*.
