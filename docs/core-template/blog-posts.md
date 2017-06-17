@@ -234,24 +234,27 @@ template-src/core/blog-posts/post.authorImage.xml
 
 ### Dates
 
-Untuk menampilkan tanggal diterbitkannya posting.
+Untuk menampilkan tanggal diterbitkannya posting dan tanggal terakhir posting diperbarui.
 
 ###### Source
 
 {% highlight plaintext %}
-template-src/core/blog-posts/post.datePublished.xml
+- template-src/core/blog-posts/post.datePublished.xml
+- template-src/core/blog-posts/post.dateUpdated.xml
 {% endhighlight %}
 
 ###### Includable
 
 {% highlight html %}
 <b:includable id='post.datePublished'>...</b:includable>
+<b:includable id='post.dateUpdated'>...</b:includable>
 {% endhighlight %}
 
 ###### Usage
 
 {% highlight html %}
-<b:include data='{ format: "dd/MM/YYYY", class: "class-name" }' name='post.datePublished'/>
+Published: <b:include data='{ format: "dd/MM/YYYY", class: "class-name" }' name='post.datePublished'/>
+Last updated: <b:include data='{ format: "dd/MM/YYYY", class: "class-name" }' name='post.dateUpdated'/>
 {% endhighlight %}
 
 Format:

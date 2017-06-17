@@ -70,6 +70,9 @@ Blog `<widget type='Blog'>`
     <b:includable id='post.datePublished'>
   <!--(bake /core/blog-posts/post.datePublished.xml)-->
 </b:includable>
+    <b:includable id='post.dateUpdated'>
+  <!--(bake /core/blog-posts/post.dateUpdated.xml)-->
+</b:includable>
     <b:includable id='post.numComments'>
   <!--(bake /core/blog-posts/post.numComments.xml)-->
 </b:includable>

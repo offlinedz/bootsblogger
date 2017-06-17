@@ -1,0 +1,3 @@
+<time expr:class='data:class' expr:datetime='data:post.lastUpdated.iso8601' expr:title='data:post.lastUpdated.iso8601'>
+  <b:eval expr='format(data:post.lastUpdated, data:format)'/>
+</time>
