@@ -437,7 +437,9 @@ template-src/core/blog-posts/post.numComments.xml
 ###### Usage
 
 {% highlight html %}
-<b:include data='{ class: "class-name" }' name='post.numComments'/>
+<b:if cond='data:post.allowComments'>
+  <b:include data='{ class: "class-name" }' name='post.numComments'/>
+</b:if>
 {% endhighlight %}
 
 ### Images
