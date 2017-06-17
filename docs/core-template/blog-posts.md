@@ -253,8 +253,8 @@ Untuk menampilkan tanggal diterbitkannya posting dan tanggal terakhir posting di
 ###### Usage
 
 {% highlight html %}
-Published: <b:include data='{ format: "dd/MM/YYYY", class: "class-name" }' name='post.datePublished'/>
-Last updated: <b:include data='{ format: "dd/MM/YYYY", class: "class-name" }' name='post.dateUpdated'/>
+Published: <b:include data='{ customFormat: "dd/MM/YYYY"|false, class: "class-name" }' name='post.datePublished'/>
+Last updated: <b:include data='{ customFormat: "dd/MM/YYYY"|false, class: "class-name" }' name='post.dateUpdated'/>
 {% endhighlight %}
 
 Format:
