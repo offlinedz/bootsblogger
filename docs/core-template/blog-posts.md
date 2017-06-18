@@ -16,6 +16,8 @@ Bagian-bagian kode untuk posting blog hanya dapat disertakan di dalam widget `Bl
 
 Posting dibagi menjadi beberapa bagian berdasarkan tipe halaman. Untuk membuat tampilan posting yang berbeda di setiap tipe halaman, Anda hanya perlu menyesuaikan tampilan posting pada masing-masing bagian.
 
+**Catatan:** Anda tidak perlu menyertakan bagian-bagian di bawah ini karena secara *default* sudah disertakan, lihat `<b:includable id='main'>`.
+
 ### Homepage
 
 Tampilan posting untuk halaman beranda.
@@ -126,6 +128,80 @@ template-src/content/blog-posts/post-archive.xml
 
 {% highlight html %}
 <b:includable id='post-archive'>...</b:includable>
+{% endhighlight %}
+
+## Includes <small class="text-muted">main</small>
+
+Bagian-bagian di bawah ini hanya disertakan di dalam `<b:includable id='main'>`.
+
+**Catatan:** Anda tidak perlu menyertakan bagian-bagian di bawah ini karena secara *default* sudah disertakan, lihat `<b:includable id='main'>`.
+
+### Breadcrumb
+
+Untuk menunjukkan lokasi halaman saat ini.
+
+###### Source
+
+{% highlight plaintext %}
+template-src/content/blog-posts/breadcrumb.xml
+{% endhighlight %}
+
+###### Includable
+
+{% highlight html %}
+<b:includable id='breadcrumb'>...</b:includable>
+{% endhighlight %}
+
+### Status message
+
+Pesan yang akan muncul di atas posting, pesan hanya akan muncul di halaman hasil pencarian, halaman label, halaman arsip, dan halaman galat (404).
+
+###### Source
+
+{% highlight plaintext %}
+template-src/content/blog-posts/customStatusMessage.xml
+{% endhighlight %}
+
+###### Includable
+
+{% highlight html %}
+<b:includable id='customStatusMessage'>...</b:includable>
+{% endhighlight %}
+
+### Comments
+
+Sistem komentar bawaan Bootsblogger.
+
+###### Source
+
+{% highlight plaintext %}
+template-src/content/blog-posts/customComments.xml
+{% endhighlight %}
+
+###### Includable
+
+{% highlight html %}
+<b:includable id='customComments'>...</b:includable>
+{% endhighlight %}
+
+###### Alternative
+
+Jika Anda ingin menggunakan sistem komentar alternatif, Anda dapat menggunakan sistem komentar [Disqus](https://disqus.com), [Google+](https://support.google.com/blogger/answer/1752748), [Facebook](https://developers.facebook.com/docs/plugins/comments/), atau lainnya.
+
+### Pager
+
+Tautan untuk menuju halaman berikutnya atau sebelumnya.
+
+###### Source
+
+{% highlight plaintext %}
+template-src/content/blog-posts/customPager.xml
+{% endhighlight %}
+
+###### Includable
+
+{% highlight html %}
+<b:includable id='customPager'>...</b:includable>
 {% endhighlight %}
 
 ## Includes <small class="text-muted">byline items</small>
