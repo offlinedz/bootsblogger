@@ -1,30 +1,34 @@
 <b:comment>=== Homepage ===</b:comment>
-<b:if cond='data:view.isHomepage and data:numPosts == 0'>
-  <div class='alert alert-warning mb-0' role='alert'><data:messages.theresNothingHere/></div>
+<b:if cond='data:view.isHomepage and data:posts.empty'>
+  <div class='alert alert-warning' role='alert'>
+    <i aria-hidden='true' class='fa fa-exclamation-circle'/>
+    <data:messages.theresNothingHere/>
+  </div>
 </b:if>
 
 <b:comment>=== Search (label) page ===</b:comment>
 <b:if cond='data:view.search.label'>
-  <b:if cond='data:numPosts gte 1'>
+  <b:if cond='data:posts.size gte 1'>
     <div class='alert alert-success' role='alert'>
+      <i aria-hidden='true' class='fa fa-tags'/>
       <data:view.search.resultsMessageHtml/>
     </div>
   <b:else/>
     <div class='alert alert-warning' role='alert'>
+      <i aria-hidden='true' class='fa fa-tags'/>
       <data:view.search.resultsMessageHtml/>
     </div>
     <b:comment>=== Search form ===</b:comment>
-    <div class='card mb-0'>
+    <div class='card'>
       <div class='card-block'>
-        <p class='mb-0'><data:messages.noResultsFound/>.</p>
+        <p class='card-text'><data:messages.noResultsFound/></p>
       </div>
       <ul class='list-group list-group-flush'>
         <li class='list-group-item'>
           <form class='w-100' expr:action='data:blog.searchUrl' method='get' role='search'>
             <div class='input-group'>
               <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
-              <label class='sr-only' for='status-message-search-form'><data:messages.search/></label>
-              <input class='form-control' name='q' expr:placeholder='data:messages.searchBlog' type='text' id='status-message-search-form'/>
+              <input class='form-control' expr:aria-label='data:messages.searchBlog' expr:placeholder='data:messages.searchBlog' id='status-message-search-form' name='q' type='text'/>
             </div>
           </form>
         </li>
@@ -35,7 +39,7 @@
 
 <b:comment>=== Search (query) page ===</b:comment>
 <b:if cond='data:view.search.query'>
-  <b:if cond='data:numPosts gte 1'>
+  <b:if cond='data:posts.size gte 1'>
     <div class='alert alert-success' role='alert'>
       <i aria-hidden='true' class='fa fa-search-plus'/>
       <data:view.search.resultsMessageHtml/>
@@ -46,24 +50,23 @@
       <data:view.search.resultsMessageHtml/>
     </div>
   	<b:comment>=== Search form ===</b:comment>
-    <div class='card mb-0'>
+    <div class='card'>
       <div class='card-block'>
-        <p class='mb-0'><data:messages.noResultsFound/>.</p>
+        <p class='card-text'><data:messages.noResultsFound/></p>
       </div>
       <ul class='list-group list-group-flush'>
         <li class='list-group-item'>
           <form class='w-100' expr:action='data:blog.searchUrl' method='get' role='search'>
             <div class='input-group'>
               <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
-              <label class='sr-only' for='status-message-search-form'><data:messages.search/></label>
-              <input class='form-control' name='q' expr:placeholder='data:messages.search' type='text' id='status-message-search-form'/>
+              <input class='form-control' expr:aria-label='data:messages.searchBlog' expr:placeholder='data:messages.searchBlog' id='status-message-search-form' name='q' type='text'/>
             </div>
           </form>
         </li>
-        <li class='list-group-item'>Make sure all words are spelled correctly.</li>
-        <li class='list-group-item'>Try different keywords.</li>
-        <li class='list-group-item'>Try more general keywords.</li>
-        <li class='list-group-item'>Try fewer keywords.</li>
+        <li class='list-group-item'>Make sure all words are spelled correctly</li>
+        <li class='list-group-item'>Try different keywords</li>
+        <li class='list-group-item'>Try more general keywords</li>
+        <li class='list-group-item'>Try fewer keywords</li>
       </ul>
     </div>
   </b:if>
@@ -71,26 +74,27 @@
 
 <b:comment>=== Archive page ===</b:comment>
 <b:if cond='data:view.isArchive'>
-  <b:if cond='data:numPosts gte 1'>
+  <b:if cond='data:posts.size gte 1'>
     <div class='alert alert-success' role='alert'>
+      <i aria-hidden='true' class='fa fa-archive'/>
       <data:view.archive.rangeMessage/>
     </div>
   <b:else/>
     <div class='alert alert-warning' role='alert'>
+      <i aria-hidden='true' class='fa fa-archive'/>
       <data:view.archive.rangeMessage/>
     </div>
     <b:comment>=== Search form ===</b:comment>
-    <div class='card mb-0'>
+    <div class='card'>
       <div class='card-block'>
-        <p class='mb-0'><data:messages.noResultsFound/>.</p>
+        <p class='card-text'><data:messages.noResultsFound/></p>
       </div>
       <ul class='list-group list-group-flush'>
         <li class='list-group-item'>
           <form class='w-100' expr:action='data:blog.searchUrl' method='get' role='search'>
             <div class='input-group'>
               <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
-              <label class='sr-only' for='status-message-search-form'><data:messages.search/></label>
-              <input class='form-control' name='q' expr:placeholder='data:messages.searchBlog' type='text' id='status-message-search-form'/>
+              <input class='form-control' expr:aria-label='data:messages.searchBlog' expr:placeholder='data:messages.searchBlog' id='status-message-search-form' name='q' type='text'/>
             </div>
           </form>
         </li>
@@ -102,16 +106,18 @@
 <b:comment>=== Error page ===</b:comment>
 <b:if cond='data:view.isError'>
   <div class='alert alert-danger' role='alert'>
+    <i aria-hidden='true' class='fa fa-exclamation-circle'/>
     <strong><data:navMessage/></strong>
   </div>
   <b:comment>=== Search form ===</b:comment>
-  <div class='card card-block mb-0'>
-    <form expr:action='data:blog.searchUrl' method='get' role='search'>
-      <div class='input-group'>
-        <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
-        <label class='sr-only' for='status-message-search-form'><data:messages.search/></label>
-        <input class='form-control' name='q' expr:placeholder='data:messages.searchBlog' type='text' id='status-message-search-form'/>
-      </div>
-    </form>
+  <div class='card'>
+    <div class='card-block'>
+      <form class='w-100' expr:action='data:blog.searchUrl' method='get' role='search'>
+        <div class='input-group'>
+          <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
+          <input class='form-control' expr:aria-label='data:messages.searchBlog' expr:placeholder='data:messages.searchBlog' id='status-message-search-form' name='q' type='text'/>
+        </div>
+      </form>
+    </div>
   </div>
 </b:if>
