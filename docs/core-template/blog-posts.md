@@ -562,7 +562,7 @@ template-src/core/blog-posts/post.image.xml
 ###### Usage
 
 {% highlight html %}
-<b:include data='{ size: number, aspectRatioWidth: number, aspectRatioHeight: number, link: true|false, class: "class-name" }' name='post.image'/>
+<b:include data='{ size: number, ratioWidth: number, ratioHeight: number, link: true|false, class: "class-name" }' name='post.image'/>
 {% endhighlight %}
 
 ### Background images
@@ -584,7 +584,7 @@ template-src/core/blog-posts/post.imageBg.xml
 ###### Usage
 
 {% highlight html %}
-<b:include data='{ size: number, aspectRatioWidth: number, aspectRatioHeight: number, class: "class-name", style: "min-height: 180px;" }' name='post.imageBg'/>
+<b:include data='{ size: number, ratioWidth: number, ratioHeight: number, class: "class-name", style: "min-height: 180px;" }' name='post.imageBg'/>
 {% endhighlight %}
 
 ### Snippets
