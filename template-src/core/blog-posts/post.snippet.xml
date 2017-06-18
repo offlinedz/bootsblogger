@@ -1,4 +1,4 @@
-<b:if cond='data:post.hasJumpLink'>
+<b:if cond='data:post.hasJumpLink and data:notHasJumpLink'>
   <data:post.body/>
 <b:else/>
   <b:eval expr='snippet(data:post.body, { length: data:length, links: data:links, linebreaks: data:linebreaks, ellipsis: data:ellipsis })'/>
