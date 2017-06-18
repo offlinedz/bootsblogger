@@ -57,14 +57,14 @@
 <b:if cond='data:view.search.label'>
   <meta expr:content='data:blog.pageName + &quot; | &quot; + data:blog.title' property='og:title'/>
   <meta expr:content='data:view.search.resultsMessage + &quot;.&quot;' property='og:description'/>
-  <meta expr:content='&quot;https://placehold.it/512/eee/777?text=&quot; + data:blog.pageName' property='og:image'/>
+  <meta expr:content='&quot;https://placehold.it/512/777/eee?text=&quot; + data:blog.pageName' property='og:image'/>
 </b:if>
 
 <b:comment>=== Search (query) page ===</b:comment>
 <b:if cond='data:view.search.query'>
   <meta expr:content='data:view.search.resultsMessage + &quot; | &quot; + data:blog.title' property='og:title'/>
   <meta expr:content='data:view.search.resultsMessage + &quot;.&quot;' property='og:description'/>
-  <meta content='https://placehold.it/512/eee/777?text=Search+Results' property='og:image'/>
+  <meta content='https://placehold.it/512/777/eee?text=Search+Results' property='og:image'/>
 </b:if>
 
 <b:comment>=== Search (default) page ===</b:comment>
@@ -82,12 +82,12 @@
 <b:if cond='data:view.isArchive'>
   <meta expr:content='data:view.archive.rangeMessage + &quot; | &quot; + data:blog.title' property='og:title'/>
   <meta expr:content='data:view.archive.rangeMessage + &quot;.&quot;' property='og:description'/>
-  <meta expr:content='&quot;https://placehold.it/512/eee/777?text=&quot; + data:view.archive.year' property='og:image'/>
+  <meta expr:content='&quot;https://placehold.it/512/777/eee?text=&quot; + data:view.archive.year' property='og:image'/>
 </b:if>
 
 <b:comment>=== Error page ===</b:comment>
 <b:if cond='data:view.isError'>
   <meta expr:content='&quot;404 | &quot; + data:blog.title' property='og:title'/>
   <meta content='404' property='og:description'/>
-  <meta content='https://placehold.it/512/eee/777?text=404' property='og:image'/>
+  <meta content='https://placehold.it/512/777/eee?text=404' property='og:image'/>
 </b:if>
