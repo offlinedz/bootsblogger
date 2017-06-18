@@ -29,6 +29,11 @@
 // Images
 //
 
+.card-img-left,
+.card-img-right {
+  width: 100%;
+}
+
 @each $breakpoint in map-keys($grid-breakpoints) {
   $min: breakpoint-min($breakpoint, $grid-breakpoints);
   $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
