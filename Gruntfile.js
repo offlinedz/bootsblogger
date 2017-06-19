@@ -18,10 +18,12 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     clean: {
-      dist: 'dist',
-      bootstrapCss: 'template-src/core/assets/css/bootstrap',
-      bootsbloggerCss: 'template-src/core/assets/css/bootsblogger',
-      docs: 'docs/assets/css/bootsblogger'
+      'dist': 'dist',
+      'css': [
+        'template-src/core/assets/css/bootstrap',
+        'template-src/core/assets/css/bootsblogger',
+        'docs/assets/css/bootsblogger'
+      ]
     },
 
     scsslint: {
@@ -55,33 +57,6 @@ module.exports = function(grunt) {
         files: {
           'template-src/core/assets/css/bootsblogger/bootsblogger.css': 'scss/bootsblogger/bootsblogger.scss'
         }
-      }
-    },
-
-    cssmin: {
-      options: {
-        compatibility: 'ie10,-properties.zeroUnits',
-        keepSpecialComments: '*',
-        sourceMap: true,
-        advanced: false
-      },
-      bootstrap: {
-        files: [{
-          expand: true,
-          cwd: 'template-src/core/assets/css/bootstrap',
-          src: ['*.css', '!*.min.css'],
-          dest: 'template-src/core/assets/css/bootstrap',
-          ext: '.min.css'
-        }]
-      },
-      bootsblogger: {
-        files: [{
-          expand: true,
-          cwd: 'template-src/core/assets/css/bootsblogger',
-          src: ['*.css', '!*.min.css'],
-          dest: 'template-src/core/assets/css/bootsblogger',
-          ext: '.min.css'
-        }]
       }
     },
 
@@ -135,8 +110,35 @@ module.exports = function(grunt) {
       }
     },
 
+    cssmin: {
+      options: {
+        compatibility: 'ie10,-properties.zeroUnits',
+        keepSpecialComments: '*',
+        sourceMap: true,
+        advanced: false
+      },
+      bootstrap: {
+        files: [{
+          expand: true,
+          cwd: 'template-src/core/assets/css/bootstrap',
+          src: ['*.css', '!*.min.css'],
+          dest: 'template-src/core/assets/css/bootstrap',
+          ext: '.min.css'
+        }]
+      },
+      bootsblogger: {
+        files: [{
+          expand: true,
+          cwd: 'template-src/core/assets/css/bootsblogger',
+          src: ['*.css', '!*.min.css'],
+          dest: 'template-src/core/assets/css/bootsblogger',
+          ext: '.min.css'
+        }]
+      }
+    },
+
     bake: {
-      template: {
+      core: {
         options: {
           basePath: 'template-src',
           content: 'template-src/config.json'
@@ -163,31 +165,16 @@ module.exports = function(grunt) {
     },
 
     watch: {
-      bootstrapCss: {
-        files: [
-          'scss/bootstrap/**/*.scss',
-          'scss/_custom.scss'
-        ],
+      css: {
+        files: ['scss/**/*.scss'],
         tasks: [
-          'lint-scss-bootstrap',
-          'clean:bootstrapCss',
-          'compile-sass-bootstrap',
           'clean:dist',
-          'compile-template'
-        ]
-      },
-      bootsbloggerCss: {
-        files: [
-          'scss/bootsblogger/**/*.scss',
-          'scss/_custom.scss'
-        ],
-        tasks: [
-          'lint-scss-bootsblogger',
-          'clean:bootsbloggerCss',
-          'compile-sass-bootsblogger',
-          'clean:dist',
-          'compile-template',
-          'clean:docs',
+          'clean:css',
+          'css-lint',
+          'css-compile',
+          'css-prefix',
+          'css-minify',
+          'template-compile',
           'copy:docs'
         ]
       },
@@ -202,13 +189,13 @@ module.exports = function(grunt) {
         ],
         tasks: [
           'clean:dist',
-          'compile-template'
+          'template-compile'
         ]
       }
     },
 
     gitcheckout: {
-      revertCompiledFiles: {
+      compiled: {
         options: {
           branch: [
             'dist/.',
@@ -236,7 +223,7 @@ module.exports = function(grunt) {
 
     buildcontrol: {
       options: {
-        dir: '_gh_pages',
+        dir: './_gh_pages',
         commit: true,
         push: true,
         message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
@@ -257,14 +244,12 @@ module.exports = function(grunt) {
           level: 9,
           pretty: true
         },
-        files: [
-          {
-            expand: true,
-            cwd: 'dist/',
-            src: ['**'],
-            dest: 'bootsblogger-<%= pkg.version %>-dist'
-          }
-        ]
+        files: [{
+          expand: true,
+          cwd: 'dist/',
+          src: ['**'],
+          dest: 'bootsblogger-<%= pkg.version %>-dist'
+        }]
       }
     }
 
@@ -281,56 +266,54 @@ module.exports = function(grunt) {
   };
 
   // CSS task.
-  grunt.registerTask('lint-scss-bootstrap', ['scsslint:bootstrap']);
-  grunt.registerTask('lint-scss-bootsblogger', ['scsslint:bootsblogger']);
-  grunt.registerTask('compile-sass-bootstrap', ['sass:bootstrap', 'cssmin:bootstrap', 'postcss:bootstrap']);
-  grunt.registerTask('compile-sass-bootsblogger', ['sass:bootsblogger', 'cssmin:bootsblogger', 'postcss:bootsblogger']);
+  grunt.registerTask('css-lint', ['scsslint:bootstrap', 'scsslint:bootsblogger']);
+  grunt.registerTask('css-compile', ['sass:bootstrap', 'sass:bootsblogger']);
+  grunt.registerTask('css-prefix', ['postcss:bootstrap', 'postcss:bootsblogger']);
+  grunt.registerTask('css-minify', ['cssmin:bootstrap', 'cssmin:bootsblogger']);
 
   // Template task.
-  grunt.registerTask('compile-template', ['bake:template']);
+  grunt.registerTask('template-compile', ['bake:core']);
 
   // Docs task.
-  grunt.registerTask('validate-html-docs', ['jekyll:docs', 'exec:docs-lint']);
+  grunt.registerTask('docs-lint', ['jekyll:docs', 'exec:docs-lint']);
 
   // Test task.
   var testSubtasks = [];
   // Skip core tests if running a different subset of the test suite
   if (runSubset('core')) {
     testSubtasks = testSubtasks.concat([
-      'lint-scss-bootstrap',
-      'lint-scss-bootsblogger',
-      'compile-sass-bootstrap',
-      'compile-sass-bootsblogger',
-      'compile-template'
+      'css-lint',
+      'css-compile',
+      'css-prefix',
+      'css-minify',
+      'template-compile'
     ]);
   }
   if (runSubset('core') && !(isTravis)) {
-    testSubtasks.push('gitcheckout:revertCompiledFiles');
+    testSubtasks.push('gitcheckout:compiled');
   }
   // Skip HTML validation if running a different subset of the test suite
-  if (runSubset('validate-html-docs') &&
+  if (runSubset('browser') &&
       isTravis &&
       // Skip HTML5 validator when [skip validator] is in the commit message
       isUndefOrNonZero(process.env.BOOTSBLOGGER_DO_VALIDATOR)) {
-    testSubtasks.push('validate-html-docs');
+    testSubtasks.push('docs-lint');
   }
   grunt.registerTask('test', testSubtasks);
 
   // Default task.
   grunt.registerTask('default', [
     'clean:dist',
-    'clean:bootstrapCss',
-    'clean:bootsbloggerCss',
-    'lint-scss-bootstrap',
-    'lint-scss-bootsblogger',
-    'compile-sass-bootstrap',
-    'compile-sass-bootsblogger',
-    'compile-template',
-    'clean:docs',
+    'clean:css',
+    'css-lint',
+    'css-compile',
+    'css-prefix',
+    'css-minify',
+    'template-compile',
     'copy:docs'
   ]);
 
-  grunt.registerTask('prep-release', ['test', 'jekyll:github', 'compress']);
+  grunt.registerTask('prep-release', ['default', 'jekyll:github', 'compress']);
 
   // Publish to GitHub
   grunt.registerTask('publish', ['buildcontrol:pages']);

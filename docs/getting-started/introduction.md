@@ -28,7 +28,7 @@ bootsblogger/
     └── template.xml
 {% endhighlight %}
 
-Pasang `template.xml` di blog Anda, dan ubahsuaikan template.
+Pasang `template.xml` di blog Anda, kemudian ubahsuaikan.
 
 ### Source files
 

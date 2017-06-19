@@ -19,8 +19,8 @@ cache:
     - vendor/bundle
 env:
   - BOOTSBLOGGER_TEST=core
-  - BOOTSBLOGGER_TEST=validate-html-docs
+  - BOOTSBLOGGER_TEST=browser
 matrix:
   exclude:
     - node_js: "4"
-      env: BOOTSBLOGGER_TEST=validate-html-docs
+      env: BOOTSBLOGGER_TEST=browser
