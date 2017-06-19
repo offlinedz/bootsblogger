@@ -21,6 +21,11 @@
   text-decoration: none;
 }
 
+.card-img-left,
+.card-img-right {
+  width: 100%;
+}
+
 .card-block-img-left {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
@@ -221,7 +226,6 @@
 
 .navmenu {
   padding: 1.25rem 1.25rem;
-  margin-bottom: 1rem;
   border-radius: 0.25rem;
 }
 
@@ -231,7 +235,6 @@
   top: 0;
   bottom: 0;
   z-index: 1030;
-  margin-bottom: 0;
   overflow-y: auto;
   border-radius: 0;
 }
