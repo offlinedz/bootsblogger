@@ -34,10 +34,10 @@
       </b:if>
 
       <b:comment>=== Breadcrumb ===</b:comment>
-      <b:include name='breadcrumb'/>
+      <b:include name='main.breadcrumb'/>
 
       <b:comment>=== Status message ===</b:comment>
-      <b:include name='customStatusMessage'/>
+      <b:include name='main.statusMessage'/>
 
       <b:comment>=== Posts ===</b:comment>
       <b:if cond='data:posts.notEmpty'>
@@ -74,10 +74,10 @@
       </b:if>
 
       <b:comment>=== Comments ===</b:comment>
-      <b:include cond='data:view.isSingleItem' name='customComments'/>
+      <b:include cond='data:view.isSingleItem' name='main.comments'/>
 
       <b:comment>=== Pager ===</b:comment>
-      <b:include cond='data:posts.notEmpty' name='customPager'/>
+      <b:include cond='data:posts.notEmpty' name='main.pager'/>
 
     </b:if>
 

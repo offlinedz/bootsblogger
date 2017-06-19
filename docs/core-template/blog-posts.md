@@ -143,13 +143,13 @@ Untuk menunjukkan lokasi halaman saat ini.
 ###### Source
 
 {% highlight plaintext %}
-template-src/content/blog-posts/breadcrumb.xml
+template-src/content/blog-posts/main.breadcrumb.xml
 {% endhighlight %}
 
 ###### Includable
 
 {% highlight html %}
-<b:includable id='breadcrumb'>...</b:includable>
+<b:includable id='main.breadcrumb'>...</b:includable>
 {% endhighlight %}
 
 ### Status message
@@ -159,13 +159,13 @@ Pesan yang akan muncul di atas posting, pesan hanya akan muncul di halaman hasil
 ###### Source
 
 {% highlight plaintext %}
-template-src/content/blog-posts/customStatusMessage.xml
+template-src/content/blog-posts/main.statusMessage.xml
 {% endhighlight %}
 
 ###### Includable
 
 {% highlight html %}
-<b:includable id='customStatusMessage'>...</b:includable>
+<b:includable id='main.statusMessage'>...</b:includable>
 {% endhighlight %}
 
 ### Comments
@@ -175,13 +175,13 @@ Sistem komentar bawaan Bootsblogger.
 ###### Source
 
 {% highlight plaintext %}
-template-src/content/blog-posts/customComments.xml
+template-src/content/blog-posts/main.comments.xml
 {% endhighlight %}
 
 ###### Includable
 
 {% highlight html %}
-<b:includable id='customComments'>...</b:includable>
+<b:includable id='main.comments'>...</b:includable>
 {% endhighlight %}
 
 ###### Alternative
@@ -195,13 +195,13 @@ Tautan untuk menuju halaman berikutnya atau sebelumnya.
 ###### Source
 
 {% highlight plaintext %}
-template-src/content/blog-posts/customPager.xml
+template-src/content/blog-posts/main.pager.xml
 {% endhighlight %}
 
 ###### Includable
 
 {% highlight html %}
-<b:includable id='customPager'>...</b:includable>
+<b:includable id='main.pager'>...</b:includable>
 {% endhighlight %}
 
 ## Includes <small class="text-muted">byline items</small>
@@ -215,13 +215,13 @@ Bagian *header*.
 ###### Source
 
 {% highlight plaintext %}
-template-src/core/blog-posts/customHeaderByline.xml
+template-src/core/blog-posts/byline.header.xml
 {% endhighlight %}
 
 ###### Includable
 
 {% highlight html %}
-<b:includable id='customHeaderByline'>...</b:includable>
+<b:includable id='byline.header'>...</b:includable>
 {% endhighlight %}
 
 ###### Usage
@@ -229,7 +229,7 @@ template-src/core/blog-posts/customHeaderByline.xml
 {% highlight html %}
 <b:if cond='data:headerByline.items.notEmpty'>
   <div class='wrapper'>
-    <b:include name='customHeaderByline'/>
+    <b:include name='byline.header'/>
   </div>
 </b:if>
 {% endhighlight %}
@@ -241,13 +241,13 @@ Bagian *footer*.
 ###### Source
 
 {% highlight plaintext %}
-template-src/core/blog-posts/customFooterBylines.xml
+template-src/core/blog-posts/byline.footer.xml
 {% endhighlight %}
 
 ###### Includable
 
 {% highlight html %}
-<b:includable id='customFooterBylines'>...</b:includable>
+<b:includable id='byline.footer'>...</b:includable>
 {% endhighlight %}
 
 ###### Usage
@@ -255,7 +255,7 @@ template-src/core/blog-posts/customFooterBylines.xml
 {% highlight html %}
 <b:if cond='data:footerBylines.notEmpty'>
   <div class='wrapper'>
-    <b:include name='customFooterBylines'/>
+    <b:include name='byline.footer'/>
   </div>
 </b:if>
 {% endhighlight %}

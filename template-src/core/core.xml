@@ -40,23 +40,23 @@ Blog `<widget type='Blog'/>`
 
 <b:defaultmarkups>
   <b:defaultmarkup type='Common'>
-    <b:includable id='breadcrumb' var='post'>
-  <!--(bake /core/blog-posts/breadcrumb.xml)-->
+    <b:includable id='main.breadcrumb' var='post'>
+  <!--(bake /core/blog-posts/main.breadcrumb.xml)-->
 </b:includable>
-    <b:includable id='customStatusMessage' var='post'>
-  <!--(bake /core/blog-posts/customStatusMessage.xml)-->
+    <b:includable id='main.statusMessage' var='post'>
+  <!--(bake /core/blog-posts/main.statusMessage.xml)-->
 </b:includable>
-    <b:includable id='customComments' var='post'>
-  <!--(bake /core/blog-posts/customComments.xml)-->
+    <b:includable id='main.comments' var='post'>
+  <!--(bake /core/blog-posts/main.comments.xml)-->
 </b:includable>
-    <b:includable id='customPager' var='post'>
-  <!--(bake /core/blog-posts/customPager.xml)-->
+    <b:includable id='main.pager' var='post'>
+  <!--(bake /core/blog-posts/main.pager.xml)-->
 </b:includable>
-    <b:includable id='customHeaderByline'>
-  <!--(bake /core/blog-posts/customHeaderByline.xml)-->
+    <b:includable id='byline.header'>
+  <!--(bake /core/blog-posts/byline.header.xml)-->
 </b:includable>
-    <b:includable id='customFooterBylines'>
-  <!--(bake /core/blog-posts/customFooterBylines.xml)-->
+    <b:includable id='byline.footer'>
+  <!--(bake /core/blog-posts/byline.footer.xml)-->
 </b:includable>
     <b:includable id='post.authorName'>
   <!--(bake /core/blog-posts/post.authorName.xml)-->

@@ -4,7 +4,7 @@
     <b:if cond='data:headerByline.items.notEmpty'>
       <div class='card-header'>
         <!-- headerByline -->
-        <b:include name='customHeaderByline'/>
+        <b:include name='byline.header'/>
       </div>
     </b:if>
 
@@ -37,7 +37,7 @@
     <b:if cond='data:footerBylines.notEmpty'>
       <div class='card-footer'>
         <!-- footerBylines -->
-        <b:include name='customFooterBylines'/>
+        <b:include name='byline.footer'/>
       </div>
     </b:if>
   </article>
