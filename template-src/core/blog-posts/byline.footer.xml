@@ -155,7 +155,7 @@
           <span class='byline byline-icons'>
             <i aria-hidden='true' class='byline-email-icon fa fa-envelope'/>
             <a b:whitespace='remove' class='byline-email-link' expr:href='data:post.emailPostUrl' expr:title='data:messages.emailPost'>
-              <b:message name='messages.emailPost'/>
+              <data:messages.emailPost/>
             </a>
           </span>
         </b:if>

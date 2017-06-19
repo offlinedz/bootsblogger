@@ -7,7 +7,7 @@
   <b:if cond='data:post.snippets'>
     <a b:whitespace='remove' expr:class='data:class' expr:href='data:post.url' role='button'>
       <b:attr name='title' expr:value='data:post.title ? data:post.title : &quot;&quot;'/>
-      <b:message name='messages.keepReading'/><span class='sr-only'>jump-<data:post.id/></span>
+      <data:messages.keepReading/><span class='sr-only'>jump-<data:post.id/></span>
     </a>
   </b:if>
 </b:if>
