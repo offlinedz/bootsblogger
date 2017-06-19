@@ -25,11 +25,13 @@
     <b:if cond='!data:view.isMobile'>
 
       <b:comment>=== Metadata JSON ===</b:comment>
-      <div class='script-application-ld-json' id='script-application-ld-json'>
-        <b:loop values='data:posts' var='post'>
-          <b:include name='postMetadataJSON'/>
-        </b:loop>
-      </div>
+      <b:if cond='data:posts.notEmpty'>
+        <div class='script-application-ld-json' id='script-application-ld-json'>
+          <b:loop values='data:posts' var='post'>
+            <b:include name='postMetadataJSON'/>
+          </b:loop>
+        </div>
+      </b:if>
 
       <b:comment>=== Breadcrumb ===</b:comment>
       <b:include name='breadcrumb'/>
