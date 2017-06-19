@@ -1,5 +1,5 @@
 <b:loop values='data:posts' var='post'>
-  <article class='card' expr:id='&quot;post-&quot; + data:post.id'>
+  <article class='card mb-3' expr:id='&quot;post-&quot; + data:post.id'>
     <div class='card-block'>
       <!-- Title -->
       <b:if cond='data:post.title'>
