@@ -85,8 +85,8 @@ body {}
 .navbar-custom {
   min-height: 4rem;
   background-color: #ff5722;
-  -webkit-box-shadow: 0 0.5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);
-  box-shadow: 0 0.5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);
+  -webkit-box-shadow: 0 .5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);
+          box-shadow: 0 .5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);
 }
 
 @media (min-width: 992px) {
@@ -96,6 +96,66 @@ body {}
     top: 0;
     z-index: 1030;
   }
+}
+
+/**
+ * Brand
+ */
+
+.navbar-custom .navbar-brand {
+  color: #fff;
+}
+.navbar-custom .navbar-brand:focus,
+.navbar-custom .navbar-brand:hover {
+  color: #fff;
+}
+
+/**
+ * Nav
+ */
+
+.navbar-custom .navbar-nav .nav-link {
+  color: #ffccbc;
+}
+.navbar-custom .navbar-nav .nav-link:focus,
+.navbar-custom .navbar-nav .nav-link:hover {
+  color: #fff;
+}
+.navbar-custom .navbar-nav .nav-link.disabled {
+  color: #ffab91;
+}
+.navbar-custom .navbar-nav .show > .nav-link,
+.navbar-custom .navbar-nav .active > .nav-link,
+.navbar-custom .navbar-nav .nav-link.show,
+.navbar-custom .navbar-nav .nav-link.active {
+  color: #fff;
+}
+
+/**
+ * Text
+ */
+
+.navbar-custom .navbar-text {
+  color: #fff;
+}
+
+/**
+ * Toggler
+ */
+
+.navbar-custom .navbar-toggler {
+  background-color: #ff7043;
+  border-color: #ff8a65;
+}
+.navbar-custom .navbar-toggler:focus,
+.navbar-custom .navbar-toggler:hover {
+  background-color: #ff8a65;
+  border-color: #ffab91;
+}
+
+/* stroke='#fff' */
+.navbar-custom .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#fff' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
 
@@ -115,14 +175,32 @@ body {}
    ============================================== */
 
 .btn-custom {
-  color: #ffe484;
-  border-color: #ffe484;
+  color: #333;
+  background-color: #ffe082;
+  border-color: #ffe082;
 }
-.btn-custom:hover,
-.btn-custom:focus {
-  color: #463c34;
-  background-color: #ffe484;
-  border-color: #ffe484;
+.btn-custom:hover {
+  color: #333;
+  background-color: #ffd54f;
+  border-color: #ffd54f;
+}
+.btn-custom:focus,
+.btn-custom.focus {
+  -webkit-box-shadow: 0 0 0 3px rgba(255,213,79,.45);
+          box-shadow: 0 0 0 3px rgba(255,213,79,.45);
+}
+.btn-custom:disabled,
+.btn-custom.disabled {
+  color: #777;
+  background-color: #ffecb3;
+  border-color: #ffecb3;
+}
+.btn-custom:active,
+.btn-custom.active,
+.show > .btn-custom.dropdown-toggle {
+  color: #333;
+  background-color: #ffd54f;
+  border-color: #ffd54f;
 }
 
 
@@ -209,8 +287,8 @@ body {}
   font-weight: 500;
   color: #333;
 }
-.footer a:hover,
-.footer a:focus {
+.footer a:focus,
+.footer a:hover {
   color: #0275d8;
 }
 
@@ -328,11 +406,13 @@ Post layout and styles
         <ul class='list-inline mb-0'>
           <!-- Author -->
           <li class='list-inline-item'>
-            <span class='text-muted'><data:messages.postedBy/></span> <b:include data='{ class: &quot;text-muted&quot; }' name='post.authorName'/>
+            <span class='text-muted'><data:messages.postedBy/></span>
+            <b:include data='{ class: &quot;text-muted&quot;, noUrlClass: &quot;text-muted&quot; }' name='post.authorName'/>
           </li>
           <!-- Date -->
           <li class='list-inline-item'>
-            <span class='text-muted'><data:messages.on/></span> <b:include data='{ customFormat: &quot;MMM dd, YYYY&quot;, class: &quot;text-muted&quot; }' name='post.datePublished'/>
+            <span class='text-muted'><data:messages.on/></span>
+            <b:include data='{ customFormat: &quot;MMM dd, YYYY&quot;, class: &quot;text-muted&quot; }' name='post.datePublished'/>
           </li>
         </ul>
       </div>
@@ -351,11 +431,9 @@ Post layout and styles
         <ul class='list-inline mb-0'>
           <!-- Labels -->
           <li class='list-inline-item'>
-            <span class='text-muted'>
-              <i aria-hidden='true' class='fa fa-tags'/>
-              <data:messages.labels/>:
-            </span>
-            <b:include data='{ comma: false, max-results: 12, class: &quot;badge badge-default&quot; }' name='post.labels'/>
+            <i aria-hidden='true' class='fa fa-tags text-muted'/>
+            <span class='text-muted'><data:messages.labels/>:</span>
+            <b:include data='{ comma: false, max-results: 12, class: &quot;badge badge-default&quot;, unlabelledClass: &quot;text-muted&quot; }' name='post.labels'/>
           </li>
         </ul>
       </div>
@@ -405,16 +483,16 @@ Post layout and styles
 
           <!-- Footer -->
           <div class='card-footer'>
-            <div class='d-flex flex-wrap flex-row justify-content-between'>
+            <div class='d-flex flex-wrap justify-content-between'>
               <!-- Author -->
-              <div class='text-muted'>
-                <i aria-hidden='true' class='fa fa-user-circle'/>
-                <b:include data='{ class: &quot;text-muted&quot; }' name='post.authorName'/>
+              <div>
+                <i aria-hidden='true' class='fa fa-user-circle text-muted'/>
+                <b:include data='{ class: &quot;text-muted&quot;, noUrlClass: &quot;text-muted&quot; }' name='post.authorName'/>
               </div>
               <!-- Number of comments -->
               <b:if cond='data:post.allowComments'>
-                <div class='text-muted'>
-                  <i aria-hidden='true' class='fa fa-comments'/>
+                <div>
+                  <i aria-hidden='true' class='fa fa-comments text-muted'/>
                   <b:include data='{ class: &quot;text-muted&quot; }' name='post.numComments'/>
                 </div>
               </b:if>
@@ -437,9 +515,10 @@ Post layout and styles
             </a>
           </h2>
         </b:if>
-        <!-- Snippet and date -->
+        <!-- Date and snippet -->
         <div class='card-text'>
-          <b:include data='{ customFormat: &quot;MMM dd, YYYY&quot;, class: &quot;text-muted&quot; }' name='post.datePublished'/> -
+          <b:include data='{ customFormat: &quot;MMM dd, YYYY&quot;, class: &quot;text-muted&quot; }' name='post.datePublished'/>
+          <span class='text-muted'>-</span>
           <b:include data='{ length: 150, links: false, linebreaks: false, ellipsis: true, notHasJumpLink: false }' name='post.snippet'/>
         </div>
       </div>
@@ -509,7 +588,7 @@ Post layout and styles
           </td>
           <!-- Author -->
           <td class='text-nowrap'>
-            <b:include data='{ class: &quot;&quot; }' name='post.authorName'/>
+            <b:include data='{ class: &quot;&quot;, noUrlClass: &quot;&quot; }' name='post.authorName'/>
           </td>
         </tr>
       </b:loop>
@@ -551,7 +630,7 @@ Skip navigation
 Navbar
 ================================================= </b:comment>
 
-<header class='navbar navbar-inverse navbar-toggleable-md navbar-custom'>
+<header class='navbar navbar-custom navbar-toggleable-md'>
   <nav class='container'>
     <button class='navbar-toggler navbar-toggler-right' type='button' data-toggle='collapse' data-target='#navbar' aria-controls='navbar' aria-expanded='false' aria-label='Toggle navigation'>
       <span class='navbar-toggler-icon'></span>
@@ -2098,13 +2177,11 @@ Blog `<widget type='Blog'/>`
 </b:includable>
     <b:includable id='post.authorName'>
   <b:if cond='data:post.author'>
-    <span class='data-post-author'>
-      <b:if cond='data:post.author.profileUrl'>
-        <a b:whitespace='remove' expr:class='data:class' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'><data:post.author.name/></a>
-      <b:else/>
-        <span><data:post.author.name/></span>
-      </b:if>
-    </span>
+    <b:if cond='data:post.author.profileUrl'>
+      <a b:whitespace='remove' expr:class='data:class' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'><data:post.author.name/></a>
+    <b:else/>
+      <span expr:class='data:noUrlClass'><data:post.author.name/></span>
+    </b:if>
   </b:if>
 </b:includable>
     <b:includable id='post.authorImage'>
@@ -2164,42 +2241,40 @@ Blog `<widget type='Blog'/>`
   </b:if>
 </b:includable>
     <b:includable id='post.labels'>
-  <span class='data-post-labels'>
-    <b:if cond='data:post.labels'>
-      <b:loop index='i' values='data:post.labels' var='label'>
-        <a b:whitespace='remove' expr:class='data:class' expr:href='params(data:label.url, { max-results: data:max-results })'><data:label.name/></a><b:if cond='(data:comma == true) and (data:i != (data:post.labels.size - 1))'>,</b:if>
-      </b:loop>
-    <b:else/>
-      <span>Unlabelled</span>
-    </b:if>
-  </span>
+  <b:if cond='data:post.labels'>
+    <b:loop index='i' values='data:post.labels' var='label'>
+      <a b:whitespace='remove' expr:class='data:class' expr:href='params(data:label.url, { max-results: data:max-results })' expr:title='data:label.name'><data:label.name/></a><b:if cond='(data:comma == true) and (data:i != (data:post.labels.size - 1))'>,</b:if>
+    </b:loop>
+  <b:else/>
+    <span expr:class='data:unlabelledClass'>Unlabelled</span>
+  </b:if>
 </b:includable>
     <b:includable id='post.image'>
   <b:if cond='data:post.featuredImage'>
     <b:if cond='data:post.featuredImage.isYoutube'>
       <b:if cond='data:link'>
         <a expr:href='data:post.url'>
-          <img expr:class='data:class' expr:src='resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl,data:size,(data:ratioWidth + &quot;:&quot; + data:ratioHeight))' expr:alt='data:post.title ? data:post.title : &quot;Image&quot;'/>
+          <img expr:class='data:class' expr:src='resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl,data:size,(data:ratioWidth + &quot;:&quot; + data:ratioHeight))' expr:alt='data:post.title ? data:post.title : data:messages.image'/>
         </a>
       <b:else/>
-        <img expr:class='data:class' expr:src='resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl,data:size,(data:ratioWidth + &quot;:&quot; + data:ratioHeight))' expr:alt='data:post.title ? data:post.title : &quot;Image&quot;'/>
+        <img expr:class='data:class' expr:src='resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl,data:size,(data:ratioWidth + &quot;:&quot; + data:ratioHeight))' expr:alt='data:post.title ? data:post.title : data:messages.image'/>
       </b:if>
     <b:else/>
       <b:if cond='data:link'>
         <a expr:href='data:post.url'>
-          <img expr:class='data:class' expr:src='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage,data:size,(data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.featuredImage' expr:alt='data:post.title ? data:post.title : &quot;Image&quot;'/>
+          <img expr:class='data:class' expr:src='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage,data:size,(data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.featuredImage' expr:alt='data:post.title ? data:post.title : data:messages.image'/>
         </a>
       <b:else/>
-        <img expr:class='data:class' expr:src='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage,data:size,(data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.featuredImage' expr:alt='data:post.title ? data:post.title : &quot;Image&quot;'/>
+        <img expr:class='data:class' expr:src='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage,data:size,(data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.featuredImage' expr:alt='data:post.title ? data:post.title : data:messages.image'/>
       </b:if>
     </b:if>
   <b:else/>
     <b:if cond='data:link'>
       <a expr:href='data:post.url'>
-        <img expr:class='data:class' expr:src='&quot;https://placehold.it/&quot; + data:size + &quot;x&quot; + ((data:size * data:ratioHeight) / data:ratioWidth) + &quot;/777/eee?text=B&quot;' expr:alt='data:post.title ? data:post.title : &quot;Image&quot;'/>
+        <img expr:class='data:class' expr:src='&quot;https://placehold.it/&quot; + data:size + &quot;x&quot; + ((data:size * data:ratioHeight) / data:ratioWidth) + &quot;/777/eee?text=B&quot;' expr:alt='data:post.title ? data:post.title : data:messages.image'/>
       </a>
     <b:else/>
-      <img expr:class='data:class' expr:src='&quot;https://placehold.it/&quot; + data:size + &quot;x&quot; + ((data:size * data:ratioHeight) / data:ratioWidth) + &quot;/777/eee?text=B&quot;' expr:alt='data:post.title ? data:post.title : &quot;Image&quot;'/>
+      <img expr:class='data:class' expr:src='&quot;https://placehold.it/&quot; + data:size + &quot;x&quot; + ((data:size * data:ratioHeight) / data:ratioWidth) + &quot;/777/eee?text=B&quot;' expr:alt='data:post.title ? data:post.title : data:messages.image'/>
     </b:if>
   </b:if>
 </b:includable>
