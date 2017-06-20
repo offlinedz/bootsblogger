@@ -26,16 +26,16 @@
 
         <!-- Footer -->
         <div class='card-footer'>
-          <div class='d-flex flex-wrap flex-row justify-content-between'>
+          <div class='d-flex flex-wrap justify-content-between'>
             <!-- Author -->
-            <div class='text-muted'>
-              <i aria-hidden='true' class='fa fa-user-circle'/>
-              <b:include data='{ class: &quot;text-muted&quot; }' name='post.authorName'/>
+            <div>
+              <i aria-hidden='true' class='fa fa-user-circle text-muted'/>
+              <b:include data='{ class: &quot;text-muted&quot;, noUrlClass: &quot;text-muted&quot; }' name='post.authorName'/>
             </div>
             <!-- Number of comments -->
             <b:if cond='data:post.allowComments'>
-              <div class='text-muted'>
-                <i aria-hidden='true' class='fa fa-comments'/>
+              <div>
+                <i aria-hidden='true' class='fa fa-comments text-muted'/>
                 <b:include data='{ class: &quot;text-muted&quot; }' name='post.numComments'/>
               </div>
             </b:if>

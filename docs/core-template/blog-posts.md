@@ -283,7 +283,7 @@ template-src/core/blog-posts/post.authorName.xml
 ###### Usage
 
 {% highlight html %}
-<b:include data='{ class: "class-name" }' name='post.authorName'/>
+<b:include data='{ class: "class-name", noUrlClass: "class-name" }' name='post.authorName'/>
 {% endhighlight %}
 
 ### Author image
@@ -540,7 +540,7 @@ template-src/core/blog-posts/post.labels.xml
 ###### Usage
 
 {% highlight html %}
-<b:include data='{ comma: true|false, max-results: number, class: "class-name" }' name='post.labels'/>
+<b:include data='{ comma: true|false, max-results: number, class: "class-name", unlabelledClass: "class-name" }' name='post.labels'/>
 {% endhighlight %}
 
 ### Images

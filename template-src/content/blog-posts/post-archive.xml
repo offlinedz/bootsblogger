@@ -14,7 +14,7 @@
         </td>
         <!-- Author -->
         <td class='text-nowrap'>
-          <b:include data='{ class: &quot;&quot; }' name='post.authorName'/>
+          <b:include data='{ class: &quot;&quot;, noUrlClass: &quot;&quot; }' name='post.authorName'/>
         </td>
       </tr>
     </b:loop>

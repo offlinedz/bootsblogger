@@ -9,9 +9,10 @@
           </a>
         </h2>
       </b:if>
-      <!-- Snippet and date -->
+      <!-- Date and snippet -->
       <div class='card-text'>
-        <b:include data='{ customFormat: &quot;MMM dd, YYYY&quot;, class: &quot;text-muted&quot; }' name='post.datePublished'/> -
+        <b:include data='{ customFormat: &quot;MMM dd, YYYY&quot;, class: &quot;text-muted&quot; }' name='post.datePublished'/>
+        <span class='text-muted'>-</span>
         <b:include data='{ length: 150, links: false, linebreaks: false, ellipsis: true, notHasJumpLink: false }' name='post.snippet'/>
       </div>
     </div>

@@ -2,26 +2,26 @@
   <b:if cond='data:post.featuredImage.isYoutube'>
     <b:if cond='data:link'>
       <a expr:href='data:post.url'>
-        <img expr:class='data:class' expr:src='resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl,data:size,(data:ratioWidth + &quot;:&quot; + data:ratioHeight))' expr:alt='data:post.title ? data:post.title : &quot;Image&quot;'/>
+        <img expr:class='data:class' expr:src='resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl,data:size,(data:ratioWidth + &quot;:&quot; + data:ratioHeight))' expr:alt='data:post.title ? data:post.title : data:messages.image'/>
       </a>
     <b:else/>
-      <img expr:class='data:class' expr:src='resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl,data:size,(data:ratioWidth + &quot;:&quot; + data:ratioHeight))' expr:alt='data:post.title ? data:post.title : &quot;Image&quot;'/>
+      <img expr:class='data:class' expr:src='resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl,data:size,(data:ratioWidth + &quot;:&quot; + data:ratioHeight))' expr:alt='data:post.title ? data:post.title : data:messages.image'/>
     </b:if>
   <b:else/>
     <b:if cond='data:link'>
       <a expr:href='data:post.url'>
-        <img expr:class='data:class' expr:src='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage,data:size,(data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.featuredImage' expr:alt='data:post.title ? data:post.title : &quot;Image&quot;'/>
+        <img expr:class='data:class' expr:src='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage,data:size,(data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.featuredImage' expr:alt='data:post.title ? data:post.title : data:messages.image'/>
       </a>
     <b:else/>
-      <img expr:class='data:class' expr:src='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage,data:size,(data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.featuredImage' expr:alt='data:post.title ? data:post.title : &quot;Image&quot;'/>
+      <img expr:class='data:class' expr:src='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage,data:size,(data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.featuredImage' expr:alt='data:post.title ? data:post.title : data:messages.image'/>
     </b:if>
   </b:if>
 <b:else/>
   <b:if cond='data:link'>
     <a expr:href='data:post.url'>
-      <img expr:class='data:class' expr:src='&quot;https://placehold.it/&quot; + data:size + &quot;x&quot; + ((data:size * data:ratioHeight) / data:ratioWidth) + &quot;/777/eee?text=B&quot;' expr:alt='data:post.title ? data:post.title : &quot;Image&quot;'/>
+      <img expr:class='data:class' expr:src='&quot;https://placehold.it/&quot; + data:size + &quot;x&quot; + ((data:size * data:ratioHeight) / data:ratioWidth) + &quot;/777/eee?text=B&quot;' expr:alt='data:post.title ? data:post.title : data:messages.image'/>
     </a>
   <b:else/>
-    <img expr:class='data:class' expr:src='&quot;https://placehold.it/&quot; + data:size + &quot;x&quot; + ((data:size * data:ratioHeight) / data:ratioWidth) + &quot;/777/eee?text=B&quot;' expr:alt='data:post.title ? data:post.title : &quot;Image&quot;'/>
+    <img expr:class='data:class' expr:src='&quot;https://placehold.it/&quot; + data:size + &quot;x&quot; + ((data:size * data:ratioHeight) / data:ratioWidth) + &quot;/777/eee?text=B&quot;' expr:alt='data:post.title ? data:post.title : data:messages.image'/>
   </b:if>
 </b:if>
