@@ -9,16 +9,16 @@
 Title, meta, and link tags
 ================================================= </b:comment>
 
-<b:include name='requiredMetaTags'/>
-<b:include name='customTitle'/>
-<b:include name='customAllHeadContent'/>
+<b:include name='head.requiredMetaTags'/>
+<b:include name='head.title'/>
+<b:include name='head.allHeadContent'/>
 
 <b:with value='&quot;https://example.com/path/to/image.png&quot;' var='image'>
 <b:with value='&quot;@username_of_website&quot;' var='twitterUsernameWebsite'>
 <b:with value='&quot;@username_of_content_creator&quot;' var='twitterUsernameCreator'>
-  <b:include name='defaultTags'/>
-  <b:include name='facebookTags'/>
-  <b:include name='twitterTags'/>
+  <b:include name='head.defaultTags'/>
+  <b:include name='head.facebookTags'/>
+  <b:include name='head.twitterTags'/>
 </b:with>
 </b:with>
 </b:with>
@@ -30,14 +30,14 @@ CSS
 ================================================= </b:comment>
 
 <b:comment>=== Core CSS ===</b:comment>
-<b:include name='bootstrapCss'/>
-<b:include name='bootsbloggerCss'/>
+<b:include name='css.bootstrap'/>
+<b:include name='css.bootsblogger'/>
 
 <b:comment>=== Font Awesome ===</b:comment>
-<b:include name='fontAwesome'/>
+<b:include name='css.fontAwesome'/>
 
 <b:comment>=== Layout mode CSS ===</b:comment>
-<b:include name='layoutModeCss'/>
+<b:include name='head.layoutModeCss'/>
 
 <b:comment>=== Template CSS ===</b:comment>
 <b:skin>
@@ -90,7 +90,7 @@ Post layout and styles
 <b:class cond='data:view.isArchive' name='blog-view-archive'/>
 <b:class cond='data:view.isError' name='blog-view-error'/>
 <b:class cond='data:view.isPreview' name='blog-view-preview'/>
-<b:class name='your-body-class'/>
+<b:class name='class-name'/>
 
 
 <b:comment>
@@ -180,9 +180,9 @@ Footer
 JavaScript
 ================================================= </b:comment>
 
-<b:include name='jquery'/>
-<b:include name='tether'/>
-<b:include name='bootstrapJs'/>
+<b:include name='js.jquery'/>
+<b:include name='js.tether'/>
+<b:include name='js.bootstrap'/>
 
 <b:comment>=== Template JavaScript ===</b:comment>
 <script>

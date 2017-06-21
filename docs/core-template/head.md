@@ -18,63 +18,63 @@ group: core-template
 ###### Source
 
 {% highlight plaintext %}
-template-src/core/head/requiredMetaTags.xml
+template-src/core/head/head.requiredMetaTags.xml
 {% endhighlight %}
 
 ###### Includable
 
 {% highlight html %}
-<b:includable id='requiredMetaTags'>...</b:includable>
+<b:includable id='head.requiredMetaTags'>...</b:includable>
 {% endhighlight %}
 
 ###### Usage
 
 {% highlight html %}
-<b:include name='requiredMetaTags'/>
+<b:include name='head.requiredMetaTags'/>
 {% endhighlight %}
 
-## Custom all-head-content
+## All-head-content
 
 Custom `<b:include data='blog' name='all-head-content'/>`.
 
 ###### Source
 
 {% highlight plaintext %}
-template-src/core/head/customAllHeadContent.xml
+template-src/core/head/head.allHeadContent.xml
 {% endhighlight %}
 
 ###### Includable
 
 {% highlight html %}
-<b:includable id='customAllHeadContent'>...</b:includable>
+<b:includable id='head.allHeadContent'>...</b:includable>
 {% endhighlight %}
 
 ###### Usage
 
 {% highlight html %}
-<b:include name='customAllHeadContent'/>
+<b:include name='head.allHeadContent'/>
 {% endhighlight %}
 
-## Custom title
+## Title
 
 Custom `<title>`.
 
 ###### Source
 
 {% highlight plaintext %}
-template-src/core/head/customTitle.xml
+template-src/core/head/head.title.xml
 {% endhighlight %}
 
 ###### Includable
 
 {% highlight html %}
-<b:includable id='customTitle'>...</b:includable>
+<b:includable id='head.title'>...</b:includable>
 {% endhighlight %}
 
 ###### Usage
 
 {% highlight html %}
-<b:include name='customTitle'/>
+<b:include name='head.title'/>
 {% endhighlight %}
 
 ## SERP and social tags
@@ -83,20 +83,20 @@ Tag `<meta>` dan `<link>` untuk <abbr title="Search Engine Results Page">SERP</a
 ###### Source
 
 {% highlight plaintext %}
-- Default/SERP: template-src/core/head/defaultTags.xml
-- Twitter Cards: template-src/core/head/twitterTags.xml
-- Facebook Open Graph: template-src/core/head/facebookTags.xml
+- Default/SERP: template-src/core/head/head.defaultTags.xml
+- Twitter Cards: template-src/core/head/head.twitterTags.xml
+- Facebook Open Graph: template-src/core/head/head.facebookTags.xml
 {% endhighlight %}
 
 ###### Includable
 
 {% highlight html %}
 <!-- Default/SERP -->
-<b:includable id='defaultTags'>...</b:includable>
+<b:includable id='head.defaultTags'>...</b:includable>
 <!-- Twitter Cards -->
-<b:includable id='facebookTags'>...</b:includable>
+<b:includable id='head.facebookTags'>...</b:includable>
 <!-- Facebook Open Graph -->
-<b:includable id='twitterTags'>...</b:includable>
+<b:includable id='head.twitterTags'>...</b:includable>
 {% endhighlight %}
 
 ###### Usage
@@ -105,9 +105,9 @@ Tag `<meta>` dan `<link>` untuk <abbr title="Search Engine Results Page">SERP</a
 <b:with value='"https://example.com/path/to/image.png"' var='image'>
 <b:with value='"@username_of_website"' var='twitterUsernameWebsite'>
 <b:with value='"@username_of_content_creator"' var='twitterUsernameCreator'>
-  <b:include name='defaultTags'/>
-  <b:include name='facebookTags'/>
-  <b:include name='twitterTags'/>
+  <b:include name='head.defaultTags'/>
+  <b:include name='head.facebookTags'/>
+  <b:include name='head.twitterTags'/>
 </b:with>
 </b:with>
 </b:with>
@@ -120,19 +120,19 @@ CSS untuk <a href="#" data-toggle="modal" data-target=".image-blogger-layout">Bl
 ###### Source
 
 {% highlight plaintext %}
-template-src/core/head/layout-mode.css
+template-src/core/head/head.layout-mode.css
 {% endhighlight %}
 
 ###### Includable
 
 {% highlight html %}
-<b:includable id='layoutModeCss'>...</b:includable>
+<b:includable id='head.layoutModeCss'>...</b:includable>
 {% endhighlight %}
 
 ###### Usage
 
 {% highlight html %}
-<b:include name='layoutModeCss'/>
+<b:include name='head.layoutModeCss'/>
 {% endhighlight %}
 
 ### Grid usage
