@@ -202,16 +202,17 @@
       @include hover-focus {
         color: $navmenu-light-hover-color;
       }
-    }
-    .nav-link.active {
-      @include plain-hover-focus {
-        color: $navmenu-light-active-color;
-      }
-    }
-    .nav-link.disabled {
-      @include plain-hover-focus {
+
+      &.disabled {
         color: $navmenu-light-disabled-color;
       }
+    }
+
+    .show > .nav-link,
+    .active > .nav-link,
+    .nav-link.show,
+    .nav-link.active {
+      color: $navmenu-light-active-color;
     }
 
     .nav-item-bordered {
@@ -245,16 +246,17 @@
       @include hover-focus {
         color: $navmenu-inverse-hover-color;
       }
-    }
-    .nav-link.active {
-      @include plain-hover-focus {
-        color: $navmenu-inverse-active-color;
-      }
-    }
-    .nav-link.disabled {
-      @include plain-hover-focus {
+
+      &.disabled {
         color: $navmenu-inverse-disabled-color;
       }
+    }
+
+    .show > .nav-link,
+    .active > .nav-link,
+    .nav-link.show,
+    .nav-link.active {
+      color: $navmenu-inverse-active-color;
     }
 
     .nav-item-bordered {
