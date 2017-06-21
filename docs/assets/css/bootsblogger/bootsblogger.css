@@ -403,11 +403,14 @@
 .navmenu-light .navmenu-nav .nav-link:focus, .navmenu-light .navmenu-nav .nav-link:hover {
   color: rgba(0, 0, 0, 0.6);
 }
-.navmenu-light .navmenu-nav .nav-link.active, .navmenu-light .navmenu-nav .nav-link.active:focus, .navmenu-light .navmenu-nav .nav-link.active:hover {
-  color: rgba(0, 0, 0, 0.8);
-}
-.navmenu-light .navmenu-nav .nav-link.disabled, .navmenu-light .navmenu-nav .nav-link.disabled:focus, .navmenu-light .navmenu-nav .nav-link.disabled:hover {
+.navmenu-light .navmenu-nav .nav-link.disabled {
   color: rgba(0, 0, 0, 0.15);
+}
+.navmenu-light .navmenu-nav .show > .nav-link,
+.navmenu-light .navmenu-nav .active > .nav-link,
+.navmenu-light .navmenu-nav .nav-link.show,
+.navmenu-light .navmenu-nav .nav-link.active {
+  color: rgba(0, 0, 0, 0.8);
 }
 .navmenu-light .navmenu-nav .nav-item-bordered {
   border-color: rgba(0, 0, 0, 0.05);
@@ -431,11 +434,14 @@
 .navmenu-inverse .navmenu-nav .nav-link:focus, .navmenu-inverse .navmenu-nav .nav-link:hover {
   color: rgba(255, 255, 255, 0.75);
 }
-.navmenu-inverse .navmenu-nav .nav-link.active, .navmenu-inverse .navmenu-nav .nav-link.active:focus, .navmenu-inverse .navmenu-nav .nav-link.active:hover {
-  color: white;
-}
-.navmenu-inverse .navmenu-nav .nav-link.disabled, .navmenu-inverse .navmenu-nav .nav-link.disabled:focus, .navmenu-inverse .navmenu-nav .nav-link.disabled:hover {
+.navmenu-inverse .navmenu-nav .nav-link.disabled {
   color: rgba(255, 255, 255, 0.25);
+}
+.navmenu-inverse .navmenu-nav .show > .nav-link,
+.navmenu-inverse .navmenu-nav .active > .nav-link,
+.navmenu-inverse .navmenu-nav .nav-link.show,
+.navmenu-inverse .navmenu-nav .nav-link.active {
+  color: white;
 }
 .navmenu-inverse .navmenu-nav .nav-item-bordered {
   border-color: rgba(0, 0, 0, 0.25);
