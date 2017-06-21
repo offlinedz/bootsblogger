@@ -181,7 +181,7 @@ JavaScript
 ================================================= </b:comment>
 
 <b:include name='js.jquery'/>
-<b:include name='js.tether'/>
+<b:include name='js.popper'/>
 <b:include name='js.bootstrap'/>
 
 <b:comment>=== Template JavaScript ===</b:comment>

@@ -229,8 +229,8 @@ Assets
     <b:includable id='js.jquery'>
       <script crossorigin='anonymous' integrity='{{ blog.cdn.jquery_hash }}' src='{{ blog.cdn.jquery }}'/>
     </b:includable>
-    <b:includable id='js.tether'>
-      <script crossorigin='anonymous' integrity='{{ blog.cdn.tether_hash }}' src='{{ blog.cdn.tether }}'/>
+    <b:includable id='js.popper'>
+      <script crossorigin='anonymous' integrity='{{ blog.cdn.popper_hash }}' src='{{ blog.cdn.popper }}'/>
     </b:includable>
     <b:includable id='js.bootstrap'>
       <script crossorigin='anonymous' integrity='{{ blog.cdn.bootstrapJs_hash }}' src='{{ blog.cdn.bootstrapJs }}'/>
