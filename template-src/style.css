@@ -191,8 +191,8 @@ body {}
 /**
  * Post byline items
  *
- * `customHeaderByline`
- * `customFooterBylines`
+ * `byline.header`
+ * `byline.footer`
  */
 
 .byline + .byline {
