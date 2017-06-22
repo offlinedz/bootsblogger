@@ -136,8 +136,21 @@
     .list-group-item:not(.active):first-child {
       border-top: $list-group-border-width solid $list-group-border-color;
     }
+
     .list-group-item.active:first-child {
       border-top: $list-group-border-width solid $list-group-active-border;
+    }
+    .list-group-item-success.active:first-child {
+      border-color: $state-success-text;
+    }
+    .list-group-item-info.active:first-child {
+      border-color: $state-info-text;
+    }
+    .list-group-item-warning.active:first-child {
+      border-color: $state-warning-text;
+    }
+    .list-group-item-danger.active:first-child {
+      border-color: $state-danger-text;
     }
   }
 
@@ -319,6 +332,12 @@
 .wg-panel.wg-title-hide .widget-content > .list-group-flush:first-child .list-group-item:first-child {
   @include border-top-radius(calc(#{$wg-panel-border-radius} - #{$wg-panel-border-width}));
 }
+// With `.wg-panel-group`
+//scss-lint:disable SelectorDepth
+.wg-panel.wg-panel-group .widget:not(:last-child) .widget-content > .list-group-flush:last-child .list-group-item:last-child {
+  @include border-bottom-radius(0);
+}
+//scss-lint:enable SelectorDepth
 
 // Background variations
 
