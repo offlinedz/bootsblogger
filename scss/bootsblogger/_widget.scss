@@ -285,6 +285,14 @@
   @include border-radius($wg-panel-border-radius);
 }
 
+// Smaller
+
+.wg-panel-sm > .widget > .title {
+  padding: $wg-panel-sm-title-padding;
+  font-size: $wg-panel-sm-title-font-size;
+  font-weight: $wg-panel-sm-title-font-weight;
+}
+
 // Group
 
 .wg-panel-group {

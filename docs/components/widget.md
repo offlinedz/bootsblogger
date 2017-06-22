@@ -778,6 +778,25 @@ Ubah `.wg-panel-{color}` menjadi `.wg-panel-outline-{color}`.
 <b:section class='wg wg-panel wg-panel-outline-{color} wg-title-{color}' id='sectionId'></b:section>
 {% endhighlight %}
 
+### Smaller
+
+Tambahkan `.wg-panel-sm`.
+
+<div class="bd-example bd-example-widget-inverse text-gray-dark">
+  <div class="wg wg-panel wg-panel-sm wg-panel-orange wg-title-gray-dark">
+    <div class="widget">
+      <h3 class="title">Widget title</h3>
+      <div class="widget-content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+      </div>
+    </div><!-- /.widget -->
+  </div>
+</div><!-- /.bd-example -->
+
+{% highlight html %}
+<b:section class='wg wg-panel wg-panel-sm wg-panel-orange wg-title-gray-dark' id='sectionId'></b:section>
+{% endhighlight %}
+
 ### Group
 
 Tambahkan `.wg-panel-group`.

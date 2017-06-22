@@ -127,6 +127,10 @@ $wg-panel-border-width:          1px !default;
 $wg-panel-border-radius:         $border-radius !default;
 $wg-panel-box-shadow:            0 1px 1px rgba(0,0,0,.05) !default;
 
+$wg-panel-sm-title-padding:      .3rem $wg-panel-content-padding !default;
+$wg-panel-sm-title-font-size:    .75rem !default;
+$wg-panel-sm-title-font-weight:  500 !default;
+
 // Widget grid
 
 $wg-grid-gutter-width-base:      30px !default;
