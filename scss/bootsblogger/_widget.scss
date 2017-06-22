@@ -11,7 +11,7 @@
 .wg > .widget > .title {
   font-size: $wg-title-font-size;
   font-weight: $wg-title-font-weight;
-  line-height: 1.1;
+  line-height: $wg-title-line-height;
 }
 
 // Content
