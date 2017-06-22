@@ -143,12 +143,12 @@ Gunakan pada elemen yang di dalamnya terdapat tag `b:section`. Sesuaikan dengan 
 <div class='container'>
   <!-- Main -->
   <main class='main blogger-col-8' id='main'>
-    <b:section class='' id='main-section' maxwidgets='1' name='Main' showaddelement='no'></b:section>
+    <b:section class='b-section-main' id='b-section-main' maxwidgets='1' name='Main' showaddelement='no'></b:section>
   </main><!-- /.main -->
 
   <!-- Sidebar -->
   <aside class='sidebar blogger-col-4' id='sidebar'>
-    <b:section class='' id='sidebar-section' name='Sidebar'></section>
+    <b:section class='b-section-sidebar' id='b-section-sidebar' name='Sidebar'></section>
   </aside><!-- /.sidebar -->
 </div>
 {% endhighlight %}
@@ -162,12 +162,12 @@ Contoh-contoh lainnya:
   <div class='row'>
     <!-- Main -->
     <main class='main col-md-9 blogger-col-9' id='main'>
-      <b:section class='' id='main-section' maxwidgets='1' name='Main' showaddelement='no'></b:section>
+      <b:section class='b-section-main' id='b-section-main' maxwidgets='1' name='Main' showaddelement='no'></b:section>
     </main><!-- /.main -->
 
     <!-- Sidebar -->
     <aside class='sidebar col-md-3 blogger-col-3' id='sidebar'>
-      <b:section class='' id='sidebar-section' name='Sidebar'></section>
+      <b:section class='b-section-sidebar' id='b-section-sidebar' name='Sidebar'></section>
     </aside><!-- /.sidebar -->
   </div><!-- /.row -->
 </div><!-- /.container -->
@@ -178,12 +178,12 @@ Contoh-contoh lainnya:
   <div class='row'>
     <!-- Main -->
     <main class='main col-md-9 blogger-col-8' id='main'>
-      <b:section class='' id='main-section' maxwidgets='1' name='Main' showaddelement='no'></b:section>
+      <b:section class='b-section-main' id='b-section-main' maxwidgets='1' name='Main' showaddelement='no'></b:section>
     </main><!-- /.main -->
 
     <!-- Sidebar -->
     <aside class='sidebar col-md-3 blogger-col-4' id='sidebar'>
-      <b:section class='' id='sidebar-section' name='Sidebar'></section>
+      <b:section class='b-section-sidebar' id='b-section-sidebar' name='Sidebar'></section>
     </aside><!-- /.sidebar -->
   </div><!-- /.row -->
 </div><!-- /.container -->

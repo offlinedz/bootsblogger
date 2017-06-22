@@ -1,5 +1,5 @@
 <b:if cond='!data:view.isPage'>
-  <nav class='pager d-flex justify-content-between'>
+  <nav class='blog-pager d-flex justify-content-between'>
     <b:if cond='data:newerPageUrl'>
       <a class='btn btn-secondary' expr:href='data:newerPageUrl' role='button'><data:messages.newer/></a>
     <b:else/>
@@ -17,7 +17,7 @@
 </b:if>
 
 <b:if cond='data:view.isPage'>
-  <nav class='pager d-flex justify-content-center'>
+  <nav class='blog-pager d-flex justify-content-center'>
     <a class='btn btn-secondary' expr:href='data:blog.homepageUrl' role='button'><data:messages.home/></a>
   </nav>
 </b:if>

@@ -123,22 +123,26 @@ Jumbotron
 
 <b:comment>
 =================================================
-Main and sidebar
+Main content
 ================================================= </b:comment>
 
-<div class='main-and-sidebar py-5' id='main-and-sidebar'>
+<div class='main-content py-5' id='main-content'>
   <div class='container'>
     <div class='row'>
       <!-- Main -->
       <main class='main col-md-9 blogger-col-8' id='main'>
-        <b:section class='' id='main-section' maxwidgets='1' name='Main' showaddelement='no'>
-          <!--(bake /core/blog-posts/widget.xml)-->
-        </b:section>
+        <div class='main-wrap'>
+          <b:section class='b-section-main' id='b-section-main' maxwidgets='1' name='Main' showaddelement='no'>
+            <!--(bake /core/blog-posts/widget.xml)-->
+          </b:section>
+        </div>
       </main><!-- /.main -->
 
       <!-- Sidebar -->
       <aside class='sidebar col-md-3 blogger-col-4 mt-5 mt-md-0' id='sidebar'>
-        <b:section class='wg wg-box wg-box-white wg-title-gray-dark wg-md-12 wg-sm-6 mnb-3' id='sidebar-section' name='Sidebar'/>
+        <div class='sidebar-wrap'>
+          <b:section class='b-section-sidebar wg wg-box wg-box-white wg-title-gray-dark wg-md-12 wg-sm-6 mnb-3' id='b-section-sidebar' name='Sidebar'/>
+        </div>
       </aside><!-- /.sidebar -->
     </div><!-- /.row -->
   </div><!-- /.container -->
@@ -152,7 +156,9 @@ Widget 1
 
 <div class='widget-1 py-5' id='widget-1'>
   <div class='container'>
-    <b:section class='wg wg-panel wg-panel-orange wg-title-gray-dark wg-md-4 mnb-3' id='widget-1-section' name='Widget 1'></b:section>
+    <div class='widget-1-wrap'>
+      <b:section class='b-section-widget-1 wg wg-panel wg-panel-orange wg-title-gray-dark wg-md-4 mnb-3' id='b-section-widget-1' name='Widget 1'></b:section>
+    </div>
   </div>
 </div>
 
@@ -164,13 +170,15 @@ Footer
 
 <footer class='footer py-5' id='footer'>
   <div class='container'>
-    <ul class='list-inline'>
-      <li class='list-inline-item'><a href='#'>Twitter</a></li>
-      <li class='list-inline-item'><a href='#'>Facebook</a></li>
-      <li class='list-inline-item'><a href='#'>Google+</a></li>
-    </ul>
-    <p class='mb-0'>&#169; <data:blog.title/>.</p>
-    <p class='mb-0'>Template <span class='text-lowercase'><data:messages.by/></span> <a href='{{ blog.templateAuthorUrl }}'>{{ blog.templateAuthorName }}</a> + <a href='https://bootsblogger.github.io'>Bootsblogger</a>. <b:message name='messages.poweredByBloggerLink'><b:param expr:value='data:blog.bloggerUrl'/></b:message>.</p>
+    <div class='footer-wrap'>
+      <ul class='list-inline'>
+        <li class='list-inline-item'><a href='#'>Twitter</a></li>
+        <li class='list-inline-item'><a href='#'>Facebook</a></li>
+        <li class='list-inline-item'><a href='#'>Google+</a></li>
+      </ul>
+      <p class='mb-0'>&#169; <data:blog.title/>.</p>
+      <p class='mb-0'>Template <span class='text-lowercase'><data:messages.by/></span> <a href='{{ blog.templateAuthorUrl }}'>{{ blog.templateAuthorName }}</a> + <a href='https://bootsblogger.github.io'>Bootsblogger</a>. <b:message name='messages.poweredByBloggerLink'><b:param expr:value='data:blog.bloggerUrl'/></b:message>.</p>
+    </div>
   </div>
 </footer>
 

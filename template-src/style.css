@@ -161,32 +161,28 @@ body {}
 
 
 /* ==============================================
-   Main and sidebar
+   `Blog`
    ============================================== */
 
-.main-and-sidebar {
-  background-color: #fafafa;
+/* Breadcrumb
+   ============================================== */
+
+.blog-breadcrumb {
+  background-color: #fbe9e7;
 }
 
-/* Main
+/* Status message
    ============================================== */
 
-.main {}
-
-/**
- * Status message
- */
-
-.search-label,
-.search-query {
+.blog-alert .search-label,
+.blog-alert .search-query {
   font-weight: bold;
 }
 
-/**
- * Posts
- */
+/* Posts
+   ============================================== */
 
-.posts {}
+.blog-posts {}
 
 /**
  * Post byline items
@@ -199,24 +195,40 @@ body {}
   margin-left: .5rem;
 }
 
-/**
- * Comments
- */
+/* Comments
+   ============================================== */
 
-.comments {}
+.blog-comments {}
 
-/**
- * Pager
- */
+/* Pager
+   ============================================== */
 
-.pager > .btn {
+.blog-pager > .btn {
   border-radius: 2rem;
 }
+
+
+/* ==============================================
+   Main content
+   ============================================== */
+
+.main-content {
+  background-color: #fafafa;
+}
+
+/* Main
+   ============================================== */
+
+.main {}
+
+.main-wrap {}
 
 /* Sidebar
    ============================================== */
 
 .sidebar {}
+
+.sidebar-wrap {}
 
 
 /* ==============================================
@@ -226,6 +238,8 @@ body {}
 .widget-1 {
   background-color: #333;
 }
+
+.widget-1-wrap {}
 
 
 /* ==============================================
@@ -238,6 +252,8 @@ body {}
   text-align: center;
   background-color: #fafafa;
 }
+
+.footer-wrap {}
 
 .footer a {
   font-weight: 500;

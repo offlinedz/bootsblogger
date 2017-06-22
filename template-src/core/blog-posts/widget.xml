@@ -41,7 +41,7 @@
 
       <b:comment>=== Posts ===</b:comment>
       <b:if cond='data:posts.notEmpty'>
-        <div class='posts' id='posts'>
+        <div class='blog-posts'>
           <b:comment>=== Homepage ===</b:comment>
           <b:if cond='data:view.isHomepage'>
             <b:include name='post-home'/>

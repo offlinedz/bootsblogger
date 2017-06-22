@@ -1,4 +1,4 @@
-<ol class='breadcrumb'>
+<ol class='blog-breadcrumb breadcrumb'>
   <li class='breadcrumb-item'>
     <a expr:href='data:blog.homepageUrl'>Home</a>
   </li>
