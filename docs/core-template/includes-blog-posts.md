@@ -1,7 +1,7 @@
 ---
 layout: docs
-title: Blog posts
-description: Gadget Blog dirancang untuk memberikan kemudahan dalam mengatur tampilan posting, dan juga dirancang untuk dapat membuat tampilan posting yang berbeda di setiap tipe halaman.
+title: Includes - Blog posts
+description: Bagian-bagian kode untuk posting blog.
 group: core-template
 ---
 
@@ -14,9 +14,9 @@ Bagian-bagian kode untuk posting blog hanya dapat disertakan di dalam widget `Bl
 
 ## Post layout and styles
 
-Posting dibagi menjadi beberapa bagian berdasarkan tipe halaman. Untuk membuat tampilan posting yang berbeda di setiap tipe halaman, Anda hanya perlu menyesuaikan tampilan posting pada masing-masing bagian.
+Untuk memudahkan dalam mengatur tampilan posting, posting dibagi menjadi beberapa bagian berdasarkan tipe halaman. Tampilan posting dapat berbeda-beda di setiap tipe halaman, untuk membuat tampilan posting yang berbeda di setiap tipe halaman, Anda hanya perlu menyesuaikan tampilan posting pada masing-masing bagian.
 
-**Catatan:** Anda tidak perlu menyertakan bagian-bagian di bawah ini karena secara *default* sudah disertakan, lihat `<b:includable id='main'>`.
+Bagian-bagian ini digunakan di bagian [`<b:includable id='main.blog-posts'>`](#blog-posts).
 
 ### Homepage
 
@@ -25,7 +25,7 @@ Tampilan posting untuk halaman beranda.
 ###### Source
 
 {% highlight plaintext %}
-template-src/content/blog-posts/post-home.xml
+template-src/post-layout/post-home.xml
 {% endhighlight %}
 
 ###### Includable
@@ -41,7 +41,7 @@ Tampilan posting untuk halaman posting (*item*).
 ###### Source
 
 {% highlight plaintext %}
-template-src/content/blog-posts/post-item.xml
+template-src/post-layout/post-item.xml
 {% endhighlight %}
 
 ###### Includable
@@ -57,7 +57,7 @@ Tampilan posting untuk halaman statis.
 ###### Source
 
 {% highlight plaintext %}
-template-src/content/blog-posts/post-static.xml
+template-src/post-layout/post-static.xml
 {% endhighlight %}
 
 ###### Includable
@@ -73,7 +73,7 @@ Tampilan posting untuk halaman kategori.
 ###### Source
 
 {% highlight plaintext %}
-template-src/content/blog-posts/post-search-label.xml
+template-src/post-layout/post-search-label.xml
 {% endhighlight %}
 
 ###### Includable
@@ -89,7 +89,7 @@ Tampilan posting untuk halaman hasil pencarian.
 ###### Source
 
 {% highlight plaintext %}
-template-src/content/blog-posts/post-search-query.xml
+template-src/post-layout/post-search-query.xml
 {% endhighlight %}
 
 ###### Includable
@@ -105,7 +105,7 @@ Tampilan posting untuk halaman dengan URL `https://example.blogspot.com/search`.
 ###### Source
 
 {% highlight plaintext %}
-template-src/content/blog-posts/post-search-default.xml
+template-src/post-layout/post-search-default.xml
 {% endhighlight %}
 
 ###### Includable
@@ -121,7 +121,7 @@ Tampilan posting untuk halaman arsip.
 ###### Source
 
 {% highlight plaintext %}
-template-src/content/blog-posts/post-archive.xml
+template-src/post-layout/post-archive.xml
 {% endhighlight %}
 
 ###### Includable
@@ -130,83 +130,99 @@ template-src/content/blog-posts/post-archive.xml
 <b:includable id='post-archive'>...</b:includable>
 {% endhighlight %}
 
-## Includes <small class="text-muted">main</small>
+## Main
 
-Bagian-bagian di bawah ini hanya disertakan di dalam `<b:includable id='main'>`.
+Bagian-bagian ini digunakan di bagian `<b:includable id='main'>` di dalam widget `Blog`.
 
-**Catatan:** Anda tidak perlu menyertakan bagian-bagian di bawah ini karena secara *default* sudah disertakan, lihat `<b:includable id='main'>`.
-
-### Breadcrumb
+### Blog breadcrumb
 
 Untuk menunjukkan lokasi halaman saat ini.
 
 ###### Source
 
 {% highlight plaintext %}
-template-src/content/blog-posts/main.breadcrumb.xml
+template-src/includes/blog-posts/main.blog-breadcrumb.xml
 {% endhighlight %}
 
 ###### Includable
 
 {% highlight html %}
-<b:includable id='main.breadcrumb'>...</b:includable>
+<b:includable id='main.blog-breadcrumb'>...</b:includable>
 {% endhighlight %}
 
-### Status message
+### Blog alert
 
-Pesan yang akan muncul di atas posting, pesan hanya akan muncul di halaman hasil pencarian, halaman label, halaman arsip, dan halaman galat (404).
+Pesan yang akan muncul di atas posting. Pesan hanya akan muncul di halaman hasil pencarian, halaman label, halaman arsip, dan halaman galat (404).
 
 ###### Source
 
 {% highlight plaintext %}
-template-src/content/blog-posts/main.statusMessage.xml
+template-src/includes/blog-posts/main.blog-alert.xml
 {% endhighlight %}
 
 ###### Includable
 
 {% highlight html %}
-<b:includable id='main.statusMessage'>...</b:includable>
+<b:includable id='main.blog-alert'>...</b:includable>
 {% endhighlight %}
 
-### Comments
+### Blog posts
+
+Penggunaan [post layout and styles](#post-layout-and-styles).
+
+###### Source
+
+{% highlight plaintext %}
+template-src/includes/blog-posts/main.blog-posts.xml
+{% endhighlight %}
+
+###### Includable
+
+{% highlight html %}
+<b:includable id='main.blog-posts'>...</b:includable>
+{% endhighlight %}
+
+### Blog comments
 
 Sistem komentar bawaan Bootsblogger.
 
 ###### Source
 
 {% highlight plaintext %}
-template-src/content/blog-posts/main.comments.xml
+template-src/includes/blog-posts/main.blog-comments.xml
 {% endhighlight %}
 
 ###### Includable
 
 {% highlight html %}
-<b:includable id='main.comments'>...</b:includable>
+<b:includable id='main.blog-comments'>...</b:includable>
 {% endhighlight %}
 
 ###### Alternative
 
 Jika Anda ingin menggunakan sistem komentar alternatif, Anda dapat menggunakan sistem komentar [Disqus](https://disqus.com), [Google+](https://support.google.com/blogger/answer/1752748), [Facebook](https://developers.facebook.com/docs/plugins/comments/), atau lainnya.
 
-### Pager
+### Blog pager
 
 Tautan untuk menuju halaman berikutnya atau sebelumnya.
 
 ###### Source
 
 {% highlight plaintext %}
-template-src/content/blog-posts/main.pager.xml
+template-src/includes/blog-posts/main.blog-pager.xml
 {% endhighlight %}
 
 ###### Includable
 
 {% highlight html %}
-<b:includable id='main.pager'>...</b:includable>
+<b:includable id='main.blog-pager'>...</b:includable>
 {% endhighlight %}
 
-## Includes <small class="text-muted">byline items</small>
+## Post byline items
 
 Untuk menampilkan *item* posting yang ada dalam daftar konfigurasi posting blog.
+
+Bagian-bagian ini dapat digunakan di bagian [post layout and styles](#post-layout-and-styles).
 
 ### headerByline
 
@@ -215,7 +231,7 @@ Bagian *header*.
 ###### Source
 
 {% highlight plaintext %}
-template-src/core/blog-posts/byline.header.xml
+template-src/includes/blog-posts/byline.header.xml
 {% endhighlight %}
 
 ###### Includable
@@ -241,7 +257,7 @@ Bagian *footer*.
 ###### Source
 
 {% highlight plaintext %}
-template-src/core/blog-posts/byline.footer.xml
+template-src/includes/blog-posts/byline.footer.xml
 {% endhighlight %}
 
 ###### Includable
@@ -260,9 +276,9 @@ template-src/core/blog-posts/byline.footer.xml
 </b:if>
 {% endhighlight %}
 
-## Includes <small class="text-muted">individual</small>
+## Post items
 
-Gunakan dari beberapa berikut sesuai kebutuhan:
+Bagian-bagian ini dapat digunakan di bagian [post layout and styles](#post-layout-and-styles).
 
 ### Author name
 
@@ -271,7 +287,7 @@ Untuk menampilkan nama penulis.
 ###### Source
 
 {% highlight plaintext %}
-template-src/core/blog-posts/post.authorName.xml
+template-src/includes/blog-posts/post.authorName.xml
 {% endhighlight %}
 
 ###### Includable
@@ -293,7 +309,7 @@ Untuk menampilkan foto penulis.
 ###### Source
 
 {% highlight plaintext %}
-template-src/core/blog-posts/post.authorImage.xml
+template-src/includes/blog-posts/post.authorImage.xml
 {% endhighlight %}
 
 ###### Includable
@@ -315,8 +331,8 @@ Untuk menampilkan tanggal diterbitkannya posting dan tanggal terakhir posting di
 ###### Source
 
 {% highlight plaintext %}
-- template-src/core/blog-posts/post.datePublished.xml
-- template-src/core/blog-posts/post.dateUpdated.xml
+- template-src/includes/blog-posts/post.datePublished.xml
+- template-src/includes/blog-posts/post.dateUpdated.xml
 {% endhighlight %}
 
 ###### Includable
@@ -504,7 +520,7 @@ Untuk menampilkan jumlah komentar per posting.
 ###### Source
 
 {% highlight plaintext %}
-template-src/core/blog-posts/post.numComments.xml
+template-src/includes/blog-posts/post.numComments.xml
 {% endhighlight %}
 
 ###### Includable
@@ -528,7 +544,7 @@ Untuk menampilkan label posting.
 ###### Source
 
 {% highlight plaintext %}
-template-src/core/blog-posts/post.labels.xml
+template-src/includes/blog-posts/post.labels.xml
 {% endhighlight %}
 
 ###### Includable
@@ -550,7 +566,7 @@ Untuk menampilkan *featured image*.
 ###### Source
 
 {% highlight plaintext %}
-template-src/core/blog-posts/post.image.xml
+template-src/includes/blog-posts/post.image.xml
 {% endhighlight %}
 
 ###### Includable
@@ -572,7 +588,7 @@ Untuk menampilkan *featured image* dengan CSS `background-image`.
 ###### Source
 
 {% highlight plaintext %}
-template-src/core/blog-posts/post.imageBg.xml
+template-src/includes/blog-posts/post.imageBg.xml
 {% endhighlight %}
 
 ###### Includable
@@ -594,7 +610,7 @@ Untuk menampilkan ringkasan posting.
 ###### Source
 
 {% highlight plaintext %}
-template-src/core/blog-posts/post.snippet.xml
+template-src/includes/blog-posts/post.snippet.xml
 {% endhighlight %}
 
 ###### Includable
@@ -618,7 +634,7 @@ Untuk menampilkan *jump link*.
 ###### Source
 
 {% highlight plaintext %}
-template-src/core/blog-posts/post.jumpLink.xml
+template-src/includes/blog-posts/post.jumpLink.xml
 {% endhighlight %}
 
 ###### Includable

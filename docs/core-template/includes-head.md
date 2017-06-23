@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Head
+title: Includes - Head
 description: Bagian-bagian kode yang digunakan di dalam tag head HTML.
 group: core-template
 ---
@@ -18,7 +18,7 @@ group: core-template
 ###### Source
 
 {% highlight plaintext %}
-template-src/core/head/head.requiredMetaTags.xml
+template-src/includes/head/head.requiredMetaTags.xml
 {% endhighlight %}
 
 ###### Includable
@@ -40,7 +40,7 @@ Custom `<b:include data='blog' name='all-head-content'/>`.
 ###### Source
 
 {% highlight plaintext %}
-template-src/core/head/head.allHeadContent.xml
+template-src/includes/head/head.allHeadContent.xml
 {% endhighlight %}
 
 ###### Includable
@@ -57,12 +57,12 @@ template-src/core/head/head.allHeadContent.xml
 
 ## Title
 
-Custom `<title>`.
+Judul dokumen atau tag `<title>`.
 
 ###### Source
 
 {% highlight plaintext %}
-template-src/core/head/head.title.xml
+template-src/includes/head/head.title.xml
 {% endhighlight %}
 
 ###### Includable
@@ -83,9 +83,9 @@ Tag `<meta>` dan `<link>` untuk <abbr title="Search Engine Results Page">SERP</a
 ###### Source
 
 {% highlight plaintext %}
-- Default/SERP: template-src/core/head/head.defaultTags.xml
-- Twitter Cards: template-src/core/head/head.twitterTags.xml
-- Facebook Open Graph: template-src/core/head/head.facebookTags.xml
+- Default/SERP: template-src/includes/head/head.defaultTags.xml
+- Twitter Cards: template-src/includes/head/head.twitterTags.xml
+- Facebook Open Graph: template-src/includes/head/head.facebookTags.xml
 {% endhighlight %}
 
 ###### Includable
@@ -120,7 +120,7 @@ CSS untuk <a href="#" data-toggle="modal" data-target=".image-blogger-layout">Bl
 ###### Source
 
 {% highlight plaintext %}
-template-src/core/head/head.layout-mode.css
+template-src/includes/head/head.layout-mode.css
 {% endhighlight %}
 
 ###### Includable

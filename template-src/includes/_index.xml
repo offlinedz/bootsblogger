@@ -6,30 +6,30 @@ Head
 <b:defaultmarkups>
   <b:defaultmarkup type='Common'>
     <b:includable id='head.requiredMetaTags'>
-  <!--(bake /core/head/head.requiredMetaTags.xml)-->
-</b:includable>
+      <!--(bake head/head.requiredMetaTags.xml)-->
+    </b:includable>
     <b:includable id='head.title'>
-  <!--(bake /core/head/head.title.xml)-->
-</b:includable>
+      <!--(bake head/head.title.xml)-->
+    </b:includable>
     <b:includable id='head.allHeadContent'>
-  <!--(bake /core/head/head.allHeadContent.xml)-->
-</b:includable>
+      <!--(bake head/head.allHeadContent.xml)-->
+    </b:includable>
     <b:includable id='head.defaultTags'>
-  <!--(bake /core/head/head.defaultTags.xml)-->
-</b:includable>
+      <!--(bake head/head.defaultTags.xml)-->
+    </b:includable>
     <b:includable id='head.facebookTags'>
-  <!--(bake /core/head/head.facebookTags.xml)-->
-</b:includable>
+      <!--(bake head/head.facebookTags.xml)-->
+    </b:includable>
     <b:includable id='head.twitterTags'>
-  <!--(bake /core/head/head.twitterTags.xml)-->
-</b:includable>
+      <!--(bake head/head.twitterTags.xml)-->
+    </b:includable>
     <b:includable id='head.layoutModeCss'>
-  <b:template-skin>
-    <![CDATA[
-    <!--(bake /core/head/head.layout-mode.css)-->
-    ]]>
-  </b:template-skin>
-</b:includable>
+      <b:template-skin>
+      <![CDATA[
+      <!--(bake head/head.layout-mode.css)-->
+      ]]>
+      </b:template-skin>
+    </b:includable>
   </b:defaultmarkup>
 </b:defaultmarkups>
 
@@ -41,56 +41,56 @@ Blog `<widget type='Blog'/>`
 <b:defaultmarkups>
   <b:defaultmarkup type='Common'>
     <b:includable id='main.blog-breadcrumb' var='post'>
-  <!--(bake /core/blog-posts/main.blog-breadcrumb.xml)-->
-</b:includable>
+      <!--(bake blog-posts/main.blog-breadcrumb.xml)-->
+    </b:includable>
     <b:includable id='main.blog-alert' var='post'>
-  <!--(bake /core/blog-posts/main.blog-alert.xml)-->
-</b:includable>
+      <!--(bake blog-posts/main.blog-alert.xml)-->
+    </b:includable>
     <b:includable id='main.blog-posts' var='post'>
-  <!--(bake /core/blog-posts/main.blog-posts.xml)-->
-</b:includable>
+      <!--(bake blog-posts/main.blog-posts.xml)-->
+    </b:includable>
     <b:includable id='main.blog-comments' var='post'>
-  <!--(bake /core/blog-posts/main.blog-comments.xml)-->
-</b:includable>
+      <!--(bake blog-posts/main.blog-comments.xml)-->
+    </b:includable>
     <b:includable id='main.blog-pager' var='post'>
-  <!--(bake /core/blog-posts/main.blog-pager.xml)-->
-</b:includable>
+      <!--(bake blog-posts/main.blog-pager.xml)-->
+    </b:includable>
     <b:includable id='byline.header'>
-  <!--(bake /core/blog-posts/byline.header.xml)-->
-</b:includable>
+      <!--(bake blog-posts/byline.header.xml)-->
+    </b:includable>
     <b:includable id='byline.footer'>
-  <!--(bake /core/blog-posts/byline.footer.xml)-->
-</b:includable>
+      <!--(bake blog-posts/byline.footer.xml)-->
+    </b:includable>
     <b:includable id='post.authorName'>
-  <!--(bake /core/blog-posts/post.authorName.xml)-->
-</b:includable>
+      <!--(bake blog-posts/post.authorName.xml)-->
+    </b:includable>
     <b:includable id='post.authorImage'>
-  <!--(bake /core/blog-posts/post.authorImage.xml)-->
-</b:includable>
+      <!--(bake blog-posts/post.authorImage.xml)-->
+    </b:includable>
     <b:includable id='post.datePublished'>
-  <!--(bake /core/blog-posts/post.datePublished.xml)-->
-</b:includable>
+      <!--(bake blog-posts/post.datePublished.xml)-->
+    </b:includable>
     <b:includable id='post.dateUpdated'>
-  <!--(bake /core/blog-posts/post.dateUpdated.xml)-->
-</b:includable>
+      <!--(bake blog-posts/post.dateUpdated.xml)-->
+    </b:includable>
     <b:includable id='post.numComments'>
-  <!--(bake /core/blog-posts/post.numComments.xml)-->
-</b:includable>
+      <!--(bake blog-posts/post.numComments.xml)-->
+    </b:includable>
     <b:includable id='post.labels'>
-  <!--(bake /core/blog-posts/post.labels.xml)-->
-</b:includable>
+      <!--(bake blog-posts/post.labels.xml)-->
+    </b:includable>
     <b:includable id='post.image'>
-  <!--(bake /core/blog-posts/post.image.xml)-->
-</b:includable>
+      <!--(bake blog-posts/post.image.xml)-->
+    </b:includable>
     <b:includable id='post.imageBg'>
-  <!--(bake /core/blog-posts/post.imageBg.xml)-->
-</b:includable>
+      <!--(bake blog-posts/post.imageBg.xml)-->
+    </b:includable>
     <b:includable id='post.snippet'>
-  <!--(bake /core/blog-posts/post.snippet.xml)-->
-</b:includable>
+      <!--(bake blog-posts/post.snippet.xml)-->
+    </b:includable>
     <b:includable id='post.jumpLink'>
-  <!--(bake /core/blog-posts/post.jumpLink.xml)-->
-</b:includable>
+      <!--(bake blog-posts/post.jumpLink.xml)-->
+    </b:includable>
   </b:defaultmarkup>
 </b:defaultmarkups>
 
@@ -218,12 +218,12 @@ Assets
   <b:defaultmarkup type='Common'>
     <b:includable id='css.bootstrap'>
       <style>
-        <!--(bake /core/assets/css/bootstrap/bootstrap.min.css)-->
+      <!--(bake assets/css/bootstrap/bootstrap.min.css)-->
       </style>
     </b:includable>
     <b:includable id='css.bootsblogger'>
       <style>
-        <!--(bake /core/assets/css/bootsblogger/bootsblogger.min.css)-->
+      <!--(bake assets/css/bootsblogger/bootsblogger.min.css)-->
       </style>
     </b:includable>
     <b:includable id='css.fontAwesome'>

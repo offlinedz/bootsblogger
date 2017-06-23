@@ -8,10 +8,10 @@
   pages:
     - title: Overview
     - title: Page types
-    - title: Head
     - title: Body class
-    - title: Blog posts
-    - title: Assets
+    - title: Includes - Head
+    - title: Includes - Blog posts
+    - title: Includes - Assets
 
 - title: Components
   pages:

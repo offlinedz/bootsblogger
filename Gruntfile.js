@@ -20,8 +20,8 @@ module.exports = function(grunt) {
     clean: {
       'dist': 'dist',
       'css': [
-        'template-src/core/assets/css/bootstrap',
-        'template-src/core/assets/css/bootsblogger',
+        'template-src/includes/assets/css/bootstrap',
+        'template-src/includes/assets/css/bootsblogger',
         'docs/assets/css/bootsblogger'
       ]
     },
@@ -50,12 +50,12 @@ module.exports = function(grunt) {
       },
       bootstrap: {
         files: {
-          'template-src/core/assets/css/bootstrap/bootstrap.css': 'scss/bootstrap/bootstrap.scss'
+          'template-src/includes/assets/css/bootstrap/bootstrap.css': 'scss/bootstrap/bootstrap.scss'
         }
       },
       bootsblogger: {
         files: {
-          'template-src/core/assets/css/bootsblogger/bootsblogger.css': 'scss/bootsblogger/bootsblogger.scss'
+          'template-src/includes/assets/css/bootsblogger/bootsblogger.css': 'scss/bootsblogger/bootsblogger.scss'
         }
       }
     },
@@ -103,10 +103,10 @@ module.exports = function(grunt) {
         ]
       },
       bootstrap: {
-        src: 'template-src/core/assets/css/bootstrap/*.css'
+        src: 'template-src/includes/assets/css/bootstrap/*.css'
       },
       bootsblogger: {
-        src: 'template-src/core/assets/css/bootsblogger/*.css'
+        src: 'template-src/includes/assets/css/bootsblogger/*.css'
       }
     },
 
@@ -120,18 +120,18 @@ module.exports = function(grunt) {
       bootstrap: {
         files: [{
           expand: true,
-          cwd: 'template-src/core/assets/css/bootstrap',
+          cwd: 'template-src/includes/assets/css/bootstrap',
           src: ['*.css', '!*.min.css'],
-          dest: 'template-src/core/assets/css/bootstrap',
+          dest: 'template-src/includes/assets/css/bootstrap',
           ext: '.min.css'
         }]
       },
       bootsblogger: {
         files: [{
           expand: true,
-          cwd: 'template-src/core/assets/css/bootsblogger',
+          cwd: 'template-src/includes/assets/css/bootsblogger',
           src: ['*.css', '!*.min.css'],
-          dest: 'template-src/core/assets/css/bootsblogger',
+          dest: 'template-src/includes/assets/css/bootsblogger',
           ext: '.min.css'
         }]
       }
@@ -158,7 +158,7 @@ module.exports = function(grunt) {
     copy: {
       docs: {
         expand: true,
-        cwd: 'template-src/core/assets/css',
+        cwd: 'template-src/includes/assets/css',
         src: 'bootsblogger/*',
         dest: 'docs/assets/css'
       }
@@ -184,8 +184,8 @@ module.exports = function(grunt) {
           'template-src/**/*.css',
           'template-src/**/*.js',
           'template-src/config.json',
-          '!template-src/core/assets/css/bootstrap/*',
-          '!template-src/core/assets/css/bootsblogger/*'
+          '!template-src/includes/assets/css/bootstrap/*',
+          '!template-src/includes/assets/css/bootsblogger/*'
         ],
         tasks: [
           'clean:dist',
@@ -199,8 +199,8 @@ module.exports = function(grunt) {
         options: {
           branch: [
             'dist/.',
-            'template-src/core/assets/css/bootstrap/.',
-            'template-src/core/assets/css/bootsblogger/.',
+            'template-src/includes/assets/css/bootstrap/.',
+            'template-src/includes/assets/css/bootsblogger/.',
             'docs/assets/css/bootsblogger/.'
           ]
         }

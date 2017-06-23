@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Assets
+title: Includes - Assets
 description: CSS, JavaScript, dan lainnya.
 group: core-template
 ---
@@ -21,7 +21,7 @@ CSS dan JavaScript inti.
 ###### Source
 
 {% highlight plaintext %}
-template-src/core/assets/css/bootstrap/bootstrap.min.css
+template-src/includes/assets/css/bootstrap/bootstrap.min.css
 {% endhighlight %}
 
 ###### Includable
@@ -76,7 +76,7 @@ Lihat `template-src/config.json`:
 ###### Source
 
 {% highlight plaintext %}
-template-src/core/assets/css/bootsblogger/bootsblogger.min.css
+template-src/includes/assets/css/bootsblogger/bootsblogger.min.css
 {% endhighlight %}
 
 ###### Includable
@@ -98,8 +98,6 @@ CSS Bootsblogger dikompilasi dari kode sumber, oleh karena itu, CSS Bootsblogger
 Aset untuk keperluan gambar dan ikon.
 
 ### Font Awesome
-
-Beberapa bagian kode inti Bootsblogger menggunakan ikon Font Awesome, oleh karena itu, Font Awesome harus digunakan.
 
 - Homepage: <http://fontawesome.io>
 - Source: <abbr title="Content Delivery Network">CDN</abbr>

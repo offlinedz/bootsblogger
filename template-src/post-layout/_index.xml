@@ -1,0 +1,25 @@
+<b:defaultmarkups>
+  <b:defaultmarkup type='Common'>
+    <b:includable id='post-home'>
+      <!--(bake post-home.xml)-->
+    </b:includable>
+    <b:includable id='post-item'>
+      <!--(bake post-item.xml)-->
+    </b:includable>
+    <b:includable id='post-static'>
+      <!--(bake post-static.xml)-->
+    </b:includable>
+    <b:includable id='post-search-label'>
+      <!--(bake post-search-label.xml)-->
+    </b:includable>
+    <b:includable id='post-search-query'>
+      <!--(bake post-search-query.xml)-->
+    </b:includable>
+    <b:includable id='post-search-default'>
+      <!--(bake post-search-default.xml)-->
+    </b:includable>
+    <b:includable id='post-archive'>
+      <!--(bake post-archive.xml)-->
+    </b:includable>
+  </b:defaultmarkup>
+</b:defaultmarkups>

@@ -42,7 +42,7 @@ CSS
 <b:comment>=== Template CSS ===</b:comment>
 <b:skin>
 <![CDATA[
-<!--(bake /style.css)-->
+<!--(bake style.css)-->
 ]]>
 </b:skin>
 
@@ -52,31 +52,7 @@ CSS
 Post layout and styles
 ================================================= </b:comment>
 
-<b:defaultmarkups>
-  <b:defaultmarkup type='Common'>
-    <b:includable id='post-home'>
-  <!--(bake /content/blog-posts/post-home.xml)-->
-</b:includable>
-    <b:includable id='post-item'>
-  <!--(bake /content/blog-posts/post-item.xml)-->
-</b:includable>
-    <b:includable id='post-static'>
-  <!--(bake /content/blog-posts/post-static.xml)-->
-</b:includable>
-    <b:includable id='post-search-label'>
-  <!--(bake /content/blog-posts/post-search-label.xml)-->
-</b:includable>
-    <b:includable id='post-search-query'>
-  <!--(bake /content/blog-posts/post-search-query.xml)-->
-</b:includable>
-    <b:includable id='post-search-default'>
-  <!--(bake /content/blog-posts/post-search-default.xml)-->
-</b:includable>
-    <b:includable id='post-archive'>
-  <!--(bake /content/blog-posts/post-archive.xml)-->
-</b:includable>
-  </b:defaultmarkup>
-</b:defaultmarkups>
+<!--(bake post-layout/_index.xml)-->
 
 
 </head>
@@ -110,7 +86,7 @@ Skip navigation
 Navbar
 ================================================= </b:comment>
 
-<!--(bake /content/navbar.xml)-->
+<!--(bake components/navbar.xml)-->
 
 
 <b:comment>
@@ -118,7 +94,7 @@ Navbar
 Jumbotron
 ================================================= </b:comment>
 
-<!--(bake /content/jumbotron.xml)-->
+<!--(bake components/jumbotron.xml)-->
 
 
 <b:comment>
@@ -133,7 +109,7 @@ Main content
       <main class='main col-md-9 blogger-col-8' id='main'>
         <div class='main-wrap'>
           <b:section class='b-section-main' id='b-section-main' maxwidgets='1' name='Main' showaddelement='no'>
-            <!--(bake /core/blog-posts/widget.xml)-->
+            <!--(bake widgets/blog-posts.xml)-->
           </b:section>
         </div>
       </main><!-- /.main -->
@@ -195,17 +171,17 @@ JavaScript
 <b:comment>=== Template JavaScript ===</b:comment>
 <script>
 //<![CDATA[
-<!--(bake /script.js)-->
+<!--(bake script.js)-->
 //]]>
 </script>
 
 
 <b:comment>
 =================================================
-Bootsblogger Core Template
+Includes
 ================================================= </b:comment>
 
-<!--(bake /core/core.xml)-->
+<!--(bake includes/_index.xml)-->
 
 
 </body>
