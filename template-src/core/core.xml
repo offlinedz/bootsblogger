@@ -40,17 +40,20 @@ Blog `<widget type='Blog'/>`
 
 <b:defaultmarkups>
   <b:defaultmarkup type='Common'>
-    <b:includable id='main.breadcrumb' var='post'>
-  <!--(bake /core/blog-posts/main.breadcrumb.xml)-->
+    <b:includable id='main.blog-breadcrumb' var='post'>
+  <!--(bake /core/blog-posts/main.blog-breadcrumb.xml)-->
 </b:includable>
-    <b:includable id='main.statusMessage' var='post'>
-  <!--(bake /core/blog-posts/main.statusMessage.xml)-->
+    <b:includable id='main.blog-alert' var='post'>
+  <!--(bake /core/blog-posts/main.blog-alert.xml)-->
 </b:includable>
-    <b:includable id='main.comments' var='post'>
-  <!--(bake /core/blog-posts/main.comments.xml)-->
+    <b:includable id='main.blog-posts' var='post'>
+  <!--(bake /core/blog-posts/main.blog-posts.xml)-->
 </b:includable>
-    <b:includable id='main.pager' var='post'>
-  <!--(bake /core/blog-posts/main.pager.xml)-->
+    <b:includable id='main.blog-comments' var='post'>
+  <!--(bake /core/blog-posts/main.blog-comments.xml)-->
+</b:includable>
+    <b:includable id='main.blog-pager' var='post'>
+  <!--(bake /core/blog-posts/main.blog-pager.xml)-->
 </b:includable>
     <b:includable id='byline.header'>
   <!--(bake /core/blog-posts/byline.header.xml)-->
