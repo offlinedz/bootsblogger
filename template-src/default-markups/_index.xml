@@ -1,3 +1,4 @@
 <b:defaultmarkups>
+  <!--(bake BlogSearch.xml)-->
   <!--(bake FollowByEmail.xml)-->
 </b:defaultmarkups>
