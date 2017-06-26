@@ -12,7 +12,7 @@
       <div class='col-sm-3 col-md-4'>
         <!-- Image -->
         <div class='card-block-img-left-sm'>
-          <b:include data='{ size: 250, ratioWidth: 1, ratioHeight: 1, link: true, class: &quot;card-img-left&quot; }' name='post.image'/>
+          <b:include data='{ size: 400, sourceSet: [200, 400, 800, 1200, 1600], sourceSizes: &quot;100%&quot;, ratioWidth: 1, ratioHeight: 1, link: true, defaultNoImage: true, class: &quot;card-img-left&quot; }' name='post.image'/>
         </div>
       </div>
       <div class='col-sm-9 col-md-8'>

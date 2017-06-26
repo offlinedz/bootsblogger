@@ -1,9 +1,11 @@
 <b:if cond='data:post.featuredImage'>
   <b:if cond='data:post.featuredImage.isYoutube'>
-    <div expr:class='data:class' expr:style='data:style + &quot; background-image: url(&quot; + (resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl,data:size,(data:ratioWidth + &quot;:&quot; + data:ratioHeight))) + &quot;);&quot;'/>
+    <div expr:class='data:class' expr:style='data:style + &quot; background-image: url(&quot; + (data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl,data:size,(data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.featuredImage.youtubeMaxResDefaultUrl) + &quot;);&quot;'/>
   <b:else/>
     <div expr:class='data:class' expr:style='data:style + &quot; background-image: url(&quot; + (data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage,data:size,(data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.featuredImage) + &quot;);&quot;'/>
   </b:if>
 <b:else/>
-  <div expr:class='data:class' expr:style='data:style + &quot; background-image: url(https://placehold.it/&quot; + data:size + &quot;x&quot; + ((data:size * data:ratioHeight) / data:ratioWidth) + &quot;/777/eee?text=B);&quot;'/>
+  <b:if cond='data:defaultNoImage'>
+    <div expr:class='data:class' expr:style='data:style + &quot; background-image: url(https://placehold.it/&quot; + data:size + &quot;x&quot; + (((data:size * data:ratioHeight) % data:ratioWidth == 0) ? ((data:size * data:ratioHeight) / data:ratioWidth) : data:size) + &quot;/777/eee?text=B);&quot;'/>
+  </b:if>
 </b:if>

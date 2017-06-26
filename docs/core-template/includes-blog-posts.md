@@ -321,8 +321,16 @@ template-src/includes/blog-posts/post.authorImage.xml
 ###### Usage
 
 {% highlight html %}
-<b:include data='{ size: number, aspectRatioWidth: number, aspectRatioHeight: number, class: "class-name" }' name='post.authorImage'/>
+<b:include data='{ size: number, ratioWidth: number, ratioHeight: number, class: "class-name" }' name='post.authorImage'/>
 {% endhighlight %}
+
+###### Example
+
+{% highlight html %}
+<b:include data='{ size: 128, ratioWidth: 1, ratioHeight: 1, class: "class-name" }' name='post.authorImage'/>
+{% endhighlight %}
+
+Baca lebih lanjut tentang [images](#images).
 
 ### Dates
 
@@ -563,6 +571,10 @@ template-src/includes/blog-posts/post.labels.xml
 
 Untuk menampilkan *featured image*.
 
+**Resources:** [Aspect ratio (image)](https://en.wikipedia.org/wiki/Aspect_ratio_(image)), [responsive images (`srcset`, `sizes`)](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images).
+
+##### Menggunakan tag `<img>`:
+
 ###### Source
 
 {% highlight plaintext %}
@@ -578,12 +590,10 @@ template-src/includes/blog-posts/post.image.xml
 ###### Usage
 
 {% highlight html %}
-<b:include data='{ size: number, ratioWidth: number, ratioHeight: number, link: true|false, class: "class-name" }' name='post.image'/>
+<b:include data='{ size: number, sourceSet: [number]|false, sourceSizes: "sizes"|false, ratioWidth: number, ratioHeight: number, link: true|false, defaultNoImage: true|false, class: "class-name" }' name='post.image'/>
 {% endhighlight %}
 
-### Background images
-
-Untuk menampilkan *featured image* dengan CSS `background-image`.
+##### Menggunakan CSS `background-image`:
 
 ###### Source
 
@@ -600,7 +610,25 @@ template-src/includes/blog-posts/post.imageBg.xml
 ###### Usage
 
 {% highlight html %}
-<b:include data='{ size: number, ratioWidth: number, ratioHeight: number, class: "class-name", style: "min-height: 180px;" }' name='post.imageBg'/>
+<b:include data='{ size: number, ratioWidth: number, ratioHeight: number, defaultNoImage: true|false, class: "class-name", style: "min-height: 180px;" }' name='post.imageBg'/>
+{% endhighlight %}
+
+##### Example
+
+Width = `size`, Height = ((`size` * `ratioHeight`) / `ratioWidth`).
+
+{% highlight html %}
+<b:include data='{ size: 600, sourceSet: false, sourceSizes: false, ratioWidth: 600, ratioHeight: 180, link: true, defaultNoImage: true, class: "class-name" }' name='post.image'/>
+{% endhighlight %}
+
+Original: Width = `size`, Height = ((`size` * `ratioHeight`) / `ratioWidth`).
+
+Responsive: Width = `sourceSet`, Height = ((`sourceSet` * `ratioHeight`) / `ratioWidth`).
+
+Pelajari lebih lanjut tentang [`srcset` dan `sizes`](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#Resolution_switching_Different_sizes).
+
+{% highlight html %}
+<b:include data='{ size: 600, sourceSet: [200, 400, 800, 1200, 1600], sourceSizes: "(min-width: 576px) 320px, 100%", ratioWidth: 16, ratioHeight: 9, link: true, defaultNoImage: true, class: "class-name" }' name='post.image'/>
 {% endhighlight %}
 
 ### Snippets
