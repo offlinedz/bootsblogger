@@ -168,7 +168,7 @@ body {}
    ============================================== */
 
 .blog-breadcrumb {
-  background-color: #fbe9e7;
+  background-color: rgba(0,0,0,.05);
 }
 
 /* Alert
