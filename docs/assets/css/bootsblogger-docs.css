@@ -116,12 +116,17 @@
   }
 }
 
-.bd-featurette-icons {
+.bd-featurette-icon {
+  font-size: 6em;
+  color: #ff7043;
+}
+
+.bd-featurette-bpbph {
   padding-top: 3rem;
   padding-bottom: 3rem;
   text-align: center;
 }
-.bd-featurette-icons .plus {
+.bd-featurette-bpbph .plus {
   font-size: 2rem;
   font-weight: 500;
   color: #777;
