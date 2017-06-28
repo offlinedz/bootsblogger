@@ -1,6 +1,6 @@
 <b:if cond='data:post.author'>
   <b:if cond='data:post.author.profileUrl'>
-    <a b:whitespace='remove' expr:class='data:class' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'><data:post.author.name/></a>
+    <a b:whitespace='remove' expr:class='data:class' expr:href='data:post.author.profileUrl' expr:title='data:post.author.name'><data:post.author.name/></a>
   <b:else/>
     <span expr:class='data:noUrlClass'><data:post.author.name/></span>
   </b:if>
