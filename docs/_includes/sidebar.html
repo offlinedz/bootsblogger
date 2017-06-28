@@ -1,4 +1,4 @@
-<div class="navmenu navmenu-expand-md bd-navmenu">
+<div class="navmenu bd-navmenu">
   <div class="navmenu-content">
     <form class="bd-search d-flex align-items-center">
       <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
@@ -8,9 +8,11 @@
       <div class="dropdown-menu bd-search-results" id="search-results"></div>
     </form>
   </div>
+</div>
 
-  <div class="collapse navmenu-collapse" id="bd-docs-nav">
-    <nav class="navmenu-nav mt-3">
+<div class="collapse bd-navmenu-scroll d-md-block" id="bd-docs-nav">
+  <div class="navmenu bd-navmenu">
+    <nav class="navmenu-nav">
       {% assign page_slug = page.url | split: '/' | last %}
       {% for group in site.data.nav %}
       {% assign link = group.pages | first %}
@@ -22,8 +24,8 @@
         {% assign active = 'active' %}
       {% endif %}
 
-      <div class="nav-item nav-item-bordered {{ active }}">
-        <a class="nav-link {{ active }}" href="{{ site.baseurl }}/{{ group_slug }}/{{ link_slug }}{% if link_slug %}/{% endif %}">
+      <div class="nav-item {{ active }}">
+        <a class="nav-link nav-link-sm {{ active }}" href="{{ site.baseurl }}/{{ group_slug }}/{{ link_slug }}{% if link_slug %}/{% endif %}">
           {{ group.title }}
         </a>
 
