@@ -25,10 +25,10 @@
       </div>
       <ul class='list-group list-group-flush'>
         <li class='list-group-item'>
-          <form class='w-100' expr:action='data:blog.searchUrl' method='get' role='search'>
-            <div class='input-group'>
+          <form class='w-100' expr:action='data:blog.searchUrl' method='get'>
+            <div class='input-group' role='search'>
               <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
-              <input class='form-control' expr:aria-label='data:messages.searchBlog' expr:placeholder='data:messages.searchBlog' id='status-message-search-form' name='q' type='text'/>
+              <input class='form-control' expr:aria-label='data:messages.searchBlog' expr:placeholder='data:messages.searchBlog' id='status-message-search-form' name='q' type='search'/>
             </div>
           </form>
         </li>
@@ -56,10 +56,10 @@
       </div>
       <ul class='list-group list-group-flush'>
         <li class='list-group-item'>
-          <form class='w-100' expr:action='data:blog.searchUrl' method='get' role='search'>
-            <div class='input-group'>
+          <form class='w-100' expr:action='data:blog.searchUrl' method='get'>
+            <div class='input-group' role='search'>
               <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
-              <input class='form-control' expr:aria-label='data:messages.searchBlog' expr:placeholder='data:messages.searchBlog' id='status-message-search-form' name='q' type='text'/>
+              <input class='form-control' expr:aria-label='data:messages.searchBlog' expr:placeholder='data:messages.searchBlog' id='status-message-search-form' name='q' type='search'/>
             </div>
           </form>
         </li>
@@ -91,10 +91,10 @@
       </div>
       <ul class='list-group list-group-flush'>
         <li class='list-group-item'>
-          <form class='w-100' expr:action='data:blog.searchUrl' method='get' role='search'>
-            <div class='input-group'>
+          <form class='w-100' expr:action='data:blog.searchUrl' method='get'>
+            <div class='input-group' role='search'>
               <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
-              <input class='form-control' expr:aria-label='data:messages.searchBlog' expr:placeholder='data:messages.searchBlog' id='status-message-search-form' name='q' type='text'/>
+              <input class='form-control' expr:aria-label='data:messages.searchBlog' expr:placeholder='data:messages.searchBlog' id='status-message-search-form' name='q' type='search'/>
             </div>
           </form>
         </li>
@@ -112,10 +112,10 @@
   <b:comment>=== Search form ===</b:comment>
   <div class='card'>
     <div class='card-block'>
-      <form class='w-100' expr:action='data:blog.searchUrl' method='get' role='search'>
-        <div class='input-group'>
+      <form class='w-100' expr:action='data:blog.searchUrl' method='get'>
+        <div class='input-group' role='search'>
           <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
-          <input class='form-control' expr:aria-label='data:messages.searchBlog' expr:placeholder='data:messages.searchBlog' id='status-message-search-form' name='q' type='text'/>
+          <input class='form-control' expr:aria-label='data:messages.searchBlog' expr:placeholder='data:messages.searchBlog' id='status-message-search-form' name='q' type='search'/>
         </div>
       </form>
     </div>
