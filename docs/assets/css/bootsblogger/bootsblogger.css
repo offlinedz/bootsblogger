@@ -4,7 +4,7 @@
  * Licensed under MIT (https://github.com/bootsblogger/bootsblogger/blob/master/LICENSE)
  */
 .card-title-link {
-  color: #292b2c;
+  color: inherit;
   text-decoration: none;
 }
 .card-title-link:hover, .card-title-link:focus {
@@ -294,22 +294,19 @@
   border-top: 1px solid transparent;
 }
 
-.navmenu-header,
-.navmenu-form,
-.navmenu-btn,
-.navmenu-text {
+.navmenu-header {
+  padding-right: 1.25rem;
+  padding-left: 1.25rem;
+  margin-right: -1.25rem;
+  margin-bottom: 0.5rem;
+  margin-left: -1.25rem;
+}
+
+.navmenu-content {
   padding-right: 1.25rem;
   padding-left: 1.25rem;
   margin-right: -1.25rem;
   margin-left: -1.25rem;
-}
-
-.navmenu-header {
-  margin-bottom: 0.5rem;
-}
-
-.navmenu-text p:last-child {
-  margin-bottom: 0;
 }
 
 .navmenu-divider {
@@ -321,37 +318,18 @@
 }
 
 .navmenu-nav + .navmenu-nav,
-.navmenu-nav + .navmenu-form,
-.navmenu-nav + .navmenu-btn,
-.navmenu-nav + .navmenu-text,
-.navmenu-form + .navmenu-form,
-.navmenu-form + .navmenu-nav,
-.navmenu-form + .navmenu-btn,
-.navmenu-form + .navmenu-text,
-.navmenu-btn + .navmenu-btn,
-.navmenu-btn + .navmenu-nav,
-.navmenu-btn + .navmenu-form,
-.navmenu-btn + .navmenu-text,
-.navmenu-text + .navmenu-text,
-.navmenu-text + .navmenu-nav,
-.navmenu-text + .navmenu-form,
-.navmenu-text + .navmenu-btn {
-  margin-top: 1.25rem;
-}
-
-.navmenu-brand + .navmenu-header,
-.navmenu-brand + .navmenu-nav,
-.navmenu-brand + .navmenu-form,
-.navmenu-brand + .navmenu-btn,
-.navmenu-brand + .navmenu-text {
-  margin-top: 0.625rem;
-}
-
 .navmenu-nav + .navmenu-header,
-.navmenu-form + .navmenu-header,
-.navmenu-btn + .navmenu-header,
-.navmenu-text + .navmenu-header {
+.navmenu-nav + .navmenu-content,
+.navmenu-content + .navmenu-nav,
+.navmenu-content + .navmenu-header,
+.navmenu-content + .navmenu-content {
   margin-top: 1.25rem;
+}
+
+.navmenu-brand + .navmenu-nav,
+.navmenu-brand + .navmenu-header,
+.navmenu-brand + .navmenu-content {
+  margin-top: 0.625rem;
 }
 
 .navmenu-divider {
