@@ -171,7 +171,7 @@ body {}
   background-color: #fbe9e7;
 }
 
-/* Status message
+/* Alert
    ============================================== */
 
 .blog-alert .search-label,
@@ -183,17 +183,6 @@ body {}
    ============================================== */
 
 .blog-posts {}
-
-/**
- * Post byline items
- *
- * `byline.header`
- * `byline.footer`
- */
-
-.byline + .byline {
-  margin-left: .5rem;
-}
 
 /* Comments
    ============================================== */
