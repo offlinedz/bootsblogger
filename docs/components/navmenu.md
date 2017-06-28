@@ -218,49 +218,6 @@ Image and text:
 </nav>
 {% endexample %}
 
-### Forms
-
-{% example html %}
-<nav class="navmenu navmenu-light bg-faded">
-  <div class="navmenu-form">
-    <form>
-      <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for...">
-    </form>
-  </div>
-</nav>
-{% endexample %}
-
-{% example html %}
-<nav class="navmenu navmenu-light bg-faded">
-  <div class="navmenu-form">
-    <form class="d-flex align-items-center">
-      <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for...">
-      <button class="btn btn-primary ml-2" type="submit">Go!</button>
-    </form>
-  </div>
-</nav>
-{% endexample %}
-
-### Buttons
-
-{% example html %}
-<nav class="navmenu navmenu-light bg-faded">
-  <div class="navmenu-btn">
-    <a class="btn btn-block btn-primary" href="#">Go somewhere</a>
-  </div>
-</nav>
-{% endexample %}
-
-### Text
-
-{% example html %}
-<nav class="navmenu navmenu-light bg-faded">
-  <div class="navmenu-text">
-    <p class="text-success">Hello, world!</p>
-  </div>
-</nav>
-{% endexample %}
-
 ### Dividers
 
 {% example html %}
@@ -277,6 +234,47 @@ Image and text:
     <a class="nav-item nav-link" href="#">Nav item</a>
     <a class="nav-item nav-link" href="#">Nav item again</a>
     <a class="nav-item nav-link" href="#">Another nav item</a>
+  </div>
+</nav>
+{% endexample %}
+
+### With `.navmenu-content`
+
+Dengan `.navmenu-content`, Anda dapat memasukkan elemen sesuai dengan yang Anda inginkan. Lihat beberapa contoh berikut:
+
+{% example html %}
+<nav class="navmenu navmenu-light bg-faded">
+  <div class="navmenu-content">
+    <form>
+      <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for...">
+    </form>
+  </div>
+</nav>
+{% endexample %}
+
+{% example html %}
+<nav class="navmenu navmenu-light bg-faded">
+  <div class="navmenu-content">
+    <form class="d-flex align-items-center">
+      <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for...">
+      <button class="btn btn-primary ml-2" type="submit">Go!</button>
+    </form>
+  </div>
+</nav>
+{% endexample %}
+
+{% example html %}
+<nav class="navmenu navmenu-light bg-faded">
+  <div class="navmenu-content">
+    <a class="btn btn-block btn-primary" href="#">Go somewhere</a>
+  </div>
+</nav>
+{% endexample %}
+
+{% example html %}
+<nav class="navmenu navmenu-light bg-faded">
+  <div class="navmenu-content">
+    <p class="text-success mb-0">Hello, world!</p>
   </div>
 </nav>
 {% endexample %}
@@ -299,7 +297,7 @@ Image and text:
   <div class="navmenu-divider"></div>
 
   <h6 class="navmenu-header">Form</h6>
-  <div class="navmenu-form">
+  <div class="navmenu-content">
     <form>
       <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for...">
     </form>
@@ -308,7 +306,7 @@ Image and text:
   <div class="navmenu-divider"></div>
 
   <h6 class="navmenu-header">Button</h6>
-  <div class="navmenu-btn d-flex flex-wrap flex-column">
+  <div class="navmenu-content d-flex flex-wrap flex-column">
     <div class="btn-group">
       <a class="btn btn-secondary w-100" href="#">Action 1</a>
       <a class="btn btn-secondary w-100" href="#">Action 2</a>
@@ -318,8 +316,8 @@ Image and text:
   <div class="navmenu-divider"></div>
 
   <h6 class="navmenu-header">Text</h6>
-  <div class="navmenu-text">
-    <p class="text-muted">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+  <div class="navmenu-content">
+    <p class="text-muted mb-0">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
   </div>
 </nav>
 {% endexample %}
@@ -360,9 +358,11 @@ Example 2:
       Nav item collapse
     </a>
     <div class="collapse" id="navmenuNavCollapseDemo02">
-      <a class="nav-item nav-item-bordered nav-link nav-link-sm small" href="#">Nav item</a>
-      <a class="nav-item nav-item-bordered nav-link nav-link-sm small" href="#">Nav item again</a>
-      <a class="nav-item nav-item-bordered nav-link nav-link-sm small" href="#">Another nav item</a>
+      <div>
+        <a class="nav-item nav-item-bordered nav-link nav-link-sm small" href="#">Nav item</a>
+        <a class="nav-item nav-item-bordered nav-link nav-link-sm small" href="#">Nav item again</a>
+        <a class="nav-item nav-item-bordered nav-link nav-link-sm small" href="#">Another nav item</a>
+      </div>
     </div>
     <a class="nav-item nav-link" href="#">Nav item again</a>
     <a class="nav-item nav-link" href="#">Another nav item</a>
@@ -470,7 +470,7 @@ Always:
 
 {% example html %}
 <nav class="navmenu navmenu-light bg-faded">
-  <div class="navmenu-btn">
+  <div class="navmenu-content">
     <button class="btn btn-secondary btn-block" type="button" data-toggle="collapse" data-target="#navmenuTogglerDemo0" aria-controls="navmenuTogglerDemo0" aria-expanded="false" aria-label="Toggle navigation">Toggle nav</button>
   </div>
 
@@ -488,7 +488,7 @@ Always:
 
 {% example html %}
 <nav class="navmenu navmenu-light navmenu-expand-sm bg-faded">
-  <div class="navmenu-btn navmenu-toggler">
+  <div class="navmenu-content navmenu-toggler">
     <button class="btn btn-secondary btn-block" type="button" data-toggle="collapse" data-target="#navmenuTogglerDemo01" aria-controls="navmenuTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">Toggle nav</button>
   </div>
 
@@ -506,7 +506,7 @@ Always:
 
 {% example html %}
 <nav class="navmenu navmenu-light navmenu-expand-md bg-faded">
-  <div class="navmenu-btn navmenu-toggler">
+  <div class="navmenu-content navmenu-toggler">
     <button class="btn btn-secondary btn-block" type="button" data-toggle="collapse" data-target="#navmenuTogglerDemo02" aria-controls="navmenuTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">Toggle nav</button>
   </div>
 
@@ -524,7 +524,7 @@ Always:
 
 {% example html %}
 <nav class="navmenu navmenu-light navmenu-expand-lg bg-faded">
-  <div class="navmenu-btn navmenu-toggler">
+  <div class="navmenu-content navmenu-toggler">
     <button class="btn btn-secondary btn-block" type="button" data-toggle="collapse" data-target="#navmenuTogglerDemo03" aria-controls="navmenuTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">Toggle nav</button>
   </div>
 
@@ -542,7 +542,7 @@ Always:
 
 {% example html %}
 <nav class="navmenu navmenu-light navmenu-expand-xl bg-faded">
-  <div class="navmenu-btn navmenu-toggler">
+  <div class="navmenu-content navmenu-toggler">
     <button class="btn btn-secondary btn-block" type="button" data-toggle="collapse" data-target="#navmenuTogglerDemo04" aria-controls="navmenuTogglerDemo04" aria-expanded="false" aria-label="Toggle navigation">Toggle nav</button>
   </div>
 

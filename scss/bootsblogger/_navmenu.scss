@@ -84,26 +84,33 @@
 
 
 //
-// Headers, forms, buttons, text, dividers
+// Headers
 //
 
-.navmenu-header,
-.navmenu-form,
-.navmenu-btn,
-.navmenu-text {
+.navmenu-header {
+  padding-right: $navmenu-padding-x;
+  padding-left: $navmenu-padding-x;
+  margin-right: -$navmenu-padding-x;
+  margin-bottom: $navmenu-header-margin-bottom;
+  margin-left: -$navmenu-padding-x;
+}
+
+
+//
+// Content
+//
+
+.navmenu-content {
   padding-right: $navmenu-padding-x;
   padding-left: $navmenu-padding-x;
   margin-right: -$navmenu-padding-x;
   margin-left: -$navmenu-padding-x;
 }
 
-.navmenu-header {
-  margin-bottom: $navmenu-header-margin-bottom;
-}
 
-.navmenu-text p:last-child {
-  margin-bottom: 0;
-}
+//
+// Dividers
+//
 
 .navmenu-divider {
   height: 0;
@@ -119,42 +126,23 @@
 //
 
 .navmenu-nav + .navmenu-nav,
-.navmenu-nav + .navmenu-form,
-.navmenu-nav + .navmenu-btn,
-.navmenu-nav + .navmenu-text,
-.navmenu-form + .navmenu-form, //
-.navmenu-form + .navmenu-nav,
-.navmenu-form + .navmenu-btn,
-.navmenu-form + .navmenu-text,
-.navmenu-btn + .navmenu-btn, //
-.navmenu-btn + .navmenu-nav,
-.navmenu-btn + .navmenu-form,
-.navmenu-btn + .navmenu-text,
-.navmenu-text + .navmenu-text, //
-.navmenu-text + .navmenu-nav,
-.navmenu-text + .navmenu-form,
-.navmenu-text + .navmenu-btn {
-  margin-top: $navmenu-content-spacer-y;
-}
-
-.navmenu-brand + .navmenu-header,
-.navmenu-brand + .navmenu-nav,
-.navmenu-brand + .navmenu-form,
-.navmenu-brand + .navmenu-btn,
-.navmenu-brand + .navmenu-text {
-  margin-top: ($navmenu-content-spacer-y / 2);
-}
-
 .navmenu-nav + .navmenu-header,
-.navmenu-form + .navmenu-header,
-.navmenu-btn + .navmenu-header,
-.navmenu-text + .navmenu-header {
-  margin-top: $navmenu-content-spacer-y;
+.navmenu-nav + .navmenu-content,
+.navmenu-content + .navmenu-nav,
+.navmenu-content + .navmenu-header,
+.navmenu-content + .navmenu-content {
+  margin-top: $navmenu-spacer-y;
+}
+
+.navmenu-brand + .navmenu-nav,
+.navmenu-brand + .navmenu-header,
+.navmenu-brand + .navmenu-content {
+  margin-top: ($navmenu-spacer-y / 2);
 }
 
 .navmenu-divider {
-  margin-top: $navmenu-content-spacer-y;
-  margin-bottom: $navmenu-content-spacer-y;
+  margin-top: $navmenu-spacer-y;
+  margin-bottom: $navmenu-spacer-y;
 }
 
 
