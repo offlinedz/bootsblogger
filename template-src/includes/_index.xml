@@ -79,11 +79,11 @@ Blog `<widget type='Blog'/>`
     <b:includable id='post.labels'>
       <!--(bake blog-posts/post.labels.xml)-->
     </b:includable>
-    <b:includable id='post.image'>
-      <!--(bake blog-posts/post.image.xml)-->
+    <b:includable id='post.featuredImage'>
+      <!--(bake blog-posts/post.featuredImage.xml)-->
     </b:includable>
-    <b:includable id='post.imageBg'>
-      <!--(bake blog-posts/post.imageBg.xml)-->
+    <b:includable id='post.featuredImageBg'>
+      <!--(bake blog-posts/post.featuredImageBg.xml)-->
     </b:includable>
     <b:includable id='post.snippet'>
       <!--(bake blog-posts/post.snippet.xml)-->

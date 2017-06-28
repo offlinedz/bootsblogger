@@ -3,7 +3,7 @@
     <article class='col-sm-6 mb-3 mb-sm-5' expr:id='&quot;post-&quot; + data:post.id'>
       <div class='card h-100'>
         <!-- Image -->
-        <b:include data='{ size: 320, ratioWidth: 320, ratioHeight: 180, defaultNoImage: true, class: &quot;card-img-top card-img-cover&quot;, style: &quot;height: 180px;&quot; }' name='post.imageBg'/>
+        <b:include data='{ size: 320, ratioWidth: 320, ratioHeight: 180, defaultNoImage: true, class: &quot;card-img-top card-img-cover&quot;, style: &quot;height: 180px;&quot; }' name='post.featuredImageBg'/>
 
         <div class='card-block'>
           <!-- Title -->
