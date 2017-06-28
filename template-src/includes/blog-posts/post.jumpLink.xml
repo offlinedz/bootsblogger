@@ -1,6 +1,6 @@
 <b:if cond='data:post.hasJumpLink'>
   <a b:whitespace='remove' expr:class='data:class' expr:href='fragment(data:post.url, &quot;more&quot;)' role='button'>
-    <b:attr name='title' expr:value='data:post.title ? data:post.title : data:messages.noTitle'/>
+    <b:attr name='title' expr:value='data:post.title ? data:post.title : &quot;&quot;'/>
     <data:blog.jumpLinkMessage/><span class='sr-only'>jump-<data:post.id/></span>
   </a>
 <b:else/>
