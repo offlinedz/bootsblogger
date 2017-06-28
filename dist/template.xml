@@ -372,7 +372,8 @@ Post layout and styles
             <div class='col-sm-3 col-md-4'>
               <!-- Image -->
               <div class='card-block-img-left-sm'>
-                <b:include data='{ size: 400, sourceSet: [200, 400, 800, 1200, 1600], sourceSizes: &quot;100%&quot;, ratioWidth: 1, ratioHeight: 1, link: true, defaultNoImage: true, class: &quot;card-img-left&quot; }' name='post.image'/>
+                <!-- Note: `sm` = 576px, so `max-width` = (`sm` - 1) = 575px. -->
+                <b:include data='{ size: 320, sourceSet: [320, 512], sourceSizes: &quot;(max-width: 575px) 512px, 320px&quot;, ratioWidth: 1, ratioHeight: 1, link: true, defaultNoImage: true, class: &quot;card-img-left&quot; }' name='post.featuredImage'/>
               </div>
             </div>
             <div class='col-sm-9 col-md-8'>
@@ -465,7 +466,7 @@ Post layout and styles
           <article class='col-sm-6 mb-3 mb-sm-5' expr:id='&quot;post-&quot; + data:post.id'>
             <div class='card h-100'>
               <!-- Image -->
-              <b:include data='{ size: 320, ratioWidth: 320, ratioHeight: 180, defaultNoImage: true, class: &quot;card-img-top card-img-cover&quot;, style: &quot;height: 180px;&quot; }' name='post.imageBg'/>
+              <b:include data='{ size: 320, ratioWidth: 320, ratioHeight: 180, defaultNoImage: true, class: &quot;card-img-top card-img-cover&quot;, style: &quot;height: 180px;&quot; }' name='post.featuredImageBg'/>
 
               <div class='card-block'>
                 <!-- Title -->
@@ -545,7 +546,8 @@ Post layout and styles
             <div class='col-sm-3 col-md-4'>
               <!-- Image -->
               <div class='card-block-img-left-sm'>
-                <b:include data='{ size: 400, sourceSet: [200, 400, 800, 1200, 1600], sourceSizes: &quot;100%&quot;, ratioWidth: 1, ratioHeight: 1, link: true, defaultNoImage: true, class: &quot;card-img-left&quot; }' name='post.image'/>
+                <!-- Note: `sm` = 576px, so `max-width` = (`sm` - 1) = 575px. -->
+                <b:include data='{ size: 320, sourceSet: [320, 512], sourceSizes: &quot;(max-width: 575px) 512px, 320px&quot;, ratioWidth: 1, ratioHeight: 1, link: true, defaultNoImage: true, class: &quot;card-img-left&quot; }' name='post.featuredImage'/>
               </div>
             </div>
             <div class='col-sm-9 col-md-8'>
@@ -635,50 +637,47 @@ Skip navigation
 Navbar
 ================================================= </b:comment>
 
-<header class='navbar navbar-custom navbar-toggleable-md'>
+<header class='navbar navbar-toggleable-md navbar-custom'>
   <nav class='container'>
-    <button class='navbar-toggler navbar-toggler-right' type='button' data-toggle='collapse' data-target='#navbar' aria-controls='navbar' aria-expanded='false' aria-label='Toggle navigation'>
-      <span class='navbar-toggler-icon'></span>
-    </button>
-
     <a class='navbar-brand' expr:href='data:blog.homepageUrl'>
       <data:blog.title/>
     </a>
+    <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbar' aria-controls='navbar' aria-expanded='false' aria-label='Toggle navigation'>
+      <span class='navbar-toggler-icon'></span>
+    </button>
 
     <div class='collapse navbar-collapse' id='navbar'>
-      <ul class='navbar-nav mr-auto'>
-        <li class='nav-item'><a class='nav-link' href='/search/label/Test?max-results=10'>Test</a></li>
-        <li class='nav-item'><a class='nav-link' href='/search/label/Sample?max-results=10'>Sample</a></li>
+      <ul class='navbar-nav mt-2 mt-md-0'>
+        <li class='nav-item'><a expr:class='&quot;nav-link&quot; + (data:view.isHomepage ? &quot; active&quot; : &quot;&quot;)' expr:href='data:blog.homepageUrl'>Home</a></li>
+        <li class='nav-item'><a class='nav-link disabled' href='#'>Disabled</a></li>
         <li class='nav-item dropdown'>
           <a class='nav-link dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' href='#'>Demo</a>
           <div class='dropdown-menu'>
-            <a class='dropdown-item' href='/'>Homepage</a>
+            <a class='dropdown-item' expr:href='data:blog.homepageUrl'>Homepage</a>
             <div class='dropdown-divider'></div>
-            <a class='dropdown-item' href='/search'>Search (default) page</a>
+            <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, &quot;/search&quot;)'>Search (default) page</a>
             <div class='dropdown-divider'></div>
-            <a class='dropdown-item' href='/search/label/Sample?max-results=10'>Search (label) page <span class='badge badge-success'>yes</span></a>
-            <a class='dropdown-item' href='/search/label/Nope?max-results=10'>Search (label) page <span class='badge badge-danger'>nope</span></a>
+            <a class='dropdown-item' expr:href='data:blog.homepageUrl path &quot;/search/label/Sample&quot; params { max-results: &quot;12&quot; }'>Search (label) page <span class='badge badge-success'>yep</span></a>
+            <a class='dropdown-item' expr:href='data:blog.homepageUrl path &quot;/search/label/Nope&quot; params { max-results: &quot;12&quot; }'>Search (label) page <span class='badge badge-danger'>nope</span></a>
             <div class='dropdown-divider'></div>
-            <a class='dropdown-item' href='/search?q=lorem+ipsum'>Search (query) page <span class='badge badge-success'>yes</span></a>
-            <a class='dropdown-item' href='/search?q=nope'>Search (query) page <span class='badge badge-danger'>nope</span></a>
+            <a class='dropdown-item' expr:href='data:blog.homepageUrl path &quot;/search&quot; appendParams { q: &quot;lorem ipsum&quot; }'>Search (query) page <span class='badge badge-success'>yep</span></a>
+            <a class='dropdown-item' expr:href='data:blog.homepageUrl path &quot;/search&quot; appendParams { q: &quot;nope&quot; }'>Search (query) page <span class='badge badge-danger'>nope</span></a>
             <div class='dropdown-divider'></div>
-            <a class='dropdown-item' href='/2016_11_01_archive.html'>Archive page <span class='badge badge-success'>yes</span></a>
-            <a class='dropdown-item' href='/1945_08_17_archive.html'>Archive page <span class='badge badge-danger'>nope</span></a>
+            <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, &quot;/2016/11&quot;)'>Archive page <span class='badge badge-success'>yep</span></a>
+            <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, &quot;/1945/08&quot;)'>Archive page <span class='badge badge-danger'>nope</span></a>
             <div class='dropdown-divider'></div>
-            <a class='dropdown-item' href='/2016/11/sample-blog-post-03.html'>Item page</a>
-            <a class='dropdown-item' href='/p/static-page.html'>Static page</a>
-            <a class='dropdown-item' href='/404'>Error page</a>
+            <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, &quot;/2016/11/sample-blog-post-03.html&quot;)'>Item page</a>
+            <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, &quot;/p/static-page.html&quot;)'>Static page</a>
+            <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, &quot;/404&quot;)'>Error page</a>
             <div class='dropdown-divider'></div>
             <h6 class='dropdown-header'>Comments</h6>
-            <a class='dropdown-item' href='/2016/11/sample-blog-post-01.html#comments'>No comments</a>
-            <a class='dropdown-item' href='/2016/11/sample-blog-post-02.html#comments'>Not allowed</a>
-            <a class='dropdown-item' href='/2016/11/sample-blog-post-03.html#comments'>Test comment</a>
+            <a class='dropdown-item' expr:href='data:blog.homepageUrl path &quot;/2016/11/sample-blog-post-01.html&quot; fragment &quot;comments&quot;'>No comments</a>
+            <a class='dropdown-item' expr:href='data:blog.homepageUrl path &quot;/2016/11/sample-blog-post-02.html&quot; fragment &quot;comments&quot;'>Not allowed</a>
           </div>
         </li>
       </ul>
-      <form class='form-inline my-2 my-lg-0' expr:action='data:blog.searchUrl' method='get' role='search'>
-        <label class='sr-only' for='search'><data:messages.search/></label>
-        <input class='form-control' expr:placeholder='data:messages.search' id='search' name='q'/>
+      <form class='form-inline ml-auto my-2 my-md-0' expr:action='data:blog.searchUrl' method='get'>
+        <div role='search'><input class='form-control' expr:aria-label='data:messages.search' expr:placeholder='data:messages.search' name='q' type='search'/></div>
       </form>
     </div><!-- /.navbar-collapse -->
   </nav><!-- /.container -->
@@ -2267,7 +2266,7 @@ Blog `<widget type='Blog'/>`
         <span expr:class='data:unlabelledClass'>Unlabelled</span>
       </b:if>
     </b:includable>
-    <b:includable id='post.image'>
+    <b:includable id='post.featuredImage'>
       <b:if cond='data:post.featuredImage'>
         <b:if cond='data:post.featuredImage.isYoutube'>
           <b:if cond='data:link'>
@@ -2338,7 +2337,7 @@ Blog `<widget type='Blog'/>`
         </b:if>
       </b:if>
     </b:includable>
-    <b:includable id='post.imageBg'>
+    <b:includable id='post.featuredImageBg'>
       <b:if cond='data:post.featuredImage'>
         <b:if cond='data:post.featuredImage.isYoutube'>
           <div expr:class='data:class' expr:style='data:style + &quot; background-image: url(&quot; + (data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl,data:size,(data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.featuredImage.youtubeMaxResDefaultUrl) + &quot;);&quot;'/>
@@ -2361,7 +2360,7 @@ Blog `<widget type='Blog'/>`
     <b:includable id='post.jumpLink'>
       <b:if cond='data:post.hasJumpLink'>
         <a b:whitespace='remove' expr:class='data:class' expr:href='fragment(data:post.url, &quot;more&quot;)' role='button'>
-          <b:attr name='title' expr:value='data:post.title ? data:post.title : data:messages.noTitle'/>
+          <b:attr name='title' expr:value='data:post.title ? data:post.title : &quot;&quot;'/>
           <data:blog.jumpLinkMessage/><span class='sr-only'>jump-<data:post.id/></span>
         </a>
       <b:else/>
