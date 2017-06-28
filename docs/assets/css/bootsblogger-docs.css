@@ -48,6 +48,7 @@
    ============================================== */
 
 .bd-jumbotron {
+  margin-bottom: 0;
   color: #fff;
   text-align: center;
   background-color: #ff5722;
