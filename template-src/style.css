@@ -125,6 +125,27 @@ body {}
   background-color: #ff5722;
 }
 
+.jumbotron-custom .lead {
+  margin-right: auto;
+  margin-bottom: 2rem;
+  margin-left: auto;
+}
+.jumbotron-custom .lead:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .jumbotron-custom .lead {
+    font-size: 1.5rem
+  }
+}
+@media (min-width: 992px) {
+  .jumbotron-custom .lead {
+    width: 85%;
+    font-size: 2rem
+  }
+}
+
 
 /* ==============================================
    Buttons

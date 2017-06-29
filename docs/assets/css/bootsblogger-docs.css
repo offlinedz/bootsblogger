@@ -54,8 +54,30 @@
   background-color: #ff5722;
 }
 
+.bd-jumbotron .lead {
+  margin-right: auto;
+  margin-bottom: 2rem;
+  margin-left: auto;
+}
+.bd-jumbotron .lead:last-child {
+  margin-bottom: 0;
+}
+
 .bd-jumbotron-version {
+  margin-top: -1rem;
   color: #ffab91;
+}
+
+@media (min-width: 768px) {
+  .bd-jumbotron .lead {
+    font-size: 1.5rem
+  }
+}
+@media (min-width: 992px) {
+  .bd-jumbotron .lead {
+    width: 85%;
+    font-size: 2rem
+  }
 }
 
 
