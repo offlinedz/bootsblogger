@@ -2,23 +2,21 @@
 // Title links
 //
 
-.card-title-link {
+.card:not(.card-inverse) .card-title-link {
   color: $card-title-link-color;
   text-decoration: $card-title-link-decoration;
 
-  &:hover,
-  &:focus {
+  @include hover-focus {
     color: $card-title-link-hover-color;
     text-decoration: $card-title-link-hover-decoration;
   }
 }
 
-.card-title-link-inverse {
+.card.card-inverse .card-title-link {
   color: $card-inverse-title-link-color;
   text-decoration: $card-inverse-title-link-decoration;
 
-  &:hover,
-  &:focus {
+  @include hover-focus {
     color: $card-inverse-title-link-hover-color;
     text-decoration: $card-inverse-title-link-hover-decoration;
   }

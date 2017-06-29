@@ -10,7 +10,7 @@ Baca dokumentasi [Bootstrap card](https://v4-alpha.getbootstrap.com/components/c
 
 ## Title links
 
-Gunakan `.card-title-link` atau `.card-title-link-inverse`.
+Gunakan `.card-title-link`.
 
 {% example html %}
 <div class="card mb-3">
@@ -22,7 +22,7 @@ Gunakan `.card-title-link` atau `.card-title-link-inverse`.
 
 <div class="card card-inverse card-primary">
   <div class="card-block">
-    <h2 class="card-title"><a class="card-title-link-inverse" href="#">Card title</a></h2>
+    <h2 class="card-title"><a class="card-title-link" href="#">Card title</a></h2>
     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
   </div>
 </div>
