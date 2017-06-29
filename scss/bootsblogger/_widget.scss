@@ -495,6 +495,7 @@
   @include clearfix;
 
   .widget {
+    position: relative;
     min-height: 1px;
     margin-right: ($wg-grid-gutter-width-base / 2);
     margin-left: ($wg-grid-gutter-width-base / 2);
@@ -514,45 +515,62 @@
   .wg-10,
   .wg-11,
   .wg-12 {
+    display: flex;
+    flex-wrap: wrap;
+
     .widget {
-      float: left;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
     }
   }
   .wg-12 .widget {
-    width: calc(100% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(100% - #{$wg-grid-gutter-width-base});
+    max-width: calc(100% - #{$wg-grid-gutter-width-base});
   }
   .wg-11 .widget {
-    width: calc(91.66666667% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(91.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(91.66666667% - #{$wg-grid-gutter-width-base});
   }
   .wg-10 .widget {
-    width: calc(83.33333333% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(83.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(83.33333333% - #{$wg-grid-gutter-width-base});
   }
   .wg-9 .widget {
-    width: calc(75% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(75% - #{$wg-grid-gutter-width-base});
+    max-width: calc(75% - #{$wg-grid-gutter-width-base});
   }
   .wg-8 .widget {
-    width: calc(66.66666667% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(66.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(66.66666667% - #{$wg-grid-gutter-width-base});
   }
   .wg-7 .widget {
-    width: calc(58.33333333% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(58.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(58.33333333% - #{$wg-grid-gutter-width-base});
   }
   .wg-6 .widget {
-    width: calc(50% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(50% - #{$wg-grid-gutter-width-base});
+    max-width: calc(50% - #{$wg-grid-gutter-width-base});
   }
   .wg-5 .widget {
-    width: calc(41.66666667% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(41.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(41.66666667% - #{$wg-grid-gutter-width-base});
   }
   .wg-4 .widget {
-    width: calc(33.33333333% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(33.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(33.33333333% - #{$wg-grid-gutter-width-base});
   }
   .wg-3 .widget {
-    width: calc(25% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(25% - #{$wg-grid-gutter-width-base});
+    max-width: calc(25% - #{$wg-grid-gutter-width-base});
   }
   .wg-2 .widget {
-    width: calc(16.66666667% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(16.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(16.66666667% - #{$wg-grid-gutter-width-base});
   }
   .wg-1 .widget {
-    width: calc(8.33333333% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(8.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(8.33333333% - #{$wg-grid-gutter-width-base});
   }
 }
 
@@ -569,45 +587,62 @@
   .wg-sm-10,
   .wg-sm-11,
   .wg-sm-12 {
+    display: flex;
+    flex-wrap: wrap;
+
     .widget {
-      float: left;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
     }
   }
   .wg-sm-12 .widget {
-    width: calc(100% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(100% - #{$wg-grid-gutter-width-base});
+    max-width: calc(100% - #{$wg-grid-gutter-width-base});
   }
   .wg-sm-11 .widget {
-    width: calc(91.66666667% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(91.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(91.66666667% - #{$wg-grid-gutter-width-base});
   }
   .wg-sm-10 .widget {
-    width: calc(83.33333333% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(83.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(83.33333333% - #{$wg-grid-gutter-width-base});
   }
   .wg-sm-9 .widget {
-    width: calc(75% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(75% - #{$wg-grid-gutter-width-base});
+    max-width: calc(75% - #{$wg-grid-gutter-width-base});
   }
   .wg-sm-8 .widget {
-    width: calc(66.66666667% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(66.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(66.66666667% - #{$wg-grid-gutter-width-base});
   }
   .wg-sm-7 .widget {
-    width: calc(58.33333333% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(58.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(58.33333333% - #{$wg-grid-gutter-width-base});
   }
   .wg-sm-6 .widget {
-    width: calc(50% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(50% - #{$wg-grid-gutter-width-base});
+    max-width: calc(50% - #{$wg-grid-gutter-width-base});
   }
   .wg-sm-5 .widget {
-    width: calc(41.66666667% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(41.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(41.66666667% - #{$wg-grid-gutter-width-base});
   }
   .wg-sm-4 .widget {
-    width: calc(33.33333333% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(33.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(33.33333333% - #{$wg-grid-gutter-width-base});
   }
   .wg-sm-3 .widget {
-    width: calc(25% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(25% - #{$wg-grid-gutter-width-base});
+    max-width: calc(25% - #{$wg-grid-gutter-width-base});
   }
   .wg-sm-2 .widget {
-    width: calc(16.66666667% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(16.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(16.66666667% - #{$wg-grid-gutter-width-base});
   }
   .wg-sm-1 .widget {
-    width: calc(8.33333333% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(8.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(8.33333333% - #{$wg-grid-gutter-width-base});
   }
 }
 
@@ -624,45 +659,62 @@
   .wg-md-10,
   .wg-md-11,
   .wg-md-12 {
+    display: flex;
+    flex-wrap: wrap;
+
     .widget {
-      float: left;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
     }
   }
   .wg-md-12 .widget {
-    width: calc(100% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(100% - #{$wg-grid-gutter-width-base});
+    max-width: calc(100% - #{$wg-grid-gutter-width-base});
   }
   .wg-md-11 .widget {
-    width: calc(91.66666667% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(91.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(91.66666667% - #{$wg-grid-gutter-width-base});
   }
   .wg-md-10 .widget {
-    width: calc(83.33333333% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(83.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(83.33333333% - #{$wg-grid-gutter-width-base});
   }
   .wg-md-9 .widget {
-    width: calc(75% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(75% - #{$wg-grid-gutter-width-base});
+    max-width: calc(75% - #{$wg-grid-gutter-width-base});
   }
   .wg-md-8 .widget {
-    width: calc(66.66666667% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(66.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(66.66666667% - #{$wg-grid-gutter-width-base});
   }
   .wg-md-7 .widget {
-    width: calc(58.33333333% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(58.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(58.33333333% - #{$wg-grid-gutter-width-base});
   }
   .wg-md-6 .widget {
-    width: calc(50% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(50% - #{$wg-grid-gutter-width-base});
+    max-width: calc(50% - #{$wg-grid-gutter-width-base});
   }
   .wg-md-5 .widget {
-    width: calc(41.66666667% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(41.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(41.66666667% - #{$wg-grid-gutter-width-base});
   }
   .wg-md-4 .widget {
-    width: calc(33.33333333% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(33.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(33.33333333% - #{$wg-grid-gutter-width-base});
   }
   .wg-md-3 .widget {
-    width: calc(25% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(25% - #{$wg-grid-gutter-width-base});
+    max-width: calc(25% - #{$wg-grid-gutter-width-base});
   }
   .wg-md-2 .widget {
-    width: calc(16.66666667% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(16.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(16.66666667% - #{$wg-grid-gutter-width-base});
   }
   .wg-md-1 .widget {
-    width: calc(8.33333333% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(8.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(8.33333333% - #{$wg-grid-gutter-width-base});
   }
 }
 
@@ -679,45 +731,62 @@
   .wg-lg-10,
   .wg-lg-11,
   .wg-lg-12 {
+    display: flex;
+    flex-wrap: wrap;
+
     .widget {
-      float: left;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
     }
   }
   .wg-lg-12 .widget {
-    width: calc(100% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(100% - #{$wg-grid-gutter-width-base});
+    max-width: calc(100% - #{$wg-grid-gutter-width-base});
   }
   .wg-lg-11 .widget {
-    width: calc(91.66666667% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(91.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(91.66666667% - #{$wg-grid-gutter-width-base});
   }
   .wg-lg-10 .widget {
-    width: calc(83.33333333% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(83.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(83.33333333% - #{$wg-grid-gutter-width-base});
   }
   .wg-lg-9 .widget {
-    width: calc(75% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(75% - #{$wg-grid-gutter-width-base});
+    max-width: calc(75% - #{$wg-grid-gutter-width-base});
   }
   .wg-lg-8 .widget {
-    width: calc(66.66666667% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(66.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(66.66666667% - #{$wg-grid-gutter-width-base});
   }
   .wg-lg-7 .widget {
-    width: calc(58.33333333% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(58.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(58.33333333% - #{$wg-grid-gutter-width-base});
   }
   .wg-lg-6 .widget {
-    width: calc(50% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(50% - #{$wg-grid-gutter-width-base});
+    max-width: calc(50% - #{$wg-grid-gutter-width-base});
   }
   .wg-lg-5 .widget {
-    width: calc(41.66666667% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(41.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(41.66666667% - #{$wg-grid-gutter-width-base});
   }
   .wg-lg-4 .widget {
-    width: calc(33.33333333% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(33.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(33.33333333% - #{$wg-grid-gutter-width-base});
   }
   .wg-lg-3 .widget {
-    width: calc(25% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(25% - #{$wg-grid-gutter-width-base});
+    max-width: calc(25% - #{$wg-grid-gutter-width-base});
   }
   .wg-lg-2 .widget {
-    width: calc(16.66666667% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(16.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(16.66666667% - #{$wg-grid-gutter-width-base});
   }
   .wg-lg-1 .widget {
-    width: calc(8.33333333% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(8.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(8.33333333% - #{$wg-grid-gutter-width-base});
   }
 }
 
@@ -734,44 +803,61 @@
   .wg-xl-10,
   .wg-xl-11,
   .wg-xl-12 {
+    display: flex;
+    flex-wrap: wrap;
+
     .widget {
-      float: left;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
     }
   }
   .wg-xl-12 .widget {
-    width: calc(100% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(100% - #{$wg-grid-gutter-width-base});
+    max-width: calc(100% - #{$wg-grid-gutter-width-base});
   }
   .wg-xl-11 .widget {
-    width: calc(91.66666667% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(91.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(91.66666667% - #{$wg-grid-gutter-width-base});
   }
   .wg-xl-10 .widget {
-    width: calc(83.33333333% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(83.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(83.33333333% - #{$wg-grid-gutter-width-base});
   }
   .wg-xl-9 .widget {
-    width: calc(75% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(75% - #{$wg-grid-gutter-width-base});
+    max-width: calc(75% - #{$wg-grid-gutter-width-base});
   }
   .wg-xl-8 .widget {
-    width: calc(66.66666667% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(66.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(66.66666667% - #{$wg-grid-gutter-width-base});
   }
   .wg-xl-7 .widget {
-    width: calc(58.33333333% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(58.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(58.33333333% - #{$wg-grid-gutter-width-base});
   }
   .wg-xl-6 .widget {
-    width: calc(50% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(50% - #{$wg-grid-gutter-width-base});
+    max-width: calc(50% - #{$wg-grid-gutter-width-base});
   }
   .wg-xl-5 .widget {
-    width: calc(41.66666667% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(41.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(41.66666667% - #{$wg-grid-gutter-width-base});
   }
   .wg-xl-4 .widget {
-    width: calc(33.33333333% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(33.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(33.33333333% - #{$wg-grid-gutter-width-base});
   }
   .wg-xl-3 .widget {
-    width: calc(25% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(25% - #{$wg-grid-gutter-width-base});
+    max-width: calc(25% - #{$wg-grid-gutter-width-base});
   }
   .wg-xl-2 .widget {
-    width: calc(16.66666667% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(16.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(16.66666667% - #{$wg-grid-gutter-width-base});
   }
   .wg-xl-1 .widget {
-    width: calc(8.33333333% - #{$wg-grid-gutter-width-base});
+    flex: 0 0 calc(8.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(8.33333333% - #{$wg-grid-gutter-width-base});
   }
 }
