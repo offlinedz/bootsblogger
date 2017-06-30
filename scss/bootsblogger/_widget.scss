@@ -517,6 +517,15 @@
   .wg-12 {
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
+
+    &.wg-equal-height-cols {
+      align-items: stretch;
+
+      .widget-content {
+        height: 100%;
+      }
+    }
 
     .widget {
       display: flex;
@@ -589,6 +598,15 @@
   .wg-sm-12 {
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
+
+    &.wg-equal-height-cols {
+      align-items: stretch;
+
+      .widget-content {
+        height: 100%;
+      }
+    }
 
     .widget {
       display: flex;
@@ -661,6 +679,15 @@
   .wg-md-12 {
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
+
+    &.wg-equal-height-cols {
+      align-items: stretch;
+
+      .widget-content {
+        height: 100%;
+      }
+    }
 
     .widget {
       display: flex;
@@ -733,6 +760,15 @@
   .wg-lg-12 {
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
+
+    &.wg-equal-height-cols {
+      align-items: stretch;
+
+      .widget-content {
+        height: 100%;
+      }
+    }
 
     .widget {
       display: flex;
@@ -805,6 +841,15 @@
   .wg-xl-12 {
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
+
+    &.wg-equal-height-cols {
+      align-items: stretch;
+
+      .widget-content {
+        height: 100%;
+      }
+    }
 
     .widget {
       display: flex;
