@@ -12,7 +12,7 @@ group: components
 
 ## Base class
 
-Komponen widget membutuhkan penggunaan kelas dasar `.wg`. `.wg` hanya mengatur `margin` dan ukuran judul widget (dapat diubah menggunakan kelas pengubah [ukuran judul widget](#font-size)).
+Komponen widget membutuhkan penggunaan kelas dasar `.wg` untuk mengatur *margin* dan ukuran judul widget (dapat diubah menggunakan kelas pengubah [ukuran judul widget](#font-size)).
 
 **Catatan:** komponen widget tidak mengubah warna konten yang berada di dalamnya (di dalam `.widget-content`), oleh karena itu, Anda perlu menyesuaikannya dengan *custom styles* atau kelas utilitas.
 
@@ -502,7 +502,7 @@ Ubah `.wg-box-{color}` menjadi `.wg-box-outline-{color}`.
 
 ### List groups
 
-Buat daftar konten di dalam widget-box dengan *flush list group*.
+*Flush list group* di dalam widget-box.
 
 <div class="bd-example">
   <div class="wg wg-box wg-box-white wg-title-gray-dark">
@@ -830,7 +830,7 @@ Tambahkan `.wg-panel-group`.
 
 ### List groups
 
-Buat daftar konten di dalam widget-panel dengan *flush list group*.
+*Flush list group* di dalam widget-panel.
 
 <div class="bd-example">
   <div class="wg wg-panel wg-panel-purple wg-title-white">
@@ -944,7 +944,7 @@ Sistem grid untuk widget.
   </tbody>
 </table>
 
-Grid widget menggunakan `calc()` untuk mengkalkulasi lebar dan jarak widget. Menggunakan `calc()` adalah untuk menghindari penggunaan `padding` pada `.widget`, agar tidak terjadi konflik dengan CSS widget lainnya.
+Grid widget menggunakan `margin-left` dan `margin-right` untuk membuat *gutters*/jarak antara widget, dan menggunakan `calc()` untuk mengkalkulasi lebar dan jarak widget. Menggunakan *margin* dan `calc()` adalah untuk menghindari penggunaan `padding` pada `.widget`, agar tidak terjadi konflik dengan CSS widget lainnya.
 
 ### Examples
 
