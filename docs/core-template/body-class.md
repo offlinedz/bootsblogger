@@ -1,9 +1,11 @@
 ---
 layout: docs
 title: Body class
-description: Pada tag body HTML, terdapat kelas yang berbeda untuk identifikasi tipe halaman.
+description: Pada tag body HTML, terdapat kelas yang berbeda di setiap tipe halaman.
 group: core-template
 ---
+
+Di bawah ini adalah nama kelas tiap-tiap tipe halaman.
 
 {% highlight html %}
 <b:class cond='data:view.isHomepage' name='blog-view-home'/>
