@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Page types
-description: Template dasar Bootsblogger menggunakan berbagai tipe halaman untuk mengatur tampilan blog, tampilan posting, kelas, dan lainnya.
+description: Anda dapat mengatur tampilan blog, tampilan posting, kelas, dan lainnya menjadi berbeda di setiap tipe halaman.
 group: core-template
 ---
 
