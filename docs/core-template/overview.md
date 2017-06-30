@@ -8,5 +8,18 @@ redirect_from: "/core-template/"
 
 ## Blogger version
 
-- Menggunakan template versi `3`, `<html b:layoutsVersion='3'>`.
-- Menggunakan gadget versi `2`, `<html b:defaultwidgetversion='2'>` atau `<b:widget version='2'>`.
+Menggunakan template versi `3`:
+
+{% highlight html %}
+<html b:layoutsVersion='3'>...</html>
+{% endhighlight %}
+
+Menggunakan gadget versi `2`:
+
+{% highlight html %}
+<html b:defaultwidgetversion='2'>...</html>
+{% endhighlight %}
+
+{% highlight html %}
+<b:widget version='2'>...</b:widget>
+{% endhighlight %}
