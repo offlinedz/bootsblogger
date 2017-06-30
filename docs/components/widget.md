@@ -782,7 +782,7 @@ Ubah `.wg-panel-{color}` menjadi `.wg-panel-outline-{color}`.
 
 Tambahkan `.wg-panel-sm`.
 
-<div class="bd-example bd-example-widget-inverse text-gray-dark">
+<div class="bd-example">
   <div class="wg wg-panel wg-panel-sm wg-panel-orange wg-title-gray-dark">
     <div class="widget">
       <h3 class="title">Widget title</h3>
@@ -801,7 +801,7 @@ Tambahkan `.wg-panel-sm`.
 
 Tambahkan `.wg-panel-group`.
 
-<div class="bd-example bd-example-widget-inverse text-gray-dark">
+<div class="bd-example">
   <div class="wg wg-panel wg-panel-group wg-panel-teal wg-title-white">
     <div class="widget">
       <h3 class="title">Widget title</h3>
@@ -981,7 +981,7 @@ Grid widget menggunakan `margin-left` dan `margin-right` untuk membuat *gutters*
 <b:section class='wg wg-title-white wg-sm-6 wg-md-4 wg-lg-3' id='sectionId'></b:section>
 {% endhighlight %}
 
-<div class="bd-example bd-example-widget-inverse text-gray-dark">
+<div class="bd-example">
   <div class="wg wg-box wg-box-orange wg-title-black wg-sm-6 wg-md-4 wg-grid-example">
     <div class="widget">
       <h3 class="title">Widget title</h3>
@@ -1014,7 +1014,7 @@ Grid widget menggunakan `margin-left` dan `margin-right` untuk membuat *gutters*
 <b:section class='wg wg-box wg-box-orange wg-title-black wg-sm-6 wg-md-4' id='sectionId'></b:section>
 {% endhighlight %}
 
-<div class="bd-example bd-example-widget-inverse text-gray-dark">
+<div class="bd-example">
   <div class="wg wg-panel wg-panel-orange wg-title-black wg-sm-6 wg-grid-example">
     <div class="widget">
       <h3 class="title">Widget title</h3>
