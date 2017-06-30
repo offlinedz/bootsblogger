@@ -861,3 +861,16 @@
     max-width: calc(8.33333333% - #{$wg-grid-gutter-width-base});
   }
 }
+
+
+//
+// Kill bottom margin
+//
+
+.wg-section-no-mb {
+  margin-bottom: -$wg-margin-bottom;
+
+  &.wg-panel-group {
+    margin-bottom: 0;
+  }
+}

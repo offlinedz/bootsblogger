@@ -1046,3 +1046,98 @@ Grid widget menggunakan `margin-left` dan `margin-right` untuk membuat *gutters*
 {% highlight html %}
 <b:section class='wg wg-panel wg-panel-orange wg-title-black wg-sm-6' id='sectionId'></b:section>
 {% endhighlight %}
+
+## `.wg-section-no-mb`
+
+Gunakan `.wg-section-no-mb` untuk menghilangkan *margin* bawah pada widget baris terakhir.
+
+<div class="bd-example">
+  <div class="p-3 bg-faded d-inline-block">
+    <div class="wg wg-box wg-box-orange wg-title-black wg-section-no-mb">
+      <div class="widget">
+        <h3 class="title">Widget title</h3>
+        <div class="widget-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+        </div>
+      </div><!-- /.widget -->
+      <div class="widget">
+        <h3 class="title">Widget title</h3>
+        <div class="widget-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+        </div>
+      </div><!-- /.widget -->
+    </div>
+  </div>
+</div><!-- /.bd-example -->
+
+{% highlight html %}
+<div class='p-3 bg-faded'>
+  <b:section class='wg wg-box wg-box-orange wg-title-black wg-section-no-mb' id='sectionId'></b:section>
+</div>
+{% endhighlight %}
+
+Grup:
+
+<div class="bd-example">
+  <div class="p-3 bg-faded d-inline-block">
+    <div class="wg wg-panel wg-panel-group wg-panel-orange wg-title-black wg-section-no-mb">
+      <div class="widget">
+        <h3 class="title">Widget title</h3>
+        <div class="widget-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+        </div>
+      </div><!-- /.widget -->
+      <div class="widget">
+        <h3 class="title">Widget title</h3>
+        <div class="widget-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+        </div>
+      </div><!-- /.widget -->
+    </div>
+  </div>
+</div><!-- /.bd-example -->
+
+{% highlight html %}
+<div class='p-3 bg-faded'>
+  <b:section class='wg wg-panel wg-panel-group wg-panel-orange wg-title-black wg-section-no-mb' id='sectionId'></b:section>
+</div>
+{% endhighlight %}
+
+Dengan grid:
+
+<div class="bd-example">
+  <div class="p-3 bg-faded">
+    <div class="wg wg-panel wg-panel-orange wg-title-black wg-sm-6 wg-section-no-mb wg-grid-example">
+      <div class="widget">
+        <h3 class="title">Widget title</h3>
+        <div class="widget-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+        </div>
+      </div><!-- /.widget -->
+      <div class="widget">
+        <h3 class="title">Widget title</h3>
+        <div class="widget-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+        </div>
+      </div><!-- /.widget -->
+      <div class="widget">
+        <h3 class="title">Widget title</h3>
+        <div class="widget-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+        </div>
+      </div><!-- /.widget -->
+      <div class="widget">
+        <h3 class="title">Widget title</h3>
+        <div class="widget-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+        </div>
+      </div><!-- /.widget -->
+    </div>
+  </div>
+</div><!-- /.bd-example -->
+
+{% highlight html %}
+<div class='p-3 bg-faded'>
+  <b:section class='wg wg-panel wg-panel-orange wg-title-black wg-sm-6 wg-section-no-mb' id='sectionId'></b:section>
+</div>
+{% endhighlight %}
