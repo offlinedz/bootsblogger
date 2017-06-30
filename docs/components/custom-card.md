@@ -198,7 +198,7 @@ Pelajari beberapa contoh di bawah ini.
 
 #### Background images
 
-Tampilkan gambar dengan CSS `background-image`, tambahkan `.card-img-cover`, membutuhkan CSS `min-height`.
+Tampilkan gambar dengan CSS `background-image`. Tambahkan `.card-img-cover`. Membutuhkan penggunaan CSS `min-height`.
 
 <div class="bd-example">
   <div class="card">
