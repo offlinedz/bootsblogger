@@ -77,7 +77,7 @@ Gunakan `.navmenu-light` atau `.navmenu-inverse` untuk menyesuaikan warna teks d
 
 ## Supported content
 
-Navmenu mendukung beberapa sub-komponen. Pilih dari beberapa berikut sesuai kebutuhan:
+Konten di dalam navmenu:
 
 ### Brand
 
@@ -169,7 +169,7 @@ Image and text:
 </nav>
 {% endexample %}
 
-**Small nav** - *Item* nav dengan *padding* atas dan bawah yang lebih kecil, tambahkan `.nav-link-sm` ke `.nav-link`:
+**Small nav** - *Nav items* dengan *padding* atas dan bawah yang lebih kecil, tambahkan `.nav-link-sm` ke `.nav-link`:
 
 {% example html %}
 <nav class="navmenu navmenu-light bg-faded">
@@ -181,7 +181,7 @@ Image and text:
 </nav>
 {% endexample %}
 
-**Bordered nav** - *Item* nav dengan *border* atas dan bawah, tambahkan `.nav-item-bordered` ke `.nav-item`:
+**Bordered nav** - *Nav items* dengan *border* atas dan bawah, tambahkan `.nav-item-bordered` ke `.nav-item`:
 
 {% example html %}
 <nav class="navmenu navmenu-light bg-faded">
@@ -460,13 +460,13 @@ Membutuhkan [Bootstrap dropdown plugin](https://v4-alpha.getbootstrap.com/compon
 
 Dengan menggunakan `.navmenu-toggler`, `.navmenu-collapse`, dan `.navmenu-expand{-sm|-md|-lg|-xl}` Anda dapat menentukan kapan menampilkan atau menyembunyikan elemen navmenu.
 
-Jika ingin elemen navmenu selalu tersembunyi, jangan tambahkan `.navmenu-expand-*`, dan juga dapat menghilangkan penggunaan `.navmenu-toggler` dan `.navmenu-collapse`.
-
 Kelas untuk `xs` tidak tersedia (`.navmenu-expand`).
 
 ### Toggler
 
 Always:
+
+Tidak membutuhkan `.navmenu-expand-*`, `.navmenu-toggler`, dan `.navmenu-collapse`.
 
 {% example html %}
 <nav class="navmenu navmenu-light bg-faded">
@@ -484,10 +484,10 @@ Always:
 </nav>
 {% endexample %}
 
-`sm` (&le;576px):
+`sm` (&lt;576px):
 
 {% example html %}
-<nav class="navmenu navmenu-light navmenu-expand-sm bg-faded">
+<nav class="navmenu navmenu-expand-sm navmenu-light bg-faded">
   <div class="navmenu-content navmenu-toggler">
     <button class="btn btn-secondary btn-block" type="button" data-toggle="collapse" data-target="#navmenuTogglerDemo01" aria-controls="navmenuTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">Toggle nav</button>
   </div>
@@ -502,10 +502,10 @@ Always:
 </nav>
 {% endexample %}
 
-`md` (&le;768px):
+`md` (&lt;768px):
 
 {% example html %}
-<nav class="navmenu navmenu-light navmenu-expand-md bg-faded">
+<nav class="navmenu navmenu-expand-md navmenu-light bg-faded">
   <div class="navmenu-content navmenu-toggler">
     <button class="btn btn-secondary btn-block" type="button" data-toggle="collapse" data-target="#navmenuTogglerDemo02" aria-controls="navmenuTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">Toggle nav</button>
   </div>
@@ -520,10 +520,10 @@ Always:
 </nav>
 {% endexample %}
 
-`lg` (&le;992px):
+`lg` (&lt;992px):
 
 {% example html %}
-<nav class="navmenu navmenu-light navmenu-expand-lg bg-faded">
+<nav class="navmenu navmenu-expand-lg navmenu-light bg-faded">
   <div class="navmenu-content navmenu-toggler">
     <button class="btn btn-secondary btn-block" type="button" data-toggle="collapse" data-target="#navmenuTogglerDemo03" aria-controls="navmenuTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">Toggle nav</button>
   </div>
@@ -538,10 +538,10 @@ Always:
 </nav>
 {% endexample %}
 
-`xl` (&le;1200px):
+`xl` (&lt;1200px):
 
 {% example html %}
-<nav class="navmenu navmenu-light navmenu-expand-xl bg-faded">
+<nav class="navmenu navmenu-expand-xl navmenu-light bg-faded">
   <div class="navmenu-content navmenu-toggler">
     <button class="btn btn-secondary btn-block" type="button" data-toggle="collapse" data-target="#navmenuTogglerDemo04" aria-controls="navmenuTogglerDemo04" aria-expanded="false" aria-label="Toggle navigation">Toggle nav</button>
   </div>
