@@ -2,4 +2,5 @@
   <!--(bake BlogSearch.xml)-->
   <!--(bake ContactForm.xml)-->
   <!--(bake FollowByEmail.xml)-->
+  <!--(bake Label.xml)-->
 </b:defaultmarkups>
