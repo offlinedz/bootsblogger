@@ -383,7 +383,7 @@ Post layout and styles
         <article class='card mb-3 mb-sm-5' expr:id='&quot;post-&quot; + data:post.id'>
           <!-- Header -->
           <b:if cond='data:headerByline.items.notEmpty'>
-            <div class='card-header'>
+            <div class='card-header text-muted'>
               <!-- headerByline -->
               <b:include name='byline.header'/>
             </div>
@@ -410,14 +410,14 @@ Post layout and styles
                 <!-- Snippet -->
                 <div class='card-text'><b:include data='{ length: 150, links: true, linebreaks: true, ellipsis: true, notHasJumpLink: true }' name='post.snippet'/></div>
                 <!-- Jump link -->
-                <div class='mt-2'><b:include data='{ class: &quot;btn btn-primary&quot; }' name='post.jumpLink'/></div>
+                <b:include data='{ class: &quot;btn btn-primary&quot;, parentClass: &quot;mt-2&quot; }' name='post.jumpLink'/>
               </div>
             </div>
           </div>
 
           <!-- Footer -->
           <b:if cond='data:footerBylines.notEmpty'>
-            <div class='card-footer'>
+            <div class='card-footer text-muted'>
               <!-- footerBylines -->
               <b:include name='byline.footer'/>
             </div>
@@ -505,7 +505,7 @@ Post layout and styles
                 <!-- Snippet -->
                 <div class='card-text'><b:include data='{ length: 150, links: true, linebreaks: true, ellipsis: true, notHasJumpLink: false }' name='post.snippet'/></div>
                 <!-- Jump link -->
-                <div class='mt-2'><b:include data='{ class: &quot;card-link&quot; }' name='post.jumpLink'/></div>
+                <b:include data='{ class: &quot;card-link&quot;, parentClass: &quot;mt-2&quot; }' name='post.jumpLink'/>
               </div>
 
               <!-- Footer -->
@@ -557,7 +557,7 @@ Post layout and styles
         <article class='card mb-3 mb-sm-5' expr:id='&quot;post-&quot; + data:post.id'>
           <!-- Header -->
           <b:if cond='data:headerByline.items.notEmpty'>
-            <div class='card-header'>
+            <div class='card-header text-muted'>
               <!-- headerByline -->
               <b:include name='byline.header'/>
             </div>
@@ -584,14 +584,14 @@ Post layout and styles
                 <!-- Snippet -->
                 <div class='card-text'><b:include data='{ length: 150, links: true, linebreaks: true, ellipsis: true, notHasJumpLink: true }' name='post.snippet'/></div>
                 <!-- Jump link -->
-                <div class='mt-2'><b:include data='{ class: &quot;btn btn-primary&quot; }' name='post.jumpLink'/></div>
+                <b:include data='{ class: &quot;btn btn-primary&quot;, parentClass: &quot;mt-2&quot; }' name='post.jumpLink'/>
               </div>
             </div>
           </div>
 
           <!-- Footer -->
           <b:if cond='data:footerBylines.notEmpty'>
-            <div class='card-footer'>
+            <div class='card-footer text-muted'>
               <!-- footerBylines -->
               <b:include name='byline.footer'/>
             </div>
@@ -730,7 +730,7 @@ Main content
   <div class='container'>
     <div class='row'>
       <!-- Main -->
-      <main class='main col-md-9 blogger-col-8' id='main'>
+      <main class='col-md-9 main blogger-col-8' id='main'>
         <div class='main-wrap'>
           <b:section class='b-section-main' id='b-section-main' maxwidgets='1' name='Main' showaddelement='no'>
             <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2' visible='true'>
@@ -792,7 +792,7 @@ Main content
       </main><!-- /.main -->
 
       <!-- Sidebar -->
-      <aside class='sidebar col-md-3 blogger-col-4 mt-5 mt-md-0' id='sidebar'>
+      <aside class='col-md-3 sidebar mt-5 mt-md-0 blogger-col-4' id='sidebar'>
         <div class='sidebar-wrap'>
           <b:section class='b-section-sidebar wg wg-box wg-box-white wg-title-gray-dark wg-md-12 wg-sm-6 mnb-3' id='b-section-sidebar' name='Sidebar'/>
         </div>
@@ -1375,7 +1375,7 @@ Blog `<widget type='Blog'/>`
                 <form class='w-100' expr:action='data:blog.searchUrl' method='get'>
                   <div class='input-group' role='search'>
                     <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
-                    <input class='form-control' expr:aria-label='data:messages.searchBlog' expr:placeholder='data:messages.searchBlog' id='status-message-search-form' name='q' type='search'/>
+                    <input class='form-control' expr:aria-label='data:messages.searchBlog' expr:placeholder='data:messages.searchBlog' id='blog-alert-search-form' name='q' type='search'/>
                   </div>
                 </form>
               </li>
@@ -1406,7 +1406,7 @@ Blog `<widget type='Blog'/>`
                 <form class='w-100' expr:action='data:blog.searchUrl' method='get'>
                   <div class='input-group' role='search'>
                     <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
-                    <input class='form-control' expr:aria-label='data:messages.searchBlog' expr:placeholder='data:messages.searchBlog' id='status-message-search-form' name='q' type='search'/>
+                    <input class='form-control' expr:aria-label='data:messages.searchBlog' expr:placeholder='data:messages.searchBlog' id='blog-alert-search-form' name='q' type='search'/>
                   </div>
                 </form>
               </li>
@@ -1441,7 +1441,7 @@ Blog `<widget type='Blog'/>`
                 <form class='w-100' expr:action='data:blog.searchUrl' method='get'>
                   <div class='input-group' role='search'>
                     <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
-                    <input class='form-control' expr:aria-label='data:messages.searchBlog' expr:placeholder='data:messages.searchBlog' id='status-message-search-form' name='q' type='search'/>
+                    <input class='form-control' expr:aria-label='data:messages.searchBlog' expr:placeholder='data:messages.searchBlog' id='blog-alert-search-form' name='q' type='search'/>
                   </div>
                 </form>
               </li>
@@ -1462,7 +1462,7 @@ Blog `<widget type='Blog'/>`
             <form class='w-100' expr:action='data:blog.searchUrl' method='get'>
               <div class='input-group' role='search'>
                 <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
-                <input class='form-control' expr:aria-label='data:messages.searchBlog' expr:placeholder='data:messages.searchBlog' id='status-message-search-form' name='q' type='search'/>
+                <input class='form-control' expr:aria-label='data:messages.searchBlog' expr:placeholder='data:messages.searchBlog' id='blog-alert-search-form' name='q' type='search'/>
               </div>
             </form>
           </div>
@@ -1817,25 +1817,25 @@ Blog `<widget type='Blog'/>`
     <b:includable id='main.blog-pager' var='post'>
       <b:if cond='!data:view.isPage'>
         <nav class='blog-pager d-flex justify-content-between'>
-          <b:if cond='data:newerPageUrl'>
-            <a class='btn btn-secondary' expr:href='data:newerPageUrl' role='button'><data:messages.newer/></a>
-          <b:else/>
-            <a class='btn btn-secondary disabled' href='#' role='button'><data:messages.newer/></a>
-          </b:if>
+          <a class='blog-pager-newer-link btn btn-secondary' role='button'>
+            <b:attr expr:value='data:newerPageUrl ? data:newerPageUrl : &quot;#&quot;' name='href'/>
+            <b:class cond='!data:newerPageUrl' name='disabled'/>
+            <data:messages.newer/>
+          </a>
 
-          <a class='btn btn-secondary' expr:href='data:blog.homepageUrl' role='button'><data:messages.home/></a>
+          <a class='blog-pager-home-link btn btn-secondary' expr:href='data:blog.homepageUrl' role='button'><data:messages.home/></a>
 
-          <b:if cond='data:olderPageUrl'>
-            <a class='btn btn-secondary' expr:href='data:olderPageUrl' role='button'><data:messages.older/></a>
-          <b:else/>
-            <a class='btn btn-secondary disabled' href='#' role='button'><data:messages.older/></a>
-          </b:if>
+          <a class='blog-pager-older-link btn btn-secondary' role='button'>
+            <b:attr expr:value='data:olderPageUrl ? data:olderPageUrl : &quot;#&quot;' name='href'/>
+            <b:class cond='!data:olderPageUrl' name='disabled'/>
+            <data:messages.older/>
+          </a>
         </nav>
       </b:if>
 
       <b:if cond='data:view.isPage'>
         <nav class='blog-pager d-flex justify-content-center'>
-          <a class='btn btn-secondary' expr:href='data:blog.homepageUrl' role='button'><data:messages.home/></a>
+          <a class='blog-pager-home-link btn btn-secondary' expr:href='data:blog.homepageUrl' role='button'><data:messages.home/></a>
         </nav>
       </b:if>
     </b:includable>
@@ -2225,30 +2225,18 @@ Blog `<widget type='Blog'/>`
     <b:includable id='post.authorImage'>
       <b:if cond='data:post.author and data:post.author.authorPhoto'>
         <b:if cond='data:post.author.authorPhoto.image.isYoutube'>
-          <b:if cond='data:post.author.profileUrl'>
-            <a expr:href='data:post.author.profileUrl'>
-              <img expr:alt='data:post.author.name' expr:class='data:class' expr:src='data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl,data:size,(data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl'/>
-            </a>
-          <b:else/>
-            <img expr:alt='data:post.author.name' expr:class='data:class' expr:src='data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl,data:size,(data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl'/>
-          </b:if>
+          <b:tag cond='data:post.author.profileUrl' expr:href='data:post.author.profileUrl' name='a'>
+            <img expr:alt='data:post.author.name' expr:class='data:class' expr:src='data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl, data:size, (data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl'/>
+          </b:tag>
         <b:else/>
-          <b:if cond='data:post.author.profileUrl'>
-            <a expr:href='data:post.author.profileUrl'>
-              <img expr:alt='data:post.author.name' expr:class='data:class' expr:src='data:post.author.authorPhoto.image.isResizable ? resizeImage(data:post.author.authorPhoto.image,data:size,(data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.author.authorPhoto.image'/>
-            </a>
-          <b:else/>
-            <img expr:alt='data:post.author.name' expr:class='data:class' expr:src='data:post.author.authorPhoto.image.isResizable ? resizeImage(data:post.author.authorPhoto.image,data:size,(data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.author.authorPhoto.image'/>
-          </b:if>
+          <b:tag cond='data:post.author.profileUrl' expr:href='data:post.author.profileUrl' name='a'>
+            <img expr:alt='data:post.author.name' expr:class='data:class' expr:src='data:post.author.authorPhoto.image.isResizable ? resizeImage(data:post.author.authorPhoto.image, data:size, (data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.author.authorPhoto.image'/>
+          </b:tag>
         </b:if>
       <b:else/>
-        <b:if cond='data:post.author.profileUrl'>
-          <a expr:href='data:post.author.profileUrl'>
-            <img expr:alt='data:post.author.name' expr:class='data:class' expr:src='&quot;https://placehold.it/&quot; + data:ratioWidth + &quot;x&quot; + (((data:size * data:ratioHeight) % data:ratioWidth == 0) ? ((data:size * data:ratioHeight) / data:ratioWidth) : data:size) + &quot;/ff5722/fff?text=B&quot;'/>
-          </a>
-        <b:else/>
+        <b:tag cond='data:post.author.profileUrl' expr:href='data:post.author.profileUrl' name='a'>
           <img expr:alt='data:post.author.name' expr:class='data:class' expr:src='&quot;https://placehold.it/&quot; + data:ratioWidth + &quot;x&quot; + (((data:size * data:ratioHeight) % data:ratioWidth == 0) ? ((data:size * data:ratioHeight) / data:ratioWidth) : data:size) + &quot;/ff5722/fff?text=B&quot;'/>
-        </b:if>
+        </b:tag>
       </b:if>
     </b:includable>
     <b:includable id='post.datePublished'>
@@ -2290,21 +2278,7 @@ Blog `<widget type='Blog'/>`
     <b:includable id='post.featuredImage'>
       <b:if cond='data:post.featuredImage'>
         <b:if cond='data:post.featuredImage.isYoutube'>
-          <b:if cond='data:link'>
-            <a expr:href='data:post.url'>
-              <img b:whitespace='remove'>
-                <b:class expr:name='data:class'/>
-                <b:attr expr:value='data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, data:size, (data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.featuredImage.youtubeMaxResDefaultUrl' name='src'/>
-                <b:if cond='data:sourceSizes'>
-                  <b:attr expr:value='data:sourceSizes' name='sizes'/>
-                </b:if>
-                <b:if cond='data:sourceSet'>
-                  <b:attr expr:value='sourceSet(data:post.featuredImage.youtubeMaxResDefaultUrl, data:sourceSet, (data:ratioWidth + &quot;:&quot; + data:ratioHeight))' name='srcset'/>
-                </b:if>
-                <b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
-              </img>
-            </a>
-          <b:else/>
+          <b:tag cond='data:link' expr:href='data:post.url' name='a'>
             <img b:whitespace='remove'>
               <b:class expr:name='data:class'/>
               <b:attr expr:value='data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, data:size, (data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.featuredImage.youtubeMaxResDefaultUrl' name='src'/>
@@ -2316,23 +2290,9 @@ Blog `<widget type='Blog'/>`
               </b:if>
               <b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
             </img>
-          </b:if>
+          </b:tag>
         <b:else/>
-          <b:if cond='data:link'>
-            <a expr:href='data:post.url'>
-              <img b:whitespace='remove'>
-                <b:class expr:name='data:class'/>
-                <b:attr expr:value='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, data:size, (data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.featuredImage' name='src'/>
-                <b:if cond='data:sourceSizes'>
-                  <b:attr expr:value='data:sourceSizes' name='sizes'/>
-                </b:if>
-                <b:if cond='data:sourceSet'>
-                  <b:attr expr:value='sourceSet(data:post.featuredImage, data:sourceSet, (data:ratioWidth + &quot;:&quot; + data:ratioHeight))' name='srcset'/>
-                </b:if>
-                <b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
-              </img>
-            </a>
-          <b:else/>
+          <b:tag cond='data:link' expr:href='data:post.url' name='a'>
             <img b:whitespace='remove'>
               <b:class expr:name='data:class'/>
               <b:attr expr:value='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, data:size, (data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.featuredImage' name='src'/>
@@ -2344,26 +2304,22 @@ Blog `<widget type='Blog'/>`
               </b:if>
               <b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
             </img>
-          </b:if>
+          </b:tag>
         </b:if>
       <b:else/>
         <b:if cond='data:defaultNoImage'>
-          <b:if cond='data:link'>
-            <a expr:href='data:post.url'>
-              <img expr:alt='data:post.title ? data:post.title : data:messages.image' expr:class='data:class' expr:src='&quot;https://placehold.it/&quot; + data:size + &quot;x&quot; + (((data:size * data:ratioHeight) % data:ratioWidth == 0) ? ((data:size * data:ratioHeight) / data:ratioWidth) : data:size) + &quot;/777/eee?text=B&quot;'/>
-            </a>
-          <b:else/>
+          <b:tag cond='data:link' expr:href='data:post.url' name='a'>
             <img expr:alt='data:post.title ? data:post.title : data:messages.image' expr:class='data:class' expr:src='&quot;https://placehold.it/&quot; + data:size + &quot;x&quot; + (((data:size * data:ratioHeight) % data:ratioWidth == 0) ? ((data:size * data:ratioHeight) / data:ratioWidth) : data:size) + &quot;/777/eee?text=B&quot;'/>
-          </b:if>
+          </b:tag>
         </b:if>
       </b:if>
     </b:includable>
     <b:includable id='post.featuredImageBg'>
       <b:if cond='data:post.featuredImage'>
         <b:if cond='data:post.featuredImage.isYoutube'>
-          <div expr:class='data:class' expr:style='data:style + &quot; background-image: url(&quot; + (data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl,data:size,(data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.featuredImage.youtubeMaxResDefaultUrl) + &quot;);&quot;'/>
+          <div expr:class='data:class' expr:style='data:style + &quot; background-image: url(&quot; + (data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, data:size, (data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.featuredImage.youtubeMaxResDefaultUrl) + &quot;);&quot;'/>
         <b:else/>
-          <div expr:class='data:class' expr:style='data:style + &quot; background-image: url(&quot; + (data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage,data:size,(data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.featuredImage) + &quot;);&quot;'/>
+          <div expr:class='data:class' expr:style='data:style + &quot; background-image: url(&quot; + (data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, data:size, (data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.featuredImage) + &quot;);&quot;'/>
         </b:if>
       <b:else/>
         <b:if cond='data:defaultNoImage'>
@@ -2380,16 +2336,20 @@ Blog `<widget type='Blog'/>`
     </b:includable>
     <b:includable id='post.jumpLink'>
       <b:if cond='data:post.hasJumpLink'>
-        <a b:whitespace='remove' expr:class='data:class' expr:href='fragment(data:post.url, &quot;more&quot;)' role='button'>
-          <b:attr name='title' expr:value='data:post.title ? data:post.title : &quot;&quot;'/>
-          <data:blog.jumpLinkMessage/><span class='sr-only'>jump-<data:post.id/></span>
-        </a>
+        <div expr:class='data:parentClass'>
+          <a b:whitespace='remove' expr:class='data:class' expr:href='fragment(data:post.url, &quot;more&quot;)' role='button'>
+            <b:attr name='title' expr:value='data:post.title ? data:post.title : &quot;&quot;'/>
+            <data:blog.jumpLinkMessage/><span class='sr-only'>jump-<data:post.id/></span>
+          </a>
+        </div>
       <b:else/>
         <b:if cond='data:post.snippets'>
-          <a b:whitespace='remove' expr:class='data:class' expr:href='data:post.url' role='button'>
-            <b:attr name='title' expr:value='data:post.title ? data:post.title : &quot;&quot;'/>
-            <data:messages.keepReading/><span class='sr-only'>jump-<data:post.id/></span>
-          </a>
+          <div expr:class='data:parentClass'>
+            <a b:whitespace='remove' expr:class='data:class' expr:href='data:post.url' role='button'>
+              <b:attr name='title' expr:value='data:post.title ? data:post.title : &quot;&quot;'/>
+              <data:messages.keepReading/><span class='sr-only'>jump-<data:post.id/></span>
+            </a>
+          </div>
         </b:if>
       </b:if>
     </b:includable>
