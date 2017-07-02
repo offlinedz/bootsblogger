@@ -21,7 +21,7 @@
           <!-- Snippet -->
           <div class='card-text'><b:include data='{ length: 150, links: true, linebreaks: true, ellipsis: true, notHasJumpLink: false }' name='post.snippet'/></div>
           <!-- Jump link -->
-          <div class='mt-2'><b:include data='{ class: &quot;card-link&quot; }' name='post.jumpLink'/></div>
+          <b:include data='{ class: &quot;card-link&quot;, parentClass: &quot;mt-2&quot; }' name='post.jumpLink'/>
         </div>
 
         <!-- Footer -->

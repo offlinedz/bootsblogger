@@ -686,5 +686,5 @@ template-src/includes/blog-posts/post.jumpLink.xml
 ###### Usage
 
 {% highlight html %}
-<b:include data='{ class: "btn btn-primary" }' name='post.jumpLink'/>
+<b:include data='{ class: "btn btn-primary", parentClass: "class-name" }' name='post.jumpLink'/>
 {% endhighlight %}

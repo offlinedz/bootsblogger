@@ -1,13 +1,17 @@
 <b:if cond='data:post.hasJumpLink'>
-  <a b:whitespace='remove' expr:class='data:class' expr:href='fragment(data:post.url, &quot;more&quot;)' role='button'>
-    <b:attr name='title' expr:value='data:post.title ? data:post.title : &quot;&quot;'/>
-    <data:blog.jumpLinkMessage/><span class='sr-only'>jump-<data:post.id/></span>
-  </a>
+  <div expr:class='data:parentClass'>
+    <a b:whitespace='remove' expr:class='data:class' expr:href='fragment(data:post.url, &quot;more&quot;)' role='button'>
+      <b:attr name='title' expr:value='data:post.title ? data:post.title : &quot;&quot;'/>
+      <data:blog.jumpLinkMessage/><span class='sr-only'>jump-<data:post.id/></span>
+    </a>
+  </div>
 <b:else/>
   <b:if cond='data:post.snippets'>
-    <a b:whitespace='remove' expr:class='data:class' expr:href='data:post.url' role='button'>
-      <b:attr name='title' expr:value='data:post.title ? data:post.title : &quot;&quot;'/>
-      <data:messages.keepReading/><span class='sr-only'>jump-<data:post.id/></span>
-    </a>
+    <div expr:class='data:parentClass'>
+      <a b:whitespace='remove' expr:class='data:class' expr:href='data:post.url' role='button'>
+        <b:attr name='title' expr:value='data:post.title ? data:post.title : &quot;&quot;'/>
+        <data:messages.keepReading/><span class='sr-only'>jump-<data:post.id/></span>
+      </a>
+    </div>
   </b:if>
 </b:if>
