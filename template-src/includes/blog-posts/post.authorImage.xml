@@ -2,18 +2,18 @@
   <b:if cond='data:post.author.authorPhoto.image.isYoutube'>
     <b:if cond='data:post.author.profileUrl'>
       <a expr:href='data:post.author.profileUrl'>
-        <img expr:alt='data:post.author.name' expr:class='data:class' expr:src='data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl,data:size,(data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl'/>
+        <img expr:alt='data:post.author.name' expr:class='data:class' expr:src='data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl, data-size, (data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl'/>
       </a>
     <b:else/>
-      <img expr:alt='data:post.author.name' expr:class='data:class' expr:src='data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl,data:size,(data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl'/>
+      <img expr:alt='data:post.author.name' expr:class='data:class' expr:src='data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl, data-size, (data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl'/>
     </b:if>
   <b:else/>
     <b:if cond='data:post.author.profileUrl'>
       <a expr:href='data:post.author.profileUrl'>
-        <img expr:alt='data:post.author.name' expr:class='data:class' expr:src='data:post.author.authorPhoto.image.isResizable ? resizeImage(data:post.author.authorPhoto.image,data:size,(data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.author.authorPhoto.image'/>
+        <img expr:alt='data:post.author.name' expr:class='data:class' expr:src='data:post.author.authorPhoto.image.isResizable ? resizeImage(data:post.author.authorPhoto.image, data-size, (data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.author.authorPhoto.image'/>
       </a>
     <b:else/>
-      <img expr:alt='data:post.author.name' expr:class='data:class' expr:src='data:post.author.authorPhoto.image.isResizable ? resizeImage(data:post.author.authorPhoto.image,data:size,(data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.author.authorPhoto.image'/>
+      <img expr:alt='data:post.author.name' expr:class='data:class' expr:src='data:post.author.authorPhoto.image.isResizable ? resizeImage(data:post.author.authorPhoto.image, data-size, (data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.author.authorPhoto.image'/>
     </b:if>
   </b:if>
 <b:else/>
