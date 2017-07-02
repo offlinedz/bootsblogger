@@ -1,7 +1,7 @@
 <b:if cond='!data:view.isPage'>
   <nav class='blog-pager d-flex justify-content-between'>
     <a class='blog-pager-newer-link btn btn-secondary' role='button'>
-      <b:attr expr:value='data:newerPageUrl ? data:newerPageurl : &quot;#&quot;' name='href'/>
+      <b:attr expr:value='data:newerPageUrl ? data:newerPageUrl : &quot;#&quot;' name='href'/>
       <b:class cond='!data:newerPageUrl' name='disabled'/>
       <data:messages.newer/>
     </a>
@@ -9,9 +9,9 @@
     <a class='blog-pager-home-link btn btn-secondary' expr:href='data:blog.homepageUrl' role='button'><data:messages.home/></a>
 
     <a class='blog-pager-older-link btn btn-secondary' role='button'>
-      <b:attr expr:value='data:olderPageUrl ? data:olderPageurl : &quot;#&quot;' name='href'/>
+      <b:attr expr:value='data:olderPageUrl ? data:olderPageUrl : &quot;#&quot;' name='href'/>
       <b:class cond='!data:olderPageUrl' name='disabled'/>
-      <data:messages.newer/>
+      <data:messages.older/>
     </a>
   </nav>
 </b:if>
