@@ -2,7 +2,7 @@
   <article class='card mb-3 mb-sm-5' expr:id='&quot;post-&quot; + data:post.id'>
     <!-- Header -->
     <b:if cond='data:headerByline.items.notEmpty'>
-      <div class='card-header'>
+      <div class='card-header text-muted'>
         <!-- headerByline -->
         <b:include name='byline.header'/>
       </div>
@@ -36,7 +36,7 @@
 
     <!-- Footer -->
     <b:if cond='data:footerBylines.notEmpty'>
-      <div class='card-footer'>
+      <div class='card-footer text-muted'>
         <!-- footerBylines -->
         <b:include name='byline.footer'/>
       </div>
