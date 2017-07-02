@@ -1,18 +1,18 @@
 <b:if cond='!data:view.isPage'>
   <nav class='blog-pager d-flex justify-content-between'>
-    <b:if cond='data:newerPageUrl'>
-      <a class='blog-pager-newer-link btn btn-secondary' expr:href='data:newerPageUrl' role='button'><data:messages.newer/></a>
-    <b:else/>
-      <a class='blog-pager-newer-link btn btn-secondary disabled' href='#' role='button'><data:messages.newer/></a>
-    </b:if>
+    <a class='blog-pager-newer-link btn btn-secondary' role='button'>
+      <b:attr expr:value='data:newerPageUrl ? data:newerPageurl : &quot;#&quot;' name='href'/>
+      <b:class cond='!data:newerPageUrl' name='disabled'/>
+      <data:messages.newer/>
+    </a>
 
     <a class='blog-pager-home-link btn btn-secondary' expr:href='data:blog.homepageUrl' role='button'><data:messages.home/></a>
 
-    <b:if cond='data:olderPageUrl'>
-      <a class='blog-pager-older-link btn btn-secondary' expr:href='data:olderPageUrl' role='button'><data:messages.older/></a>
-    <b:else/>
-      <a class='blog-pager-older-link btn btn-secondary disabled' href='#' role='button'><data:messages.older/></a>
-    </b:if>
+    <a class='blog-pager-older-link btn btn-secondary' role='button'>
+      <b:attr expr:value='data:olderPageUrl ? data:olderPageurl : &quot;#&quot;' name='href'/>
+      <b:class cond='!data:olderPageUrl' name='disabled'/>
+      <data:messages.newer/>
+    </a>
   </nav>
 </b:if>
 
