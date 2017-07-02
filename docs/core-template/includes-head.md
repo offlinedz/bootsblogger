@@ -139,6 +139,23 @@ template-src/includes/head/head.layout-mode.css
 
 Gunakan pada elemen yang di dalamnya terdapat tag `b:section`. Sesuaikan dengan kerangka template.
 
+<table class="table table-bordered table-striped table-responsive">
+  <tbody>
+    <tr>
+      <th class="text-nowrap" scope="row">Grid behavior</th>
+      <td>Horizontal at all times</td>
+    </tr>
+    <tr>
+      <th class="text-nowrap" scope="row">Class prefix</th>
+      <td><code>.blogger-col-</code></td>
+    </tr>
+    <tr>
+      <th class="text-nowrap" scope="row"># of columns</th>
+      <td>12</td>
+    </tr>
+  </tbody>
+</table>
+
 {% highlight html %}
 <div class='container'>
   <!-- Main -->
