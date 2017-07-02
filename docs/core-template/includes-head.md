@@ -161,12 +161,12 @@ Contoh-contoh lainnya:
 <div class='container'>
   <div class='row'>
     <!-- Main -->
-    <main class='main col-md-9 blogger-col-9' id='main'>
+    <main class='col-md-9 main blogger-col-9' id='main'>
       <b:section class='b-section-main' id='b-section-main' maxwidgets='1' name='Main' showaddelement='no'></b:section>
     </main><!-- /.main -->
 
     <!-- Sidebar -->
-    <aside class='sidebar col-md-3 blogger-col-3' id='sidebar'>
+    <aside class='col-md-3 sidebar blogger-col-3' id='sidebar'>
       <b:section class='b-section-sidebar' id='b-section-sidebar' name='Sidebar'></section>
     </aside><!-- /.sidebar -->
   </div><!-- /.row -->
@@ -177,12 +177,12 @@ Contoh-contoh lainnya:
 <div class='container'>
   <div class='row'>
     <!-- Main -->
-    <main class='main col-md-9 blogger-col-8' id='main'>
+    <main class='col-md-9 main blogger-col-8' id='main'>
       <b:section class='b-section-main' id='b-section-main' maxwidgets='1' name='Main' showaddelement='no'></b:section>
     </main><!-- /.main -->
 
     <!-- Sidebar -->
-    <aside class='sidebar col-md-3 blogger-col-4' id='sidebar'>
+    <aside class='col-md-3 sidebar blogger-col-4' id='sidebar'>
       <b:section class='b-section-sidebar' id='b-section-sidebar' name='Sidebar'></section>
     </aside><!-- /.sidebar -->
   </div><!-- /.row -->
