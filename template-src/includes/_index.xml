@@ -220,6 +220,9 @@ Icons
       <!--(bake icons/icons.blogger.xml)-->
     </b:includable>
   </b:defaultmarkup>
+  <b:includable id='icons.bootsblogger'>
+    <!--(bake icons/icons.bootsblogger.xml)-->
+  </b:includable>
 </b:defaultmarkups>
 
 <b:comment>
