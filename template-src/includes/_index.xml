@@ -211,6 +211,19 @@ Unused default inclusions
 
 <b:comment>
 -------------------------------------------------
+Icons
+------------------------------------------------- </b:comment>
+
+<b:defaultmarkups>
+  <b:defaultmarkup type='Common'>
+    <b:includable id='icons.blogger'>
+      <!--(bake icons/icons.blogger.xml)-->
+    </b:includable>
+  </b:defaultmarkup>
+</b:defaultmarkups>
+
+<b:comment>
+-------------------------------------------------
 Assets
 ------------------------------------------------- </b:comment>
 
