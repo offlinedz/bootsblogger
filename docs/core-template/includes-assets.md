@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Includes - Assets
-description: CSS, JavaScript, dan lainnya.
+description: CSS, JavaScript, images, icons, dan lainnya.
 group: core-template
 ---
 
@@ -10,15 +10,11 @@ group: core-template
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
-## Core CSS and JavaScript
-
-CSS dan JavaScript inti.
+## CSS and JavaScript
 
 ### Bootstrap CSS
 
-- Source: Compiled
-
-###### Source
+###### Source <small>(Compiled)</small>
 
 {% highlight plaintext %}
 template-src/includes/assets/css/bootstrap/bootstrap.min.css
@@ -40,9 +36,7 @@ CSS Bootstrap dikompilasi dari kode sumber, oleh karena itu, CSS Bootstrap diser
 
 ### Bootstrap JS
 
-- Source: <abbr title="Content Delivery Network">CDN</abbr>
-
-###### Source
+###### Source <small>(<abbr title="Content Delivery Network">CDN</abbr>)</small>
 
 Lihat `template-src/config.json`:
 
@@ -71,9 +65,7 @@ Lihat `template-src/config.json`:
 
 ### Bootsblogger CSS
 
-- Source: Compiled
-
-###### Source
+###### Source <small>(Compiled)</small>
 
 {% highlight plaintext %}
 template-src/includes/assets/css/bootsblogger/bootsblogger.min.css
@@ -93,17 +85,11 @@ CSS Bootsblogger dikompilasi dari kode sumber, oleh karena itu, CSS Bootsblogger
 <b:include name='css.bootsblogger'/>
 {% endhighlight %}
 
-## Images and Icons
-
-Aset untuk keperluan gambar dan ikon.
-
 ### Font Awesome
 
-- Homepage: <http://fontawesome.io>
-- Source: <abbr title="Content Delivery Network">CDN</abbr>
-- Version: `4.7.0`
+<http://fontawesome.io>
 
-###### Source
+###### Source <small>(<abbr title="Content Delivery Network">CDN</abbr>)</small>
 
 Lihat `template-src/config.json`:
 
@@ -132,15 +118,11 @@ Lihat `template-src/config.json`:
 
 ## Dependencies
 
-Aset yang harus digunakan untuk mendukung *plugin* (khususnya *plugin* Bootstrap) agar dapat bekerja.
-
 ### jQuery
 
-- Homepage: <https://jquery.com>
-- Source: <abbr title="Content Delivery Network">CDN</abbr>
-- Version: `3.1.1`
+<https://jquery.com>
 
-###### Source
+###### Source <small>(<abbr title="Content Delivery Network">CDN</abbr>)</small>
 
 Lihat `template-src/config.json`:
 
@@ -169,11 +151,9 @@ Lihat `template-src/config.json`:
 
 ### Popper.js
 
-- Homepage: <https://popper.js.org>
-- Source: <abbr title="Content Delivery Network">CDN</abbr>
-- Version: `1.10.1`
+<https://popper.js.org>
 
-###### Source
+###### Source <small>(<abbr title="Content Delivery Network">CDN</abbr>)</small>
 
 Lihat `template-src/config.json`:
 
@@ -206,7 +186,7 @@ Untuk penggunaan CSS dan JavaScript, penempatannya harus diperhatikan.
 
 {% highlight html %}
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <!-- Bootstrap CSS first, then Bootsblogger CSS, then Font Awesome. -->
     <b:include name='css.bootstrap'/>
