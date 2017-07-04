@@ -99,10 +99,10 @@ Jumbotron
 
 <b:comment>
 =================================================
-Main content
+Main and sidebar
 ================================================= </b:comment>
 
-<div class='main-content py-5' id='main-content'>
+<div class='main-and-sidebar py-5' id='main-content'>
   <div class='container'>
     <div class='row'>
       <!-- Main -->
