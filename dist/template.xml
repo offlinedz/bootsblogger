@@ -55,12 +55,7 @@ CSS
  * Version       : 1.0
  * License       : MIT
  * License URL   : https://opensource.org/licenses/MIT
- */
-
-/**
- * Bootsblogger v1.0.0-alpha.1 (https://bootsblogger.github.io)
- * Copyright 2017 Igoy Nawamreh
- * Licensed under MIT (https://github.com/bootsblogger/bootsblogger/blob/master/LICENSE)
+ * <3            : Bootsblogger v1.0.0-alpha.1 (https://bootsblogger.github.io)
  */
 
 /**
@@ -79,7 +74,7 @@ body {}
 
 
 /* ==============================================
-   Navbar
+   Custom Navbar
    ============================================== */
 
 .navbar-custom {
@@ -160,7 +155,7 @@ body {}
 
 
 /* ==============================================
-   Jumbotron
+   Custom Jumbotron
    ============================================== */
 
 .jumbotron-custom {
@@ -192,7 +187,7 @@ body {}
 
 
 /* ==============================================
-   Buttons
+   Custom Buttons
    ============================================== */
 
 .btn-custom {
@@ -226,7 +221,7 @@ body {}
 
 
 /* ==============================================
-   `Blog`
+   Widget `Blog`
    ============================================== */
 
 /* Breadcrumb
@@ -263,10 +258,13 @@ body {}
 
 
 /* ==============================================
-   Main content
+   Layout and styles
    ============================================== */
 
-.main-content {
+/* Wrapping element for .main and .sidebar
+   ============================================== */
+
+.main-and-sidebar {
   background-color: #fafafa;
 }
 
@@ -284,9 +282,7 @@ body {}
 
 .sidebar-wrap {}
 
-
-/* ==============================================
-   Widget 1
+/* Widget 1
    ============================================== */
 
 .widget-1 {
@@ -295,9 +291,7 @@ body {}
 
 .widget-1-wrap {}
 
-
-/* ==============================================
-   Footer
+/* Footer
    ============================================== */
 
 .footer {
@@ -316,6 +310,25 @@ body {}
 .footer a:focus,
 .footer a:hover {
   color: #0275d8;
+}
+
+.footer p {
+  margin-bottom: 1rem;
+}
+.footer p:last-child {
+  margin-bottom: 0;
+}
+
+.footer-links {
+  padding-left: 0;
+  margin-bottom: 1rem;
+  list-style: none;
+}
+.footer-links li {
+  display: inline-block;
+}
+.footer-links li:not(:last-child) {
+  margin-right: 5px;
 }
 
 
@@ -391,9 +404,9 @@ Post layout and styles
 
           <div class='row no-gutters'>
             <div class='col-sm-3 col-md-4'>
-              <!-- Image -->
+              <!-- Featured image -->
               <div class='card-block-img-left-sm'>
-                <!-- Note: `sm` = 576px, so `max-width` = (`sm` - 1) = 575px. -->
+                <!-- Note: `sm` = 576px, `max-width` = (`sm` - 1) = 575px. -->
                 <b:include data='{ size: 320, sourceSet: [320, 512], sourceSizes: &quot;(max-width: 575px) 512px, 320px&quot;, ratioWidth: 1, ratioHeight: 1, link: true, defaultNoImage: true, class: &quot;card-img-left&quot; }' name='post.featuredImage'/>
               </div>
             </div>
@@ -486,7 +499,7 @@ Post layout and styles
         <b:loop values='data:posts' var='post'>
           <article class='col-sm-6 mb-3 mb-sm-5' expr:id='&quot;post-&quot; + data:post.id'>
             <div class='card h-100'>
-              <!-- Image -->
+              <!-- Featured image -->
               <b:include data='{ size: 320, ratioWidth: 320, ratioHeight: 180, defaultNoImage: true, class: &quot;card-img-top card-img-cover&quot;, style: &quot;height: 180px;&quot; }' name='post.featuredImageBg'/>
 
               <div class='card-block'>
@@ -565,9 +578,9 @@ Post layout and styles
 
           <div class='row no-gutters'>
             <div class='col-sm-3 col-md-4'>
-              <!-- Image -->
+              <!-- Featured image -->
               <div class='card-block-img-left-sm'>
-                <!-- Note: `sm` = 576px, so `max-width` = (`sm` - 1) = 575px. -->
+                <!-- Note: `sm` = 576px, `max-width` = (`sm` - 1) = 575px. -->
                 <b:include data='{ size: 320, sourceSet: [320, 512], sourceSizes: &quot;(max-width: 575px) 512px, 320px&quot;, ratioWidth: 1, ratioHeight: 1, link: true, defaultNoImage: true, class: &quot;card-img-left&quot; }' name='post.featuredImage'/>
               </div>
             </div>
@@ -723,14 +736,14 @@ Jumbotron
 
 <b:comment>
 =================================================
-Main content
+Main and sidebar
 ================================================= </b:comment>
 
-<div class='main-content py-5' id='main-content'>
+<div class='main-and-sidebar py-5' id='main-content'>
   <div class='container'>
     <div class='row'>
       <!-- Main -->
-      <main class='col-md-9 main blogger-col-8' id='main'>
+      <main class='col-md-8 col-lg-9 main blogger-col-8' id='main'>
         <div class='main-wrap'>
           <b:section class='b-section-main' id='b-section-main' maxwidgets='1' name='Main' showaddelement='no'>
             <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2' visible='true'>
@@ -792,9 +805,9 @@ Main content
       </main><!-- /.main -->
 
       <!-- Sidebar -->
-      <aside class='col-md-3 sidebar mt-5 mt-md-0 blogger-col-4' id='sidebar'>
+      <aside class='col-md-4 col-lg-3 sidebar mt-5 mt-md-0 blogger-col-4' id='sidebar'>
         <div class='sidebar-wrap'>
-          <b:section class='b-section-sidebar wg wg-box wg-box-white wg-title-gray-dark wg-md-12 wg-sm-6 mnb-3' id='b-section-sidebar' name='Sidebar'/>
+          <b:section class='b-section-sidebar wg wg-box wg-box-white wg-title-gray-dark mnb-3' id='b-section-sidebar' name='Sidebar'/>
         </div>
       </aside><!-- /.sidebar -->
     </div><!-- /.row -->
@@ -810,7 +823,7 @@ Widget 1
 <div class='widget-1 py-5' id='widget-1'>
   <div class='container'>
     <div class='widget-1-wrap'>
-      <b:section class='b-section-widget-1 wg wg-panel wg-panel-orange wg-title-gray-dark wg-md-4 mnb-3' id='b-section-widget-1' name='Widget 1'></b:section>
+      <b:section class='b-section-widget-1 wg wg-panel wg-panel-orange wg-title-gray-dark wg-md-6 wg-lg-4 mnb-3' id='b-section-widget-1' name='Widget 1'></b:section>
     </div>
   </div>
 </div>
@@ -824,13 +837,38 @@ Footer
 <footer class='footer py-5' id='footer'>
   <div class='container'>
     <div class='footer-wrap'>
-      <ul class='list-inline'>
-        <li class='list-inline-item'><a href='#'>Twitter</a></li>
-        <li class='list-inline-item'><a href='#'>Facebook</a></li>
-        <li class='list-inline-item'><a href='#'>Google+</a></li>
-      </ul>
-      <p class='mb-0'>&#169; <data:blog.title/>.</p>
-      <p class='mb-0'>Template <span class='text-lowercase'><data:messages.by/></span> <a href='https://example.com/you'>Your name</a> + <a href='https://bootsblogger.github.io'>Bootsblogger</a>. <b:message name='messages.poweredByBloggerLink'><b:param expr:value='data:blog.bloggerUrl'/></b:message>.</p>
+      <b:section class='b-section-footer-links wg-title-hide' id='b-section-footer-links' maxwidgets='1' name='Footer links' showaddelement='no'>
+        <b:widget id='HTML1000' locked='true' title='Footer links' type='HTML' version='2' visible='true'>
+          <b:widget-settings>
+            <b:widget-setting name='content'>
+              &lt;ul class="footer-links"&gt;
+                &lt;li&gt;
+                  &lt;a href="https://twitter.com/username">Twitter&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                  &lt;a href="https://facebook.com/username">Facebook&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                  &lt;a href="https://plus.google.com/+username">Google+&lt;/a&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt;
+            </b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main'>
+            <b:include name='widget-title'/>
+            <div class='widget-content'>
+              <data:content/>
+            </div>
+          </b:includable>
+        </b:widget>
+      </b:section>
+      <p>&#169; <data:blog.title/>.</p>
+      <p>
+        <a expr:href='data:blog.bloggerUrl' style='text-decoration: none;'>
+          <b:include data='{ width: 24, height: 24, fillBg: &quot;#ff5722&quot;, fillB: &quot;#fff&quot;, class: &quot;&quot;, style: &quot;vertical-align: middle;&quot; }' name='icons.blogger'/>
+          <b:message name='messages.poweredByBlogger'/>
+        </a>
+      </p>
     </div>
   </div>
 </footer>
@@ -2469,6 +2507,30 @@ Unused default inclusions
     <b:includable id='threadedCommentJs'/>
     <b:includable id='threadedComments'/>
   </b:defaultmarkup>
+</b:defaultmarkups>
+
+<b:comment>
+-------------------------------------------------
+Icons
+------------------------------------------------- </b:comment>
+
+<b:defaultmarkups>
+  <b:defaultmarkup type='Common'>
+    <b:includable id='icons.blogger'>
+      <svg expr:class='data:class' expr:width='data:width' expr:height='data:height' viewBox='0 0 612 612' xmlns='http://www.w3.org/2000/svg' focusable='false' expr:style='data:style'>
+        <title>Blogger</title>
+        <path expr:fill='data:fillBg' d='M612, 510c0, 56.1-45.9, 102-102, 102H102C45.9, 612, 0, 566.1, 0, 510V102C0, 45.9, 45.9, 0, 102, 0h408 c56.1, 0, 102, 45.9, 102, 102V510z'></path>
+        <path expr:fill='data:fillB' d='m 483.32742, 262.81768 c -7.88887, -3.44838 -41.73045, 0.38183 -51.13171, -8.29282 -6.63342, -6.25243 -7.05677, -17.56407 -9.6465, -32.65819 -4.33566, -25.27222 -6.14292, -30.99964 -10.65377, -40.95102 -16.41131, -35.46224 -55.75058, -65.82947 -91.48993, -65.82947 l -82.8361, 0 c -65.17519, 0 -118.42655, 54.35078 -118.42655, 120.6814 l 0, 140.71541 c 0, 66.2113 53.25136, 120.43083 118.42655, 120.43083 l 136.10207, 0 c 65.17226, 0 118.06159, -54.21953 118.43823, -120.43083 l 0.74743, -97.4615 c 0, 0 0, -12.05144 -9.52972, -16.20381 m -244.26024, -49.11258 65.67737, 0 c 12.5311, 0 22.68271, 10.33321 22.68271, 22.95738 0, 12.63611 -10.15161, 23.08864 -22.68271, 23.08864 l -65.67737, 0 c -12.53111, 0 -22.6827, -10.45253 -22.6827, -23.08864 0.003, -12.62417 10.15451, -22.95738 22.6827, -22.95738 m 133.47731, 183.9574 -133.47731, 0 c -12.53111, 0 -22.6827, -10.46447 -22.6827, -22.95739 0, -12.6361 10.15159, -22.96932 22.6827, -22.96932 l 133.47731, 0 c 12.40265, 0 22.55132, 10.33322 22.55132, 22.96932 0.003, 12.49292 -10.14867, 22.95739 -22.55132, 22.95739'></path>
+      </svg>
+    </b:includable>
+  </b:defaultmarkup>
+  <b:includable id='icons.bootsblogger'>
+    <svg expr:class='data:class' expr:width='data:width' expr:height='data:height' viewBox='0 0 612 612' xmlns='http://www.w3.org/2000/svg' focusable='false' expr:style='data:style'>
+      <title>Bootsblogger</title>
+      <path fill='#563D7C' d='M612, 510c0, 56.1-45.9, 102-102, 102H102C45.9, 612, 0, 566.1, 0, 510V102C0, 45.9, 45.9, 0, 102, 0h408 c56.1, 0, 102, 45.9, 102, 102V510z'></path>
+      <path fill='#fff' d='m 483.32742, 262.81768 c -7.88887, -3.44838 -41.73045, 0.38183 -51.13171, -8.29282 -6.63342, -6.25243 -7.05677, -17.56407 -9.6465, -32.65819 -4.33566, -25.27222 -6.14292, -30.99964 -10.65377, -40.95102 -16.41131, -35.46224 -55.75058, -65.82947 -91.48993, -65.82947 l -82.8361, 0 c -65.17519, 0 -118.42655, 54.35078 -118.42655, 120.6814 l 0, 140.71541 c 0, 66.2113 53.25136, 120.43083 118.42655, 120.43083 l 136.10207, 0 c 65.17226, 0 118.06159, -54.21953 118.43823, -120.43083 l 0.74743, -97.4615 c 0, 0 0, -12.05144 -9.52972, -16.20381 m -244.26024, -49.11258 65.67737, 0 c 12.5311, 0 22.68271, 10.33321 22.68271, 22.95738 0, 12.63611 -10.15161, 23.08864 -22.68271, 23.08864 l -65.67737, 0 c -12.53111, 0 -22.6827, -10.45253 -22.6827, -23.08864 0.003, -12.62417 10.15451, -22.95738 22.6827, -22.95738 m 133.47731, 183.9574 -133.47731, 0 c -12.53111, 0 -22.6827, -10.46447 -22.6827, -22.95739 0, -12.6361 10.15159, -22.96932 22.6827, -22.96932 l 133.47731, 0 c 12.40265, 0 22.55132, 10.33322 22.55132, 22.96932 0.003, 12.49292 -10.14867, 22.95739 -22.55132, 22.95739'></path>
+    </svg>
+  </b:includable>
 </b:defaultmarkups>
 
 <b:comment>
