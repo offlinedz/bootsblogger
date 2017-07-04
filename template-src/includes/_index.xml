@@ -217,11 +217,11 @@ Icons
 <b:defaultmarkups>
   <b:defaultmarkup type='Common'>
     <b:includable id='icons.blogger'>
-      <!--(bake icons/icons.blogger.xml)-->
+      <!--(bake assets/icons/icons.blogger.xml)-->
     </b:includable>
   </b:defaultmarkup>
   <b:includable id='icons.bootsblogger'>
-    <!--(bake icons/icons.bootsblogger.xml)-->
+    <!--(bake assets/icons/icons.bootsblogger.xml)-->
   </b:includable>
 </b:defaultmarkups>
 
