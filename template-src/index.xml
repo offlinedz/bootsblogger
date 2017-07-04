@@ -127,13 +127,13 @@ Main and sidebar
 
 <b:comment>
 =================================================
-Widget 1
+Widget block 1
 ================================================= </b:comment>
 
-<div class='widget-1 py-5' id='widget-1'>
+<div class='widget-block-1 py-5' id='widget-1'>
   <div class='container'>
-    <div class='widget-1-wrap'>
-      <b:section class='b-section-widget-1 wg wg-panel wg-panel-orange wg-title-gray-dark wg-md-6 wg-lg-4 mnb-3' id='b-section-widget-1' name='Widget 1'></b:section>
+    <div class='widget-block-1-wrap'>
+      <b:section class='b-section-widget-block-1 wg wg-panel wg-panel-orange wg-title-gray-dark wg-md-6 wg-lg-4 mnb-3' id='b-section-widget-block-1' name='Widget block (1)'></b:section>
     </div>
   </div>
 </div>
