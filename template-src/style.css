@@ -229,14 +229,14 @@ body {}
 
 .main {}
 
-.main-wrap {}
+.main-content {}
 
 /* Sidebar
    ============================================== */
 
 .sidebar {}
 
-.sidebar-wrap {}
+.sidebar-content {}
 
 /* Footer
    ============================================== */
@@ -248,7 +248,7 @@ body {}
   background-color: #fafafa;
 }
 
-.footer-wrap {}
+.footer-content {}
 
 .footer a {
   font-weight: 500;
@@ -285,7 +285,7 @@ body {}
   background-color: #333;
 }
 
-.widget-block-1-wrap {}
+.widget-block-1-content {}
 
 
 /* ==============================================
