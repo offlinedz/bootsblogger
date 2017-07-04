@@ -147,13 +147,16 @@ Footer
 <footer class='footer py-5' id='footer'>
   <div class='container'>
     <div class='footer-wrap'>
-      <ul class='list-inline'>
-        <li class='list-inline-item'><a href='#'>Twitter</a></li>
-        <li class='list-inline-item'><a href='#'>Facebook</a></li>
-        <li class='list-inline-item'><a href='#'>Google+</a></li>
-      </ul>
-      <p class='mb-0'>&#169; <data:blog.title/>.</p>
-      <p class='mb-0'>Template <span class='text-lowercase'><data:messages.by/></span> <a href='{{ blog.templateAuthorUrl }}'>{{ blog.templateAuthorName }}</a> + <a href='https://bootsblogger.github.io'>Bootsblogger</a>. <b:message name='messages.poweredByBloggerLink'><b:param expr:value='data:blog.bloggerUrl'/></b:message>.</p>
+      <b:section class='b-section-footer-links wg-title-hide' id='b-section-footer-links' maxwidgets='1' name='Footer links' showaddelement='no'>
+        <!--(bake widgets/footer-links.xml)-->
+      </b:section>
+      <p>&#169; <data:blog.title/>.</p>
+      <p>
+        <a expr:href='data:blog.bloggerUrl' style='text-decoration: none;'>
+          <b:include data='{ width: 24, height: 24, fillBg: &quot;#ff5722&quot;, fillB: &quot;#fff&quot;, class: &quot;&quot;, style: &quot;vertical-align: middle;&quot; }' name='icons.blogger'/>
+          <b:message name='messages.poweredByBlogger'/>
+        </a>
+      </p>
     </div>
   </div>
 </footer>

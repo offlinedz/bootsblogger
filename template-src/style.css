@@ -274,6 +274,25 @@ body {}
   color: #0275d8;
 }
 
+.footer p {
+  margin-bottom: 1rem;
+}
+.footer p:last-child {
+  margin-bottom: 0;
+}
+
+.footer-links {
+  padding-left: 0;
+  margin-bottom: 1rem;
+  list-style: none;
+}
+.footer-links li {
+  display: inline-block;
+}
+.footer-links li:not(:last-child) {
+  margin-right: 5px;
+}
+
 
 /* ==============================================
    <body> classes
