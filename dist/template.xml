@@ -273,23 +273,14 @@ body {}
 
 .main {}
 
-.main-wrap {}
+.main-content {}
 
 /* Sidebar
    ============================================== */
 
 .sidebar {}
 
-.sidebar-wrap {}
-
-/* Widget 1
-   ============================================== */
-
-.widget-1 {
-  background-color: #333;
-}
-
-.widget-1-wrap {}
+.sidebar-content {}
 
 /* Footer
    ============================================== */
@@ -301,7 +292,7 @@ body {}
   background-color: #fafafa;
 }
 
-.footer-wrap {}
+.footer-content {}
 
 .footer a {
   font-weight: 500;
@@ -330,6 +321,15 @@ body {}
 .footer-links li:not(:last-child) {
   margin-right: 5px;
 }
+
+/* Widget block (1)
+   ============================================== */
+
+.widget-block-1 {
+  background-color: #333;
+}
+
+.widget-block-1-content {}
 
 
 /* ==============================================
@@ -744,7 +744,7 @@ Main and sidebar
     <div class='row'>
       <!-- Main -->
       <main class='col-md-8 col-lg-9 main blogger-col-8' id='main'>
-        <div class='main-wrap'>
+        <div class='main-content'>
           <b:section class='b-section-main' id='b-section-main' maxwidgets='1' name='Main' showaddelement='no'>
             <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2' visible='true'>
               <b:widget-settings>
@@ -806,7 +806,7 @@ Main and sidebar
 
       <!-- Sidebar -->
       <aside class='col-md-4 col-lg-3 sidebar mt-5 mt-md-0 blogger-col-4' id='sidebar'>
-        <div class='sidebar-wrap'>
+        <div class='sidebar-content'>
           <b:section class='b-section-sidebar wg wg-box wg-box-white wg-title-gray-dark mnb-3' id='b-section-sidebar' name='Sidebar'/>
         </div>
       </aside><!-- /.sidebar -->
@@ -817,13 +817,13 @@ Main and sidebar
 
 <b:comment>
 =================================================
-Widget 1
+Widget block 1
 ================================================= </b:comment>
 
-<div class='widget-1 py-5' id='widget-1'>
+<div class='widget-block-1 py-5' id='widget-1'>
   <div class='container'>
-    <div class='widget-1-wrap'>
-      <b:section class='b-section-widget-1 wg wg-panel wg-panel-orange wg-title-gray-dark wg-md-6 wg-lg-4 mnb-3' id='b-section-widget-1' name='Widget 1'></b:section>
+    <div class='widget-block-1-content'>
+      <b:section class='b-section-widget-block-1 wg wg-panel wg-panel-orange wg-title-gray-dark wg-md-6 wg-lg-4 mnb-3' id='b-section-widget-block-1' name='Widget block (1)'></b:section>
     </div>
   </div>
 </div>
@@ -836,7 +836,7 @@ Footer
 
 <footer class='footer py-5' id='footer'>
   <div class='container'>
-    <div class='footer-wrap'>
+    <div class='footer-content'>
       <b:section class='b-section-footer-links wg-title-hide' id='b-section-footer-links' maxwidgets='1' name='Footer links' showaddelement='no'>
         <b:widget id='HTML1000' locked='true' title='Footer links' type='HTML' version='2' visible='true'>
           <b:widget-settings>
