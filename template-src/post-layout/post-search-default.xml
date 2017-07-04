@@ -10,9 +10,9 @@
 
     <div class='row no-gutters'>
       <div class='col-sm-3 col-md-4'>
-        <!-- Image -->
+        <!-- Featured image -->
         <div class='card-block-img-left-sm'>
-          <!-- Note: `sm` = 576px, so `max-width` = (`sm` - 1) = 575px. -->
+          <!-- Note: `sm` = 576px, `max-width` = (`sm` - 1) = 575px. -->
           <b:include data='{ size: 320, sourceSet: [320, 512], sourceSizes: &quot;(max-width: 575px) 512px, 320px&quot;, ratioWidth: 1, ratioHeight: 1, link: true, defaultNoImage: true, class: &quot;card-img-left&quot; }' name='post.featuredImage'/>
         </div>
       </div>
