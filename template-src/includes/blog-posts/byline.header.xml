@@ -178,6 +178,6 @@
         </li>
       </b:if>
 
-    </b:loop><!-- item -->
+    </b:loop>
   </ul>
-</b:if><!-- data:headerByline.items.notEmpty -->
+</b:if>

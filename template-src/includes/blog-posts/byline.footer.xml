@@ -180,8 +180,8 @@
             </li>
           </b:if>
 
-        </b:loop><!-- item -->
+        </b:loop>
       </ul>
     </div>
-  </b:loop><!-- itemBylines -->
-</b:if><!-- data:footerBylines.notEmpty -->
+  </b:loop>
+</b:if>
