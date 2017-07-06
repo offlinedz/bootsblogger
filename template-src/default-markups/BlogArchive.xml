@@ -34,24 +34,52 @@
     </ol>
   </b:includable>
   <b:includable id='hierarchy'>
-    <b:include data='data' name='interval'/>
-  </b:includable>
-  <b:includable id='interval' var='intervals'>
-    <ol class='archive-hierarchy list-unstyled mb-0'>
-      <b:loop values='data:intervals' var='interval'>
-        <li>
-          <div class='archive-hierarchy-title'>
-            <a expr:href='data:interval.url'>
-              <data:interval.name/> <small>(<data:interval.post-count/>)</small>
+    <div class='archive-hierarchy'>
+      <ol class='archive-hierarchy-yearly list-unstyled mb-0'>
+        <b:loop values='data:data' var='i'>
+          <li>
+            <a aria-expanded='false' class='dropdown-toggle mr-2' data-toggle='collapse' expr:aria-controls='data:i.toggleId' expr:href='"#" + data:i.toggleId'>
+              <span class='sr-only'>Toggle <data:i.toggleId/></span>
             </a>
-          </div>
+            <a expr:href='data:i.url'>
+              <data:i.name/> <small>(<data:i.post-count/>)</small>
+            </a>
 
-          <div class='archive-hierarchy-content pl-3'>
-            <b:include cond='data:interval.data' data='interval.data' name='interval'/>
-          </div>
-        </li>
-      </b:loop>
-    </ol>
+            <div class='collapse' expr:id='data:i.toggleId'>
+              <ul class='archive-hierarchy-monthly list-unstyled pl-4'>
+                <b:loop values='data:i.data' var='j'>
+                  <li>
+                    <b:if cond='data:j.data'>
+                      <a aria-expanded='false' class='dropdown-toggle mr-2' data-toggle='collapse' expr:aria-controls='data:j.toggleId' expr:href='"#" + data:j.toggleId'>
+                        <span class='sr-only'>Toggle <data:j.toggleId/></span>
+                      </a>
+                    </b:if>
+                    <a expr:href='data:j.url'>
+                      <data:j.name/> <small>(<data:j.post-count/>)</small>
+                    </a>
+
+                    <b:if cond='data:j.data'>
+                      <div class='collapse' expr:id='data:j.toggleId'>
+                        <ul class='archive-hierarchy-daily list-unstyled pl-4'>
+                          <b:loop values='data:j.data' var='k'>
+                            <li>
+                              <a expr:href='data:k.url'>
+                                <data:k.name/> <small>(<data:k.post-count/>)</small>
+                              </a>
+                            </li>
+                          </b:loop>
+                        </ul>
+                      </div>
+                    </b:if>
+                  </li>
+                </b:loop>
+              </ul>
+            </div>
+          </li>
+        </b:loop>
+      </ol>
+    </div>
   </b:includable>
+  <b:includable id='interval' var='intervals'/>
   <b:includable id='posts' var='posts'/>
 </b:defaultmarkup>
