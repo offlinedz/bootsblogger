@@ -8,13 +8,18 @@ redirect_from: "/getting-started/"
 
 Template dasar Bootsblogger sangat fleksibel, mudah dipahami, penulisan kode yang baik, terstruktur, dan menyediakan banyak fitur. Dengan itu semua, Anda dapat dengan mudah membangun template sesuai dengan yang Anda inginkan.
 
+## Contents
+
+* Will be replaced with the ToC, excluding the "Contents" header
+{:toc}
+
 ## Quick start
 
 Anda dapat menggunakan Bootsblogger dengan dua cara, yaitu:
 
 ### Compiled template
 
-Membangun template langsung di editor HTML Blogger.
+Membangun template langsung di editor HTML Blogger atau dapat juga menggunakan *text editor* favorit Anda.
 
 <a href="{{ site.download.dist }}" class="btn btn-bd">Download compiled template</a>
 
@@ -28,11 +33,11 @@ bootsblogger/
     └── template.xml
 {% endhighlight %}
 
-Pasang `template.xml` di blog Anda, kemudian ubahsuaikan.
+Pasang `template.xml` di blog Anda, kemudian ubahsuaikan. Atau, ubahsuaikan menggunakan *text editor* favorit Anda, kemudian pasang template di blog Anda.
 
 ### Source files
 
-Membangun template menggunakan [build tools]({{ site.baseurl }}/getting-started/build-tools/) dan *text editor* pilihan Anda.
+Membangun template menggunakan [build tools]({{ site.baseurl }}/getting-started/build-tools/) dan *text editor* favorit Anda.
 
 <a href="{{ site.download.source }}" class="btn btn-bd">Download source files</a>
 
@@ -76,4 +81,4 @@ bootsblogger/
 
 ## Bootstrap
 
-Sebelum memulai, pastikan Anda mengetahui apa itu Bootstrap, untuk mempelajarinya silakan kunjungi halaman dokumentasi Bootstrap di <https://v4-alpha.getbootstrap.com>.
+Untuk dapat membuat template yang super keren, Anda harus menguasai Bootstrap atau minimal mengetahui dasarnya. Untuk mempelajarinya silakan kunjungi halaman dokumentasi Bootstrap di <https://v4-alpha.getbootstrap.com>.
