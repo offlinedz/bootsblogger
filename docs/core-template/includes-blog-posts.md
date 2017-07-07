@@ -5,7 +5,7 @@ description: Bagian-bagian kode untuk posting blog.
 group: core-template
 ---
 
-Bagian-bagian kode untuk posting blog hanya dapat disertakan di dalam widget `Blog` (`<b:widget type='Blog'>`).
+Bagian-bagian kode untuk posting blog hanya dapat disertakan di dalam widget `Blog` (`<b:widget type='Blog'></b:widget>`).
 
 ## Contents
 
@@ -184,7 +184,7 @@ template-src/includes/blog-posts/main.blog-posts.xml
 
 ### Blog comments
 
-Sistem komentar bawaan Bootsblogger.
+Sistem komentar bawaan Bootsblogger menggunakan *Google+ comments*.
 
 ###### Source
 
@@ -197,10 +197,6 @@ template-src/includes/blog-posts/main.blog-comments.xml
 {% highlight html %}
 <b:includable id='main.blog-comments'>...</b:includable>
 {% endhighlight %}
-
-###### Alternative
-
-Jika Anda ingin menggunakan sistem komentar alternatif, Anda dapat menggunakan sistem komentar [Disqus](https://disqus.com), [Google+](https://support.google.com/blogger/answer/1752748), [Facebook](https://developers.facebook.com/docs/plugins/comments/), atau lainnya.
 
 ### Blog pager
 

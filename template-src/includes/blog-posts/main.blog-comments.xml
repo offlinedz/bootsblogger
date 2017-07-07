@@ -1,311 +1,116 @@
 <b:loop values='data:posts' var='post'>
-<b:if cond='data:post.allowComments'>
+  <b:if cond='data:post.allowComments'>
 
-  <div class='comments mt-5 mb-3' id='comments'>
+    <div class='blog-comments my-5' id='comments'>
+      <h1 class='blog-comments-title'><data:messages.comments/></h1>
 
-    <!-- Heading -->
-    <h1 class='comments-title mb-0'>
-      <i aria-hidden='true' class='fa fa-comments-o'/> Comments <span class='text-nowrap'><small><data:post.numberOfComments/></small></span>
-    </h1>
+      <b:if cond='data:post.commentSource == 1'>
 
-    <!-- No comments -->
-    <b:if cond='data:post.numberOfComments == 0 and data:post.allowNewComments'>
-      <div class='alert alert-info mt-4 mb-0' role='alert'>Be the first to comment.</div>
-    </b:if>
+        <div class='cmt_iframe_holder' expr:data-href='data:post.url'/>
 
-    <!-- New comments are not allowed -->
-    <b:if cond='!data:post.allowNewComments'>
-      <div class='alert alert-warning mt-4 mb-0' role='alert'>
-        <data:post.noNewCommentsText/>
-      </div>
-    </b:if>
+      <b:else/>
 
-    <!-- Comment form -->
-    <b:if cond='data:post.allowNewComments'>
-      <div class='comment-form-original-wrapper mt-4 active' id='comment-form-original-wrapper'>
+        <div class='alert alert-info mb-0' role='alert'>
+          <h5 class='alert-heading mb-3'>
+            <i aria-hidden='true' class='fa fa-google-plus fa-lg'/>
+            <span class='sr-only'>Google+</span>
+          </h5>
 
-        <div class='comment-add-wrapper'>
-          <div class='comment-block'>
-            <a class='btn btn-block btn-success js-comment-action' href='#comment-form-original-wrapper' onclick='javascript:reply(&quot;cancel&quot;);' role='button'><i aria-hidden='true' class='fa fa-comment fa-fw'/> Add</a>
-          </div>
+          <b:comment>=== French (France) - ‪Français (France)‬ ===</b:comment>
+          <b:if cond='data:blog.locale == &quot;fr&quot;'>
+            <p class='mb-1'><strong>Pour activer les commentaires Google+:</strong></p>
+            <ol class='pl-4 mb-3'>
+              <li>Vérifiez que vous utilisez votre profil Google+ et que votre blog est public.</li>
+              <li>Dans le menu de gauche, cliquez sur <strong>Paramètres &gt; Articles, commentaires et partage</strong>.</li>
+              <li>Sous la zone des commentaires Google+, choisissez <strong>Oui</strong>. En haut à droite de l'écran, cliquez sur "Enregistrer les paramètres".</li>
+            </ol>
+
+          <b:comment>=== Dutch - ‪Nederlands‬ ===</b:comment>
+          <b:elseif cond='data:blog.locale == &quot;nl&quot;'/>
+            <p class='mb-1'><strong>Google+ reacties inschakelen:</strong></p>
+            <ol class='pl-4 mb-3'>
+              <li>Zorg dat je Google+ als profiel kiest en dat je blog openbaar is.</li>
+              <li>Klik in het linkermenu op <strong>Instellingen &gt; Posts, reacties en delen</strong>.</li>
+              <li>Kies <strong>Ja</strong> bij 'Google+ reacties'. Klik in de rechterbovenhoek op 'Instellingen opslaan'.</li>
+            </ol>
+
+          <b:comment>=== German - ‪Deutsch‬ ===</b:comment>
+          <b:elseif cond='data:blog.locale == &quot;de&quot;'/>
+            <p class='mb-1'><strong>So aktivieren Sie Google+ Kommentare:</strong></p>
+            <ol class='pl-4 mb-3'>
+              <li>Achten Sie darauf, dass Sie Google+ als Ihr Profil verwenden und Ihr Blog öffentlich ist.</li>
+              <li>Klicken Sie im linken Menü auf <strong>Einstellungen &gt; Posts, Kommentare und Teilen</strong>.</li>
+              <li>Wählen Sie im Bereich "Google+ Kommentare" die Option <strong>Ja</strong> aus. Klicken Sie rechts oben auf "Einstellungen speichern".</li>
+            </ol>
+
+          <b:comment>=== Turkish - ‪Türkçe‬ ===</b:comment>
+          <b:elseif cond='data:blog.locale == &quot;tr&quot;'/>
+            <p class='mb-1'><strong>Google+ yorumlarını etkinleştirmek için:</strong></p>
+            <ol class='pl-4 mb-3'>
+              <li>Profil olarak Google+'yı kullandığınızdan ve blogunuzun herkese açık olduğundan emin olun.</li>
+              <li>Soldaki menüde, <strong>Ayarlar &gt;  Yayınlar, yorumlar ve paylaşım</strong>'ı tıklayın.</li>
+              <li>"Google+ Yorumları" altında, <strong>Evet</strong>'i seçin. Sağ üstteki Ayarları kaydet seçeneğini tıklayın.</li>
+            </ol>
+
+          <b:comment>=== Italian - ‪Italiano‬ ===</b:comment>
+          <b:elseif cond='data:blog.locale == &quot;it&quot;'/>
+            <p class='mb-1'><strong>Per attivare i commenti di Google+:</strong></p>
+            <ol class='pl-4 mb-3'>
+              <li>Assicurati di utilizzare Google+ come profilo e che il tuo blog sia pubblico.</li>
+              <li>Nel menu a sinistra, fai clic su <strong>Impostazioni &gt; Post, commenti e condivisione</strong>.</li>
+              <li>In "Commenti Google+" scegli <strong>Sì</strong>. In alto a destra, fai clic su Salva impostazioni.</li>
+            </ol>
+
+          <b:comment>=== Thai - ‪ไทย‬ ===</b:comment>
+          <b:elseif cond='data:blog.locale == &quot;th&quot;'/>
+            <p class='mb-1'><strong>วิธีเปิด Google+ คอมเมนต์มีดังนี้</strong></p>
+            <ol class='pl-4 mb-3'>
+              <li>ตรวจดูว่าคุณใช้ Google+ เป็นโปรไฟล์อยู่และบล็อกของคุณตั้งเป็นสาธารณะ</li>
+              <li>คลิก<strong>การตั้งค่า &gt; โพสต์, คอมเมนต์ และการแชร์</strong> ที่เมนูทางซ้าย</li>
+              <li>เลือก<strong>ใช่</strong> ใต้ "Google+ คอมเมนต์" คลิกบันทึกการตั้งค่าที่ด้านขวาบน</li>
+            </ol>
+
+          <b:comment>=== Japanese - ‪日本語‬ ===</b:comment>
+          <b:elseif cond='data:blog.locale == &quot;ja&quot;'/>
+            <p class='mb-1'><strong>Google+ コメントを有効にするには:</strong></p>
+            <ol class='pl-4 mb-3'>
+              <li>Google+ プロフィールを使用していることと、ブログを一般公開していることを確認します。</li>
+              <li>左側のメニューで <strong>[設定] &gt; [投稿、コメント、共有]</strong> をクリックします。</li>
+              <li>[Google+ コメント] で <strong>[はい]</strong> を選択します。右上の [設定を保存] をクリックします。</li>
+            </ol>
+
+          <b:comment>=== Korean - ‪한국어‬ ===</b:comment>
+          <b:elseif cond='data:blog.locale == &quot;ko&quot;'/>
+            <p class='mb-1'><strong>Google+ 댓글을 사용 설정하려면 다음 단계를 따릅니다.</strong></p>
+            <ol class='pl-4 mb-3'>
+              <li>프로필로 Google+를 사용 중인지 그리고 블로그가 공개되어 있는지 확인합니다.</li>
+              <li>왼쪽 메뉴에서 <strong>설정 &gt; 글, 댓글 및 공유</strong>를 클릭합니다.</li>
+              <li>'Google+ 댓글'에서 <strong>예</strong>를 선택합니다. 오른쪽 상단에서 설정 저장을 클릭합니다.</li>
+            </ol>
+
+          <b:comment>=== Indonesian - ‪Indonesia‬ ===</b:comment>
+          <b:elseif cond='data:blog.locale == &quot;id&quot;'/>
+            <p class='mb-1'><strong>Untuk mengaktifkan komentar Google+:</strong></p>
+            <ol class='pl-4 mb-3'>
+              <li>Pastikan Anda menggunakan Google+ sebagai profil dan blog Anda bersifat publik.</li>
+              <li>Di menu sebelah kiri, klik <strong>Setelan &gt; Postingan, komentar, dan bagikan</strong>.</li>
+              <li>Pada "Komentar Google+", pilih <strong>Ya</strong>. Di kanan atas, klik Simpan setelan.</li>
+            </ol>
+
+          <b:comment>=== Default, English (United States) ===</b:comment>
+          <b:else/>
+            <p class='mb-1'><strong>To turn on Google+ comments:</strong></p>
+            <ol class='pl-4 mb-3'>
+              <li>Make sure you're using Google+ as your profile and your blog is public.</li>
+              <li>In the left menu, click <strong>Settings &gt; Posts, comments and sharing</strong>.</li>
+              <li>Under "Google+ Comments," choose <strong>Yes</strong>. At the top right, click Save settings.</li>
+            </ol>
+          </b:if>
+
+          <p class='mb-0'><i aria-hidden='true' class='fa fa-info-circle'/> <a class='alert-link' href='https://support.google.com/blogger/answer/1752748' target='_blank'><data:messages.learnMore/></a></p>
         </div>
+      </b:if>
+    </div>
 
-        <div class='comment-form comment-form-loading-wrapper' id='comment-form'>
-          <!-- Comment form loading -->
-          <div class='comment-form-loading card card-block loading-show'>
-            <i aria-hidden='true' class='d-block mx-auto comment-text-muted fa fa-cog fa-spin fa-3x fa-fw'/>
-            <span class="sr-only">Loading...</span>
-          </div>
-          <!-- Comment form editor -->
-          <div class='comment-form-editor card loading-hide'>
-            <div class='card-block'>
-              <a expr:href='data:post.commentFormIframeSrc + &quot;&amp;skin=emporio&quot;' id='comment-editor-src'/>
-              <iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' data-resized='true' frameborder='0' expr:height='data:cmtIframeInitialHeight' id='comment-editor' name='comment-editor' width='100%'/>
-              <data:post.friendConnectJs/>
-              <data:post.cmtfpIframe/>
-              <script>BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;, &#39;<data:post.communityId/>&#39;);</script>
-            </div>
-            <div class='card-footer'>
-              <ul class='list-inline mb-0'>
-                <li class='list-inline-item'>
-                  <a class='comment-text-muted-link' href='#'>
-                    <i aria-hidden='true' class='fa fa-smile-o fa-lg'/>
-                  </a>
-                </li>
-                <li class='list-inline-item float-right comment-add-wrapper'>
-                  <a class='comment-text-muted-link js-comment-action' href='javascript:void(0)' onclick='javascript:reply(&quot;cancel&quot;);' role='button' title='Cancel'>
-                    <i aria-hidden='true' class='fa fa-times-circle fa-lg'/>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div><!-- /.comment-form-editor -->
-        </div><!-- /.comment-form -->
-      </div><!-- /.comment-form-original-wrapper -->
-    </b:if>
-
-    <!-- Pagination -->
-    <b:if cond='data:post.commentPagingRequired'>
-      <div class='comment-block mt-4'>
-        <div class='d-flex flex-wrap flex-column flex-sm-row align-items-stretch align-items-sm-center justify-content-sm-center'>
-          <div class='btn-group'>
-            <a class='btn btn-secondary w-100' expr:href='data:post.oldestLinkUrl' role='button'><data:post.oldestLinkText/></a>
-            <a class='btn btn-secondary w-100' expr:href='data:post.olderLinkUrl' role='button'><data:post.olderLinkText/></a>
-          </div>
-          <span class='mx-0 mx-sm-3 my-3 my-sm-0 text-center'>
-            <span class='badge badge-default badge-pill'><data:post.commentRangeText/></span>
-          </span>
-          <div class='btn-group'>
-            <a class='btn btn-secondary w-100' expr:href='data:post.newerLinkUrl' role='button'><data:post.newerLinkText/></a>
-            <a class='btn btn-secondary w-100' expr:href='data:post.newestLinkUrl' role='button'><data:post.newestLinkText/></a>
-          </div>
-        </div>
-      </div>
-    </b:if>
-
-    <b:if cond='data:post.numberOfComments != 0'>
-      <b:loop values='data:post.comments' var='comment'>
-        <b:if cond='!data:comment.inReplyTo'>
-
-          <div class='comment-block mt-4'>
-            <b:class cond='data:comment.author == data:post.author.name' name='comment-post-author'/>
-            <div class='media comment-parent-media' expr:id='data:comment.anchorName'>
-              <div class='d-flex mr-3'>
-                <b:if cond='data:comment.authorPhoto'>
-                  <img class='comment-avatar comment-avatar-parent' expr:alt='data:comment.author' expr:height='data:comment.authorPhoto.thumbHeight' expr:src='data:comment.authorPhoto.thumbUrl' expr:width='data:comment.authorPhoto.thumbWidth'/>
-                <b:else/>
-                  <img class='comment-avatar comment-avatar-parent comment-avatar-no-photo' expr:alt='data:comment.author' height='50' src='https://placehold.it/50/777/eee?text=∅' width='50'/>
-                </b:if>
-              </div>
-
-              <div class='media-body'>
-                <!-- Header -->
-                <div class='comment-header'>
-                  <div class='clearfix'>
-                    <div class='float-left'>
-                      <ul class='list-inline mb-0'>
-                        <b:if cond='data:comment.authorUrl'>
-                          <li class='list-inline-item'>
-                            <a class='comment-name-link' expr:href='data:comment.authorUrl'>
-                              <data:comment.author/>
-                            </a>
-                          </li>
-                        <b:else/>
-                          <li class='list-inline-item'>
-                            <span class='comment-name'><data:comment.author/></span>
-                          </li>
-                        </b:if>
-                      </ul>
-                    </div>
-                    <div class='float-right'>
-                      <div class='dropdown'>
-                        <a class='comment-text-muted-link' data-toggle='dropdown' href='#'>
-                          <i aria-hidden='true' class='fa fa-ellipsis-v fa-lg'/>
-                        </a>
-                        <div class='dropdown-menu dropdown-menu-right'>
-                          <b:if cond='!data:comment.isDeleted'>
-                            <a class='dropdown-item' expr:href='data:comment.deleteUrl'>
-                              <i aria-hidden='true' class='fa fa-trash-o fa-fw'/> Delete
-                            </a>
-                          <b:else/>
-                            <a class='dropdown-item' expr:href='data:comment.deleteUrl'>
-                              <i aria-hidden='true' class='fa fa-trash-o fa-fw'/> Remove forever
-                            </a>
-                          </b:if>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class='clearfix'>
-                    <ul class='list-inline mb-0'>
-                      <li class='list-inline-item'>
-                        <a class='comment-permalink' data-placement='top' data-toggle='tooltip' expr:href='data:comment.url' title='Permalink'>#</a>
-                        <span class='comment-timestamp'><data:comment.timestamp/></span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <!-- Content -->
-                <div class='comment-content mt-3'>
-                  <b:if cond='data:comment.isDeleted'>
-                    <div class='alert alert-danger mb-0' role='alert'>
-                      <a class='close' data-placement='top' data-toggle='tooltip' expr:href='data:comment.deleteUrl' title='Remove forever'>
-                        <i aria-hidden='true' class='fa fa-remove'/>
-                      </a>
-                      <data:comment.body/>
-                    </div>
-                  <b:else/>
-                    <div class='comment-body'>
-                      <data:comment.body/>
-                    </div>
-                  </b:if>
-                </div>
-                <!-- Footer -->
-                <b:if cond='!data:comment.isDeleted and data:post.allowNewComments'>
-                  <div class='comment-footer mt-3'>
-                    <ul class='list-inline mb-0'>
-                      <li class='list-inline-item'>
-                        <a class='comment-reply js-comment-action' expr:href='&quot;#comment-form-reply-wrapper-&quot; + data:comment.id' expr:onclick='&quot;javascript:reply(&amp;quot;&quot; + data:comment.id + &quot;&amp;quot;);&quot;'>
-                          <i aria-hidden='true' class='fa fa-reply fa-fw'/> Reply
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </b:if>
-              </div><!-- /.media-body -->
-            </div><!-- /.media -->
-
-            <!-- Reply form -->
-            <b:if cond='!data:comment.isDeleted and data:post.allowNewComments'>
-              <div class='comment-form-reply-wrapper mt-3' expr:id='&quot;comment-form-reply-wrapper-&quot; + data:comment.id'/>
-            </b:if>
-
-            <!-- Children -->
-            <b:loop values='data:post.comments' var='replies'>
-              <b:if cond='data:replies.inReplyTo == data:comment.id'>
-
-                <div class='media comment-children-media mt-3' expr:id='data:replies.anchorName'>
-                  <b:class cond='data:replies.author == data:post.author.name' name='comment-post-author'/>
-                  <div class='d-flex mr-3'>
-                    <b:if cond='data:replies.authorPhoto'>
-                      <img class='comment-avatar comment-avatar-children' expr:alt='data:replies.author' expr:height='data:replies.authorPhoto.thumbHeight' expr:src='data:replies.authorPhoto.thumbUrl' expr:width='data:replies.authorPhoto.thumbWidth'/>
-                    <b:else/>
-                      <img class='comment-avatar comment-avatar-children comment-avatar-no-photo' expr:alt='data:replies.author' height='50' src='https://placehold.it/50/777/eee?text=∅' width='50'/>
-                    </b:if>
-                  </div>
-
-                  <div class='media-body'>
-                    <!-- Header -->
-                    <div class='comment-header'>
-                      <div class='clearfix'>
-                        <div class='float-left'>
-                          <ul class='list-inline mb-0'>
-                            <b:if cond='data:replies.authorUrl'>
-                              <li class='list-inline-item'>
-                                <a class='comment-name-link' expr:href='data:replies.authorUrl'>
-                                  <data:replies.author/>
-                                </a>
-                              </li>
-                            <b:else/>
-                              <li class='list-inline-item'>
-                                <span class='comment-name'><data:replies.author/></span>
-                              </li>
-                            </b:if>
-                          </ul>
-                        </div>
-                        <div class='float-right'>
-                          <div class='dropdown'>
-                            <a class='comment-text-muted-link' data-toggle='dropdown' href='#'>
-                              <i aria-hidden='true' class='fa fa-ellipsis-v fa-lg'/>
-                            </a>
-                            <div class='dropdown-menu dropdown-menu-right'>
-                              <b:if cond='!data:replies.isDeleted'>
-                                <a class='dropdown-item' expr:href='data:replies.deleteUrl'>
-                                  <i aria-hidden='true' class='fa fa-trash-o fa-fw'/> Delete
-                                </a>
-                              <b:else/>
-                                <a class='dropdown-item' expr:href='data:replies.deleteUrl'>
-                                  <i aria-hidden='true' class='fa fa-trash-o fa-fw'/> Remove forever
-                                </a>
-                              </b:if>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class='clearfix'>
-                        <ul class='list-inline mb-0'>
-                          <li class='list-inline-item'>
-                            <a class='comment-permalink' data-placement='top' data-toggle='tooltip' expr:href='data:replies.url' title='Permalink'>#</a>
-                            <span class='comment-timestamp'><data:replies.timestamp/></span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <!-- Content -->
-                    <div class='comment-content mt-3'>
-                      <b:if cond='data:replies.isDeleted'>
-                        <div class='alert alert-danger mb-0' role='alert'>
-                          <a class='close' data-placement='top' data-toggle='tooltip' expr:href='data:replies.deleteUrl' title='Remove forever'>
-                            <i aria-hidden='true' class='fa fa-remove'/>
-                          </a>
-                          <data:replies.body/>
-                        </div>
-                      <b:else/>
-                        <div class='comment-body'>
-                          <data:replies.body/>
-                        </div>
-                      </b:if>
-                    </div>
-                  </div><!-- /.media-body -->
-                </div><!-- /.media -->
-              </b:if><!-- / replies.inReplyTo == data:comment.id -->
-            </b:loop><!-- / replies -->
-            <!-- Children END -->
-          </div><!-- /.comment-block -->
-        </b:if><!-- / !comment.inReplyTo -->
-      </b:loop><!-- / comment -->
-    </b:if>
-
-    <!-- Pagination -->
-    <b:if cond='data:post.commentPagingRequired'>
-      <div class='comment-block mt-4'>
-        <div class='d-flex flex-wrap flex-column flex-sm-row align-items-stretch align-items-sm-center justify-content-sm-center'>
-          <div class='btn-group'>
-            <a class='btn btn-secondary w-100' expr:href='data:post.oldestLinkUrl' role='button'><data:post.oldestLinkText/></a>
-            <a class='btn btn-secondary w-100' expr:href='data:post.olderLinkUrl' role='button'><data:post.olderLinkText/></a>
-          </div>
-          <span class='mx-0 mx-sm-3 my-3 my-sm-0 text-center'>
-            <span class='badge badge-default badge-pill'><data:post.commentRangeText/></span>
-          </span>
-          <div class='btn-group'>
-            <a class='btn btn-secondary w-100' expr:href='data:post.newerLinkUrl' role='button'><data:post.newerLinkText/></a>
-            <a class='btn btn-secondary w-100' expr:href='data:post.newestLinkUrl' role='button'><data:post.newestLinkText/></a>
-          </div>
-        </div>
-      </div>
-    </b:if>
-
-  </div><!-- /.comments -->
-
-  <b:if cond='data:post.allowNewComments'>
-    <script>
-    //<![CDATA[
-    // Comment reply iframe
-    //
-    // Thanks <dte.web.id/2013/01/membuat-fitur-komentar-berbalas.html>
-
-    var commentIframeOriginal = document.getElementById('comment-editor').src
-    function reply(id) {
-      var form = document.getElementById('comment-form')
-      var frame = document.getElementById('comment-editor')
-      var container = (id != 'cancel') ? document.getElementById('comment-form-reply-wrapper-' + id) : document.getElementById('comment-form-original-wrapper')
-
-      container.insertBefore(form, null)
-      frame.src = (id != 'cancel') ? commentIframeOriginal + '&parentID=' + id : commentIframeOriginal
-    }
-    //]]>
-    </script>
   </b:if>
-
-</b:if>
 </b:loop>
