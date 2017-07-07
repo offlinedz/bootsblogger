@@ -148,7 +148,7 @@ Footer
   <div class='container'>
     <div class='footer-content'>
       <b:section class='b-section-footer-links wg-title-hide' id='b-section-footer-links' maxwidgets='1' name='Footer links' showaddelement='no'>
-        <!--(bake widgets/footer-links.xml)-->
+        <!--(bake widgets/HTML.footer-links.xml)-->
       </b:section>
       <p>&#169; <data:blog.title/>.</p>
       <p>

@@ -3,13 +3,13 @@
     <b:widget-setting name='content'>
       &lt;ul class="footer-links"&gt;
         &lt;li&gt;
-          &lt;a href="https://twitter.com/username">Twitter&lt;/a&gt;
+          &lt;a href="https://twitter.com/username"&gt;Twitter&lt;/a&gt;
         &lt;/li&gt;
         &lt;li&gt;
-          &lt;a href="https://facebook.com/username">Facebook&lt;/a&gt;
+          &lt;a href="https://facebook.com/username"&gt;Facebook&lt;/a&gt;
         &lt;/li&gt;
         &lt;li&gt;
-          &lt;a href="https://plus.google.com/+username">Google+&lt;/a&gt;
+          &lt;a href="https://plus.google.com/+username"&gt;Google+&lt;/a&gt;
         &lt;/li&gt;
       &lt;/ul&gt;
     </b:widget-setting>
