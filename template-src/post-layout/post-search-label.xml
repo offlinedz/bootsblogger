@@ -2,9 +2,12 @@
   <b:loop values='data:posts' var='post'>
     <article class='col-sm-6 mb-3 mb-sm-5' expr:id='&quot;post-&quot; + data:post.id'>
       <div class='card h-100'>
+
+        <!-- >>> Image <<< -->
         <!-- Featured image -->
         <b:include data='{ size: 320, ratioWidth: 320, ratioHeight: 180, defaultNoImage: true, class: &quot;card-img-top card-img-cover&quot;, style: &quot;height: 180px;&quot; }' name='post.featuredImageBg'/>
 
+        <!-- >>> Body <<< -->
         <div class='card-block'>
           <!-- Title -->
           <b:if cond='data:post.title'>
@@ -22,26 +25,27 @@
           <div class='card-text'><b:include data='{ length: 150, links: true, linebreaks: true, ellipsis: true, notHasJumpLink: false }' name='post.snippet'/></div>
           <!-- Jump link -->
           <b:include data='{ class: &quot;card-link&quot;, parentClass: &quot;mt-2&quot; }' name='post.jumpLink'/>
-        </div>
+        </div><!-- /.card-block -->
 
-        <!-- Footer -->
+        <!-- >>> Footer <<< -->
         <div class='card-footer'>
           <div class='d-flex flex-wrap justify-content-between'>
             <!-- Author -->
-            <div>
+            <span>
               <i aria-hidden='true' class='fa fa-user-circle text-muted'/>
               <b:include data='{ class: &quot;text-muted&quot;, noUrlClass: &quot;text-muted&quot; }' name='post.authorName'/>
-            </div>
+            </span>
             <!-- Number of comments -->
             <b:if cond='data:post.allowComments'>
-              <div>
+              <span>
                 <i aria-hidden='true' class='fa fa-comments text-muted'/>
                 <b:include data='{ class: &quot;text-muted&quot; }' name='post.numComments'/>
-              </div>
+              </span>
             </b:if>
-          </div>
-        </div>
-      </div>
-    </article>
+          </div><!-- /flex -->
+        </div><!-- /.card-footer -->
+
+      </div><!-- /.card -->
+    </article><!-- /col -->
   </b:loop>
-</div>
+</div><!-- /.row -->

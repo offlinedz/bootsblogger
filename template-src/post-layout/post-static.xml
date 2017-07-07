@@ -1,5 +1,7 @@
 <b:loop values='data:posts' var='post'>
   <article class='card mb-3' expr:id='&quot;post-&quot; + data:post.id'>
+
+    <!-- >>> Body <<< -->
     <div class='card-block'>
       <!-- Title -->
       <b:if cond='data:post.title'>
@@ -7,6 +9,7 @@
       </b:if>
       <!-- Body -->
       <data:post.body/>
-    </div>
-  </article>
+    </div><!-- /.card-block -->
+
+  </article><!-- /.card -->
 </b:loop>

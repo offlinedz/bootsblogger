@@ -1,6 +1,7 @@
 <b:loop values='data:posts' var='post'>
   <article class='card mb-3' expr:id='&quot;post-&quot; + data:post.id'>
-    <!-- Header -->
+
+    <!-- >>> Header <<< -->
     <div class='card-header'>
       <ul class='list-inline mb-0'>
         <!-- Author -->
@@ -13,9 +14,10 @@
           <span class='text-muted'><data:messages.on/></span>
           <b:include data='{ customFormat: &quot;MMM dd, YYYY&quot;, class: &quot;text-muted&quot; }' name='post.datePublished'/>
         </li>
-      </ul>
-    </div>
+      </ul><!-- /.list-inline -->
+    </div><!-- /.card-header -->
 
+    <!-- >>> Body <<< -->
     <div class='card-block'>
       <!-- Title -->
       <b:if cond='data:post.title'>
@@ -23,9 +25,9 @@
       </b:if>
       <!-- Body -->
       <data:post.body/>
-    </div>
+    </div><!-- /.card-block -->
 
-    <!-- Footer -->
+    <!-- >>> Footer <<< -->
     <div class='card-footer'>
       <ul class='list-inline mb-0'>
         <!-- Labels -->
@@ -34,7 +36,8 @@
           <span class='text-muted'><data:messages.labels/>:</span>
           <b:include data='{ comma: false, max-results: 12, class: &quot;badge badge-default&quot;, unlabelledClass: &quot;text-muted&quot; }' name='post.labels'/>
         </li>
-      </ul>
-    </div>
-  </article>
+      </ul><!-- /.list-inline -->
+    </div><!-- /.card-footer -->
+
+  </article><!-- /.card -->
 </b:loop>

@@ -1,21 +1,23 @@
 <b:loop values='data:posts' var='post'>
   <article class='card mb-3 mb-sm-5' expr:id='&quot;post-&quot; + data:post.id'>
-    <!-- Header -->
+
+    <!-- >>> Header <<< -->
     <b:if cond='data:headerByline.items.notEmpty'>
       <div class='card-header text-muted'>
         <!-- headerByline -->
         <b:include name='byline.header'/>
-      </div>
+      </div><!-- /.card-header -->
     </b:if>
 
+    <!-- >>> Body <<< -->
     <div class='row no-gutters'>
       <div class='col-sm-3 col-md-4'>
         <!-- Featured image -->
         <div class='card-block-img-left-sm'>
           <!-- Note: `sm` = 576px, `max-width` = (`sm` - 1) = 575px. -->
           <b:include data='{ size: 320, sourceSet: [320, 512], sourceSizes: &quot;(max-width: 575px) 512px, 320px&quot;, ratioWidth: 1, ratioHeight: 1, link: true, defaultNoImage: true, class: &quot;card-img-left&quot; }' name='post.featuredImage'/>
-        </div>
-      </div>
+        </div><!-- /.card-block-img-left-sm -->
+      </div><!-- /col -->
       <div class='col-sm-9 col-md-8'>
         <div class='card-block'>
           <!-- Title -->
@@ -30,16 +32,17 @@
           <div class='card-text'><b:include data='{ length: 150, links: true, linebreaks: true, ellipsis: true, notHasJumpLink: true }' name='post.snippet'/></div>
           <!-- Jump link -->
           <b:include data='{ class: &quot;btn btn-primary&quot;, parentClass: &quot;mt-2&quot; }' name='post.jumpLink'/>
-        </div>
-      </div>
-    </div>
+        </div><!-- /.card-block -->
+      </div><!-- /col -->
+    </div><!-- /.row -->
 
-    <!-- Footer -->
+    <!-- >>> Footer <<< -->
     <b:if cond='data:footerBylines.notEmpty'>
       <div class='card-footer text-muted'>
         <!-- footerBylines -->
         <b:include name='byline.footer'/>
-      </div>
+      </div><!-- /.card-footer -->
     </b:if>
-  </article>
+
+  </article><!-- /.card -->
 </b:loop>
