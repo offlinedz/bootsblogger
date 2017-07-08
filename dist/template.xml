@@ -289,7 +289,7 @@ body {}
   font-size: 85%;
   color: #777;
   text-align: center;
-  background-color: #fafafa;
+  background-color: #eee;
 }
 
 .footer-content {}
@@ -745,7 +745,7 @@ Jumbotron
 <b:if cond='data:view.isHomepage'>
   <div class='jumbotron jumbotron-fluid jumbotron-custom mb-0'>
     <div class='container'>
-      <img alt='Bootsblogger' class='mb-3' height='128' src='https://cdn.rawgit.com/bootsblogger/resources/master/assets/img/bootsblogger-solid.svg' width='128'/>
+      <b:include data='{ width: 128, height: 128, class: &quot;mb-3&quot;, style: &quot;&quot; }' name='icons.bootsblogger'/>
       <p class='lead'>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
       <p class='lead'><a class='btn btn-lg btn-custom' href='https://bootsblogger.github.io' role='button'>Getting started</a></p>
     </div><!-- /.container -->
@@ -826,7 +826,23 @@ Main and sidebar
       <!-- Sidebar -->
       <aside class='col-md-4 col-lg-3 sidebar mt-5 mt-md-0 blogger-col-4' id='sidebar'>
         <div class='sidebar-content'>
-          <b:section class='b-section-sidebar wg wg-box wg-box-white wg-title-gray-dark mnb-3' id='b-section-sidebar' name='Sidebar'/>
+          <b:section class='b-section-sidebar wg wg-panel wg-panel-sm wg-panel-orange wg-title-gray-dark wg-section-no-mb' id='b-section-sidebar' name='Sidebar'>
+            <b:widget id='HTML1' locked='false' title='HTML/JavaScript' type='HTML' version='2' visible='true'>
+              <b:widget-settings>
+                <b:widget-setting name='content'>
+                  &lt;p&gt;
+                    Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
+                  &lt;/p&gt;
+                </b:widget-setting>
+              </b:widget-settings>
+              <b:includable id='main'>
+                <b:include name='widget-title'/>
+                <div class='widget-content'>
+                  <data:content/>
+                </div>
+              </b:includable>
+            </b:widget>
+          </b:section>
         </div><!-- /.sidebar-content -->
       </aside><!-- /.sidebar -->
     </div><!-- /.row -->
@@ -842,7 +858,56 @@ Widget block (1)
 <div class='widget-block-1 py-5' id='widget-block-1'>
   <div class='container'>
     <div class='widget-block-1-content'>
-      <b:section class='b-section-widget-block-1 wg wg-panel wg-panel-orange wg-title-gray-dark wg-md-6 wg-lg-4 mnb-3' id='b-section-widget-block-1' name='Widget block (1)'></b:section>
+      <b:section class='b-section-widget-block-1 wg wg-box wg-box-gray-dark wg-title-gray-light wg-lg-4 wg-equal-height-cols wg-section-no-mb' id='b-section-widget-block-1' name='Widget block (1)'>
+        <b:widget id='HTML2' locked='false' title='HTML/JavaScript' type='HTML' version='2' visible='true'>
+          <b:widget-settings>
+            <b:widget-setting name='content'>
+              &lt;p class="text-white"&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+              &lt;/p&gt;
+            </b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main'>
+            <b:include name='widget-title'/>
+            <div class='widget-content'>
+              <data:content/>
+            </div>
+          </b:includable>
+        </b:widget>
+        <b:widget id='HTML3' locked='false' title='HTML/JavaScript' type='HTML' version='2' visible='true'>
+          <b:widget-settings>
+            <b:widget-setting name='content'>
+              &lt;p class="text-white"&gt;
+                Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
+              &lt;/p&gt;
+            </b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main'>
+            <b:include name='widget-title'/>
+            <div class='widget-content'>
+              <data:content/>
+            </div>
+          </b:includable>
+        </b:widget>
+        <b:widget id='HTML4' locked='false' title='HTML/JavaScript' type='HTML' version='2' visible='true'>
+          <b:widget-settings>
+            <b:widget-setting name='content'>
+              &lt;p class="text-white"&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+              &lt;/p&gt;
+              &lt;p class="text-white"&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+              &lt;/p&gt;
+            </b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main'>
+            <b:include name='widget-title'/>
+            <div class='widget-content'>
+              <data:content/>
+            </div>
+          </b:includable>
+        </b:widget>
+      </b:section>
     </div><!-- /.widget-block-1-content -->
   </div><!-- /.container -->
 </div><!-- /.widget-block-1 -->
