@@ -330,56 +330,6 @@ body {}
 }
 
 .widget-block-1-content {}
-
-
-/* ==============================================
-   <body> classes
-   ============================================== */
-
-/* Homepage
-   ============================================== */
-
-.blog-view-home .element {}
-
-/* Item page
-   ============================================== */
-
-.blog-view-item .element {}
-
-/* Static page
-   ============================================== */
-
-.blog-view-static .element {}
-
-/* Search (label) page
-   ============================================== */
-
-.blog-view-search-label .element {}
-
-/* Search (query) page
-   ============================================== */
-
-.blog-view-search-query .element {}
-
-/* Search (default) page
-   ============================================== */
-
-.blog-view-search-default .element {}
-
-/* Archive page
-   ============================================== */
-
-.blog-view-archive .element {}
-
-/* Error page
-   ============================================== */
-
-.blog-view-error .element {}
-
-/* Preview page
-   ============================================== */
-
-.blog-view-preview .element {}
 ]]>
 </b:skin>
 
@@ -840,6 +790,37 @@ Main and sidebar
                 <div class='widget-content'>
                   <data:content/>
                 </div>
+              </b:includable>
+            </b:widget>
+            <b:widget id='Label1' locked='false' title='Labels' type='Label' version='2' visible='true'>
+              <b:widget-settings>
+                <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
+                <b:widget-setting name='display'>LIST</b:widget-setting>
+                <b:widget-setting name='selectedLabelsList'/>
+                <b:widget-setting name='showType'>ALL</b:widget-setting>
+                <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
+              </b:widget-settings>
+              <b:includable id='main' var='this'>
+                <b:include name='widget-title'/>
+                <b:include name='content'/>
+              </b:includable>
+              <b:includable id='content'>
+                <div class='widget-content'>
+                  <b:include cond='data:this.display in {"list", "cloud"}' name='custom'/>
+                </div>
+              </b:includable>
+              <b:includable id='list'/>
+              <b:includable id='cloud'/>
+              <b:includable id='custom'>
+                <b:loop values='data:labels' var='label'>
+                  <a class='badge badge-default' expr:href='data:label.url'>
+                    <b:class cond='data:view.search.label == data:label.name' name='active'/>
+                    <data:label.name/>
+                    <b:if cond='data:this.showFreqNumbers'>
+                      <span>(<data:label.count/>)</span>
+                    </b:if>
+                  </a>
+                </b:loop>
               </b:includable>
             </b:widget>
           </b:section>
