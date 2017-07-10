@@ -672,10 +672,6 @@ Navbar
             <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, &quot;/2016/11/sample-blog-post-03.html&quot;)'>Item page</a>
             <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, &quot;/p/static-page.html&quot;)'>Static page</a>
             <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, &quot;/404&quot;)'>Error page</a>
-            <div class='dropdown-divider'></div>
-            <h6 class='dropdown-header'>Comments</h6>
-            <a class='dropdown-item' expr:href='data:blog.homepageUrl path &quot;/2016/11/sample-blog-post-01.html&quot; fragment &quot;comments&quot;'>No comments</a>
-            <a class='dropdown-item' expr:href='data:blog.homepageUrl path &quot;/2016/11/sample-blog-post-02.html&quot; fragment &quot;comments&quot;'>Not allowed</a>
           </div>
         </li>
       </ul>
@@ -795,33 +791,11 @@ Main and sidebar
             <b:widget id='Label1' locked='false' title='Labels' type='Label' version='2' visible='true'>
               <b:widget-settings>
                 <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
-                <b:widget-setting name='display'>LIST</b:widget-setting>
+                <b:widget-setting name='display'>CLOUD</b:widget-setting>
                 <b:widget-setting name='selectedLabelsList'/>
                 <b:widget-setting name='showType'>ALL</b:widget-setting>
                 <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
               </b:widget-settings>
-              <b:includable id='main' var='this'>
-                <b:include name='widget-title'/>
-                <b:include name='content'/>
-              </b:includable>
-              <b:includable id='content'>
-                <div class='widget-content'>
-                  <b:include cond='data:this.display in {"list", "cloud"}' name='custom'/>
-                </div>
-              </b:includable>
-              <b:includable id='list'/>
-              <b:includable id='cloud'/>
-              <b:includable id='custom'>
-                <b:loop values='data:labels' var='label'>
-                  <a class='badge badge-default' expr:href='data:label.url'>
-                    <b:class cond='data:view.search.label == data:label.name' name='active'/>
-                    <data:label.name/>
-                    <b:if cond='data:this.showFreqNumbers'>
-                      <span>(<data:label.count/>)</span>
-                    </b:if>
-                  </a>
-                </b:loop>
-              </b:includable>
             </b:widget>
           </b:section>
         </div><!-- /.sidebar-content -->
@@ -837,6 +811,7 @@ Widget block (1)
 ================================================= </b:comment>
 
 <div class='widget-block-1 py-5' id='widget-block-1'>
+  <b:class cond='data:widgets none w =&gt; w.sectionId == &quot;b-section-widget-block-1&quot;' name='d-none'/>
   <div class='container'>
     <div class='widget-block-1-content'>
       <b:section class='b-section-widget-block-1 wg wg-box wg-box-gray-dark wg-title-gray-light wg-lg-4 wg-equal-height-cols wg-section-no-mb' id='b-section-widget-block-1' name='Widget block (1)'>
