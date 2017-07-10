@@ -134,6 +134,7 @@ Widget block (1)
 ================================================= </b:comment>
 
 <div class='widget-block-1 py-5' id='widget-block-1'>
+  <b:class cond='data:widgets none w =&gt; w.sectionId == &quot;b-section-widget-block-1&quot;' name='d-none'/>
   <div class='container'>
     <div class='widget-block-1-content'>
       <b:section class='b-section-widget-block-1 wg wg-box wg-box-gray-dark wg-title-gray-light wg-lg-4 wg-equal-height-cols wg-section-no-mb' id='b-section-widget-block-1' name='Widget block (1)'>
