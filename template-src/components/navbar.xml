@@ -30,10 +30,6 @@
             <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, &quot;/2016/11/sample-blog-post-03.html&quot;)'>Item page</a>
             <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, &quot;/p/static-page.html&quot;)'>Static page</a>
             <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, &quot;/404&quot;)'>Error page</a>
-            <div class='dropdown-divider'></div>
-            <h6 class='dropdown-header'>Comments</h6>
-            <a class='dropdown-item' expr:href='data:blog.homepageUrl path &quot;/2016/11/sample-blog-post-01.html&quot; fragment &quot;comments&quot;'>No comments</a>
-            <a class='dropdown-item' expr:href='data:blog.homepageUrl path &quot;/2016/11/sample-blog-post-02.html&quot; fragment &quot;comments&quot;'>Not allowed</a>
           </div>
         </li>
       </ul>
