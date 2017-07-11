@@ -320,15 +320,15 @@ template-src/includes/blog-posts/post.authorImage.xml
 <b:include data='{ size: number, ratioWidth: number, ratioHeight: number, class: "class-name" }' name='post.authorImage'/>
 {% endhighlight %}
 
-###### Example
+**Example:**
 
 Width = `size`, Height = ((`size` * `ratioHeight`) / `ratioWidth`).
+
+128x128:
 
 {% highlight html %}
 <b:include data='{ size: 128, ratioWidth: 1, ratioHeight: 1, class: "class-name" }' name='post.authorImage'/>
 {% endhighlight %}
-
-Baca lebih lanjut tentang [images](#featured-image).
 
 ### Dates
 
@@ -355,7 +355,7 @@ Published: <b:include data='{ customFormat: "dd/MM/YYYY"|false, class: "class-na
 Last updated: <b:include data='{ customFormat: "dd/MM/YYYY"|false, class: "class-name" }' name='post.dateUpdated'/>
 {% endhighlight %}
 
-Format:
+**Format:**
 
 <table class="table-responsive">
   <thead>
@@ -569,9 +569,7 @@ template-src/includes/blog-posts/post.labels.xml
 
 Untuk menampilkan *featured image*.
 
-**Resources:** [Aspect ratio (image)](https://en.wikipedia.org/wiki/Aspect_ratio_(image)), [responsive images (`srcset`, `sizes`)](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images).
-
-##### With `<img>`
+##### Using HTML `<img>`
 
 ###### Source
 
@@ -591,9 +589,37 @@ template-src/includes/blog-posts/post.featuredImage.xml
 <b:include data='{ size: number, sourceSet: [number]|false, sourceSizes: "sizes"|false, ratioWidth: number, ratioHeight: number, link: true|false, defaultNoImage: true|false, class: "class-name" }' name='post.featuredImage'/>
 {% endhighlight %}
 
-##### With `background-image`
+**Notation:**
 
-**Catatan:** `post.featuredImageBg` tidak menggunakan `srcset` dan `sizes`.
+Non-responsive: Width = `size`, Height = ((`size` * `ratioHeight`) / `ratioWidth`).
+
+Responsive: Width = `sourceSet`, Height = ((`sourceSet` * `ratioHeight`) / `ratioWidth`).
+
+**Example without `srcset` and `sizes`:**
+
+{% highlight html %}
+<b:include data='{ size: 512, sourceSet: false, sourceSizes: false, ratioWidth: 16, ratioHeight: 9, link: true, defaultNoImage: true, class: "class-name" }' name='post.featuredImage'/>
+{% endhighlight %}
+
+**Example with `srcset`, but without `sizes`:**
+
+{% highlight html %}
+<!-- Example 1: `false` -->
+<b:include data='{ size: 256, sourceSet: [256, 512, 1280, 1600], sourceSizes: false, ratioWidth: 16, ratioHeight: 9, link: true, defaultNoImage: true, class: "class-name" }' name='post.featuredImage'/>
+
+<!-- Example 2: `100vw` -->
+<b:include data='{ size: 256, sourceSet: [256, 512, 1280, 1600], sourceSizes: "100vw", ratioWidth: 16, ratioHeight: 9, link: true, defaultNoImage: true, class: "class-name" }' name='post.featuredImage'/>
+{% endhighlight %}
+
+**Example with `srcset` and `sizes`:**
+
+{% highlight html %}
+<b:include data='{ size: 256, sourceSet: [256, 512, 1280, 1600], sourceSizes: "(max-width: 575px) 256px, (max-width: 767px) 512px, (max-width: 991px) 1280px, 1600px", ratioWidth: 16, ratioHeight: 9, link: true, defaultNoImage: true, class: "class-name" }' name='post.featuredImage'/>
+{% endhighlight %}
+
+##### Using CSS `background-image`
+
+`post.featuredImageBg` tidak menggunakan `srcset` dan `sizes`.
 
 ###### Source
 
@@ -613,33 +639,15 @@ template-src/includes/blog-posts/post.featuredImageBg.xml
 <b:include data='{ size: number, ratioWidth: number, ratioHeight: number, defaultNoImage: true|false, class: "class-name", style: "min-height: <number><units>;" }' name='post.featuredImageBg'/>
 {% endhighlight %}
 
-##### Example
+**Example:**
 
 Width = `size`, Height = ((`size` * `ratioHeight`) / `ratioWidth`).
 
 {% highlight html %}
-<!-- `post.featuredImage` -->
-<b:include data='{ size: 320, sourceSet: false, sourceSizes: false, ratioWidth: 320, ratioHeight: 180, link: true, defaultNoImage: true, class: "class-name" }' name='post.featuredImage'/>
-<b:include data='{ size: 320, sourceSet: false, sourceSizes: false, ratioWidth: 16, ratioHeight: 9, link: true, defaultNoImage: true, class: "class-name" }' name='post.featuredImage'/>
-
-<!-- `post.featuredImageBg` -->
-<b:include data='{ size: 320, ratioWidth: 320, ratioHeight: 180, defaultNoImage: true|false, class: "class-name", style: "min-height: 180px;" }' name='post.featuredImageBg'/>
-<b:include data='{ size: 320, ratioWidth: 16, ratioHeight: 9, defaultNoImage: true|false, class: "class-name", style: "min-height: 180px;" }' name='post.featuredImageBg'/>
+<b:include data='{ size: 512, ratioWidth: 16, ratioHeight: 9, defaultNoImage: true|false, class: "class-name", style: "min-height: 180px;" }' name='post.featuredImageBg'/>
 {% endhighlight %}
 
----
-
-Original `src`: Width = `size`, Height = ((`size` * `ratioHeight`) / `ratioWidth`).
-
-Responsive: Width = `sourceSet`, Height = ((`sourceSet` * `ratioHeight`) / `ratioWidth`).
-
-`sizes` atau `sourceSizes` memungkinkan kita untuk memilih resolusi terbaik sesuai lebar layar. Pelajari lebih lanjut tentang [`srcset` dan `sizes`](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#Resolution_switching_Different_sizes).
-
-{% highlight html %}
-<b:include data='{ size: 320, sourceSet: [320, 640, 1280, 1600], sourceSizes: "(max-width: 575px) 320px, (max-width: 767px) 640px, (max-width: 991px) 1280px, 1600px", ratioWidth: 16, ratioHeight: 9, link: true, defaultNoImage: true, class: "class-name" }' name='post.featuredImage'/>
-{% endhighlight %}
-
-### Snippets
+### Snippet
 
 Untuk menampilkan ringkasan posting.
 

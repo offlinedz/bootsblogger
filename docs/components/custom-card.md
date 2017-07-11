@@ -8,6 +8,11 @@ redirect_from: "/components/"
 
 Baca dokumentasi [Bootstrap card](https://v4-alpha.getbootstrap.com/components/card/).
 
+## Contents
+
+* Will be replaced with the ToC, excluding the "Contents" header
+{:toc}
+
 ## Title links
 
 Gunakan `.card-title-link`.
@@ -54,7 +59,7 @@ Elemen pembungkus untuk `.card-img-left` dan `.card-img-right`:
 
 Pelajari beberapa contoh di bawah ini.
 
-#### Always
+#### Non-responsive
 
 <div class="bd-example">
   <div class="card mb-3">

@@ -138,7 +138,7 @@ template-src/includes/assets/icons/icons.blogger.xml
 <b:include data='{ width: number, height: number, fillBg: "#ff5722", fillB: "#fff", class: "class-name", style: "vertical-align: middle;" }' name='icons.blogger'/>
 {% endhighlight %}
 
-###### Example
+**Example:**
 
 <div class="bd-example">
   <svg class="" width="24" height="24" viewBox="0 0 612 612" xmlns="http://www.w3.org/2000/svg" focusable="false" style="vertical-align: middle;">
@@ -173,7 +173,7 @@ template-src/includes/assets/icons/icons.bootsblogger.xml
 <b:include data='{ width: number, height: number, class: "class-name", style: "vertical-align: middle;" }' name='icons.bootsblogger'/>
 {% endhighlight %}
 
-###### Example
+**Example:**
 
 <div class="bd-example">
   <svg class="" width="24" height="24" viewBox="0 0 612 612" xmlns="http://www.w3.org/2000/svg" focusable="false" style="vertical-align: middle;">

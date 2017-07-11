@@ -464,9 +464,9 @@ Kelas untuk `xs` tidak tersedia (`.navmenu-expand`).
 
 ### Toggler
 
-Always:
+`xs`:
 
-Tidak membutuhkan `.navmenu-expand-*`, `.navmenu-toggler`, dan `.navmenu-collapse`.
+Tidak membutuhkan `.navmenu-expand`, `.navmenu-toggler`, dan `.navmenu-collapse`.
 
 {% example html %}
 <nav class="navmenu navmenu-light bg-faded">
