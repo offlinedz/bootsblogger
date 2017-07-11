@@ -39,7 +39,7 @@ CSS
 <b:comment>=== Layout mode CSS ===</b:comment>
 <b:include name='head.layoutModeCss'/>
 
-<b:comment>=== Template CSS ===</b:comment>
+<b:comment>=== Template Skin ===</b:comment>
 <b:skin>
 <![CDATA[
 /* ==============================================
