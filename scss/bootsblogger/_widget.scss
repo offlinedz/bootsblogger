@@ -279,8 +279,9 @@
   @include border-top-radius(0);
 }
 
-// With `.wg-title-hide`
-.wg-panel.wg-title-hide > .widget > .widget-content {
+// With `.wg-title-hide` and no title
+.wg-panel.wg-title-hide > .widget > .widget-content,
+.wg-panel > .widget > .widget-content:first-child {
   border-width: $wg-panel-border-width;
   @include border-radius($wg-panel-border-radius);
 }
@@ -315,6 +316,10 @@
     border-bottom-width: 0;
     @include border-bottom-radius(0);
   }
+  // No title
+  &:not(:first-child) > .widget-content:first-child {
+    @include border-top-radius(0);
+  }
 }
 
 // Flush list group
@@ -336,12 +341,16 @@
   }
 }
 
-// With `.wg-title-hide`
-.wg-panel.wg-title-hide .widget-content > .list-group-flush:first-child .list-group-item:first-child {
+// With `.wg-title-hide` and no title
+.wg-panel.wg-title-hide .widget-content > .list-group-flush:first-child .list-group-item:first-child,
+.wg-panel .widget-content:first-child > .list-group-flush:first-child .list-group-item:first-child {
   @include border-top-radius(calc(#{$wg-panel-border-radius} - #{$wg-panel-border-width}));
 }
 // With `.wg-panel-group`
 //scss-lint:disable SelectorDepth
+.wg-panel.wg-panel-group .widget:not(:first-child) .widget-content:first-child > .list-group-flush:first-child .list-group-item:first-child {
+  @include border-top-radius(0); // No title
+}
 .wg-panel.wg-panel-group .widget:not(:last-child) .widget-content > .list-group-flush:last-child .list-group-item:last-child {
   @include border-bottom-radius(0);
 }
