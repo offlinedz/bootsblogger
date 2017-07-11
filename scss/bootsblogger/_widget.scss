@@ -163,8 +163,9 @@
   }
 }
 
-// With `.wg-title-hide`
-.wg-box.wg-title-hide .widget-content > .list-group-flush:first-child {
+// With `.wg-title-hide` and no title
+.wg-box.wg-title-hide .widget-content > .list-group-flush:first-child,
+.wg-box .widget-content:first-child > .list-group-flush:first-child {
   margin-top: -$wg-box-padding;
 
   .list-group-item:first-child {
