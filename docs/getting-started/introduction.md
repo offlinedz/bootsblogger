@@ -62,7 +62,7 @@ bootsblogger/
     ├── config.json
     ├── index.xml
     ├── script.js
-    └── style.css
+    └── skin.css
 {% endhighlight %}
 
 - **`dist/template.xml`** - Template terkompilasi.
@@ -77,7 +77,7 @@ bootsblogger/
   - `index.xml` - Untuk menyertakan keseluruhan bagian-bagian template, dan akan dikompilasi ke dalam `/dist`.
   - `config.json` - Template config.
   - `script.js` - Template JavaScript.
-  - `style.css` - Template CSS.
+  - `style.css` - Template Skin.
 
 ## Bootstrap
 
