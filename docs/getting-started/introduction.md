@@ -79,7 +79,7 @@ bootsblogger/
   - `widgets/` - Widget.
    - `config.json` - Konfigurasi.
   - `index.xml` - Untuk menyertakan keseluruhan bagian-bagian template, dan akan dikompilasi ke dalam `/dist`.
-  - `layout-mode.css` - CSS untuk menyesuaikan tata letak widget/gadget (pada menu bilah kiri, klik **Layout**).
+  - `layout-mode.css` - CSS untuk halaman Layout Blogger. [Dokumentasi]({{ site.baseurl }}/core-template/layout-mode-css/).
   - `script.js` - Template JavaScript.
   - `skin.css` - Template Skin.
 
