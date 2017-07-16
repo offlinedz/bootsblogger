@@ -1,233 +1,27 @@
 ---
 layout: docs
-title: Includes - Blog posts
-description: Bagian-bagian kode untuk posting blog.
+title: Includable - Post
+description: Includable untuk posting blog.
 group: core-template
 ---
 
-Bagian-bagian kode untuk posting blog hanya dapat disertakan di dalam widget `Blog` (`<b:widget type='Blog'></b:widget>`).
+Hanya dapat disertakan di dalam widget `Blog` (`<b:widget type='Blog'></b:widget>`).
 
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
-## Post layout and styles
-
-Untuk memudahkan dalam mengatur tampilan posting, posting dibagi menjadi beberapa bagian berdasarkan tipe halaman. Tampilan posting dapat berbeda-beda di setiap tipe halaman, untuk membuat tampilan posting yang berbeda di setiap tipe halaman, Anda hanya perlu menyesuaikan tampilan posting pada masing-masing bagian.
-
-Bagian-bagian ini digunakan di bagian [`<b:includable id='main.blog-posts'>`](#blog-posts).
-
-### Homepage
-
-Tampilan posting untuk halaman beranda.
-
-###### Source
-
-{% highlight plaintext %}
-template-src/post-layout/post-home.xml
-{% endhighlight %}
-
-###### Includable
-
-{% highlight html %}
-<b:includable id='post-home'>...</b:includable>
-{% endhighlight %}
-
-### Item page
-
-Tampilan posting untuk halaman posting (*item*).
-
-###### Source
-
-{% highlight plaintext %}
-template-src/post-layout/post-item.xml
-{% endhighlight %}
-
-###### Includable
-
-{% highlight html %}
-<b:includable id='post-item'>...</b:includable>
-{% endhighlight %}
-
-### Static page
-
-Tampilan posting untuk halaman statis.
-
-###### Source
-
-{% highlight plaintext %}
-template-src/post-layout/post-static.xml
-{% endhighlight %}
-
-###### Includable
-
-{% highlight html %}
-<b:includable id='post-static'>...</b:includable>
-{% endhighlight %}
-
-### Search (label) page
-
-Tampilan posting untuk halaman kategori.
-
-###### Source
-
-{% highlight plaintext %}
-template-src/post-layout/post-search-label.xml
-{% endhighlight %}
-
-###### Includable
-
-{% highlight html %}
-<b:includable id='post-search-label'>...</b:includable>
-{% endhighlight %}
-
-### Search (query) page
-
-Tampilan posting untuk halaman hasil pencarian.
-
-###### Source
-
-{% highlight plaintext %}
-template-src/post-layout/post-search-query.xml
-{% endhighlight %}
-
-###### Includable
-
-{% highlight html %}
-<b:includable id='post-search-query'>...</b:includable>
-{% endhighlight %}
-
-### Search (default) page
-
-Tampilan posting untuk halaman dengan URL `https://example.blogspot.com/search`.
-
-###### Source
-
-{% highlight plaintext %}
-template-src/post-layout/post-search-default.xml
-{% endhighlight %}
-
-###### Includable
-
-{% highlight html %}
-<b:includable id='post-search-default'>...</b:includable>
-{% endhighlight %}
-
-### Archive page
-
-Tampilan posting untuk halaman arsip.
-
-###### Source
-
-{% highlight plaintext %}
-template-src/post-layout/post-archive.xml
-{% endhighlight %}
-
-###### Includable
-
-{% highlight html %}
-<b:includable id='post-archive'>...</b:includable>
-{% endhighlight %}
-
-## Main
-
-Bagian-bagian ini digunakan di bagian `<b:includable id='main'>` di dalam widget `Blog`.
-
-### Blog breadcrumb
-
-Untuk menunjukkan lokasi halaman saat ini.
-
-###### Source
-
-{% highlight plaintext %}
-template-src/includes/blog-posts/main.blog-breadcrumb.xml
-{% endhighlight %}
-
-###### Includable
-
-{% highlight html %}
-<b:includable id='main.blog-breadcrumb'>...</b:includable>
-{% endhighlight %}
-
-### Blog alert
-
-Pesan yang akan muncul di atas posting. Pesan hanya akan muncul di halaman hasil pencarian, halaman label, halaman arsip, dan halaman galat (404).
-
-###### Source
-
-{% highlight plaintext %}
-template-src/includes/blog-posts/main.blog-alert.xml
-{% endhighlight %}
-
-###### Includable
-
-{% highlight html %}
-<b:includable id='main.blog-alert'>...</b:includable>
-{% endhighlight %}
-
-### Blog posts
-
-Penggunaan [post layout and styles](#post-layout-and-styles).
-
-###### Source
-
-{% highlight plaintext %}
-template-src/includes/blog-posts/main.blog-posts.xml
-{% endhighlight %}
-
-###### Includable
-
-{% highlight html %}
-<b:includable id='main.blog-posts'>...</b:includable>
-{% endhighlight %}
-
-### Blog comments
-
-Sistem komentar bawaan Bootsblogger menggunakan *Google+ comments*.
-
-###### Source
-
-{% highlight plaintext %}
-template-src/includes/blog-posts/main.blog-comments.xml
-{% endhighlight %}
-
-###### Includable
-
-{% highlight html %}
-<b:includable id='main.blog-comments'>...</b:includable>
-{% endhighlight %}
-
-### Blog pager
-
-Tautan untuk menuju halaman berikutnya atau sebelumnya.
-
-###### Source
-
-{% highlight plaintext %}
-template-src/includes/blog-posts/main.blog-pager.xml
-{% endhighlight %}
-
-###### Includable
-
-{% highlight html %}
-<b:includable id='main.blog-pager'>...</b:includable>
-{% endhighlight %}
-
 ## Post byline items
 
 Untuk menampilkan *item* posting yang ada dalam daftar konfigurasi posting blog.
 
-Bagian-bagian ini dapat digunakan di bagian [post layout and styles](#post-layout-and-styles).
-
-### headerByline
-
-Bagian *header*.
+### Header
 
 ###### Source
 
 {% highlight plaintext %}
-template-src/includes/blog-posts/byline.header.xml
+template-src/includable/post/byline.header.xml
 {% endhighlight %}
 
 ###### Includable
@@ -246,14 +40,12 @@ template-src/includes/blog-posts/byline.header.xml
 </b:if>
 {% endhighlight %}
 
-### footerBylines
-
-Bagian *footer*.
+### Footer
 
 ###### Source
 
 {% highlight plaintext %}
-template-src/includes/blog-posts/byline.footer.xml
+template-src/includable/post/byline.footer.xml
 {% endhighlight %}
 
 ###### Includable
@@ -274,8 +66,6 @@ template-src/includes/blog-posts/byline.footer.xml
 
 ## Post items
 
-Bagian-bagian ini dapat digunakan di bagian [post layout and styles](#post-layout-and-styles).
-
 ### Author name
 
 Untuk menampilkan nama penulis.
@@ -283,7 +73,7 @@ Untuk menampilkan nama penulis.
 ###### Source
 
 {% highlight plaintext %}
-template-src/includes/blog-posts/post.authorName.xml
+template-src/includable/post/post.authorName.xml
 {% endhighlight %}
 
 ###### Includable
@@ -305,7 +95,7 @@ Untuk menampilkan foto penulis.
 ###### Source
 
 {% highlight plaintext %}
-template-src/includes/blog-posts/post.authorImage.xml
+template-src/includable/post/post.authorImage.xml
 {% endhighlight %}
 
 ###### Includable
@@ -337,8 +127,8 @@ Untuk menampilkan tanggal diterbitkannya posting dan tanggal terakhir posting di
 ###### Source
 
 {% highlight plaintext %}
-- template-src/includes/blog-posts/post.datePublished.xml
-- template-src/includes/blog-posts/post.dateUpdated.xml
+- template-src/includable/post/post.datePublished.xml
+- template-src/includable/post/post.dateUpdated.xml
 {% endhighlight %}
 
 ###### Includable
@@ -526,7 +316,7 @@ Untuk menampilkan jumlah komentar per posting.
 ###### Source
 
 {% highlight plaintext %}
-template-src/includes/blog-posts/post.numComments.xml
+template-src/includable/post/post.numComments.xml
 {% endhighlight %}
 
 ###### Includable
@@ -550,7 +340,7 @@ Untuk menampilkan label posting.
 ###### Source
 
 {% highlight plaintext %}
-template-src/includes/blog-posts/post.labels.xml
+template-src/includable/post/post.labels.xml
 {% endhighlight %}
 
 ###### Includable
@@ -574,7 +364,7 @@ Untuk menampilkan *featured image*.
 ###### Source
 
 {% highlight plaintext %}
-template-src/includes/blog-posts/post.featuredImage.xml
+template-src/includable/post/post.featuredImage.xml
 {% endhighlight %}
 
 ###### Includable
@@ -624,7 +414,7 @@ Responsive: Width = `sourceSet`, Height = ((`sourceSet` * `ratioHeight`) / `rati
 ###### Source
 
 {% highlight plaintext %}
-template-src/includes/blog-posts/post.featuredImageBg.xml
+template-src/includable/post/post.featuredImageBg.xml
 {% endhighlight %}
 
 ###### Includable
@@ -654,7 +444,7 @@ Untuk menampilkan ringkasan posting.
 ###### Source
 
 {% highlight plaintext %}
-template-src/includes/blog-posts/post.snippet.xml
+template-src/includable/post/post.snippet.xml
 {% endhighlight %}
 
 ###### Includable
@@ -678,7 +468,7 @@ Untuk menampilkan *jump link*.
 ###### Source
 
 {% highlight plaintext %}
-template-src/includes/blog-posts/post.jumpLink.xml
+template-src/includable/post/post.jumpLink.xml
 {% endhighlight %}
 
 ###### Includable

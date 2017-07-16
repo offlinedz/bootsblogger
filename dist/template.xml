@@ -37,7 +37,76 @@ CSS
 <b:include name='css.fontAwesome'/>
 
 <b:comment>=== Layout mode CSS ===</b:comment>
-<b:include name='head.layoutModeCss'/>
+<b:template-skin>
+<![CDATA[
+/* Hide */
+body#layout ul,
+body#layout ol {
+  display: none;
+}
+
+/* Clearfix */
+body#layout .container::after,
+body#layout .section::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+/* Grid */
+body#layout .blogger-col-1,
+body#layout .blogger-col-2,
+body#layout .blogger-col-3,
+body#layout .blogger-col-4,
+body#layout .blogger-col-5,
+body#layout .blogger-col-6,
+body#layout .blogger-col-7,
+body#layout .blogger-col-8,
+body#layout .blogger-col-9,
+body#layout .blogger-col-10,
+body#layout .blogger-col-11,
+body#layout .blogger-col-12 {
+  position: relative;
+  float: left;
+}
+body#layout .blogger-col-1 {
+  width: 8.33333333%;
+}
+body#layout .blogger-col-2 {
+  width: 16.66666667%;
+}
+body#layout .blogger-col-3 {
+  width: 25%;
+}
+body#layout .blogger-col-4 {
+  width: 33.33333333%;
+}
+body#layout .blogger-col-5 {
+  width: 41.66666667%;
+}
+body#layout .blogger-col-6 {
+  width: 50%;
+}
+body#layout .blogger-col-7 {
+  width: 58.33333333%;
+}
+body#layout .blogger-col-8 {
+  width: 66.66666667%;
+}
+body#layout .blogger-col-9 {
+  width: 75%;
+}
+body#layout .blogger-col-10 {
+  width: 83.33333333%;
+}
+body#layout .blogger-col-11 {
+  width: 91.66666667%;
+}
+body#layout .blogger-col-12 {
+  width: 100%;
+}
+]]>
+</b:template-skin>
 
 <b:comment>=== Template Skin ===</b:comment>
 <b:skin>
@@ -337,8 +406,10 @@ body {}
 
 <b:comment>
 =================================================
-Post layout and styles
+Post (Jump to widget: Blog1 --- includable: main)
 ================================================= </b:comment>
+
+<b:comment>=== Post layout and styles ===</b:comment>
 
 <b:defaultmarkups>
   <b:defaultmarkup type='Common'>
@@ -609,6 +680,343 @@ Post layout and styles
   </b:defaultmarkup>
 </b:defaultmarkups>
 
+<b:comment>=== Breadcrumb, alert, comments, and pager. ===</b:comment>
+
+<b:defaultmarkups>
+  <b:defaultmarkup type='Common'>
+    <b:includable id='blog-breadcrumb' var='post'>
+      <ol class='blog-breadcrumb breadcrumb'>
+        <li class='breadcrumb-item'>
+          <a expr:href='data:blog.homepageUrl'>Home</a>
+        </li>
+
+        <b:comment>=== Item page ===</b:comment>
+        <b:if cond='data:view.isPost'>
+          <li class='breadcrumb-item active'>Posts</li>
+          <li class='breadcrumb-item active'>
+            <b:loop values='data:posts' var='post'>
+              <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+            </b:loop>
+          </li>
+        </b:if>
+
+        <b:comment>=== Static page ===</b:comment>
+        <b:if cond='data:view.isPage'>
+          <li class='breadcrumb-item active'>Pages</li>
+          <li class='breadcrumb-item active'>
+            <b:loop values='data:posts' var='post'>
+              <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+            </b:loop>
+          </li>
+        </b:if>
+
+        <b:comment>=== Search (label) page ===</b:comment>
+        <b:if cond='data:view.search.label'>
+          <li class='breadcrumb-item active'>Search</li>
+          <li class='breadcrumb-item active'>Label</li>
+          <li class='breadcrumb-item active'>&quot;<data:view.search.label/>&quot;</li>
+        </b:if>
+
+        <b:comment>=== Search (query) page ===</b:comment>
+        <b:if cond='data:view.search.query'>
+          <li class='breadcrumb-item active'>Search</li>
+          <li class='breadcrumb-item active'>Query</li>
+          <li class='breadcrumb-item active'>&quot;<data:view.search.query/>&quot;</li>
+        </b:if>
+
+        <b:comment>=== Archive page ===</b:comment>
+        <b:if cond='data:view.isArchive'>
+          <li class='breadcrumb-item active'>Archive</li>
+          <li class='breadcrumb-item active'><data:view.archive.year/></li>
+          <b:if cond='data:view.archive.month'>
+            <li class='breadcrumb-item active'><data:view.archive.month/></li>
+          </b:if>
+        </b:if>
+
+        <b:comment>=== Error page ===</b:comment>
+        <b:if cond='data:view.isError'>
+          <li class='breadcrumb-item active'>404</li>
+        </b:if>
+      </ol>
+    </b:includable>
+    <b:includable id='blog-alert' var='post'>
+      <b:comment>=== Homepage ===</b:comment>
+      <b:if cond='data:view.isHomepage and data:posts.empty'>
+        <div class='blog-alert alert alert-warning' role='alert'>
+          <i aria-hidden='true' class='fa fa-exclamation-circle'/>
+          <data:messages.theresNothingHere/>
+        </div>
+      </b:if>
+
+      <b:comment>=== Search (label) page ===</b:comment>
+      <b:if cond='data:view.search.label'>
+        <b:if cond='data:posts.size gte 1'>
+          <div class='blog-alert alert alert-success' role='alert'>
+            <i aria-hidden='true' class='fa fa-tags'/>
+            <data:view.search.resultsMessageHtml/>
+          </div>
+        <b:else/>
+          <div class='blog-alert alert alert-warning' role='alert'>
+            <i aria-hidden='true' class='fa fa-tags'/>
+            <data:view.search.resultsMessageHtml/>
+          </div>
+          <b:comment>=== Search form ===</b:comment>
+          <div class='card'>
+            <div class='card-block'>
+              <p class='card-text'><data:messages.noResultsFound/></p>
+            </div>
+            <ul class='list-group list-group-flush'>
+              <li class='list-group-item'>
+                <form class='w-100' expr:action='data:blog.searchUrl' method='get'>
+                  <div class='input-group' role='search'>
+                    <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
+                    <input class='form-control' expr:aria-label='data:messages.searchBlog' expr:placeholder='data:messages.searchBlog' id='blog-alert-search-form' name='q' type='search'/>
+                  </div>
+                </form>
+              </li>
+            </ul>
+          </div>
+        </b:if>
+      </b:if>
+
+      <b:comment>=== Search (query) page ===</b:comment>
+      <b:if cond='data:view.search.query'>
+        <b:if cond='data:posts.size gte 1'>
+          <div class='blog-alert alert alert-success' role='alert'>
+            <i aria-hidden='true' class='fa fa-search-plus'/>
+            <data:view.search.resultsMessageHtml/>
+          </div>
+        <b:else/>
+          <div class='blog-alert alert alert-warning' role='alert'>
+            <i aria-hidden='true' class='fa fa-search-minus'/>
+            <data:view.search.resultsMessageHtml/>
+          </div>
+        	<b:comment>=== Search form ===</b:comment>
+          <div class='card'>
+            <div class='card-block'>
+              <p class='card-text'><data:messages.noResultsFound/></p>
+            </div>
+            <ul class='list-group list-group-flush'>
+              <li class='list-group-item'>
+                <form class='w-100' expr:action='data:blog.searchUrl' method='get'>
+                  <div class='input-group' role='search'>
+                    <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
+                    <input class='form-control' expr:aria-label='data:messages.searchBlog' expr:placeholder='data:messages.searchBlog' id='blog-alert-search-form' name='q' type='search'/>
+                  </div>
+                </form>
+              </li>
+              <li class='list-group-item'>Make sure all words are spelled correctly</li>
+              <li class='list-group-item'>Try different keywords</li>
+              <li class='list-group-item'>Try more general keywords</li>
+              <li class='list-group-item'>Try fewer keywords</li>
+            </ul>
+          </div>
+        </b:if>
+      </b:if>
+
+      <b:comment>=== Archive page ===</b:comment>
+      <b:if cond='data:view.isArchive'>
+        <b:if cond='data:posts.size gte 1'>
+          <div class='blog-alert alert alert-success' role='alert'>
+            <i aria-hidden='true' class='fa fa-archive'/>
+            <data:view.archive.rangeMessage/>
+          </div>
+        <b:else/>
+          <div class='blog-alert alert alert-warning' role='alert'>
+            <i aria-hidden='true' class='fa fa-archive'/>
+            <data:view.archive.rangeMessage/>
+          </div>
+          <b:comment>=== Search form ===</b:comment>
+          <div class='card'>
+            <div class='card-block'>
+              <p class='card-text'><data:messages.noResultsFound/></p>
+            </div>
+            <ul class='list-group list-group-flush'>
+              <li class='list-group-item'>
+                <form class='w-100' expr:action='data:blog.searchUrl' method='get'>
+                  <div class='input-group' role='search'>
+                    <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
+                    <input class='form-control' expr:aria-label='data:messages.searchBlog' expr:placeholder='data:messages.searchBlog' id='blog-alert-search-form' name='q' type='search'/>
+                  </div>
+                </form>
+              </li>
+            </ul>
+          </div>
+        </b:if>
+      </b:if>
+
+      <b:comment>=== Error page ===</b:comment>
+      <b:if cond='data:view.isError'>
+        <div class='blog-alert alert alert-danger' role='alert'>
+          <i aria-hidden='true' class='fa fa-exclamation-circle'/>
+          <strong><data:navMessage/></strong>
+        </div>
+        <b:comment>=== Search form ===</b:comment>
+        <div class='card'>
+          <div class='card-block'>
+            <form class='w-100' expr:action='data:blog.searchUrl' method='get'>
+              <div class='input-group' role='search'>
+                <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
+                <input class='form-control' expr:aria-label='data:messages.searchBlog' expr:placeholder='data:messages.searchBlog' id='blog-alert-search-form' name='q' type='search'/>
+              </div>
+            </form>
+          </div>
+        </div>
+      </b:if>
+    </b:includable>
+    <b:includable id='blog-comments' var='post'>
+      <b:loop values='data:posts' var='post'>
+        <b:if cond='data:post.allowComments'>
+
+          <div class='blog-comments my-5' id='comments'>
+            <h1 class='blog-comments-title'><data:messages.comments/></h1>
+
+            <b:if cond='data:post.commentSource == 1'>
+
+              <div class='cmt_iframe_holder' expr:data-href='data:post.url'/>
+
+            <b:else/>
+
+              <div class='alert alert-info mb-0' role='alert'>
+                <h5 class='alert-heading mb-3'>
+                  <i aria-hidden='true' class='fa fa-google-plus fa-lg'/>
+                  <span class='sr-only'>Google+</span>
+                </h5>
+
+                <b:comment>=== French (France) - ‪Français (France)‬ ===</b:comment>
+                <b:if cond='data:blog.locale == &quot;fr&quot;'>
+                  <p class='mb-1'><strong>Pour activer les commentaires Google+:</strong></p>
+                  <ol class='pl-4 mb-3'>
+                    <li>Vérifiez que vous utilisez votre profil Google+ et que votre blog est public.</li>
+                    <li>Dans le menu de gauche, cliquez sur <strong>Paramètres &gt; Articles, commentaires et partage</strong>.</li>
+                    <li>Sous la zone des commentaires Google+, choisissez <strong>Oui</strong>. En haut à droite de l'écran, cliquez sur "Enregistrer les paramètres".</li>
+                  </ol>
+
+                <b:comment>=== Dutch - ‪Nederlands‬ ===</b:comment>
+                <b:elseif cond='data:blog.locale == &quot;nl&quot;'/>
+                  <p class='mb-1'><strong>Google+ reacties inschakelen:</strong></p>
+                  <ol class='pl-4 mb-3'>
+                    <li>Zorg dat je Google+ als profiel kiest en dat je blog openbaar is.</li>
+                    <li>Klik in het linkermenu op <strong>Instellingen &gt; Posts, reacties en delen</strong>.</li>
+                    <li>Kies <strong>Ja</strong> bij 'Google+ reacties'. Klik in de rechterbovenhoek op 'Instellingen opslaan'.</li>
+                  </ol>
+
+                <b:comment>=== German - ‪Deutsch‬ ===</b:comment>
+                <b:elseif cond='data:blog.locale == &quot;de&quot;'/>
+                  <p class='mb-1'><strong>So aktivieren Sie Google+ Kommentare:</strong></p>
+                  <ol class='pl-4 mb-3'>
+                    <li>Achten Sie darauf, dass Sie Google+ als Ihr Profil verwenden und Ihr Blog öffentlich ist.</li>
+                    <li>Klicken Sie im linken Menü auf <strong>Einstellungen &gt; Posts, Kommentare und Teilen</strong>.</li>
+                    <li>Wählen Sie im Bereich "Google+ Kommentare" die Option <strong>Ja</strong> aus. Klicken Sie rechts oben auf "Einstellungen speichern".</li>
+                  </ol>
+
+                <b:comment>=== Turkish - ‪Türkçe‬ ===</b:comment>
+                <b:elseif cond='data:blog.locale == &quot;tr&quot;'/>
+                  <p class='mb-1'><strong>Google+ yorumlarını etkinleştirmek için:</strong></p>
+                  <ol class='pl-4 mb-3'>
+                    <li>Profil olarak Google+'yı kullandığınızdan ve blogunuzun herkese açık olduğundan emin olun.</li>
+                    <li>Soldaki menüde, <strong>Ayarlar &gt;  Yayınlar, yorumlar ve paylaşım</strong>'ı tıklayın.</li>
+                    <li>"Google+ Yorumları" altında, <strong>Evet</strong>'i seçin. Sağ üstteki Ayarları kaydet seçeneğini tıklayın.</li>
+                  </ol>
+
+                <b:comment>=== Italian - ‪Italiano‬ ===</b:comment>
+                <b:elseif cond='data:blog.locale == &quot;it&quot;'/>
+                  <p class='mb-1'><strong>Per attivare i commenti di Google+:</strong></p>
+                  <ol class='pl-4 mb-3'>
+                    <li>Assicurati di utilizzare Google+ come profilo e che il tuo blog sia pubblico.</li>
+                    <li>Nel menu a sinistra, fai clic su <strong>Impostazioni &gt; Post, commenti e condivisione</strong>.</li>
+                    <li>In "Commenti Google+" scegli <strong>Sì</strong>. In alto a destra, fai clic su Salva impostazioni.</li>
+                  </ol>
+
+                <b:comment>=== Thai - ‪ไทย‬ ===</b:comment>
+                <b:elseif cond='data:blog.locale == &quot;th&quot;'/>
+                  <p class='mb-1'><strong>วิธีเปิด Google+ คอมเมนต์มีดังนี้</strong></p>
+                  <ol class='pl-4 mb-3'>
+                    <li>ตรวจดูว่าคุณใช้ Google+ เป็นโปรไฟล์อยู่และบล็อกของคุณตั้งเป็นสาธารณะ</li>
+                    <li>คลิก<strong>การตั้งค่า &gt; โพสต์, คอมเมนต์ และการแชร์</strong> ที่เมนูทางซ้าย</li>
+                    <li>เลือก<strong>ใช่</strong> ใต้ "Google+ คอมเมนต์" คลิกบันทึกการตั้งค่าที่ด้านขวาบน</li>
+                  </ol>
+
+                <b:comment>=== Japanese - ‪日本語‬ ===</b:comment>
+                <b:elseif cond='data:blog.locale == &quot;ja&quot;'/>
+                  <p class='mb-1'><strong>Google+ コメントを有効にするには:</strong></p>
+                  <ol class='pl-4 mb-3'>
+                    <li>Google+ プロフィールを使用していることと、ブログを一般公開していることを確認します。</li>
+                    <li>左側のメニューで <strong>[設定] &gt; [投稿、コメント、共有]</strong> をクリックします。</li>
+                    <li>[Google+ コメント] で <strong>[はい]</strong> を選択します。右上の [設定を保存] をクリックします。</li>
+                  </ol>
+
+                <b:comment>=== Korean - ‪한국어‬ ===</b:comment>
+                <b:elseif cond='data:blog.locale == &quot;ko&quot;'/>
+                  <p class='mb-1'><strong>Google+ 댓글을 사용 설정하려면 다음 단계를 따릅니다.</strong></p>
+                  <ol class='pl-4 mb-3'>
+                    <li>프로필로 Google+를 사용 중인지 그리고 블로그가 공개되어 있는지 확인합니다.</li>
+                    <li>왼쪽 메뉴에서 <strong>설정 &gt; 글, 댓글 및 공유</strong>를 클릭합니다.</li>
+                    <li>'Google+ 댓글'에서 <strong>예</strong>를 선택합니다. 오른쪽 상단에서 설정 저장을 클릭합니다.</li>
+                  </ol>
+
+                <b:comment>=== Indonesian - ‪Indonesia‬ ===</b:comment>
+                <b:elseif cond='data:blog.locale == &quot;id&quot;'/>
+                  <p class='mb-1'><strong>Untuk mengaktifkan komentar Google+:</strong></p>
+                  <ol class='pl-4 mb-3'>
+                    <li>Pastikan Anda menggunakan Google+ sebagai profil dan blog Anda bersifat publik.</li>
+                    <li>Di menu sebelah kiri, klik <strong>Setelan &gt; Postingan, komentar, dan bagikan</strong>.</li>
+                    <li>Pada "Komentar Google+", pilih <strong>Ya</strong>. Di kanan atas, klik Simpan setelan.</li>
+                  </ol>
+
+                <b:comment>=== Default, English (United States) ===</b:comment>
+                <b:else/>
+                  <p class='mb-1'><strong>To turn on Google+ comments:</strong></p>
+                  <ol class='pl-4 mb-3'>
+                    <li>Make sure you're using Google+ as your profile and your blog is public.</li>
+                    <li>In the left menu, click <strong>Settings &gt; Posts, comments and sharing</strong>.</li>
+                    <li>Under "Google+ Comments," choose <strong>Yes</strong>. At the top right, click Save settings.</li>
+                  </ol>
+                </b:if>
+
+                <p class='mb-0'>
+                  <i aria-hidden='true' class='fa fa-info-circle'/>
+                  <a class='alert-link' href='https://support.google.com/blogger/answer/1752748' target='_blank'>
+                    <data:messages.learnMore/>
+                  </a>
+                </p>
+              </div>
+            </b:if>
+          </div>
+
+        </b:if>
+      </b:loop>
+    </b:includable>
+    <b:includable id='blog-pager' var='post'>
+      <b:if cond='!data:view.isPage'>
+        <nav class='blog-pager d-flex justify-content-between'>
+          <a class='blog-pager-newer-link btn btn-secondary' role='button'>
+            <b:attr expr:value='data:newerPageUrl ? data:newerPageUrl : &quot;#&quot;' name='href'/>
+            <b:class cond='!data:newerPageUrl' name='disabled'/>
+            <data:messages.newer/>
+          </a>
+
+          <a class='blog-pager-home-link btn btn-secondary' expr:href='data:blog.homepageUrl' role='button'>
+            <data:messages.home/>
+          </a>
+
+          <a class='blog-pager-older-link btn btn-secondary' role='button'>
+            <b:attr expr:value='data:olderPageUrl ? data:olderPageUrl : &quot;#&quot;' name='href'/>
+            <b:class cond='!data:olderPageUrl' name='disabled'/>
+            <data:messages.older/>
+          </a>
+        </nav>
+      </b:if>
+
+      <b:if cond='data:view.isPage'>
+        <nav class='blog-pager d-flex justify-content-center'>
+          <a class='blog-pager-home-link btn btn-secondary' expr:href='data:blog.homepageUrl' role='button'><data:messages.home/></a>
+        </nav>
+      </b:if>
+    </b:includable>
+  </b:defaultmarkup>
+</b:defaultmarkups>
+
 
 </head>
 <body>
@@ -621,7 +1029,6 @@ Post layout and styles
 <b:class cond='data:view.isArchive' name='blog-view-archive'/>
 <b:class cond='data:view.isError' name='blog-view-error'/>
 <b:class cond='data:view.isPreview' name='blog-view-preview'/>
-<b:class name='class-name'/>
 
 
 <b:comment>
@@ -748,19 +1155,50 @@ Main and sidebar
                   </b:if>
 
                   <b:comment>=== Breadcrumb ===</b:comment>
-                  <b:include name='main.blog-breadcrumb'/>
+                  <b:include name='blog-breadcrumb'/>
 
                   <b:comment>=== Alert ===</b:comment>
-                  <b:include name='main.blog-alert'/>
+                  <b:include name='blog-alert'/>
 
                   <b:comment>=== Posts ===</b:comment>
-                  <b:include cond='data:posts.notEmpty' name='main.blog-posts'/>
+                  <b:if cond='data:posts.notEmpty'>
+                    <div class='blog-posts'>
+                      <b:comment>=== Homepage ===</b:comment>
+                      <b:if cond='data:view.isHomepage'>
+                        <b:include name='post-home'/>
+                      </b:if>
+                      <b:comment>=== Item page ===</b:comment>
+                      <b:if cond='data:view.isPost'>
+                        <b:include name='post-item'/>
+                      </b:if>
+                      <b:comment>=== Static page ===</b:comment>
+                      <b:if cond='data:view.isPage'>
+                        <b:include name='post-static'/>
+                      </b:if>
+                      <b:comment>=== Search (label) page ===</b:comment>
+                      <b:if cond='data:view.search.label'>
+                        <b:include name='post-search-label'/>
+                      </b:if>
+                      <b:comment>=== Search (query) page ===</b:comment>
+                      <b:if cond='data:view.search.query'>
+                        <b:include name='post-search-query'/>
+                      </b:if>
+                      <b:comment>=== Search (default) page ===</b:comment>
+                      <b:if cond='data:view.search and !data:view.search.label and !data:view.search.query'>
+                        <b:include name='post-search-default'/>
+                      </b:if>
+                      <b:comment>=== Archive page ===</b:comment>
+                      <b:if cond='data:view.isArchive'>
+                        <b:include name='post-archive'/>
+                      </b:if>
+                    </div>
+                  </b:if>
 
                   <b:comment>=== Comments ===</b:comment>
-                  <b:include cond='data:view.isSingleItem' name='main.blog-comments'/>
+                  <b:include cond='data:view.isSingleItem' name='blog-comments'/>
 
                   <b:comment>=== Pager ===</b:comment>
-                  <b:include cond='data:posts.notEmpty' name='main.blog-pager'/>
+                  <b:include cond='data:posts.notEmpty' name='blog-pager'/>
 
                 </b:if>
 
@@ -947,7 +1385,7 @@ JavaScript
 
 <b:comment>
 =================================================
-Includes
+Includable
 ================================================= </b:comment>
 
 <b:comment>
@@ -1286,443 +1724,16 @@ Head
         <meta content='https://placehold.it/512/777/eee?text=404' property='twitter:image'/>
       </b:if>
     </b:includable>
-    <b:includable id='head.layoutModeCss'>
-      <b:template-skin>
-      <![CDATA[
-      /* Hide */
-      body#layout ul,
-      body#layout ol {
-        display: none;
-      }
-
-      /* Clearfix */
-      body#layout .container::after,
-      body#layout .section::after {
-        display: block;
-        content: "";
-        clear: both;
-      }
-
-      /* Grid */
-      body#layout .blogger-col-1,
-      body#layout .blogger-col-2,
-      body#layout .blogger-col-3,
-      body#layout .blogger-col-4,
-      body#layout .blogger-col-5,
-      body#layout .blogger-col-6,
-      body#layout .blogger-col-7,
-      body#layout .blogger-col-8,
-      body#layout .blogger-col-9,
-      body#layout .blogger-col-10,
-      body#layout .blogger-col-11,
-      body#layout .blogger-col-12 {
-        position: relative;
-        float: left;
-      }
-      body#layout .blogger-col-1 {
-        width: 8.33333333%;
-      }
-      body#layout .blogger-col-2 {
-        width: 16.66666667%;
-      }
-      body#layout .blogger-col-3 {
-        width: 25%;
-      }
-      body#layout .blogger-col-4 {
-        width: 33.33333333%;
-      }
-      body#layout .blogger-col-5 {
-        width: 41.66666667%;
-      }
-      body#layout .blogger-col-6 {
-        width: 50%;
-      }
-      body#layout .blogger-col-7 {
-        width: 58.33333333%;
-      }
-      body#layout .blogger-col-8 {
-        width: 66.66666667%;
-      }
-      body#layout .blogger-col-9 {
-        width: 75%;
-      }
-      body#layout .blogger-col-10 {
-        width: 83.33333333%;
-      }
-      body#layout .blogger-col-11 {
-        width: 91.66666667%;
-      }
-      body#layout .blogger-col-12 {
-        width: 100%;
-      }
-      ]]>
-      </b:template-skin>
-    </b:includable>
   </b:defaultmarkup>
 </b:defaultmarkups>
 
 <b:comment>
 -------------------------------------------------
-Blog `<widget type='Blog'></widget>`
+Post
 ------------------------------------------------- </b:comment>
 
 <b:defaultmarkups>
   <b:defaultmarkup type='Common'>
-    <b:includable id='main.blog-breadcrumb' var='post'>
-      <ol class='blog-breadcrumb breadcrumb'>
-        <li class='breadcrumb-item'>
-          <a expr:href='data:blog.homepageUrl'>Home</a>
-        </li>
-
-        <b:comment>=== Item page ===</b:comment>
-        <b:if cond='data:view.isPost'>
-          <li class='breadcrumb-item active'>Posts</li>
-          <li class='breadcrumb-item active'>
-            <b:loop values='data:posts' var='post'>
-              <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
-            </b:loop>
-          </li>
-        </b:if>
-
-        <b:comment>=== Static page ===</b:comment>
-        <b:if cond='data:view.isPage'>
-          <li class='breadcrumb-item active'>Pages</li>
-          <li class='breadcrumb-item active'>
-            <b:loop values='data:posts' var='post'>
-              <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
-            </b:loop>
-          </li>
-        </b:if>
-
-        <b:comment>=== Search (label) page ===</b:comment>
-        <b:if cond='data:view.search.label'>
-          <li class='breadcrumb-item active'>Search</li>
-          <li class='breadcrumb-item active'>Label</li>
-          <li class='breadcrumb-item active'>&quot;<data:view.search.label/>&quot;</li>
-        </b:if>
-
-        <b:comment>=== Search (query) page ===</b:comment>
-        <b:if cond='data:view.search.query'>
-          <li class='breadcrumb-item active'>Search</li>
-          <li class='breadcrumb-item active'>Query</li>
-          <li class='breadcrumb-item active'>&quot;<data:view.search.query/>&quot;</li>
-        </b:if>
-
-        <b:comment>=== Archive page ===</b:comment>
-        <b:if cond='data:view.isArchive'>
-          <li class='breadcrumb-item active'>Archive</li>
-          <li class='breadcrumb-item active'><data:view.archive.year/></li>
-          <b:if cond='data:view.archive.month'>
-            <li class='breadcrumb-item active'><data:view.archive.month/></li>
-          </b:if>
-        </b:if>
-
-        <b:comment>=== Error page ===</b:comment>
-        <b:if cond='data:view.isError'>
-          <li class='breadcrumb-item active'>404</li>
-        </b:if>
-      </ol>
-    </b:includable>
-    <b:includable id='main.blog-alert' var='post'>
-      <b:comment>=== Homepage ===</b:comment>
-      <b:if cond='data:view.isHomepage and data:posts.empty'>
-        <div class='blog-alert alert alert-warning' role='alert'>
-          <i aria-hidden='true' class='fa fa-exclamation-circle'/>
-          <data:messages.theresNothingHere/>
-        </div>
-      </b:if>
-
-      <b:comment>=== Search (label) page ===</b:comment>
-      <b:if cond='data:view.search.label'>
-        <b:if cond='data:posts.size gte 1'>
-          <div class='blog-alert alert alert-success' role='alert'>
-            <i aria-hidden='true' class='fa fa-tags'/>
-            <data:view.search.resultsMessageHtml/>
-          </div>
-        <b:else/>
-          <div class='blog-alert alert alert-warning' role='alert'>
-            <i aria-hidden='true' class='fa fa-tags'/>
-            <data:view.search.resultsMessageHtml/>
-          </div>
-          <b:comment>=== Search form ===</b:comment>
-          <div class='card'>
-            <div class='card-block'>
-              <p class='card-text'><data:messages.noResultsFound/></p>
-            </div>
-            <ul class='list-group list-group-flush'>
-              <li class='list-group-item'>
-                <form class='w-100' expr:action='data:blog.searchUrl' method='get'>
-                  <div class='input-group' role='search'>
-                    <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
-                    <input class='form-control' expr:aria-label='data:messages.searchBlog' expr:placeholder='data:messages.searchBlog' id='blog-alert-search-form' name='q' type='search'/>
-                  </div>
-                </form>
-              </li>
-            </ul>
-          </div>
-        </b:if>
-      </b:if>
-
-      <b:comment>=== Search (query) page ===</b:comment>
-      <b:if cond='data:view.search.query'>
-        <b:if cond='data:posts.size gte 1'>
-          <div class='blog-alert alert alert-success' role='alert'>
-            <i aria-hidden='true' class='fa fa-search-plus'/>
-            <data:view.search.resultsMessageHtml/>
-          </div>
-        <b:else/>
-          <div class='blog-alert alert alert-warning' role='alert'>
-            <i aria-hidden='true' class='fa fa-search-minus'/>
-            <data:view.search.resultsMessageHtml/>
-          </div>
-        	<b:comment>=== Search form ===</b:comment>
-          <div class='card'>
-            <div class='card-block'>
-              <p class='card-text'><data:messages.noResultsFound/></p>
-            </div>
-            <ul class='list-group list-group-flush'>
-              <li class='list-group-item'>
-                <form class='w-100' expr:action='data:blog.searchUrl' method='get'>
-                  <div class='input-group' role='search'>
-                    <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
-                    <input class='form-control' expr:aria-label='data:messages.searchBlog' expr:placeholder='data:messages.searchBlog' id='blog-alert-search-form' name='q' type='search'/>
-                  </div>
-                </form>
-              </li>
-              <li class='list-group-item'>Make sure all words are spelled correctly</li>
-              <li class='list-group-item'>Try different keywords</li>
-              <li class='list-group-item'>Try more general keywords</li>
-              <li class='list-group-item'>Try fewer keywords</li>
-            </ul>
-          </div>
-        </b:if>
-      </b:if>
-
-      <b:comment>=== Archive page ===</b:comment>
-      <b:if cond='data:view.isArchive'>
-        <b:if cond='data:posts.size gte 1'>
-          <div class='blog-alert alert alert-success' role='alert'>
-            <i aria-hidden='true' class='fa fa-archive'/>
-            <data:view.archive.rangeMessage/>
-          </div>
-        <b:else/>
-          <div class='blog-alert alert alert-warning' role='alert'>
-            <i aria-hidden='true' class='fa fa-archive'/>
-            <data:view.archive.rangeMessage/>
-          </div>
-          <b:comment>=== Search form ===</b:comment>
-          <div class='card'>
-            <div class='card-block'>
-              <p class='card-text'><data:messages.noResultsFound/></p>
-            </div>
-            <ul class='list-group list-group-flush'>
-              <li class='list-group-item'>
-                <form class='w-100' expr:action='data:blog.searchUrl' method='get'>
-                  <div class='input-group' role='search'>
-                    <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
-                    <input class='form-control' expr:aria-label='data:messages.searchBlog' expr:placeholder='data:messages.searchBlog' id='blog-alert-search-form' name='q' type='search'/>
-                  </div>
-                </form>
-              </li>
-            </ul>
-          </div>
-        </b:if>
-      </b:if>
-
-      <b:comment>=== Error page ===</b:comment>
-      <b:if cond='data:view.isError'>
-        <div class='blog-alert alert alert-danger' role='alert'>
-          <i aria-hidden='true' class='fa fa-exclamation-circle'/>
-          <strong><data:navMessage/></strong>
-        </div>
-        <b:comment>=== Search form ===</b:comment>
-        <div class='card'>
-          <div class='card-block'>
-            <form class='w-100' expr:action='data:blog.searchUrl' method='get'>
-              <div class='input-group' role='search'>
-                <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
-                <input class='form-control' expr:aria-label='data:messages.searchBlog' expr:placeholder='data:messages.searchBlog' id='blog-alert-search-form' name='q' type='search'/>
-              </div>
-            </form>
-          </div>
-        </div>
-      </b:if>
-    </b:includable>
-    <b:includable id='main.blog-posts' var='post'>
-      <div class='blog-posts'>
-        <b:comment>=== Homepage ===</b:comment>
-        <b:if cond='data:view.isHomepage'>
-          <b:include name='post-home'/>
-        </b:if>
-        <b:comment>=== Item page ===</b:comment>
-        <b:if cond='data:view.isPost'>
-          <b:include name='post-item'/>
-        </b:if>
-        <b:comment>=== Static page ===</b:comment>
-        <b:if cond='data:view.isPage'>
-          <b:include name='post-static'/>
-        </b:if>
-        <b:comment>=== Search (label) page ===</b:comment>
-        <b:if cond='data:view.search.label'>
-          <b:include name='post-search-label'/>
-        </b:if>
-        <b:comment>=== Search (query) page ===</b:comment>
-        <b:if cond='data:view.search.query'>
-          <b:include name='post-search-query'/>
-        </b:if>
-        <b:comment>=== Search (default) page ===</b:comment>
-        <b:if cond='data:view.search and !data:view.search.label and !data:view.search.query'>
-          <b:include name='post-search-default'/>
-        </b:if>
-        <b:comment>=== Archive page ===</b:comment>
-        <b:if cond='data:view.isArchive'>
-          <b:include name='post-archive'/>
-        </b:if>
-      </div>
-    </b:includable>
-    <b:includable id='main.blog-comments' var='post'>
-      <b:loop values='data:posts' var='post'>
-        <b:if cond='data:post.allowComments'>
-
-          <div class='blog-comments my-5' id='comments'>
-            <h1 class='blog-comments-title'><data:messages.comments/></h1>
-
-            <b:if cond='data:post.commentSource == 1'>
-
-              <div class='cmt_iframe_holder' expr:data-href='data:post.url'/>
-
-            <b:else/>
-
-              <div class='alert alert-info mb-0' role='alert'>
-                <h5 class='alert-heading mb-3'>
-                  <i aria-hidden='true' class='fa fa-google-plus fa-lg'/>
-                  <span class='sr-only'>Google+</span>
-                </h5>
-
-                <b:comment>=== French (France) - ‪Français (France)‬ ===</b:comment>
-                <b:if cond='data:blog.locale == &quot;fr&quot;'>
-                  <p class='mb-1'><strong>Pour activer les commentaires Google+:</strong></p>
-                  <ol class='pl-4 mb-3'>
-                    <li>Vérifiez que vous utilisez votre profil Google+ et que votre blog est public.</li>
-                    <li>Dans le menu de gauche, cliquez sur <strong>Paramètres &gt; Articles, commentaires et partage</strong>.</li>
-                    <li>Sous la zone des commentaires Google+, choisissez <strong>Oui</strong>. En haut à droite de l'écran, cliquez sur "Enregistrer les paramètres".</li>
-                  </ol>
-
-                <b:comment>=== Dutch - ‪Nederlands‬ ===</b:comment>
-                <b:elseif cond='data:blog.locale == &quot;nl&quot;'/>
-                  <p class='mb-1'><strong>Google+ reacties inschakelen:</strong></p>
-                  <ol class='pl-4 mb-3'>
-                    <li>Zorg dat je Google+ als profiel kiest en dat je blog openbaar is.</li>
-                    <li>Klik in het linkermenu op <strong>Instellingen &gt; Posts, reacties en delen</strong>.</li>
-                    <li>Kies <strong>Ja</strong> bij 'Google+ reacties'. Klik in de rechterbovenhoek op 'Instellingen opslaan'.</li>
-                  </ol>
-
-                <b:comment>=== German - ‪Deutsch‬ ===</b:comment>
-                <b:elseif cond='data:blog.locale == &quot;de&quot;'/>
-                  <p class='mb-1'><strong>So aktivieren Sie Google+ Kommentare:</strong></p>
-                  <ol class='pl-4 mb-3'>
-                    <li>Achten Sie darauf, dass Sie Google+ als Ihr Profil verwenden und Ihr Blog öffentlich ist.</li>
-                    <li>Klicken Sie im linken Menü auf <strong>Einstellungen &gt; Posts, Kommentare und Teilen</strong>.</li>
-                    <li>Wählen Sie im Bereich "Google+ Kommentare" die Option <strong>Ja</strong> aus. Klicken Sie rechts oben auf "Einstellungen speichern".</li>
-                  </ol>
-
-                <b:comment>=== Turkish - ‪Türkçe‬ ===</b:comment>
-                <b:elseif cond='data:blog.locale == &quot;tr&quot;'/>
-                  <p class='mb-1'><strong>Google+ yorumlarını etkinleştirmek için:</strong></p>
-                  <ol class='pl-4 mb-3'>
-                    <li>Profil olarak Google+'yı kullandığınızdan ve blogunuzun herkese açık olduğundan emin olun.</li>
-                    <li>Soldaki menüde, <strong>Ayarlar &gt;  Yayınlar, yorumlar ve paylaşım</strong>'ı tıklayın.</li>
-                    <li>"Google+ Yorumları" altında, <strong>Evet</strong>'i seçin. Sağ üstteki Ayarları kaydet seçeneğini tıklayın.</li>
-                  </ol>
-
-                <b:comment>=== Italian - ‪Italiano‬ ===</b:comment>
-                <b:elseif cond='data:blog.locale == &quot;it&quot;'/>
-                  <p class='mb-1'><strong>Per attivare i commenti di Google+:</strong></p>
-                  <ol class='pl-4 mb-3'>
-                    <li>Assicurati di utilizzare Google+ come profilo e che il tuo blog sia pubblico.</li>
-                    <li>Nel menu a sinistra, fai clic su <strong>Impostazioni &gt; Post, commenti e condivisione</strong>.</li>
-                    <li>In "Commenti Google+" scegli <strong>Sì</strong>. In alto a destra, fai clic su Salva impostazioni.</li>
-                  </ol>
-
-                <b:comment>=== Thai - ‪ไทย‬ ===</b:comment>
-                <b:elseif cond='data:blog.locale == &quot;th&quot;'/>
-                  <p class='mb-1'><strong>วิธีเปิด Google+ คอมเมนต์มีดังนี้</strong></p>
-                  <ol class='pl-4 mb-3'>
-                    <li>ตรวจดูว่าคุณใช้ Google+ เป็นโปรไฟล์อยู่และบล็อกของคุณตั้งเป็นสาธารณะ</li>
-                    <li>คลิก<strong>การตั้งค่า &gt; โพสต์, คอมเมนต์ และการแชร์</strong> ที่เมนูทางซ้าย</li>
-                    <li>เลือก<strong>ใช่</strong> ใต้ "Google+ คอมเมนต์" คลิกบันทึกการตั้งค่าที่ด้านขวาบน</li>
-                  </ol>
-
-                <b:comment>=== Japanese - ‪日本語‬ ===</b:comment>
-                <b:elseif cond='data:blog.locale == &quot;ja&quot;'/>
-                  <p class='mb-1'><strong>Google+ コメントを有効にするには:</strong></p>
-                  <ol class='pl-4 mb-3'>
-                    <li>Google+ プロフィールを使用していることと、ブログを一般公開していることを確認します。</li>
-                    <li>左側のメニューで <strong>[設定] &gt; [投稿、コメント、共有]</strong> をクリックします。</li>
-                    <li>[Google+ コメント] で <strong>[はい]</strong> を選択します。右上の [設定を保存] をクリックします。</li>
-                  </ol>
-
-                <b:comment>=== Korean - ‪한국어‬ ===</b:comment>
-                <b:elseif cond='data:blog.locale == &quot;ko&quot;'/>
-                  <p class='mb-1'><strong>Google+ 댓글을 사용 설정하려면 다음 단계를 따릅니다.</strong></p>
-                  <ol class='pl-4 mb-3'>
-                    <li>프로필로 Google+를 사용 중인지 그리고 블로그가 공개되어 있는지 확인합니다.</li>
-                    <li>왼쪽 메뉴에서 <strong>설정 &gt; 글, 댓글 및 공유</strong>를 클릭합니다.</li>
-                    <li>'Google+ 댓글'에서 <strong>예</strong>를 선택합니다. 오른쪽 상단에서 설정 저장을 클릭합니다.</li>
-                  </ol>
-
-                <b:comment>=== Indonesian - ‪Indonesia‬ ===</b:comment>
-                <b:elseif cond='data:blog.locale == &quot;id&quot;'/>
-                  <p class='mb-1'><strong>Untuk mengaktifkan komentar Google+:</strong></p>
-                  <ol class='pl-4 mb-3'>
-                    <li>Pastikan Anda menggunakan Google+ sebagai profil dan blog Anda bersifat publik.</li>
-                    <li>Di menu sebelah kiri, klik <strong>Setelan &gt; Postingan, komentar, dan bagikan</strong>.</li>
-                    <li>Pada "Komentar Google+", pilih <strong>Ya</strong>. Di kanan atas, klik Simpan setelan.</li>
-                  </ol>
-
-                <b:comment>=== Default, English (United States) ===</b:comment>
-                <b:else/>
-                  <p class='mb-1'><strong>To turn on Google+ comments:</strong></p>
-                  <ol class='pl-4 mb-3'>
-                    <li>Make sure you're using Google+ as your profile and your blog is public.</li>
-                    <li>In the left menu, click <strong>Settings &gt; Posts, comments and sharing</strong>.</li>
-                    <li>Under "Google+ Comments," choose <strong>Yes</strong>. At the top right, click Save settings.</li>
-                  </ol>
-                </b:if>
-
-                <p class='mb-0'><i aria-hidden='true' class='fa fa-info-circle'/> <a class='alert-link' href='https://support.google.com/blogger/answer/1752748' target='_blank'><data:messages.learnMore/></a></p>
-              </div>
-            </b:if>
-          </div>
-
-        </b:if>
-      </b:loop>
-    </b:includable>
-    <b:includable id='main.blog-pager' var='post'>
-      <b:if cond='!data:view.isPage'>
-        <nav class='blog-pager d-flex justify-content-between'>
-          <a class='blog-pager-newer-link btn btn-secondary' role='button'>
-            <b:attr expr:value='data:newerPageUrl ? data:newerPageUrl : &quot;#&quot;' name='href'/>
-            <b:class cond='!data:newerPageUrl' name='disabled'/>
-            <data:messages.newer/>
-          </a>
-
-          <a class='blog-pager-home-link btn btn-secondary' expr:href='data:blog.homepageUrl' role='button'><data:messages.home/></a>
-
-          <a class='blog-pager-older-link btn btn-secondary' role='button'>
-            <b:attr expr:value='data:olderPageUrl ? data:olderPageUrl : &quot;#&quot;' name='href'/>
-            <b:class cond='!data:olderPageUrl' name='disabled'/>
-            <data:messages.older/>
-          </a>
-        </nav>
-      </b:if>
-
-      <b:if cond='data:view.isPage'>
-        <nav class='blog-pager d-flex justify-content-center'>
-          <a class='blog-pager-home-link btn btn-secondary' expr:href='data:blog.homepageUrl' role='button'><data:messages.home/></a>
-        </nav>
-      </b:if>
-    </b:includable>
     <b:includable id='byline.header'>
       <b:if cond='data:headerByline.items.notEmpty'>
         <ul class='list-inline mb-0'>
@@ -2240,11 +2251,7 @@ Blog `<widget type='Blog'></widget>`
   </b:defaultmarkup>
 </b:defaultmarkups>
 
-<b:comment>
-Unused default inclusions
-  Default inclusions can not be deleted.
-  But, you can close an inclusion (e.g., `<b:includable id='foo'/>`).
-</b:comment>
+<b:comment>=== Remove default inclusions ===</b:comment>
 
 <b:defaultmarkups>
   <b:defaultmarkup type='Blog'>

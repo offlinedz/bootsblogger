@@ -107,7 +107,12 @@
             </ol>
           </b:if>
 
-          <p class='mb-0'><i aria-hidden='true' class='fa fa-info-circle'/> <a class='alert-link' href='https://support.google.com/blogger/answer/1752748' target='_blank'><data:messages.learnMore/></a></p>
+          <p class='mb-0'>
+            <i aria-hidden='true' class='fa fa-info-circle'/>
+            <a class='alert-link' href='https://support.google.com/blogger/answer/1752748' target='_blank'>
+              <data:messages.learnMore/>
+            </a>
+          </p>
         </div>
       </b:if>
     </div>

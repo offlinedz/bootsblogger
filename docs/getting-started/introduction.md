@@ -19,7 +19,7 @@ Anda dapat menggunakan Bootsblogger dengan dua cara, yaitu:
 
 ### Compiled template
 
-Membangun template langsung di editor HTML Blogger atau dapat juga menggunakan *text editor* favorit Anda.
+Membangun template langsung di editor HTML Blogger, atau Anda dapat menggunakan *text editor* favorit Anda.
 
 <a href="{{ site.download.dist }}" class="btn btn-bd">Download compiled template</a>
 
@@ -43,7 +43,7 @@ Membangun template menggunakan [build tools]({{ site.baseurl }}/getting-started/
 
 **Content:**
 
-Template terkompilasi, beserta kode sumber Sass, template, dan berkas dokumentasi. Untuk lebih jelas lihat struktur di bawah ini.
+Template terkompilasi, beserta kode sumber CSS, template, dan dokumentasi. Untuk lebih jelas lihat struktur di bawah ini.
 
 {% highlight plaintext %}
 bootsblogger/
@@ -55,29 +55,33 @@ bootsblogger/
 │   ├── bootstrap/
 │   └── _custom.scss
 └── template-src/
-    ├── components/
-    ├── includes/
-    ├── post-layout/
+    ├── default-markups/
+    ├── includable/
+    ├── partials/
+    ├── post/
     ├── widgets/
     ├── config.json
     ├── index.xml
+    ├── layout-mode.css
     ├── script.js
     └── skin.css
 {% endhighlight %}
 
 - **`dist/template.xml`** - Template terkompilasi.
 - **`docs/`** - Berkas-berkas dokumentasi.
-- **`scss/`** - Kode sumber CSS Bootstrap dan Bootsblogger yang akan dikompilasi ke dalam `template-src/includes/assets/css`.
+- **`scss/`** - Kode sumber CSS Bootstrap dan Bootsblogger yang akan dikompilasi ke dalam `template-src/includable/assets/css`.
   - `_custom.scss` - Digunakan untuk [mengubahsuaikan variabel Sass]({{ site.baseurl }}/getting-started/options/) Bootstrap dan Bootsblogger.
 - **`template-src/`** - Kode sumber template.
-  - `components/` - Bagian-bagian template untuk komponen.
-  - `includes/` - Bagian-bagian template untuk [head]({{ site.baseurl }}/core-template/includes-head/), [blog posts]({{ site.baseurl }}/core-template/includes-blog-posts/), dan [assets]({{ site.baseurl }}/core-template/includes-assets/).
-  - `post-layout/` - Bagian-bagian template untuk mengatur tampilan posting.
-  - `widgets/` - Bagian-bagian template untuk widget.
+  - `default-markups/` - *Default markup* untuk gadget.
+  - `includable/` - Includable: [head]({{ site.baseurl }}/core-template/includable-head/), [post]({{ site.baseurl }}/core-template/includable-post/), dan [assets]({{ site.baseurl }}/core-template/includable-assets/).
+  - `partials` - *Partial templates*.
+  - `post/` - Bagian-bagian template untuk mengatur tampilan posting blog. [Dokumentasi]({{ site.baseurl }}/core-template/post/).
+  - `widgets/` - Widget.
+   - `config.json` - Konfigurasi.
   - `index.xml` - Untuk menyertakan keseluruhan bagian-bagian template, dan akan dikompilasi ke dalam `/dist`.
-  - `config.json` - Template config.
+  - `layout-mode.css` - CSS untuk menyesuaikan tata letak widget/gadget (pada menu bilah kiri, klik **Layout**).
   - `script.js` - Template JavaScript.
-  - `style.css` - Template Skin.
+  - `skin.css` - Template Skin.
 
 ## Bootstrap
 

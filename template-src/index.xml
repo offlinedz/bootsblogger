@@ -37,7 +37,11 @@ CSS
 <b:include name='css.fontAwesome'/>
 
 <b:comment>=== Layout mode CSS ===</b:comment>
-<b:include name='head.layoutModeCss'/>
+<b:template-skin>
+<![CDATA[
+<!--(bake layout-mode.css)-->
+]]>
+</b:template-skin>
 
 <b:comment>=== Template Skin ===</b:comment>
 <b:skin>
@@ -49,10 +53,10 @@ CSS
 
 <b:comment>
 =================================================
-Post layout and styles
+Post (Jump to widget: Blog1 --- includable: main)
 ================================================= </b:comment>
 
-<!--(bake post-layout/_index.xml)-->
+<!--(bake post/_index.xml)-->
 
 
 </head>
@@ -66,7 +70,6 @@ Post layout and styles
 <b:class cond='data:view.isArchive' name='blog-view-archive'/>
 <b:class cond='data:view.isError' name='blog-view-error'/>
 <b:class cond='data:view.isPreview' name='blog-view-preview'/>
-<b:class name='class-name'/>
 
 
 <b:comment>
@@ -86,7 +89,7 @@ Skip navigation
 Navbar
 ================================================= </b:comment>
 
-<!--(bake components/navbar.xml)-->
+<!--(bake partials/navbar.xml)-->
 
 
 <b:comment>
@@ -94,7 +97,7 @@ Navbar
 Jumbotron
 ================================================= </b:comment>
 
-<!--(bake components/jumbotron.xml)-->
+<!--(bake partials/jumbotron.xml)-->
 
 
 <b:comment>
@@ -189,10 +192,10 @@ JavaScript
 
 <b:comment>
 =================================================
-Includes
+Includable
 ================================================= </b:comment>
 
-<!--(bake includes/_index.xml)-->
+<!--(bake includable/_index.xml)-->
 
 
 <b:comment>

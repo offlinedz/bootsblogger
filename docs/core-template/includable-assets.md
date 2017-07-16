@@ -1,7 +1,7 @@
 ---
 layout: docs
-title: Includes - Assets
-description: CSS, JavaScript, images, icons, dan lainnya.
+title: Includable - Assets
+description: CSS, JavaScript, icons, dan lainnya.
 group: core-template
 ---
 
@@ -17,18 +17,16 @@ group: core-template
 ###### Source <small>(Compiled)</small>
 
 {% highlight plaintext %}
-template-src/includes/assets/css/bootstrap/bootstrap.min.css
+template-src/includable/assets/css/bootstrap/bootstrap.min.css
 {% endhighlight %}
 
-###### Includable
-
-CSS Bootstrap dikompilasi dari kode sumber, oleh karena itu, CSS Bootstrap disertakan menggunakan tag `<style>` HTML (Internal style sheet).
+###### Includable <small>(Internal style sheet)</small>
 
 {% highlight html %}
 <b:includable id='css.bootstrap'>...</b:includable>
 {% endhighlight %}
 
-###### Usage
+###### Usage <small>(Required)</small>
 
 {% highlight html %}
 <b:include name='css.bootstrap'/>
@@ -57,7 +55,7 @@ Lihat `template-src/config.json`:
 <b:includable id='js.bootstrap'>...</b:includable>
 {% endhighlight %}
 
-###### Usage
+###### Usage <small>(Required)</small>
 
 {% highlight html %}
 <b:include name='js.bootstrap'/>
@@ -68,18 +66,16 @@ Lihat `template-src/config.json`:
 ###### Source <small>(Compiled)</small>
 
 {% highlight plaintext %}
-template-src/includes/assets/css/bootsblogger/bootsblogger.min.css
+template-src/includable/assets/css/bootsblogger/bootsblogger.min.css
 {% endhighlight %}
 
-###### Includable
-
-CSS Bootsblogger dikompilasi dari kode sumber, oleh karena itu, CSS Bootsblogger disertakan menggunakan tag `<style>` HTML (Internal style sheet).
+###### Includable <small>(Internal style sheet)</small>
 
 {% highlight html %}
 <b:includable id='css.bootsblogger'>...</b:includable>
 {% endhighlight %}
 
-###### Usage
+###### Usage <small>(Required)</small>
 
 {% highlight html %}
 <b:include name='css.bootsblogger'/>
@@ -110,7 +106,7 @@ Lihat `template-src/config.json`:
 <b:includable id='css.fontAwesome'>...</b:includable>
 {% endhighlight %}
 
-###### Usage
+###### Usage <small>(Required)</small>
 
 {% highlight html %}
 <b:include name='css.fontAwesome'/>
@@ -118,12 +114,12 @@ Lihat `template-src/config.json`:
 
 ## Icons
 
-### Blogger
+### Blogger <small>(Inline SVG)</small>
 
 ###### Source
 
 {% highlight plaintext %}
-template-src/includes/assets/icons/icons.blogger.xml
+template-src/includable/assets/icons/icons.blogger.xml
 {% endhighlight %}
 
 ###### Includable
@@ -153,12 +149,11 @@ template-src/includes/assets/icons/icons.blogger.xml
 <b:include data='{ width: 24, height: 24, fillBg: "#ff5722", fillB: "#fff", class: "", style: "vertical-align: middle;" }' name='icons.blogger'/> Blogger
 {% endhighlight %}
 
-### Bootsblogger
+### Bootsblogger <small>(Inline SVG)</small>
 
 ###### Source
-
 {% highlight plaintext %}
-template-src/includes/assets/icons/icons.bootsblogger.xml
+template-src/includable/assets/icons/icons.bootsblogger.xml
 {% endhighlight %}
 
 ###### Includable
@@ -215,7 +210,7 @@ Lihat `template-src/config.json`:
 <b:includable id='js.jquery'>...</b:includable>
 {% endhighlight %}
 
-###### Usage
+###### Usage <small>(Required)</small>
 
 {% highlight html %}
 <b:include name='js.jquery'/>
@@ -246,7 +241,7 @@ Lihat `template-src/config.json`:
 <b:includable id='js.popper'>...</b:includable>
 {% endhighlight %}
 
-###### Usage
+###### Usage <small>(Required)</small>
 
 {% highlight html %}
 <b:include name='js.popper'/>

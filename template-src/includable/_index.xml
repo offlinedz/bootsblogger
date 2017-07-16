@@ -23,82 +23,56 @@ Head
     <b:includable id='head.twitterTags'>
       <!--(bake head/head.twitterTags.xml)-->
     </b:includable>
-    <b:includable id='head.layoutModeCss'>
-      <b:template-skin>
-      <![CDATA[
-      <!--(bake head/head.layout-mode.css)-->
-      ]]>
-      </b:template-skin>
-    </b:includable>
   </b:defaultmarkup>
 </b:defaultmarkups>
 
 <b:comment>
 -------------------------------------------------
-Blog `<widget type='Blog'></widget>`
+Post
 ------------------------------------------------- </b:comment>
 
 <b:defaultmarkups>
   <b:defaultmarkup type='Common'>
-    <b:includable id='main.blog-breadcrumb' var='post'>
-      <!--(bake blog-posts/main.blog-breadcrumb.xml)-->
-    </b:includable>
-    <b:includable id='main.blog-alert' var='post'>
-      <!--(bake blog-posts/main.blog-alert.xml)-->
-    </b:includable>
-    <b:includable id='main.blog-posts' var='post'>
-      <!--(bake blog-posts/main.blog-posts.xml)-->
-    </b:includable>
-    <b:includable id='main.blog-comments' var='post'>
-      <!--(bake blog-posts/main.blog-comments.xml)-->
-    </b:includable>
-    <b:includable id='main.blog-pager' var='post'>
-      <!--(bake blog-posts/main.blog-pager.xml)-->
-    </b:includable>
     <b:includable id='byline.header'>
-      <!--(bake blog-posts/byline.header.xml)-->
+      <!--(bake post/byline.header.xml)-->
     </b:includable>
     <b:includable id='byline.footer'>
-      <!--(bake blog-posts/byline.footer.xml)-->
+      <!--(bake post/byline.footer.xml)-->
     </b:includable>
     <b:includable id='post.authorName'>
-      <!--(bake blog-posts/post.authorName.xml)-->
+      <!--(bake post/post.authorName.xml)-->
     </b:includable>
     <b:includable id='post.authorImage'>
-      <!--(bake blog-posts/post.authorImage.xml)-->
+      <!--(bake post/post.authorImage.xml)-->
     </b:includable>
     <b:includable id='post.datePublished'>
-      <!--(bake blog-posts/post.datePublished.xml)-->
+      <!--(bake post/post.datePublished.xml)-->
     </b:includable>
     <b:includable id='post.dateUpdated'>
-      <!--(bake blog-posts/post.dateUpdated.xml)-->
+      <!--(bake post/post.dateUpdated.xml)-->
     </b:includable>
     <b:includable id='post.numComments'>
-      <!--(bake blog-posts/post.numComments.xml)-->
+      <!--(bake post/post.numComments.xml)-->
     </b:includable>
     <b:includable id='post.labels'>
-      <!--(bake blog-posts/post.labels.xml)-->
+      <!--(bake post/post.labels.xml)-->
     </b:includable>
     <b:includable id='post.featuredImage'>
-      <!--(bake blog-posts/post.featuredImage.xml)-->
+      <!--(bake post/post.featuredImage.xml)-->
     </b:includable>
     <b:includable id='post.featuredImageBg'>
-      <!--(bake blog-posts/post.featuredImageBg.xml)-->
+      <!--(bake post/post.featuredImageBg.xml)-->
     </b:includable>
     <b:includable id='post.snippet'>
-      <!--(bake blog-posts/post.snippet.xml)-->
+      <!--(bake post/post.snippet.xml)-->
     </b:includable>
     <b:includable id='post.jumpLink'>
-      <!--(bake blog-posts/post.jumpLink.xml)-->
+      <!--(bake post/post.jumpLink.xml)-->
     </b:includable>
   </b:defaultmarkup>
 </b:defaultmarkups>
 
-<b:comment>
-Unused default inclusions
-  Default inclusions can not be deleted.
-  But, you can close an inclusion (e.g., `<b:includable id='foo'/>`).
-</b:comment>
+<b:comment>=== Remove default inclusions ===</b:comment>
 
 <b:defaultmarkups>
   <b:defaultmarkup type='Blog'>

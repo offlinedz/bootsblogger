@@ -9,9 +9,10 @@
     - title: Overview
     - title: Page types
     - title: Body class
-    - title: Includes - Head
-    - title: Includes - Blog posts
-    - title: Includes - Assets
+    - title: Post
+    - title: Includable - Head
+    - title: Includable - Post
+    - title: Includable - Assets
 
 - title: Components
   pages:

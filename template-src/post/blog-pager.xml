@@ -6,7 +6,9 @@
       <data:messages.newer/>
     </a>
 
-    <a class='blog-pager-home-link btn btn-secondary' expr:href='data:blog.homepageUrl' role='button'><data:messages.home/></a>
+    <a class='blog-pager-home-link btn btn-secondary' expr:href='data:blog.homepageUrl' role='button'>
+      <data:messages.home/>
+    </a>
 
     <a class='blog-pager-older-link btn btn-secondary' role='button'>
       <b:attr expr:value='data:olderPageUrl ? data:olderPageUrl : &quot;#&quot;' name='href'/>
