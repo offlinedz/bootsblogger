@@ -14,7 +14,7 @@ Hanya dapat disertakan di dalam widget `Blog` (`<b:widget type='Blog'></b:widget
 
 ## Post byline items
 
-Untuk menampilkan *item* posting yang ada dalam daftar konfigurasi posting blog.
+Untuk menampilkan *item* posting yang ada dalam daftar konfigurasi posting blog (<a href="#" data-toggle="modal" data-target="#modalImgBloggerConfigureBlogPosts">lihat gambar</a>).
 
 ### Header
 
