@@ -121,8 +121,8 @@ project (indentation, accurate comments, etc.) and any other requirements
 
 - [`/bootsblogger/dist/`](../dist)
 - [`/bootsblogger/scss/bootstrap/`](../scss/bootstrap)
-- [`/bootsblogger/template-src/includes/assets/css/bootstrap/`](../template-src/includes/assets/css/bootstrap)
-- [`/bootsblogger/template-src/includes/assets/css/bootsblogger/`](../template-src/includes/assets/css/bootsblogger)
+- [`/bootsblogger/template-src/includable/assets/css/bootstrap/`](../template-src/includable/assets/css/bootstrap)
+- [`/bootsblogger/template-src/includable/assets/css/bootsblogger/`](../template-src/includable/assets/css/bootsblogger)
 
 **You should edit the source files in:**
 
