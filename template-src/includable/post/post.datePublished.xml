@@ -1,4 +1,4 @@
-<time expr:class='data:class' expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
+<time expr:class='data:timeClass' expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
   <b:if cond='data:customFormat'>
     <b:eval expr='format(data:post.date, data:customFormat)'/>
   <b:else/>

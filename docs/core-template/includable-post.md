@@ -139,7 +139,7 @@ Width = `size`, Height = ((`size` * `ratioHeight`) / `ratioWidth`).
 128x128:
 
 {% highlight html %}
-<b:include data='{ size: 128, ratioWidth: 1, ratioHeight: 1, class: "class-name" }' name='post.authorImage'/>
+<b:include data='{ size: 128, ratioWidth: 1, ratioHeight: 1, imageClass: "class-name" }' name='post.authorImage'/>
 {% endhighlight %}
 
 ### Dates
@@ -163,8 +163,8 @@ Untuk menampilkan tanggal diterbitkannya posting dan tanggal terakhir posting di
 ###### Usage
 
 {% highlight html %}
-Published: <b:include data='{ customFormat: "dd/MM/YYYY"|false, class: "class-name" }' name='post.datePublished'/>
-Last updated: <b:include data='{ customFormat: "dd/MM/YYYY"|false, class: "class-name" }' name='post.dateUpdated'/>
+Published: <b:include data='{ customFormat: "dd/MM/YYYY"|false, timeClass: "class-name" }' name='post.datePublished'/>
+Last updated: <b:include data='{ customFormat: "dd/MM/YYYY"|false, timeClass: "class-name" }' name='post.dateUpdated'/>
 {% endhighlight %}
 
 **Format:**
