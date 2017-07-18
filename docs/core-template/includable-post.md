@@ -448,7 +448,7 @@ template-src/includable/post/post.featuredImageBg.xml
 ###### Usage
 
 {% highlight html %}
-<b:include data='{ size: number, ratioWidth: number, ratioHeight: number, defaultNoImage: true|false, class: "class-name", style: "min-height: <number><units>;" }' name='post.featuredImageBg'/>
+<b:include data='{ size: number, ratioWidth: number, ratioHeight: number, noImage: true|false, class: "class-name", style: "min-height: <number><units>;" }' name='post.featuredImageBg'/>
 {% endhighlight %}
 
 **Example:**
@@ -456,7 +456,7 @@ template-src/includable/post/post.featuredImageBg.xml
 Width = `size`, Height = ((`size` * `ratioHeight`) / `ratioWidth`).
 
 {% highlight html %}
-<b:include data='{ size: 512, ratioWidth: 16, ratioHeight: 9, defaultNoImage: true|false, class: "class-name", style: "min-height: 180px;" }' name='post.featuredImageBg'/>
+<b:include data='{ size: 512, ratioWidth: 16, ratioHeight: 9, noImage: true|false, class: "class-name", style: "min-height: 180px;" }' name='post.featuredImageBg'/>
 {% endhighlight %}
 
 ### Snippet
