@@ -66,6 +66,28 @@ template-src/includable/post/byline.footer.xml
 
 ## Post items
 
+### Title
+
+Untuk menampilkan judul posting.
+
+###### Source
+
+{% highlight plaintext %}
+template-src/includable/post/post.title.xml
+{% endhighlight %}
+
+###### Includable
+
+{% highlight html %}
+<b:includable id='post.title'>...</b:includable>
+{% endhighlight %}
+
+###### Usage
+
+{% highlight html %}
+<b:include data='{ heading: true|false, headingTag: "h1|h2|h3|h4|h5|h6", headingClass: "class-name", link: true|false, linkClass: "class-name", noTitle: true|false }' name='post.title'/>
+{% endhighlight %}
+
 ### Author name
 
 Untuk menampilkan nama penulis.

@@ -39,6 +39,9 @@ Post
     <b:includable id='byline.footer'>
       <!--(bake post/byline.footer.xml)-->
     </b:includable>
+    <b:includable id='post.title'>
+      <!--(bake post/post.title.xml)-->
+    </b:includable>
     <b:includable id='post.authorName'>
       <!--(bake post/post.authorName.xml)-->
     </b:includable>
