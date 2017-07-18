@@ -398,7 +398,7 @@ template-src/includable/post/post.featuredImage.xml
 ###### Usage
 
 {% highlight html %}
-<b:include data='{ size: number, sourceSet: [number]|false, sourceSizes: "sizes"|false, ratioWidth: number, ratioHeight: number, link: true|false, defaultNoImage: true|false, imageClass: "class-name" }' name='post.featuredImage'/>
+<b:include data='{ size: number, sourceSet: [number]|false, sourceSizes: "sizes"|false, ratioWidth: number, ratioHeight: number, link: true|false, noImage: true|false, imageClass: "class-name" }' name='post.featuredImage'/>
 {% endhighlight %}
 
 **Notation:**
@@ -410,23 +410,23 @@ Responsive: Width = `sourceSet`, Height = ((`sourceSet` * `ratioHeight`) / `rati
 **Example without `srcset` and `sizes`:**
 
 {% highlight html %}
-<b:include data='{ size: 512, sourceSet: false, sourceSizes: false, ratioWidth: 16, ratioHeight: 9, link: true, defaultNoImage: true, imageClass: "class-name" }' name='post.featuredImage'/>
+<b:include data='{ size: 512, sourceSet: false, sourceSizes: false, ratioWidth: 16, ratioHeight: 9, link: true, noImage: true, imageClass: "class-name" }' name='post.featuredImage'/>
 {% endhighlight %}
 
 **Example with `srcset`, but without `sizes`:**
 
 {% highlight html %}
 <!-- Example 1: `false` -->
-<b:include data='{ size: 256, sourceSet: [256, 512, 1280, 1600], sourceSizes: false, ratioWidth: 16, ratioHeight: 9, link: true, defaultNoImage: true, imageClass: "class-name" }' name='post.featuredImage'/>
+<b:include data='{ size: 256, sourceSet: [256, 512, 1280, 1600], sourceSizes: false, ratioWidth: 16, ratioHeight: 9, link: true, noImage: true, imageClass: "class-name" }' name='post.featuredImage'/>
 
 <!-- Example 2: `100vw` -->
-<b:include data='{ size: 256, sourceSet: [256, 512, 1280, 1600], sourceSizes: "100vw", ratioWidth: 16, ratioHeight: 9, link: true, defaultNoImage: true, imageClass: "class-name" }' name='post.featuredImage'/>
+<b:include data='{ size: 256, sourceSet: [256, 512, 1280, 1600], sourceSizes: "100vw", ratioWidth: 16, ratioHeight: 9, link: true, noImage: true, imageClass: "class-name" }' name='post.featuredImage'/>
 {% endhighlight %}
 
 **Example with `srcset` and `sizes`:**
 
 {% highlight html %}
-<b:include data='{ size: 256, sourceSet: [256, 512, 1280, 1600], sourceSizes: "(max-width: 575px) 256px, (max-width: 767px) 512px, (max-width: 991px) 1280px, 1600px", ratioWidth: 16, ratioHeight: 9, link: true, defaultNoImage: true, imageClass: "class-name" }' name='post.featuredImage'/>
+<b:include data='{ size: 256, sourceSet: [256, 512, 1280, 1600], sourceSizes: "(max-width: 575px) 256px, (max-width: 767px) 512px, (max-width: 991px) 1280px, 1600px", ratioWidth: 16, ratioHeight: 9, link: true, noImage: true, imageClass: "class-name" }' name='post.featuredImage'/>
 {% endhighlight %}
 
 ##### Using CSS `background-image`

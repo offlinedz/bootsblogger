@@ -29,7 +29,7 @@
     </b:tag>
   </b:if>
 <b:else/>
-  <b:if cond='data:defaultNoImage'>
+  <b:if cond='data:noImage'>
     <b:tag cond='data:link' expr:href='data:post.url' name='a'>
       <img expr:alt='data:post.title ? data:post.title : data:messages.image' expr:class='data:imageClass' expr:src='&quot;https://placehold.it/&quot; + data:size + &quot;x&quot; + (((data:size * data:ratioHeight) % data:ratioWidth == 0) ? ((data:size * data:ratioHeight) / data:ratioWidth) : data:size) + &quot;/777/eee?text=B&quot;'/>
     </b:tag>
