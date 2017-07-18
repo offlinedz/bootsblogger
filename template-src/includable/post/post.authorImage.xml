@@ -1,15 +1,15 @@
 <b:if cond='data:post.author and data:post.author.authorPhoto'>
   <b:if cond='data:post.author.authorPhoto.image.isYoutube'>
     <b:tag cond='data:post.author.profileUrl' expr:href='data:post.author.profileUrl' name='a'>
-      <img expr:alt='data:post.author.name' expr:class='data:class' expr:src='data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl, data:size, (data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl'/>
+      <img expr:alt='data:post.author.name' expr:class='data:imageClass' expr:src='data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl, data:size, (data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl'/>
     </b:tag>
   <b:else/>
     <b:tag cond='data:post.author.profileUrl' expr:href='data:post.author.profileUrl' name='a'>
-      <img expr:alt='data:post.author.name' expr:class='data:class' expr:src='data:post.author.authorPhoto.image.isResizable ? resizeImage(data:post.author.authorPhoto.image, data:size, (data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.author.authorPhoto.image'/>
+      <img expr:alt='data:post.author.name' expr:class='data:imageClass' expr:src='data:post.author.authorPhoto.image.isResizable ? resizeImage(data:post.author.authorPhoto.image, data:size, (data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.author.authorPhoto.image'/>
     </b:tag>
   </b:if>
 <b:else/>
   <b:tag cond='data:post.author.profileUrl' expr:href='data:post.author.profileUrl' name='a'>
-    <img expr:alt='data:post.author.name' expr:class='data:class' expr:src='&quot;https://placehold.it/&quot; + data:ratioWidth + &quot;x&quot; + (((data:size * data:ratioHeight) % data:ratioWidth == 0) ? ((data:size * data:ratioHeight) / data:ratioWidth) : data:size) + &quot;/ff5722/fff?text=B&quot;'/>
+    <img expr:alt='data:post.author.name' expr:class='data:imageClass' expr:src='&quot;https://placehold.it/&quot; + data:ratioWidth + &quot;x&quot; + (((data:size * data:ratioHeight) % data:ratioWidth == 0) ? ((data:size * data:ratioHeight) / data:ratioWidth) : data:size) + &quot;/ff5722/fff?text=B&quot;'/>
   </b:tag>
 </b:if>

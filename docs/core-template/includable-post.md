@@ -129,7 +129,7 @@ template-src/includable/post/post.authorImage.xml
 ###### Usage
 
 {% highlight html %}
-<b:include data='{ size: number, ratioWidth: number, ratioHeight: number, class: "class-name" }' name='post.authorImage'/>
+<b:include data='{ size: number, ratioWidth: number, ratioHeight: number, imageClass: "class-name" }' name='post.authorImage'/>
 {% endhighlight %}
 
 **Example:**
