@@ -351,7 +351,7 @@ template-src/includable/post/post.numComments.xml
 
 {% highlight html %}
 <b:if cond='data:post.allowComments'>
-  <b:include data='{ class: "class-name" }' name='post.numComments'/>
+  <b:include data='{ linkClass: "class-name" }' name='post.numComments'/>
 </b:if>
 {% endhighlight %}
 
