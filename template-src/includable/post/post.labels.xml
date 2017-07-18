@@ -1,6 +1,6 @@
 <b:if cond='data:post.labels'>
   <b:loop index='i' values='data:post.labels' var='label'>
-    <a b:whitespace='remove' expr:class='data:class' expr:href='params(data:label.url, { max-results: data:max-results })' expr:title='data:label.name'><data:label.name/></a><b:if cond='(data:comma == true) and (data:i != (data:post.labels.size - 1))'>,</b:if>
+    <a b:whitespace='remove' expr:class='data:linkClass' expr:href='params(data:label.url, { max-results: data:maxResults })' expr:title='data:label.name'><data:label.name/></a><b:if cond='(data:comma == true) and (data:i != (data:post.labels.size - 1))'>,</b:if>
   </b:loop>
 <b:else/>
   <span expr:class='data:unlabelledClass'>Unlabelled</span>

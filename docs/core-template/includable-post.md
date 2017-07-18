@@ -374,7 +374,7 @@ template-src/includable/post/post.labels.xml
 ###### Usage
 
 {% highlight html %}
-<b:include data='{ comma: true|false, max-results: number, class: "class-name", unlabelledClass: "class-name" }' name='post.labels'/>
+<b:include data='{ comma: true|false, maxResults: number, linkClass: "class-name", unlabelledClass: "class-name" }' name='post.labels'/>
 {% endhighlight %}
 
 ### Featured image
