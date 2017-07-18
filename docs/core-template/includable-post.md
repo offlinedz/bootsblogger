@@ -502,5 +502,5 @@ template-src/includable/post/post.jumpLink.xml
 ###### Usage
 
 {% highlight html %}
-<b:include data='{ class: "btn btn-primary", parentClass: "class-name" }' name='post.jumpLink'/>
+<b:include data='{ linkClass: "btn btn-primary", parentClass: "class-name" }' name='post.jumpLink'/>
 {% endhighlight %}
