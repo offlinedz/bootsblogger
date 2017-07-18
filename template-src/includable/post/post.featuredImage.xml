@@ -2,7 +2,7 @@
   <b:if cond='data:post.featuredImage.isYoutube'>
     <b:tag cond='data:link' expr:href='data:post.url' name='a'>
       <img b:whitespace='remove'>
-        <b:class expr:name='data:class'/>
+        <b:class expr:name='data:imageClass'/>
         <b:attr expr:value='data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, data:size, (data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.featuredImage.youtubeMaxResDefaultUrl' name='src'/>
         <b:if cond='data:sourceSizes'>
           <b:attr expr:value='data:sourceSizes' name='sizes'/>
@@ -16,7 +16,7 @@
   <b:else/>
     <b:tag cond='data:link' expr:href='data:post.url' name='a'>
       <img b:whitespace='remove'>
-        <b:class expr:name='data:class'/>
+        <b:class expr:name='data:imageClass'/>
         <b:attr expr:value='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, data:size, (data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.featuredImage' name='src'/>
         <b:if cond='data:sourceSizes'>
           <b:attr expr:value='data:sourceSizes' name='sizes'/>
@@ -31,7 +31,7 @@
 <b:else/>
   <b:if cond='data:defaultNoImage'>
     <b:tag cond='data:link' expr:href='data:post.url' name='a'>
-      <img expr:alt='data:post.title ? data:post.title : data:messages.image' expr:class='data:class' expr:src='&quot;https://placehold.it/&quot; + data:size + &quot;x&quot; + (((data:size * data:ratioHeight) % data:ratioWidth == 0) ? ((data:size * data:ratioHeight) / data:ratioWidth) : data:size) + &quot;/777/eee?text=B&quot;'/>
+      <img expr:alt='data:post.title ? data:post.title : data:messages.image' expr:class='data:imageClass' expr:src='&quot;https://placehold.it/&quot; + data:size + &quot;x&quot; + (((data:size * data:ratioHeight) % data:ratioWidth == 0) ? ((data:size * data:ratioHeight) / data:ratioWidth) : data:size) + &quot;/777/eee?text=B&quot;'/>
     </b:tag>
   </b:if>
 </b:if>
