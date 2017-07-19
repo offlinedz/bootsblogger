@@ -1,18 +1,6 @@
-<p align="center">
-  <a href="https://bootsblogger.github.io"><img src="https://cdn.rawgit.com/bootsblogger/resources/master/assets/img/bootsblogger-solid.svg" alt="Bootsblogger" width=72 height=72></a>
-</p>
+# [Bootsblogger](https://bootsblogger.github.io/)
 
-<h3 align="center">Bootsblogger</h3>
-
-<p align="center">
-  <a href="https://blogger.com"><img align="center" src="https://cdn.rawgit.com/bootsblogger/resources/master/assets/img/blogger.svg" title="Blogger" alt="Blogger" width=42 height=42></a>
-  +
-  <a href="https://github.com/twbs/bootstrap"><img align="center" src="https://cdn.rawgit.com/bootsblogger/resources/master/assets/img/bootstrap-solid.svg" title="Bootstrap" alt="Bootstrap" width=42 height=42></a>
-  +
-  <img align="center" src="https://cdn.rawgit.com/bootsblogger/resources/master/assets/img/heart-solid.svg" alt="Heart" width=42 height=42>
-</p>
-
-<br>
+[Blogger](https://blogger.com/) + [Bootstrap](https://getbootstrap.com/) + :heart:
 
 ## Status
 
