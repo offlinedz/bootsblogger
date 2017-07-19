@@ -1,7 +1,7 @@
 <b:loop values='data:posts' var='post'>
   <b:if cond='data:post.allowComments'>
 
-    <div class='blog-comments my-5' id='comments'>
+    <div class='blog-comments' id='comments'>
       <h1 class='blog-comments-title'><data:messages.comments/></h1>
 
       <b:if cond='data:post.commentSource == 1'>

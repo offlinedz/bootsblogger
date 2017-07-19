@@ -1,22 +1,28 @@
 <b:comment>=== Homepage ===</b:comment>
 <b:if cond='data:view.isHomepage and data:posts.empty'>
-  <div class='blog-alert alert alert-warning' role='alert'>
-    <i aria-hidden='true' class='fa fa-exclamation-circle'/>
-    <data:messages.theresNothingHere/>
+  <div class='blog-alert'>
+    <div class='alert alert-warning' role='alert'>
+      <i aria-hidden='true' class='fa fa-exclamation-circle'/>
+      <data:messages.theresNothingHere/>
+    </div>
   </div>
 </b:if>
 
 <b:comment>=== Search (label) page ===</b:comment>
 <b:if cond='data:view.search.label'>
   <b:if cond='data:posts.size gte 1'>
-    <div class='blog-alert alert alert-success' role='alert'>
-      <i aria-hidden='true' class='fa fa-tags'/>
-      <data:view.search.resultsMessageHtml/>
+    <div class='blog-alert'>
+      <div class='alert alert-success' role='alert'>
+        <i aria-hidden='true' class='fa fa-tags'/>
+        <data:view.search.resultsMessageHtml/>
+      </div>
     </div>
   <b:else/>
-    <div class='blog-alert alert alert-warning' role='alert'>
-      <i aria-hidden='true' class='fa fa-tags'/>
-      <data:view.search.resultsMessageHtml/>
+    <div class='blog-alert'>
+      <div class='alert alert-warning' role='alert'>
+        <i aria-hidden='true' class='fa fa-tags'/>
+        <data:view.search.resultsMessageHtml/>
+      </div>
     </div>
     <b:comment>=== Search form ===</b:comment>
     <div class='card'>
@@ -40,14 +46,18 @@
 <b:comment>=== Search (query) page ===</b:comment>
 <b:if cond='data:view.search.query'>
   <b:if cond='data:posts.size gte 1'>
-    <div class='blog-alert alert alert-success' role='alert'>
-      <i aria-hidden='true' class='fa fa-search-plus'/>
-      <data:view.search.resultsMessageHtml/>
+    <div class='blog-alert'>
+      <div class='alert alert-success' role='alert'>
+        <i aria-hidden='true' class='fa fa-search-plus'/>
+        <data:view.search.resultsMessageHtml/>
+      </div>
     </div>
   <b:else/>
-    <div class='blog-alert alert alert-warning' role='alert'>
-      <i aria-hidden='true' class='fa fa-search-minus'/>
-      <data:view.search.resultsMessageHtml/>
+    <div class='blog-alert'>
+      <div class='alert alert-warning' role='alert'>
+        <i aria-hidden='true' class='fa fa-search-minus'/>
+        <data:view.search.resultsMessageHtml/>
+      </div>
     </div>
   	<b:comment>=== Search form ===</b:comment>
     <div class='card'>
@@ -75,14 +85,18 @@
 <b:comment>=== Archive page ===</b:comment>
 <b:if cond='data:view.isArchive'>
   <b:if cond='data:posts.size gte 1'>
-    <div class='blog-alert alert alert-success' role='alert'>
-      <i aria-hidden='true' class='fa fa-archive'/>
-      <data:view.archive.rangeMessage/>
+    <div class='blog-alert'>
+      <div class='alert alert-success' role='alert'>
+        <i aria-hidden='true' class='fa fa-archive'/>
+        <data:view.archive.rangeMessage/>
+      </div>
     </div>
   <b:else/>
-    <div class='blog-alert alert alert-warning' role='alert'>
-      <i aria-hidden='true' class='fa fa-archive'/>
-      <data:view.archive.rangeMessage/>
+    <div class='blog-alert'>
+      <div class='alert alert-warning' role='alert'>
+        <i aria-hidden='true' class='fa fa-archive'/>
+        <data:view.archive.rangeMessage/>
+      </div>
     </div>
     <b:comment>=== Search form ===</b:comment>
     <div class='card'>
@@ -105,9 +119,11 @@
 
 <b:comment>=== Error page ===</b:comment>
 <b:if cond='data:view.isError'>
-  <div class='blog-alert alert alert-danger' role='alert'>
-    <i aria-hidden='true' class='fa fa-exclamation-circle'/>
-    <strong><data:navMessage/></strong>
+  <div class='blog-alert'>
+    <div class='alert alert-danger' role='alert'>
+      <i aria-hidden='true' class='fa fa-exclamation-circle'/>
+      <strong><data:navMessage/></strong>
+    </div>
   </div>
   <b:comment>=== Search form ===</b:comment>
   <div class='card'>

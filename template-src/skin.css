@@ -184,15 +184,15 @@ body {}
 /* Breadcrumb
    ============================================== */
 
-.blog-breadcrumb {
+.blog-breadcrumb .breadcrumb {
   background-color: rgba(0,0,0,.05);
 }
 
 /* Alert
    ============================================== */
 
-.blog-alert .search-label,
-.blog-alert .search-query {
+.blog-alert .alert .search-label,
+.blog-alert .alert .search-query {
   font-weight: bold;
 }
 
@@ -204,7 +204,10 @@ body {}
 /* Comments
    ============================================== */
 
-.blog-comments {}
+.blog-comments {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
 
 /* Pager
    ============================================== */
