@@ -5,8 +5,6 @@ description: Title tag, meta tag, link tag, dan lainnya.
 group: core-template
 ---
 
-Hanya dapat disertakan di dalam tag `<head>` HTML.
-
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header

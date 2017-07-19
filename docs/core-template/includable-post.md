@@ -5,8 +5,6 @@ description: Includable untuk posting blog.
 group: core-template
 ---
 
-Hanya dapat disertakan di dalam widget `Blog` (`<b:widget type='Blog'></b:widget>`).
-
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
