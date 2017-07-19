@@ -14,6 +14,8 @@ group: core-template
 
 Untuk memudahkan dalam mengatur tampilan posting, posting dibagi menjadi beberapa bagian berdasarkan tipe halaman. Tampilan posting dapat berbeda-beda di setiap tipe halaman, untuk membuat tampilan posting yang berbeda di setiap tipe halaman, Anda hanya perlu menyesuaikan tampilan posting pada masing-masing bagian.
 
+Dalam membuat tampilan posting, Anda membutuhkan penggunaan [includable untuk posting blog]({{ site.baseurl }}/core-template/includable-post/).
+
 ### Homepage
 
 Tampilan posting untuk halaman beranda.
