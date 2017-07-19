@@ -1,6 +1,6 @@
-# [Bootsblogger](https://bootsblogger.github.io/)
+# [Bootsblogger](https://bootsblogger.github.io)
 
-[Blogger](https://blogger.com/) + [Bootstrap](https://getbootstrap.com/) + :heart:
+[Blogger](https://blogger.com) + [Bootstrap](https://getbootstrap.com) + :heart:
 
 ## Status
 
@@ -12,8 +12,7 @@
 
 Choose one of the following options:
 
-1. Download the latest stable release from
-   [bootsblogger.github.io](https://bootsblogger.github.io).
+1. Download the latest stable release from <https://bootsblogger.github.io>.
 2. Clone the repo: `git clone
    https://github.com/bootsblogger/bootsblogger.git` - and checkout the
    [tagged release](https://github.com/bootsblogger/bootsblogger/releases)
