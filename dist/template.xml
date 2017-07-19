@@ -297,15 +297,15 @@ body {}
 /* Breadcrumb
    ============================================== */
 
-.blog-breadcrumb {
+.blog-breadcrumb .breadcrumb {
   background-color: rgba(0,0,0,.05);
 }
 
 /* Alert
    ============================================== */
 
-.blog-alert .search-label,
-.blog-alert .search-query {
+.blog-alert .alert .search-label,
+.blog-alert .alert .search-query {
   font-weight: bold;
 }
 
@@ -317,7 +317,10 @@ body {}
 /* Comments
    ============================================== */
 
-.blog-comments {}
+.blog-comments {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
 
 /* Pager
    ============================================== */
@@ -685,80 +688,88 @@ Post (Jump to widget: Blog1 --- includable: main)
 <b:defaultmarkups>
   <b:defaultmarkup type='Common'>
     <b:includable id='blog-breadcrumb' var='post'>
-      <ol class='blog-breadcrumb breadcrumb'>
-        <li class='breadcrumb-item'>
-          <a expr:href='data:blog.homepageUrl'>Home</a>
-        </li>
-
-        <b:comment>=== Item page ===</b:comment>
-        <b:if cond='data:view.isPost'>
-          <li class='breadcrumb-item active'>Posts</li>
-          <li class='breadcrumb-item active'>
-            <b:loop values='data:posts' var='post'>
-              <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
-            </b:loop>
+      <div class='blog-breadcrumb'>
+        <ol class='breadcrumb'>
+          <li class='breadcrumb-item'>
+            <a expr:href='data:blog.homepageUrl'>Home</a>
           </li>
-        </b:if>
 
-        <b:comment>=== Static page ===</b:comment>
-        <b:if cond='data:view.isPage'>
-          <li class='breadcrumb-item active'>Pages</li>
-          <li class='breadcrumb-item active'>
-            <b:loop values='data:posts' var='post'>
-              <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
-            </b:loop>
-          </li>
-        </b:if>
-
-        <b:comment>=== Search (label) page ===</b:comment>
-        <b:if cond='data:view.search.label'>
-          <li class='breadcrumb-item active'>Search</li>
-          <li class='breadcrumb-item active'>Label</li>
-          <li class='breadcrumb-item active'>&quot;<data:view.search.label/>&quot;</li>
-        </b:if>
-
-        <b:comment>=== Search (query) page ===</b:comment>
-        <b:if cond='data:view.search.query'>
-          <li class='breadcrumb-item active'>Search</li>
-          <li class='breadcrumb-item active'>Query</li>
-          <li class='breadcrumb-item active'>&quot;<data:view.search.query/>&quot;</li>
-        </b:if>
-
-        <b:comment>=== Archive page ===</b:comment>
-        <b:if cond='data:view.isArchive'>
-          <li class='breadcrumb-item active'>Archive</li>
-          <li class='breadcrumb-item active'><data:view.archive.year/></li>
-          <b:if cond='data:view.archive.month'>
-            <li class='breadcrumb-item active'><data:view.archive.month/></li>
+          <b:comment>=== Item page ===</b:comment>
+          <b:if cond='data:view.isPost'>
+            <li class='breadcrumb-item active'>Posts</li>
+            <li class='breadcrumb-item active'>
+              <b:loop values='data:posts' var='post'>
+                <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+              </b:loop>
+            </li>
           </b:if>
-        </b:if>
 
-        <b:comment>=== Error page ===</b:comment>
-        <b:if cond='data:view.isError'>
-          <li class='breadcrumb-item active'>404</li>
-        </b:if>
-      </ol>
+          <b:comment>=== Static page ===</b:comment>
+          <b:if cond='data:view.isPage'>
+            <li class='breadcrumb-item active'>Pages</li>
+            <li class='breadcrumb-item active'>
+              <b:loop values='data:posts' var='post'>
+                <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+              </b:loop>
+            </li>
+          </b:if>
+
+          <b:comment>=== Search (label) page ===</b:comment>
+          <b:if cond='data:view.search.label'>
+            <li class='breadcrumb-item active'>Search</li>
+            <li class='breadcrumb-item active'>Label</li>
+            <li class='breadcrumb-item active'>&quot;<data:view.search.label/>&quot;</li>
+          </b:if>
+
+          <b:comment>=== Search (query) page ===</b:comment>
+          <b:if cond='data:view.search.query'>
+            <li class='breadcrumb-item active'>Search</li>
+            <li class='breadcrumb-item active'>Query</li>
+            <li class='breadcrumb-item active'>&quot;<data:view.search.query/>&quot;</li>
+          </b:if>
+
+          <b:comment>=== Archive page ===</b:comment>
+          <b:if cond='data:view.isArchive'>
+            <li class='breadcrumb-item active'>Archive</li>
+            <li class='breadcrumb-item active'><data:view.archive.year/></li>
+            <b:if cond='data:view.archive.month'>
+              <li class='breadcrumb-item active'><data:view.archive.month/></li>
+            </b:if>
+          </b:if>
+
+          <b:comment>=== Error page ===</b:comment>
+          <b:if cond='data:view.isError'>
+            <li class='breadcrumb-item active'>404</li>
+          </b:if>
+        </ol>
+      </div>
     </b:includable>
     <b:includable id='blog-alert' var='post'>
       <b:comment>=== Homepage ===</b:comment>
       <b:if cond='data:view.isHomepage and data:posts.empty'>
-        <div class='blog-alert alert alert-warning' role='alert'>
-          <i aria-hidden='true' class='fa fa-exclamation-circle'/>
-          <data:messages.theresNothingHere/>
+        <div class='blog-alert'>
+          <div class='alert alert-warning' role='alert'>
+            <i aria-hidden='true' class='fa fa-exclamation-circle'/>
+            <data:messages.theresNothingHere/>
+          </div>
         </div>
       </b:if>
 
       <b:comment>=== Search (label) page ===</b:comment>
       <b:if cond='data:view.search.label'>
         <b:if cond='data:posts.size gte 1'>
-          <div class='blog-alert alert alert-success' role='alert'>
-            <i aria-hidden='true' class='fa fa-tags'/>
-            <data:view.search.resultsMessageHtml/>
+          <div class='blog-alert'>
+            <div class='alert alert-success' role='alert'>
+              <i aria-hidden='true' class='fa fa-tags'/>
+              <data:view.search.resultsMessageHtml/>
+            </div>
           </div>
         <b:else/>
-          <div class='blog-alert alert alert-warning' role='alert'>
-            <i aria-hidden='true' class='fa fa-tags'/>
-            <data:view.search.resultsMessageHtml/>
+          <div class='blog-alert'>
+            <div class='alert alert-warning' role='alert'>
+              <i aria-hidden='true' class='fa fa-tags'/>
+              <data:view.search.resultsMessageHtml/>
+            </div>
           </div>
           <b:comment>=== Search form ===</b:comment>
           <div class='card'>
@@ -782,14 +793,18 @@ Post (Jump to widget: Blog1 --- includable: main)
       <b:comment>=== Search (query) page ===</b:comment>
       <b:if cond='data:view.search.query'>
         <b:if cond='data:posts.size gte 1'>
-          <div class='blog-alert alert alert-success' role='alert'>
-            <i aria-hidden='true' class='fa fa-search-plus'/>
-            <data:view.search.resultsMessageHtml/>
+          <div class='blog-alert'>
+            <div class='alert alert-success' role='alert'>
+              <i aria-hidden='true' class='fa fa-search-plus'/>
+              <data:view.search.resultsMessageHtml/>
+            </div>
           </div>
         <b:else/>
-          <div class='blog-alert alert alert-warning' role='alert'>
-            <i aria-hidden='true' class='fa fa-search-minus'/>
-            <data:view.search.resultsMessageHtml/>
+          <div class='blog-alert'>
+            <div class='alert alert-warning' role='alert'>
+              <i aria-hidden='true' class='fa fa-search-minus'/>
+              <data:view.search.resultsMessageHtml/>
+            </div>
           </div>
         	<b:comment>=== Search form ===</b:comment>
           <div class='card'>
@@ -817,14 +832,18 @@ Post (Jump to widget: Blog1 --- includable: main)
       <b:comment>=== Archive page ===</b:comment>
       <b:if cond='data:view.isArchive'>
         <b:if cond='data:posts.size gte 1'>
-          <div class='blog-alert alert alert-success' role='alert'>
-            <i aria-hidden='true' class='fa fa-archive'/>
-            <data:view.archive.rangeMessage/>
+          <div class='blog-alert'>
+            <div class='alert alert-success' role='alert'>
+              <i aria-hidden='true' class='fa fa-archive'/>
+              <data:view.archive.rangeMessage/>
+            </div>
           </div>
         <b:else/>
-          <div class='blog-alert alert alert-warning' role='alert'>
-            <i aria-hidden='true' class='fa fa-archive'/>
-            <data:view.archive.rangeMessage/>
+          <div class='blog-alert'>
+            <div class='alert alert-warning' role='alert'>
+              <i aria-hidden='true' class='fa fa-archive'/>
+              <data:view.archive.rangeMessage/>
+            </div>
           </div>
           <b:comment>=== Search form ===</b:comment>
           <div class='card'>
@@ -847,9 +866,11 @@ Post (Jump to widget: Blog1 --- includable: main)
 
       <b:comment>=== Error page ===</b:comment>
       <b:if cond='data:view.isError'>
-        <div class='blog-alert alert alert-danger' role='alert'>
-          <i aria-hidden='true' class='fa fa-exclamation-circle'/>
-          <strong><data:navMessage/></strong>
+        <div class='blog-alert'>
+          <div class='alert alert-danger' role='alert'>
+            <i aria-hidden='true' class='fa fa-exclamation-circle'/>
+            <strong><data:navMessage/></strong>
+          </div>
         </div>
         <b:comment>=== Search form ===</b:comment>
         <div class='card'>
@@ -868,7 +889,7 @@ Post (Jump to widget: Blog1 --- includable: main)
       <b:loop values='data:posts' var='post'>
         <b:if cond='data:post.allowComments'>
 
-          <div class='blog-comments my-5' id='comments'>
+          <div class='blog-comments' id='comments'>
             <h1 class='blog-comments-title'><data:messages.comments/></h1>
 
             <b:if cond='data:post.commentSource == 1'>
