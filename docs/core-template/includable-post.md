@@ -83,7 +83,7 @@ template-src/includable/post/post.title.xml
 ###### Usage
 
 {% highlight html %}
-<b:include data='{ heading: "h1|h2|h3|h4|h5|h6"|false, headingClass: "class-name", link: true|false, linkClass: "class-name", noTitle: true|false }' name='post.title'/>
+<b:include data='{ heading: "h1|h2|h3|h4|h5|h6"|false, headingClass: "class-name", link: true|false, linkClass: "class-name", noTitleMessage: true|false }' name='post.title'/>
 {% endhighlight %}
 
 ### Author name
