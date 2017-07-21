@@ -105,7 +105,7 @@ template-src/includable/post/post.authorName.xml
 ###### Usage
 
 {% highlight html %}
-<b:include data='{ linkClass: "class-name", noLinkClass: "class-name" }' name='post.authorName'/>
+<b:include data='{ linkClass: "class-name" }' name='post.authorName'/>
 {% endhighlight %}
 
 ### Author image
