@@ -127,7 +127,7 @@ template-src/includable/post/post.authorImage.xml
 ###### Usage
 
 {% highlight html %}
-<b:include data='{ size: number, ratioWidth: number, ratioHeight: number, imageClass: "class-name" }' name='post.authorImage'/>
+<b:include data='{ size: number, ratioWidth: number, ratioHeight: number, noImage: "https://example.com/path/to/no-image.png"|false, imageClass: "class-name" }' name='post.authorImage'/>
 {% endhighlight %}
 
 **Example:**
@@ -137,7 +137,7 @@ Width = `size`, Height = ((`size` * `ratioHeight`) / `ratioWidth`).
 128x128:
 
 {% highlight html %}
-<b:include data='{ size: 128, ratioWidth: 1, ratioHeight: 1, imageClass: "class-name" }' name='post.authorImage'/>
+<b:include data='{ size: 128, ratioWidth: 1, ratioHeight: 1, noImage: "https://placehold.it/128x128/777/eee/?text=NO+IMAGE", imageClass: "class-name" }' name='post.authorImage'/>
 {% endhighlight %}
 
 ### Dates

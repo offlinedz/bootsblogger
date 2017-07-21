@@ -9,7 +9,9 @@
     </b:tag>
   </b:if>
 <b:else/>
-  <b:tag cond='data:post.author.profileUrl' expr:href='data:post.author.profileUrl' name='a'>
-    <img expr:alt='data:post.author.name' expr:class='data:imageClass' expr:src='&quot;https://placehold.it/&quot; + data:ratioWidth + &quot;x&quot; + (((data:size * data:ratioHeight) % data:ratioWidth == 0) ? ((data:size * data:ratioHeight) / data:ratioWidth) : data:size) + &quot;/ff5722/fff?text=B&quot;'/>
-  </b:tag>
+  <b:if cond='data:noImage'>
+    <b:tag cond='data:post.author.profileUrl' expr:href='data:post.author.profileUrl' name='a'>
+      <img expr:alt='data:post.author.name' expr:class='data:imageClass' expr:src='data:noImage'/>
+    </b:tag>
+  </b:if>
 </b:if>
