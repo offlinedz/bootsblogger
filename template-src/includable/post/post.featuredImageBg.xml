@@ -6,6 +6,6 @@
   </b:if>
 <b:else/>
   <b:if cond='data:noImage'>
-    <div expr:class='data:class' expr:style='data:style + &quot; background-image: url(https://placehold.it/&quot; + data:size + &quot;x&quot; + (((data:size * data:ratioHeight) % data:ratioWidth == 0) ? ((data:size * data:ratioHeight) / data:ratioWidth) : data:size) + &quot;/777/eee?text=B);&quot;'/>
+    <div expr:class='data:class' expr:style='data:style + &quot; background-image: url(&quot; + data:noImage + &quot;);&quot;'/>
   </b:if>
 </b:if>

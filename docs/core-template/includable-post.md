@@ -396,7 +396,7 @@ template-src/includable/post/post.featuredImage.xml
 ###### Usage
 
 {% highlight html %}
-<b:include data='{ size: number, sourceSet: [number]|false, sourceSizes: "sizes"|false, ratioWidth: number, ratioHeight: number, link: true|false, noImage: true|false, imageClass: "class-name" }' name='post.featuredImage'/>
+<b:include data='{ size: number, sourceSet: [number]|false, sourceSizes: "sizes"|false, ratioWidth: number, ratioHeight: number, link: true|false, noImage: "https://example.com/path/to/no-image.png"|false, imageClass: "class-name" }' name='post.featuredImage'/>
 {% endhighlight %}
 
 **Notation:**
@@ -408,23 +408,23 @@ Responsive: Width = `sourceSet`, Height = ((`sourceSet` * `ratioHeight`) / `rati
 **Example without `srcset` and `sizes`:**
 
 {% highlight html %}
-<b:include data='{ size: 512, sourceSet: false, sourceSizes: false, ratioWidth: 16, ratioHeight: 9, link: true, noImage: true, imageClass: "class-name" }' name='post.featuredImage'/>
+<b:include data='{ size: 512, sourceSet: false, sourceSizes: false, ratioWidth: 16, ratioHeight: 9, link: true, noImage: "https://placehold.it/512x288/777/eee/?text=NO+IMAGE", imageClass: "class-name" }' name='post.featuredImage'/>
 {% endhighlight %}
 
 **Example with `srcset`, but without `sizes`:**
 
 {% highlight html %}
 <!-- Example 1: `false` -->
-<b:include data='{ size: 256, sourceSet: [256, 512, 1280, 1600], sourceSizes: false, ratioWidth: 16, ratioHeight: 9, link: true, noImage: true, imageClass: "class-name" }' name='post.featuredImage'/>
+<b:include data='{ size: 256, sourceSet: [256, 512, 1280, 1600], sourceSizes: false, ratioWidth: 16, ratioHeight: 9, link: true, noImage: "https://placehold.it/256x144/777/eee/?text=NO+IMAGE", imageClass: "class-name" }' name='post.featuredImage'/>
 
 <!-- Example 2: `100vw` -->
-<b:include data='{ size: 256, sourceSet: [256, 512, 1280, 1600], sourceSizes: "100vw", ratioWidth: 16, ratioHeight: 9, link: true, noImage: true, imageClass: "class-name" }' name='post.featuredImage'/>
+<b:include data='{ size: 256, sourceSet: [256, 512, 1280, 1600], sourceSizes: "100vw", ratioWidth: 16, ratioHeight: 9, link: true, noImage: "https://placehold.it/256x144/777/eee/?text=NO+IMAGE", imageClass: "class-name" }' name='post.featuredImage'/>
 {% endhighlight %}
 
 **Example with `srcset` and `sizes`:**
 
 {% highlight html %}
-<b:include data='{ size: 256, sourceSet: [256, 512, 1280, 1600], sourceSizes: "(max-width: 575px) 256px, (max-width: 767px) 512px, (max-width: 991px) 1280px, 1600px", ratioWidth: 16, ratioHeight: 9, link: true, noImage: true, imageClass: "class-name" }' name='post.featuredImage'/>
+<b:include data='{ size: 256, sourceSet: [256, 512, 1280, 1600], sourceSizes: "(max-width: 575px) 256px, (max-width: 767px) 512px, (max-width: 991px) 1280px, 1600px", ratioWidth: 16, ratioHeight: 9, link: true, noImage: "https://placehold.it/256x144/777/eee/?text=NO+IMAGE", imageClass: "class-name" }' name='post.featuredImage'/>
 {% endhighlight %}
 
 ##### Using CSS `background-image`
@@ -446,7 +446,7 @@ template-src/includable/post/post.featuredImageBg.xml
 ###### Usage
 
 {% highlight html %}
-<b:include data='{ size: number, ratioWidth: number, ratioHeight: number, noImage: true|false, class: "class-name", style: "min-height: <number><units>;" }' name='post.featuredImageBg'/>
+<b:include data='{ size: number, ratioWidth: number, ratioHeight: number, noImage: "https://example.com/path/to/no-image.png"|false, class: "class-name", style: "min-height: <number><units>;" }' name='post.featuredImageBg'/>
 {% endhighlight %}
 
 **Example:**
@@ -454,7 +454,7 @@ template-src/includable/post/post.featuredImageBg.xml
 Width = `size`, Height = ((`size` * `ratioHeight`) / `ratioWidth`).
 
 {% highlight html %}
-<b:include data='{ size: 512, ratioWidth: 16, ratioHeight: 9, noImage: true|false, class: "class-name", style: "min-height: 180px;" }' name='post.featuredImageBg'/>
+<b:include data='{ size: 512, ratioWidth: 16, ratioHeight: 9, noImage: "https://placehold.it/512x288/777/eee/?text=NO+IMAGE", class: "class-name", style: "min-height: 288px;" }' name='post.featuredImageBg'/>
 {% endhighlight %}
 
 ### Snippet
