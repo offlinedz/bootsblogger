@@ -4,17 +4,15 @@
       <tr expr:id='&quot;post-&quot; + data:post.id'>
         <!-- Date -->
         <td class='text-nowrap'>
-          <b:include data='{ customFormat: &quot;dd/MM/YYYY&quot;, class: &quot;&quot; }' name='post.datePublished'/>
+          <b:include data='{ customFormat: &quot;dd/MM/YYYY&quot;, timeClass: &quot;&quot; }' name='post.datePublished'/>
         </td>
         <!-- Title -->
         <td>
-          <a expr:href='data:post.link ? data:post.link : data:post.url' expr:title='data:post.title ? data:post.title : data:messages.noTitle'>
-            <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
-          </a>
+          <b:include data='{ heading: false, headingClass: "", link: true, linkClass: "", noTitleMessage: true }' name='post.title'/>
         </td>
         <!-- Author -->
         <td class='text-nowrap'>
-          <b:include data='{ class: &quot;&quot;, noUrlClass: &quot;&quot; }' name='post.authorName'/>
+          <b:include data='{ linkClass: &quot;&quot; }' name='post.authorName'/>
         </td>
       </tr>
     </b:loop>

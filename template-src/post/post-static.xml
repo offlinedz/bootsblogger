@@ -4,9 +4,7 @@
     <!-- >>> Body <<< -->
     <div class='card-block'>
       <!-- Title -->
-      <b:if cond='data:post.title'>
-        <h1><data:post.title/></h1>
-      </b:if>
+      <b:include data='{ heading: "h1", headingClass: "", link: false, linkClass: "", noTitleMessage: false }' name='post.title'/>
       <!-- Body -->
       <data:post.body/>
     </div><!-- /.card-block -->

@@ -14,24 +14,17 @@
       <div class='col-sm-3 col-md-4'>
         <!-- Featured image -->
         <div class='card-block-img-left-sm'>
-          <!-- Note: `sm` = 576px, `max-width` = (`sm` - 1) = 575px. -->
-          <b:include data='{ size: 320, sourceSet: [320, 512], sourceSizes: &quot;(max-width: 575px) 512px, 320px&quot;, ratioWidth: 1, ratioHeight: 1, link: true, defaultNoImage: true, class: &quot;card-img-left&quot; }' name='post.featuredImage'/>
+          <b:include data='{ size: 256, sourceSet: [256, 512], sourceSizes: &quot;100vw&quot;, ratioWidth: 1, ratioHeight: 1, link: true, noImage: "https://placehold.it/256x256/777/eee/?text=NO+IMAGE", imageClass: &quot;card-img-left&quot; }' name='post.featuredImage'/>
         </div><!-- /.card-block-img-left-sm -->
       </div><!-- /col -->
       <div class='col-sm-9 col-md-8'>
         <div class='card-block'>
           <!-- Title -->
-          <b:if cond='data:post.title'>
-            <h2 class='card-title'>
-              <a class='card-title-link' expr:href='data:post.link ? data:post.link : data:post.url' expr:title='data:post.title'>
-                <data:post.title/>
-              </a>
-            </h2>
-          </b:if>
+          <b:include data='{ heading: "h2", headingClass: "card-title", link: true, linkClass: "card-title-link", noTitleMessage: false }' name='post.title'/>
           <!-- Snippet -->
-          <div class='card-text'><b:include data='{ length: 150, links: true, linebreaks: true, ellipsis: true, notHasJumpLink: true }' name='post.snippet'/></div>
+          <b:include data='{ length: 150, links: true, linebreaks: true, ellipsis: true, notHasJumpLink: true, parentClass: "card-text" }' name='post.snippet'/>
           <!-- Jump link -->
-          <b:include data='{ class: &quot;btn btn-primary&quot;, parentClass: &quot;mt-2&quot; }' name='post.jumpLink'/>
+          <b:include data='{ linkClass: &quot;btn btn-primary&quot;, parentClass: &quot;mt-2&quot; }' name='post.jumpLink'/>
         </div><!-- /.card-block -->
       </div><!-- /col -->
     </div><!-- /.row -->
