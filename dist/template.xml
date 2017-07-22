@@ -577,7 +577,7 @@ Post (Jump to widget: Blog1 --- includable: main)
               <b:include data='{ customFormat: &quot;MMM dd, YYYY&quot;, timeClass: &quot;text-muted&quot; }' name='post.datePublished'/>
               <span class='text-muted'>-</span>
               <b:include data='{ length: 150, links: false, linebreaks: false, ellipsis: true, notHasJumpLink: false, parentClass: "d-inline" }' name='post.snippet'/>
-            </div>
+            </div><!-- /.card-text -->
           </div><!-- /.card-block -->
 
         </article><!-- /.card -->
