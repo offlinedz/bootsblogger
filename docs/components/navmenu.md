@@ -18,10 +18,10 @@ Bungkus [konten](#supported-content) dengan `.navmenu`, dan tambahkan kelas [ske
 
 Tentukan skema warna navmenu dengan mengeset `background-color` dan `border-color`, Anda dapat menggunakan kelas utilitas warna atau membuat *custom styles*.
 
-Gunakan `.navmenu-light` atau `.navmenu-inverse` untuk menyesuaikan warna teks dengan warna latar belakang. `.navmenu-light` untuk latar belakang yang berwarna terang dan `.navmenu-inverse` untuk latar belakang yang berwarna gelap.
+Gunakan `.navmenu-light` atau `.navmenu-dark` untuk menyesuaikan warna teks dengan warna latar belakang. `.navmenu-light` untuk latar belakang yang berwarna terang dan `.navmenu-dark` untuk latar belakang yang berwarna gelap.
 
 <div class="bd-example">
-  <nav class="navmenu navmenu-inverse bg-inverse mb-3">
+  <nav class="navmenu navmenu-dark bg-inverse mb-3">
     <a class="navmenu-brand" href="#">Bootsblogger</a>
     <div class="navmenu-nav">
       <a class="nav-item nav-link" href="#">Nav item</a>
@@ -34,7 +34,7 @@ Gunakan `.navmenu-light` atau `.navmenu-inverse` untuk menyesuaikan warna teks d
     </div>
   </nav>
 
-  <nav class="navmenu navmenu-inverse bg-primary mb-3">
+  <nav class="navmenu navmenu-dark bg-primary mb-3">
     <a class="navmenu-brand" href="#">Bootsblogger</a>
     <div class="navmenu-nav">
       <a class="nav-item nav-link" href="#">Nav item</a>
@@ -62,11 +62,11 @@ Gunakan `.navmenu-light` atau `.navmenu-inverse` untuk menyesuaikan warna teks d
 </div>
 
 {% highlight html %}
-<nav class="navmenu navmenu-inverse bg-inverse">
+<nav class="navmenu navmenu-dark bg-inverse">
   <!-- Navmenu content -->
 </nav>
 
-<nav class="navmenu navmenu-inverse bg-primary">
+<nav class="navmenu navmenu-dark bg-primary">
   <!-- Navmenu content -->
 </nav>
 
@@ -371,7 +371,7 @@ Example 2:
 Example 3:
 
 {% example html %}
-<nav class="navmenu navmenu-inverse bg-inverse">
+<nav class="navmenu navmenu-dark bg-inverse">
   <a class="navmenu-brand" href="#">Bootsblogger</a>
   <div class="navmenu-nav">
     <div class="nav-item nav-item-bordered">
