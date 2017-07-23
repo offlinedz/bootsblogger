@@ -403,34 +403,34 @@
   border-color: rgba(0, 0, 0, 0.05);
 }
 
-.navmenu-inverse .navmenu-brand {
+.navmenu-dark .navmenu-brand {
   color: white;
 }
-.navmenu-inverse .navmenu-brand:focus, .navmenu-inverse .navmenu-brand:hover {
+.navmenu-dark .navmenu-brand:focus, .navmenu-dark .navmenu-brand:hover {
   color: white;
 }
-.navmenu-inverse .navmenu-nav .nav-link {
+.navmenu-dark .navmenu-nav .nav-link {
   color: rgba(255, 255, 255, 0.5);
 }
-.navmenu-inverse .navmenu-nav .nav-link:focus, .navmenu-inverse .navmenu-nav .nav-link:hover {
+.navmenu-dark .navmenu-nav .nav-link:focus, .navmenu-dark .navmenu-nav .nav-link:hover {
   color: rgba(255, 255, 255, 0.75);
 }
-.navmenu-inverse .navmenu-nav .nav-link.disabled {
+.navmenu-dark .navmenu-nav .nav-link.disabled {
   color: rgba(255, 255, 255, 0.25);
 }
-.navmenu-inverse .navmenu-nav .show > .nav-link,
-.navmenu-inverse .navmenu-nav .active > .nav-link,
-.navmenu-inverse .navmenu-nav .nav-link.show,
-.navmenu-inverse .navmenu-nav .nav-link.active {
+.navmenu-dark .navmenu-nav .show > .nav-link,
+.navmenu-dark .navmenu-nav .active > .nav-link,
+.navmenu-dark .navmenu-nav .nav-link.show,
+.navmenu-dark .navmenu-nav .nav-link.active {
   color: white;
 }
-.navmenu-inverse .navmenu-nav .nav-item-bordered {
+.navmenu-dark .navmenu-nav .nav-item-bordered {
   border-color: rgba(0, 0, 0, 0.25);
 }
-.navmenu-inverse .navmenu-header {
+.navmenu-dark .navmenu-header {
   color: rgba(255, 255, 255, 0.4);
 }
-.navmenu-inverse .navmenu-divider {
+.navmenu-dark .navmenu-divider {
   border-color: rgba(0, 0, 0, 0.25);
 }
 
