@@ -226,6 +226,7 @@
 
 .navmenu {
   padding: 1.25rem 1.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 0.25rem;
 }
 
@@ -241,10 +242,12 @@
 
 .navmenu-fixed-right {
   right: 0;
+  border-width: 0 0 0 1px;
 }
 
 .navmenu-fixed-left {
   left: 0;
+  border-width: 0 1px 0 0;
 }
 
 .navmenu-brand {
