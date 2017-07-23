@@ -77,8 +77,6 @@ Gunakan `.navmenu-light` atau `.navmenu-inverse` untuk menyesuaikan warna teks d
 
 ## Supported content
 
-Konten di dalam navmenu:
-
 ### Brand
 
 As a link:
@@ -240,7 +238,7 @@ Image and text:
 
 ### With `.navmenu-content`
 
-Dengan `.navmenu-content`, Anda dapat memasukkan elemen sesuai dengan yang Anda inginkan. Lihat beberapa contoh berikut:
+Gunakan `.navmenu-content` untuk membuat elemen lainnya, lihat beberapa contoh berikut:
 
 {% example html %}
 <nav class="navmenu navmenu-light bg-faded">
