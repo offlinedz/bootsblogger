@@ -4,6 +4,7 @@
 
 .navmenu {
   padding: $navmenu-padding-y $navmenu-padding-x;
+  border: $navmenu-border-width solid $navmenu-border-color;
   @include border-radius($navmenu-border-radius);
 }
 
@@ -23,9 +24,11 @@
 }
 .navmenu-fixed-right {
   right: 0;
+  border-width: 0 0 0 $navmenu-border-width;
 }
 .navmenu-fixed-left {
   left: 0;
+  border-width: 0 $navmenu-border-width 0 0;
 }
 
 

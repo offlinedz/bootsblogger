@@ -16,7 +16,7 @@ Bungkus [konten](#supported-content) dengan `.navmenu`, dan tambahkan kelas [ske
 
 ## Color schemes
 
-Tentukan warna navmenu dengan mengeset `background-color`, Anda dapat menggunakan kelas utilitas warna atau membuat *custom styles*.
+Tentukan skema warna navmenu dengan mengeset `background-color` dan `border-color`, Anda dapat menggunakan kelas utilitas warna atau membuat *custom styles*.
 
 Gunakan `.navmenu-light` atau `.navmenu-inverse` untuk menyesuaikan warna teks dengan warna latar belakang. `.navmenu-light` untuk latar belakang yang berwarna terang dan `.navmenu-inverse` untuk latar belakang yang berwarna gelap.
 
@@ -47,7 +47,7 @@ Gunakan `.navmenu-light` atau `.navmenu-inverse` untuk menyesuaikan warna teks d
     </div>
   </nav>
 
-  <nav class="navmenu navmenu-light" style="background-color: #e3f2fd;">
+  <nav class="navmenu navmenu-light" style="background-color: #e3f2fd; border-color: #b1deff;">
     <a class="navmenu-brand" href="#">Bootsblogger</a>
     <div class="navmenu-nav">
       <a class="nav-item nav-link" href="#">Nav item</a>
@@ -70,7 +70,7 @@ Gunakan `.navmenu-light` atau `.navmenu-inverse` untuk menyesuaikan warna teks d
   <!-- Navmenu content -->
 </nav>
 
-<nav class="navmenu navmenu-light" style="background-color: #e3f2fd;">
+<nav class="navmenu navmenu-light" style="background-color: #e3f2fd; border-color: #b1deff;">
   <!-- Navmenu content -->
 </nav>
 {% endhighlight %}
