@@ -451,11 +451,11 @@
   margin-bottom: 0;
 }
 
-.wg-title-gray-light > .widget > .title {
+.wg-title-light > .widget > .title {
   color: #f7f7f9;
 }
 
-.wg-title-gray-dark > .widget > .title {
+.wg-title-dark > .widget > .title {
   color: #292b2c;
 }
 
@@ -590,12 +590,12 @@
   border-top-left-radius: calc(0.25rem - 1px);
 }
 
-.wg-box-gray-light > .widget {
+.wg-box-light > .widget {
   background-color: #f7f7f9;
   border-color: #e8e8ee;
 }
 
-.wg-box-gray-dark > .widget {
+.wg-box-dark > .widget {
   background-color: #292b2c;
   border-color: #1d1e1f;
 }
@@ -650,12 +650,12 @@
   border-color: #54356b;
 }
 
-.wg-box-outline-gray-light > .widget {
+.wg-box-outline-light > .widget {
   background-color: transparent;
   border-color: #f7f7f9;
 }
 
-.wg-box-outline-gray-dark > .widget {
+.wg-box-outline-dark > .widget {
   background-color: transparent;
   border-color: #292b2c;
 }
@@ -797,20 +797,20 @@
   border-bottom-left-radius: 0;
 }
 
-.wg-panel-gray-light > .widget > .title {
+.wg-panel-light > .widget > .title {
   background-color: #f7f7f9;
   border-color: #e8e8ee;
 }
-.wg-panel-gray-light > .widget > .widget-content {
+.wg-panel-light > .widget > .widget-content {
   background-color: #fff;
   border-color: #e8e8ee;
 }
 
-.wg-panel-gray-dark > .widget > .title {
+.wg-panel-dark > .widget > .title {
   background-color: #292b2c;
   border-color: #1d1e1f;
 }
-.wg-panel-gray-dark > .widget > .widget-content {
+.wg-panel-dark > .widget > .widget-content {
   background-color: #fff;
   border-color: #1d1e1f;
 }
@@ -905,20 +905,20 @@
   border-color: #54356b;
 }
 
-.wg-panel-outline-gray-light > .widget > .title {
+.wg-panel-outline-light > .widget > .title {
   background-color: transparent;
   border-color: #f7f7f9;
 }
-.wg-panel-outline-gray-light > .widget > .widget-content {
+.wg-panel-outline-light > .widget > .widget-content {
   background-color: transparent;
   border-color: #f7f7f9;
 }
 
-.wg-panel-outline-gray-dark > .widget > .title {
+.wg-panel-outline-dark > .widget > .title {
   background-color: transparent;
   border-color: #292b2c;
 }
-.wg-panel-outline-gray-dark > .widget > .widget-content {
+.wg-panel-outline-dark > .widget > .widget-content {
   background-color: transparent;
   border-color: #292b2c;
 }
