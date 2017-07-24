@@ -78,11 +78,11 @@ $wg-title-h6:                    $font-size-h6 !default;
 
 // Colors
 
-$wg-gray-light-color:            $gray-lightest !default;
-$wg-gray-light-border:           darken($wg-gray-light-color, 5%) !default;
+$wg-light-color:                 $gray-lightest !default;
+$wg-light-border:                darken($wg-light-color, 5%) !default;
 
-$wg-gray-dark-color:             $gray-dark !default;
-$wg-gray-dark-border:            darken($wg-gray-dark-color, 5%) !default;
+$wg-dark-color:                  $gray-dark !default;
+$wg-dark-border:                 darken($wg-dark-color, 5%) !default;
 
 $wg-white-color:                 $white !default;
 $wg-white-border:                rgba(0,0,0,.125) !default;

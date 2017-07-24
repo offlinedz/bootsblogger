@@ -40,17 +40,17 @@ Kelas-kelas untuk mengatur judul widget—warna, ukuran, perataan, dan kelas unt
 Kelas-kelas yang tersedia untuk mengubah warna judul widget.
 
 <div class="bd-example bd-example-widget-inverse text-white">
-  <div class="wg wg-title-gray-light">
+  <div class="wg wg-title-light">
     <div class="widget">
-      <h3 class="title">Gray Light</h3>
+      <h3 class="title">Light</h3>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
     </div><!-- /.widget -->
   </div>
-  <div class="wg wg-title-gray-dark">
+  <div class="wg wg-title-dark">
     <div class="widget">
-      <h3 class="title">Gray Dark</h3>
+      <h3 class="title">Dark</h3>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
@@ -139,8 +139,8 @@ Kelas-kelas yang tersedia untuk mengubah warna judul widget.
 </div><!-- /.bd-example -->
 
 {% highlight html %}
-<b:section class='wg wg-title-gray-light' id='sectionId'></b:section>
-<b:section class='wg wg-title-gray-dark' id='sectionId'></b:section>
+<b:section class='wg wg-title-light' id='sectionId'></b:section>
+<b:section class='wg wg-title-dark' id='sectionId'></b:section>
 <b:section class='wg wg-title-white' id='sectionId'></b:section>
 <b:section class='wg wg-title-black' id='sectionId'></b:section>
 <b:section class='wg wg-title-red' id='sectionId'></b:section>
@@ -280,17 +280,17 @@ Untuk menyembunyikan judul widget gunakan `.wg-title-hide`.
 Gunakan `.wg-box`, `.wg-box-{color}`, dan [`.wg-title-{color}`](#color).
 
 <div class="bd-example bd-example-widget-inverse text-muted">
-  <div class="wg wg-box wg-box-gray-light wg-title-gray-dark">
+  <div class="wg wg-box wg-box-light wg-title-dark">
     <div class="widget">
-      <h3 class="title">Gray Light</h3>
+      <h3 class="title">Light</h3>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
     </div><!-- /.widget -->
   </div>
-  <div class="wg wg-box wg-box-gray-dark wg-title-gray-light">
+  <div class="wg wg-box wg-box-dark wg-title-light">
     <div class="widget">
-      <h3 class="title">Gray Dark</h3>
+      <h3 class="title">Dark</h3>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
@@ -379,8 +379,8 @@ Gunakan `.wg-box`, `.wg-box-{color}`, dan [`.wg-title-{color}`](#color).
 </div><!-- /.bd-example -->
 
 {% highlight html %}
-<b:section class='wg wg-box wg-box-gray-light wg-title-gray-dark' id='sectionId'></b:section>
-<b:section class='wg wg-box wg-box-gray-dark wg-title-gray-light' id='sectionId'></b:section>
+<b:section class='wg wg-box wg-box-light wg-title-dark' id='sectionId'></b:section>
+<b:section class='wg wg-box wg-box-dark wg-title-light' id='sectionId'></b:section>
 <b:section class='wg wg-box wg-box-white wg-title-black' id='sectionId'></b:section>
 <b:section class='wg wg-box wg-box-black wg-title-white' id='sectionId'></b:section>
 <b:section class='wg wg-box wg-box-red wg-title-white' id='sectionId'></b:section>
@@ -398,17 +398,17 @@ Gunakan `.wg-box`, `.wg-box-{color}`, dan [`.wg-title-{color}`](#color).
 Ubah `.wg-box-{color}` menjadi `.wg-box-outline-{color}`.
 
 <div class="bd-example bd-example-widget-inverse text-white">
-  <div class="wg wg-box wg-box-outline-gray-light wg-title-gray-light">
+  <div class="wg wg-box wg-box-outline-light wg-title-light">
     <div class="widget">
-      <h3 class="title">Gray Light</h3>
+      <h3 class="title">Light</h3>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
     </div><!-- /.widget -->
   </div>
-  <div class="wg wg-box wg-box-outline-gray-dark wg-title-gray-dark">
+  <div class="wg wg-box wg-box-outline-dark wg-title-dark">
     <div class="widget">
-      <h3 class="title">Gray Dark</h3>
+      <h3 class="title">Dark</h3>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
@@ -505,7 +505,7 @@ Ubah `.wg-box-{color}` menjadi `.wg-box-outline-{color}`.
 *Flush list group* di dalam widget-box.
 
 <div class="bd-example">
-  <div class="wg wg-box wg-box-white wg-title-gray-dark">
+  <div class="wg wg-box wg-box-white wg-title-dark">
     <div class="widget">
       <h3 class="title">Widget title</h3>
       <div class="widget-content">
@@ -536,7 +536,7 @@ Ubah `.wg-box-{color}` menjadi `.wg-box-outline-{color}`.
 </div><!-- /.bd-example -->
 
 {% highlight html %}
-<b:section class='wg wg-box wg-box-white wg-title-gray-dark' id='sectionId'></b:section>
+<b:section class='wg wg-box wg-box-white wg-title-dark' id='sectionId'></b:section>
 {% endhighlight %}
 
 Tambahkan gadget **HTML/JavaScript**. Kemudian, buat *list group* menggunakan `.list-group-flush`:
@@ -557,18 +557,18 @@ Tambahkan gadget **HTML/JavaScript**. Kemudian, buat *list group* menggunakan `.
 
 Gunakan `.wg-panel`, `.wg-panel-{color}`, dan [`.wg-title-{color}`](#color).
 
-<div class="bd-example bd-example-widget-inverse text-gray-dark">
-  <div class="wg wg-panel wg-panel-gray-light wg-title-gray-dark">
+<div class="bd-example bd-example-widget-inverse text-dark">
+  <div class="wg wg-panel wg-panel-light wg-title-dark">
     <div class="widget">
-      <h3 class="title">Gray Light</h3>
+      <h3 class="title">Light</h3>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
     </div><!-- /.widget -->
   </div>
-  <div class="wg wg-panel wg-panel-gray-dark wg-title-gray-light">
+  <div class="wg wg-panel wg-panel-dark wg-title-light">
     <div class="widget">
-      <h3 class="title">Gray Dark</h3>
+      <h3 class="title">Dark</h3>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
@@ -657,8 +657,8 @@ Gunakan `.wg-panel`, `.wg-panel-{color}`, dan [`.wg-title-{color}`](#color).
 </div><!-- /.bd-example -->
 
 {% highlight html %}
-<b:section class='wg wg-panel wg-panel-gray-light wg-title-gray-dark' id='sectionId'></b:section>
-<b:section class='wg wg-panel wg-panel-gray-dark wg-title-gray-light' id='sectionId'></b:section>
+<b:section class='wg wg-panel wg-panel-light wg-title-dark' id='sectionId'></b:section>
+<b:section class='wg wg-panel wg-panel-dark wg-title-light' id='sectionId'></b:section>
 <b:section class='wg wg-panel wg-panel-white wg-title-black' id='sectionId'></b:section>
 <b:section class='wg wg-panel wg-panel-black wg-title-white' id='sectionId'></b:section>
 <b:section class='wg wg-panel wg-panel-red wg-title-white' id='sectionId'></b:section>
@@ -676,17 +676,17 @@ Gunakan `.wg-panel`, `.wg-panel-{color}`, dan [`.wg-title-{color}`](#color).
 Ubah `.wg-panel-{color}` menjadi `.wg-panel-outline-{color}`.
 
 <div class="bd-example bd-example-widget-inverse text-white">
-  <div class="wg wg-panel wg-panel-outline-gray-light wg-title-gray-light">
+  <div class="wg wg-panel wg-panel-outline-light wg-title-light">
     <div class="widget">
-      <h3 class="title">Gray Light</h3>
+      <h3 class="title">Light</h3>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
     </div><!-- /.widget -->
   </div>
-  <div class="wg wg-panel wg-panel-outline-gray-dark wg-title-gray-dark">
+  <div class="wg wg-panel wg-panel-outline-dark wg-title-dark">
     <div class="widget">
-      <h3 class="title">Gray Dark</h3>
+      <h3 class="title">Dark</h3>
       <div class="widget-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </div>
@@ -783,7 +783,7 @@ Ubah `.wg-panel-{color}` menjadi `.wg-panel-outline-{color}`.
 Tambahkan `.wg-panel-sm`.
 
 <div class="bd-example">
-  <div class="wg wg-panel wg-panel-sm wg-panel-orange wg-title-gray-dark">
+  <div class="wg wg-panel wg-panel-sm wg-panel-orange wg-title-dark">
     <div class="widget">
       <h3 class="title">Widget title</h3>
       <div class="widget-content">
@@ -794,7 +794,7 @@ Tambahkan `.wg-panel-sm`.
 </div><!-- /.bd-example -->
 
 {% highlight html %}
-<b:section class='wg wg-panel wg-panel-sm wg-panel-orange wg-title-gray-dark' id='sectionId'></b:section>
+<b:section class='wg wg-panel wg-panel-sm wg-panel-orange wg-title-dark' id='sectionId'></b:section>
 {% endhighlight %}
 
 ### Group

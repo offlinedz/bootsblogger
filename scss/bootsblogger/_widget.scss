@@ -32,11 +32,11 @@
 
 // Color
 
-.wg-title-gray-light {
-  @include wg-title-variant($wg-gray-light-color)
+.wg-title-light {
+  @include wg-title-variant($wg-light-color)
 }
-.wg-title-gray-dark {
-  @include wg-title-variant($wg-gray-dark-color)
+.wg-title-dark {
+  @include wg-title-variant($wg-dark-color)
 }
 .wg-title-white {
   @include wg-title-variant($wg-white-color)
@@ -176,11 +176,11 @@
 
 // Background variations
 
-.wg-box-gray-light {
-  @include wg-box-variant($wg-gray-light-color, $wg-gray-light-border)
+.wg-box-light {
+  @include wg-box-variant($wg-light-color, $wg-light-border)
 }
-.wg-box-gray-dark {
-  @include wg-box-variant($wg-gray-dark-color, $wg-gray-dark-border)
+.wg-box-dark {
+  @include wg-box-variant($wg-dark-color, $wg-dark-border)
 }
 .wg-box-white {
   @include wg-box-variant($wg-white-color, $wg-white-border)
@@ -214,11 +214,11 @@
 }
 
 // Remove all backgrounds
-.wg-box-outline-gray-light {
-  @include wg-box-outline-variant($wg-gray-light-color)
+.wg-box-outline-light {
+  @include wg-box-outline-variant($wg-light-color)
 }
-.wg-box-outline-gray-dark {
-  @include wg-box-outline-variant($wg-gray-dark-color)
+.wg-box-outline-dark {
+  @include wg-box-outline-variant($wg-dark-color)
 }
 .wg-box-outline-white {
   @include wg-box-outline-variant($wg-white-color)
@@ -359,11 +359,11 @@
 
 // Background variations
 
-.wg-panel-gray-light {
-  @include wg-panel-variant($wg-gray-light-color, $wg-gray-light-border)
+.wg-panel-light {
+  @include wg-panel-variant($wg-light-color, $wg-light-border)
 }
-.wg-panel-gray-dark {
-  @include wg-panel-variant($wg-gray-dark-color, $wg-gray-dark-border)
+.wg-panel-dark {
+  @include wg-panel-variant($wg-dark-color, $wg-dark-border)
 }
 .wg-panel-white {
   @include wg-panel-variant($wg-white-color, $wg-white-border)
@@ -397,11 +397,11 @@
 }
 
 // Remove all backgrounds
-.wg-panel-outline-gray-light {
-  @include wg-panel-outline-variant($wg-gray-light-color)
+.wg-panel-outline-light {
+  @include wg-panel-outline-variant($wg-light-color)
 }
-.wg-panel-outline-gray-dark {
-  @include wg-panel-outline-variant($wg-gray-dark-color)
+.wg-panel-outline-dark {
+  @include wg-panel-outline-variant($wg-dark-color)
 }
 .wg-panel-outline-white {
   @include wg-panel-outline-variant($wg-white-color)
