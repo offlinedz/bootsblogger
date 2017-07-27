@@ -164,7 +164,7 @@ Footer
       <p>&#169; <data:blog.title/>.</p>
       <p>
         <a expr:href='data:blog.bloggerUrl' style='text-decoration: none;'>
-          <b:include data='{ width: 24, height: 24, fillBg: "#ff5722", fillB: "#fff", class: "", style: "vertical-align: middle;" }' name='icons.blogger'/>
+          <b:include data='{ width: 24, height: 24, fillBg: "#ff5722", fillB: "#fff", class: "align-middle" }' name='icons.blogger'/>
           <b:message name='messages.poweredByBlogger'/>
         </a>
       </p>
