@@ -1,7 +1,12 @@
 <b:defaultmarkups>
+  <b:comment>=== BlogArchive ===</b:comment>
   <!--(bake BlogArchive.xml)-->
+  <b:comment>=== BlogSearch ===</b:comment>
   <!--(bake BlogSearch.xml)-->
+  <b:comment>=== ContactForm ===</b:comment>
   <!--(bake ContactForm.xml)-->
+  <b:comment>=== FollowByEmail ===</b:comment>
   <!--(bake FollowByEmail.xml)-->
+  <b:comment>=== Label ===</b:comment>
   <!--(bake Label.xml)-->
 </b:defaultmarkups>

@@ -1,7 +1,6 @@
 <b:comment>
--------------------------------------------------
 Head
-------------------------------------------------- </b:comment>
+================================================= </b:comment>
 
 <b:defaultmarkups>
   <b:defaultmarkup type='Common'>
@@ -27,9 +26,8 @@ Head
 </b:defaultmarkups>
 
 <b:comment>
--------------------------------------------------
 Post
-------------------------------------------------- </b:comment>
+================================================= </b:comment>
 
 <b:defaultmarkups>
   <b:defaultmarkup type='Common'>
@@ -117,9 +115,8 @@ Post
 </b:defaultmarkups>
 
 <b:comment>
--------------------------------------------------
 Assets
-------------------------------------------------- </b:comment>
+================================================= </b:comment>
 
 <b:defaultmarkups>
   <b:defaultmarkup type='Common'>
@@ -149,6 +146,7 @@ Assets
 </b:defaultmarkups>
 
 <b:comment>=== Icons ===</b:comment>
+
 <b:defaultmarkups>
   <b:defaultmarkup type='Common'>
     <b:includable id='icons.blogger'>
