@@ -3,11 +3,11 @@
     <a class='navbar-brand' expr:href='data:blog.homepageUrl'>
       <data:blog.title/>
     </a>
-    <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbar' aria-controls='navbar' aria-expanded='false' aria-label='Toggle navigation'>
+    <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarCollapse' aria-controls='navbarCollapse' aria-expanded='false' aria-label='Toggle navigation'>
       <span class='navbar-toggler-icon'></span>
     </button>
 
-    <div class='collapse navbar-collapse' id='navbar'>
+    <div class='collapse navbar-collapse' id='navbarCollapse'>
       <ul class='navbar-nav mt-2 mt-md-0'>
         <li class='nav-item'><a expr:class='"nav-link" + (data:view.isHomepage ? " active" : "")' expr:href='data:blog.homepageUrl'>Home</a></li>
         <li class='nav-item'><a class='nav-link disabled' href='#'>Disabled</a></li>
