@@ -1,7 +1,7 @@
 <b:if cond='data:view.isHomepage'>
   <div class='jumbotron jumbotron-fluid jumbotron-custom mb-0'>
     <div class='container'>
-      <b:include data='{ width: 128, height: 128, class: &quot;mb-3&quot;, style: &quot;&quot; }' name='icons.bootsblogger'/>
+      <b:include data='{ width: 128, height: 128, class: "mb-3", style: "" }' name='icons.bootsblogger'/>
       <p class='lead'>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
       <p class='lead'><a class='btn btn-lg btn-custom' href='https://bootsblogger.github.io' role='button'>Getting started</a></p>
     </div><!-- /.container -->

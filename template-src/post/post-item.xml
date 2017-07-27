@@ -1,5 +1,5 @@
 <b:loop values='data:posts' var='post'>
-  <article class='card mb-3' expr:id='&quot;post-&quot; + data:post.id'>
+  <article class='card mb-3' expr:id='"post-" + data:post.id'>
 
     <!-- >>> Header <<< -->
     <div class='card-header'>
@@ -7,12 +7,12 @@
         <!-- Author -->
         <li class='list-inline-item'>
           <span class='text-muted'><data:messages.postedBy/></span>
-          <b:include data='{ linkClass: &quot;text-muted&quot; }' name='post.authorName'/>
+          <b:include data='{ linkClass: "text-muted" }' name='post.authorName'/>
         </li>
         <!-- Date -->
         <li class='list-inline-item'>
           <span class='text-muted'><data:messages.on/></span>
-          <b:include data='{ customFormat: &quot;MMM dd, YYYY&quot;, timeClass: &quot;text-muted&quot; }' name='post.datePublished'/>
+          <b:include data='{ customFormat: "MMM dd, YYYY", timeClass: "text-muted" }' name='post.datePublished'/>
         </li>
       </ul><!-- /.list-inline -->
     </div><!-- /.card-header -->
@@ -32,7 +32,7 @@
         <li class='list-inline-item'>
           <i aria-hidden='true' class='fa fa-tags text-muted'/>
           <span class='text-muted'><data:messages.labels/>:</span>
-          <b:include data='{ comma: false, maxResults: 12, labelLinkClass: &quot;badge badge-default&quot;, unlabelledClass: &quot;text-muted&quot; }' name='post.labels'/>
+          <b:include data='{ comma: false, maxResults: 12, labelLinkClass: "badge badge-default", unlabelledClass: "text-muted" }' name='post.labels'/>
         </li>
       </ul><!-- /.list-inline -->
     </div><!-- /.card-footer -->

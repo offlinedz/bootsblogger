@@ -17,7 +17,7 @@
           </h5>
 
           <b:comment>=== French (France) - ‪Français (France)‬ ===</b:comment>
-          <b:if cond='data:blog.locale == &quot;fr&quot;'>
+          <b:if cond='data:blog.locale == "fr"'>
             <p class='mb-1'><strong>Pour activer les commentaires Google+:</strong></p>
             <ol class='pl-4 mb-3'>
               <li>Vérifiez que vous utilisez votre profil Google+ et que votre blog est public.</li>
@@ -26,7 +26,7 @@
             </ol>
 
           <b:comment>=== Dutch - ‪Nederlands‬ ===</b:comment>
-          <b:elseif cond='data:blog.locale == &quot;nl&quot;'/>
+          <b:elseif cond='data:blog.locale == "nl"'/>
             <p class='mb-1'><strong>Google+ reacties inschakelen:</strong></p>
             <ol class='pl-4 mb-3'>
               <li>Zorg dat je Google+ als profiel kiest en dat je blog openbaar is.</li>
@@ -35,7 +35,7 @@
             </ol>
 
           <b:comment>=== German - ‪Deutsch‬ ===</b:comment>
-          <b:elseif cond='data:blog.locale == &quot;de&quot;'/>
+          <b:elseif cond='data:blog.locale == "de"'/>
             <p class='mb-1'><strong>So aktivieren Sie Google+ Kommentare:</strong></p>
             <ol class='pl-4 mb-3'>
               <li>Achten Sie darauf, dass Sie Google+ als Ihr Profil verwenden und Ihr Blog öffentlich ist.</li>
@@ -44,7 +44,7 @@
             </ol>
 
           <b:comment>=== Turkish - ‪Türkçe‬ ===</b:comment>
-          <b:elseif cond='data:blog.locale == &quot;tr&quot;'/>
+          <b:elseif cond='data:blog.locale == "tr"'/>
             <p class='mb-1'><strong>Google+ yorumlarını etkinleştirmek için:</strong></p>
             <ol class='pl-4 mb-3'>
               <li>Profil olarak Google+'yı kullandığınızdan ve blogunuzun herkese açık olduğundan emin olun.</li>
@@ -53,7 +53,7 @@
             </ol>
 
           <b:comment>=== Italian - ‪Italiano‬ ===</b:comment>
-          <b:elseif cond='data:blog.locale == &quot;it&quot;'/>
+          <b:elseif cond='data:blog.locale == "it"'/>
             <p class='mb-1'><strong>Per attivare i commenti di Google+:</strong></p>
             <ol class='pl-4 mb-3'>
               <li>Assicurati di utilizzare Google+ come profilo e che il tuo blog sia pubblico.</li>
@@ -62,7 +62,7 @@
             </ol>
 
           <b:comment>=== Thai - ‪ไทย‬ ===</b:comment>
-          <b:elseif cond='data:blog.locale == &quot;th&quot;'/>
+          <b:elseif cond='data:blog.locale == "th"'/>
             <p class='mb-1'><strong>วิธีเปิด Google+ คอมเมนต์มีดังนี้</strong></p>
             <ol class='pl-4 mb-3'>
               <li>ตรวจดูว่าคุณใช้ Google+ เป็นโปรไฟล์อยู่และบล็อกของคุณตั้งเป็นสาธารณะ</li>
@@ -71,7 +71,7 @@
             </ol>
 
           <b:comment>=== Japanese - ‪日本語‬ ===</b:comment>
-          <b:elseif cond='data:blog.locale == &quot;ja&quot;'/>
+          <b:elseif cond='data:blog.locale == "ja"'/>
             <p class='mb-1'><strong>Google+ コメントを有効にするには:</strong></p>
             <ol class='pl-4 mb-3'>
               <li>Google+ プロフィールを使用していることと、ブログを一般公開していることを確認します。</li>
@@ -80,7 +80,7 @@
             </ol>
 
           <b:comment>=== Korean - ‪한국어‬ ===</b:comment>
-          <b:elseif cond='data:blog.locale == &quot;ko&quot;'/>
+          <b:elseif cond='data:blog.locale == "ko"'/>
             <p class='mb-1'><strong>Google+ 댓글을 사용 설정하려면 다음 단계를 따릅니다.</strong></p>
             <ol class='pl-4 mb-3'>
               <li>프로필로 Google+를 사용 중인지 그리고 블로그가 공개되어 있는지 확인합니다.</li>
@@ -89,7 +89,7 @@
             </ol>
 
           <b:comment>=== Indonesian - ‪Indonesia‬ ===</b:comment>
-          <b:elseif cond='data:blog.locale == &quot;id&quot;'/>
+          <b:elseif cond='data:blog.locale == "id"'/>
             <p class='mb-1'><strong>Untuk mengaktifkan komentar Google+:</strong></p>
             <ol class='pl-4 mb-3'>
               <li>Pastikan Anda menggunakan Google+ sebagai profil dan blog Anda bersifat publik.</li>

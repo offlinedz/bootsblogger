@@ -5,7 +5,7 @@
         <b:loop values='data:itemBylines.items' var='item'>
 
           <b:comment>=== Share ===</b:comment>
-          <b:if cond='data:item.name == &quot;share&quot;'>
+          <b:if cond='data:item.name == "share"'>
             <li class='byline byline-share list-inline-item'>
               <div class='d-inline-block dropdown'>
                 <a b:whitespace='remove' class='byline-share-toggle' href='#' data-toggle='dropdown' expr:title='data:messages.share'>
@@ -14,38 +14,38 @@
                 <div class='dropdown-menu byline-share-dropdown-menu'>
                   <b:loop values='data:sharing.platforms' var='platform'>
                     <b:if cond='data:post.shareUrl'>
-                      <b:if cond='data:platform.key == &quot;twitter&quot;'>
-                        <a class='dropdown-item byline-share-item byline-share-item-twitter' expr:href='data:post.shareUrl + &quot;&amp;target=twitter&quot;' expr:title='data:platform.shareMessage' target='_blank'>
+                      <b:if cond='data:platform.key == "twitter"'>
+                        <a class='dropdown-item byline-share-item byline-share-item-twitter' expr:href='data:post.shareUrl + "&amp;target=twitter"' expr:title='data:platform.shareMessage' target='_blank'>
                           <i aria-hidden='true' class='byline-share-icon byline-share-icon-twitter fa fa-twitter-square fa-fw'/>
                           <data:platform.name/>
                         </a>
                       </b:if>
-                      <b:if cond='data:platform.key == &quot;facebook&quot;'>
-                        <a class='dropdown-item byline-share-item byline-share-item-facebook' expr:href='data:post.shareUrl + &quot;&amp;target=facebook&quot;' expr:title='data:platform.shareMessage' target='_blank'>
+                      <b:if cond='data:platform.key == "facebook"'>
+                        <a class='dropdown-item byline-share-item byline-share-item-facebook' expr:href='data:post.shareUrl + "&amp;target=facebook"' expr:title='data:platform.shareMessage' target='_blank'>
                           <i aria-hidden='true' class='byline-share-icon byline-share-icon-facebook fa fa-facebook-square fa-fw'/>
                           <data:platform.name/>
                         </a>
                       </b:if>
-                      <b:if cond='data:platform.key == &quot;googlePlus&quot;'>
-                        <a class='dropdown-item byline-share-item byline-share-item-google-plus' expr:href='data:post.shareUrl + &quot;&amp;target=googlePlus&quot;' expr:title='data:platform.shareMessage' target='_blank'>
+                      <b:if cond='data:platform.key == "googlePlus"'>
+                        <a class='dropdown-item byline-share-item byline-share-item-google-plus' expr:href='data:post.shareUrl + "&amp;target=googlePlus"' expr:title='data:platform.shareMessage' target='_blank'>
                           <i aria-hidden='true' class='byline-share-icon byline-share-icon-google-plus fa fa-google-plus-square fa-fw'/>
                           <data:platform.name/>
                         </a>
                       </b:if>
-                      <b:if cond='data:platform.key == &quot;pinterest&quot;'>
-                        <a class='dropdown-item byline-share-item byline-share-item-pinterest' expr:href='data:post.shareUrl + &quot;&amp;target=pinterest&quot;' expr:title='data:platform.shareMessage' target='_blank'>
+                      <b:if cond='data:platform.key == "pinterest"'>
+                        <a class='dropdown-item byline-share-item byline-share-item-pinterest' expr:href='data:post.shareUrl + "&amp;target=pinterest"' expr:title='data:platform.shareMessage' target='_blank'>
                           <i aria-hidden='true' class='byline-share-icon byline-share-icon-pinterest fa fa-pinterest-square fa-fw'/>
                           <data:platform.name/>
                         </a>
                       </b:if>
-                      <b:if cond='data:platform.key == &quot;email&quot;'>
-                        <a class='dropdown-item byline-share-item byline-share-item-email' expr:href='data:post.shareUrl + &quot;&amp;target=email&quot;' expr:title='data:platform.shareMessage' target='_blank'>
+                      <b:if cond='data:platform.key == "email"'>
+                        <a class='dropdown-item byline-share-item byline-share-item-email' expr:href='data:post.shareUrl + "&amp;target=email"' expr:title='data:platform.shareMessage' target='_blank'>
                           <i aria-hidden='true' class='byline-share-icon byline-share-icon-email fa fa-envelope fa-fw'/>
                           <data:platform.name/>
                         </a>
                       </b:if>
-                      <b:if cond='data:platform.key == &quot;blogThis&quot;'>
-                        <a class='dropdown-item byline-share-item byline-share-item-blog-this' expr:href='data:post.shareUrl + &quot;&amp;target=blogThis&quot;' expr:title='data:platform.shareMessage' target='_blank'>
+                      <b:if cond='data:platform.key == "blogThis"'>
+                        <a class='dropdown-item byline-share-item byline-share-item-blog-this' expr:href='data:post.shareUrl + "&amp;target=blogThis"' expr:title='data:platform.shareMessage' target='_blank'>
                           <i aria-hidden='true' class='byline-share-icon byline-share-icon-blog-this fa fa-pencil-square fa-fw'/>
                           <data:platform.name/>
                         </a>
@@ -58,7 +58,7 @@
           </b:if>
 
           <b:comment>=== Comments ===</b:comment>
-          <b:if cond='data:item.name == &quot;comments&quot;'>
+          <b:if cond='data:item.name == "comments"'>
             <b:if cond='data:post.allowComments'>
               <li class='byline byline-comments list-inline-item'>
                 <i aria-hidden='true' class='byline-comments-icon fa fa-comments'/>
@@ -72,11 +72,11 @@
           </b:if>
 
           <b:comment>=== Location ===</b:comment>
-          <b:if cond='data:item.name == &quot;location&quot;'>
+          <b:if cond='data:item.name == "location"'>
             <b:if cond='data:post.location'>
               <li class='byline byline-location list-inline-item'>
                 <i aria-hidden='true' class='byline-location-icon fa fa-location-arrow'/>
-                <b:if cond='data:item.label != &quot;&quot;'>
+                <b:if cond='data:item.label != ""'>
                   <span class='byline-location-label'><data:item.label/></span>
                 </b:if>
                 <a b:whitespace='remove' class='byline-location-link' expr:href='data:post.location.mapsUrl' target='_blank'>
@@ -87,16 +87,16 @@
           </b:if>
 
           <b:comment>=== Backlinks ===</b:comment>
-          <b:if cond='data:item.name == &quot;backlinks&quot;'>
+          <b:if cond='data:item.name == "backlinks"'>
             <li class='byline byline-backlinks list-inline-item'>
               <i aria-hidden='true' class='byline-backlinks-icon fa fa-pencil-square'/>
-              <b:if cond='data:item.label != &quot;&quot;'>
-                <a b:whitespace='remove' class='byline-backlinks-link' expr:onclick='&quot;window.open(&amp;quot;https://www.blogger.com/blog-this.g?n=&quot; + data:blog.title + &quot;: &quot; + (data:post.title ? data:post.title : data:messages.noTitle) + &quot;&amp;u=&quot; + data:post.url + &quot;&amp;t=&amp;quot;, &amp;quot;_blank&amp;quot;, &amp;quot;directories=no, titlebar=no, toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=800, height=600&amp;quot;);&quot;' href='javascript:void(0)'>
+              <b:if cond='data:item.label != ""'>
+                <a b:whitespace='remove' class='byline-backlinks-link' expr:onclick='"window.open(&amp;quot;https://www.blogger.com/blog-this.g?n=" + data:blog.title + ": " + (data:post.title ? data:post.title : data:messages.noTitle) + "&amp;u=" + data:post.url + "&amp;t=&amp;quot;, &amp;quot;_blank&amp;quot;, &amp;quot;directories=no, titlebar=no, toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=800, height=600&amp;quot;);"' href='javascript:void(0)'>
                   <b:attr name='title' expr:value='data:item.label'/>
                   <data:item.label/>
                 </a>
               <b:else/>
-                <a b:whitespace='remove' class='byline-backlinks-link' expr:onclick='&quot;window.open(&amp;quot;https://www.blogger.com/blog-this.g?n=&quot; + data:blog.title + &quot;: &quot; + (data:post.title ? data:post.title : data:messages.noTitle) + &quot;&amp;u=&quot; + data:post.url + &quot;&amp;t=&amp;quot;, &amp;quot;_blank&amp;quot;, &amp;quot;directories=no, titlebar=no, toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=800, height=600&amp;quot;);&quot;' href='javascript:void(0)'>
+                <a b:whitespace='remove' class='byline-backlinks-link' expr:onclick='"window.open(&amp;quot;https://www.blogger.com/blog-this.g?n=" + data:blog.title + ": " + (data:post.title ? data:post.title : data:messages.noTitle) + "&amp;u=" + data:post.url + "&amp;t=&amp;quot;, &amp;quot;_blank&amp;quot;, &amp;quot;directories=no, titlebar=no, toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=800, height=600&amp;quot;);"' href='javascript:void(0)'>
                   <b:attr name='title' value='Links to this post'/>
                   Links to this post
                 </a>
@@ -105,10 +105,10 @@
           </b:if>
 
           <b:comment>=== Timestamp ===</b:comment>
-          <b:if cond='data:item.name == &quot;timestamp&quot;'>
+          <b:if cond='data:item.name == "timestamp"'>
             <li class='byline byline-timestamp list-inline-item'>
               <i aria-hidden='true' class='byline-timestamp-icon fa fa-clock-o'/>
-              <b:if cond='data:item.label != &quot;&quot;'>
+              <b:if cond='data:item.label != ""'>
                 <span class='byline-timestamp-label'><data:item.label/></span>
               </b:if>
               <time class='byline-timestamp-date' expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
@@ -118,10 +118,10 @@
           </b:if>
 
           <b:comment>=== Author ===</b:comment>
-          <b:if cond='data:item.name == &quot;author&quot;'>
+          <b:if cond='data:item.name == "author"'>
             <li class='byline byline-author list-inline-item'>
               <i aria-hidden='true' class='byline-author-icon fa fa-user-circle'/>
-              <b:if cond='data:item.label != &quot;&quot;'>
+              <b:if cond='data:item.label != ""'>
                 <span class='byline-author-label'><data:item.label/></span>
               </b:if>
               <b:if cond='data:post.author'>
@@ -135,10 +135,10 @@
           </b:if>
 
           <b:comment>=== Labels ===</b:comment>
-          <b:if cond='data:item.name == &quot;labels&quot;'>
+          <b:if cond='data:item.name == "labels"'>
             <li class='byline byline-labels list-inline-item'>
               <i aria-hidden='true' class='byline-labels-icon fa fa-tags'/>
-              <b:if cond='data:item.label != &quot;&quot;'>
+              <b:if cond='data:item.label != ""'>
                 <span class='byline-labels-label'><data:item.label/></span>
               </b:if>
               <b:if cond='data:post.labels'>
@@ -152,7 +152,7 @@
           </b:if>
 
           <b:comment>=== Icons ===</b:comment>
-          <b:if cond='data:item.name == &quot;icons&quot;'>
+          <b:if cond='data:item.name == "icons"'>
             <li class='byline byline-icons list-inline-item'>
               <i aria-hidden='true' class='byline-email-icon fa fa-envelope'/>
               <a b:whitespace='remove' class='byline-email-link' expr:href='data:post.emailPostUrl' expr:title='data:messages.emailPost'>
@@ -162,13 +162,13 @@
           </b:if>
 
           <b:comment>=== Reactions ===</b:comment>
-          <b:if cond='data:item.name == &quot;reactions&quot;'>
+          <b:if cond='data:item.name == "reactions"'>
             <li class='byline byline-reactions list-inline-item'>
               <div class='d-flex justify-content-start'>
                 <div>
                   <i aria-hidden='true' class='byline-reactions-icon fa fa-star'/>
                 </div>
-                <b:if cond='data:item.label != &quot;&quot;'>
+                <b:if cond='data:item.label != ""'>
                   <div style='margin-left: 4px;'>
                     <span class='byline-reactions-label'><data:item.label/></span>
                   </div>

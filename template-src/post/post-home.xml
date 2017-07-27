@@ -1,5 +1,5 @@
 <b:loop values='data:posts' var='post'>
-  <article class='card mb-3 mb-sm-5' expr:id='&quot;post-&quot; + data:post.id'>
+  <article class='card mb-3 mb-sm-5' expr:id='"post-" + data:post.id'>
 
     <!-- >>> Header <<< -->
     <b:if cond='data:headerByline.items.notEmpty'>
@@ -14,7 +14,7 @@
       <div class='col-sm-3 col-md-4'>
         <!-- Featured image -->
         <div class='card-block-img-left-sm'>
-          <b:include data='{ size: 256, sourceSet: [256, 512], sourceSizes: &quot;100vw&quot;, ratioWidth: 1, ratioHeight: 1, link: true, noImage: "https://placehold.it/256x256/777/eee/?text=NO+IMAGE", imageClass: &quot;card-img-left&quot; }' name='post.featuredImage'/>
+          <b:include data='{ size: 256, sourceSet: [256, 512], sourceSizes: "100vw", ratioWidth: 1, ratioHeight: 1, link: true, noImage: "https://placehold.it/256x256/777/eee/?text=NO+IMAGE", imageClass: "card-img-left" }' name='post.featuredImage'/>
         </div><!-- /.card-block-img-left-sm -->
       </div><!-- /col -->
       <div class='col-sm-9 col-md-8'>
@@ -24,7 +24,7 @@
           <!-- Snippet -->
           <b:include data='{ length: 150, links: true, linebreaks: true, ellipsis: true, notHasJumpLink: true, parentClass: "card-text" }' name='post.snippet'/>
           <!-- Jump link -->
-          <b:include data='{ linkClass: &quot;btn btn-primary&quot;, parentClass: &quot;mt-2&quot; }' name='post.jumpLink'/>
+          <b:include data='{ linkClass: "btn btn-primary", parentClass: "mt-2" }' name='post.jumpLink'/>
         </div><!-- /.card-block -->
       </div><!-- /col -->
     </div><!-- /.row -->

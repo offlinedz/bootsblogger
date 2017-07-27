@@ -1,11 +1,11 @@
  <div class='row'>
   <b:loop values='data:posts' var='post'>
-    <article class='col-sm-6 mb-3 mb-sm-5' expr:id='&quot;post-&quot; + data:post.id'>
+    <article class='col-sm-6 mb-3 mb-sm-5' expr:id='"post-" + data:post.id'>
       <div class='card h-100'>
 
         <!-- >>> Image <<< -->
         <!-- Featured image -->
-        <b:include data='{ size: 320, ratioWidth: 320, ratioHeight: 180, noImage: "https://placehold.it/320x180/777/eee/?text=NO+IMAGE", class: &quot;card-img-top card-img-cover&quot;, style: &quot;height: 180px;&quot; }' name='post.featuredImageBg'/>
+        <b:include data='{ size: 320, ratioWidth: 320, ratioHeight: 180, noImage: "https://placehold.it/320x180/777/eee/?text=NO+IMAGE", class: "card-img-top card-img-cover", style: "height: 180px;" }' name='post.featuredImageBg'/>
 
         <!-- >>> Body <<< -->
         <div class='card-block'>
@@ -13,12 +13,12 @@
           <b:include data='{ heading: "h2", headingClass: "card-title h4", link: true, linkClass: "card-title-link", noTitleMessage: false }' name='post.title'/>
           <!-- Date -->
           <h6 class='card-subtitle mb-2'>
-            <b:include data='{ customFormat: &quot;MMM dd, YYYY&quot;, timeClass: &quot;text-muted&quot; }' name='post.datePublished'/>
+            <b:include data='{ customFormat: "MMM dd, YYYY", timeClass: "text-muted" }' name='post.datePublished'/>
           </h6>
           <!-- Snippet -->
           <b:include data='{ length: 150, links: true, linebreaks: true, ellipsis: true, notHasJumpLink: false, parentClass: "card-text" }' name='post.snippet'/>
           <!-- Jump link -->
-          <b:include data='{ class: &quot;card-link&quot;, parentClass: &quot;mt-2&quot; }' name='post.jumpLink'/>
+          <b:include data='{ class: "card-link", parentClass: "mt-2" }' name='post.jumpLink'/>
         </div><!-- /.card-block -->
 
         <!-- >>> Footer <<< -->
@@ -27,13 +27,13 @@
             <!-- Author -->
             <span>
               <i aria-hidden='true' class='fa fa-user-circle text-muted'/>
-              <b:include data='{ linkClass: &quot;text-muted&quot; }' name='post.authorName'/>
+              <b:include data='{ linkClass: "text-muted" }' name='post.authorName'/>
             </span>
             <!-- Number of comments -->
             <b:if cond='data:post.allowComments'>
               <span>
                 <i aria-hidden='true' class='fa fa-comments text-muted'/>
-                <b:include data='{ linkClass: &quot;text-muted&quot; }' name='post.numComments'/>
+                <b:include data='{ linkClass: "text-muted" }' name='post.numComments'/>
               </span>
             </b:if>
           </div><!-- /flex -->

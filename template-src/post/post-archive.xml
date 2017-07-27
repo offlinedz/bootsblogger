@@ -1,10 +1,10 @@
 <table class='table table-striped'>
   <tbody>
     <b:loop values='data:posts' var='post'>
-      <tr expr:id='&quot;post-&quot; + data:post.id'>
+      <tr expr:id='"post-" + data:post.id'>
         <!-- Date -->
         <td class='text-nowrap'>
-          <b:include data='{ customFormat: &quot;dd/MM/YYYY&quot;, timeClass: &quot;&quot; }' name='post.datePublished'/>
+          <b:include data='{ customFormat: "dd/MM/YYYY", timeClass: "" }' name='post.datePublished'/>
         </td>
         <!-- Title -->
         <td>
@@ -12,7 +12,7 @@
         </td>
         <!-- Author -->
         <td class='text-nowrap'>
-          <b:include data='{ linkClass: &quot;&quot; }' name='post.authorName'/>
+          <b:include data='{ linkClass: "" }' name='post.authorName'/>
         </td>
       </tr>
     </b:loop>

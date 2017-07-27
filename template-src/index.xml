@@ -13,9 +13,9 @@ Title, meta, and link tags
 <b:include name='head.title'/>
 <b:include name='head.allHeadContent'/>
 
-<b:with value='&quot;https://example.com/path/to/image.png&quot;' var='image'>
-<b:with value='&quot;@username_of_website&quot;' var='twitterUsernameWebsite'>
-<b:with value='&quot;@username_of_content_creator&quot;' var='twitterUsernameCreator'>
+<b:with value='"https://example.com/path/to/image.png"' var='image'>
+<b:with value='"@username_of_website"' var='twitterUsernameWebsite'>
+<b:with value='"@username_of_content_creator"' var='twitterUsernameCreator'>
   <b:include name='head.defaultTags'/>
   <b:include name='head.facebookTags'/>
   <b:include name='head.twitterTags'/>
@@ -137,7 +137,7 @@ Widget block (1)
 ================================================= </b:comment>
 
 <div class='widget-block-1 py-5' id='widget-block-1'>
-  <b:class cond='data:widgets none w =&gt; w.sectionId == &quot;b-section-widget-block-1&quot;' name='d-none'/>
+  <b:class cond='data:widgets none w =&gt; w.sectionId == "b-section-widget-block-1"' name='d-none'/>
   <div class='container'>
     <div class='widget-block-1-content'>
       <b:section class='b-section-widget-block-1 wg wg-box wg-box-gray-dark wg-title-gray-light wg-lg-4 wg-equal-height-cols wg-section-no-mb' id='b-section-widget-block-1' name='Widget block (1)'>
@@ -164,7 +164,7 @@ Footer
       <p>&#169; <data:blog.title/>.</p>
       <p>
         <a expr:href='data:blog.bloggerUrl' style='text-decoration: none;'>
-          <b:include data='{ width: 24, height: 24, fillBg: &quot;#ff5722&quot;, fillB: &quot;#fff&quot;, class: &quot;&quot;, style: &quot;vertical-align: middle;&quot; }' name='icons.blogger'/>
+          <b:include data='{ width: 24, height: 24, fillBg: "#ff5722", fillB: "#fff", class: "", style: "vertical-align: middle;" }' name='icons.blogger'/>
           <b:message name='messages.poweredByBlogger'/>
         </a>
       </p>

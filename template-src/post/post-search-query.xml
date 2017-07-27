@@ -1,5 +1,5 @@
 <b:loop values='data:posts' var='post'>
-  <article class='card mb-3' expr:id='&quot;post-&quot; + data:post.id'>
+  <article class='card mb-3' expr:id='"post-" + data:post.id'>
 
     <!-- >>> Body <<< -->
     <div class='card-block'>
@@ -7,7 +7,7 @@
       <b:include data='{ heading: "h2", headingClass: "card-title", link: true, linkClass: "card-title-link", noTitleMessage: false }' name='post.title'/>
       <!-- Date and snippet -->
       <div class='card-text'>
-        <b:include data='{ customFormat: &quot;MMM dd, YYYY&quot;, timeClass: &quot;text-muted&quot; }' name='post.datePublished'/>
+        <b:include data='{ customFormat: "MMM dd, YYYY", timeClass: "text-muted" }' name='post.datePublished'/>
         <span class='text-muted'>-</span>
         <b:include data='{ length: 150, links: false, linebreaks: false, ellipsis: true, notHasJumpLink: false, parentClass: "d-inline" }' name='post.snippet'/>
       </div><!-- /.card-text -->

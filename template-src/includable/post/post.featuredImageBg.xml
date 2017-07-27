@@ -1,11 +1,11 @@
 <b:if cond='data:post.featuredImage'>
   <b:if cond='data:post.featuredImage.isYoutube'>
-    <div expr:class='data:class' expr:style='data:style + &quot; background-image: url(&quot; + (data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, data:size, (data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.featuredImage.youtubeMaxResDefaultUrl) + &quot;);&quot;'/>
+    <div expr:class='data:class' expr:style='data:style + " background-image: url(" + (data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, data:size, (data:ratioWidth + ":" + data:ratioHeight)) : data:post.featuredImage.youtubeMaxResDefaultUrl) + ");"'/>
   <b:else/>
-    <div expr:class='data:class' expr:style='data:style + &quot; background-image: url(&quot; + (data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, data:size, (data:ratioWidth + &quot;:&quot; + data:ratioHeight)) : data:post.featuredImage) + &quot;);&quot;'/>
+    <div expr:class='data:class' expr:style='data:style + " background-image: url(" + (data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, data:size, (data:ratioWidth + ":" + data:ratioHeight)) : data:post.featuredImage) + ");"'/>
   </b:if>
 <b:else/>
   <b:if cond='data:noImage'>
-    <div expr:class='data:class' expr:style='data:style + &quot; background-image: url(&quot; + data:noImage + &quot;);&quot;'/>
+    <div expr:class='data:class' expr:style='data:style + " background-image: url(" + data:noImage + ");"'/>
   </b:if>
 </b:if>

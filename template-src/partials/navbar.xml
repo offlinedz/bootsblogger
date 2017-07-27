@@ -9,27 +9,27 @@
 
     <div class='collapse navbar-collapse' id='navbar'>
       <ul class='navbar-nav mt-2 mt-md-0'>
-        <li class='nav-item'><a expr:class='&quot;nav-link&quot; + (data:view.isHomepage ? &quot; active&quot; : &quot;&quot;)' expr:href='data:blog.homepageUrl'>Home</a></li>
+        <li class='nav-item'><a expr:class='"nav-link" + (data:view.isHomepage ? " active" : "")' expr:href='data:blog.homepageUrl'>Home</a></li>
         <li class='nav-item'><a class='nav-link disabled' href='#'>Disabled</a></li>
         <li class='nav-item dropdown'>
           <a class='nav-link dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' href='#'>Demo</a>
           <div class='dropdown-menu'>
             <a class='dropdown-item' expr:href='data:blog.homepageUrl'>Homepage</a>
             <div class='dropdown-divider'></div>
-            <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, &quot;/search&quot;)'>Search (default) page</a>
+            <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, "/search")'>Search (default) page</a>
             <div class='dropdown-divider'></div>
-            <a class='dropdown-item' expr:href='data:blog.homepageUrl path &quot;/search/label/Sample&quot; params { max-results: &quot;12&quot; }'>Search (label) page <span class='badge badge-success'>yep</span></a>
-            <a class='dropdown-item' expr:href='data:blog.homepageUrl path &quot;/search/label/Nope&quot; params { max-results: &quot;12&quot; }'>Search (label) page <span class='badge badge-danger'>nope</span></a>
+            <a class='dropdown-item' expr:href='data:blog.homepageUrl path "/search/label/Sample" params { max-results: "12" }'>Search (label) page <span class='badge badge-success'>yep</span></a>
+            <a class='dropdown-item' expr:href='data:blog.homepageUrl path "/search/label/Nope" params { max-results: "12" }'>Search (label) page <span class='badge badge-danger'>nope</span></a>
             <div class='dropdown-divider'></div>
-            <a class='dropdown-item' expr:href='data:blog.homepageUrl path &quot;/search&quot; appendParams { q: &quot;lorem ipsum&quot; }'>Search (query) page <span class='badge badge-success'>yep</span></a>
-            <a class='dropdown-item' expr:href='data:blog.homepageUrl path &quot;/search&quot; appendParams { q: &quot;nope&quot; }'>Search (query) page <span class='badge badge-danger'>nope</span></a>
+            <a class='dropdown-item' expr:href='data:blog.homepageUrl path "/search" appendParams { q: "lorem ipsum" }'>Search (query) page <span class='badge badge-success'>yep</span></a>
+            <a class='dropdown-item' expr:href='data:blog.homepageUrl path "/search" appendParams { q: "nope" }'>Search (query) page <span class='badge badge-danger'>nope</span></a>
             <div class='dropdown-divider'></div>
-            <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, &quot;/2016/11&quot;)'>Archive page <span class='badge badge-success'>yep</span></a>
-            <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, &quot;/1945/08&quot;)'>Archive page <span class='badge badge-danger'>nope</span></a>
+            <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, "/2016/11")'>Archive page <span class='badge badge-success'>yep</span></a>
+            <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, "/1945/08")'>Archive page <span class='badge badge-danger'>nope</span></a>
             <div class='dropdown-divider'></div>
-            <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, &quot;/2016/11/sample-blog-post-03.html&quot;)'>Item page</a>
-            <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, &quot;/p/static-page.html&quot;)'>Static page</a>
-            <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, &quot;/404&quot;)'>Error page</a>
+            <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, "/2016/11/sample-blog-post-03.html")'>Item page</a>
+            <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, "/p/static-page.html")'>Static page</a>
+            <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, "/404")'>Error page</a>
           </div>
         </li>
       </ul>
