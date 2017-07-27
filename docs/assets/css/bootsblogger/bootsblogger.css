@@ -373,31 +373,31 @@
   }
 }
 .navmenu-light .navmenu-brand {
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 0.9);
 }
 .navmenu-light .navmenu-brand:focus, .navmenu-light .navmenu-brand:hover {
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 0.9);
 }
 .navmenu-light .navmenu-nav .nav-link {
-  color: rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.5);
 }
 .navmenu-light .navmenu-nav .nav-link:focus, .navmenu-light .navmenu-nav .nav-link:hover {
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.7);
 }
 .navmenu-light .navmenu-nav .nav-link.disabled {
-  color: rgba(0, 0, 0, 0.15);
+  color: rgba(0, 0, 0, 0.3);
 }
 .navmenu-light .navmenu-nav .show > .nav-link,
 .navmenu-light .navmenu-nav .active > .nav-link,
 .navmenu-light .navmenu-nav .nav-link.show,
 .navmenu-light .navmenu-nav .nav-link.active {
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 0.9);
 }
 .navmenu-light .navmenu-nav .nav-item-bordered {
   border-color: rgba(0, 0, 0, 0.05);
 }
 .navmenu-light .navmenu-header {
-  color: rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.4);
 }
 .navmenu-light .navmenu-divider {
   border-color: rgba(0, 0, 0, 0.05);
