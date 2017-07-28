@@ -112,72 +112,6 @@ body {}
 
 
 /* ==========================================================================
-   Custom Jumbotron
-   ========================================================================== */
-
-.jumbotron-custom {
-  color: #fff;
-  text-align: center;
-  background-color: #ff5722;
-}
-
-.jumbotron-custom .lead {
-  margin-right: auto;
-  margin-bottom: 2rem;
-  margin-left: auto;
-}
-.jumbotron-custom .lead:last-child {
-  margin-bottom: 0;
-}
-
-@media (min-width: 768px) {
-  .jumbotron-custom .lead {
-    font-size: 1.5rem
-  }
-}
-@media (min-width: 992px) {
-  .jumbotron-custom .lead {
-    width: 85%;
-    font-size: 2rem
-  }
-}
-
-
-/* ==========================================================================
-   Custom Buttons
-   ========================================================================== */
-
-.btn-custom {
-  color: #333;
-  background-color: #ffe082;
-  border-color: #ffe082;
-}
-.btn-custom:hover {
-  color: #333;
-  background-color: #ffd54f;
-  border-color: #ffd54f;
-}
-.btn-custom:focus,
-.btn-custom.focus {
-  -webkit-box-shadow: 0 0 0 3px rgba(255,213,79,.45);
-          box-shadow: 0 0 0 3px rgba(255,213,79,.45);
-}
-.btn-custom:disabled,
-.btn-custom.disabled {
-  color: #777;
-  background-color: #ffecb3;
-  border-color: #ffecb3;
-}
-.btn-custom:active,
-.btn-custom.active,
-.show > .btn-custom.dropdown-toggle {
-  color: #333;
-  background-color: #ffd54f;
-  border-color: #ffd54f;
-}
-
-
-/* ==========================================================================
    Widget `Blog`
    ========================================================================== */
 
@@ -220,6 +154,102 @@ body {}
 /* ==========================================================================
    Layout and styles
    ========================================================================== */
+
+/* Header
+   ========================================================================== */
+
+/**
+ * Base class
+ */
+
+.header {
+  position: relative;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  color: #fff;
+  background-color: #777;
+}
+
+/**
+ * Title
+ */
+
+@media (min-width: 768px) {
+  .header h1 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.1;
+  }
+}
+
+.header h1 a,
+.header h1 a:hover {
+  color: #fff;
+}
+.header h1 a,
+.header h1 a:focus,
+.header h1 a:hover {
+  text-decoration: none;
+}
+
+/**
+ * Description
+ */
+
+.header p {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+/**
+ * Image placement: REPLACE
+ *
+ * - `.image-placement-replace`
+ * - `.image-placement-replace.no-image`
+ * - `.image-placement-replace.has-image`
+ */
+
+.header.image-placement-replace img {
+  max-width: 100%;
+}
+
+/**
+ * Image placement: BEFORE_DESCRIPTION
+ *
+ * - `.image-placement-before-description`
+ * - `.image-placement-before-description.no-image`
+ * - `.image-placement-before-description.has-image`
+ */
+
+.header.image-placement-before-description img {
+  max-width: 100%;
+  margin-bottom: 1rem;
+}
+
+/**
+ * Image placement: BEHIND
+ *
+ * - `.image-placement-behind`
+ * - `.image-placement-behind.no-image`
+ * - `.image-placement-behind.has-image`
+ */
+
+.header.image-placement-behind {
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+          background-size: cover;
+}
+
+.header.image-placement-behind.has-image::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: "";
+  background-image: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7));
+}
 
 /* Wrapping element for .main and .sidebar
    ========================================================================== */

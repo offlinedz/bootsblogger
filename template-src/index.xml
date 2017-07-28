@@ -6,7 +6,7 @@
 
 <b:comment>
 =================================================
-Title, meta, and link tags
+Title, meta and link tags
 ================================================= </b:comment>
 
 <b:include name='head.requiredMetaTags'/>
@@ -94,10 +94,14 @@ Navbar
 
 <b:comment>
 =================================================
-Jumbotron
+Header
 ================================================= </b:comment>
 
-<!--(bake partials/jumbotron.xml)-->
+<b:if cond='data:view.isLayoutMode or (data:view.isHomepage)'>
+  <b:section class='b-section-header wg-title-hide' id='b-section-header' maxwidgets='1' name='Header' showaddelement='no'>
+    <!--(bake widgets/b-section-header__Header1.xml)-->
+  </b:section>
+</b:if>
 
 
 <b:comment>
