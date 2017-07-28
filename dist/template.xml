@@ -6,7 +6,7 @@
 
 <b:comment>
 =================================================
-Title, meta, and link tags
+Title, meta and link tags
 ================================================= </b:comment>
 
 <b:include name='head.requiredMetaTags'/>
@@ -112,9 +112,9 @@ body#layout .blogger-col-12 {
 <b:comment>=== Template Skin ===</b:comment>
 <b:skin>
 <![CDATA[
-/* ==============================================
+/* ==========================================================================
    Template details
-   ============================================== */
+   ========================================================================== */
 
 /**
  * Template Name : Template name
@@ -137,16 +137,16 @@ body#layout .blogger-col-12 {
  */
 
 
-/* ==============================================
+/* ==========================================================================
    Global styles
-   ============================================== */
+   ========================================================================== */
 
 body {}
 
 
-/* ==============================================
+/* ==========================================================================
    Custom Navbar
-   ============================================== */
+   ========================================================================== */
 
 .navbar-custom {
   min-height: 4rem;
@@ -225,85 +225,19 @@ body {}
 }
 
 
-/* ==============================================
-   Custom Jumbotron
-   ============================================== */
-
-.jumbotron-custom {
-  color: #fff;
-  text-align: center;
-  background-color: #ff5722;
-}
-
-.jumbotron-custom .lead {
-  margin-right: auto;
-  margin-bottom: 2rem;
-  margin-left: auto;
-}
-.jumbotron-custom .lead:last-child {
-  margin-bottom: 0;
-}
-
-@media (min-width: 768px) {
-  .jumbotron-custom .lead {
-    font-size: 1.5rem
-  }
-}
-@media (min-width: 992px) {
-  .jumbotron-custom .lead {
-    width: 85%;
-    font-size: 2rem
-  }
-}
-
-
-/* ==============================================
-   Custom Buttons
-   ============================================== */
-
-.btn-custom {
-  color: #333;
-  background-color: #ffe082;
-  border-color: #ffe082;
-}
-.btn-custom:hover {
-  color: #333;
-  background-color: #ffd54f;
-  border-color: #ffd54f;
-}
-.btn-custom:focus,
-.btn-custom.focus {
-  -webkit-box-shadow: 0 0 0 3px rgba(255,213,79,.45);
-          box-shadow: 0 0 0 3px rgba(255,213,79,.45);
-}
-.btn-custom:disabled,
-.btn-custom.disabled {
-  color: #777;
-  background-color: #ffecb3;
-  border-color: #ffecb3;
-}
-.btn-custom:active,
-.btn-custom.active,
-.show > .btn-custom.dropdown-toggle {
-  color: #333;
-  background-color: #ffd54f;
-  border-color: #ffd54f;
-}
-
-
-/* ==============================================
+/* ==========================================================================
    Widget `Blog`
-   ============================================== */
+   ========================================================================== */
 
 /* Breadcrumb
-   ============================================== */
+   ========================================================================== */
 
 .blog-breadcrumb .breadcrumb {
   background-color: rgba(0,0,0,.05);
 }
 
 /* Alert
-   ============================================== */
+   ========================================================================== */
 
 .blog-alert .alert .search-label,
 .blog-alert .alert .search-query {
@@ -311,12 +245,12 @@ body {}
 }
 
 /* Posts
-   ============================================== */
+   ========================================================================== */
 
 .blog-posts {}
 
 /* Comments
-   ============================================== */
+   ========================================================================== */
 
 .blog-comments {
   margin-top: 3rem;
@@ -324,40 +258,136 @@ body {}
 }
 
 /* Pager
-   ============================================== */
+   ========================================================================== */
 
 .blog-pager > .btn {
   border-radius: 2rem;
 }
 
 
-/* ==============================================
+/* ==========================================================================
    Layout and styles
-   ============================================== */
+   ========================================================================== */
+
+/* Header
+   ========================================================================== */
+
+/**
+ * Base class
+ */
+
+.header {
+  position: relative;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  color: #fff;
+  background-color: #777;
+}
+
+/**
+ * Title
+ */
+
+@media (min-width: 768px) {
+  .header h1 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.1;
+  }
+}
+
+.header h1 a,
+.header h1 a:hover {
+  color: #fff;
+}
+.header h1 a,
+.header h1 a:focus,
+.header h1 a:hover {
+  text-decoration: none;
+}
+
+/**
+ * Description
+ */
+
+.header p {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+/**
+ * Image placement: REPLACE
+ *
+ * - `.image-placement-replace`
+ * - `.image-placement-replace.no-image`
+ * - `.image-placement-replace.has-image`
+ */
+
+.header.image-placement-replace img {
+  max-width: 100%;
+}
+
+/**
+ * Image placement: BEFORE_DESCRIPTION
+ *
+ * - `.image-placement-before-description`
+ * - `.image-placement-before-description.no-image`
+ * - `.image-placement-before-description.has-image`
+ */
+
+.header.image-placement-before-description img {
+  max-width: 100%;
+  margin-bottom: 1rem;
+}
+
+/**
+ * Image placement: BEHIND
+ *
+ * - `.image-placement-behind`
+ * - `.image-placement-behind.no-image`
+ * - `.image-placement-behind.has-image`
+ */
+
+.header.image-placement-behind {
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+          background-size: cover;
+}
+
+.header.image-placement-behind.has-image::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: "";
+  background-image: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7));
+}
 
 /* Wrapping element for .main and .sidebar
-   ============================================== */
+   ========================================================================== */
 
 .main-and-sidebar {
   background-color: #fafafa;
 }
 
 /* Main
-   ============================================== */
+   ========================================================================== */
 
 .main {}
 
 .main-content {}
 
 /* Sidebar
-   ============================================== */
+   ========================================================================== */
 
 .sidebar {}
 
 .sidebar-content {}
 
 /* Footer
-   ============================================== */
+   ========================================================================== */
 
 .footer {
   font-size: 85%;
@@ -397,7 +427,7 @@ body {}
 }
 
 /* Widget block (1)
-   ============================================== */
+   ========================================================================== */
 
 .widget-block-1 {
   background-color: #333;
@@ -1083,17 +1113,76 @@ Navbar
 
 <b:comment>
 =================================================
-Jumbotron
+Header
 ================================================= </b:comment>
 
-<b:if cond='data:view.isHomepage'>
-  <div class='jumbotron jumbotron-fluid jumbotron-custom mb-0'>
-    <div class='container'>
-      <b:include data='{ width: 128, height: 128, class: "mb-3" }' name='icons.bootsblogger'/>
-      <p class='lead'>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-      <p class='lead'><a class='btn btn-lg btn-custom' href='https://bootsblogger.github.io' role='button'>Getting started</a></p>
-    </div><!-- /.container -->
-  </div><!-- /.jumbotron -->
+<b:if cond='data:view.isLayoutMode or (data:view.isHomepage)'>
+  <b:section class='b-section-header wg-title-hide' id='b-section-header' maxwidgets='1' name='Header' showaddelement='no'>
+    <b:widget id='Header1' locked='true' title='Header (Header)' type='Header' version='2' visible='true'>
+      <b:widget-settings>
+        <b:widget-setting name='displayUrl'/>
+        <b:widget-setting name='displayHeight'>0</b:widget-setting>
+        <b:widget-setting name='sectionWidth'>0</b:widget-setting>
+        <b:widget-setting name='useImage'>true</b:widget-setting>
+        <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
+        <b:widget-setting name='imagePlacement'>BEHIND</b:widget-setting>
+        <b:widget-setting name='displayWidth'>0</b:widget-setting>
+      </b:widget-settings>
+      <b:includable id='main' var='this'>
+        <b:comment>=== REPLACE ===</b:comment>
+        <b:if cond='data:imagePlacement == "REPLACE"'>
+          <div class='header image-placement-replace'>
+            <b:class cond='!data:image' name='no-image'/>
+            <b:class cond='data:image' name='has-image'/>
+            <div class='container'>
+              <b:if cond='data:image'>
+                <a expr:href='data:blog.homepageUrl'>
+                  <img expr:alt='data:title ? data:title : data:messages.image' expr:src='data:image'/>
+                </a>
+              </b:if>
+            </div>
+          </div>
+        </b:if>
+        <b:comment>=== BEFORE_DESCRIPTION ===</b:comment>
+        <b:if cond='data:imagePlacement == "BEFORE_DESCRIPTION"'>
+          <div class='header image-placement-before-description'>
+            <b:class cond='!data:image' name='no-image'/>
+            <b:class cond='data:image' name='has-image'/>
+            <div class='container'>
+              <b:if cond='data:image'>
+                <a expr:href='data:blog.homepageUrl'>
+                  <img expr:alt='data:title ? data:title : data:messages.image' expr:src='data:image'/>
+                </a>
+              </b:if>
+              <b:if cond='data:description'>
+                <p><data:description/></p>
+              </b:if>
+            </div>
+          </div>
+        </b:if>
+        <b:comment>=== BEHIND ===</b:comment>
+        <b:if cond='data:imagePlacement == "BEHIND"'>
+          <div class='header image-placement-behind'>
+            <b:attr cond='data:image' expr:value='"background-image: url(" + data:image + ");"' name='style'/>
+            <b:class cond='!data:image' name='no-image'/>
+            <b:class cond='data:image' name='has-image'/>
+            <div class='container'>
+              <b:if cond='data:title'>
+                <h1><a expr:href='data:blog.homepageUrl'><data:title/></a></h1>
+              </b:if>
+              <b:if cond='data:description'>
+                <p><data:description/></p>
+              </b:if>
+            </div>
+          </div>
+        </b:if>
+      </b:includable>
+      <b:includable id='behindImageStyle'/>
+      <b:includable id='description'/>
+      <b:includable id='image'/>
+      <b:includable id='title'/>
+    </b:widget>
+  </b:section>
 </b:if>
 
 
