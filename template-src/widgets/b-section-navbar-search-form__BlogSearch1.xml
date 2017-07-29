@@ -1,4 +1,4 @@
-<b:widget id='BlogSearch1' locked='true' title='Search' type='BlogSearch' visible='true'>
+<b:widget id='BlogSearch1' locked='true' title='Search' type='BlogSearch' version='2' visible='true'>
   <b:includable id='main'>
     <b:include name='content'/>
   </b:includable>

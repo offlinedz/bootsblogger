@@ -1,4 +1,4 @@
-<b:widget id='PageList1' locked='true' title='Pages' type='PageList' visible='true'>
+<b:widget id='PageList1' locked='true' title='Pages' type='PageList' version='2' visible='true'>
   <b:widget-settings>
     <b:widget-setting name='pageListJson'><![CDATA[{'home': {'href': '/', 'title': 'Home', 'position': 0}, 'link0': {'href': 'https://example.com/1', 'title': 'External link 1', 'position': 1}, 'link1': {'href': 'https://example.com/2', 'title': 'External link 2', 'position': 2}}]]></b:widget-setting>
     <b:widget-setting name='homeTitle'>Home</b:widget-setting>
