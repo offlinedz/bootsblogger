@@ -126,7 +126,6 @@ Main and sidebar
         <div class='sidebar-content'>
           <b:section class='b-section-sidebar wg wg-panel wg-panel-sm wg-panel-orange wg-title-dark wg-section-no-mb' id='b-section-sidebar' name='Sidebar'>
             <!--(bake widgets/b-section-sidebar__HTML1.xml)-->
-            <!--(bake widgets/b-section-sidebar__Label1.xml)-->
           </b:section>
         </div><!-- /.sidebar-content -->
       </aside><!-- /.sidebar -->
