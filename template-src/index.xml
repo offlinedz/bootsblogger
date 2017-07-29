@@ -97,10 +97,12 @@ Navbar
 Header
 ================================================= </b:comment>
 
-<b:if cond='data:view.isLayoutMode or (data:view.isHomepage)'>
-  <b:section id='b-section-header' maxwidgets='1' name='Header' showaddelement='no'>
-    <!--(bake widgets/b-section-header__Header1.xml)-->
-  </b:section>
+<b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-header")'>
+  <b:if cond='data:view.isLayoutMode or (data:view.isHomepage)'>
+    <b:section id='b-section-header' maxwidgets='1' name='Header' showaddelement='no'>
+      <!--(bake widgets/b-section-header__Header1.xml)-->
+    </b:section>
+  </b:if>
 </b:if>
 
 
@@ -139,18 +141,19 @@ Main and sidebar
 Widget block (1)
 ================================================= </b:comment>
 
-<div class='widget-block-1 py-5' id='widget-block-1'>
-  <b:class cond='data:widgets none w =&gt; w.sectionId == "b-section-widget-block-1"' name='d-none'/>
-  <div class='container'>
-    <div class='widget-block-1-content'>
-      <b:section class='wg wg-box wg-box-dark wg-title-light wg-lg-4 wg-equal-height-cols wg-section-no-mb' id='b-section-widget-block-1' name='Widget block (1)'>
-        <!--(bake widgets/b-section-widget-block-1__1__HTML2.xml)-->
-        <!--(bake widgets/b-section-widget-block-1__2__HTML3.xml)-->
-        <!--(bake widgets/b-section-widget-block-1__3__HTML4.xml)-->
-      </b:section>
-    </div><!-- /.widget-block-1-content -->
-  </div><!-- /.container -->
-</div><!-- /.widget-block-1 -->
+<b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-widget-block-1")'>
+  <div class='widget-block-1 py-5' id='widget-block-1'>
+    <div class='container'>
+      <div class='widget-block-1-content'>
+        <b:section class='wg wg-box wg-box-dark wg-title-light wg-lg-4 wg-equal-height-cols wg-section-no-mb' id='b-section-widget-block-1' name='Widget block (1)'>
+          <!--(bake widgets/b-section-widget-block-1__1__HTML2.xml)-->
+          <!--(bake widgets/b-section-widget-block-1__2__HTML3.xml)-->
+          <!--(bake widgets/b-section-widget-block-1__3__HTML4.xml)-->
+        </b:section>
+      </div><!-- /.widget-block-1-content -->
+    </div><!-- /.container -->
+  </div><!-- /.widget-block-1 -->
+</b:if>
 
 
 <b:comment>
@@ -161,9 +164,11 @@ Footer
 <footer class='footer py-5' id='footer'>
   <div class='container'>
     <div class='footer-content'>
-      <b:section id='b-section-footer-links' maxwidgets='1' name='Footer links' showaddelement='no'>
-        <!--(bake widgets/b-section-footer-links__HTML1000.xml)-->
-      </b:section>
+      <b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-footer-links")'>
+        <b:section id='b-section-footer-links' maxwidgets='1' name='Footer links' showaddelement='no'>
+          <!--(bake widgets/b-section-footer-links__HTML1000.xml)-->
+        </b:section>
+      </b:if>
       <p>&#169; <data:blog.title/>.</p>
       <p>
         <a expr:href='data:blog.bloggerUrl' style='text-decoration: none;'>
