@@ -13,14 +13,14 @@
         <ul class='navbar-nav mt-2 mt-md-0'>
           <b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-navbar-dropdown-labels")'>
             <li class='nav-item dropdown'>
-              <b:section class='b-section-navbar-dropdown-labels' id='b-section-navbar-dropdown-labels' maxwidgets='1' name='Navbar: dropdown labels' showaddelement='no'>
+              <b:section id='b-section-navbar-dropdown-labels' maxwidgets='1' name='Navbar: dropdown labels' showaddelement='no'>
                 <!--(bake /widgets/b-section-navbar-dropdown-labels__Label1.xml)-->
               </b:section>
             </li>
           </b:if>
           <b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-navbar-dropdown-pages")'>
             <li class='nav-item dropdown'>
-              <b:section class='b-section-navbar-dropdown-pages' id='b-section-navbar-dropdown-pages' maxwidgets='1' name='Navbar: dropdown pages' showaddelement='no'>
+              <b:section id='b-section-navbar-dropdown-pages' maxwidgets='1' name='Navbar: dropdown pages' showaddelement='no'>
                 <!--(bake /widgets/b-section-navbar-dropdown-pages__PageList1.xml)-->
               </b:section>
             </li>
@@ -51,7 +51,7 @@
         </ul>
         <b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-navbar-search-form")'>
           <div class='ml-auto my-2 my-md-0'>
-            <b:section class='b-section-navbar-search-form' id='b-section-navbar-search-form' maxwidgets='1' name='Navbar: search form' showaddelement='no'>
+            <b:section id='b-section-navbar-search-form' maxwidgets='1' name='Navbar: search form' showaddelement='no'>
               <!--(bake /widgets/b-section-navbar-search-form__BlogSearch1.xml)-->
             </b:section>
           </div>

@@ -105,12 +105,12 @@ Gunakan pada elemen yang di dalamnya terdapat tag `b:section`. Sesuaikan dengan 
 <div class='container'>
   <!-- Main -->
   <main class='main blogger-col-8' id='main'>
-    <b:section class='b-section-main' id='b-section-main' maxwidgets='1' name='Main' showaddelement='no'></b:section>
+    <b:section id='b-section-main' maxwidgets='1' name='Main' showaddelement='no'></b:section>
   </main><!-- /.main -->
 
   <!-- Sidebar -->
   <aside class='sidebar blogger-col-4' id='sidebar'>
-    <b:section class='b-section-sidebar' id='b-section-sidebar' name='Sidebar'></section>
+    <b:section id='b-section-sidebar' name='Sidebar'></section>
   </aside><!-- /.sidebar -->
 </div>
 {% endhighlight %}
@@ -124,12 +124,12 @@ Dengan grid Bootstrap:
   <div class='row'>
     <!-- Main -->
     <main class='col-md-8 col-lg-9 main blogger-col-8' id='main'>
-      <b:section class='b-section-main' id='b-section-main' maxwidgets='1' name='Main' showaddelement='no'></b:section>
+      <b:section id='b-section-main' maxwidgets='1' name='Main' showaddelement='no'></b:section>
     </main><!-- /.main -->
 
     <!-- Sidebar -->
     <aside class='col-md-4 col-lg-3 sidebar blogger-col-4' id='sidebar'>
-      <b:section class='b-section-sidebar' id='b-section-sidebar' name='Sidebar'></section>
+      <b:section id='b-section-sidebar' name='Sidebar'></section>
     </aside><!-- /.sidebar -->
   </div><!-- /.row -->
 </div><!-- /.container -->
