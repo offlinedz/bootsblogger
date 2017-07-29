@@ -39,13 +39,6 @@ CSS
 <b:comment>=== Layout mode CSS ===</b:comment>
 <b:template-skin>
 <![CDATA[
-/* Hide */
-body#layout ul,
-body#layout ol {
-  padding-left: 0;
-  list-style: none;
-}
-
 /* Clearfix */
 body#layout .container::after,
 body#layout .section::after {
@@ -106,6 +99,20 @@ body#layout .blogger-col-11 {
 body#layout .blogger-col-12 {
   width: 100%;
 }
+
+/* Lists */
+body#layout ul,
+body#layout ol {
+  padding-left: 0;
+  list-style: none;
+}
+
+/* Navbar */
+body#layout .navbar {
+  max-width: 500px;
+  margin-right: auto;
+  margin-left: auto;
+}
 ]]>
 </b:template-skin>
 
@@ -142,87 +149,6 @@ body#layout .blogger-col-12 {
    ========================================================================== */
 
 body {}
-
-
-/* ==========================================================================
-   Custom Navbar
-   ========================================================================== */
-
-.navbar-custom {
-  min-height: 4rem;
-  background-color: #ff5722;
-  -webkit-box-shadow: 0 .5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);
-          box-shadow: 0 .5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);
-}
-
-@media (min-width: 992px) {
-  .navbar-custom {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 1030;
-  }
-}
-
-/**
- * Brand
- */
-
-.navbar-custom .navbar-brand {
-  color: #fff;
-}
-.navbar-custom .navbar-brand:focus,
-.navbar-custom .navbar-brand:hover {
-  color: #fff;
-}
-
-/**
- * Nav
- */
-
-.navbar-custom .navbar-nav .nav-link {
-  color: #ffccbc;
-}
-.navbar-custom .navbar-nav .nav-link:focus,
-.navbar-custom .navbar-nav .nav-link:hover {
-  color: #fff;
-}
-.navbar-custom .navbar-nav .nav-link.disabled {
-  color: #ffab91;
-}
-.navbar-custom .navbar-nav .show > .nav-link,
-.navbar-custom .navbar-nav .active > .nav-link,
-.navbar-custom .navbar-nav .nav-link.show,
-.navbar-custom .navbar-nav .nav-link.active {
-  color: #fff;
-}
-
-/**
- * Text
- */
-
-.navbar-custom .navbar-text {
-  color: #fff;
-}
-
-/**
- * Toggler
- */
-
-.navbar-custom .navbar-toggler {
-  background-color: #ff7043;
-  border-color: #ff8a65;
-}
-.navbar-custom .navbar-toggler:focus,
-.navbar-custom .navbar-toggler:hover {
-  background-color: #ff8a65;
-  border-color: #ffab91;
-}
-
-/* stroke='#fff' */
-.navbar-custom .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#fff' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-}
 
 
 /* ==========================================================================
@@ -1068,47 +994,151 @@ Skip navigation
 Navbar
 ================================================= </b:comment>
 
-<header class='navbar navbar-toggleable-md navbar-custom'>
-  <nav class='container'>
+<nav class='navbar navbar-toggleable-md navbar-inverse bg-inverse'>
+  <div class='container'>
+
     <a class='navbar-brand' expr:href='data:blog.homepageUrl'>
       <data:blog.title/>
     </a>
-    <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarCollapse' aria-controls='navbarCollapse' aria-expanded='false' aria-label='Toggle navigation'>
-      <span class='navbar-toggler-icon'></span>
-    </button>
 
-    <div class='collapse navbar-collapse' id='navbarCollapse'>
-      <ul class='navbar-nav mt-2 mt-md-0'>
-        <li class='nav-item'><a expr:class='"nav-link" + (data:view.isHomepage ? " active" : "")' expr:href='data:blog.homepageUrl'>Home</a></li>
-        <li class='nav-item'><a class='nav-link disabled' href='#'>Disabled</a></li>
-        <li class='nav-item dropdown'>
-          <a class='nav-link dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' href='#'>Demo</a>
-          <div class='dropdown-menu'>
-            <a class='dropdown-item' expr:href='data:blog.homepageUrl'>Homepage</a>
-            <div class='dropdown-divider'></div>
-            <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, "/search")'>Search (default) page</a>
-            <div class='dropdown-divider'></div>
-            <a class='dropdown-item' expr:href='data:blog.homepageUrl path "/search/label/Sample" params { max-results: "12" }'>Search (label) page <span class='badge badge-success'>yep</span></a>
-            <a class='dropdown-item' expr:href='data:blog.homepageUrl path "/search/label/Nope" params { max-results: "12" }'>Search (label) page <span class='badge badge-danger'>nope</span></a>
-            <div class='dropdown-divider'></div>
-            <a class='dropdown-item' expr:href='data:blog.homepageUrl path "/search" appendParams { q: "lorem ipsum" }'>Search (query) page <span class='badge badge-success'>yep</span></a>
-            <a class='dropdown-item' expr:href='data:blog.homepageUrl path "/search" appendParams { q: "nope" }'>Search (query) page <span class='badge badge-danger'>nope</span></a>
-            <div class='dropdown-divider'></div>
-            <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, "/2016/11")'>Archive page <span class='badge badge-success'>yep</span></a>
-            <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, "/1945/08")'>Archive page <span class='badge badge-danger'>nope</span></a>
-            <div class='dropdown-divider'></div>
-            <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, "/2016/11/sample-blog-post-03.html")'>Item page</a>
-            <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, "/p/static-page.html")'>Static page</a>
-            <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, "/404")'>Error page</a>
+    <b:if cond='data:widgets any (w =&gt; w.sectionId in {"b-section-navbar-dropdown-labels", "b-section-navbar-dropdown-pages", "b-section-navbar-search-form"})'>
+      <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarCollapse' aria-controls='navbarCollapse' aria-expanded='false' aria-label='Toggle navigation'>
+        <span class='navbar-toggler-icon'></span>
+      </button>
+      <div class='collapse navbar-collapse' id='navbarCollapse'>
+        <ul class='navbar-nav mt-2 mt-md-0'>
+          <b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-navbar-dropdown-labels")'>
+            <li class='nav-item dropdown'>
+              <b:section id='b-section-navbar-dropdown-labels' maxwidgets='1' name='Navbar: dropdown labels' showaddelement='no'>
+                <b:widget id='Label1' locked='true' title='Labels' type='Label' version='2' visible='true'>
+                  <b:widget-settings>
+                    <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
+                    <b:widget-setting name='display'>LIST</b:widget-setting>
+                    <b:widget-setting name='selectedLabelsList'/>
+                    <b:widget-setting name='showType'>ALL</b:widget-setting>
+                    <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
+                  </b:widget-settings>
+                  <b:includable id='main' var='this'>
+                    <a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#'>
+                      <b:eval expr='data:title ? data:title : "Labels"'/>
+                    </a>
+                    <b:include name='content'/>
+                  </b:includable>
+                  <b:includable id='content'>
+                    <b:include cond='data:this.display == "list"' name='list'/>
+                    <b:include cond='data:this.display == "cloud"' name='cloud'/>
+                  </b:includable>
+                  <b:includable id='list'>
+                    <div class='dropdown-menu'>
+                      <b:loop values='data:labels' var='label'>
+                        <a class='dropdown-item' expr:href='data:label.url'>
+                          <b:class cond='data:view.search.label == data:label.name' name='active'/>
+                          <data:label.name/>
+                          <b:if cond='data:this.showFreqNumbers'>
+                            <small>(<data:label.count/>)</small>
+                          </b:if>
+                        </a>
+                      </b:loop>
+                    </div>
+                  </b:includable>
+                  <b:includable id='cloud'>
+                    <div class='dropdown-menu p-2'>
+                      <b:loop values='data:labels' var='label'>
+                        <a class='badge' expr:href='data:label.url'>
+                          <b:class cond='data:view.url.canonical and (data:view.search.label != data:label.name)' name='badge-default'/>
+                          <b:class cond='data:view.search.label == data:label.name' name='badge-primary'/>
+                          <data:label.name/>
+                          <b:if cond='data:this.showFreqNumbers'>
+                            <small>(<data:label.count/>)</small>
+                          </b:if>
+                        </a>
+                      </b:loop>
+                    </div>
+                  </b:includable>
+                </b:widget>
+              </b:section>
+            </li>
+          </b:if>
+          <b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-navbar-dropdown-pages")'>
+            <li class='nav-item dropdown'>
+              <b:section id='b-section-navbar-dropdown-pages' maxwidgets='1' name='Navbar: dropdown pages' showaddelement='no'>
+                <b:widget id='PageList1' locked='true' title='Pages' type='PageList' version='2' visible='true'>
+                  <b:widget-settings>
+                    <b:widget-setting name='pageListJson'><![CDATA[{'home': {'href': '/', 'title': 'Home', 'position': 0}, 'link0': {'href': 'https://example.com/1', 'title': 'External link 1', 'position': 1}, 'link1': {'href': 'https://example.com/2', 'title': 'External link 2', 'position': 2}}]]></b:widget-setting>
+                    <b:widget-setting name='homeTitle'>Home</b:widget-setting>
+                  </b:widget-settings>
+                  <b:includable id='main'>
+                    <a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#'>
+                      <b:eval expr='data:title ? data:title : "Pages"'/>
+                    </a>
+                    <b:include name='content'/>
+                  </b:includable>
+                  <b:includable id='content'>
+                    <div class='dropdown-menu'>
+                      <b:loop values='data:links' var='link'>
+                        <a class='dropdown-item' expr:href='data:link.href'>
+                          <b:class cond='data:link.isCurrentPage' name='active'/>
+                          <data:link.title/>
+                        </a>
+                      </b:loop>
+                    </div>
+                  </b:includable>
+                  <b:includable id='overflowButton'/>
+                  <b:includable id='overflowablePageList'/>
+                  <b:includable id='pageLink'/>
+                  <b:includable id='pageList'/>
+                </b:widget>
+              </b:section>
+            </li>
+          </b:if>
+          <!-- Demo -->
+          <li class='nav-item dropdown'>
+            <a class='nav-link dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' href='#'>Demo</a>
+            <div class='dropdown-menu'>
+              <a class='dropdown-item' expr:href='data:blog.homepageUrl'>Homepage</a>
+              <div class='dropdown-divider'></div>
+              <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, "/search")'>Search (default) page</a>
+              <div class='dropdown-divider'></div>
+              <a class='dropdown-item' expr:href='data:blog.homepageUrl path "/search/label/Sample" params { max-results: "12" }'>Search (label) page <span class='badge badge-success'>yep</span></a>
+              <a class='dropdown-item' expr:href='data:blog.homepageUrl path "/search/label/Nope" params { max-results: "12" }'>Search (label) page <span class='badge badge-danger'>nope</span></a>
+              <div class='dropdown-divider'></div>
+              <a class='dropdown-item' expr:href='data:blog.homepageUrl path "/search" appendParams { q: "lorem ipsum" }'>Search (query) page <span class='badge badge-success'>yep</span></a>
+              <a class='dropdown-item' expr:href='data:blog.homepageUrl path "/search" appendParams { q: "nope" }'>Search (query) page <span class='badge badge-danger'>nope</span></a>
+              <div class='dropdown-divider'></div>
+              <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, "/2016/11")'>Archive page <span class='badge badge-success'>yep</span></a>
+              <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, "/1945/08")'>Archive page <span class='badge badge-danger'>nope</span></a>
+              <div class='dropdown-divider'></div>
+              <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, "/2016/11/sample-blog-post-03.html")'>Item page</a>
+              <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, "/p/static-page.html")'>Static page</a>
+              <a class='dropdown-item' expr:href='path(data:blog.homepageUrl, "/404")'>Error page</a>
+            </div>
+          </li>
+          <!-- /Demo -->
+        </ul>
+        <b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-navbar-search-form")'>
+          <div class='ml-auto my-2 my-md-0'>
+            <b:section id='b-section-navbar-search-form' maxwidgets='1' name='Navbar: search form' showaddelement='no'>
+              <b:widget id='BlogSearch1' locked='true' title='Search' type='BlogSearch' version='2' visible='true'>
+                <b:includable id='main'>
+                  <b:include name='content'/>
+                </b:includable>
+                <b:includable id='content'>
+                  <form class='form-inline' expr:action='data:blog.searchUrl'>
+                    <input class='form-control mr-sm-2' expr:aria-label='data:messages.searchThisBlog' expr:placeholder='data:messages.searchThisBlog' name='q' type='text'/>
+                    <button class='btn btn-success my-2 my-sm-0' type='submit'><data:messages.search/></button>
+                  </form>
+                </b:includable>
+                <b:includable id='searchForm'/>
+                <b:includable id='searchSubmit'/>
+              </b:widget>
+            </b:section>
           </div>
-        </li>
-      </ul>
-      <form class='form-inline ml-auto my-2 my-md-0' expr:action='data:blog.searchUrl' method='get'>
-        <div role='search'><input class='form-control' expr:aria-label='data:messages.search' expr:placeholder='data:messages.search' name='q' type='search'/></div>
-      </form>
-    </div><!-- /.navbar-collapse -->
-  </nav><!-- /.container -->
-</header><!-- /.navbar -->
+        </b:if>
+      </div><!-- /.navbar-collapse -->
+    </b:if>
+
+  </div><!-- /.container -->
+</nav><!-- /.navbar -->
 
 
 <b:comment>
@@ -1116,73 +1146,75 @@ Navbar
 Header
 ================================================= </b:comment>
 
-<b:if cond='data:view.isLayoutMode or (data:view.isHomepage)'>
-  <b:section class='b-section-header wg-title-hide' id='b-section-header' maxwidgets='1' name='Header' showaddelement='no'>
-    <b:widget id='Header1' locked='true' title='Header (Header)' type='Header' version='2' visible='true'>
-      <b:widget-settings>
-        <b:widget-setting name='displayUrl'/>
-        <b:widget-setting name='displayHeight'>0</b:widget-setting>
-        <b:widget-setting name='sectionWidth'>0</b:widget-setting>
-        <b:widget-setting name='useImage'>true</b:widget-setting>
-        <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
-        <b:widget-setting name='imagePlacement'>BEHIND</b:widget-setting>
-        <b:widget-setting name='displayWidth'>0</b:widget-setting>
-      </b:widget-settings>
-      <b:includable id='main' var='this'>
-        <b:comment>=== REPLACE ===</b:comment>
-        <b:if cond='data:imagePlacement == "REPLACE"'>
-          <div class='header image-placement-replace'>
-            <b:class cond='!data:image' name='no-image'/>
-            <b:class cond='data:image' name='has-image'/>
-            <div class='container'>
-              <b:if cond='data:image'>
-                <a expr:href='data:blog.homepageUrl'>
-                  <img expr:alt='data:title ? data:title : data:messages.image' expr:src='data:image'/>
-                </a>
-              </b:if>
+<b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-header")'>
+  <b:if cond='data:view.isLayoutMode or (data:view.isHomepage)'>
+    <b:section id='b-section-header' maxwidgets='1' name='Header' showaddelement='no'>
+      <b:widget id='Header1' locked='true' title='Header (Header)' type='Header' version='2' visible='true'>
+        <b:widget-settings>
+          <b:widget-setting name='displayUrl'/>
+          <b:widget-setting name='displayHeight'>0</b:widget-setting>
+          <b:widget-setting name='sectionWidth'>0</b:widget-setting>
+          <b:widget-setting name='useImage'>true</b:widget-setting>
+          <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
+          <b:widget-setting name='imagePlacement'>BEHIND</b:widget-setting>
+          <b:widget-setting name='displayWidth'>0</b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main' var='this'>
+          <b:comment>=== REPLACE ===</b:comment>
+          <b:if cond='data:imagePlacement == "REPLACE"'>
+            <div class='header image-placement-replace'>
+              <b:class cond='!data:image' name='no-image'/>
+              <b:class cond='data:image' name='has-image'/>
+              <div class='container'>
+                <b:if cond='data:image'>
+                  <a expr:href='data:blog.homepageUrl'>
+                    <img expr:alt='data:title ? data:title : data:messages.image' expr:src='data:image'/>
+                  </a>
+                </b:if>
+              </div>
             </div>
-          </div>
-        </b:if>
-        <b:comment>=== BEFORE_DESCRIPTION ===</b:comment>
-        <b:if cond='data:imagePlacement == "BEFORE_DESCRIPTION"'>
-          <div class='header image-placement-before-description'>
-            <b:class cond='!data:image' name='no-image'/>
-            <b:class cond='data:image' name='has-image'/>
-            <div class='container'>
-              <b:if cond='data:image'>
-                <a expr:href='data:blog.homepageUrl'>
-                  <img expr:alt='data:title ? data:title : data:messages.image' expr:src='data:image'/>
-                </a>
-              </b:if>
-              <b:if cond='data:description'>
-                <p><data:description/></p>
-              </b:if>
+          </b:if>
+          <b:comment>=== BEFORE_DESCRIPTION ===</b:comment>
+          <b:if cond='data:imagePlacement == "BEFORE_DESCRIPTION"'>
+            <div class='header image-placement-before-description'>
+              <b:class cond='!data:image' name='no-image'/>
+              <b:class cond='data:image' name='has-image'/>
+              <div class='container'>
+                <b:if cond='data:image'>
+                  <a expr:href='data:blog.homepageUrl'>
+                    <img expr:alt='data:title ? data:title : data:messages.image' expr:src='data:image'/>
+                  </a>
+                </b:if>
+                <b:if cond='data:description'>
+                  <p><data:description/></p>
+                </b:if>
+              </div>
             </div>
-          </div>
-        </b:if>
-        <b:comment>=== BEHIND ===</b:comment>
-        <b:if cond='data:imagePlacement == "BEHIND"'>
-          <div class='header image-placement-behind'>
-            <b:attr cond='data:image' expr:value='"background-image: url(" + data:image + ");"' name='style'/>
-            <b:class cond='!data:image' name='no-image'/>
-            <b:class cond='data:image' name='has-image'/>
-            <div class='container'>
-              <b:if cond='data:title'>
-                <h1><a expr:href='data:blog.homepageUrl'><data:title/></a></h1>
-              </b:if>
-              <b:if cond='data:description'>
-                <p><data:description/></p>
-              </b:if>
+          </b:if>
+          <b:comment>=== BEHIND ===</b:comment>
+          <b:if cond='data:imagePlacement == "BEHIND"'>
+            <div class='header image-placement-behind'>
+              <b:attr cond='data:image' expr:value='"background-image: url(" + data:image + ");"' name='style'/>
+              <b:class cond='!data:image' name='no-image'/>
+              <b:class cond='data:image' name='has-image'/>
+              <div class='container'>
+                <b:if cond='data:title'>
+                  <h1><a expr:href='data:blog.homepageUrl'><data:title/></a></h1>
+                </b:if>
+                <b:if cond='data:description'>
+                  <p><data:description/></p>
+                </b:if>
+              </div>
             </div>
-          </div>
-        </b:if>
-      </b:includable>
-      <b:includable id='behindImageStyle'/>
-      <b:includable id='description'/>
-      <b:includable id='image'/>
-      <b:includable id='title'/>
-    </b:widget>
-  </b:section>
+          </b:if>
+        </b:includable>
+        <b:includable id='behindImageStyle'/>
+        <b:includable id='description'/>
+        <b:includable id='image'/>
+        <b:includable id='title'/>
+      </b:widget>
+    </b:section>
+  </b:if>
 </b:if>
 
 
@@ -1197,7 +1229,7 @@ Main and sidebar
       <!-- Main -->
       <main class='col-md-8 col-lg-9 main blogger-col-8' id='main'>
         <div class='main-content'>
-          <b:section class='b-section-main' id='b-section-main' maxwidgets='1' name='Main' showaddelement='no'>
+          <b:section id='b-section-main' maxwidgets='1' name='Main' showaddelement='no'>
             <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2' visible='true'>
               <b:widget-settings>
                 <b:widget-setting name='showDateHeader'>false</b:widget-setting>
@@ -1290,7 +1322,7 @@ Main and sidebar
       <!-- Sidebar -->
       <aside class='col-md-4 col-lg-3 sidebar mt-5 mt-md-0 blogger-col-4' id='sidebar'>
         <div class='sidebar-content'>
-          <b:section class='b-section-sidebar wg wg-panel wg-panel-sm wg-panel-orange wg-title-dark wg-section-no-mb' id='b-section-sidebar' name='Sidebar'>
+          <b:section class='wg wg-panel wg-panel-sm wg-panel-orange wg-title-dark wg-section-no-mb' id='b-section-sidebar' name='Sidebar'>
             <b:widget id='HTML1' locked='false' title='HTML/JavaScript' type='HTML' version='2' visible='true'>
               <b:widget-settings>
                 <b:widget-setting name='content'>
@@ -1306,15 +1338,6 @@ Main and sidebar
                 </div>
               </b:includable>
             </b:widget>
-            <b:widget id='Label1' locked='false' title='Labels' type='Label' version='2' visible='true'>
-              <b:widget-settings>
-                <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
-                <b:widget-setting name='display'>CLOUD</b:widget-setting>
-                <b:widget-setting name='selectedLabelsList'/>
-                <b:widget-setting name='showType'>ALL</b:widget-setting>
-                <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
-              </b:widget-settings>
-            </b:widget>
           </b:section>
         </div><!-- /.sidebar-content -->
       </aside><!-- /.sidebar -->
@@ -1328,63 +1351,64 @@ Main and sidebar
 Widget block (1)
 ================================================= </b:comment>
 
-<div class='widget-block-1 py-5' id='widget-block-1'>
-  <b:class cond='data:widgets none w =&gt; w.sectionId == "b-section-widget-block-1"' name='d-none'/>
-  <div class='container'>
-    <div class='widget-block-1-content'>
-      <b:section class='b-section-widget-block-1 wg wg-box wg-box-dark wg-title-light wg-lg-4 wg-equal-height-cols wg-section-no-mb' id='b-section-widget-block-1' name='Widget block (1)'>
-        <b:widget id='HTML2' locked='false' title='HTML/JavaScript' type='HTML' version='2' visible='true'>
-          <b:widget-settings>
-            <b:widget-setting name='content'>
-              &lt;p class="text-white"&gt;
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-              &lt;/p&gt;
-            </b:widget-setting>
-          </b:widget-settings>
-          <b:includable id='main'>
-            <b:include name='widget-title'/>
-            <div class='widget-content'>
-              <data:content/>
-            </div>
-          </b:includable>
-        </b:widget>
-        <b:widget id='HTML3' locked='false' title='HTML/JavaScript' type='HTML' version='2' visible='true'>
-          <b:widget-settings>
-            <b:widget-setting name='content'>
-              &lt;p class="text-white"&gt;
-                Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
-              &lt;/p&gt;
-            </b:widget-setting>
-          </b:widget-settings>
-          <b:includable id='main'>
-            <b:include name='widget-title'/>
-            <div class='widget-content'>
-              <data:content/>
-            </div>
-          </b:includable>
-        </b:widget>
-        <b:widget id='HTML4' locked='false' title='HTML/JavaScript' type='HTML' version='2' visible='true'>
-          <b:widget-settings>
-            <b:widget-setting name='content'>
-              &lt;p class="text-white"&gt;
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-              &lt;/p&gt;
-              &lt;p class="text-white"&gt;
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-              &lt;/p&gt;
-            </b:widget-setting>
-          </b:widget-settings>
-          <b:includable id='main'>
-            <b:include name='widget-title'/>
-            <div class='widget-content'>
-              <data:content/>
-            </div>
-          </b:includable>
-        </b:widget>
-      </b:section>
-    </div><!-- /.widget-block-1-content -->
-  </div><!-- /.container -->
-</div><!-- /.widget-block-1 -->
+<b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-widget-block-1")'>
+  <div class='widget-block-1 py-5' id='widget-block-1'>
+    <div class='container'>
+      <div class='widget-block-1-content'>
+        <b:section class='wg wg-box wg-box-dark wg-title-light wg-lg-4 wg-equal-height-cols wg-section-no-mb' id='b-section-widget-block-1' name='Widget block (1)'>
+          <b:widget id='HTML2' locked='false' title='HTML/JavaScript' type='HTML' version='2' visible='true'>
+            <b:widget-settings>
+              <b:widget-setting name='content'>
+                &lt;p class="text-white"&gt;
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+                &lt;/p&gt;
+              </b:widget-setting>
+            </b:widget-settings>
+            <b:includable id='main'>
+              <b:include name='widget-title'/>
+              <div class='widget-content'>
+                <data:content/>
+              </div>
+            </b:includable>
+          </b:widget>
+          <b:widget id='HTML3' locked='false' title='HTML/JavaScript' type='HTML' version='2' visible='true'>
+            <b:widget-settings>
+              <b:widget-setting name='content'>
+                &lt;p class="text-white"&gt;
+                  Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
+                &lt;/p&gt;
+              </b:widget-setting>
+            </b:widget-settings>
+            <b:includable id='main'>
+              <b:include name='widget-title'/>
+              <div class='widget-content'>
+                <data:content/>
+              </div>
+            </b:includable>
+          </b:widget>
+          <b:widget id='HTML4' locked='false' title='HTML/JavaScript' type='HTML' version='2' visible='true'>
+            <b:widget-settings>
+              <b:widget-setting name='content'>
+                &lt;p class="text-white"&gt;
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+                &lt;/p&gt;
+                &lt;p class="text-white"&gt;
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+                &lt;/p&gt;
+              </b:widget-setting>
+            </b:widget-settings>
+            <b:includable id='main'>
+              <b:include name='widget-title'/>
+              <div class='widget-content'>
+                <data:content/>
+              </div>
+            </b:includable>
+          </b:widget>
+        </b:section>
+      </div><!-- /.widget-block-1-content -->
+    </div><!-- /.container -->
+  </div><!-- /.widget-block-1 -->
+</b:if>
 
 
 <b:comment>
@@ -1395,31 +1419,31 @@ Footer
 <footer class='footer py-5' id='footer'>
   <div class='container'>
     <div class='footer-content'>
-      <b:section class='b-section-footer-links wg-title-hide' id='b-section-footer-links' maxwidgets='1' name='Footer links' showaddelement='no'>
-        <b:widget id='HTML1000' locked='true' title='Footer links' type='HTML' version='2' visible='true'>
-          <b:widget-settings>
-            <b:widget-setting name='content'>
-              &lt;ul class="footer-links"&gt;
-                &lt;li&gt;
-                  &lt;a href="https://twitter.com/username"&gt;Twitter&lt;/a&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                  &lt;a href="https://facebook.com/username"&gt;Facebook&lt;/a&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                  &lt;a href="https://plus.google.com/+username"&gt;Google+&lt;/a&gt;
-                &lt;/li&gt;
-              &lt;/ul&gt;
-            </b:widget-setting>
-          </b:widget-settings>
-          <b:includable id='main'>
-            <b:include name='widget-title'/>
-            <div class='widget-content'>
-              <data:content/>
-            </div>
-          </b:includable>
-        </b:widget>
-      </b:section>
+      <b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-footer-links")'>
+        <b:section id='b-section-footer-links' maxwidgets='1' name='Footer links' showaddelement='no'>
+          <b:widget id='LinkList1' locked='true' title='Footer links' type='LinkList' version='2' visible='true'>
+            <b:widget-settings>
+              <b:widget-setting name='sorting'>NONE</b:widget-setting>
+              <b:widget-setting name='text-0'>Twitter</b:widget-setting>
+              <b:widget-setting name='link-0'>https://twitter.com/username</b:widget-setting>
+              <b:widget-setting name='text-1'>Facebook</b:widget-setting>
+              <b:widget-setting name='link-1'>https://facebook.com/username</b:widget-setting>
+              <b:widget-setting name='text-2'>Google+</b:widget-setting>
+              <b:widget-setting name='link-2'>https://plus.google.com/+username</b:widget-setting>
+            </b:widget-settings>
+            <b:includable id='main'>
+              <b:include name='content'/>
+            </b:includable>
+            <b:includable id='content'>
+              <ul class='footer-links'>
+                <b:loop values='data:links' var='link'>
+                  <li><a expr:href='data:link.target'><data:link.name/></a></li>
+                </b:loop>
+              </ul>
+            </b:includable>
+          </b:widget>
+        </b:section>
+      </b:if>
       <p>&#169; <data:blog.title/>.</p>
       <p>
         <a expr:href='data:blog.bloggerUrl' style='text-decoration: none;'>
