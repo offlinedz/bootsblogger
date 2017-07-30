@@ -34,12 +34,20 @@ body {}
    Header
    ========================================================================== */
 
-/**
- * Base class
- */
+/* Base style
+   ========================================================================== */
 
 .header {
   position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-height: 350px;
   padding-top: 4rem;
   padding-bottom: 4rem;
   color: #fff;
@@ -75,35 +83,45 @@ body {}
 .header p {
   font-size: 1.25rem;
   font-weight: 300;
+  margin-bottom: 0;
 }
 
+/* Image placement: REPLACE
+   ========================================================================== */
+
 /**
- * Image placement: REPLACE
+ * Classes
  *
  * - `.image-placement-replace`
  * - `.image-placement-replace.no-image`
  * - `.image-placement-replace.has-image`
  */
 
-.header.image-placement-replace img {
+.header.image-placement-replace.has-image img {
   max-width: 100%;
 }
 
+/* Image placement: BEFORE_DESCRIPTION
+   ========================================================================== */
+
 /**
- * Image placement: BEFORE_DESCRIPTION
+ * Classes
  *
  * - `.image-placement-before-description`
  * - `.image-placement-before-description.no-image`
  * - `.image-placement-before-description.has-image`
  */
 
-.header.image-placement-before-description img {
+.header.image-placement-before-description.has-image img {
   max-width: 100%;
   margin-bottom: 1rem;
 }
 
+/* Image placement: BEHIND
+   ========================================================================== */
+
 /**
- * Image placement: BEHIND
+ * Classes
  *
  * - `.image-placement-behind`
  * - `.image-placement-behind.no-image`
@@ -117,14 +135,18 @@ body {}
           background-size: cover;
 }
 
+.header.image-placement-behind.has-image {
+  z-index: 1;
+}
 .header.image-placement-behind.has-image::before {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  z-index: -1;
   content: "";
-  background-image: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7));
+  background-image: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25));
 }
 
 
