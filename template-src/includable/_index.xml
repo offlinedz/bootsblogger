@@ -152,8 +152,5 @@ Assets
     <b:includable id='icons.blogger'>
       <!--(bake assets/icons/icons.blogger.xml)-->
     </b:includable>
-    <b:includable id='icons.bootsblogger'>
-      <!--(bake assets/icons/icons.bootsblogger.xml)-->
-    </b:includable>
   </b:defaultmarkup>
 </b:defaultmarkups>
