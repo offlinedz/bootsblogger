@@ -79,7 +79,7 @@ Skip navigation
 
 <a class='sr-only sr-only-focusable skiplink' href='#main' id='skiplink'>
   <div class='container'>
-    <span class='skiplink-text'>Skip to main content</span>
+    <span class='skiplink-text'><data:messages.skipToMainContent/></span>
   </div>
 </a>
 
