@@ -29,11 +29,8 @@ Title, meta and link tags
 CSS
 ================================================= </b:comment>
 
-<b:comment>=== Core CSS ===</b:comment>
 <b:include name='css.bootstrap'/>
 <b:include name='css.bootsblogger'/>
-
-<b:comment>=== Font Awesome ===</b:comment>
 <b:include name='css.fontAwesome'/>
 
 <b:comment>=== Layout mode CSS ===</b:comment>

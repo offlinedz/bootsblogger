@@ -174,11 +174,54 @@ body {}
   background-color: rgba(0,0,0,.05);
 }
 
+.blog-breadcrumb .breadcrumb-item a {
+  color: #007bff;
+  text-decoration: none;
+}
+.blog-breadcrumb .breadcrumb-item a:focus,
+.blog-breadcrumb .breadcrumb-item a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.blog-breadcrumb .breadcrumb-item.active {
+  color: #777;
+}
+
+.blog-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+  color: #868e96;
+  content: "/";
+}
+
+.blog-breadcrumb .breadcrumb-item.active + .breadcrumb-item.active::before {
+  color: #868e96;
+  content: ":";
+}
+
 /* Alert
    ========================================================================== */
 
-.blog-alert .alert .search-label,
-.blog-alert .alert .search-query {
+.blog-status-message {
+  padding: .75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+}
+
+.blog-status-message-success {
+  background-color: #dff0d8;
+  border-color: #d0e9c6;
+  color: #3c763d;
+}
+
+.blog-status-message-danger {
+  background-color: #f2dede;
+  border-color: #ebcccc;
+  color: #a94442;
+}
+
+.blog-status-message .search-label,
+.blog-status-message .search-query {
   font-weight: bold;
 }
 
@@ -198,7 +241,7 @@ body {}
 /* Pager
    ========================================================================== */
 
-.blog-pager > .btn {
+.blog-pager .btn {
   border-radius: 2rem;
 }
 

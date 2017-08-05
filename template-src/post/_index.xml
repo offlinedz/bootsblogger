@@ -1,40 +1,13 @@
-<b:comment>=== Post layout and styles ===</b:comment>
-
-<b:defaultmarkups>
-  <b:defaultmarkup type='Common'>
-    <b:includable id='post-home'>
-      <!--(bake post-home.xml)-->
-    </b:includable>
-    <b:includable id='post-item'>
-      <!--(bake post-item.xml)-->
-    </b:includable>
-    <b:includable id='post-static'>
-      <!--(bake post-static.xml)-->
-    </b:includable>
-    <b:includable id='post-search-label'>
-      <!--(bake post-search-label.xml)-->
-    </b:includable>
-    <b:includable id='post-search-query'>
-      <!--(bake post-search-query.xml)-->
-    </b:includable>
-    <b:includable id='post-search-default'>
-      <!--(bake post-search-default.xml)-->
-    </b:includable>
-    <b:includable id='post-archive'>
-      <!--(bake post-archive.xml)-->
-    </b:includable>
-  </b:defaultmarkup>
-</b:defaultmarkups>
-
-<b:comment>=== Breadcrumb, alert, comments, and pager. ===</b:comment>
-
 <b:defaultmarkups>
   <b:defaultmarkup type='Common'>
     <b:includable id='blog-breadcrumb' var='post'>
       <!--(bake blog-breadcrumb.xml)-->
     </b:includable>
-    <b:includable id='blog-alert' var='post'>
-      <!--(bake blog-alert.xml)-->
+    <b:includable id='blog-status-message' var='post'>
+      <!--(bake blog-status-message.xml)-->
+    </b:includable>
+    <b:includable id='blog-posts' var='post'>
+      <!--(bake blog-posts.xml)-->
     </b:includable>
     <b:includable id='blog-comments' var='post'>
       <!--(bake blog-comments.xml)-->

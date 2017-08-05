@@ -34,50 +34,19 @@
       </b:if>
 
       <b:comment>=== Breadcrumb ===</b:comment>
-      <b:include name='blog-breadcrumb'/>
+      <b:include cond='!data:view.isHomepage' name='blog-breadcrumb'/>
 
-      <b:comment>=== Alert ===</b:comment>
-      <b:include name='blog-alert'/>
+      <b:comment>=== Status message ===</b:comment>
+      <b:include name='blog-status-message'/>
 
       <b:comment>=== Posts ===</b:comment>
-      <b:if cond='data:posts.notEmpty'>
-        <div class='blog-posts'>
-          <b:comment>=== Homepage ===</b:comment>
-          <b:if cond='data:view.isHomepage'>
-            <b:include name='post-home'/>
-          </b:if>
-          <b:comment>=== Item page ===</b:comment>
-          <b:if cond='data:view.isPost'>
-            <b:include name='post-item'/>
-          </b:if>
-          <b:comment>=== Static page ===</b:comment>
-          <b:if cond='data:view.isPage'>
-            <b:include name='post-static'/>
-          </b:if>
-          <b:comment>=== Search (label) page ===</b:comment>
-          <b:if cond='data:view.search.label'>
-            <b:include name='post-search-label'/>
-          </b:if>
-          <b:comment>=== Search (query) page ===</b:comment>
-          <b:if cond='data:view.search.query'>
-            <b:include name='post-search-query'/>
-          </b:if>
-          <b:comment>=== Search (default) page ===</b:comment>
-          <b:if cond='data:view.search and !data:view.search.label and !data:view.search.query'>
-            <b:include name='post-search-default'/>
-          </b:if>
-          <b:comment>=== Archive page ===</b:comment>
-          <b:if cond='data:view.isArchive'>
-            <b:include name='post-archive'/>
-          </b:if>
-        </div>
-      </b:if>
+      <b:include cond='data:posts.notEmpty' name='blog-posts'/>
 
       <b:comment>=== Comments ===</b:comment>
-      <b:include cond='data:view.isSingleItem' name='blog-comments'/>
+      <b:include cond='data:view.isPost' name='blog-comments'/>
 
       <b:comment>=== Pager ===</b:comment>
-      <b:include cond='data:posts.notEmpty' name='blog-pager'/>
+      <b:include cond='data:posts.notEmpty and !data:view.isPage' name='blog-pager'/>
 
     </b:if>
 

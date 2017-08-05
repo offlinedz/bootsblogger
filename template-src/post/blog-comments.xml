@@ -2,6 +2,7 @@
   <b:if cond='data:post.allowComments'>
 
     <div class='blog-comments' id='comments'>
+
       <h1 class='blog-comments-title'><data:messages.comments/></h1>
 
       <b:if cond='data:post.commentSource == 1'>
@@ -114,7 +115,9 @@
             </a>
           </p>
         </div>
+
       </b:if>
+
     </div>
 
   </b:if>
