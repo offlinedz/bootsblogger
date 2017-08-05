@@ -29,11 +29,8 @@ Title, meta and link tags
 CSS
 ================================================= </b:comment>
 
-<b:comment>=== Core CSS ===</b:comment>
 <b:include name='css.bootstrap'/>
 <b:include name='css.bootsblogger'/>
-
-<b:comment>=== Font Awesome ===</b:comment>
 <b:include name='css.fontAwesome'/>
 
 <b:comment>=== Layout mode CSS ===</b:comment>
@@ -295,11 +292,54 @@ body {}
   background-color: rgba(0,0,0,.05);
 }
 
+.blog-breadcrumb .breadcrumb-item a {
+  color: #007bff;
+  text-decoration: none;
+}
+.blog-breadcrumb .breadcrumb-item a:focus,
+.blog-breadcrumb .breadcrumb-item a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.blog-breadcrumb .breadcrumb-item.active {
+  color: #777;
+}
+
+.blog-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+  color: #868e96;
+  content: "/";
+}
+
+.blog-breadcrumb .breadcrumb-item.active + .breadcrumb-item.active::before {
+  color: #868e96;
+  content: ":";
+}
+
 /* Alert
    ========================================================================== */
 
-.blog-alert .alert .search-label,
-.blog-alert .alert .search-query {
+.blog-status-message {
+  padding: .75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+}
+
+.blog-status-message-success {
+  background-color: #dff0d8;
+  border-color: #d0e9c6;
+  color: #3c763d;
+}
+
+.blog-status-message-danger {
+  background-color: #f2dede;
+  border-color: #ebcccc;
+  color: #a94442;
+}
+
+.blog-status-message .search-label,
+.blog-status-message .search-query {
   font-weight: bold;
 }
 
@@ -319,7 +359,7 @@ body {}
 /* Pager
    ========================================================================== */
 
-.blog-pager > .btn {
+.blog-pager .btn {
   border-radius: 2rem;
 }
 
@@ -393,348 +433,114 @@ body {}
 Post (Jump to widget: Blog1 --- includable: main)
 ================================================= </b:comment>
 
-<b:comment>=== Post layout and styles ===</b:comment>
-
-<b:defaultmarkups>
-  <b:defaultmarkup type='Common'>
-    <b:includable id='post-home'>
-      <b:loop values='data:posts' var='post'>
-        <article class='card mb-3 mb-sm-5' expr:id='"post-" + data:post.id'>
-
-          <!-- >>> Header <<< -->
-          <b:if cond='data:headerByline.items.notEmpty'>
-            <div class='card-header text-muted'>
-              <!-- headerByline -->
-              <b:include name='byline.header'/>
-            </div><!-- /.card-header -->
-          </b:if>
-
-          <!-- >>> Body <<< -->
-          <div class='row no-gutters'>
-            <div class='col-sm-3 col-md-4'>
-              <!-- Featured image -->
-              <div class='card-block-img-left-sm'>
-                <b:include data='{ size: 256, sourceSet: [256, 512], sourceSizes: "100vw", ratioWidth: 1, ratioHeight: 1, link: true, noImage: "https://placehold.it/256x256/777/eee/?text=NO+IMAGE", imageClass: "card-img-left" }' name='post.featuredImage'/>
-              </div><!-- /.card-block-img-left-sm -->
-            </div><!-- /col -->
-            <div class='col-sm-9 col-md-8'>
-              <div class='card-block'>
-                <!-- Title -->
-                <b:include data='{ heading: "h2", headingClass: "card-title", link: true, linkClass: "card-title-link", noTitleMessage: false }' name='post.title'/>
-                <!-- Snippet -->
-                <b:include data='{ length: 150, links: true, linebreaks: true, ellipsis: true, notHasJumpLink: true, parentClass: "card-text" }' name='post.snippet'/>
-                <!-- Jump link -->
-                <b:include data='{ linkClass: "btn btn-primary", parentClass: "mt-2" }' name='post.jumpLink'/>
-              </div><!-- /.card-block -->
-            </div><!-- /col -->
-          </div><!-- /.row -->
-
-          <!-- >>> Footer <<< -->
-          <b:if cond='data:footerBylines.notEmpty'>
-            <div class='card-footer text-muted'>
-              <!-- footerBylines -->
-              <b:include name='byline.footer'/>
-            </div><!-- /.card-footer -->
-          </b:if>
-
-        </article><!-- /.card -->
-      </b:loop>
-    </b:includable>
-    <b:includable id='post-item'>
-      <b:loop values='data:posts' var='post'>
-        <article class='card mb-3' expr:id='"post-" + data:post.id'>
-
-          <!-- >>> Header <<< -->
-          <div class='card-header'>
-            <ul class='list-inline mb-0'>
-              <!-- Author -->
-              <li class='list-inline-item'>
-                <span class='text-muted'><data:messages.postedBy/></span>
-                <b:include data='{ linkClass: "text-muted" }' name='post.authorName'/>
-              </li>
-              <!-- Date -->
-              <li class='list-inline-item'>
-                <span class='text-muted'><data:messages.on/></span>
-                <b:include data='{ customFormat: "MMM dd, YYYY", timeClass: "text-muted" }' name='post.datePublished'/>
-              </li>
-            </ul><!-- /.list-inline -->
-          </div><!-- /.card-header -->
-
-          <!-- >>> Body <<< -->
-          <div class='card-block'>
-            <!-- Title -->
-            <b:include data='{ heading: "h1", headingClass: "", link: false, linkClass: "", noTitleMessage: false }' name='post.title'/>
-            <!-- Body -->
-            <data:post.body/>
-          </div><!-- /.card-block -->
-
-          <!-- >>> Footer <<< -->
-          <div class='card-footer'>
-            <ul class='list-inline mb-0'>
-              <!-- Labels -->
-              <li class='list-inline-item'>
-                <i aria-hidden='true' class='fa fa-tags text-muted'/>
-                <span class='text-muted'><data:messages.labels/>:</span>
-                <b:include data='{ comma: false, maxResults: 12, labelLinkClass: "badge badge-default", unlabelledClass: "text-muted" }' name='post.labels'/>
-              </li>
-            </ul><!-- /.list-inline -->
-          </div><!-- /.card-footer -->
-
-        </article><!-- /.card -->
-      </b:loop>
-    </b:includable>
-    <b:includable id='post-static'>
-      <b:loop values='data:posts' var='post'>
-        <article class='card mb-3' expr:id='"post-" + data:post.id'>
-
-          <!-- >>> Body <<< -->
-          <div class='card-block'>
-            <!-- Title -->
-            <b:include data='{ heading: "h1", headingClass: "", link: false, linkClass: "", noTitleMessage: false }' name='post.title'/>
-            <!-- Body -->
-            <data:post.body/>
-          </div><!-- /.card-block -->
-
-        </article><!-- /.card -->
-      </b:loop>
-    </b:includable>
-    <b:includable id='post-search-label'>
-       <div class='row'>
-        <b:loop values='data:posts' var='post'>
-          <article class='col-sm-6 mb-3 mb-sm-5' expr:id='"post-" + data:post.id'>
-            <div class='card h-100'>
-
-              <!-- >>> Image <<< -->
-              <!-- Featured image -->
-              <b:include data='{ size: 320, ratioWidth: 320, ratioHeight: 180, noImage: "https://placehold.it/320x180/777/eee/?text=NO+IMAGE", class: "card-img-top card-img-cover", style: "height: 180px;" }' name='post.featuredImageBg'/>
-
-              <!-- >>> Body <<< -->
-              <div class='card-block'>
-                <!-- Title -->
-                <b:include data='{ heading: "h2", headingClass: "card-title h4", link: true, linkClass: "card-title-link", noTitleMessage: false }' name='post.title'/>
-                <!-- Date -->
-                <h6 class='card-subtitle mb-2'>
-                  <b:include data='{ customFormat: "MMM dd, YYYY", timeClass: "text-muted" }' name='post.datePublished'/>
-                </h6>
-                <!-- Snippet -->
-                <b:include data='{ length: 150, links: true, linebreaks: true, ellipsis: true, notHasJumpLink: false, parentClass: "card-text" }' name='post.snippet'/>
-                <!-- Jump link -->
-                <b:include data='{ class: "card-link", parentClass: "mt-2" }' name='post.jumpLink'/>
-              </div><!-- /.card-block -->
-
-              <!-- >>> Footer <<< -->
-              <div class='card-footer'>
-                <div class='d-flex flex-wrap justify-content-between'>
-                  <!-- Author -->
-                  <span>
-                    <i aria-hidden='true' class='fa fa-user-circle text-muted'/>
-                    <b:include data='{ linkClass: "text-muted" }' name='post.authorName'/>
-                  </span>
-                  <!-- Number of comments -->
-                  <b:if cond='data:post.allowComments'>
-                    <span>
-                      <i aria-hidden='true' class='fa fa-comments text-muted'/>
-                      <b:include data='{ linkClass: "text-muted" }' name='post.numComments'/>
-                    </span>
-                  </b:if>
-                </div><!-- /flex -->
-              </div><!-- /.card-footer -->
-
-            </div><!-- /.card -->
-          </article><!-- /col -->
-        </b:loop>
-      </div><!-- /.row -->
-    </b:includable>
-    <b:includable id='post-search-query'>
-      <b:loop values='data:posts' var='post'>
-        <article class='card mb-3' expr:id='"post-" + data:post.id'>
-
-          <!-- >>> Body <<< -->
-          <div class='card-block'>
-            <!-- Title -->
-            <b:include data='{ heading: "h2", headingClass: "card-title", link: true, linkClass: "card-title-link", noTitleMessage: false }' name='post.title'/>
-            <!-- Date and snippet -->
-            <div class='card-text'>
-              <b:include data='{ customFormat: "MMM dd, YYYY", timeClass: "text-muted" }' name='post.datePublished'/>
-              <span class='text-muted'>-</span>
-              <b:include data='{ length: 150, links: false, linebreaks: false, ellipsis: true, notHasJumpLink: false, parentClass: "d-inline" }' name='post.snippet'/>
-            </div><!-- /.card-text -->
-          </div><!-- /.card-block -->
-
-        </article><!-- /.card -->
-      </b:loop>
-    </b:includable>
-    <b:includable id='post-search-default'>
-      <b:loop values='data:posts' var='post'>
-        <article class='card mb-3 mb-sm-5' expr:id='"post-" + data:post.id'>
-
-          <!-- >>> Header <<< -->
-          <b:if cond='data:headerByline.items.notEmpty'>
-            <div class='card-header text-muted'>
-              <!-- headerByline -->
-              <b:include name='byline.header'/>
-            </div><!-- /.card-header -->
-          </b:if>
-
-          <!-- >>> Body <<< -->
-          <div class='row no-gutters'>
-            <div class='col-sm-3 col-md-4'>
-              <!-- Featured image -->
-              <div class='card-block-img-left-sm'>
-                <b:include data='{ size: 256, sourceSet: [256, 512], sourceSizes: "100vw", ratioWidth: 1, ratioHeight: 1, link: true, noImage: "https://placehold.it/256x256/777/eee/?text=NO+IMAGE", imageClass: "card-img-left" }' name='post.featuredImage'/>
-              </div><!-- /.card-block-img-left-sm -->
-            </div><!-- /col -->
-            <div class='col-sm-9 col-md-8'>
-              <div class='card-block'>
-                <!-- Title -->
-                <b:include data='{ heading: "h2", headingClass: "card-title", link: true, linkClass: "card-title-link", noTitleMessage: false }' name='post.title'/>
-                <!-- Snippet -->
-                <b:include data='{ length: 150, links: true, linebreaks: true, ellipsis: true, notHasJumpLink: true, parentClass: "card-text" }' name='post.snippet'/>
-                <!-- Jump link -->
-                <b:include data='{ linkClass: "btn btn-primary", parentClass: "mt-2" }' name='post.jumpLink'/>
-              </div><!-- /.card-block -->
-            </div><!-- /col -->
-          </div><!-- /.row -->
-
-          <!-- >>> Footer <<< -->
-          <b:if cond='data:footerBylines.notEmpty'>
-            <div class='card-footer text-muted'>
-              <!-- footerBylines -->
-              <b:include name='byline.footer'/>
-            </div><!-- /.card-footer -->
-          </b:if>
-
-        </article><!-- /.card -->
-      </b:loop>
-    </b:includable>
-    <b:includable id='post-archive'>
-      <table class='table table-striped'>
-        <tbody>
-          <b:loop values='data:posts' var='post'>
-            <tr expr:id='"post-" + data:post.id'>
-              <!-- Date -->
-              <td class='text-nowrap'>
-                <b:include data='{ customFormat: "dd/MM/YYYY", timeClass: "" }' name='post.datePublished'/>
-              </td>
-              <!-- Title -->
-              <td>
-                <b:include data='{ heading: false, headingClass: "", link: true, linkClass: "", noTitleMessage: true }' name='post.title'/>
-              </td>
-              <!-- Author -->
-              <td class='text-nowrap'>
-                <b:include data='{ linkClass: "" }' name='post.authorName'/>
-              </td>
-            </tr>
-          </b:loop>
-        </tbody>
-      </table>
-    </b:includable>
-  </b:defaultmarkup>
-</b:defaultmarkups>
-
-<b:comment>=== Breadcrumb, alert, comments, and pager. ===</b:comment>
-
 <b:defaultmarkups>
   <b:defaultmarkup type='Common'>
     <b:includable id='blog-breadcrumb' var='post'>
       <div class='blog-breadcrumb'>
+
         <ol class='breadcrumb'>
-          <li class='breadcrumb-item'>
-            <a expr:href='data:blog.homepageUrl'>Home</a>
-          </li>
+          <b:comment>=== Homepage ===</b:comment>
+          <b:if cond='data:view.isHomepage'>
+            <b:comment>None</b:comment>
+          </b:if>
 
           <b:comment>=== Item page ===</b:comment>
           <b:if cond='data:view.isPost'>
-            <li class='breadcrumb-item active'>Posts</li>
-            <li class='breadcrumb-item active'>
-              <b:loop values='data:posts' var='post'>
-                <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
-              </b:loop>
+            <li class='breadcrumb-item'>
+              <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
             </li>
+            <li class='breadcrumb-item active'>Posts</li>
+            <b:loop values='data:posts' var='post'>
+              <li class='breadcrumb-item active'><data:post.title/></li>
+            </b:loop>
           </b:if>
 
           <b:comment>=== Static page ===</b:comment>
           <b:if cond='data:view.isPage'>
-            <li class='breadcrumb-item active'>Pages</li>
-            <li class='breadcrumb-item active'>
-              <b:loop values='data:posts' var='post'>
-                <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
-              </b:loop>
+            <li class='breadcrumb-item'>
+              <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
             </li>
+            <li class='breadcrumb-item active'>Pages</li>
+            <b:loop values='data:posts' var='post'>
+              <li class='breadcrumb-item active'><data:post.title/></li>
+            </b:loop>
           </b:if>
 
           <b:comment>=== Search (label) page ===</b:comment>
           <b:if cond='data:view.search.label'>
-            <li class='breadcrumb-item active'>Search</li>
+            <li class='breadcrumb-item'>
+              <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+            </li>
+            <li class='breadcrumb-item'>
+              <a expr:href='path(data:blog.homepageUrl, "/search")'>Search</a>
+            </li>
             <li class='breadcrumb-item active'>Label</li>
-            <li class='breadcrumb-item active'>"<data:view.search.label/>"</li>
+            <li class='breadcrumb-item active'><data:view.search.label/></li>
           </b:if>
 
           <b:comment>=== Search (query) page ===</b:comment>
           <b:if cond='data:view.search.query'>
-            <li class='breadcrumb-item active'>Search</li>
+            <li class='breadcrumb-item'>
+              <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+            </li>
+            <li class='breadcrumb-item'>
+              <a expr:href='path(data:blog.homepageUrl, "/search")'>Search</a>
+            </li>
             <li class='breadcrumb-item active'>Query</li>
-            <li class='breadcrumb-item active'>"<data:view.search.query/>"</li>
+            <li class='breadcrumb-item active'><data:view.search.query/></li>
+          </b:if>
+
+          <b:comment>=== Search (default) page ===</b:comment>
+          <b:if cond='data:view.search and !data:view.search.label and !data:view.search.query'>
+            <li class='breadcrumb-item'>
+              <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+            </li>
+            <li class='breadcrumb-item active'>Search</li>
           </b:if>
 
           <b:comment>=== Archive page ===</b:comment>
           <b:if cond='data:view.isArchive'>
-            <li class='breadcrumb-item active'>Archive</li>
-            <li class='breadcrumb-item active'><data:view.archive.year/></li>
+            <li class='breadcrumb-item'>
+              <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+            </li>
             <b:if cond='data:view.archive.month'>
+              <li class='breadcrumb-item'>
+                <a expr:href='data:blog.homepageUrl + data:view.archive.year'><data:view.archive.year/></a>
+              </li>
               <li class='breadcrumb-item active'><data:view.archive.month/></li>
+            <b:else/>
+              <li class='breadcrumb-item active'><data:view.archive.year/></li>
             </b:if>
           </b:if>
 
           <b:comment>=== Error page ===</b:comment>
           <b:if cond='data:view.isError'>
+            <li class='breadcrumb-item'>
+              <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+            </li>
             <li class='breadcrumb-item active'>404</li>
           </b:if>
         </ol>
+
       </div>
     </b:includable>
-    <b:includable id='blog-alert' var='post'>
+    <b:includable id='blog-status-message' var='post'>
       <b:comment>=== Homepage ===</b:comment>
       <b:if cond='data:view.isHomepage and data:posts.empty'>
-        <div class='blog-alert'>
-          <div class='alert alert-warning' role='alert'>
-            <i aria-hidden='true' class='fa fa-exclamation-circle'/>
-            <data:messages.theresNothingHere/>
-          </div>
+        <div class='blog-status-message blog-status-message-danger' role='alert'>
+          <data:messages.theresNothingHere/>
         </div>
       </b:if>
 
       <b:comment>=== Search (label) page ===</b:comment>
       <b:if cond='data:view.search.label'>
         <b:if cond='data:posts.size gte 1'>
-          <div class='blog-alert'>
-            <div class='alert alert-success' role='alert'>
-              <i aria-hidden='true' class='fa fa-tags'/>
-              <data:view.search.resultsMessageHtml/>
-            </div>
+          <div class='blog-status-message blog-status-message-success' role='alert'>
+            <data:view.search.resultsMessageHtml/>
           </div>
         <b:else/>
-          <div class='blog-alert'>
-            <div class='alert alert-warning' role='alert'>
-              <i aria-hidden='true' class='fa fa-tags'/>
-              <data:view.search.resultsMessageHtml/>
-            </div>
-          </div>
-          <b:comment>=== Search form ===</b:comment>
-          <div class='card'>
-            <div class='card-block'>
-              <p class='card-text'><data:messages.noResultsFound/></p>
-            </div>
-            <ul class='list-group list-group-flush'>
-              <li class='list-group-item'>
-                <form class='w-100' expr:action='data:blog.searchUrl' method='get'>
-                  <div class='input-group' role='search'>
-                    <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
-                    <input class='form-control' expr:aria-label='data:messages.searchBlog' expr:placeholder='data:messages.searchBlog' id='blog-alert-search-form' name='q' type='search'/>
-                  </div>
-                </form>
-              </li>
-            </ul>
+          <div class='blog-status-message blog-status-message-danger' role='alert'>
+            <data:view.search.resultsMessageHtml/> : <data:messages.noResultsFound/>
           </div>
         </b:if>
       </b:if>
@@ -742,38 +548,12 @@ Post (Jump to widget: Blog1 --- includable: main)
       <b:comment>=== Search (query) page ===</b:comment>
       <b:if cond='data:view.search.query'>
         <b:if cond='data:posts.size gte 1'>
-          <div class='blog-alert'>
-            <div class='alert alert-success' role='alert'>
-              <i aria-hidden='true' class='fa fa-search-plus'/>
-              <data:view.search.resultsMessageHtml/>
-            </div>
+          <div class='blog-status-message blog-status-message-success' role='alert'>
+            <data:view.search.resultsMessageHtml/>
           </div>
         <b:else/>
-          <div class='blog-alert'>
-            <div class='alert alert-warning' role='alert'>
-              <i aria-hidden='true' class='fa fa-search-minus'/>
-              <data:view.search.resultsMessageHtml/>
-            </div>
-          </div>
-        	<b:comment>=== Search form ===</b:comment>
-          <div class='card'>
-            <div class='card-block'>
-              <p class='card-text'><data:messages.noResultsFound/></p>
-            </div>
-            <ul class='list-group list-group-flush'>
-              <li class='list-group-item'>
-                <form class='w-100' expr:action='data:blog.searchUrl' method='get'>
-                  <div class='input-group' role='search'>
-                    <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
-                    <input class='form-control' expr:aria-label='data:messages.searchBlog' expr:placeholder='data:messages.searchBlog' id='blog-alert-search-form' name='q' type='search'/>
-                  </div>
-                </form>
-              </li>
-              <li class='list-group-item'>Make sure all words are spelled correctly</li>
-              <li class='list-group-item'>Try different keywords</li>
-              <li class='list-group-item'>Try more general keywords</li>
-              <li class='list-group-item'>Try fewer keywords</li>
-            </ul>
+          <div class='blog-status-message blog-status-message-danger' role='alert'>
+            <data:view.search.resultsMessageHtml/> : <data:messages.noResultsFound/>
           </div>
         </b:if>
       </b:if>
@@ -781,64 +561,280 @@ Post (Jump to widget: Blog1 --- includable: main)
       <b:comment>=== Archive page ===</b:comment>
       <b:if cond='data:view.isArchive'>
         <b:if cond='data:posts.size gte 1'>
-          <div class='blog-alert'>
-            <div class='alert alert-success' role='alert'>
-              <i aria-hidden='true' class='fa fa-archive'/>
-              <data:view.archive.rangeMessage/>
-            </div>
+          <div class='blog-status-message blog-status-message-success' role='alert'>
+            <data:view.archive.rangeMessage/>
           </div>
         <b:else/>
-          <div class='blog-alert'>
-            <div class='alert alert-warning' role='alert'>
-              <i aria-hidden='true' class='fa fa-archive'/>
-              <data:view.archive.rangeMessage/>
-            </div>
-          </div>
-          <b:comment>=== Search form ===</b:comment>
-          <div class='card'>
-            <div class='card-block'>
-              <p class='card-text'><data:messages.noResultsFound/></p>
-            </div>
-            <ul class='list-group list-group-flush'>
-              <li class='list-group-item'>
-                <form class='w-100' expr:action='data:blog.searchUrl' method='get'>
-                  <div class='input-group' role='search'>
-                    <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
-                    <input class='form-control' expr:aria-label='data:messages.searchBlog' expr:placeholder='data:messages.searchBlog' id='blog-alert-search-form' name='q' type='search'/>
-                  </div>
-                </form>
-              </li>
-            </ul>
+          <div class='blog-status-message blog-status-message-danger' role='alert'>
+            <data:view.archive.rangeMessage/> : <data:messages.noResultsFound/>
           </div>
         </b:if>
       </b:if>
 
       <b:comment>=== Error page ===</b:comment>
       <b:if cond='data:view.isError'>
-        <div class='blog-alert'>
-          <div class='alert alert-danger' role='alert'>
-            <i aria-hidden='true' class='fa fa-exclamation-circle'/>
-            <strong><data:navMessage/></strong>
-          </div>
-        </div>
-        <b:comment>=== Search form ===</b:comment>
-        <div class='card'>
-          <div class='card-block'>
-            <form class='w-100' expr:action='data:blog.searchUrl' method='get'>
-              <div class='input-group' role='search'>
-                <span class='input-group-addon'><i aria-hidden='true' class='fa fa-search'/></span>
-                <input class='form-control' expr:aria-label='data:messages.searchBlog' expr:placeholder='data:messages.searchBlog' id='blog-alert-search-form' name='q' type='search'/>
-              </div>
-            </form>
-          </div>
+        <div class='blog-status-message blog-status-message-danger' role='alert'>
+          <data:navMessage/>
         </div>
       </b:if>
+    </b:includable>
+    <b:includable id='blog-posts' var='post'>
+      <div class='blog-posts'>
+
+        <b:comment>=== Homepage ===</b:comment>
+        <b:if cond='data:view.isHomepage'>
+          <b:loop values='data:posts' var='post'>
+            <article class='card mb-3 mb-sm-5' expr:id='"post-" + data:post.id'>
+
+              <!-- >>> Header <<< -->
+              <b:if cond='data:headerByline.items.notEmpty'>
+                <div class='card-header text-muted'>
+                  <!-- headerByline -->
+                  <b:include name='byline.header'/>
+                </div><!-- /.card-header -->
+              </b:if>
+
+              <!-- >>> Body <<< -->
+              <div class='row no-gutters'>
+                <div class='col-sm-3 col-md-4'>
+                  <!-- Featured image -->
+                  <div class='card-block-img-left-sm'>
+                    <b:include data='{ size: 256, sourceSet: [256, 512], sourceSizes: "100vw", ratioWidth: 1, ratioHeight: 1, link: true, noImage: "https://placehold.it/256x256/777/eee/?text=NO+IMAGE", imageClass: "card-img-left" }' name='post.featuredImage'/>
+                  </div><!-- /.card-block-img-left-sm -->
+                </div><!-- /col -->
+                <div class='col-sm-9 col-md-8'>
+                  <div class='card-block'>
+                    <!-- Title -->
+                    <b:include data='{ heading: "h2", headingClass: "card-title", link: true, linkClass: "card-title-link", noTitleMessage: false }' name='post.title'/>
+                    <!-- Snippet -->
+                    <b:include data='{ length: 150, links: true, linebreaks: true, ellipsis: true, notHasJumpLink: true, parentClass: "card-text" }' name='post.snippet'/>
+                    <!-- Jump link -->
+                    <b:include data='{ linkClass: "btn btn-primary", parentClass: "mt-2" }' name='post.jumpLink'/>
+                  </div><!-- /.card-block -->
+                </div><!-- /col -->
+              </div><!-- /.row -->
+
+              <!-- >>> Footer <<< -->
+              <b:if cond='data:footerBylines.notEmpty'>
+                <div class='card-footer text-muted'>
+                  <!-- footerBylines -->
+                  <b:include name='byline.footer'/>
+                </div><!-- /.card-footer -->
+              </b:if>
+
+            </article><!-- /.card -->
+          </b:loop>
+        </b:if><!-- /Homepage -->
+
+        <b:comment>=== Item page ===</b:comment>
+        <b:if cond='data:view.isPost'>
+          <b:loop values='data:posts' var='post'>
+            <article class='card mb-3' expr:id='"post-" + data:post.id'>
+
+              <!-- >>> Header <<< -->
+              <div class='card-header'>
+                <ul class='list-inline mb-0'>
+                  <!-- Author -->
+                  <li class='list-inline-item'>
+                    <span class='text-muted'><data:messages.postedBy/></span>
+                    <b:include data='{ linkClass: "text-muted" }' name='post.authorName'/>
+                  </li>
+                  <!-- Date -->
+                  <li class='list-inline-item'>
+                    <span class='text-muted'><data:messages.on/></span>
+                    <b:include data='{ customFormat: "MMM dd, YYYY", timeClass: "text-muted" }' name='post.datePublished'/>
+                  </li>
+                </ul><!-- /.list-inline -->
+              </div><!-- /.card-header -->
+
+              <!-- >>> Body <<< -->
+              <div class='card-block'>
+                <!-- Title -->
+                <b:include data='{ heading: "h1", headingClass: "", link: false, linkClass: "", noTitleMessage: false }' name='post.title'/>
+                <!-- Body -->
+                <data:post.body/>
+              </div><!-- /.card-block -->
+
+              <!-- >>> Footer <<< -->
+              <div class='card-footer'>
+                <ul class='list-inline mb-0'>
+                  <!-- Labels -->
+                  <li class='list-inline-item'>
+                    <i aria-hidden='true' class='fa fa-tags text-muted'/>
+                    <span class='text-muted'><data:messages.labels/>:</span>
+                    <b:include data='{ comma: false, maxResults: 12, labelLinkClass: "badge badge-default", unlabelledClass: "text-muted" }' name='post.labels'/>
+                  </li>
+                </ul><!-- /.list-inline -->
+              </div><!-- /.card-footer -->
+
+            </article><!-- /.card -->
+          </b:loop>
+        </b:if><!-- /Item page -->
+
+        <b:comment>=== Static page ===</b:comment>
+        <b:if cond='data:view.isPage'>
+          <b:loop values='data:posts' var='post'>
+            <article class='card mb-3' expr:id='"post-" + data:post.id'>
+
+              <!-- >>> Body <<< -->
+              <div class='card-block'>
+                <!-- Title -->
+                <b:include data='{ heading: "h1", headingClass: "", link: false, linkClass: "", noTitleMessage: false }' name='post.title'/>
+                <!-- Body -->
+                <data:post.body/>
+              </div><!-- /.card-block -->
+
+            </article><!-- /.card -->
+          </b:loop>
+        </b:if><!-- /Static page -->
+
+        <b:comment>=== Search (label) page ===</b:comment>
+        <b:if cond='data:view.search.label'>
+          <div class='row'>
+            <b:loop values='data:posts' var='post'>
+              <article class='col-sm-6 mb-3 mb-sm-5' expr:id='"post-" + data:post.id'>
+                <div class='card h-100'>
+
+                  <!-- >>> Image <<< -->
+                  <!-- Featured image -->
+                  <b:include data='{ size: 320, ratioWidth: 320, ratioHeight: 180, noImage: "https://placehold.it/320x180/777/eee/?text=NO+IMAGE", class: "card-img-top card-img-cover", style: "height: 180px;" }' name='post.featuredImageBg'/>
+
+                  <!-- >>> Body <<< -->
+                  <div class='card-block'>
+                    <!-- Title -->
+                    <b:include data='{ heading: "h2", headingClass: "card-title h4", link: true, linkClass: "card-title-link", noTitleMessage: false }' name='post.title'/>
+                    <!-- Date -->
+                    <h6 class='card-subtitle mb-2'>
+                      <b:include data='{ customFormat: "MMM dd, YYYY", timeClass: "text-muted" }' name='post.datePublished'/>
+                    </h6>
+                    <!-- Snippet -->
+                    <b:include data='{ length: 150, links: true, linebreaks: true, ellipsis: true, notHasJumpLink: false, parentClass: "card-text" }' name='post.snippet'/>
+                    <!-- Jump link -->
+                    <b:include data='{ class: "card-link", parentClass: "mt-2" }' name='post.jumpLink'/>
+                  </div><!-- /.card-block -->
+
+                  <!-- >>> Footer <<< -->
+                  <div class='card-footer'>
+                    <div class='d-flex flex-wrap justify-content-between'>
+                      <!-- Author -->
+                      <span>
+                        <i aria-hidden='true' class='fa fa-user-circle text-muted'/>
+                        <b:include data='{ linkClass: "text-muted" }' name='post.authorName'/>
+                      </span>
+                      <!-- Number of comments -->
+                      <b:if cond='data:post.allowComments'>
+                        <span>
+                          <i aria-hidden='true' class='fa fa-comments text-muted'/>
+                          <b:include data='{ linkClass: "text-muted" }' name='post.numComments'/>
+                        </span>
+                      </b:if>
+                    </div><!-- /flex -->
+                  </div><!-- /.card-footer -->
+
+                </div><!-- /.card -->
+              </article><!-- /col -->
+            </b:loop>
+          </div><!-- /.row -->
+        </b:if><!-- /Search (label) page -->
+
+        <b:comment>=== Search (query) page ===</b:comment>
+        <b:if cond='data:view.search.query'>
+          <b:loop values='data:posts' var='post'>
+            <article class='card mb-3' expr:id='"post-" + data:post.id'>
+
+              <!-- >>> Body <<< -->
+              <div class='card-block'>
+                <!-- Title -->
+                <b:include data='{ heading: "h2", headingClass: "card-title", link: true, linkClass: "card-title-link", noTitleMessage: false }' name='post.title'/>
+                <!-- Date and snippet -->
+                <div class='card-text'>
+                  <b:include data='{ customFormat: "MMM dd, YYYY", timeClass: "text-muted" }' name='post.datePublished'/>
+                  <span class='text-muted'>-</span>
+                  <b:include data='{ length: 150, links: false, linebreaks: false, ellipsis: true, notHasJumpLink: false, parentClass: "d-inline" }' name='post.snippet'/>
+                </div><!-- /.card-text -->
+              </div><!-- /.card-block -->
+
+            </article><!-- /.card -->
+          </b:loop>
+        </b:if><!-- /Search (query) page -->
+
+        <b:comment>=== Search (default) page ===</b:comment>
+        <b:if cond='data:view.search and !data:view.search.label and !data:view.search.query'>
+          <b:loop values='data:posts' var='post'>
+            <article class='card mb-3 mb-sm-5' expr:id='"post-" + data:post.id'>
+
+              <!-- >>> Header <<< -->
+              <b:if cond='data:headerByline.items.notEmpty'>
+                <div class='card-header text-muted'>
+                  <!-- headerByline -->
+                  <b:include name='byline.header'/>
+                </div><!-- /.card-header -->
+              </b:if>
+
+              <!-- >>> Body <<< -->
+              <div class='row no-gutters'>
+                <div class='col-sm-3 col-md-4'>
+                  <!-- Featured image -->
+                  <div class='card-block-img-left-sm'>
+                    <b:include data='{ size: 256, sourceSet: [256, 512], sourceSizes: "100vw", ratioWidth: 1, ratioHeight: 1, link: true, noImage: "https://placehold.it/256x256/777/eee/?text=NO+IMAGE", imageClass: "card-img-left" }' name='post.featuredImage'/>
+                  </div><!-- /.card-block-img-left-sm -->
+                </div><!-- /col -->
+                <div class='col-sm-9 col-md-8'>
+                  <div class='card-block'>
+                    <!-- Title -->
+                    <b:include data='{ heading: "h2", headingClass: "card-title", link: true, linkClass: "card-title-link", noTitleMessage: false }' name='post.title'/>
+                    <!-- Snippet -->
+                    <b:include data='{ length: 150, links: true, linebreaks: true, ellipsis: true, notHasJumpLink: true, parentClass: "card-text" }' name='post.snippet'/>
+                    <!-- Jump link -->
+                    <b:include data='{ linkClass: "btn btn-primary", parentClass: "mt-2" }' name='post.jumpLink'/>
+                  </div><!-- /.card-block -->
+                </div><!-- /col -->
+              </div><!-- /.row -->
+
+              <!-- >>> Footer <<< -->
+              <b:if cond='data:footerBylines.notEmpty'>
+                <div class='card-footer text-muted'>
+                  <!-- footerBylines -->
+                  <b:include name='byline.footer'/>
+                </div><!-- /.card-footer -->
+              </b:if>
+
+            </article><!-- /.card -->
+          </b:loop>
+        </b:if><!-- /Search (default) page -->
+
+        <b:comment>=== Archive page ===</b:comment>
+        <b:if cond='data:view.isArchive'>
+          <table class='table table-striped'>
+            <tbody>
+              <b:loop values='data:posts' var='post'>
+                <tr expr:id='"post-" + data:post.id'>
+                  <!-- Date -->
+                  <td class='text-nowrap'>
+                    <b:include data='{ customFormat: "dd/MM/YYYY", timeClass: "" }' name='post.datePublished'/>
+                  </td>
+                  <!-- Title -->
+                  <td>
+                    <b:include data='{ heading: false, headingClass: "", link: true, linkClass: "", noTitleMessage: true }' name='post.title'/>
+                  </td>
+                  <!-- Author -->
+                  <td class='text-nowrap'>
+                    <b:include data='{ linkClass: "" }' name='post.authorName'/>
+                  </td>
+                </tr>
+              </b:loop>
+            </tbody>
+          </table>
+        </b:if><!-- /Archive page -->
+
+      </div>
     </b:includable>
     <b:includable id='blog-comments' var='post'>
       <b:loop values='data:posts' var='post'>
         <b:if cond='data:post.allowComments'>
 
           <div class='blog-comments' id='comments'>
+
             <h1 class='blog-comments-title'><data:messages.comments/></h1>
 
             <b:if cond='data:post.commentSource == 1'>
@@ -951,38 +947,34 @@ Post (Jump to widget: Blog1 --- includable: main)
                   </a>
                 </p>
               </div>
+
             </b:if>
+
           </div>
 
         </b:if>
       </b:loop>
     </b:includable>
     <b:includable id='blog-pager' var='post'>
-      <b:if cond='!data:view.isPage'>
-        <nav class='blog-pager d-flex justify-content-between'>
-          <a class='blog-pager-newer-link btn btn-secondary' role='button'>
-            <b:attr expr:value='data:newerPageUrl ? data:newerPageUrl : "#"' name='href'/>
-            <b:class cond='!data:newerPageUrl' name='disabled'/>
-            <data:messages.newer/>
-          </a>
+      <nav class='blog-pager d-flex justify-content-between'>
 
-          <a class='blog-pager-home-link btn btn-secondary' expr:href='data:blog.homepageUrl' role='button'>
-            <data:messages.home/>
-          </a>
+        <a class='blog-pager-newer-link btn btn-secondary' role='button'>
+          <b:attr expr:value='data:newerPageUrl ? data:newerPageUrl : "#"' name='href'/>
+          <b:class cond='!data:newerPageUrl' name='disabled'/>
+          <data:messages.newer/>
+        </a>
 
-          <a class='blog-pager-older-link btn btn-secondary' role='button'>
-            <b:attr expr:value='data:olderPageUrl ? data:olderPageUrl : "#"' name='href'/>
-            <b:class cond='!data:olderPageUrl' name='disabled'/>
-            <data:messages.older/>
-          </a>
-        </nav>
-      </b:if>
+        <a class='blog-pager-home-link btn btn-secondary' expr:href='data:blog.homepageUrl' role='button'>
+          <data:messages.home/>
+        </a>
 
-      <b:if cond='data:view.isPage'>
-        <nav class='blog-pager d-flex justify-content-center'>
-          <a class='blog-pager-home-link btn btn-secondary' expr:href='data:blog.homepageUrl' role='button'><data:messages.home/></a>
-        </nav>
-      </b:if>
+        <a class='blog-pager-older-link btn btn-secondary' role='button'>
+          <b:attr expr:value='data:olderPageUrl ? data:olderPageUrl : "#"' name='href'/>
+          <b:class cond='!data:olderPageUrl' name='disabled'/>
+          <data:messages.older/>
+        </a>
+
+      </nav>
     </b:includable>
   </b:defaultmarkup>
 </b:defaultmarkups>
@@ -1008,7 +1000,7 @@ Skip navigation
 
 <a class='sr-only sr-only-focusable skiplink' href='#main' id='skiplink'>
   <div class='container'>
-    <span class='skiplink-text'>Skip to main content</span>
+    <span class='skiplink-text'><data:messages.skipToMainContent/></span>
   </div>
 </a>
 
@@ -1290,50 +1282,19 @@ Main and sidebar
                   </b:if>
 
                   <b:comment>=== Breadcrumb ===</b:comment>
-                  <b:include name='blog-breadcrumb'/>
+                  <b:include cond='!data:view.isHomepage' name='blog-breadcrumb'/>
 
-                  <b:comment>=== Alert ===</b:comment>
-                  <b:include name='blog-alert'/>
+                  <b:comment>=== Status message ===</b:comment>
+                  <b:include name='blog-status-message'/>
 
                   <b:comment>=== Posts ===</b:comment>
-                  <b:if cond='data:posts.notEmpty'>
-                    <div class='blog-posts'>
-                      <b:comment>=== Homepage ===</b:comment>
-                      <b:if cond='data:view.isHomepage'>
-                        <b:include name='post-home'/>
-                      </b:if>
-                      <b:comment>=== Item page ===</b:comment>
-                      <b:if cond='data:view.isPost'>
-                        <b:include name='post-item'/>
-                      </b:if>
-                      <b:comment>=== Static page ===</b:comment>
-                      <b:if cond='data:view.isPage'>
-                        <b:include name='post-static'/>
-                      </b:if>
-                      <b:comment>=== Search (label) page ===</b:comment>
-                      <b:if cond='data:view.search.label'>
-                        <b:include name='post-search-label'/>
-                      </b:if>
-                      <b:comment>=== Search (query) page ===</b:comment>
-                      <b:if cond='data:view.search.query'>
-                        <b:include name='post-search-query'/>
-                      </b:if>
-                      <b:comment>=== Search (default) page ===</b:comment>
-                      <b:if cond='data:view.search and !data:view.search.label and !data:view.search.query'>
-                        <b:include name='post-search-default'/>
-                      </b:if>
-                      <b:comment>=== Archive page ===</b:comment>
-                      <b:if cond='data:view.isArchive'>
-                        <b:include name='post-archive'/>
-                      </b:if>
-                    </div>
-                  </b:if>
+                  <b:include cond='data:posts.notEmpty' name='blog-posts'/>
 
                   <b:comment>=== Comments ===</b:comment>
-                  <b:include cond='data:view.isSingleItem' name='blog-comments'/>
+                  <b:include cond='data:view.isPost' name='blog-comments'/>
 
                   <b:comment>=== Pager ===</b:comment>
-                  <b:include cond='data:posts.notEmpty' name='blog-pager'/>
+                  <b:include cond='data:posts.notEmpty and !data:view.isPage' name='blog-pager'/>
 
                 </b:if>
 
@@ -2499,13 +2460,6 @@ Assets
         <title>Blogger</title>
         <path expr:fill='data:fillBg' d='M612, 510c0, 56.1-45.9, 102-102, 102H102C45.9, 612, 0, 566.1, 0, 510V102C0, 45.9, 45.9, 0, 102, 0h408 c56.1, 0, 102, 45.9, 102, 102V510z'></path>
         <path expr:fill='data:fillB' d='m 483.32742, 262.81768 c -7.88887, -3.44838 -41.73045, 0.38183 -51.13171, -8.29282 -6.63342, -6.25243 -7.05677, -17.56407 -9.6465, -32.65819 -4.33566, -25.27222 -6.14292, -30.99964 -10.65377, -40.95102 -16.41131, -35.46224 -55.75058, -65.82947 -91.48993, -65.82947 l -82.8361, 0 c -65.17519, 0 -118.42655, 54.35078 -118.42655, 120.6814 l 0, 140.71541 c 0, 66.2113 53.25136, 120.43083 118.42655, 120.43083 l 136.10207, 0 c 65.17226, 0 118.06159, -54.21953 118.43823, -120.43083 l 0.74743, -97.4615 c 0, 0 0, -12.05144 -9.52972, -16.20381 m -244.26024, -49.11258 65.67737, 0 c 12.5311, 0 22.68271, 10.33321 22.68271, 22.95738 0, 12.63611 -10.15161, 23.08864 -22.68271, 23.08864 l -65.67737, 0 c -12.53111, 0 -22.6827, -10.45253 -22.6827, -23.08864 0.003, -12.62417 10.15451, -22.95738 22.6827, -22.95738 m 133.47731, 183.9574 -133.47731, 0 c -12.53111, 0 -22.6827, -10.46447 -22.6827, -22.95739 0, -12.6361 10.15159, -22.96932 22.6827, -22.96932 l 133.47731, 0 c 12.40265, 0 22.55132, 10.33322 22.55132, 22.96932 0.003, 12.49292 -10.14867, 22.95739 -22.55132, 22.95739'></path>
-      </svg>
-    </b:includable>
-    <b:includable id='icons.bootsblogger'>
-      <svg expr:class='data:class' expr:width='data:width' expr:height='data:height' viewBox='0 0 612 612' xmlns='http://www.w3.org/2000/svg' focusable='false'>
-        <title>Bootsblogger</title>
-        <path fill='#563D7C' d='M612, 510c0, 56.1-45.9, 102-102, 102H102C45.9, 612, 0, 566.1, 0, 510V102C0, 45.9, 45.9, 0, 102, 0h408 c56.1, 0, 102, 45.9, 102, 102V510z'></path>
-        <path fill='#fff' d='m 483.32742, 262.81768 c -7.88887, -3.44838 -41.73045, 0.38183 -51.13171, -8.29282 -6.63342, -6.25243 -7.05677, -17.56407 -9.6465, -32.65819 -4.33566, -25.27222 -6.14292, -30.99964 -10.65377, -40.95102 -16.41131, -35.46224 -55.75058, -65.82947 -91.48993, -65.82947 l -82.8361, 0 c -65.17519, 0 -118.42655, 54.35078 -118.42655, 120.6814 l 0, 140.71541 c 0, 66.2113 53.25136, 120.43083 118.42655, 120.43083 l 136.10207, 0 c 65.17226, 0 118.06159, -54.21953 118.43823, -120.43083 l 0.74743, -97.4615 c 0, 0 0, -12.05144 -9.52972, -16.20381 m -244.26024, -49.11258 65.67737, 0 c 12.5311, 0 22.68271, 10.33321 22.68271, 22.95738 0, 12.63611 -10.15161, 23.08864 -22.68271, 23.08864 l -65.67737, 0 c -12.53111, 0 -22.6827, -10.45253 -22.6827, -23.08864 0.003, -12.62417 10.15451, -22.95738 22.6827, -22.95738 m 133.47731, 183.9574 -133.47731, 0 c -12.53111, 0 -22.6827, -10.46447 -22.6827, -22.95739 0, -12.6361 10.15159, -22.96932 22.6827, -22.96932 l 133.47731, 0 c 12.40265, 0 22.55132, 10.33322 22.55132, 22.96932 0.003, 12.49292 -10.14867, 22.95739 -22.55132, 22.95739'></path>
       </svg>
     </b:includable>
   </b:defaultmarkup>
