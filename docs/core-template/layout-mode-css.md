@@ -12,18 +12,17 @@ Untuk lebih jelas <a href="#" data-toggle="modal" data-target="#modalImgBloggerL
 Lihat `template-src/layout-mode.css`:
 
 {% highlight css %}
-/* Hide */
-body#layout ul,
-body#layout ol {
-  display: none;
-}
-
 /* Clearfix */
 body#layout .container::after,
 body#layout .section::after {
   display: block;
   content: "";
   clear: both;
+}
+
+/* Container */
+body#layout .container {
+  max-width: 100%;
 }
 
 /* Grid */
@@ -77,6 +76,20 @@ body#layout .blogger-col-11 {
 }
 body#layout .blogger-col-12 {
   width: 100%;
+}
+
+/* Lists */
+body#layout ul,
+body#layout ol {
+  padding-left: 0;
+  list-style: none;
+}
+
+/* Navbar */
+body#layout .navbar {
+  max-width: 500px;
+  margin-right: auto;
+  margin-left: auto;
 }
 {% endhighlight %}
 
