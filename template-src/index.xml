@@ -113,20 +113,16 @@ Main and sidebar
     <div class='row'>
       <!-- Main -->
       <main class='col-md-8 col-lg-9 main blogger-col-8' id='main'>
-        <div class='main-content'>
-          <b:section id='b-section-main' maxwidgets='1' name='Main' showaddelement='no'>
-            <!--(bake widgets/b-section-main__Blog1.xml)-->
-          </b:section>
-        </div><!-- /.main-content -->
+        <b:section id='b-section-main' maxwidgets='1' name='Main' showaddelement='no'>
+          <!--(bake widgets/b-section-main__Blog1.xml)-->
+        </b:section>
       </main><!-- /.main -->
 
       <!-- Sidebar -->
       <aside class='col-md-4 col-lg-3 sidebar mt-5 mt-md-0 blogger-col-4' id='sidebar'>
-        <div class='sidebar-content'>
-          <b:section class='wg wg-panel wg-panel-sm wg-panel-orange wg-title-dark wg-section-no-mb' id='b-section-sidebar' name='Sidebar'>
-            <!--(bake widgets/b-section-sidebar__HTML1.xml)-->
-          </b:section>
-        </div><!-- /.sidebar-content -->
+        <b:section class='wg wg-panel wg-panel-sm wg-panel-orange wg-title-dark wg-section-no-mb' id='b-section-sidebar' name='Sidebar'>
+          <!--(bake widgets/b-section-sidebar__HTML1.xml)-->
+        </b:section>
       </aside><!-- /.sidebar -->
     </div><!-- /.row -->
   </div><!-- /.container -->
@@ -141,13 +137,11 @@ Widget block (1)
 <b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-widget-block-1")'>
   <div class='widget-block-1 py-5' id='widget-block-1'>
     <div class='container'>
-      <div class='widget-block-1-content'>
-        <b:section class='wg wg-box wg-box-dark wg-title-light wg-lg-4 wg-equal-height-cols wg-section-no-mb' id='b-section-widget-block-1' name='Widget block (1)'>
-          <!--(bake widgets/b-section-widget-block-1__1__HTML2.xml)-->
-          <!--(bake widgets/b-section-widget-block-1__2__HTML3.xml)-->
-          <!--(bake widgets/b-section-widget-block-1__3__HTML4.xml)-->
-        </b:section>
-      </div><!-- /.widget-block-1-content -->
+      <b:section class='wg wg-box wg-box-dark wg-title-light wg-lg-4 wg-equal-height-cols wg-section-no-mb' id='b-section-widget-block-1' name='Widget block (1)'>
+        <!--(bake widgets/b-section-widget-block-1__1__HTML2.xml)-->
+        <!--(bake widgets/b-section-widget-block-1__2__HTML3.xml)-->
+        <!--(bake widgets/b-section-widget-block-1__3__HTML4.xml)-->
+      </b:section>
     </div><!-- /.container -->
   </div><!-- /.widget-block-1 -->
 </b:if>
@@ -160,20 +154,18 @@ Footer
 
 <footer class='footer py-5' id='footer'>
   <div class='container'>
-    <div class='footer-content'>
-      <b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-footer-links")'>
-        <b:section id='b-section-footer-links' maxwidgets='1' name='Footer links' showaddelement='no'>
-          <!--(bake widgets/b-section-footer-links__LinkList1.xml)-->
-        </b:section>
-      </b:if>
-      <p>&#169; <data:blog.title/>.</p>
-      <p>
-        <a expr:href='data:blog.bloggerUrl' style='text-decoration: none;'>
-          <b:include data='{ width: 24, height: 24, fillBg: "#ff5722", fillB: "#fff", class: "align-middle" }' name='icons.blogger'/>
-          <b:message name='messages.poweredByBlogger'/>
-        </a>
-      </p>
-    </div><!-- /.footer-content -->
+    <b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-footer-links")'>
+      <b:section id='b-section-footer-links' maxwidgets='1' name='Footer links' showaddelement='no'>
+        <!--(bake widgets/b-section-footer-links__LinkList1.xml)-->
+      </b:section>
+    </b:if>
+    <p>&#169; <data:blog.title/>.</p>
+    <p>
+      <a expr:href='data:blog.bloggerUrl' style='text-decoration: none;'>
+        <b:include data='{ width: 24, height: 24, fillBg: "#ff5722", fillB: "#fff", class: "align-middle" }' name='icons.blogger'/>
+        <b:message name='messages.poweredByBlogger'/>
+      </a>
+    </p>
   </div><!-- /.container -->
 </footer><!-- /.footer -->
 

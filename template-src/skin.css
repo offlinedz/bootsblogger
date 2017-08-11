@@ -165,8 +165,6 @@ body {}
 
 .main {}
 
-.main-content {}
-
 /* Breadcrumb
    ========================================================================== */
 
@@ -250,8 +248,6 @@ body {}
 
 .sidebar {}
 
-.sidebar-content {}
-
 
 /* ==========================================================================
    Footer
@@ -263,8 +259,6 @@ body {}
   text-align: center;
   background-color: #eee;
 }
-
-.footer-content {}
 
 .footer a {
   font-weight: 500;
@@ -303,5 +297,3 @@ body {}
 .widget-block-1 {
   background-color: #333;
 }
-
-.widget-block-1-content {}
