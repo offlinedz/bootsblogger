@@ -6,6 +6,11 @@ body#layout .section::after {
   clear: both;
 }
 
+/* Container */
+body#layout .container {
+  max-width: 100%;
+}
+
 /* Grid */
 body#layout .blogger-col-1,
 body#layout .blogger-col-2,
