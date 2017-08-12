@@ -288,8 +288,6 @@ body {}
 
 .main {}
 
-.main-content {}
-
 /* Breadcrumb
    ========================================================================== */
 
@@ -373,8 +371,6 @@ body {}
 
 .sidebar {}
 
-.sidebar-content {}
-
 
 /* ==========================================================================
    Footer
@@ -386,8 +382,6 @@ body {}
   text-align: center;
   background-color: #eee;
 }
-
-.footer-content {}
 
 .footer a {
   font-weight: 500;
@@ -426,8 +420,6 @@ body {}
 .widget-block-1 {
   background-color: #333;
 }
-
-.widget-block-1-content {}
 ]]>
 </b:skin>
 
@@ -701,7 +693,9 @@ Post (Jump to widget: Blog1 --- includable: main)
 
                   <!-- >>> Image <<< -->
                   <!-- Featured image -->
-                  <b:include data='{ size: 320, ratioWidth: 320, ratioHeight: 180, noImage: "https://placehold.it/320x180/777/eee/?text=NO+IMAGE", class: "card-img-top card-img-cover", style: "height: 180px;" }' name='post.featuredImageBg'/>
+                  <div class='card-img-top card-img-cover'>
+                    <b:include data='{ size: 320, ratioWidth: 320, ratioHeight: 180, noImage: "https://placehold.it/320x180/777/eee/?text=NO+IMAGE", style: "height: 180px;" }' name='post.featuredImageBg'/>
+                  </div>
 
                   <!-- >>> Body <<< -->
                   <div class='card-block'>
@@ -1248,87 +1242,83 @@ Main and sidebar
     <div class='row'>
       <!-- Main -->
       <main class='col-md-8 col-lg-9 main blogger-col-8' id='main'>
-        <div class='main-content'>
-          <b:section id='b-section-main' maxwidgets='1' name='Main' showaddelement='no'>
-            <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2' visible='true'>
-              <b:widget-settings>
-                <b:widget-setting name='showDateHeader'>false</b:widget-setting>
-                <b:widget-setting name='style.textcolor'>#000000</b:widget-setting>
-                <b:widget-setting name='showShareButtons'>true</b:widget-setting>
-                <b:widget-setting name='showCommentLink'>true</b:widget-setting>
-                <b:widget-setting name='style.urlcolor'>#008000</b:widget-setting>
-                <b:widget-setting name='showAuthor'>true</b:widget-setting>
-                <b:widget-setting name='style.linkcolor'>#0000ff</b:widget-setting>
-                <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
-                <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
-                <b:widget-setting name='showAuthorProfile'>true</b:widget-setting>
-                <b:widget-setting name='style.layout'>1x1</b:widget-setting>
-                <b:widget-setting name='showLabels'>true</b:widget-setting>
-                <b:widget-setting name='showLocation'>true</b:widget-setting>
-                <b:widget-setting name='showTimestamp'>true</b:widget-setting>
-                <b:widget-setting name='postsPerAd'>1</b:widget-setting>
-                <b:widget-setting name='showBacklinks'>true</b:widget-setting>
-                <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
-                <b:widget-setting name='showInlineAds'>true</b:widget-setting>
-                <b:widget-setting name='showReactions'>true</b:widget-setting>
-              </b:widget-settings>
-              <b:includable id='main'>
+        <b:section id='b-section-main' maxwidgets='1' name='Main' showaddelement='no'>
+          <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2' visible='true'>
+            <b:widget-settings>
+              <b:widget-setting name='showDateHeader'>false</b:widget-setting>
+              <b:widget-setting name='style.textcolor'>#000000</b:widget-setting>
+              <b:widget-setting name='showShareButtons'>true</b:widget-setting>
+              <b:widget-setting name='showCommentLink'>true</b:widget-setting>
+              <b:widget-setting name='style.urlcolor'>#008000</b:widget-setting>
+              <b:widget-setting name='showAuthor'>true</b:widget-setting>
+              <b:widget-setting name='style.linkcolor'>#0000ff</b:widget-setting>
+              <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
+              <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
+              <b:widget-setting name='showAuthorProfile'>true</b:widget-setting>
+              <b:widget-setting name='style.layout'>1x1</b:widget-setting>
+              <b:widget-setting name='showLabels'>true</b:widget-setting>
+              <b:widget-setting name='showLocation'>true</b:widget-setting>
+              <b:widget-setting name='showTimestamp'>true</b:widget-setting>
+              <b:widget-setting name='postsPerAd'>1</b:widget-setting>
+              <b:widget-setting name='showBacklinks'>true</b:widget-setting>
+              <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
+              <b:widget-setting name='showInlineAds'>true</b:widget-setting>
+              <b:widget-setting name='showReactions'>true</b:widget-setting>
+            </b:widget-settings>
+            <b:includable id='main'>
 
-                <b:if cond='!data:view.isMobile'>
+              <b:if cond='!data:view.isMobile'>
 
-                  <b:comment>=== Metadata JSON ===</b:comment>
-                  <b:if cond='data:posts.notEmpty'>
-                    <div class='script-application-ld-json' id='script-application-ld-json'>
-                      <b:loop values='data:posts' var='post'>
-                        <b:include name='postMetadataJSON'/>
-                      </b:loop>
-                    </div>
-                  </b:if>
-
-                  <b:comment>=== Breadcrumb ===</b:comment>
-                  <b:include cond='!data:view.isHomepage' name='blog-breadcrumb'/>
-
-                  <b:comment>=== Status message ===</b:comment>
-                  <b:include name='blog-status-message'/>
-
-                  <b:comment>=== Posts ===</b:comment>
-                  <b:include cond='data:posts.notEmpty' name='blog-posts'/>
-
-                  <b:comment>=== Comments ===</b:comment>
-                  <b:include cond='data:view.isPost' name='blog-comments'/>
-
-                  <b:comment>=== Pager ===</b:comment>
-                  <b:include cond='data:posts.notEmpty and !data:view.isPage' name='blog-pager'/>
-
+                <b:comment>=== Metadata JSON ===</b:comment>
+                <b:if cond='data:posts.notEmpty'>
+                  <div class='script-application-ld-json' id='script-application-ld-json'>
+                    <b:loop values='data:posts' var='post'>
+                      <b:include name='postMetadataJSON'/>
+                    </b:loop>
+                  </div>
                 </b:if>
 
-              </b:includable>
-            </b:widget>
-          </b:section>
-        </div><!-- /.main-content -->
+                <b:comment>=== Breadcrumb ===</b:comment>
+                <b:include cond='!data:view.isHomepage' name='blog-breadcrumb'/>
+
+                <b:comment>=== Status message ===</b:comment>
+                <b:include name='blog-status-message'/>
+
+                <b:comment>=== Posts ===</b:comment>
+                <b:include cond='data:posts.notEmpty' name='blog-posts'/>
+
+                <b:comment>=== Comments ===</b:comment>
+                <b:include cond='data:view.isPost' name='blog-comments'/>
+
+                <b:comment>=== Pager ===</b:comment>
+                <b:include cond='data:posts.notEmpty and !data:view.isPage' name='blog-pager'/>
+
+              </b:if>
+
+            </b:includable>
+          </b:widget>
+        </b:section>
       </main><!-- /.main -->
 
       <!-- Sidebar -->
       <aside class='col-md-4 col-lg-3 sidebar mt-5 mt-md-0 blogger-col-4' id='sidebar'>
-        <div class='sidebar-content'>
-          <b:section class='wg wg-panel wg-panel-sm wg-panel-orange wg-title-dark wg-section-no-mb' id='b-section-sidebar' name='Sidebar'>
-            <b:widget id='HTML1' locked='false' title='HTML/JavaScript' type='HTML' version='2' visible='true'>
-              <b:widget-settings>
-                <b:widget-setting name='content'>
-                  &lt;p&gt;
-                    Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
-                  &lt;/p&gt;
-                </b:widget-setting>
-              </b:widget-settings>
-              <b:includable id='main'>
-                <b:include name='widget-title'/>
-                <div class='widget-content'>
-                  <data:content/>
-                </div>
-              </b:includable>
-            </b:widget>
-          </b:section>
-        </div><!-- /.sidebar-content -->
+        <b:section class='wg wg-panel wg-panel-sm wg-panel-orange wg-title-dark wg-section-no-mb' id='b-section-sidebar' name='Sidebar'>
+          <b:widget id='HTML1' locked='false' title='HTML/JavaScript' type='HTML' version='2' visible='true'>
+            <b:widget-settings>
+              <b:widget-setting name='content'>
+                &lt;p&gt;
+                  Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
+                &lt;/p&gt;
+              </b:widget-setting>
+            </b:widget-settings>
+            <b:includable id='main'>
+              <b:include name='widget-title'/>
+              <div class='widget-content'>
+                <data:content/>
+              </div>
+            </b:includable>
+          </b:widget>
+        </b:section>
       </aside><!-- /.sidebar -->
     </div><!-- /.row -->
   </div><!-- /.container -->
@@ -1343,58 +1333,56 @@ Widget block (1)
 <b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-widget-block-1")'>
   <div class='widget-block-1 py-5' id='widget-block-1'>
     <div class='container'>
-      <div class='widget-block-1-content'>
-        <b:section class='wg wg-box wg-box-dark wg-title-light wg-lg-4 wg-equal-height-cols wg-section-no-mb' id='b-section-widget-block-1' name='Widget block (1)'>
-          <b:widget id='HTML2' locked='false' title='HTML/JavaScript' type='HTML' version='2' visible='true'>
-            <b:widget-settings>
-              <b:widget-setting name='content'>
-                &lt;p class="text-white"&gt;
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-                &lt;/p&gt;
-              </b:widget-setting>
-            </b:widget-settings>
-            <b:includable id='main'>
-              <b:include name='widget-title'/>
-              <div class='widget-content'>
-                <data:content/>
-              </div>
-            </b:includable>
-          </b:widget>
-          <b:widget id='HTML3' locked='false' title='HTML/JavaScript' type='HTML' version='2' visible='true'>
-            <b:widget-settings>
-              <b:widget-setting name='content'>
-                &lt;p class="text-white"&gt;
-                  Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
-                &lt;/p&gt;
-              </b:widget-setting>
-            </b:widget-settings>
-            <b:includable id='main'>
-              <b:include name='widget-title'/>
-              <div class='widget-content'>
-                <data:content/>
-              </div>
-            </b:includable>
-          </b:widget>
-          <b:widget id='HTML4' locked='false' title='HTML/JavaScript' type='HTML' version='2' visible='true'>
-            <b:widget-settings>
-              <b:widget-setting name='content'>
-                &lt;p class="text-white"&gt;
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-                &lt;/p&gt;
-                &lt;p class="text-white"&gt;
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-                &lt;/p&gt;
-              </b:widget-setting>
-            </b:widget-settings>
-            <b:includable id='main'>
-              <b:include name='widget-title'/>
-              <div class='widget-content'>
-                <data:content/>
-              </div>
-            </b:includable>
-          </b:widget>
-        </b:section>
-      </div><!-- /.widget-block-1-content -->
+      <b:section class='wg wg-box wg-box-dark wg-title-light wg-lg-4 wg-equal-height-cols wg-section-no-mb' id='b-section-widget-block-1' name='Widget block (1)'>
+        <b:widget id='HTML2' locked='false' title='HTML/JavaScript' type='HTML' version='2' visible='true'>
+          <b:widget-settings>
+            <b:widget-setting name='content'>
+              &lt;p class="text-white"&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+              &lt;/p&gt;
+            </b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main'>
+            <b:include name='widget-title'/>
+            <div class='widget-content'>
+              <data:content/>
+            </div>
+          </b:includable>
+        </b:widget>
+        <b:widget id='HTML3' locked='false' title='HTML/JavaScript' type='HTML' version='2' visible='true'>
+          <b:widget-settings>
+            <b:widget-setting name='content'>
+              &lt;p class="text-white"&gt;
+                Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
+              &lt;/p&gt;
+            </b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main'>
+            <b:include name='widget-title'/>
+            <div class='widget-content'>
+              <data:content/>
+            </div>
+          </b:includable>
+        </b:widget>
+        <b:widget id='HTML4' locked='false' title='HTML/JavaScript' type='HTML' version='2' visible='true'>
+          <b:widget-settings>
+            <b:widget-setting name='content'>
+              &lt;p class="text-white"&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+              &lt;/p&gt;
+              &lt;p class="text-white"&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+              &lt;/p&gt;
+            </b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main'>
+            <b:include name='widget-title'/>
+            <div class='widget-content'>
+              <data:content/>
+            </div>
+          </b:includable>
+        </b:widget>
+      </b:section>
     </div><!-- /.container -->
   </div><!-- /.widget-block-1 -->
 </b:if>
@@ -1407,40 +1395,38 @@ Footer
 
 <footer class='footer py-5' id='footer'>
   <div class='container'>
-    <div class='footer-content'>
-      <b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-footer-links")'>
-        <b:section id='b-section-footer-links' maxwidgets='1' name='Footer links' showaddelement='no'>
-          <b:widget id='LinkList1' locked='true' title='Footer links' type='LinkList' version='2' visible='true'>
-            <b:widget-settings>
-              <b:widget-setting name='sorting'>NONE</b:widget-setting>
-              <b:widget-setting name='text-0'>Twitter</b:widget-setting>
-              <b:widget-setting name='link-0'>https://twitter.com/username</b:widget-setting>
-              <b:widget-setting name='text-1'>Facebook</b:widget-setting>
-              <b:widget-setting name='link-1'>https://facebook.com/username</b:widget-setting>
-              <b:widget-setting name='text-2'>Google+</b:widget-setting>
-              <b:widget-setting name='link-2'>https://plus.google.com/+username</b:widget-setting>
-            </b:widget-settings>
-            <b:includable id='main'>
-              <b:include name='content'/>
-            </b:includable>
-            <b:includable id='content'>
-              <ul class='footer-links'>
-                <b:loop values='data:links' var='link'>
-                  <li><a expr:href='data:link.target'><data:link.name/></a></li>
-                </b:loop>
-              </ul>
-            </b:includable>
-          </b:widget>
-        </b:section>
-      </b:if>
-      <p>&#169; <data:blog.title/>.</p>
-      <p>
-        <a expr:href='data:blog.bloggerUrl' style='text-decoration: none;'>
-          <b:include data='{ width: 24, height: 24, fillBg: "#ff5722", fillB: "#fff", class: "align-middle" }' name='icons.blogger'/>
-          <b:message name='messages.poweredByBlogger'/>
-        </a>
-      </p>
-    </div><!-- /.footer-content -->
+    <b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-footer-links")'>
+      <b:section id='b-section-footer-links' maxwidgets='1' name='Footer links' showaddelement='no'>
+        <b:widget id='LinkList1' locked='true' title='Footer links' type='LinkList' version='2' visible='true'>
+          <b:widget-settings>
+            <b:widget-setting name='sorting'>NONE</b:widget-setting>
+            <b:widget-setting name='text-0'>Twitter</b:widget-setting>
+            <b:widget-setting name='link-0'>https://twitter.com/username</b:widget-setting>
+            <b:widget-setting name='text-1'>Facebook</b:widget-setting>
+            <b:widget-setting name='link-1'>https://facebook.com/username</b:widget-setting>
+            <b:widget-setting name='text-2'>Google+</b:widget-setting>
+            <b:widget-setting name='link-2'>https://plus.google.com/+username</b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main'>
+            <b:include name='content'/>
+          </b:includable>
+          <b:includable id='content'>
+            <ul class='footer-links'>
+              <b:loop values='data:links' var='link'>
+                <li><a expr:href='data:link.target'><data:link.name/></a></li>
+              </b:loop>
+            </ul>
+          </b:includable>
+        </b:widget>
+      </b:section>
+    </b:if>
+    <p>&#169; <data:blog.title/>.</p>
+    <p>
+      <a expr:href='data:blog.bloggerUrl' style='text-decoration: none;'>
+        <b:include data='{ width: 24, height: 24, fillBg: "#ff5722", fillB: "#fff", class: "align-middle" }' name='icons.blogger'/>
+        <b:message name='messages.poweredByBlogger'/>
+      </a>
+    </p>
   </div><!-- /.container -->
 </footer><!-- /.footer -->
 
@@ -2331,13 +2317,13 @@ Post
     <b:includable id='post.featuredImageBg'>
       <b:if cond='data:post.featuredImage'>
         <b:if cond='data:post.featuredImage.isYoutube'>
-          <div expr:class='data:class' expr:style='data:style + " background-image: url(" + (data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, data:size, (data:ratioWidth + ":" + data:ratioHeight)) : data:post.featuredImage.youtubeMaxResDefaultUrl) + ");"'/>
+          <b:attr expr:value='data:style + " background-image: url(" + (data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, data:size, (data:ratioWidth + ":" + data:ratioHeight)) : data:post.featuredImage.youtubeMaxResDefaultUrl) + ");"' name='style'/>
         <b:else/>
-          <div expr:class='data:class' expr:style='data:style + " background-image: url(" + (data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, data:size, (data:ratioWidth + ":" + data:ratioHeight)) : data:post.featuredImage) + ");"'/>
+          <b:attr expr:value='data:style + " background-image: url(" + (data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, data:size, (data:ratioWidth + ":" + data:ratioHeight)) : data:post.featuredImage) + ");"' name='style'/>
         </b:if>
       <b:else/>
         <b:if cond='data:noImage'>
-          <div expr:class='data:class' expr:style='data:style + " background-image: url(" + data:noImage + ");"'/>
+          <b:attr expr:value='data:style + " background-image: url(" + data:noImage + ");"' name='style'/>
         </b:if>
       </b:if>
     </b:includable>
