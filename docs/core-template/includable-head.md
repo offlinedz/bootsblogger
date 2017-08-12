@@ -84,8 +84,8 @@ Tag `<meta>` dan `<link>` untuk <abbr title="Search Engine Results Page">SERP</a
 
 {% highlight plaintext %}
 - Default/SERP: template-src/includable/head/head.defaultTags.xml
-- Twitter Cards: template-src/includable/head/head.twitterTags.xml
 - Facebook Open Graph: template-src/includable/head/head.facebookTags.xml
+- Twitter Cards: template-src/includable/head/head.twitterTags.xml
 {% endhighlight %}
 
 ###### Includable
@@ -93,9 +93,9 @@ Tag `<meta>` dan `<link>` untuk <abbr title="Search Engine Results Page">SERP</a
 {% highlight html %}
 <!-- Default/SERP -->
 <b:includable id='head.defaultTags'>...</b:includable>
-<!-- Twitter Cards -->
-<b:includable id='head.facebookTags'>...</b:includable>
 <!-- Facebook Open Graph -->
+<b:includable id='head.facebookTags'>...</b:includable>
+<!-- Twitter Cards -->
 <b:includable id='head.twitterTags'>...</b:includable>
 {% endhighlight %}
 

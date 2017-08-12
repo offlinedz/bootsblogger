@@ -446,7 +446,9 @@ template-src/includable/post/post.featuredImageBg.xml
 ###### Usage
 
 {% highlight html %}
-<b:include data='{ size: number, ratioWidth: number, ratioHeight: number, noImage: "https://example.com/path/to/no-image.png"|false, class: "class-name", style: "min-height: <number><units>;" }' name='post.featuredImageBg'/>
+<div class='class-name'><!-- Target -->
+  <b:include data='{ size: number, ratioWidth: number, ratioHeight: number, noImage: "https://example.com/path/to/no-image.png"|false, style: "min-height: <number><units>;" }' name='post.featuredImageBg'/>
+</div>
 {% endhighlight %}
 
 **Example:**
@@ -454,7 +456,9 @@ template-src/includable/post/post.featuredImageBg.xml
 Width = `size`, Height = ((`size` * `ratioHeight`) / `ratioWidth`).
 
 {% highlight html %}
-<b:include data='{ size: 512, ratioWidth: 16, ratioHeight: 9, noImage: "https://placehold.it/512x288/777/eee/?text=NO+IMAGE", class: "class-name", style: "min-height: 288px;" }' name='post.featuredImageBg'/>
+<div class='class-name'><!-- Target -->
+  <b:include data='{ size: 512, ratioWidth: 16, ratioHeight: 9, noImage: "https://placehold.it/512x288/777/eee/?text=NO+IMAGE", style: "min-height: 288px;" }' name='post.featuredImageBg'/>
+</div>
 {% endhighlight %}
 
 ### Snippet

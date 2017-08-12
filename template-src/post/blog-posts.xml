@@ -116,7 +116,9 @@
 
             <!-- >>> Image <<< -->
             <!-- Featured image -->
-            <b:include data='{ size: 320, ratioWidth: 320, ratioHeight: 180, noImage: "https://placehold.it/320x180/777/eee/?text=NO+IMAGE", class: "card-img-top card-img-cover", style: "height: 180px;" }' name='post.featuredImageBg'/>
+            <div class='card-img-top card-img-cover'>
+              <b:include data='{ size: 320, ratioWidth: 320, ratioHeight: 180, noImage: "https://placehold.it/320x180/777/eee/?text=NO+IMAGE", style: "height: 180px;" }' name='post.featuredImageBg'/>
+            </div>
 
             <!-- >>> Body <<< -->
             <div class='card-block'>
