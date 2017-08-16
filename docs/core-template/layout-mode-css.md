@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Layout mode CSS
-description: CSS untuk halaman Layout Blogger.
+description: CSS untuk halaman tata letak Blogger.
 group: core-template
 ---
 

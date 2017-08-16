@@ -22,14 +22,14 @@
             </div><!-- /.card-block-img-left-sm -->
           </div><!-- /col -->
           <div class='col-sm-9 col-md-8'>
-            <div class='card-block'>
+            <div class='card-body'>
               <!-- Title -->
               <b:include data='{ heading: "h2", headingClass: "card-title", link: true, linkClass: "card-title-link", noTitleMessage: false }' name='post.title'/>
               <!-- Snippet -->
               <b:include data='{ length: 150, links: true, linebreaks: true, ellipsis: true, notHasJumpLink: true, parentClass: "card-text" }' name='post.snippet'/>
               <!-- Jump link -->
               <b:include data='{ linkClass: "btn btn-primary", parentClass: "mt-2" }' name='post.jumpLink'/>
-            </div><!-- /.card-block -->
+            </div><!-- /.card-body -->
           </div><!-- /col -->
         </div><!-- /.row -->
 
@@ -67,12 +67,12 @@
         </div><!-- /.card-header -->
 
         <!-- >>> Body <<< -->
-        <div class='card-block'>
+        <div class='card-body'>
           <!-- Title -->
           <b:include data='{ heading: "h1", headingClass: "", link: false, linkClass: "", noTitleMessage: false }' name='post.title'/>
           <!-- Body -->
           <data:post.body/>
-        </div><!-- /.card-block -->
+        </div><!-- /.card-body -->
 
         <!-- >>> Footer <<< -->
         <div class='card-footer'>
@@ -96,12 +96,12 @@
       <article class='card mb-3' expr:id='"post-" + data:post.id'>
 
         <!-- >>> Body <<< -->
-        <div class='card-block'>
+        <div class='card-body'>
           <!-- Title -->
           <b:include data='{ heading: "h1", headingClass: "", link: false, linkClass: "", noTitleMessage: false }' name='post.title'/>
           <!-- Body -->
           <data:post.body/>
-        </div><!-- /.card-block -->
+        </div><!-- /.card-body -->
 
       </article><!-- /.card -->
     </b:loop>
@@ -121,7 +121,7 @@
             </div>
 
             <!-- >>> Body <<< -->
-            <div class='card-block'>
+            <div class='card-body'>
               <!-- Title -->
               <b:include data='{ heading: "h2", headingClass: "card-title h4", link: true, linkClass: "card-title-link", noTitleMessage: false }' name='post.title'/>
               <!-- Date -->
@@ -132,7 +132,7 @@
               <b:include data='{ length: 150, links: true, linebreaks: true, ellipsis: true, notHasJumpLink: false, parentClass: "card-text" }' name='post.snippet'/>
               <!-- Jump link -->
               <b:include data='{ class: "card-link", parentClass: "mt-2" }' name='post.jumpLink'/>
-            </div><!-- /.card-block -->
+            </div><!-- /.card-body -->
 
             <!-- >>> Footer <<< -->
             <div class='card-footer'>
@@ -164,7 +164,7 @@
       <article class='card mb-3' expr:id='"post-" + data:post.id'>
 
         <!-- >>> Body <<< -->
-        <div class='card-block'>
+        <div class='card-body'>
           <!-- Title -->
           <b:include data='{ heading: "h2", headingClass: "card-title", link: true, linkClass: "card-title-link", noTitleMessage: false }' name='post.title'/>
           <!-- Date and snippet -->
@@ -173,7 +173,7 @@
             <span class='text-muted'>-</span>
             <b:include data='{ length: 150, links: false, linebreaks: false, ellipsis: true, notHasJumpLink: false, parentClass: "d-inline" }' name='post.snippet'/>
           </div><!-- /.card-text -->
-        </div><!-- /.card-block -->
+        </div><!-- /.card-body -->
 
       </article><!-- /.card -->
     </b:loop>
@@ -201,14 +201,14 @@
             </div><!-- /.card-block-img-left-sm -->
           </div><!-- /col -->
           <div class='col-sm-9 col-md-8'>
-            <div class='card-block'>
+            <div class='card-body'>
               <!-- Title -->
               <b:include data='{ heading: "h2", headingClass: "card-title", link: true, linkClass: "card-title-link", noTitleMessage: false }' name='post.title'/>
               <!-- Snippet -->
               <b:include data='{ length: 150, links: true, linebreaks: true, ellipsis: true, notHasJumpLink: true, parentClass: "card-text" }' name='post.snippet'/>
               <!-- Jump link -->
               <b:include data='{ linkClass: "btn btn-primary", parentClass: "mt-2" }' name='post.jumpLink'/>
-            </div><!-- /.card-block -->
+            </div><!-- /.card-body -->
           </div><!-- /col -->
         </div><!-- /.row -->
 

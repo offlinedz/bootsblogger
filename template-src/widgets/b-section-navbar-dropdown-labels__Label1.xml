@@ -33,7 +33,7 @@
     <div class='dropdown-menu p-2'>
       <b:loop values='data:labels' var='label'>
         <a class='badge' expr:href='data:label.url'>
-          <b:class cond='data:view.url.canonical and (data:view.search.label != data:label.name)' name='badge-default'/>
+          <b:class cond='data:view.url.canonical and (data:view.search.label != data:label.name)' name='badge-secondary'/>
           <b:class cond='data:view.search.label == data:label.name' name='badge-primary'/>
           <data:label.name/>
           <b:if cond='data:this.showFreqNumbers'>

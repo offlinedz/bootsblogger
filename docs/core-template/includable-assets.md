@@ -10,111 +10,45 @@ group: core-template
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
-## CSS and JavaScript
+## Required CSS
 
-### Bootstrap CSS
-
-###### Source <small>(Compiled)</small>
-
-{% highlight plaintext %}
-template-src/includable/assets/css/bootstrap/bootstrap.min.css
-{% endhighlight %}
-
-###### Includable <small>(Internal style sheet)</small>
-
-{% highlight html %}
-<b:includable id='css.bootstrap'>...</b:includable>
-{% endhighlight %}
-
-###### Usage <small>(Required)</small>
-
-{% highlight html %}
-<b:include name='css.bootstrap'/>
-{% endhighlight %}
-
-### Bootstrap JS
-
-###### Source <small>(<abbr title="Content Delivery Network">CDN</abbr>)</small>
-
-Lihat `template-src/config.json`:
-
-{% highlight json %}
-{
-  "blog": {
-    "cdn": {
-      "bootstrapJs": "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js",
-      "bootstrapJs_hash": "sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
-    }
-  }
-}
-{% endhighlight %}
+- Bootstrap
+- Bootsblogger
+- Font Awesome (CDN) - <http://fontawesome.io/>
 
 ###### Includable
 
 {% highlight html %}
-<b:includable id='js.bootstrap'>...</b:includable>
+<b:includable id='css.required'>...</b:includable>
 {% endhighlight %}
 
-###### Usage <small>(Required)</small>
+###### Usage
 
 {% highlight html %}
-<b:include name='js.bootstrap'/>
+<b:include name='css.required'/>
 {% endhighlight %}
 
-### Bootsblogger CSS
+## Required JS
 
-###### Source <small>(Compiled)</small>
-
-{% highlight plaintext %}
-template-src/includable/assets/css/bootsblogger/bootsblogger.min.css
-{% endhighlight %}
-
-###### Includable <small>(Internal style sheet)</small>
-
-{% highlight html %}
-<b:includable id='css.bootsblogger'>...</b:includable>
-{% endhighlight %}
-
-###### Usage <small>(Required)</small>
-
-{% highlight html %}
-<b:include name='css.bootsblogger'/>
-{% endhighlight %}
-
-### Font Awesome
-
-<http://fontawesome.io>
-
-###### Source <small>(<abbr title="Content Delivery Network">CDN</abbr>)</small>
-
-Lihat `template-src/config.json`:
-
-{% highlight json %}
-{
-  "blog": {
-    "cdn": {
-      "fontAwesome": "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css",
-      "fontAwesome_hash": "sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-    }
-  }
-}
-{% endhighlight %}
+- jQuery (CDN) - <https://jquery.com/>
+- Popper.js (CDN) - <https://popper.js.org/>
+- Bootstrap
 
 ###### Includable
 
 {% highlight html %}
-<b:includable id='css.fontAwesome'>...</b:includable>
+<b:includable id='js.required'>...</b:includable>
 {% endhighlight %}
 
-###### Usage <small>(Required)</small>
+###### Usage
 
 {% highlight html %}
-<b:include name='css.fontAwesome'/>
+<b:include name='js.required'/>
 {% endhighlight %}
 
 ## Icons
 
-### Blogger <small>(Inline SVG)</small>
+### Blogger
 
 ###### Source
 
@@ -149,90 +83,18 @@ template-src/includable/assets/icons/icons.blogger.xml
 <b:include data='{ width: 24, height: 24, fillBg: "#ff5722", fillB: "#fff", class: "align-middle" }' name='icons.blogger'/> Blogger
 {% endhighlight %}
 
-## Dependencies
-
-### jQuery
-
-<https://jquery.com>
-
-###### Source <small>(<abbr title="Content Delivery Network">CDN</abbr>)</small>
-
-Lihat `template-src/config.json`:
-
-{% highlight json %}
-{
-  "blog": {
-    "cdn": {
-      "jquery": "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js",
-      "jquery_hash": "sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7"
-    }
-  }
-}
-{% endhighlight %}
-
-###### Includable
-
-{% highlight html %}
-<b:includable id='js.jquery'>...</b:includable>
-{% endhighlight %}
-
-###### Usage <small>(Required)</small>
-
-{% highlight html %}
-<b:include name='js.jquery'/>
-{% endhighlight %}
-
-### Popper.js
-
-<https://popper.js.org>
-
-###### Source <small>(<abbr title="Content Delivery Network">CDN</abbr>)</small>
-
-Lihat `template-src/config.json`:
-
-{% highlight json %}
-{
-  "blog": {
-    "cdn": {
-      "popper": "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.10.1/umd/popper.min.js",
-      "popper_hash": "sha256-nxD3NU7Wocq19nG7DTQAx9troUwVoxjUhYrAhFSO3HM="
-    }
-  }
-}
-{% endhighlight %}
-
-###### Includable
-
-{% highlight html %}
-<b:includable id='js.popper'>...</b:includable>
-{% endhighlight %}
-
-###### Usage <small>(Required)</small>
-
-{% highlight html %}
-<b:include name='js.popper'/>
-{% endhighlight %}
-
 ## Example usage: CSS and JavaScript
-
-Untuk penggunaan CSS dan JavaScript, penempatannya harus diperhatikan.
 
 {% highlight html %}
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- Bootstrap CSS first, then Bootsblogger CSS, then Font Awesome. -->
-    <b:include name='css.bootstrap'/>
-    <b:include name='css.bootsblogger'/>
-    <b:include name='css.fontAwesome'/>
+    <b:include name='css.required'/>
   </head>
   <body>
     <h1>Hello, world!</h1>
 
-    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
-    <b:include name='js.jquery'/>
-    <b:include name='js.popper'/>
-    <b:include name='js.bootstrap'/>
+    <b:include name='js.required'/>
   </body>
 </html>
 {% endhighlight %}

@@ -27,14 +27,14 @@ authors: Igoy Nawamreh
 social_logo_path: /assets/brand/bootstrap-social-logo.png
 social_image_path: /assets/brand/bootstrap-social.png
 
-# Custom vars
+# Custom variables
 current_version:   1.0.0-alpha.1
 bootstrap_version: 4.0.0-alpha.6
 repo:              https://github.com/bootsblogger/bootsblogger
 
 download:
-  source:         #
-  dist:           #
+  source:         "https://github.com/bootsblogger/bootsblogger/archive/v1.0.0-beta.zip"
+  dist:           "https://github.com/bootsblogger/bootsblogger/releases/download/v1.0.0-beta/bootsblogger-1.0.0-beta-dist.zip"
 
 demo:             https://bootsblogger-demo.blogspot.com
 blog:             https://bootsblogger-blog.blogspot.com

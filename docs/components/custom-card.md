@@ -6,8 +6,6 @@ group: components
 redirect_from: "/components/"
 ---
 
-Baca dokumentasi [Bootstrap card](https://v4-alpha.getbootstrap.com/components/card/).
-
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
@@ -15,19 +13,23 @@ Baca dokumentasi [Bootstrap card](https://v4-alpha.getbootstrap.com/components/c
 
 ## Title links
 
-Gunakan `.card-title-link`.
+Gunakan `.card-title-link-light` atau `.card-title-link-dark`.
 
 {% example html %}
 <div class="card mb-3">
-  <div class="card-block">
-    <h2 class="card-title"><a class="card-title-link" href="#">Card title</a></h2>
+  <div class="card-body">
+    <h2 class="card-title">
+      <a class="card-title-link-light" href="#">Card title</a>
+    </h2>
     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
   </div>
 </div>
 
-<div class="card card-inverse card-primary">
-  <div class="card-block">
-    <h2 class="card-title"><a class="card-title-link" href="#">Card title</a></h2>
+<div class="card text-white bg-primary">
+  <div class="card-body">
+    <h2 class="card-title">
+      <a class="card-title-link-dark" href="#">Card title</a>
+    </h2>
     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
   </div>
 </div>
@@ -44,16 +46,16 @@ Gambar:
 
 Elemen pembungkus untuk `.card-img-left` dan `.card-img-right`:
 
-- `.card-block-img-left`
-- `.card-block-img-left-sm`
-- `.card-block-img-left-md`
-- `.card-block-img-left-lg`
-- `.card-block-img-left-xl`
-- `.card-block-img-right`
-- `.card-block-img-right-sm`
-- `.card-block-img-right-md`
-- `.card-block-img-right-lg`
-- `.card-block-img-right-xl`
+- `.card-img-left-wrap`
+- `.card-img-left-wrap-sm`
+- `.card-img-left-wrap-md`
+- `.card-img-left-wrap-lg`
+- `.card-img-left-wrap-xl`
+- `.card-img-right-wrap`
+- `.card-img-right-wrap-sm`
+- `.card-img-right-wrap-md`
+- `.card-img-right-wrap-lg`
+- `.card-img-right-wrap-xl`
 
 ### Examples
 
@@ -65,12 +67,12 @@ Pelajari beberapa contoh di bawah ini.
   <div class="card mb-3">
     <div class="row no-gutters">
       <div class="col-3 col-sm-4">
-        <div class="card-block-img-left">
+        <div class="card-img-left-wrap">
           <img class="card-img-left" data-src="holder.js/100px180/?auto=yes" alt="Card image cap">
         </div>
       </div>
       <div class="col-9 col-sm-8">
-        <div class="card-block">
+        <div class="card-body">
           <h4 class="card-title">Card title</h4>
           <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
@@ -81,13 +83,13 @@ Pelajari beberapa contoh di bawah ini.
   <div class="card">
     <div class="row no-gutters">
       <div class="col-9 col-sm-8">
-        <div class="card-block">
+        <div class="card-body">
           <h4 class="card-title">Card title</h4>
           <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
       </div>
       <div class="col-3 col-sm-4">
-        <div class="card-block-img-right">
+        <div class="card-img-right-wrap">
           <img class="card-img-right" data-src="holder.js/100px180/?auto=yes" alt="Card image cap">
         </div>
       </div>
@@ -99,12 +101,12 @@ Pelajari beberapa contoh di bawah ini.
 <div class="card mb-3">
   <div class="row no-gutters">
     <div class="col-3 col-sm-4">
-      <div class="card-block-img-left">
+      <div class="card-img-left-wrap">
         <img class="card-img-left" src="..." alt="...">
       </div>
     </div>
     <div class="col-9 col-sm-8">
-      <div class="card-block">
+      <div class="card-body">
         <h4 class="card-title">...</h4>
         <p class="card-text">...</p>
       </div>
@@ -115,13 +117,13 @@ Pelajari beberapa contoh di bawah ini.
 <div class="card">
   <div class="row no-gutters">
     <div class="col-9 col-sm-8">
-      <div class="card-block">
+      <div class="card-body">
       <h4 class="card-title">...</h4>
       <p class="card-text">...</p>
       </div>
     </div>
     <div class="col-3 col-sm-4">
-      <div class="card-block-img-right">
+      <div class="card-img-right-wrap">
         <img class="card-img-right" src="..." alt="...">
       </div>
     </div>
@@ -135,12 +137,12 @@ Pelajari beberapa contoh di bawah ini.
   <div class="card mb-3">
     <div class="row no-gutters">
       <div class="col-sm-3 col-md-4">
-        <div class="card-block-img-left-sm">
+        <div class="card-img-left-wrap-sm">
           <img class="card-img-left" data-src="holder.js/100px180/?auto=yes" alt="Card image cap">
         </div>
       </div>
       <div class="col-sm-9 col-md-8">
-        <div class="card-block">
+        <div class="card-body">
           <h4 class="card-title">Card title</h4>
           <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
@@ -151,13 +153,13 @@ Pelajari beberapa contoh di bawah ini.
   <div class="card">
     <div class="row no-gutters">
       <div class="col-md-9 col-lg-8">
-        <div class="card-block">
+        <div class="card-body">
           <h4 class="card-title">Card title</h4>
           <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
       </div>
       <div class="col-md-3 col-lg-4">
-        <div class="card-block-img-right-md">
+        <div class="card-img-right-wrap-md">
           <img class="card-img-right" data-src="holder.js/100px180/?auto=yes" alt="Card image cap">
         </div>
       </div>
@@ -170,12 +172,12 @@ Pelajari beberapa contoh di bawah ini.
 <div class="card mb-3">
   <div class="row no-gutters">
     <div class="col-sm-3 col-md-4">
-      <div class="card-block-img-left-sm">
+      <div class="card-img-left-wrap-sm">
         <img class="card-img-left" src="..." alt="...">
       </div>
     </div>
     <div class="col-sm-9 col-md-8">
-      <div class="card-block">
+      <div class="card-body">
         <h4 class="card-title">...</h4>
         <p class="card-text">...</p>
       </div>
@@ -187,13 +189,13 @@ Pelajari beberapa contoh di bawah ini.
 <div class="card">
   <div class="row no-gutters">
     <div class="col-md-9 col-lg-8">
-      <div class="card-block">
+      <div class="card-body">
       <h4 class="card-title">...</h4>
       <p class="card-text">...</p>
       </div>
     </div>
     <div class="col-md-3 col-lg-4">
-      <div class="card-block-img-right-md">
+      <div class="card-img-right-wrap-md">
         <img class="card-img-right" src="..." alt="...">
       </div>
     </div>
@@ -209,10 +211,10 @@ Tampilkan gambar dengan CSS `background-image`. Tambahkan `.card-img-cover`. Mem
   <div class="card">
     <div class="row no-gutters">
       <div class="col-sm-3 col-md-4">
-        <div class="card-block-img-left-sm card-img-cover holderjs" style="min-height: 180px;" data-background-src="?holder.js/800x180/?text=B"></div>
+        <div class="card-img-left-wrap-sm card-img-cover holderjs" style="min-height: 180px;" data-background-src="?holder.js/800x180/?text=B"></div>
       </div>
       <div class="col-sm-9 col-md-8">
-        <div class="card-block">
+        <div class="card-body">
           <h4 class="card-title">Card title</h4>
           <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
@@ -225,10 +227,10 @@ Tampilkan gambar dengan CSS `background-image`. Tambahkan `.card-img-cover`. Mem
 <div class="card">
   <div class="row no-gutters">
     <div class="col-sm-3 col-md-4">
-      <div class="card-block-img-left-sm card-img-cover" style="min-height: 180px; background-image: url(...);"></div>
+      <div class="card-img-left-wrap-sm card-img-cover" style="min-height: 180px; background-image: url(...);"></div>
     </div>
     <div class="col-sm-9 col-md-8">
-      <div class="card-block">
+      <div class="card-body">
         <h4 class="card-title">...</h4>
         <p class="card-text">...</p>
       </div>

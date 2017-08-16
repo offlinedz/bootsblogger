@@ -7,8 +7,6 @@
 - title: Core template
   pages:
     - title: Overview
-    - title: Page types
-    - title: Body class
     - title: Post
     - title: Includable - Head
     - title: Includable - Post
@@ -20,9 +18,3 @@
     - title: Custom card
     - title: Navmenu
     - title: Widget
-
-- title: Utilities
-  pages:
-    - title: Figures
-    - title: Sizing
-    - title: Spacing

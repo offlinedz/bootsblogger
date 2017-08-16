@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Includable - Head
-description: Title tag, meta tag, link tag, dan lainnya.
+description: Tag title, tag meta, tag link, dan lainnya.
 group: core-template
 ---
 

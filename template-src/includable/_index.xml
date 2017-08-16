@@ -120,26 +120,24 @@ Assets
 
 <b:defaultmarkups>
   <b:defaultmarkup type='Common'>
-    <b:includable id='css.bootstrap'>
+    <b:includable id='css.required'>
+      <b:comment>=== Bootstrap ===</b:comment>
       <style>
       <!--(bake assets/css/bootstrap/bootstrap.min.css)-->
       </style>
-    </b:includable>
-    <b:includable id='css.bootsblogger'>
+      <b:comment>=== Bootsblogger ===</b:comment>
       <style>
       <!--(bake assets/css/bootsblogger/bootsblogger.min.css)-->
       </style>
-    </b:includable>
-    <b:includable id='css.fontAwesome'>
+      <b:comment>=== Font Awesome ===</b:comment>
       <link crossorigin='anonymous' href='{{ blog.cdn.fontAwesome }}' integrity='{{ blog.cdn.fontAwesome_hash }}' rel='stylesheet'/>
     </b:includable>
-    <b:includable id='js.jquery'>
+    <b:includable id='js.required'>
+      <b:comment>=== jQuery ===</b:comment>
       <script crossorigin='anonymous' integrity='{{ blog.cdn.jquery_hash }}' src='{{ blog.cdn.jquery }}'/>
-    </b:includable>
-    <b:includable id='js.popper'>
+      <b:comment>=== Popper.js ===</b:comment>
       <script crossorigin='anonymous' integrity='{{ blog.cdn.popper_hash }}' src='{{ blog.cdn.popper }}'/>
-    </b:includable>
-    <b:includable id='js.bootstrap'>
+      <b:comment>=== Bootstrap ===</b:comment>
       <script crossorigin='anonymous' integrity='{{ blog.cdn.bootstrapJs_hash }}' src='{{ blog.cdn.bootstrapJs }}'/>
     </b:includable>
   </b:defaultmarkup>

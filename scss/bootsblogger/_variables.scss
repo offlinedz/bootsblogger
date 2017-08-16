@@ -9,15 +9,15 @@
 // Custom card
 //
 
-$card-title-link-color:               inherit !default;
-$card-title-link-hover-color:         $link-hover-color !default;
-$card-title-link-decoration:          none !default;
-$card-title-link-hover-decoration:    none !default;
+$card-title-link-light-color:               $gray-900 !default;
+$card-title-link-light-hover-color:         $link-hover-color !default;
+$card-title-link-light-decoration:          none !default;
+$card-title-link-light-hover-decoration:    none !default;
 
-$card-inverse-title-link-color:             #fff !default;
-$card-inverse-title-link-hover-color:       #fff !default;
-$card-inverse-title-link-decoration:        none !default;
-$card-inverse-title-link-hover-decoration:  none !default;
+$card-title-link-dark-color:             #fff !default;
+$card-title-link-dark-hover-color:       #fff !default;
+$card-title-link-dark-decoration:        none !default;
+$card-title-link-dark-hover-decoration:  none !default;
 
 
 //
@@ -25,7 +25,7 @@ $card-inverse-title-link-hover-decoration:  none !default;
 //
 
 $navmenu-padding-x:                 1.25rem !default;
-$navmenu-padding-y:                 1.25rem !default;
+$navmenu-padding-y:                 1rem !default;
 $navmenu-border-width:              1px !default;
 $navmenu-border-color:              rgba(0,0,0,.05) !default;
 $navmenu-border-radius:             $border-radius !default;
@@ -48,6 +48,7 @@ $navmenu-light-active-color:          rgba(0,0,0,.9) !default;
 $navmenu-light-disabled-color:        rgba(0,0,0,.3) !default;
 $navmenu-light-header-color:          rgba(0,0,0,.4) !default;
 $navmenu-light-item-border-color:     rgba(0,0,0,.05) !default;
+$navmenu-light-item-hover-color:      $navmenu-light-item-border-color !default;
 $navmenu-light-divider-border-color:  rgba(0,0,0,.05) !default;
 
 $navmenu-dark-color:                  rgba(255,255,255,.5) !default;
@@ -55,8 +56,9 @@ $navmenu-dark-hover-color:            rgba(255,255,255,.75) !default;
 $navmenu-dark-active-color:           rgba(255,255,255,1) !default;
 $navmenu-dark-disabled-color:         rgba(255,255,255,.25) !default;
 $navmenu-dark-header-color:           rgba(255,255,255,.4) !default;
-$navmenu-dark-item-border-color:      rgba(0,0,0,.25) !default;
-$navmenu-dark-divider-border-color:   rgba(0,0,0,.25) !default;
+$navmenu-dark-item-border-color:      rgba(0,0,0,.15) !default;
+$navmenu-dark-item-hover-color:       $navmenu-dark-item-border-color !default;
+$navmenu-dark-divider-border-color:   rgba(0,0,0,.15) !default;
 
 
 //
@@ -69,19 +71,19 @@ $wg-title-font-size:             1rem !default;
 $wg-title-font-weight:           $font-weight-bold !default;
 $wg-title-line-height:           1.1 !default;
 
-$wg-title-h1:                    $font-size-h1 !default;
-$wg-title-h2:                    $font-size-h2 !default;
-$wg-title-h3:                    $font-size-h3 !default;
-$wg-title-h4:                    $font-size-h4 !default;
-$wg-title-h5:                    $font-size-h5 !default;
-$wg-title-h6:                    $font-size-h6 !default;
+$wg-title-h1:                    $h1-font-size !default;
+$wg-title-h2:                    $h2-font-size !default;
+$wg-title-h3:                    $h3-font-size !default;
+$wg-title-h4:                    $h4-font-size !default;
+$wg-title-h5:                    $h5-font-size !default;
+$wg-title-h6:                    $h6-font-size !default;
 
 // Colors
 
-$wg-light-color:                 $gray-lightest !default;
+$wg-light-color:                 $gray-100 !default;
 $wg-light-border:                darken($wg-light-color, 5%) !default;
 
-$wg-dark-color:                  $gray-dark !default;
+$wg-dark-color:                  $gray-800 !default;
 $wg-dark-border:                 darken($wg-dark-color, 5%) !default;
 
 $wg-white-color:                 $white !default;
@@ -89,6 +91,18 @@ $wg-white-border:                rgba(0,0,0,.125) !default;
 
 $wg-black-color:                 $black !default;
 $wg-black-border:                darken($wg-black-color, 5%) !default;
+
+$wg-blue-color:                  $blue !default;
+$wg-blue-border:                 darken($wg-blue-color, 5%) !default;
+
+$wg-indigo-color:                $indigo !default;
+$wg-indigo-border:               darken($wg-indigo-color, 5%) !default;
+
+$wg-purple-color:                $purple !default;
+$wg-purple-border:               darken($wg-purple-color, 5%) !default;
+
+$wg-pink-color:                  $pink !default;
+$wg-pink-border:                 darken($wg-pink-color, 5%) !default;
 
 $wg-red-color:                   $red !default;
 $wg-red-border:                  darken($wg-red-color, 5%) !default;
@@ -102,17 +116,11 @@ $wg-yellow-border:               darken($wg-yellow-color, 5%) !default;
 $wg-green-color:                 $green !default;
 $wg-green-border:                darken($wg-green-color, 5%) !default;
 
-$wg-blue-color:                  $blue !default;
-$wg-blue-border:                 darken($wg-blue-color, 5%) !default;
-
 $wg-teal-color:                  $teal !default;
 $wg-teal-border:                 darken($wg-teal-color, 5%) !default;
 
-$wg-pink-color:                  $pink !default;
-$wg-pink-border:                 darken($wg-pink-color, 5%) !default;
-
-$wg-purple-color:                $purple !default;
-$wg-purple-border:               darken($wg-purple-color, 5%) !default;
+$wg-cyan-color:                  $cyan !default;
+$wg-cyan-border:                 darken($wg-cyan-color, 5%) !default;
 
 // Widget box
 

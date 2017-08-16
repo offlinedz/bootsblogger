@@ -4,24 +4,13 @@
  * Licensed under MIT (https://github.com/bootsblogger/bootsblogger/blob/master/LICENSE)
  */
 
-// Custom variables
-@import "../custom";
-
-// Load Bootstrap variables and mixins
+@import "../bootstrap/functions";
 @import "../bootstrap/variables";
 @import "../bootstrap/mixins";
-
-// Bootsblogger variables and mixins
 @import "variables";
 @import "mixins";
-
-// Components
 @import "custom-card";
 @import "navmenu";
 @import "widget";
-
-// Utility classes
-@import "utilities";
-
-// Blogger
 @import "item-control";
+@import "utilities";

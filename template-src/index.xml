@@ -29,9 +29,7 @@ Title, meta and link tags
 CSS
 ================================================= </b:comment>
 
-<b:include name='css.bootstrap'/>
-<b:include name='css.bootsblogger'/>
-<b:include name='css.fontAwesome'/>
+<b:include name='css.required'/>
 
 <b:comment>=== Layout mode CSS ===</b:comment>
 <b:template-skin>
@@ -175,9 +173,7 @@ Footer
 JavaScript
 ================================================= </b:comment>
 
-<b:include name='js.jquery'/>
-<b:include name='js.popper'/>
-<b:include name='js.bootstrap'/>
+<b:include name='js.required'/>
 
 <b:comment>=== Template JavaScript ===</b:comment>
 <script>

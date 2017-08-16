@@ -12,9 +12,11 @@ group: core-template
 
 ## Post byline items
 
-Untuk menampilkan *item* posting yang ada dalam daftar konfigurasi posting blog (<a href="#" data-toggle="modal" data-target="#modalImgBloggerConfigureBlogPosts">lihat gambar</a>).
+*Item* posting yang dapat diatur melalui konfigurasi posting blog (<a href="#" data-toggle="modal" data-target="#modalImgBloggerConfigureBlogPosts">lihat gambar</a>).
 
 ### Header
+
+Untuk menampilkan *item* posting yang ada dalam kolom *header*.
 
 ###### Source
 
@@ -40,6 +42,8 @@ template-src/includable/post/byline.header.xml
 
 ### Footer
 
+Untuk menampilkan *item* posting yang ada dalam kolom *footer*.
+
 ###### Source
 
 {% highlight plaintext %}
@@ -63,6 +67,8 @@ template-src/includable/post/byline.footer.xml
 {% endhighlight %}
 
 ## Post items
+
+*Item* posting di bawah ini tidak dapat diatur melalui konfigurasi posting blog.
 
 ### Title
 
@@ -483,7 +489,7 @@ template-src/includable/post/post.snippet.xml
 <b:include data='{ length: number, links: true|false, linebreaks: true|false, ellipsis: true|false, notHasJumpLink: true|false, parentClass: "class-name" }' name='post.snippet'/>
 {% endhighlight %}
 
-Ketika posting menggunakan *jump break* dan `notHasJumpLink: true` maka yang ditampilkan adalah `data:post.body`.
+Ketika posting menggunakan *jump break* dan `notHasJumpLink: true` maka yang ditampilkan adalah `<data:post.body/>`.
 
 ### Jump link
 
@@ -504,5 +510,5 @@ template-src/includable/post/post.jumpLink.xml
 ###### Usage
 
 {% highlight html %}
-<b:include data='{ linkClass: "btn btn-primary", parentClass: "class-name" }' name='post.jumpLink'/>
+<b:include data='{ linkClass: "btn btn-primary", parentClass: "mt-2" }' name='post.jumpLink'/>
 {% endhighlight %}
