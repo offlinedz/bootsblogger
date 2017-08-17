@@ -2352,6 +2352,11 @@ Post
         </b:if>
       </div>
     </b:includable>
+    <b:includable id='post.body'>
+      <div expr:class='data:parentDivClass' expr:id='"post-body-" + data:post.id'>
+        <data:post.body/>
+      </div>
+    </b:includable>
     <b:includable id='post.jumpLink'>
       <b:if cond='data:post.hasJumpLink'>
         <div expr:class='data:parentDivClass'>
