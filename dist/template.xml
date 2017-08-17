@@ -276,7 +276,9 @@ body {}
    ========================================================================== */
 
 .main-and-sidebar {
-  background-color: #fafafa;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: #f8f9fa;
 }
 
 
@@ -365,10 +367,23 @@ body {}
 
 
 /* ==========================================================================
+   Widget block (1)
+   ========================================================================== */
+
+.widget-block-1 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: #32363a;
+}
+
+
+/* ==========================================================================
    Footer
    ========================================================================== */
 
 .footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   font-size: 85%;
   color: #777;
   text-align: center;
@@ -402,15 +417,6 @@ body {}
 }
 .footer-links li:not(:last-child) {
   margin-right: 5px;
-}
-
-
-/* ==========================================================================
-   Widget block (1)
-   ========================================================================== */
-
-.widget-block-1 {
-  background-color: #333;
 }
 ]]>
 </b:skin>
@@ -1245,7 +1251,7 @@ Header
 Main and sidebar
 ================================================= </b:comment>
 
-<div class='main-and-sidebar py-5' id='main-and-sidebar'>
+<div class='main-and-sidebar' id='main-and-sidebar'>
   <div class='container'>
     <div class='row'>
       <!-- Main -->
@@ -1310,7 +1316,7 @@ Main and sidebar
 
       <!-- Sidebar -->
       <aside class='col-md-4 col-lg-3 sidebar mt-5 mt-md-0 blogger-col-4' id='sidebar'>
-        <b:section class='wg wg-panel wg-panel-sm wg-panel-orange wg-title-dark wg-section-no-mb' id='b-section-sidebar' name='Sidebar'>
+        <b:section class='wg wg-panel wg-panel-light wg-title-dark wg-section-no-mb' id='b-section-sidebar' name='Sidebar'>
           <b:widget id='HTML1' locked='false' title='HTML/JavaScript' type='HTML' version='2' visible='true'>
             <b:widget-settings>
               <b:widget-setting name='content'>
@@ -1339,7 +1345,7 @@ Widget block (1)
 ================================================= </b:comment>
 
 <b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-widget-block-1")'>
-  <div class='widget-block-1 py-5' id='widget-block-1'>
+  <div class='widget-block-1' id='widget-block-1'>
     <div class='container'>
       <b:section class='wg wg-box wg-box-dark wg-title-light wg-lg-4 wg-equal-height-cols wg-section-no-mb' id='b-section-widget-block-1' name='Widget block (1)'>
         <b:widget id='HTML2' locked='false' title='HTML/JavaScript' type='HTML' version='2' visible='true'>
@@ -1401,7 +1407,7 @@ Widget block (1)
 Footer
 ================================================= </b:comment>
 
-<footer class='footer py-5' id='footer'>
+<footer class='footer' id='footer'>
   <div class='container'>
     <b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-footer-links")'>
       <b:section id='b-section-footer-links' maxwidgets='1' name='Footer links' showaddelement='no'>
@@ -1816,7 +1822,7 @@ Post
 
 <b:defaultmarkups>
   <b:defaultmarkup type='Common'>
-    <b:includable id='byline.header'>
+    <b:includable id='post.header'>
       <b:if cond='data:headerByline.items.notEmpty'>
         <ul class='list-inline mb-0'>
           <b:loop values='data:headerByline.items' var='item'>
@@ -2001,7 +2007,7 @@ Post
         </ul>
       </b:if>
     </b:includable>
-    <b:includable id='byline.footer'>
+    <b:includable id='post.footer'>
       <b:if cond='data:footerBylines.notEmpty'>
         <b:loop values='data:footerBylines' var='itemBylines'>
           <div expr:class='data:itemBylines.regionName'>
