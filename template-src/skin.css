@@ -168,7 +168,12 @@ body {}
 /* Breadcrumb
    ========================================================================== */
 
+.blog-breadcrumb {
+  margin-bottom: 1rem;
+}
+
 .blog-breadcrumb .breadcrumb {
+  margin-bottom: 0;
   background-color: rgba(0,0,0,.05);
 }
 
@@ -182,7 +187,7 @@ body {}
 }
 
 .blog-breadcrumb .breadcrumb-item.active {
-  color: #777;
+  color: #868e96;
 }
 
 .blog-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
