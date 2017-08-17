@@ -21,13 +21,13 @@ Untuk menampilkan *item* posting yang ada dalam kolom *header*.
 ###### Source
 
 {% highlight plaintext %}
-template-src/includable/post/byline.header.xml
+template-src/includable/post/post.header.xml
 {% endhighlight %}
 
 ###### Includable
 
 {% highlight html %}
-<b:includable id='byline.header'>...</b:includable>
+<b:includable id='post.header'>...</b:includable>
 {% endhighlight %}
 
 ###### Usage
@@ -35,7 +35,7 @@ template-src/includable/post/byline.header.xml
 {% highlight html %}
 <b:if cond='data:headerByline.items.notEmpty'>
   <div class='wrapper'>
-    <b:include name='byline.header'/>
+    <b:include name='post.header'/>
   </div>
 </b:if>
 {% endhighlight %}
@@ -47,13 +47,13 @@ Untuk menampilkan *item* posting yang ada dalam kolom *footer*.
 ###### Source
 
 {% highlight plaintext %}
-template-src/includable/post/byline.footer.xml
+template-src/includable/post/post.footer.xml
 {% endhighlight %}
 
 ###### Includable
 
 {% highlight html %}
-<b:includable id='byline.footer'>...</b:includable>
+<b:includable id='post.footer'>...</b:includable>
 {% endhighlight %}
 
 ###### Usage
@@ -61,7 +61,7 @@ template-src/includable/post/byline.footer.xml
 {% highlight html %}
 <b:if cond='data:footerBylines.notEmpty'>
   <div class='wrapper'>
-    <b:include name='byline.footer'/>
+    <b:include name='post.footer'/>
   </div>
 </b:if>
 {% endhighlight %}

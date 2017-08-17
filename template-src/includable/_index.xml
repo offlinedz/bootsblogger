@@ -31,11 +31,11 @@ Post
 
 <b:defaultmarkups>
   <b:defaultmarkup type='Common'>
-    <b:includable id='byline.header'>
-      <!--(bake post/byline.header.xml)-->
+    <b:includable id='post.header'>
+      <!--(bake post/post.header.xml)-->
     </b:includable>
-    <b:includable id='byline.footer'>
-      <!--(bake post/byline.footer.xml)-->
+    <b:includable id='post.footer'>
+      <!--(bake post/post.footer.xml)-->
     </b:includable>
     <b:includable id='post.title'>
       <!--(bake post/post.title.xml)-->
