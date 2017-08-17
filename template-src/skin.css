@@ -235,47 +235,47 @@ body {}
 
 /* Tables */
 
-.post-compose-style table:not(.tr-caption-container) {
+.post-compose-style table:not(.table):not(.tr-caption-container) {
   width: 100%;
   max-width: 100%;
   margin-bottom: 1rem;
   background-color: transparent;
 }
 
-.post-compose-style table:not(.tr-caption-container) th,
-.post-compose-style table:not(.tr-caption-container) td {
+.post-compose-style table:not(.table):not(.tr-caption-container) th,
+.post-compose-style table:not(.table):not(.tr-caption-container) td {
   padding: 0.75rem;
   vertical-align: top;
   border: 1px solid #e5e5e5;
 }
 
-.post-compose-style table:not(.tr-caption-container) thead th {
+.post-compose-style table:not(.table):not(.tr-caption-container) thead th {
   vertical-align: bottom;
 }
 
-.post-compose-style table:not(.tr-caption-container) thead th,
-.post-compose-style table:not(.tr-caption-container) thead td {
+.post-compose-style table:not(.table):not(.tr-caption-container) thead th,
+.post-compose-style table:not(.table):not(.tr-caption-container) thead td {
   border-bottom-width: 2px;
 }
 
-.post-compose-style table:not(.tr-caption-container) tbody + tbody {
+.post-compose-style table:not(.table):not(.tr-caption-container) tbody + tbody {
   border-top: 2px solid #e5e5e5;
 }
 
 /* Blockquotes */
 
-.post-compose-style blockquote {
+.post-compose-style blockquote:not(.blockquote) {
   padding: 0.75rem 1rem;
   margin: 0 0 1rem;
   border-left: 5px solid #e5e5e5;
 }
 
-.post-compose-style blockquote footer {
+.post-compose-style blockquote:not(.blockquote) footer {
   display: block;
   font-size: 80%;
   color: #868e96;
 }
-.post-compose-style blockquote footer::before {
+.post-compose-style blockquote:not(.blockquote) footer::before {
   content: "\2014 \00A0";
 }
 
