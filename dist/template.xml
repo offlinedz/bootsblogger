@@ -289,7 +289,12 @@ body {}
 /* Breadcrumb
    ========================================================================== */
 
+.blog-breadcrumb {
+  margin-bottom: 1rem;
+}
+
 .blog-breadcrumb .breadcrumb {
+  margin-bottom: 0;
   background-color: rgba(0,0,0,.05);
 }
 
@@ -303,7 +308,7 @@ body {}
 }
 
 .blog-breadcrumb .breadcrumb-item.active {
-  color: #777;
+  color: #868e96;
 }
 
 .blog-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
@@ -319,22 +324,11 @@ body {}
    ========================================================================== */
 
 .blog-status-message {
-  padding: .75rem 1.25rem;
   margin-bottom: 1rem;
-  border: 1px solid transparent;
-  border-radius: .25rem;
 }
 
-.blog-status-message-success {
-  background-color: #dff0d8;
-  border-color: #d0e9c6;
-  color: #3c763d;
-}
-
-.blog-status-message-danger {
-  background-color: #f2dede;
-  border-color: #ebcccc;
-  color: #a94442;
+.blog-status-message .alert {
+  margin-bottom: 0;
 }
 
 .blog-status-message .search-label,
@@ -521,20 +515,26 @@ Post (Jump to widget: Blog1 --- includable: main)
     <b:includable id='blog-status-message' var='post'>
       <b:comment>=== Homepage ===</b:comment>
       <b:if cond='data:view.isHomepage and data:posts.empty'>
-        <div class='blog-status-message blog-status-message-danger' role='alert'>
-          <data:messages.theresNothingHere/>
+        <div class='blog-status-message'>
+          <div class='alert alert-danger' role='alert'>
+            <data:messages.theresNothingHere/>
+          </div>
         </div>
       </b:if>
 
       <b:comment>=== Search (label) page ===</b:comment>
       <b:if cond='data:view.search.label'>
         <b:if cond='data:posts.size gte 1'>
-          <div class='blog-status-message blog-status-message-success' role='alert'>
-            <data:view.search.resultsMessageHtml/>
+          <div class='blog-status-message'>
+            <div class='alert alert-success' role='alert'>
+              <data:view.search.resultsMessageHtml/>
+            </div>
           </div>
         <b:else/>
-          <div class='blog-status-message blog-status-message-danger' role='alert'>
-            <data:view.search.resultsMessageHtml/> : <data:messages.noResultsFound/>
+          <div class='blog-status-message'>
+            <div class='alert alert-danger' role='alert'>
+              <data:view.search.resultsMessageHtml/> : <data:messages.noResultsFound/>
+            </div>
           </div>
         </b:if>
       </b:if>
@@ -542,12 +542,16 @@ Post (Jump to widget: Blog1 --- includable: main)
       <b:comment>=== Search (query) page ===</b:comment>
       <b:if cond='data:view.search.query'>
         <b:if cond='data:posts.size gte 1'>
-          <div class='blog-status-message blog-status-message-success' role='alert'>
-            <data:view.search.resultsMessageHtml/>
+          <div class='blog-status-message'>
+            <div class='alert alert-success' role='alert'>
+              <data:view.search.resultsMessageHtml/>
+            </div>
           </div>
         <b:else/>
-          <div class='blog-status-message blog-status-message-danger' role='alert'>
-            <data:view.search.resultsMessageHtml/> : <data:messages.noResultsFound/>
+          <div class='blog-status-message'>
+            <div class='alert alert-danger' role='alert'>
+              <data:view.search.resultsMessageHtml/> : <data:messages.noResultsFound/>
+            </div>
           </div>
         </b:if>
       </b:if>
@@ -555,20 +559,26 @@ Post (Jump to widget: Blog1 --- includable: main)
       <b:comment>=== Archive page ===</b:comment>
       <b:if cond='data:view.isArchive'>
         <b:if cond='data:posts.size gte 1'>
-          <div class='blog-status-message blog-status-message-success' role='alert'>
-            <data:view.archive.rangeMessage/>
+          <div class='blog-status-message'>
+            <div class='alert alert-success' role='alert'>
+              <data:view.archive.rangeMessage/>
+            </div>
           </div>
         <b:else/>
-          <div class='blog-status-message blog-status-message-danger' role='alert'>
-            <data:view.archive.rangeMessage/> : <data:messages.noResultsFound/>
+          <div class='blog-status-message'>
+            <div class='alert alert-danger' role='alert'>
+              <data:view.archive.rangeMessage/> : <data:messages.noResultsFound/>
+            </div>
           </div>
         </b:if>
       </b:if>
 
       <b:comment>=== Error page ===</b:comment>
       <b:if cond='data:view.isError'>
-        <div class='blog-status-message blog-status-message-danger' role='alert'>
-          <data:navMessage/>
+        <div class='blog-status-message'>
+          <div class='alert alert-danger' role='alert'>
+            <data:navMessage/>
+          </div>
         </div>
       </b:if>
     </b:includable>
