@@ -491,6 +491,28 @@ template-src/includable/post/post.snippet.xml
 
 Ketika posting menggunakan *jump break* dan `notHasJumpLink: true` maka yang ditampilkan adalah `<data:post.body/>`.
 
+### Body
+
+Sebagai pengganti `<data:post.body/>`.
+
+###### Source
+
+{% highlight plaintext %}
+template-src/includable/post/post.body.xml
+{% endhighlight %}
+
+###### Includable
+
+{% highlight html %}
+<b:includable id='post.body'>...</b:includable>
+{% endhighlight %}
+
+###### Usage
+
+{% highlight html %}
+<b:include data='{ parentDivClass: "class-name" }' name='post.body'/>
+{% endhighlight %}
+
 ### Jump link
 
 Untuk menampilkan *jump link*.

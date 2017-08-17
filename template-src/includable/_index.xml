@@ -67,6 +67,9 @@ Post
     <b:includable id='post.snippet'>
       <!--(bake post/post.snippet.xml)-->
     </b:includable>
+    <b:includable id='post.body'>
+      <!--(bake post/post.body.xml)-->
+    </b:includable>
     <b:includable id='post.jumpLink'>
       <!--(bake post/post.jumpLink.xml)-->
     </b:includable>
