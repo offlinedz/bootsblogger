@@ -161,18 +161,20 @@
 
       <b:comment>=== Reactions ===</b:comment>
       <b:if cond='data:item.name == "reactions"'>
-        <li class='byline byline-reactions list-inline-item'>
-          <div class='d-flex justify-content-start'>
-            <div>
+        <li class='byline byline-reactions list-inline-item d-block'>
+          <div class='row no-gutters'>
+            <div class='col-auto'>
               <i aria-hidden='true' class='byline-reactions-icon fa fa-star'/>
             </div>
             <b:if cond='data:item.label != ""'>
-              <div style='margin-left: 4px;'>
+              <div class='col-auto' style='margin-left: 4px;'>
                 <span class='byline-reactions-label'><data:item.label/></span>
               </div>
             </b:if>
             <div>
-              <iframe class='byline-reactions-iframe' expr:src='data:post.reactionsUrl' name='reactions' style='position: relative; width: 100%; height: 1.5rem; vertical-align: middle; border: 0;'/>
+              <b:class cond='data:item.label != ""' name='col-sm'/>
+              <b:class cond='data:item.label == ""' name='col'/>
+              <iframe class='byline-reactions-iframe' expr:src='data:post.reactionsUrl' name='reactions' style='position: relative; width: 100%; height: 1.5rem; overflow-y: auto; vertical-align: middle; border: 0;'/>
             </div>
           </div>
         </li>
