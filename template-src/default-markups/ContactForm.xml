@@ -1,4 +1,8 @@
 <b:defaultmarkup type='ContactForm'>
+  <b:includable id='main'>
+    <b:include name='widget-title'/>
+    <b:include name='content'/>
+  </b:includable>
   <b:includable id='content'>
     <div class='widget-content'>
       <form expr:id='data:widget.instanceId + "_contact-form"' name='contact-form'>
