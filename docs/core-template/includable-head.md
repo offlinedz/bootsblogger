@@ -112,3 +112,33 @@ Tag `<meta>` dan `<link>` untuk <abbr title="Search Engine Results Page">SERP</a
 </b:with>
 </b:with>
 {% endhighlight %}
+
+## Example usage
+
+{% highlight html %}
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <b:include name='head.requiredMetaTags'/>
+    <b:include name='head.title'/>
+    <b:include name='head.allHeadContent'/>
+
+    <b:with value='"https://example.com/path/to/image.png"' var='image'>
+    <b:with value='"@username_of_website"' var='twitterUsernameWebsite'>
+    <b:with value='"@username_of_content_creator"' var='twitterUsernameCreator'>
+      <b:include name='head.defaultTags'/>
+      <b:include name='head.facebookTags'/>
+      <b:include name='head.twitterTags'/>
+    </b:with>
+    </b:with>
+    </b:with>
+
+  </head>
+  <body>
+
+    <h1>Hello, world!</h1>
+    
+  </body>
+</html>
+{% endhighlight %}
