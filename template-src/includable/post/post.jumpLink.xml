@@ -1,5 +1,5 @@
 <b:if cond='data:post.hasJumpLink'>
-  <div expr:class='data:parentClass'>
+  <div expr:class='data:parentDivClass'>
     <a b:whitespace='remove' expr:class='data:linkClass' expr:href='fragment(data:post.url, "more")' role='button'>
       <b:attr name='title' expr:value='data:post.title ? data:post.title : ""'/>
       <data:blog.jumpLinkMessage/><span class='sr-only'>jump-<data:post.id/></span>
@@ -7,7 +7,7 @@
   </div>
 <b:else/>
   <b:if cond='data:post.snippets'>
-    <div expr:class='data:parentClass'>
+    <div expr:class='data:parentDivClass'>
       <a b:whitespace='remove' expr:class='data:linkClass' expr:href='data:post.url' role='button'>
         <b:attr name='title' expr:value='data:post.title ? data:post.title : ""'/>
         <data:messages.keepReading/><span class='sr-only'>jump-<data:post.id/></span>

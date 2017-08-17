@@ -486,7 +486,7 @@ template-src/includable/post/post.snippet.xml
 ###### Usage
 
 {% highlight html %}
-<b:include data='{ length: number, links: true|false, linebreaks: true|false, ellipsis: true|false, notHasJumpLink: true|false, parentClass: "class-name" }' name='post.snippet'/>
+<b:include data='{ length: number, links: true|false, linebreaks: true|false, ellipsis: true|false, notHasJumpLink: true|false, parentDivClass: "class-name" }' name='post.snippet'/>
 {% endhighlight %}
 
 Ketika posting menggunakan *jump break* dan `notHasJumpLink: true` maka yang ditampilkan adalah `<data:post.body/>`.
@@ -510,5 +510,5 @@ template-src/includable/post/post.jumpLink.xml
 ###### Usage
 
 {% highlight html %}
-<b:include data='{ linkClass: "btn btn-primary", parentClass: "mt-2" }' name='post.jumpLink'/>
+<b:include data='{ linkClass: "btn btn-primary", parentDivClass: "mt-2" }' name='post.jumpLink'/>
 {% endhighlight %}
