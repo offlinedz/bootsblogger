@@ -85,10 +85,6 @@
   }
 }
 
-.navmenu-nav .nav-link-collapse::after {
-  position: relative;
-  top: 2px;
-}
 .navmenu-nav .nav-link-collapse.collapsed {
   // Generate the caret automatically
   &::after {
@@ -96,7 +92,7 @@
     width: 0;
     height: 0;
     margin-left: $caret-width * .85;
-    vertical-align: $caret-width * .85;
+    vertical-align: middle;
     content: "";
     border-top: $caret-width solid;
     border-right: $caret-width solid transparent;
@@ -114,7 +110,7 @@
     width: 0;
     height: 0;
     margin-left: $caret-width * .85;
-    vertical-align: $caret-width * .85;
+    vertical-align: middle;
     content: "";
     border-top: 0;
     border-right: $caret-width solid transparent;
@@ -246,7 +242,8 @@
     .show > .nav-link,
     .active > .nav-link,
     .nav-link.show,
-    .nav-link.active {
+    .nav-link.active,
+    .nav-link-collapse:not(.collapsed) {
       color: $navmenu-light-active-color;
     }
 
@@ -295,7 +292,8 @@
     .show > .nav-link,
     .active > .nav-link,
     .nav-link.show,
-    .nav-link.active {
+    .nav-link.active,
+    .nav-link-collapse:not(.collapsed) {
       color: $navmenu-dark-active-color;
     }
 
