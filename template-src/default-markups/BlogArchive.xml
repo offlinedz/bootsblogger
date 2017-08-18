@@ -13,7 +13,7 @@
     </div>
   </b:includable>
   <b:includable id='menu'>
-    <select class='archive-select custom-select' onchange='if (this.value) window.location.href=this.value'>
+    <select class='archive-select custom-select' onchange='if (this.value) window.location.href = this.value'>
       <option selected='selected' value=''><data:messages.archive/></option>
       <b:loop values='data:data' var='i'>
         <option expr:value='data:i.url'>
@@ -27,7 +27,7 @@
       <b:loop values='data:data' var='i'>
         <li>
           <a expr:href='data:i.url'>
-            <data:i.name/> <small>(<data:i.post-count/>)</small>
+            <data:i.name/> <small class='archive-flat-count'>(<data:i.post-count/>)</small>
           </a>
         </li>
       </b:loop>
@@ -35,36 +35,69 @@
   </b:includable>
   <b:includable id='hierarchy'>
     <div class='archive-hierarchy'>
+      <style expr:id='data:widget.instanceId + "_style"' scoped='scoped'>
+      #<data:widget.instanceId/>_ArchiveList .archive-hierarchy-toggle {
+        margin-right: .5rem;
+      }
+      #<data:widget.instanceId/>_ArchiveList .archive-hierarchy-monthly,
+      #<data:widget.instanceId/>_ArchiveList .archive-hierarchy-daily {
+        padding-left: 1.6rem;
+      }
+
+      #<data:widget.instanceId/>_ArchiveList .archive-hierarchy-toggle.collapsed::after {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        vertical-align: middle;
+        content: "";
+        border-top: .4em solid;
+        border-right: .4em solid transparent;
+        border-left: .4em solid transparent;
+      }
+
+      #<data:widget.instanceId/>_ArchiveList .archive-hierarchy-toggle:not(.collapsed)::after {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        vertical-align: middle;
+        content: "";
+        border-top: 0;
+        border-right: .4em solid transparent;
+        border-bottom: .4em solid;
+        border-left: .4em solid transparent;
+      }
+      </style>
+
       <ol class='archive-hierarchy-yearly list-unstyled mb-0'>
         <b:loop values='data:data' var='i'>
           <li>
-            <a aria-expanded='false' class='dropdown-toggle mr-2' data-toggle='collapse' expr:aria-controls='data:i.toggleId' expr:href='"#" + data:i.toggleId'>
+            <a aria-expanded='false' class='archive-hierarchy-toggle collapsed' data-toggle='collapse' expr:aria-controls='data:i.toggleId' expr:href='"#" + data:i.toggleId'>
               <span class='sr-only'>Toggle <data:i.toggleId/></span>
             </a>
             <a expr:href='data:i.url'>
-              <data:i.name/> <small>(<data:i.post-count/>)</small>
+              <data:i.name/> <small class='archive-hierarchy-count'>(<data:i.post-count/>)</small>
             </a>
 
             <div class='collapse' expr:id='data:i.toggleId'>
-              <ul class='archive-hierarchy-monthly list-unstyled pl-4'>
+              <ul class='archive-hierarchy-monthly list-unstyled'>
                 <b:loop values='data:i.data' var='j'>
                   <li>
                     <b:if cond='data:j.data'>
-                      <a aria-expanded='false' class='dropdown-toggle mr-2' data-toggle='collapse' expr:aria-controls='data:j.toggleId' expr:href='"#" + data:j.toggleId'>
+                      <a aria-expanded='false' class='archive-hierarchy-toggle collapsed' data-toggle='collapse' expr:aria-controls='data:j.toggleId' expr:href='"#" + data:j.toggleId'>
                         <span class='sr-only'>Toggle <data:j.toggleId/></span>
                       </a>
                     </b:if>
                     <a expr:href='data:j.url'>
-                      <data:j.name/> <small>(<data:j.post-count/>)</small>
+                      <data:j.name/> <small class='archive-hierarchy-count'>(<data:j.post-count/>)</small>
                     </a>
 
                     <b:if cond='data:j.data'>
                       <div class='collapse' expr:id='data:j.toggleId'>
-                        <ul class='archive-hierarchy-daily list-unstyled pl-4'>
+                        <ul class='archive-hierarchy-daily list-unstyled'>
                           <b:loop values='data:j.data' var='k'>
                             <li>
                               <a expr:href='data:k.url'>
-                                <data:k.name/> <small>(<data:k.post-count/>)</small>
+                                <data:k.name/> <small class='archive-hierarchy-count'>(<data:k.post-count/>)</small>
                               </a>
                             </li>
                           </b:loop>
