@@ -343,6 +343,63 @@ body {}
 
 .blog-posts {}
 
+/**
+ * Compose mode
+ */
+
+/* Images */
+
+.post-compose-style .separator img,
+.post-compose-style .tr-caption-container img {
+  max-width: 100%;
+}
+
+/* Tables */
+
+.post-compose-style table:not(.table):not(.tr-caption-container) {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  background-color: transparent;
+}
+
+.post-compose-style table:not(.table):not(.tr-caption-container) th,
+.post-compose-style table:not(.table):not(.tr-caption-container) td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border: 1px solid #e5e5e5;
+}
+
+.post-compose-style table:not(.table):not(.tr-caption-container) thead th {
+  vertical-align: bottom;
+}
+
+.post-compose-style table:not(.table):not(.tr-caption-container) thead th,
+.post-compose-style table:not(.table):not(.tr-caption-container) thead td {
+  border-bottom-width: 2px;
+}
+
+.post-compose-style table:not(.table):not(.tr-caption-container) tbody + tbody {
+  border-top: 2px solid #e5e5e5;
+}
+
+/* Blockquotes */
+
+.post-compose-style blockquote:not(.blockquote) {
+  padding: 0.75rem 1rem;
+  margin: 0 0 1rem;
+  border-left: 5px solid #e5e5e5;
+}
+
+.post-compose-style blockquote:not(.blockquote) footer {
+  display: block;
+  font-size: 80%;
+  color: #868e96;
+}
+.post-compose-style blockquote:not(.blockquote) footer::before {
+  content: "\2014 \00A0";
+}
+
 /* Comments
    ========================================================================== */
 
@@ -589,18 +646,18 @@ Post (Jump to widget: Blog1 --- includable: main)
       </b:if>
     </b:includable>
     <b:includable id='blog-posts' var='post'>
-      <div class='blog-posts'>
+      <div class='blog-posts post-compose-style'>
 
         <b:comment>=== Homepage ===</b:comment>
         <b:if cond='data:view.isHomepage'>
           <b:loop values='data:posts' var='post'>
-            <article class='card mb-3 mb-sm-5' expr:id='"post-" + data:post.id'>
+            <article class='card mb-3' expr:id='"post-" + data:post.id'>
 
               <!-- >>> Header <<< -->
               <b:if cond='data:headerByline.items.notEmpty'>
                 <div class='card-header text-muted'>
                   <!-- headerByline -->
-                  <b:include name='byline.header'/>
+                  <b:include name='post.header'/>
                 </div><!-- /.card-header -->
               </b:if>
 
@@ -608,18 +665,18 @@ Post (Jump to widget: Blog1 --- includable: main)
               <div class='row no-gutters'>
                 <div class='col-sm-3 col-md-4'>
                   <!-- Featured image -->
-                  <div class='card-block-img-left-sm'>
+                  <div class='card-img-left-wrap-sm'>
                     <b:include data='{ size: 256, sourceSet: [256, 512], sourceSizes: "100vw", ratioWidth: 1, ratioHeight: 1, link: true, noImage: "https://placehold.it/256x256/777/eee/?text=NO+IMAGE", imageClass: "card-img-left" }' name='post.featuredImage'/>
-                  </div><!-- /.card-block-img-left-sm -->
+                  </div><!-- /.card-img-left-wrap-sm -->
                 </div><!-- /col -->
                 <div class='col-sm-9 col-md-8'>
                   <div class='card-body'>
                     <!-- Title -->
-                    <b:include data='{ heading: "h2", headingClass: "card-title", link: true, linkClass: "card-title-link", noTitleMessage: false }' name='post.title'/>
+                    <b:include data='{ heading: "h2", headingClass: "card-title", link: true, linkClass: "card-title-link-light", noTitleMessage: false }' name='post.title'/>
                     <!-- Snippet -->
-                    <b:include data='{ length: 150, links: true, linebreaks: true, ellipsis: true, notHasJumpLink: true, parentClass: "card-text" }' name='post.snippet'/>
+                    <b:include data='{ length: 150, links: true, linebreaks: true, ellipsis: true, notHasJumpLink: true, parentDivClass: "card-text" }' name='post.snippet'/>
                     <!-- Jump link -->
-                    <b:include data='{ linkClass: "btn btn-primary", parentClass: "mt-2" }' name='post.jumpLink'/>
+                    <b:include data='{ linkClass: "btn btn-primary", parentDivClass: "mt-2" }' name='post.jumpLink'/>
                   </div><!-- /.card-body -->
                 </div><!-- /col -->
               </div><!-- /.row -->
@@ -628,7 +685,7 @@ Post (Jump to widget: Blog1 --- includable: main)
               <b:if cond='data:footerBylines.notEmpty'>
                 <div class='card-footer text-muted'>
                   <!-- footerBylines -->
-                  <b:include name='byline.footer'/>
+                  <b:include name='post.footer'/>
                 </div><!-- /.card-footer -->
               </b:if>
 
@@ -644,13 +701,15 @@ Post (Jump to widget: Blog1 --- includable: main)
               <!-- >>> Header <<< -->
               <div class='card-header'>
                 <ul class='list-inline mb-0'>
-                  <!-- Author -->
+                  <!-- Author name -->
                   <li class='list-inline-item'>
+                    <i aria-hidden='true' class='fa fa-user-circle text-muted'/>
                     <span class='text-muted'><data:messages.postedBy/></span>
-                    <b:include data='{ linkClass: "text-muted" }' name='post.authorName'/>
+                    <b:include data='{ linkClass: "text-secondary" }' name='post.authorName'/>
                   </li>
-                  <!-- Date -->
+                  <!-- Date published -->
                   <li class='list-inline-item'>
+                    <i aria-hidden='true' class='fa fa-clock-o text-muted'/>
                     <span class='text-muted'><data:messages.on/></span>
                     <b:include data='{ customFormat: "MMM dd, YYYY", timeClass: "text-muted" }' name='post.datePublished'/>
                   </li>
@@ -660,9 +719,9 @@ Post (Jump to widget: Blog1 --- includable: main)
               <!-- >>> Body <<< -->
               <div class='card-body'>
                 <!-- Title -->
-                <b:include data='{ heading: "h1", headingClass: "", link: false, linkClass: "", noTitleMessage: false }' name='post.title'/>
+                <b:include data='{ heading: "h1", headingClass: "card-title", link: false, linkClass: "no-class", noTitleMessage: false }' name='post.title'/>
                 <!-- Body -->
-                <data:post.body/>
+                <b:include data='{ parentDivClass: "card-text" }' name='post.body'/>
               </div><!-- /.card-body -->
 
               <!-- >>> Footer <<< -->
@@ -672,7 +731,7 @@ Post (Jump to widget: Blog1 --- includable: main)
                   <li class='list-inline-item'>
                     <i aria-hidden='true' class='fa fa-tags text-muted'/>
                     <span class='text-muted'><data:messages.labels/>:</span>
-                    <b:include data='{ comma: false, maxResults: 12, labelLinkClass: "badge badge-default", unlabelledClass: "text-muted" }' name='post.labels'/>
+                    <b:include data='{ comma: false, maxResults: 12, labelLinkClass: "badge badge-secondary", unlabelledClass: "badge badge-warning" }' name='post.labels'/>
                   </li>
                 </ul><!-- /.list-inline -->
               </div><!-- /.card-footer -->
@@ -689,9 +748,9 @@ Post (Jump to widget: Blog1 --- includable: main)
               <!-- >>> Body <<< -->
               <div class='card-body'>
                 <!-- Title -->
-                <b:include data='{ heading: "h1", headingClass: "", link: false, linkClass: "", noTitleMessage: false }' name='post.title'/>
+                <b:include data='{ heading: "h1", headingClass: "card-title", link: false, linkClass: "no-class", noTitleMessage: false }' name='post.title'/>
                 <!-- Body -->
-                <data:post.body/>
+                <b:include data='{ parentDivClass: "card-text" }' name='post.body'/>
               </div><!-- /.card-body -->
 
             </article><!-- /.card -->
@@ -702,7 +761,7 @@ Post (Jump to widget: Blog1 --- includable: main)
         <b:if cond='data:view.search.label'>
           <div class='row'>
             <b:loop values='data:posts' var='post'>
-              <article class='col-sm-6 mb-3 mb-sm-5' expr:id='"post-" + data:post.id'>
+              <article class='col-sm-6 mb-3' expr:id='"post-" + data:post.id'>
                 <div class='card h-100'>
 
                   <!-- >>> Image <<< -->
@@ -714,30 +773,30 @@ Post (Jump to widget: Blog1 --- includable: main)
                   <!-- >>> Body <<< -->
                   <div class='card-body'>
                     <!-- Title -->
-                    <b:include data='{ heading: "h2", headingClass: "card-title h4", link: true, linkClass: "card-title-link", noTitleMessage: false }' name='post.title'/>
-                    <!-- Date -->
+                    <b:include data='{ heading: "h2", headingClass: "card-title h4", link: true, linkClass: "card-title-link-light", noTitleMessage: false }' name='post.title'/>
+                    <!-- Date published -->
                     <h6 class='card-subtitle mb-2'>
                       <b:include data='{ customFormat: "MMM dd, YYYY", timeClass: "text-muted" }' name='post.datePublished'/>
                     </h6>
                     <!-- Snippet -->
-                    <b:include data='{ length: 150, links: true, linebreaks: true, ellipsis: true, notHasJumpLink: false, parentClass: "card-text" }' name='post.snippet'/>
+                    <b:include data='{ length: 150, links: true, linebreaks: true, ellipsis: true, notHasJumpLink: false, parentDivClass: "card-text" }' name='post.snippet'/>
                     <!-- Jump link -->
-                    <b:include data='{ class: "card-link", parentClass: "mt-2" }' name='post.jumpLink'/>
+                    <b:include data='{ linkClass: "card-link", parentDivClass: "mt-2" }' name='post.jumpLink'/>
                   </div><!-- /.card-body -->
 
                   <!-- >>> Footer <<< -->
                   <div class='card-footer'>
                     <div class='d-flex flex-wrap justify-content-between'>
-                      <!-- Author -->
+                      <!-- Author name -->
                       <span>
                         <i aria-hidden='true' class='fa fa-user-circle text-muted'/>
-                        <b:include data='{ linkClass: "text-muted" }' name='post.authorName'/>
+                        <b:include data='{ linkClass: "text-secondary" }' name='post.authorName'/>
                       </span>
                       <!-- Number of comments -->
                       <b:if cond='data:post.allowComments'>
                         <span>
                           <i aria-hidden='true' class='fa fa-comments text-muted'/>
-                          <b:include data='{ linkClass: "text-muted" }' name='post.numComments'/>
+                          <b:include data='{ linkClass: "text-secondary" }' name='post.numComments'/>
                         </span>
                       </b:if>
                     </div><!-- /flex -->
@@ -757,12 +816,12 @@ Post (Jump to widget: Blog1 --- includable: main)
               <!-- >>> Body <<< -->
               <div class='card-body'>
                 <!-- Title -->
-                <b:include data='{ heading: "h2", headingClass: "card-title", link: true, linkClass: "card-title-link", noTitleMessage: false }' name='post.title'/>
-                <!-- Date and snippet -->
+                <b:include data='{ heading: "h2", headingClass: "card-title", link: true, linkClass: "card-title-link-light", noTitleMessage: false }' name='post.title'/>
+                <!-- Date published and snippet -->
                 <div class='card-text'>
                   <b:include data='{ customFormat: "MMM dd, YYYY", timeClass: "text-muted" }' name='post.datePublished'/>
                   <span class='text-muted'>-</span>
-                  <b:include data='{ length: 150, links: false, linebreaks: false, ellipsis: true, notHasJumpLink: false, parentClass: "d-inline" }' name='post.snippet'/>
+                  <b:include data='{ length: 150, links: false, linebreaks: false, ellipsis: true, notHasJumpLink: false, parentDivClass: "d-inline" }' name='post.snippet'/>
                 </div><!-- /.card-text -->
               </div><!-- /.card-body -->
 
@@ -773,13 +832,13 @@ Post (Jump to widget: Blog1 --- includable: main)
         <b:comment>=== Search (default) page ===</b:comment>
         <b:if cond='data:view.search and !data:view.search.label and !data:view.search.query'>
           <b:loop values='data:posts' var='post'>
-            <article class='card mb-3 mb-sm-5' expr:id='"post-" + data:post.id'>
+            <article class='card mb-3' expr:id='"post-" + data:post.id'>
 
               <!-- >>> Header <<< -->
               <b:if cond='data:headerByline.items.notEmpty'>
                 <div class='card-header text-muted'>
                   <!-- headerByline -->
-                  <b:include name='byline.header'/>
+                  <b:include name='post.header'/>
                 </div><!-- /.card-header -->
               </b:if>
 
@@ -787,18 +846,18 @@ Post (Jump to widget: Blog1 --- includable: main)
               <div class='row no-gutters'>
                 <div class='col-sm-3 col-md-4'>
                   <!-- Featured image -->
-                  <div class='card-block-img-left-sm'>
+                  <div class='card-img-left-wrap-sm'>
                     <b:include data='{ size: 256, sourceSet: [256, 512], sourceSizes: "100vw", ratioWidth: 1, ratioHeight: 1, link: true, noImage: "https://placehold.it/256x256/777/eee/?text=NO+IMAGE", imageClass: "card-img-left" }' name='post.featuredImage'/>
-                  </div><!-- /.card-block-img-left-sm -->
+                  </div><!-- /.card-img-left-wrap-sm -->
                 </div><!-- /col -->
                 <div class='col-sm-9 col-md-8'>
                   <div class='card-body'>
                     <!-- Title -->
-                    <b:include data='{ heading: "h2", headingClass: "card-title", link: true, linkClass: "card-title-link", noTitleMessage: false }' name='post.title'/>
+                    <b:include data='{ heading: "h2", headingClass: "card-title", link: true, linkClass: "card-title-link-light", noTitleMessage: false }' name='post.title'/>
                     <!-- Snippet -->
-                    <b:include data='{ length: 150, links: true, linebreaks: true, ellipsis: true, notHasJumpLink: true, parentClass: "card-text" }' name='post.snippet'/>
+                    <b:include data='{ length: 150, links: true, linebreaks: true, ellipsis: true, notHasJumpLink: true, parentDivClass: "card-text" }' name='post.snippet'/>
                     <!-- Jump link -->
-                    <b:include data='{ linkClass: "btn btn-primary", parentClass: "mt-2" }' name='post.jumpLink'/>
+                    <b:include data='{ linkClass: "btn btn-primary", parentDivClass: "mt-2" }' name='post.jumpLink'/>
                   </div><!-- /.card-body -->
                 </div><!-- /col -->
               </div><!-- /.row -->
@@ -807,7 +866,7 @@ Post (Jump to widget: Blog1 --- includable: main)
               <b:if cond='data:footerBylines.notEmpty'>
                 <div class='card-footer text-muted'>
                   <!-- footerBylines -->
-                  <b:include name='byline.footer'/>
+                  <b:include name='post.footer'/>
                 </div><!-- /.card-footer -->
               </b:if>
 
@@ -821,17 +880,17 @@ Post (Jump to widget: Blog1 --- includable: main)
             <tbody>
               <b:loop values='data:posts' var='post'>
                 <tr expr:id='"post-" + data:post.id'>
-                  <!-- Date -->
+                  <!-- Date published -->
                   <td class='text-nowrap'>
-                    <b:include data='{ customFormat: "dd/MM/YYYY", timeClass: "" }' name='post.datePublished'/>
+                    <b:include data='{ customFormat: "dd/MM/YYYY", timeClass: "text-muted" }' name='post.datePublished'/>
                   </td>
                   <!-- Title -->
                   <td>
-                    <b:include data='{ heading: false, headingClass: "", link: true, linkClass: "", noTitleMessage: true }' name='post.title'/>
+                    <b:include data='{ heading: false, headingClass: "no-class", link: true, linkClass: "no-class", noTitleMessage: true }' name='post.title'/>
                   </td>
-                  <!-- Author -->
+                  <!-- Author name -->
                   <td class='text-nowrap'>
-                    <b:include data='{ linkClass: "" }' name='post.authorName'/>
+                    <b:include data='{ linkClass: "text-secondary" }' name='post.authorName'/>
                   </td>
                 </tr>
               </b:loop>
@@ -2499,7 +2558,7 @@ Default markups
       </div>
     </b:includable>
     <b:includable id='menu'>
-      <select class='archive-select custom-select' onchange='if (this.value) window.location.href=this.value'>
+      <select class='archive-select custom-select' onchange='if (this.value) window.location.href = this.value'>
         <option selected='selected' value=''><data:messages.archive/></option>
         <b:loop values='data:data' var='i'>
           <option expr:value='data:i.url'>
@@ -2513,7 +2572,7 @@ Default markups
         <b:loop values='data:data' var='i'>
           <li>
             <a expr:href='data:i.url'>
-              <data:i.name/> <small>(<data:i.post-count/>)</small>
+              <data:i.name/> <small class='archive-flat-count'>(<data:i.post-count/>)</small>
             </a>
           </li>
         </b:loop>
@@ -2521,36 +2580,69 @@ Default markups
     </b:includable>
     <b:includable id='hierarchy'>
       <div class='archive-hierarchy'>
+        <style expr:id='data:widget.instanceId + "_style"' scoped='scoped'>
+        #<data:widget.instanceId/>_ArchiveList .archive-hierarchy-toggle {
+          margin-right: .5rem;
+        }
+        #<data:widget.instanceId/>_ArchiveList .archive-hierarchy-monthly,
+        #<data:widget.instanceId/>_ArchiveList .archive-hierarchy-daily {
+          padding-left: 1.6rem;
+        }
+
+        #<data:widget.instanceId/>_ArchiveList .archive-hierarchy-toggle.collapsed::after {
+          display: inline-block;
+          width: 0;
+          height: 0;
+          vertical-align: middle;
+          content: "";
+          border-top: .4em solid;
+          border-right: .4em solid transparent;
+          border-left: .4em solid transparent;
+        }
+
+        #<data:widget.instanceId/>_ArchiveList .archive-hierarchy-toggle:not(.collapsed)::after {
+          display: inline-block;
+          width: 0;
+          height: 0;
+          vertical-align: middle;
+          content: "";
+          border-top: 0;
+          border-right: .4em solid transparent;
+          border-bottom: .4em solid;
+          border-left: .4em solid transparent;
+        }
+        </style>
+
         <ol class='archive-hierarchy-yearly list-unstyled mb-0'>
           <b:loop values='data:data' var='i'>
             <li>
-              <a aria-expanded='false' class='dropdown-toggle mr-2' data-toggle='collapse' expr:aria-controls='data:i.toggleId' expr:href='"#" + data:i.toggleId'>
+              <a aria-expanded='false' class='archive-hierarchy-toggle collapsed' data-toggle='collapse' expr:aria-controls='data:i.toggleId' expr:href='"#" + data:i.toggleId'>
                 <span class='sr-only'>Toggle <data:i.toggleId/></span>
               </a>
               <a expr:href='data:i.url'>
-                <data:i.name/> <small>(<data:i.post-count/>)</small>
+                <data:i.name/> <small class='archive-hierarchy-count'>(<data:i.post-count/>)</small>
               </a>
 
               <div class='collapse' expr:id='data:i.toggleId'>
-                <ul class='archive-hierarchy-monthly list-unstyled pl-4'>
+                <ul class='archive-hierarchy-monthly list-unstyled'>
                   <b:loop values='data:i.data' var='j'>
                     <li>
                       <b:if cond='data:j.data'>
-                        <a aria-expanded='false' class='dropdown-toggle mr-2' data-toggle='collapse' expr:aria-controls='data:j.toggleId' expr:href='"#" + data:j.toggleId'>
+                        <a aria-expanded='false' class='archive-hierarchy-toggle collapsed' data-toggle='collapse' expr:aria-controls='data:j.toggleId' expr:href='"#" + data:j.toggleId'>
                           <span class='sr-only'>Toggle <data:j.toggleId/></span>
                         </a>
                       </b:if>
                       <a expr:href='data:j.url'>
-                        <data:j.name/> <small>(<data:j.post-count/>)</small>
+                        <data:j.name/> <small class='archive-hierarchy-count'>(<data:j.post-count/>)</small>
                       </a>
 
                       <b:if cond='data:j.data'>
                         <div class='collapse' expr:id='data:j.toggleId'>
-                          <ul class='archive-hierarchy-daily list-unstyled pl-4'>
+                          <ul class='archive-hierarchy-daily list-unstyled'>
                             <b:loop values='data:j.data' var='k'>
                               <li>
                                 <a expr:href='data:k.url'>
-                                  <data:k.name/> <small>(<data:k.post-count/>)</small>
+                                  <data:k.name/> <small class='archive-hierarchy-count'>(<data:k.post-count/>)</small>
                                 </a>
                               </li>
                             </b:loop>
