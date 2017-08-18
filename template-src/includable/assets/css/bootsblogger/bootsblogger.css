@@ -291,17 +291,12 @@
   border-top: 1px solid transparent;
 }
 
-.navmenu-nav .nav-link-collapse::after {
-  position: relative;
-  top: 2px;
-}
-
 .navmenu-nav .nav-link-collapse.collapsed::after {
   display: inline-block;
   width: 0;
   height: 0;
   margin-left: 0.255em;
-  vertical-align: 0.255em;
+  vertical-align: middle;
   content: "";
   border-top: 0.3em solid;
   border-right: 0.3em solid transparent;
@@ -316,7 +311,7 @@
   width: 0;
   height: 0;
   margin-left: 0.255em;
-  vertical-align: 0.255em;
+  vertical-align: middle;
   content: "";
   border-top: 0;
   border-right: 0.3em solid transparent;
@@ -422,7 +417,8 @@
 .navmenu-light .navmenu-nav .show > .nav-link,
 .navmenu-light .navmenu-nav .active > .nav-link,
 .navmenu-light .navmenu-nav .nav-link.show,
-.navmenu-light .navmenu-nav .nav-link.active {
+.navmenu-light .navmenu-nav .nav-link.active,
+.navmenu-light .navmenu-nav .nav-link-collapse:not(.collapsed) {
   color: rgba(0, 0, 0, 0.9);
 }
 .navmenu-light .navmenu-nav .nav-item-bordered {
@@ -457,7 +453,8 @@
 .navmenu-dark .navmenu-nav .show > .nav-link,
 .navmenu-dark .navmenu-nav .active > .nav-link,
 .navmenu-dark .navmenu-nav .nav-link.show,
-.navmenu-dark .navmenu-nav .nav-link.active {
+.navmenu-dark .navmenu-nav .nav-link.active,
+.navmenu-dark .navmenu-nav .nav-link-collapse:not(.collapsed) {
   color: white;
 }
 .navmenu-dark .navmenu-nav .nav-item-bordered {
