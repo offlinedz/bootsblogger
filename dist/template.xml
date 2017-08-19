@@ -2829,6 +2829,62 @@ Default markups
       </div>
     </b:includable>
   </b:defaultmarkup>
+  <b:comment>=== Header ===</b:comment>
+  <b:defaultmarkup type='Header'>
+    <b:includable id='main' var='this'>
+      <b:comment>=== REPLACE ===</b:comment>
+      <b:if cond='data:imagePlacement == "REPLACE"'>
+        <div class='header image-placement-replace'>
+          <b:class cond='!data:image' name='no-image'/>
+          <b:class cond='data:image' name='has-image'/>
+          <div class='container'>
+            <b:if cond='data:image'>
+              <a expr:href='data:blog.homepageUrl'>
+                <img expr:alt='data:title ? data:title : data:messages.image' expr:src='data:image'/>
+              </a>
+            </b:if>
+          </div>
+        </div>
+      </b:if>
+      <b:comment>=== BEFORE_DESCRIPTION ===</b:comment>
+      <b:if cond='data:imagePlacement == "BEFORE_DESCRIPTION"'>
+        <div class='header image-placement-before-description'>
+          <b:class cond='!data:image' name='no-image'/>
+          <b:class cond='data:image' name='has-image'/>
+          <div class='container'>
+            <b:if cond='data:image'>
+              <a expr:href='data:blog.homepageUrl'>
+                <img expr:alt='data:title ? data:title : data:messages.image' expr:src='data:image'/>
+              </a>
+            </b:if>
+            <b:if cond='data:description'>
+              <p><data:description/></p>
+            </b:if>
+          </div>
+        </div>
+      </b:if>
+      <b:comment>=== BEHIND ===</b:comment>
+      <b:if cond='data:imagePlacement == "BEHIND"'>
+        <div class='header image-placement-behind'>
+          <b:attr cond='data:image' expr:value='"background-image: url(" + data:image + ");"' name='style'/>
+          <b:class cond='!data:image' name='no-image'/>
+          <b:class cond='data:image' name='has-image'/>
+          <div class='container'>
+            <b:if cond='data:title'>
+              <h1><a expr:href='data:blog.homepageUrl'><data:title/></a></h1>
+            </b:if>
+            <b:if cond='data:description'>
+              <p><data:description/></p>
+            </b:if>
+          </div>
+        </div>
+      </b:if>
+    </b:includable>
+    <b:includable id='behindImageStyle'/>
+    <b:includable id='description'/>
+    <b:includable id='image'/>
+    <b:includable id='title'/>
+  </b:defaultmarkup>
   <b:comment>=== Label ===</b:comment>
   <b:defaultmarkup type='Label'>
     <b:includable id='main' var='this'>
@@ -2849,7 +2905,7 @@ Default markups
             <b:class cond='data:view.search.label == data:label.name' name='active'/>
             <data:label.name/>
             <b:if cond='data:this.showFreqNumbers'>
-              <span class='badge badge-default badge-pill label-count'><data:label.count/></span>
+              <span class='badge badge-secondary badge-pill label-count'><data:label.count/></span>
             </b:if>
           </a>
         </b:loop>
@@ -2868,6 +2924,34 @@ Default markups
           </a>
         </span>
       </b:loop>
+    </b:includable>
+  </b:defaultmarkup>
+  <b:comment>=== PopularPosts ===</b:comment>
+  <b:defaultmarkup type='PopularPosts'>
+    <b:includable id='main' var='this'>
+      <b:include name='widget-title'/>
+      <div class='widget-content'>
+        <b:loop index='i' values='data:posts' var='post'>
+          <div class='media'>
+            <b:class cond='data:i != (data:posts.size - 1)' name='mb-3'/>
+            <b:include cond='data:postDisplay.showFeaturedImage' data='{ size: 64, sourceSet: false, sourceSizes: false, ratioWidth: 1, ratioHeight: 1, link: true, noImage: "https://placehold.it/64x64/777/eee/?text=?", imageClass: "d-flex mr-3 popular-post-image" }' name='post.featuredImage'/>
+            <div class='media-body'>
+              <b:include data='{ heading: "h5", headingClass: "popular-post-title mb-1", link: true, linkClass: "popular-post-title-link", noTitleMessage: true }' name='post.title'/>
+              <ul class='list-inline mb-0'>
+                <li class='list-inline-item'>
+                  <i aria-hidden='true' class='fa fa-user-circle popular-post-author-icon'/>
+                  <b:include data='{ linkClass: "popular-post-author" }' name='post.authorName'/>
+                </li>
+                <li class='list-inline-item'>
+                  <i aria-hidden='true' class='fa fa-clock-o popular-post-date-icon'/>
+                  <b:include data='{ customFormat: "MMM dd, YYYY", timeClass: "popular-post-date" }' name='post.datePublished'/>
+                </li>
+              </ul>
+              <b:include cond='data:postDisplay.showSnippet' data='{ length: 100, links: false, linebreaks: false, ellipsis: true, notHasJumpLink: false, parentDivClass: "popular-post-snippet mt-2" }' name='post.snippet'/>
+            </div>
+          </div>
+        </b:loop>
+      </div>
     </b:includable>
   </b:defaultmarkup>
 </b:defaultmarkups>
