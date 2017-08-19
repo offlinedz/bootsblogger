@@ -11,6 +11,8 @@
   <!--(bake FollowByEmail.xml)-->
   <b:comment>=== Header ===</b:comment>
   <!--(bake Header.xml)-->
+  <b:comment>=== Image ===</b:comment>
+  <!--(bake Image.xml)-->
   <b:comment>=== Label ===</b:comment>
   <!--(bake Label.xml)-->
   <b:comment>=== PopularPosts ===</b:comment>
