@@ -5,6 +5,8 @@
   <!--(bake BlogSearch.xml)-->
   <b:comment>=== ContactForm ===</b:comment>
   <!--(bake ContactForm.xml)-->
+  <b:comment>=== FeaturedPost ===</b:comment>
+  <!--(bake FeaturedPost.xml)-->
   <b:comment>=== FollowByEmail ===</b:comment>
   <!--(bake FollowByEmail.xml)-->
   <b:comment>=== Header ===</b:comment>
