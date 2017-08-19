@@ -11,4 +11,6 @@
   <!--(bake Header.xml)-->
   <b:comment>=== Label ===</b:comment>
   <!--(bake Label.xml)-->
+  <b:comment>=== PopularPosts ===</b:comment>
+  <!--(bake PopularPosts.xml)-->
 </b:defaultmarkups>
