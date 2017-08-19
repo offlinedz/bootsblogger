@@ -15,4 +15,6 @@
   <!--(bake Label.xml)-->
   <b:comment>=== PopularPosts ===</b:comment>
   <!--(bake PopularPosts.xml)-->
+  <b:comment>=== Translate ===</b:comment>
+  <!--(bake Translate.xml)-->
 </b:defaultmarkups>
