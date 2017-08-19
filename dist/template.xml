@@ -2820,7 +2820,7 @@ Default markups
         <b:loop index='i' values='data:posts' var='post'>
           <b:include cond='data:postDisplay.showFeaturedImage' data='{ size: 512, sourceSet: false, sourceSizes: false, ratioWidth: 1, ratioHeight: 1, link: true, noImage: "https://placehold.it/512x512/777/eee/?text=?", imageClass: "featured-post-image d-block img-fluid" }' name='post.featuredImage'/>
           <b:if cond='data:postDisplay.showTitle and data:postDisplay.showFeaturedImage'><div class='featured-post-divider mt-2'/></b:if>
-          <b:include cond='data:postDisplay.showTitle' data='{ heading: "h5", headingClass: "featured-post-title mb-0", link: false, linkClass: "no-class", noTitleMessage: false }' name='post.title'/>
+          <b:include cond='data:postDisplay.showTitle' data='{ heading: "h5", headingClass: "featured-post-title mb-0", link: true, linkClass: "featured-post-title-link", noTitleMessage: false }' name='post.title'/>
           <b:if cond='(data:postDisplay.showSnippet and data:postDisplay.showTitle) or (data:postDisplay.showSnippet and data:postDisplay.showFeaturedImage)'><div class='featured-post-divider mt-2'/></b:if>
           <b:include cond='data:postDisplay.showSnippet' data='{ length: 100, links: false, linebreaks: false, ellipsis: true, notHasJumpLink: false, parentDivClass: "featured-post-snippet" }' name='post.snippet'/>
         </b:loop>
@@ -2899,6 +2899,29 @@ Default markups
     <b:includable id='description'/>
     <b:includable id='image'/>
     <b:includable id='title'/>
+  </b:defaultmarkup>
+  <b:comment>=== Image ===</b:comment>
+  <b:defaultmarkup type='Image'>
+    <b:includable id='main'>
+      <b:include name='widget-title'/>
+      <b:include name='content'/>
+    </b:includable>
+    <b:includable id='content'>
+      <div class='widget-content'>
+        <figure class='figure d-block mb-0'>
+          <b:tag cond='data:link' expr:href='data:link' name='a'>
+            <b:if cond='data:sourceUrl'>
+              <img class='figure-img d-block img-fluid w-100 mb-0' expr:src='data:sourceUrl'/>
+            </b:if>
+          </b:tag>
+          <b:if cond='data:caption'>
+            <figcaption class='figure-caption text-center mt-2'>
+              <data:caption/>
+            </figcaption>
+          </b:if>
+        </figure>
+      </div>
+    </b:includable>
   </b:defaultmarkup>
   <b:comment>=== Label ===</b:comment>
   <b:defaultmarkup type='Label'>
