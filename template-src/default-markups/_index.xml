@@ -7,6 +7,8 @@
   <!--(bake ContactForm.xml)-->
   <b:comment>=== FollowByEmail ===</b:comment>
   <!--(bake FollowByEmail.xml)-->
+  <b:comment>=== Header ===</b:comment>
+  <!--(bake Header.xml)-->
   <b:comment>=== Label ===</b:comment>
   <!--(bake Label.xml)-->
 </b:defaultmarkups>
