@@ -19,6 +19,7 @@ encoding:           UTF-8
 gems:
   - jekyll-redirect-from
   - jekyll-sitemap
+  - jekyll-toc
 
 # Social
 title:              Bootsblogger

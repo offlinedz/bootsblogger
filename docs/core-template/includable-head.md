@@ -3,12 +3,8 @@ layout: docs
 title: Includable - Head
 description: Tag title, tag meta, tag link, dan lainnya.
 group: core-template
+toc: true
 ---
-
-## Contents
-
-* Will be replaced with the ToC, excluding the "Contents" header
-{:toc}
 
 ## Required meta tags
 

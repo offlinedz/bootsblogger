@@ -3,14 +3,10 @@ layout: docs
 title: Build tools
 description: Bootsblogger menggunakan Grunt untuk sistem pembuatan CSS, template, dan Jekyll untuk menulis dokumentasi.
 group: getting-started
+toc: true
 ---
 
 Gruntfile Bootsblogger (`bootsblogger/Gruntfile.js`) menyediakan berbagai perintah Grunt untuk memberikan kemudahan dalam bekerja dengan Bootsblogger, seperti untuk kompilasi kode, menjalankan pengujian, dan lainnya.
-
-## Contents
-
-* Will be replaced with the ToC, excluding the "Contents" header
-{:toc}
 
 ## Tooling setup
 

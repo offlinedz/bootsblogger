@@ -4,12 +4,8 @@ title: Overview
 description: Template dasar Bootsblogger dirancang untuk memberikan kemudahan dengan mengubahsuaikan fitur bawaan Blogger dan menambahkan fitur-fitur baru.
 group: core-template
 redirect_from: "/core-template/"
+toc: true
 ---
-
-## Contents
-
-* Will be replaced with the ToC, excluding the "Contents" header
-{:toc}
 
 ## Blogger version
 

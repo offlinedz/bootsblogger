@@ -3,12 +3,8 @@ layout: docs
 title: Includable - Assets
 description: CSS, JavaScript, icons, dan lainnya.
 group: core-template
+toc: true
 ---
-
-## Contents
-
-* Will be replaced with the ToC, excluding the "Contents" header
-{:toc}
 
 ## Required CSS
 

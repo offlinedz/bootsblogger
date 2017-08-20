@@ -3,12 +3,8 @@ layout: docs
 title: Post
 description: Bagian-bagian template untuk mengatur tampilan posting blog.
 group: core-template
+toc: true
 ---
-
-## Contents
-
-* Will be replaced with the ToC, excluding the "Contents" header
-{:toc}
 
 ## Breadcrumb
 

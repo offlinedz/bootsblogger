@@ -264,22 +264,6 @@
   }
 }
 
-#markdown-toc {
-  padding-left: 1rem;
-  margin-top: 1rem;
-  list-style: none;
-  border-left: 4px solid #FF8A65;
-}
-#markdown-toc ul {
-  padding-left: 1.5rem;
-  margin-top: .25rem;
-  margin-bottom: .25rem;
-  list-style: none;
-}
-#markdown-toc > li:first-child {
-  display: none;
-}
-
 
 /* ==========================================================================
    Highlight and example
@@ -472,12 +456,16 @@
 }
 @media (min-width: 768px) {
   .bd-sidebar {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 4rem;
-    z-index: 1000;
-    max-height: calc(100vh - 4rem);
     border-right: 1px solid rgba(0,0,0,.1);
+  }
+  @supports ((position: -webkit-sticky) or (position: sticky)) {
+    .bd-sidebar {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 4rem;
+      z-index: 1000;
+      max-height: calc(100vh - 4rem);
+    }
   }
 }
 
@@ -490,9 +478,11 @@
   border-top: 1px solid rgba(0,0,0,.05);
 }
 @media (min-width: 768px) {
-  .bd-navmenu-scroll {
-    max-height: calc(100vh - 9rem);
-    overflow-y: auto;
+  @supports ((position: -webkit-sticky) or (position: sticky)) {
+    .bd-navmenu-scroll {
+      max-height: calc(100vh - 9rem);
+      overflow-y: auto;
+    }
   }
 }
 
@@ -568,6 +558,47 @@
   color: #7a7a7a;
   text-align: center;
   white-space: normal;
+}
+
+/* TOC
+   ========================================================================== */
+
+.bd-toc {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  font-size: .875rem;
+}
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+  .bd-toc {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 4rem;
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+  }
+}
+
+.section-nav {
+  padding-left: 0;
+  border-left: 1px solid #eee;
+}
+.section-nav ul {
+  padding-left: 1rem;
+}
+.section-nav ul ul {
+  display: none;
+}
+.toc-entry {
+  display: block;
+}
+.toc-entry a {
+  display: block;
+  padding: .125rem 1.5rem;
+  color: #99979c;
+}
+.toc-entry a:hover {
+  color: #007bff;
+  text-decoration: none;
 }
 
 

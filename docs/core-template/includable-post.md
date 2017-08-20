@@ -3,12 +3,8 @@ layout: docs
 title: Includable - Post
 description: Includable untuk posting blog.
 group: core-template
+toc: true
 ---
-
-## Contents
-
-* Will be replaced with the ToC, excluding the "Contents" header
-{:toc}
 
 ## Post byline items
 

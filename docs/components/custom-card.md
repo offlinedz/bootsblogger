@@ -4,12 +4,8 @@ title: Custom card
 description: Fitur tambahan untuk komponen card yang tidak disediakan oleh Bootstrap, yang sangat berguna untuk sebuah blog.
 group: components
 redirect_from: "/components/"
+toc: true
 ---
-
-## Contents
-
-* Will be replaced with the ToC, excluding the "Contents" header
-{:toc}
 
 ## Title links
 
@@ -18,18 +14,18 @@ Gunakan `.card-title-link-light` atau `.card-title-link-dark`.
 {% example html %}
 <div class="card mb-3">
   <div class="card-body">
-    <h2 class="card-title">
+    <h4 class="card-title">
       <a class="card-title-link-light" href="#">Card title</a>
-    </h2>
+    </h4>
     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
   </div>
 </div>
 
 <div class="card text-white bg-primary">
   <div class="card-body">
-    <h2 class="card-title">
+    <h4 class="card-title">
       <a class="card-title-link-dark" href="#">Card title</a>
-    </h2>
+    </h4>
     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
   </div>
 </div>

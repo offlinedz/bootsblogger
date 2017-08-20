@@ -3,12 +3,8 @@ layout: docs
 title: Navmenu
 description: Navmenu adalah komponen untuk membuat navigasi, dan dukungan elemen lainnya. Navmenu tampil secara vertikal.
 group: components
+toc: true
 ---
-
-## Contents
-
-* Will be replaced with the ToC, excluding the "Contents" header
-{:toc}
 
 ## How it works
 
@@ -91,7 +87,7 @@ As a heading:
 
 {% example html %}
 <nav class="navmenu navmenu-light bg-light">
-  <h1 class="navmenu-brand mb-0">Bootsblogger</h1>
+  <span class="navmenu-brand h1 mb-0">Bootsblogger</span>
 </nav>
 {% endexample %}
 
