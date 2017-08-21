@@ -2555,7 +2555,7 @@ Default markups
 ================================================= </b:comment>
 
 <b:defaultmarkups>
-  <b:comment>=== BlogArchive ===</b:comment>
+  <b:comment>=== Blog Archive ===</b:comment>
   <b:defaultmarkup type='BlogArchive'>
     <b:includable id='main' var='this'>
       <b:include name='widget-title'/>
@@ -2571,7 +2571,7 @@ Default markups
       </div>
     </b:includable>
     <b:includable id='menu'>
-      <select class='archive-select custom-select' onchange='if (this.value) window.location.href = this.value'>
+      <select class='archive-menu custom-select' onchange='if (this.value) window.location.href = this.value'>
         <option selected='selected' value=''><data:messages.archive/></option>
         <b:loop values='data:data' var='i'>
           <option expr:value='data:i.url'>
@@ -2674,7 +2674,7 @@ Default markups
     <b:includable id='interval' var='intervals'/>
     <b:includable id='posts' var='posts'/>
   </b:defaultmarkup>
-  <b:comment>=== BlogSearch ===</b:comment>
+  <b:comment>=== Blog Search ===</b:comment>
   <b:defaultmarkup type='BlogSearch'>
     <b:includable id='main'>
       <b:include name='widget-title'/>
@@ -2702,7 +2702,7 @@ Default markups
       <button class='btn btn-primary' type='submit'><data:messages.search/></button>
     </b:includable>
   </b:defaultmarkup>
-  <b:comment>=== ContactForm ===</b:comment>
+  <b:comment>=== Contact Form ===</b:comment>
   <b:defaultmarkup type='ContactForm'>
     <b:includable id='main'>
       <b:include name='widget-title'/>
@@ -2812,7 +2812,7 @@ Default markups
       </div>
     </b:includable>
   </b:defaultmarkup>
-  <b:comment>=== FeaturedPost ===</b:comment>
+  <b:comment>=== Featured Post ===</b:comment>
   <b:defaultmarkup type='FeaturedPost'>
     <b:includable id='main' var='this'>
       <b:include name='widget-title'/>
@@ -2827,7 +2827,7 @@ Default markups
       </div>
     </b:includable>
   </b:defaultmarkup>
-  <b:comment>=== FollowByEmail ===</b:comment>
+  <b:comment>=== Follow by Email ===</b:comment>
   <b:defaultmarkup type='FollowByEmail'>
     <b:includable id='main'>
       <b:include name='widget-title'/>
@@ -2844,7 +2844,7 @@ Default markups
       </div>
     </b:includable>
   </b:defaultmarkup>
-  <b:comment>=== Header ===</b:comment>
+  <b:comment>=== Page Header ===</b:comment>
   <b:defaultmarkup type='Header'>
     <b:includable id='main' var='this'>
       <b:comment>=== REPLACE ===</b:comment>
@@ -2923,7 +2923,7 @@ Default markups
       </div>
     </b:includable>
   </b:defaultmarkup>
-  <b:comment>=== Label ===</b:comment>
+  <b:comment>=== Labels ===</b:comment>
   <b:defaultmarkup type='Label'>
     <b:includable id='main' var='this'>
       <b:include name='widget-title'/>
@@ -2964,7 +2964,7 @@ Default markups
       </b:loop>
     </b:includable>
   </b:defaultmarkup>
-  <b:comment>=== PopularPosts ===</b:comment>
+  <b:comment>=== Popular Posts ===</b:comment>
   <b:defaultmarkup type='PopularPosts'>
     <b:includable id='main' var='this'>
       <b:include name='widget-title'/>
