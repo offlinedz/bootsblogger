@@ -24,9 +24,10 @@ gems:
 # Social
 title:              Bootsblogger
 description:        "Blogger + Bootstrap + <3"
+twitter:            bootsblogger
 authors:            "Igoy Nawamreh"
-social_logo_path:   /assets/brand/bootstrap-social-logo.png
-social_image_path:  /assets/brand/bootstrap-social.png
+social_logo_path:   /assets/brand/bootsblogger-social-logo.png
+social_image_path:  /assets/brand/bootsblogger-social.png
 
 # Custom variables
 current_version:    1.0.0-alpha.1
