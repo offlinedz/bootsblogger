@@ -619,7 +619,7 @@
 }
 @media (min-width: 768px) {
   .bd-docs .bd-footer {
-    margin-top: -1px;
+    margin-top: -2px;
     border-top: 1px solid rgba(0,0,0,.1);
   }
 }
