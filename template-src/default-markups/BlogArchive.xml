@@ -13,7 +13,7 @@
     </div>
   </b:includable>
   <b:includable id='menu'>
-    <select class='archive-select custom-select' onchange='if (this.value) window.location.href = this.value'>
+    <select class='archive-menu custom-select' onchange='if (this.value) window.location.href = this.value'>
       <option selected='selected' value=''><data:messages.archive/></option>
       <b:loop values='data:data' var='i'>
         <option expr:value='data:i.url'>
