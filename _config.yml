@@ -25,6 +25,7 @@ gems:
 title:              Bootsblogger
 description:        "Blogger + Bootstrap + <3"
 twitter:            bootsblogger
+facebook:           bootsblogger
 authors:            "Igoy Nawamreh"
 social_logo_path:   /assets/brand/bootsblogger-social-logo.png
 social_image_path:  /assets/brand/bootsblogger-social.png
