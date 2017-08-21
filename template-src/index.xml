@@ -48,7 +48,7 @@ CSS
 
 <b:comment>
 =================================================
-Post (Jump to widget: Blog1 --- includable: main)
+Post
 ================================================= </b:comment>
 
 <!--(bake post/_index.xml)-->
