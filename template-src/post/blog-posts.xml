@@ -65,6 +65,10 @@
               <span class='text-muted'><data:messages.on/></span>
               <b:include data='{ customFormat: "MMM dd, YYYY", timeClass: "text-muted" }' name='post.datePublished'/>
             </li>
+            <!-- Share -->
+            <li class="list-inline-item">
+              <b:include data='{ parentDivClass: "dropdown", dropdownToggleLinkClass: "text-secondary", dropdownToggleType: "all", dropdownMenuClass: "dropdown-menu", dropdownItemLinkClass: "dropdown-item", dropdownItemIcon: true }' name='post.share'/>
+            </li>
           </ul><!-- /.list-inline -->
         </div><!-- /.card-header -->
 

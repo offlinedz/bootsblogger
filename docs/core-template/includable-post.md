@@ -377,6 +377,28 @@ template-src/includable/post/post.labels.xml
 <b:include data='{ comma: true|false, maxResults: number, labelLinkClass: "class-name", unlabelledClass: "class-name" }' name='post.labels'/>
 {% endhighlight %}
 
+### Share
+
+Untuk menampilkan tombol berbagi.
+
+###### Source
+
+{% highlight plaintext %}
+template-src/includable/post/post.share.xml
+{% endhighlight %}
+
+###### Includable
+
+{% highlight html %}
+<b:includable id='post.share'>...</b:includable>
+{% endhighlight %}
+
+###### Usage
+
+{% highlight html %}
+<b:include data='{ parentDivClass: "dropdown|dropup|class-name", dropdownToggleLinkClass: "class-name", dropdownToggleType: "icon|text|all", dropdownMenuClass: "dropdown-menu", dropdownItemLinkClass: "dropdown-item", dropdownItemIcon: true|false }' name='post.share'/>
+{% endhighlight %}
+
 ### Featured image
 
 Untuk menampilkan *featured image*.

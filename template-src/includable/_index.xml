@@ -58,6 +58,9 @@ Post
     <b:includable id='post.labels'>
       <!--(bake post/post.labels.xml)-->
     </b:includable>
+    <b:includable id='post.share'>
+      <!--(bake post/post.share.xml)-->
+    </b:includable>
     <b:includable id='post.featuredImage'>
       <!--(bake post/post.featuredImage.xml)-->
     </b:includable>
