@@ -16,7 +16,7 @@ baseurl:            ""
 url:                "https://bootsblogger.github.io"
 encoding:           UTF-8
 
-gems:
+plugins:
   - jekyll-redirect-from
   - jekyll-sitemap
   - jekyll-toc
