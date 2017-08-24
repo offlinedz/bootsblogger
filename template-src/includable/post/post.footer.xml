@@ -64,9 +64,13 @@
               <li class='list-inline-item byline byline-comments'>
                 <i aria-hidden='true' class='fa fa-comments byline-comments-icon'/>
                 <a b:whitespace='remove' class='byline-comments-link' expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
-                  <b:message name='messages.numberOfComments'>
-                    <b:param expr:value='data:post.numberOfComments' name='numComments'/>
-                  </b:message>
+                  <b:if cond='data:post.commentSource != 1'>
+                    <b:message name='messages.numberOfComments'>
+                      <b:param expr:value='data:post.numberOfComments' name='numComments'/>
+                    </b:message>
+                  <b:else/>
+                    <data:messages.comments/>
+                  </b:if>
                 </a>
               </li>
             </b:if>

@@ -333,7 +333,7 @@ Last updated: <b:include data='{ customFormat: "dd/MM/YYYY"|false, timeClass: "c
 
 ### Number of comments
 
-Untuk menampilkan jumlah komentar per posting.
+Untuk menampilkan jumlah komentar per posting. Jika menggunakan sistem komentar Google+, yang tampil hanya `<data:messages.comments/>`.
 
 ###### Source
 
