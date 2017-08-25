@@ -923,98 +923,12 @@ Post
                   <i aria-hidden='true' class='fa fa-google-plus fa-lg'/>
                   <span class='sr-only'>Google+</span>
                 </h5>
-
-                <b:comment>=== French (France) - ‪Français (France)‬ ===</b:comment>
-                <b:if cond='data:blog.locale == "fr"'>
-                  <p class='mb-1'><strong>Pour activer les commentaires Google+:</strong></p>
-                  <ol class='pl-4 mb-3'>
-                    <li>Vérifiez que vous utilisez votre profil Google+ et que votre blog est public.</li>
-                    <li>Dans le menu de gauche, cliquez sur <strong>Paramètres &gt; Articles, commentaires et partage</strong>.</li>
-                    <li>Sous la zone des commentaires Google+, choisissez <strong>Oui</strong>. En haut à droite de l'écran, cliquez sur "Enregistrer les paramètres".</li>
-                  </ol>
-
-                <b:comment>=== Dutch - ‪Nederlands‬ ===</b:comment>
-                <b:elseif cond='data:blog.locale == "nl"'/>
-                  <p class='mb-1'><strong>Google+ reacties inschakelen:</strong></p>
-                  <ol class='pl-4 mb-3'>
-                    <li>Zorg dat je Google+ als profiel kiest en dat je blog openbaar is.</li>
-                    <li>Klik in het linkermenu op <strong>Instellingen &gt; Posts, reacties en delen</strong>.</li>
-                    <li>Kies <strong>Ja</strong> bij 'Google+ reacties'. Klik in de rechterbovenhoek op 'Instellingen opslaan'.</li>
-                  </ol>
-
-                <b:comment>=== German - ‪Deutsch‬ ===</b:comment>
-                <b:elseif cond='data:blog.locale == "de"'/>
-                  <p class='mb-1'><strong>So aktivieren Sie Google+ Kommentare:</strong></p>
-                  <ol class='pl-4 mb-3'>
-                    <li>Achten Sie darauf, dass Sie Google+ als Ihr Profil verwenden und Ihr Blog öffentlich ist.</li>
-                    <li>Klicken Sie im linken Menü auf <strong>Einstellungen &gt; Posts, Kommentare und Teilen</strong>.</li>
-                    <li>Wählen Sie im Bereich "Google+ Kommentare" die Option <strong>Ja</strong> aus. Klicken Sie rechts oben auf "Einstellungen speichern".</li>
-                  </ol>
-
-                <b:comment>=== Turkish - ‪Türkçe‬ ===</b:comment>
-                <b:elseif cond='data:blog.locale == "tr"'/>
-                  <p class='mb-1'><strong>Google+ yorumlarını etkinleştirmek için:</strong></p>
-                  <ol class='pl-4 mb-3'>
-                    <li>Profil olarak Google+'yı kullandığınızdan ve blogunuzun herkese açık olduğundan emin olun.</li>
-                    <li>Soldaki menüde, <strong>Ayarlar &gt;  Yayınlar, yorumlar ve paylaşım</strong>'ı tıklayın.</li>
-                    <li>"Google+ Yorumları" altında, <strong>Evet</strong>'i seçin. Sağ üstteki Ayarları kaydet seçeneğini tıklayın.</li>
-                  </ol>
-
-                <b:comment>=== Italian - ‪Italiano‬ ===</b:comment>
-                <b:elseif cond='data:blog.locale == "it"'/>
-                  <p class='mb-1'><strong>Per attivare i commenti di Google+:</strong></p>
-                  <ol class='pl-4 mb-3'>
-                    <li>Assicurati di utilizzare Google+ come profilo e che il tuo blog sia pubblico.</li>
-                    <li>Nel menu a sinistra, fai clic su <strong>Impostazioni &gt; Post, commenti e condivisione</strong>.</li>
-                    <li>In "Commenti Google+" scegli <strong>Sì</strong>. In alto a destra, fai clic su Salva impostazioni.</li>
-                  </ol>
-
-                <b:comment>=== Thai - ‪ไทย‬ ===</b:comment>
-                <b:elseif cond='data:blog.locale == "th"'/>
-                  <p class='mb-1'><strong>วิธีเปิด Google+ คอมเมนต์มีดังนี้</strong></p>
-                  <ol class='pl-4 mb-3'>
-                    <li>ตรวจดูว่าคุณใช้ Google+ เป็นโปรไฟล์อยู่และบล็อกของคุณตั้งเป็นสาธารณะ</li>
-                    <li>คลิก<strong>การตั้งค่า &gt; โพสต์, คอมเมนต์ และการแชร์</strong> ที่เมนูทางซ้าย</li>
-                    <li>เลือก<strong>ใช่</strong> ใต้ "Google+ คอมเมนต์" คลิกบันทึกการตั้งค่าที่ด้านขวาบน</li>
-                  </ol>
-
-                <b:comment>=== Japanese - ‪日本語‬ ===</b:comment>
-                <b:elseif cond='data:blog.locale == "ja"'/>
-                  <p class='mb-1'><strong>Google+ コメントを有効にするには:</strong></p>
-                  <ol class='pl-4 mb-3'>
-                    <li>Google+ プロフィールを使用していることと、ブログを一般公開していることを確認します。</li>
-                    <li>左側のメニューで <strong>[設定] &gt; [投稿、コメント、共有]</strong> をクリックします。</li>
-                    <li>[Google+ コメント] で <strong>[はい]</strong> を選択します。右上の [設定を保存] をクリックします。</li>
-                  </ol>
-
-                <b:comment>=== Korean - ‪한국어‬ ===</b:comment>
-                <b:elseif cond='data:blog.locale == "ko"'/>
-                  <p class='mb-1'><strong>Google+ 댓글을 사용 설정하려면 다음 단계를 따릅니다.</strong></p>
-                  <ol class='pl-4 mb-3'>
-                    <li>프로필로 Google+를 사용 중인지 그리고 블로그가 공개되어 있는지 확인합니다.</li>
-                    <li>왼쪽 메뉴에서 <strong>설정 &gt; 글, 댓글 및 공유</strong>를 클릭합니다.</li>
-                    <li>'Google+ 댓글'에서 <strong>예</strong>를 선택합니다. 오른쪽 상단에서 설정 저장을 클릭합니다.</li>
-                  </ol>
-
-                <b:comment>=== Indonesian - ‪Indonesia‬ ===</b:comment>
-                <b:elseif cond='data:blog.locale == "id"'/>
-                  <p class='mb-1'><strong>Untuk mengaktifkan komentar Google+:</strong></p>
-                  <ol class='pl-4 mb-3'>
-                    <li>Pastikan Anda menggunakan Google+ sebagai profil dan blog Anda bersifat publik.</li>
-                    <li>Di menu sebelah kiri, klik <strong>Setelan &gt; Postingan, komentar, dan bagikan</strong>.</li>
-                    <li>Pada "Komentar Google+", pilih <strong>Ya</strong>. Di kanan atas, klik Simpan setelan.</li>
-                  </ol>
-
-                <b:comment>=== Default, English (United States) ===</b:comment>
-                <b:else/>
-                  <p class='mb-1'><strong>To turn on Google+ comments:</strong></p>
-                  <ol class='pl-4 mb-3'>
-                    <li>Make sure you're using Google+ as your profile and your blog is public.</li>
-                    <li>In the left menu, click <strong>Settings &gt; Posts, comments and sharing</strong>.</li>
-                    <li>Under "Google+ Comments," choose <strong>Yes</strong>. At the top right, click Save settings.</li>
-                  </ol>
-                </b:if>
-
+                <p class='mb-1'><strong>To turn on Google+ comments:</strong></p>
+                <ol class='pl-4 mb-3'>
+                  <li>Make sure you're using Google+ as your profile and your blog is public.</li>
+                  <li>In the left menu, click <strong>Settings &gt; Posts, comments and sharing</strong>.</li>
+                  <li>Under "Google+ Comments," choose <strong>Yes</strong>. At the top right, click Save settings.</li>
+                </ol>
                 <p class='mb-0'>
                   <i aria-hidden='true' class='fa fa-info-circle'/>
                   <a class='alert-link' href='https://support.google.com/blogger/answer/1752748' target='_blank'>
