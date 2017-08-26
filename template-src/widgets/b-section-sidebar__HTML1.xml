@@ -1,9 +1,8 @@
 <b:widget id='HTML1' locked='false' title='HTML/JavaScript' type='HTML' version='2' visible='true'>
   <b:widget-settings>
     <b:widget-setting name='content'>
-      &lt;p&gt;
-        Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
-      &lt;/p&gt;
+      &lt;p&gt;Bootsblogger is open source. It's hosted, developed, and maintained on GitHub.&lt;/p&gt;
+      &lt;a class="btn btn-sm btn-dark" href="https://github.com/bootsblogger/bootsblogger"&gt;&lt;i class="fa fa-github" aria-hidden="true"&gt;&lt;/i&gt; GitHub&lt;/a&gt;
     </b:widget-setting>
   </b:widget-settings>
   <b:includable id='main'>
