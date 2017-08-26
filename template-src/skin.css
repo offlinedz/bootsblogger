@@ -233,6 +233,15 @@ body {}
   max-width: 100%;
 }
 
+.post-compose-style .tr-caption-container {
+  margin-bottom: 1rem;
+}
+.post-compose-style .tr-caption-container .tr-caption {
+  padding: .5rem 0;
+  font-size: 90%;
+  color: #868e96;
+}
+
 /* Tables */
 
 .post-compose-style table:not(.table):not(.tr-caption-container) {
