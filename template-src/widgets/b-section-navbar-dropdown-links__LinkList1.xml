@@ -37,7 +37,6 @@
     <b:widget-setting name='link-16'>/2016/11/sample-blog-post-01.html</b:widget-setting>
     <b:widget-setting name='text-17'>Static page</b:widget-setting>
     <b:widget-setting name='link-17'>/p/static-page.html</b:widget-setting>
-
   </b:widget-settings>
   <b:includable id='main'>
     <a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#'>
