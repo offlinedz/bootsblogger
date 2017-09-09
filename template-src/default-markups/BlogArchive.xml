@@ -13,7 +13,7 @@
     </div>
   </b:includable>
   <b:includable id='menu'>
-    <select class='archive-menu custom-select' onchange='if (this.value) window.location.href = this.value'>
+    <select class='custom-select archive-menu' onchange='if (this.value) window.location.href = this.value'>
       <option selected='selected' value=''><data:messages.archive/></option>
       <b:loop values='data:data' var='i'>
         <option expr:value='data:i.url'>
@@ -23,7 +23,7 @@
     </select>
   </b:includable>
   <b:includable id='flat'>
-    <ol class='archive-flat list-unstyled mb-0'>
+    <ol class='list-unstyled mb-0 archive-flat'>
       <b:loop values='data:data' var='i'>
         <li>
           <a expr:href='data:i.url'>
@@ -68,7 +68,7 @@
       }
       </style>
 
-      <ol class='archive-hierarchy-yearly list-unstyled mb-0'>
+      <ol class='list-unstyled mb-0 archive-hierarchy-yearly'>
         <b:loop values='data:data' var='i'>
           <li>
             <a aria-expanded='false' class='archive-hierarchy-toggle collapsed' data-toggle='collapse' expr:aria-controls='data:i.toggleId' expr:href='"#" + data:i.toggleId'>
@@ -79,7 +79,7 @@
             </a>
 
             <div class='collapse' expr:id='data:i.toggleId'>
-              <ul class='archive-hierarchy-monthly list-unstyled'>
+              <ul class='list-unstyled archive-hierarchy-monthly'>
                 <b:loop values='data:i.data' var='j'>
                   <li>
                     <b:if cond='data:j.data'>
@@ -93,7 +93,7 @@
 
                     <b:if cond='data:j.data'>
                       <div class='collapse' expr:id='data:j.toggleId'>
-                        <ul class='archive-hierarchy-daily list-unstyled'>
+                        <ul class='list-unstyled archive-hierarchy-daily'>
                           <b:loop values='data:j.data' var='k'>
                             <li>
                               <a expr:href='data:k.url'>

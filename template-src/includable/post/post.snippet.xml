@@ -1,4 +1,4 @@
-<div expr:class='data:parentDivClass'>
+<div expr:class='data:parentDivClass' expr:id='"post-snippet_" + data:widget.instanceId + "_" + data:post.id'>
   <b:if cond='data:post.hasJumpLink and data:notHasJumpLink'>
     <data:post.body/>
   <b:else/>

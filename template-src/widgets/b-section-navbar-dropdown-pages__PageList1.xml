@@ -4,13 +4,13 @@
     <b:widget-setting name='homeTitle'>Home</b:widget-setting>
   </b:widget-settings>
   <b:includable id='main'>
-    <a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#'>
+    <a aria-expanded='false' aria-haspopup='true' class='nav-link dropdown-toggle' data-toggle='dropdown' expr:id='"dropdownMenu_" + data:widget.instanceId' href='#'>
       <b:eval expr='data:title ? data:title : "Pages"'/>
     </a>
     <b:include name='content'/>
   </b:includable>
   <b:includable id='content'>
-    <div class='dropdown-menu'>
+    <div class='dropdown-menu' expr:aria-labelledby='"dropdownMenu_" + data:widget.instanceId'>
       <b:loop values='data:links' var='link'>
         <a class='dropdown-item' expr:href='data:link.href'>
           <b:class cond='data:link.isCurrentPage' name='active'/>

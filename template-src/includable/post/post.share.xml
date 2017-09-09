@@ -1,5 +1,5 @@
 <div expr:class='data:parentDivClass'>
-  <a aria-expanded='false' aria-haspopup='true' b:whitespace='remove' expr:class='data:dropdownToggleLinkClass' expr:id='"dropdownMenuLink" + data:post.id' href='#' data-toggle='dropdown' expr:title='data:messages.share'>
+  <a aria-expanded='false' aria-haspopup='true' b:whitespace='remove' expr:class='data:dropdownToggleLinkClass' expr:id='"dropdownMenuShare_" + data:widget.instanceId + "_" + data:post.id' href='#' data-toggle='dropdown' expr:title='data:messages.share'>
     <b:if cond='data:dropdownToggleType == "icon"'>
       <span class="sr-only">Toggle Dropdown</span>
       <i aria-hidden='true' class='fa fa-share-alt'/>
@@ -12,7 +12,7 @@
       <data:messages.share/>
     </b:if>
   </a>
-  <div expr:aria-labelledby='"dropdownMenuLink" + data:post.id' expr:class='data:dropdownMenuClass'>
+  <div expr:aria-labelledby='"dropdownMenuShare_" + data:widget.instanceId + "_" + data:post.id' expr:class='data:dropdownMenuClass'>
     <a expr:class='data:dropdownItemLinkClass' expr:href='"https://www.blogger.com/share-post.g?blogID=" + data:blog.blogId + "&amp;postID=" + data:post.id + "&amp;target=twitter"' target='_blank'>
       <b:if cond='data:dropdownItemIcon'>
         <i aria-hidden='true' class='fa fa-twitter-square fa-fw'/>

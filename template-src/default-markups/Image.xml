@@ -8,7 +8,7 @@
       <figure class='figure d-block mb-0'>
         <b:tag cond='data:link' expr:href='data:link' name='a'>
           <b:if cond='data:sourceUrl'>
-            <img class='figure-img d-block img-fluid w-100 mb-0' expr:src='data:sourceUrl'/>
+            <img class='figure-img d-block img-fluid w-100 mb-0' expr:alt='data:messages.image' expr:src='data:sourceUrl'/>
           </b:if>
         </b:tag>
         <b:if cond='data:caption'>

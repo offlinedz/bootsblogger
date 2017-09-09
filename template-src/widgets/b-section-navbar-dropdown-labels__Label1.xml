@@ -7,7 +7,7 @@
     <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
   </b:widget-settings>
   <b:includable id='main' var='this'>
-    <a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#'>
+    <a aria-expanded='false' aria-haspopup='true' class='nav-link dropdown-toggle' data-toggle='dropdown' expr:id='"dropdownMenu_" + data:widget.instanceId' href='#'>
       <b:eval expr='data:title ? data:title : "Labels"'/>
     </a>
     <b:include name='content'/>
@@ -17,7 +17,7 @@
     <b:include cond='data:this.display == "cloud"' name='cloud'/>
   </b:includable>
   <b:includable id='list'>
-    <div class='dropdown-menu'>
+    <div class='dropdown-menu' expr:aria-labelledby='"dropdownMenu_" + data:widget.instanceId'>
       <b:loop values='data:labels' var='label'>
         <a class='dropdown-item' expr:href='appendParams(data:label.url, { max-results: "12" })'>
           <b:class cond='data:view.search.label == data:label.name' name='active'/>
@@ -30,7 +30,7 @@
     </div>
   </b:includable>
   <b:includable id='cloud'>
-    <div class='dropdown-menu p-2'>
+    <div class='dropdown-menu p-2' expr:aria-labelledby='"dropdownMenu_" + data:widget.instanceId'>
       <b:loop values='data:labels' var='label'>
         <a class='badge' expr:href='appendParams(data:label.url, { max-results: "12" })'>
           <b:class cond='data:view.url.canonical and (data:view.search.label != data:label.name)' name='badge-secondary'/>

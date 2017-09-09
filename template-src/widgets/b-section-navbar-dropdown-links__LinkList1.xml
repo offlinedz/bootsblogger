@@ -39,13 +39,13 @@
     <b:widget-setting name='link-17'>/p/static-page.html</b:widget-setting>
   </b:widget-settings>
   <b:includable id='main'>
-    <a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#'>
+    <a aria-expanded='false' aria-haspopup='true' class='nav-link dropdown-toggle' data-toggle='dropdown' expr:id='"dropdownMenu_" + data:widget.instanceId' href='#'>
       <b:eval expr='data:title ? data:title : "Links"'/>
     </a>
     <b:include name='content'/>
   </b:includable>
   <b:includable id='content'>
-    <div class='dropdown-menu'>
+    <div class='dropdown-menu' expr:aria-labelledby='"dropdownMenu_" + data:widget.instanceId'>
       <b:loop values='data:links' var='link'>
         <b:if cond='data:link.name == "### Header ###"'>
           <h6 class='dropdown-header'><data:link.target/></h6>
