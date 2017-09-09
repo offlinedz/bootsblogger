@@ -29,7 +29,7 @@ Title, meta and link tags
 CSS
 ================================================= </b:comment>
 
-<b:include name='css.required'/>
+<b:include name='assets.requiredCss'/>
 
 <b:comment>=== Layout mode CSS ===</b:comment>
 <b:template-skin>
@@ -161,7 +161,7 @@ Footer
     <p>&#169; <data:blog.title/>.</p>
     <p>
       <a b:whitespace='remove' expr:href='data:blog.bloggerUrl'>
-        <b:include data='{ width: 24, height: 24, fillBg: "#ff5722", fillB: "#fff", class: "align-middle mr-1" }' name='icons.blogger'/>
+        <b:include data='{ width: 24, height: 24, fillBg: "#ff5722", fillB: "#fff", class: "align-middle mr-1" }' name='assets.bloggerIcon'/>
         <b:message name='messages.poweredByBlogger'/>
       </a>
     </p>
@@ -174,7 +174,7 @@ Footer
 JavaScript
 ================================================= </b:comment>
 
-<b:include name='js.required'/>
+<b:include name='assets.requiredJs'/>
 
 <b:comment>=== Template JavaScript ===</b:comment>
 <script>

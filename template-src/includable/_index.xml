@@ -126,7 +126,7 @@ Assets
 
 <b:defaultmarkups>
   <b:defaultmarkup type='Common'>
-    <b:includable id='css.required'>
+    <b:includable id='assets.requiredCss'>
       <b:comment>=== Bootstrap ===</b:comment>
       <style>
       <!--(bake assets/css/bootstrap/bootstrap.min.css)-->
@@ -138,7 +138,7 @@ Assets
       <b:comment>=== Font Awesome ===</b:comment>
       <link crossorigin='anonymous' href='{{ blog.cdn.fontAwesome }}' integrity='{{ blog.cdn.fontAwesome_hash }}' rel='stylesheet'/>
     </b:includable>
-    <b:includable id='js.required'>
+    <b:includable id='assets.requiredJs'>
       <b:comment>=== jQuery ===</b:comment>
       <script crossorigin='anonymous' integrity='{{ blog.cdn.jquery_hash }}' src='{{ blog.cdn.jquery }}'/>
       <b:comment>=== Popper.js ===</b:comment>
@@ -153,8 +153,8 @@ Assets
 
 <b:defaultmarkups>
   <b:defaultmarkup type='Common'>
-    <b:includable id='icons.blogger'>
-      <!--(bake assets/icons/icons.blogger.xml)-->
+    <b:includable id='assets.bloggerIcon'>
+      <!--(bake assets/icons/assets.bloggerIcon.xml)-->
     </b:includable>
   </b:defaultmarkup>
 </b:defaultmarkups>
