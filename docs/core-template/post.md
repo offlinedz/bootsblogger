@@ -126,24 +126,20 @@ Lihat `template-src/widgets/b-section-main__Blog1.xml`:
 <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2' visible='true'>
   <b:includable id='main'>
 
-    <b:if cond='!data:view.isMobile'>
+    <b:comment>=== Breadcrumb ===</b:comment>
+    <b:include cond='!data:view.isHomepage' name='blog-breadcrumb'/>
 
-      <b:comment>=== Breadcrumb ===</b:comment>
-      <b:include cond='!data:view.isHomepage' name='blog-breadcrumb'/>
+    <b:comment>=== Status message ===</b:comment>
+    <b:include name='blog-status-message'/>
 
-      <b:comment>=== Status message ===</b:comment>
-      <b:include name='blog-status-message'/>
+    <b:comment>=== Posts ===</b:comment>
+    <b:include cond='data:posts.notEmpty' name='blog-posts'/>
 
-      <b:comment>=== Posts ===</b:comment>
-      <b:include cond='data:posts.notEmpty' name='blog-posts'/>
+    <b:comment>=== Comments ===</b:comment>
+    <b:include cond='data:view.isPost' name='blog-comments'/>
 
-      <b:comment>=== Comments ===</b:comment>
-      <b:include cond='data:view.isPost' name='blog-comments'/>
-
-      <b:comment>=== Pager ===</b:comment>
-      <b:include cond='data:posts.notEmpty and !data:view.isPage' name='blog-pager'/>
-
-    </b:if>
+    <b:comment>=== Pager ===</b:comment>
+    <b:include cond='data:posts.notEmpty and !data:view.isPage' name='blog-pager'/>
 
   </b:includable>
 </b:widget>
